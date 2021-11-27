@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>컴포넌트</title>
+    <link rel="stylesheet" href="/resources/styles/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/resources/styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/resources/styles/common.css">
+    <link rel="stylesheet" href="/resources/styles/layout.css">
+    <script src="/resources/scripts/jquery-1.6.0.min.js"></script>
+    <script src="/resources/scripts/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/resources/scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="/resources/scripts/script.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="title">select</p></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <select class="ipt"><option value="###">###</option></select>    </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <div class="ipt-select-switch"><input type="checkbox" id="checkbox-3"><label for="checkbox-3"><span class="marble"></span></label></div>    </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <div class="ipt-select-switch"><input type="checkbox" id="checkbox-4" checked><label for="checkbox-4"><span class="marble"></span></label></div>    </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <div class="ipt-select-checkbox"><input id="checkbox-1" type="checkbox"><label for="checkbox-1"><span>###</span></label></div>    </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <div class="ipt-select-checkbox"><input id="checkbox-2" type="checkbox" checked><label for="checkbox-2"><span>###</span></label></div>    </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <div class="ipt-select-checkbox"><input id="radio-1" type="radio" name="radio-1"><label for="radio-1"><span>###</span></label></div>    </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">   <div class="ipt-select-checkbox"><input id="radio-2" type="radio" name="radio-1" checked><label for="radio-2"><span>###</span></label></div>    </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="title">input</p></div>
+            <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6">   <textarea class="ipt">###</textarea>    </div>
+            
+            
+            <div class="col-lg-6 col-md-1 col-sm-6 col-xs-6">   <div class="ipt-select-file preview-image"><label class="upload-name" for="file-1">파일선택</label><input type="file" id="file-1"><div class="img-wrap"></div></div>    </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt" value="###">    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt" value="###" disabled>    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt fcs" value="###">    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt ic-error" value="###">    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt ic-search" value="###">    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt ic-lock" value="###">    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt ic-unLock" value="###">    </div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">   <input type="text" placeholder="###" class="ipt ic-date" value="###" readonly>    </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="title">button</p></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a class="btn">###</a></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a class="btn disabled">###</a></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a class="btn focus">###</a></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a class="btn active">###</a></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="title">table</p></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="table-common">
+                    <table>
+                        <thead>
+                            <tr><th>###</th><th>###</th><th>###</th><th>###</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $( ".ic-date" ).datepicker();
+    </script>
+</body>
+</html>
