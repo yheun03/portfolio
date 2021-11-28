@@ -114,10 +114,23 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .ipt-select-switch.type-1 label .marble{width: calc(var(--chcHgh) - var(--chcPdg) * 2); height: 100%; display: block; transition: all .3s; background-color: var(--white); border-radius: 50%;}
 .ipt-select-switch.type-1 input:checked + label{background: var(--gra-primary); justify-content: flex-end;}
 /* 인풋 타입 라디오 + on off가 아닌 좌우 동글 움직임 + 텍스트 추가 */
-.ipt-select-switch.type-2 input{display: none;}
-.ipt-select-switch.type-2 label{overflow: hidden; position: relative; display: block; width: calc(var(--chcHgh) * 2); height: var(--chcHgh); padding: var(--chcPdg); border-radius: var(--chcHgh); background: linear-gradient(90deg, var(--mediumGrey), var(--mediumGrey)); transition: all .3s; display: flex; justify-content: flex-start;}
-.ipt-select-switch.type-2 label .marble{width: calc(var(--chcHgh) - var(--chcPdg) * 2); height: 100%; display: block; transition: all .3s; background-color: var(--white); border-radius: 50%;}
-.ipt-select-switch.type-2 input:checked + label{background: var(--gra-primary); justify-content: flex-end;}
+.switch {position: relative; width: 100%; height: var(--chcHgh); background: var(--mediumGrey); display: flex; align-items: center; border-radius: var(--chcHgh); overflow: hidden; }
+.switch-input {display: none;}
+.switch-label {position: relative; flex: 1; line-height: var(--chcHgh); z-index: 2; text-align: center; cursor: pointer;}
+.switch-selection {position: absolute; width: calc(50% - 2px); height:calc(100% - 4px); background: var(--white); left: 2px; border-radius: var(--chcHgh); display: block; transition: left 0.15s ease-out;}  
+.switch-input:checked + .switch-label-on ~ .switch-selection {left: 50%}
+
+
+/* .switch { position: relative; height: 26px; width: 120px; background: rgba(0, 0, 0, 0.25); border-radius: 3px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);}
+.switch-label { position: relative; z-index: 2; float: left; width: 58px; line-height: 26px; font-size: 11px; color: rgba(255, 255, 255, 0.35); text-align: center; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45); cursor: pointer;}
+.switch-label:active {font-weight: bold;}
+.switch-label-off {padding-left: 2px;}
+.switch-label-on {padding-right: 2px;}
+.switch-input {display: none;}
+.switch-input:checked + .switch-label { font-weight: bold; color: rgba(0, 0, 0, 0.65); text-shadow: 0 1px rgba(255, 255, 255, 0.25); transition: 0.15s ease-out;}
+.switch-input:checked + .switch-label-on ~ .switch-selection {left: 60px;}
+.switch-selection { display: block; position: absolute; z-index: 1; top: 2px; left: 2px; width: 58px; height: 22px; background: #65bd63; border-radius: 3px; background-image: linear-gradient(to bottom, #9dd993, #65bd63); box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2); transition: left 0.15s ease-out;}   */
+
 /* 탭 */
 .tab-wrap {position: relative; height: var(--tabContent-height); display: flex;}
 .tab + .tab .tab-label{border-left: 1px solid var(--lightPrimary);}
@@ -128,16 +141,6 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .tab-content { width: 100%; height: calc(var(--tabContent-height) - var(--tabHeight)); overflow-y: auto; position: absolute; z-index: 0; top: calc(var(--tabHeight) - 2px); left: 0; padding: 10px; background: var(--white); color: var(--darkgrey); opacity: 0; transition: all 0.35s;}
 .tab-switch:checked + .tab-label { background: #fff; color: var(--darkGrey); transition: all 0.35s; z-index: 0;}
 .tab-switch:checked + label + .tab-content {z-index: 1; opacity: 1;}
-
-/* .tab-wrap {position: relative; margin: 3rem 0; height: auto; display: flex;}
-.tab + .tab .tab-label{border-left: 0.125rem solid var(--lightPrimary);}
-.tab + .tab .tab-switch:checked + .tab-label{border-color: var(--primary);}
-.tab-switch {display: none;}
-.tab-label {position: relative; display: block; line-height: calc(var(--tabHeight) - 2px); height: var(--tabHeight); padding: 0 10px; background: var(--primary); color: var(--white); cursor: pointer; top: 0; transition: all 0.25s;}
-.tab-label:hover {top: -2px;}
-.tab-content { width: 100%; height: auto; position: absolute; z-index: 1; top: calc(var(--tabHeight) - 2px); left: 0; padding: 10px; background: var(--white); color: var(--darkgrey); opacity: 0; transition: all 0.35s;}
-.tab-switch:checked + .tab-label { background: #fff; color: var(--darkGrey); transition: all 0.35s; z-index: 1;}
-.tab-switch:checked + label + .tab-content {z-index: 2; opacity: 1;} */
 
 /* 버튼 */
 .btn{width: 100%; height: 50px; font-weight: 900; border-radius: 10px; line-height: 1; background-color: var(--white); color: var(--grey); border: 1px solid var(--lightPrimary); padding: 0; display: flex; justify-content: center; align-items: center;}
