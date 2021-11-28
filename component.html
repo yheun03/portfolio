@@ -106,7 +106,10 @@
         </div>
     </div>
     <script>
-        $( ".ic-date" ).datepicker();
+        $('.ic-date').datepicker({
+            dateFormat: 'yy-mm-dd',
+        })
+        .datepicker("setDate", new Date());
     </script>
 </body>
 </html>
