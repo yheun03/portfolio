@@ -304,7 +304,7 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .scrollY li:last-child{margin-bottom: 0;}
 
 /* 테이블 */
-.table-common {width: 100%; max-height: 400px; border-bottom: 1px solid var(--lightPrimary); overflow: auto;}
+.table-common {width: 100%; max-height: 200px; border-bottom: 1px solid var(--lightPrimary); overflow: auto;}
 .table-common table { width: 100%; min-width: 860px;}
 .table-common thead {position: sticky; background-color: rgba(196, 196, 196,.3);;}
 .table-common th { font-weight: 300; color: var(--white); background-color: var(--primary); color:var(--white); line-height: 35px; font-size: 12px; text-align: center; border: 1px solid rgba(196, 196, 196,.3);}
