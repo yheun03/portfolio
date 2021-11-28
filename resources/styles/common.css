@@ -114,11 +114,11 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .ipt-select-switch.type-1 label .marble{width: calc(var(--chcHgh) - var(--chcPdg) * 2); height: 100%; display: block; transition: all .3s; background-color: var(--white); border-radius: 50%;}
 .ipt-select-switch.type-1 input:checked + label{background: var(--gra-primary); justify-content: flex-end;}
 /* 인풋 타입 라디오 + on off가 아닌 좌우 동글 움직임 + 텍스트 추가 */
-.switch {position: relative; width: 100%; height: var(--chcHgh); background: var(--mediumGrey); display: flex; align-items: center; border-radius: var(--chcHgh); overflow: hidden; }
-.switch-input {display: none;}
-.switch-label {position: relative; flex: 1; line-height: var(--chcHgh); z-index: 2; text-align: center; cursor: pointer;}
-.switch-selection {position: absolute; width: calc(50% - 2px); height:calc(100% - 4px); background: var(--white); left: 2px; border-radius: var(--chcHgh); display: block; transition: left 0.15s ease-out;}  
-.switch-input:checked + .switch-label-on ~ .switch-selection {left: 50%}
+.ipt-select-switch.type-2 {position: relative; width: 100%; height: var(--chcHgh); background: var(--mediumGrey); display: flex; align-items: center; border-radius: var(--chcHgh); overflow: hidden; }
+.ipt-select-switch.type-2 input {display: none;}
+.ipt-select-switch.type-2 input:checked + .on ~ .marble {left: 50%}
+.ipt-select-switch.type-2 label {position: relative; flex: 1; line-height: var(--chcHgh); z-index: 2; text-align: center; cursor: pointer;}
+.ipt-select-switch.type-2 .marble {position: absolute; width: calc(50% - 2px); height:calc(100% - 4px); background: var(--white); left: 2px; border-radius: var(--chcHgh); display: block; transition: left 0.15s ease-out;}  
 
 
 /* .switch { position: relative; height: 26px; width: 120px; background: rgba(0, 0, 0, 0.25); border-radius: 3px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);}
