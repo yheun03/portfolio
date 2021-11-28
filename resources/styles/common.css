@@ -120,26 +120,14 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .ipt-select-switch.type-2 label {position: relative; flex: 1; line-height: var(--chcHgh); z-index: 2; text-align: center; cursor: pointer;}
 .ipt-select-switch.type-2 .marble {position: absolute; width: calc(50% - 2px); height:calc(100% - 4px); background: var(--white); left: 2px; border-radius: var(--chcHgh); display: block; transition: left 0.15s ease-out;}  
 
-
-/* .switch { position: relative; height: 26px; width: 120px; background: rgba(0, 0, 0, 0.25); border-radius: 3px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);}
-.switch-label { position: relative; z-index: 2; float: left; width: 58px; line-height: 26px; font-size: 11px; color: rgba(255, 255, 255, 0.35); text-align: center; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45); cursor: pointer;}
-.switch-label:active {font-weight: bold;}
-.switch-label-off {padding-left: 2px;}
-.switch-label-on {padding-right: 2px;}
-.switch-input {display: none;}
-.switch-input:checked + .switch-label { font-weight: bold; color: rgba(0, 0, 0, 0.65); text-shadow: 0 1px rgba(255, 255, 255, 0.25); transition: 0.15s ease-out;}
-.switch-input:checked + .switch-label-on ~ .switch-selection {left: 60px;}
-.switch-selection { display: block; position: absolute; z-index: 1; top: 2px; left: 2px; width: 58px; height: 22px; background: #65bd63; border-radius: 3px; background-image: linear-gradient(to bottom, #9dd993, #65bd63); box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2); transition: left 0.15s ease-out;}   */
-
 /* 탭 */
 .tab-wrap {position: relative; height: var(--tabContent-height); display: flex;}
-.tab + .tab .tab-label{border-left: 1px solid var(--lightPrimary);}
-.tab + .tab .tab-switch:checked + .tab-label{border-color: var(--primary);}
+.tab + .tab .tab-label{box-shadow: inset 1px 0px 0 0px var(--lightPrimary);}
 .tab-switch {display: none;}
 .tab-label {position: relative; display: block; line-height: calc(var(--tabHeight) - 2px); height: var(--tabHeight); padding: 0 10px; background: var(--primary); color: var(--white); cursor: pointer; top: 0; transition: all 0.25s;}
 .tab-label:hover {top: -2px;}
-.tab-content { width: 100%; height: calc(var(--tabContent-height) - var(--tabHeight)); overflow-y: auto; position: absolute; z-index: 0; top: calc(var(--tabHeight) - 2px); left: 0; padding: 10px; background: var(--white); color: var(--darkgrey); opacity: 0; transition: all 0.35s;}
-.tab-switch:checked + .tab-label { background: #fff; color: var(--darkGrey); transition: all 0.35s; z-index: 0;}
+.tab-content { width: 100%; height: calc(var(--tabContent-height) - var(--tabHeight)); overflow-y: auto; position: absolute; z-index: 0; top: calc(var(--tabHeight) - 2px); left: 0; padding: 10px; background: var(--white); color: var(--darkgrey); opacity: 0; transition: all 0.35s; border: 1px solid var(--lightPrimary);}
+.tab-switch:checked + .tab-label { box-shadow: unset; background: var(--lightPrimary); color: var(--darkGrey); transition: all 0.35s; z-index: 0;}
 .tab-switch:checked + label + .tab-content {z-index: 1; opacity: 1;}
 
 /* 버튼 */
