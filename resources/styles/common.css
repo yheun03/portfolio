@@ -306,7 +306,7 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 /* 테이블 */
 .table-common {width: 100%; max-height: 200px; border-bottom: 1px solid var(--lightPrimary); overflow: auto;}
 .table-common table { width: 100%; min-width: 860px;}
-.table-common thead {position: sticky; background-color: rgba(196, 196, 196,.3);;}
+.table-common thead {position: sticky; background-color: rgba(196, 196, 196,.3); top: 0;}
 .table-common th { font-weight: 300; color: var(--white); background-color: var(--primary); color:var(--white); line-height: 35px; font-size: 12px; text-align: center; border: 1px solid rgba(196, 196, 196,.3);}
 .table-common td { text-align: center; background-color: var(--white); line-height: 28px; font-size: 12px; color: var(--darkGrey); border: 1px solid rgba(196, 196, 196,.3); padding: 0 4px;}
 .table-common tr:nth-child(2n) td { background-color: var(--lightGrey);}
