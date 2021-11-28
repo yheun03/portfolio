@@ -76,7 +76,7 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resize: none;}
 .ipt{width: 100%; height: 45px; border: 1px solid var(--lightPrimary); border-radius: 10px; padding: 0 10px; background: var(--white) right 7px center/16px no-repeat; color: var(--primary); font-weight: 900; outline: none !important; box-shadow: none;}
 .ipt[disabled],
-.ipt:not(.ic-date)[readonly]{background-color: var(--mediumGrey); color: var(--grey);}
+.ipt:not(.ic-date)[readonly]{background-color: var(--mediumGrey); color: var(--grey); cursor: not-allowed;}
 .ipt.fcs{border: 1px solid var(--primary);}
 .ipt[class^="ipt ic-"]{padding-right: 30px;}
 .ipt.ic-error{border: 1px solid var(--red); color: var(--red); background-image: url(../images/icons/ic-error-red.svg);}
@@ -142,7 +142,7 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 /* 버튼 */
 .btn{width: 100%; height: 50px; font-weight: 900; border-radius: 10px; line-height: 1; background-color: var(--white); color: var(--grey); border: 1px solid var(--lightPrimary); padding: 0; display: flex; justify-content: center; align-items: center;}
 .btn:disabled,
-.btn.disabled{background-color: var(--mediumGrey); color: var(--grey);}
+.btn.disabled{background-color: var(--mediumGrey); color: var(--grey); cursor: not-allowed;}
 .btn:focus:not([disabled]):not(.disabled):not([readonly]):not(.readonly),
 .btn.focus{background-color: rgba(205, 207, 227, 0.3); border-color: var(--primary); color: var(--primary);}
 .btn.rvs,
@@ -248,6 +248,7 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .t-right{text-align: right !important;}
 
 /* flex */
+.hide{display: none;}
 .flex{display: flex !important;}
 .flex-row-center{display: flex !important; justify-content: center !important;}
 .flex-col-center{display: flex !important; align-items: center !important;}
@@ -263,8 +264,6 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .flex-7{flex: 7;}
 .flex-8{flex: 8;}
 .flex-9{flex: 9;}
-
-.hide{display: none;}
 
 /* background */
 .bgC{background: no-repeat center/cover}
@@ -293,6 +292,10 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 
 .title{color: var(--darkGrey); font-size: 30px;}
 .dscpt{font-weight: 400; color: var(--darkGrey);}
+
+/* datepicker */
+.ui-widget-header .ui-icon{background: url(../images/icons/ic-arrow-left.svg) center/10px no-repeat; cursor: pointer;}
+.ui-widget-header .ui-icon-circle-triangle-e{background-image: url(../images/icons/ic-arrow-right.svg)}
 
 /* overflow ...처리 */
 .excpt{display: block; max-width: 100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
