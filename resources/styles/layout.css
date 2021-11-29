@@ -1,12 +1,20 @@
-#header{position: sticky; top: 0; width: 100%; height: var(--header-height); background: var(--mediumPrimary); z-index: 10; display: flex; justify-content: space-between; padding: 4px 16px 4px 0;}
+#header{position: fixed; top: 0; width: 100%; height: var(--header-height); background: var(--mediumPrimary); z-index: 10; display: flex; justify-content: space-between; padding: 4px 7.5px 4px 0;}
 #header > div{height: 100%; display: flex; align-items: center;}
 #header label{width: var(--header-height); height: var(--header-height); background: url(../images/icons/ic-hamburger-white.svg) center/16px no-repeat; cursor: pointer;}
 #header h1{margin: 0; height: 100%;}
 #header h1 img{width: unset; height: 100%; vertical-align: top;}
 #header .btn{font-size: 12px; font-weight: 400; border-radius: 4px; padding: 0 4px 0 24px; background: url(../images/icons/ic-logout-white.svg) 4px center/16px no-repeat; color: white;}
 
-#sidebar{position: fixed; top: 0; left: calc(var(--sideBar-width) * -1); width: var(--sideBar-width); height: 100vh; padding-top: var(--header-height); background-color: var(--lightPrimary); transition: .2s;}
-#contents-wrap{transition: .2s;}
+#sidebar{position: fixed; top: 0; left: calc(var(--sideBar-width) * -1); width: var(--sideBar-width); height: 100vh; padding-top: var(--header-height); background-color: var(--lightPrimary); color: var(--black); transition: .2s;}
+#sidebar a{color: inherit;}
+#sidebar > ul > li{width: 100%; line-height: 24px; padding: 8px 12px 8px 34px; background: white url(../images/icons/ic-arrow-right.svg) 10px 10px/11px no-repeat;}
+#sidebar ul ul{position: relative; padding-left: 4px;}
+#sidebar ul ul::before{content: ""; position: absolute; left: -16px; width: 1px; height: 100%; background-color: var(--lightPrimary);}
+#sidebar > ul > li:hover{background-image: url(../images/icons/ic-arrow-right-white.svg);}
+#sidebar ul li:hover{background-color: var(--mediumPrimary); color: var(--white);}
+#sidebar ul li li:hover{background-color: var(--lightPrimary);}
+
+#contents-wrap{transition: .2s; padding-top: var(--header-height);}
 
 #sidebar-open:checked~#sidebar{left: 0;}
 #sidebar-open:checked~#contents-wrap{padding-left: var(--sideBar-width);}
