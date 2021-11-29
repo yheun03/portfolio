@@ -31,7 +31,8 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 	--orange: #FF7A00;
 	--gra-primary: linear-gradient(90deg, #3D47CD, #623DCD);
 	--gra-red: linear-gradient(90deg, #FFC2C2, #FFDECB);
-	--sideBar-width: 250px;
+	--header-height: 31px;
+	--sideBar-width: 195px;
 	--chcHgh: 45px;
 	--chcPdg: 4px;
 	--tabHeight: 40px;
@@ -132,7 +133,7 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .tab-switch:checked + label + .tab-content {z-index: 1; opacity: 1;}
 
 /* 버튼 */
-.btn{width: 100%; height: 50px; font-weight: 900; border-radius: 10px; line-height: 1; background-color: var(--white); color: var(--grey); border: 1px solid var(--lightPrimary); padding: 0; display: flex; justify-content: center; align-items: center;}
+.btn{width: 100%; height: 50px; max-height: 100%; font-weight: 900; border-radius: 10px; line-height: 1; background-color: var(--white); color: var(--grey); border: 1px solid var(--lightPrimary); padding: 0; display: flex; justify-content: center; align-items: center;}
 .btn:disabled,
 .btn.disabled{background-color: var(--mediumGrey); color: var(--grey); cursor: not-allowed;}
 .btn:focus:not([disabled]):not(.disabled):not([readonly]):not(.readonly),
