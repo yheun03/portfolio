@@ -1,4 +1,8 @@
-#modal{width: 100%; height: 100vh; display: none; position: fixed; background-color: rgba(0,0,0,.4); justify-content: center; align-items: center;}
-#modal-content{padding: 20px 10px; background-color: white; position: relative;}
-#modal-content p{text-align: center;}
-#modal-content p:last-child{font-size: 50px; margin-top: 20px}
+header{position: sticky; top: 0; width: 100%; height: 50px; background: var(--lightPrimary); z-index: 10;}
+nav{position: fixed; top: 0; left: 0; width: var(--sideBar-width); height: 100vh; background-color: var(--mediumPrimary); transition: .2s;}
+#contents-wrap{padding-left: var(--sideBar-width); transition: .2s;}
+
+#openner:checked~nav{left: calc(var(--sideBar-width) * -1);}
+#openner:checked~#contents-wrap{padding: 0;}
+
+#openner{position: absolute; z-index: 11;}
