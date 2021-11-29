@@ -15,10 +15,17 @@
     <script src="./resources/scripts/script.js"></script>
 </head>
 <body>
-    <input type="checkbox" id="openner" hidden>
-    <label for="openner" style="position: absolute; top: 0; z-index: 10;">test</label>
-    <header></header>
-    <nav></nav>
+    <input type="checkbox" id="sidebar-open" checked hidden>
+    <div id="header">
+        <div>
+            <label for="sidebar-open"></label>
+            <h1><img src="./resources/images/icons/logo.png" alt=""></h1>
+        </div>
+        <div>
+            <button class="btn">로그아웃</button>
+        </div>
+    </div>
+    <div id="sidebar">test</div>
     <div id="contents-wrap">
         <div class="wrap" style="padding: 0 24px;">
             <div class="row">
