@@ -5,14 +5,7 @@
 #header h1 img{width: unset; height: 100%; vertical-align: top;}
 #header .btn{font-size: 12px; font-weight: 400; border-radius: 4px; padding: 0 4px 0 24px; background: url(../images/icons/ic-logout-white.svg) 4px center/16px no-repeat; color: white;}
 
-/* #sidebar{position: fixed; top: 0; left: calc(var(--sideBar-width) * -1); width: var(--sideBar-width); height: 100vh; padding-top: var(--header-height); background-color: var(--lightPrimary); color: var(--black); transition: .2s;}
-#sidebar a{color: inherit;}
-#sidebar > ul > li{width: 100%; line-height: 24px; padding: 8px 12px 8px 34px; background: white url(../images/icons/ic-arrow-right.svg) 10px 10px/11px no-repeat;}
-#sidebar ul ul{position: relative; padding-left: 4px;}
-#sidebar ul ul::before{content: ""; position: absolute; left: -16px; width: 1px; height: 100%; background-color: var(--lightPrimary);}
-#sidebar > ul > li:hover{background-image: url(../images/icons/ic-arrow-right-white.svg);}
-#sidebar ul li:hover{background-color: var(--mediumPrimary); color: var(--white);}
-#sidebar ul li li:hover{background-color: var(--lightPrimary);} */
+.page-wrapper{padding-top: var(--header-height);}
 .page-wrapper .sidebar-wrapper,
 .sidebar-wrapper .sidebar-brand > a,
 .sidebar-wrapper .sidebar-dropdown > a:after,
@@ -41,11 +34,11 @@
 #show-sidebar { position: fixed; left: 0; top: 10px; border-radius: 0 4px 4px 0px; width: 35px; transition-delay: 0.3s;}
 .page-wrapper.toggled #show-sidebar {left: -40px;}
 /*----------------sidebar-wrapper----------------*/
-.sidebar-wrapper { width: 260px; height: 100%; max-height: 100%; position: fixed; top: 0; left: -300px; z-index: 999;}
+.sidebar-wrapper { width: 260px; height: calc(100% - var(--header-height)); max-height: 100%; position: fixed; top: var(--header-height); left: -300px; z-index: 999;}
 .sidebar-wrapper ul { list-style-type: none; padding: 0; margin: 0;}
 
 /*----------------sidebar-content----------------*/
-.sidebar-content { max-height: calc(100% - 30px); height: calc(100% - 30px); overflow-y: auto; position: relative;}
+.sidebar-content { max-height: calc(100% - var(--header-height) - 30px); height: calc(100% - var(--header-height) - 30px); overflow-y: auto; position: relative;}
 .sidebar-content.desktop {overflow-y: hidden;}
 /*--------------------sidebar-brand----------------------*/
 .sidebar-wrapper .sidebar-brand { padding: 10px 20px; display: flex; align-items: center;}
@@ -98,6 +91,7 @@
 .badge-sonar:after { content: ""; position: absolute; top: 0; left: 0; border: 2px solid #980303; opacity: 0; border-radius: 50%; width: 100%; height: 100%; animation: sonar 1.5s infinite;}
 /*--------------------------page-content-----------------------------*/
 .page-wrapper .page-content {display: inline-block; width: 100%; padding-left: 0px; padding-top: 20px;}
+.page-wrapper .page-content .container {width: 100%; padding: 50px; margin: 0;}
 /*-----------------------------chiller-theme-------------------------------------------------*/
 .chiller-theme .sidebar-wrapper {background: #31353D;}
 .chiller-theme .sidebar-wrapper .sidebar-header,
