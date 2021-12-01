@@ -31,8 +31,8 @@
 .page-wrapper.toggled .page-content {padding-left: 300px;}
 }
 /*----------------show sidebar button----------------*/
-#show-sidebar { position: fixed; left: 0; top: 10px; border-radius: 0 4px 4px 0px; width: 35px; transition-delay: 0.3s;}
-.page-wrapper.toggled #show-sidebar {left: -40px;}
+/* #show-sidebar { position: fixed; left: 0; top: var(--header-height); border-radius: 0 4px 4px 0px; width: 35px; transition-delay: 0.3s;} */
+/* .page-wrapper.toggled #show-sidebar {left: -40px;} */
 /*----------------sidebar-wrapper----------------*/
 .sidebar-wrapper { width: 260px; height: calc(100% - var(--header-height)); max-height: 100%; position: fixed; top: var(--header-height); left: -300px; z-index: 999;}
 .sidebar-wrapper ul { list-style-type: none; padding: 0; margin: 0;}
