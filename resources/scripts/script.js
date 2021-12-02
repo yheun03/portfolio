@@ -41,4 +41,27 @@ $(document).ready(function(){
         }
     });
 
+
+      $(".sidebar-dropdown > a").click(function() {
+        $(".sidebar-submenu").slideUp(200);
+        if (
+          $(this).parent().hasClass("active")
+        ) {
+          $(".sidebar-dropdown").removeClass("active");
+          $(this).parent().removeClass("active");
+        } else {
+          $(".sidebar-dropdown").removeClass("active");
+          $(this).next(".sidebar-submenu").slideDown(200);
+          $(this).parent().addClass("active");
+        }
+      });
+
+      $("#sidebar-control").click(function(){
+        $(this).toggleClass("active")
+        if($(this).hasClass("active")){
+            $(".page-wrapper").addClass("toggled");
+        }else{
+            $(".page-wrapper").removeClass("toggled");
+        }
+      })
 })

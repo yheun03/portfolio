@@ -1,6 +1,6 @@
 #header{position: fixed; top: 0; width: 100%; height: var(--header-height); background: var(--mediumPrimary); z-index: 10; display: flex; justify-content: space-between; padding: 4px 7.5px 4px 0;}
 #header > div{height: 100%; display: flex; align-items: center;}
-#header label{width: var(--header-height); height: var(--header-height); background: url(../images/icons/ic-hamburger-white.svg) center/16px no-repeat; cursor: pointer;}
+#header #sidebar-control{width: var(--header-height); height: var(--header-height); background: url(../images/icons/ic-hamburger-white.svg) center/16px no-repeat; cursor: pointer;}
 #header h1{margin: 0; height: 100%;}
 #header h1 img{width: unset; height: 100%; vertical-align: top;}
 #header .btn{font-size: 12px; font-weight: 400; border-radius: 4px; padding: 0 4px 0 24px; background: url(../images/icons/ic-logout-white.svg) 4px center/16px no-repeat; color: white;}

@@ -20,7 +20,7 @@
 <body>
     <div id="header">
         <div>
-            <label for="sidebar-open"></label>
+            <a id="sidebar-control" class="active"></a>
             <h1><img src="./resources/images/icons/logo.png" alt=""></h1>
         </div>
         <div>
@@ -28,9 +28,6 @@
         </div>
     </div>
     <div class="page-wrapper chiller-theme toggled">
-        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-          <i class="fas fa-bars"></i>
-        </a>
         <nav id="sidebar" class="sidebar-wrapper">
           <div class="sidebar-content">
             <div class="sidebar-brand">
@@ -321,37 +318,5 @@
         <!-- page-content" -->
     </div>
       <!-- page-wrapper -->
-      <script>
-$(".sidebar-dropdown > a").click(function() {
-  $(".sidebar-submenu").slideUp(200);
-  if (
-    $(this)
-      .parent()
-      .hasClass("active")
-  ) {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .parent()
-      .removeClass("active");
-  } else {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .next(".sidebar-submenu")
-      .slideDown(200);
-    $(this)
-      .parent()
-      .addClass("active");
-  }
-});
-
-$("#close-sidebar").click(function() {
-  $(".page-wrapper").removeClass("toggled");
-});
-$("#show-sidebar").click(function() {
-  $(".page-wrapper").addClass("toggled");
-});
-
-
-      </script>
 </body>
 </html>
