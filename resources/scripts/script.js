@@ -56,8 +56,8 @@ $(document).ready(function(){
         }
       });
 
-      $("#sidebar-control").click(function(){
-        $(this).toggleClass("active")
+      $(".sidebar-control").click(function(){
+        $(".sidebar-control").toggleClass("active")
         if($(this).hasClass("active")){
             $(".page-wrapper").addClass("toggled");
         }else{
