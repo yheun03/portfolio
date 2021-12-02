@@ -1,4 +1,22 @@
-$(document).ready(function(){
+
+// NOTE: 로딩창
+$('#loading').on('scroll touchmove mousewheel', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+});
+$(window).load(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1);
+    setTimeout(function () {
+        $('#loading').hide();
+        $('#loading').off('scroll touchmove mousewheel');
+    }, 1000)
+});
+    
+    $(document).ready(function(){
+
     $.datepicker.setDefaults({
         dateFormat: 'yy-mm-dd',
         prevText: '이전 달',
