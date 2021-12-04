@@ -43,7 +43,7 @@
 /*----------------sidebar-wrapper----------------*/
 .sidebar-wrapper { width: 260px; height: calc(100% - var(--header-height)); max-height: 100%; position: fixed; top: var(--header-height); left: -300px;}
 /*----------------sidebar-content----------------*/
-.sidebar-content { max-height: calc(100% - var(--header-height) - 30px); height: calc(100% - var(--header-height) - 30px); overflow-y: auto; position: relative;}
+.sidebar-content { max-height: calc(100% - var(--header-height) - 30px); height: calc(100% - var(--header-height) - 30px); display: flex; flex-direction: column; position: relative;}
 /*--------------------sidebar-brand----------------------*/
 .sidebar-wrapper .sidebar-brand { padding: 10px 20px; display: flex; align-items: center;}
 .sidebar-wrapper .sidebar-brand > a { text-transform: uppercase; font-weight: bold; flex-grow: 1;}
@@ -60,7 +60,7 @@
 /*-----------------------sidebar-search------------------------*/
 .sidebar-wrapper .sidebar-search > div {padding: 10px 20px;}
 /*----------------------sidebar-menu-------------------------*/
-.sidebar-wrapper .sidebar-menu {padding-bottom: 10px;}
+.sidebar-wrapper .sidebar-menu {padding-bottom: 10px; overflow-y: auto;}
 .sidebar-wrapper .sidebar-menu .header-menu span { font-weight: bold; font-size: 14px; padding: 15px 20px 5px 20px; display: inline-block;}
 .sidebar-wrapper .sidebar-menu ul li a { display: inline-block; width: 100%; text-decoration: none; position: relative; padding: 8px 30px 8px 20px;}
 .sidebar-wrapper .sidebar-menu ul li a i { margin-right: 10px; font-size: 12px; width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 4px;}
