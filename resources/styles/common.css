@@ -121,7 +121,10 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .ipt-select-switch.type-2 input:checked + .on ~ .marble {left: 50%}
 .ipt-select-switch.type-2 label {position: relative; flex: 1; line-height: var(--chcHgh); z-index: 2; text-align: center; cursor: pointer;}
 .ipt-select-switch.type-2 .marble {position: absolute; width: calc(50% - 2px); height:calc(100% - 4px); background: var(--white); left: 2px; border-radius: var(--chcHgh); display: block; transition: left 0.15s ease-out;}  
-
+/* 인풋 + 검색버튼 */
+.ipt-search-button{display: flex;}
+.ipt-search-button input.ipt{border-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0;}
+.ipt-search-button a{border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; width: unset; padding-left: 0;}
 /* 탭 */
 .tab-wrap {position: relative; height: var(--tabContent-height); display: flex;}
 .tab + .tab .tab-label{box-shadow: inset 1px 0px 0 0px var(--lightPrimary);}
