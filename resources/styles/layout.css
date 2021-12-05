@@ -38,9 +38,9 @@
 .sidebar-wrapper .sidebar-menu ul li a{transition: all 0.3s ease;}
 /*----------------toggeled sidebar----------------*/
 .page-wrapper.toggled .sidebar-wrapper {left: 0px;}
-@media screen and (min-width: 768px) {.page-wrapper.toggled .page-content {padding-left: 300px;}}
+@media screen and (min-width: 768px) {.page-wrapper.toggled .page-content {padding-left: var(--sidebar-width);}}
 /*----------------sidebar-wrapper----------------*/
-.sidebar-wrapper { width: 260px; height: calc(100% - var(--header-height)); max-height: 100%; position: fixed; top: var(--header-height); left: -300px;}
+.sidebar-wrapper { width: var(--sidebar-width); height: calc(100% - var(--header-height)); z-index: 50; max-height: 100%; position: fixed; top: var(--header-height); left: calc(var(--sidebar-width) * -1);}
 /*----------------sidebar-content----------------*/
 .sidebar-content { max-height: calc(100% - var(--header-height)); height: calc(100% - var(--header-height)); display: flex; flex-direction: column; position: relative;}
 /*--------------------sidebar-brand----------------------*/

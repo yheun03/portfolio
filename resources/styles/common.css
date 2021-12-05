@@ -37,6 +37,7 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 	--chcPdg: 4px;
 	--tabHeight: 40px;
 	--tabContent-height: 100px;
+	--sidebar-width: 260px;
 }
 
 .b-white {background-color: var(--white);}
