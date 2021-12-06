@@ -119,7 +119,7 @@
 #sidebar::-webkit-scrollbar-track { background: transparent; border: 0px none #ffffff; border-radius: 50px;}
 
 .page-wrapper.type-2{width: 800px; margin: 0 auto; position: relative;}
-.page-wrapper.type-2 #sidebar{position: absolute; width: var(--sidebar-width); top: 0; left: calc(var(--sidebar-width) * -1); padding-top: var(--header-height); height: 100%; z-index: 5;}
+.page-wrapper.type-2 #sidebar{position: absolute; width: var(--sidebar-width); top: 0; left: calc(var(--sidebar-width) * -1); padding-top: var(--header-height); height: 100vh; z-index: 5;}
 .page-wrapper.type-2 #sidebar .sidebar-content{position: sticky; top: 0;}
 .page-wrapper.type-2 #sidebar ul{padding: 8px 0;}
 .page-wrapper.type-2 #sidebar ul li{line-height: 32px; color: var((--darkGrey)); margin-top: 10px; padding-left: 20px;}
