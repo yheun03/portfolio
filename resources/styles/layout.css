@@ -118,7 +118,6 @@
 #sidebar::-webkit-scrollbar-thumb { background-color: #525965; border: 0px none #ffffff; border-radius: 0px;}
 #sidebar::-webkit-scrollbar-track { background: transparent; border: 0px none #ffffff; border-radius: 50px;}
 
-
 .page-wrapper.type-2{width: 800px; margin: 0 auto; position: relative;}
 .page-wrapper.type-2 #sidebar{position: absolute; width: var(--sidebar-width); top: 0; left: calc(var(--sidebar-width) * -1); padding-top: var(--header-height); height: 100%; z-index: 5;}
 .page-wrapper.type-2 #sidebar .sidebar-content{position: sticky; top: 0;}
