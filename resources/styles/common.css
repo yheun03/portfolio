@@ -31,13 +31,12 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 	--orange: #FF7A00;
 	--gra-primary: linear-gradient(90deg, #3D47CD, #623DCD);
 	--gra-red: linear-gradient(90deg, #FFC2C2, #FFDECB);
+	--sidebar-width: 260px;
 	--header-height: 31px;
-	--sideBar-width: 195px;
 	--chcHgh: 45px;
 	--chcPdg: 4px;
 	--tabHeight: 40px;
 	--tabContent-height: 100px;
-	--sidebar-width: 260px;
 }
 
 .b-white {background-color: var(--white);}
