@@ -125,3 +125,4 @@
 .page-wrapper.type-2 #sidebar ul li a{color: inherit; font-weight: 600; font-size: 14px;}
 .page-wrapper.type-2 #sidebar ul li.active{background: var(--primary); color: white;}
 .page-wrapper.type-2 #sidebar + .page-content .container{width: 100%; padding-top: var(--header-height);}
+.page-wrapper.type-2 .sidebar-footer > a { color: var(--darkGrey);}
