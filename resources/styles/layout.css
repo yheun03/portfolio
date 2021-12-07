@@ -34,7 +34,6 @@
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before,
 .sidebar-wrapper ul li a i,
 .page-wrapper .page-content,
-.sidebar-wrapper .sidebar-search .input-group-text,
 .sidebar-wrapper .sidebar-menu ul li a{transition: all 0.3s ease;}
 /*----------------toggeled sidebar----------------*/
 .page-wrapper.type-1.toggled .sidebar-wrapper {left: 0px;}
@@ -107,7 +106,7 @@
 .page-wrapper.type-1 .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active a i { color: #16c7ff; text-shadow:0px 0px 10px rgba(22, 199, 255, 0.5);}
 .page-wrapper.type-1 .sidebar-wrapper .sidebar-menu ul li a i,
 .page-wrapper.type-1 .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
-.page-wrapper.type-1 .sidebar-wrapper .sidebar-search .ipt.ic-search { background-color: #3a3f48;}
+.page-wrapper.type-1 .sidebar-wrapper .sidebar-search .ipt { background-color: #3a3f48;}
 .page-wrapper.type-1 .sidebar-wrapper .sidebar-search .ipt.ic-search { background-image: url(../images/icons/ic-search-white.svg)}
 .page-wrapper.type-1 .sidebar-wrapper .sidebar-menu .header-menu span {color: #6c7b88;}
 .page-wrapper.type-1 .sidebar-footer { background-color: #3a3f48; box-shadow: 0px -1px 5px #282c33; border-top: 1px solid #464a52;}
@@ -119,11 +118,11 @@
 #sidebar::-webkit-scrollbar-track { background: transparent; border: 0px none #ffffff; border-radius: 50px;}
 
 .page-wrapper.type-2{width: 800px; margin: 0 auto; position: relative;}
-.page-wrapper.type-2 #sidebar{position: absolute; width: var(--sidebar-width); top: 0; left: calc(var(--sidebar-width) * -1); padding-top: var(--header-height); height: 100%; z-index: 5;}
+.page-wrapper.type-2 #sidebar{position: absolute; width: var(--sidebar-width); top: 0; left: calc(var(--sidebar-width) * -1); padding-top: var(--header-height); height: 100vh; z-index: 5;}
 .page-wrapper.type-2 #sidebar .sidebar-content{position: sticky; top: 0;}
-.page-wrapper.type-2 #sidebar .sidebar-footer{position: sticky; bottom: 0;}
 .page-wrapper.type-2 #sidebar ul{padding: 8px 0;}
 .page-wrapper.type-2 #sidebar ul li{line-height: 32px; color: var((--darkGrey)); margin-top: 10px; padding-left: 20px;}
 .page-wrapper.type-2 #sidebar ul li a{color: inherit; font-weight: 600; font-size: 14px;}
 .page-wrapper.type-2 #sidebar ul li.active{background: var(--primary); color: white;}
 .page-wrapper.type-2 #sidebar + .page-content .container{width: 100%; padding-top: var(--header-height);}
+.page-wrapper.type-2 .sidebar-footer > a { color: var(--darkGrey);}
