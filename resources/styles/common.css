@@ -81,21 +81,21 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .ipt:not(.ic-date)[readonly]{background-color: var(--mediumGrey); color: var(--grey); cursor: not-allowed;}
 .ipt.fcs{border: 1px solid var(--primary);}
 .ipt[class^="ipt ic-"]{padding-right: 30px;}
-.ipt.ic-error{border: 1px solid var(--red); color: var(--red); background-image: url(../images/icons/ic-error-red.svg);}
+.ipt.ic-error{color: var(--red); background-image: url(../images/icons/ic-error-red.svg);}
 .ipt.ic-search{background-image: url(../images/icons/ic-search.svg);}
 .ipt.ic-lock{background-image: url(../images/icons/ic-lock.svg);}
 .ipt.ic-unLock{background-image: url(../images/icons/ic-unLock.svg);}
 .ipt.ic-date{background-image: url(../images/icons/ic-calendar.svg); cursor: pointer;}
 .ipt.ic-error:focus,
-.ipt.ic-error:active{box-shadow: 0 0 0 1px inset var(--red);}
+.ipt.ic-error:active{border-color: var(--red);}
 *:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):focus,
-*:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):active{border-color: var(--primary); box-shadow: 0 0 0 1px inset var(--primary);}
+*:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):active{border-color: var(--primary); border-color: var(--primary);}
 .ipt::placeholder{color: var(--lightPrimary); font-weight: 500;  text-transform: capitalize;}
 .ipt.ic-error::placeholder{color: var(--red);}
 /* 파일찾기 + 이미지 선택 시 이미지 뷰어 */
 .ipt-select-file{display: flex; align-items: center; flex-direction: column; position: relative;}
 .ipt-select-file input[type="file"] { display: none; }
-.ipt-select-file .upload-name{width: 100%; line-height: 45px; height: 45px; border: 1px solid var(--lightPrimary); border-radius: 10px; padding: 0 35px 0 10px; background: var(--white) url(../images/icons/ic-file.svg) right 10px center/16px no-repeat; color: var(--primary); font-weight: 900; outline: none !important; box-shadow: none;}
+.ipt-select-file .upload-name{width: 100%; line-height: 45px; height: 45px; border: 1px solid var(--lightPrimary); border-radius: 10px; padding: 0 35px 0 10px; background: var(--white) url(../images/icons/ic-file.svg) right 10px center/16px no-repeat; color: var(--primary); font-weight: 900; outline: none !important;}
 .ipt-select-file .upload-thumb-wrap {display: inline-block; border: 1px solid var(--lightPrimary); height: 100%;}
 .ipt-select-file .upload-display img {height: 100% !important;}
 .ipt-select-file .img-wrap{display: flex; max-height: 200px;}
@@ -124,8 +124,8 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 /* 인풋 + 검색버튼 */
 .ipt-search-button{display: flex;}
 .ipt-search-button input.ipt{border-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0;}
-.ipt-search-button input.ipt:focus{border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); clip-path: inset(-1px 0px -1px -1px);}
-.ipt-search-button input.ipt:focus+a{border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); clip-path: inset(-1px -1px -1px 0);}
+.ipt-search-button input.ipt:focus{border-color: var(--primary); border-right: 0;}
+.ipt-search-button input.ipt:focus+a{border-color: var(--primary); border-left: 0;}
 .ipt-search-button a{border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; width: unset; padding-left: 0;}
 /* 탭 */
 .tab-wrap {position: relative; height: var(--tabContent-height); display: flex;}
