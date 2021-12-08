@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./resources/styles/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./resources/styles/common.css">
     <link rel="stylesheet" href="./resources/styles/layout.css">
+    <link rel="stylesheet" href="./resources/styles/mobile.css">
     <script src="./resources/scripts/jquery-1.6.0.min.js"></script>
     <script src="./resources/scripts/jquery-ui/jquery-ui.min.js"></script>
     <script src="./resources/scripts/bootstrap/bootstrap.min.js"></script>
@@ -33,295 +34,390 @@
             <a class="btn">로그아웃</a>
         </div>
     </div>
-    <div class="page-wrapper toggled type-2">
+    <div class="page-wrapper toggled type-1">
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
-                <div class="sidebar-brand">
-                    <a href="#">pro sidebar</a>
-                    <div class="sidebar-control active">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </div>
-                <div class="sidebar-header">
-                    <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
-                    </div>
-                    <div class="user-info">
-                        <span class="user-name">Jhon <strong>Smith</strong></span>
-                        <span class="user-role">Administrator</span>
-                        <span class="user-status">
-                            <i class="fa fa-circle"></i>
-                            <span>Online</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="sidebar-search">
-                    <div>
-                        
-                        <div class="ipt-search-button">
-                            <input type="text" placeholder="###" class="ipt" value="###">
-                            <a href="" class="ipt ic-search"></a>
-                        </div>
-                    </div>
-                </div>
                 <div class="sidebar-menu">
                     <ul>
-                        <li class="header-menu"><span>General</span></li>
-                        <li class="sidebar-dropdown">
-                            <a href="#"><i class="fa fa-tachometer-alt"></i><span>Dashboard</span><span class="badge badge-pill badge-warning">New</span></a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li><a href="#">Dashboard 1<span class="badge badge-pill badge-success">Pro</span></a></li>
-                                    <li><a href="#">Dashboard 2</a></li>
-                                    <li><a href="#">Dashboard 3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#"><i class="fa fa-shopping-cart"></i><span>E-commerce</span><span class="badge badge-pill badge-danger">3</span></a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li><a href="#">Products</a></li>
-                                    <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Credit cart</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#"><i class="far fa-gem"></i><span>Components</span></a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li><a href="#">General</a></li>
-                                    <li><a href="#">Panels</a></li>
-                                    <li><a href="#">Tables</a></li>
-                                    <li><a href="#">Icons</a></li>
-                                    <li><a href="#">Forms</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#"><i class="fa fa-chart-line"></i><span>Charts</span></a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li><a href="#">Pie chart</a></li>
-                                    <li><a href="#">Line chart</a></li>
-                                    <li><a href="#">Bar chart</a></li>
-                                    <li><a href="#">Histogram</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#"><i class="fa fa-globe"></i><span>Maps</span></a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li><a href="#">Google maps</a></li>
-                                    <li><a href="#">Open street map</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="header-menu"><span>Extra</span></li>
-                        <li><a href="#"><i class="fa fa-book"></i><span>Documentation</span><span class="badge badge-pill badge-primary">Beta</span></a></li>
-                        <li><a href="#"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
-                        <li><a href="#"><i class="fa fa-folder"></i><span>Examples</span></a></li>
+                        <li class="sidebar-dropdown"><span>General</span></li>
+                        <li class="sidebar-dropdown"><span>General</span></li>
+                        <li class="sidebar-dropdown"><span>General</span></li>
+                        <li class="sidebar-dropdown"><span>General</span></li>
                     </ul>
                 </div>
-            </div>
-            <div class="sidebar-footer">
-                <a href="#">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge badge-pill badge-warning notification">3</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-envelope"></i>
-                    <span class="badge badge-pill badge-success notification">7</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-cog"></i>
-                    <span class="badge-sonar"></span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-power-off"></i>
-                </a>
             </div>
         </nav>
         <main class="page-content">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">select</p>
+                
+                <div id="root">
+                    <div class="header bdB-Primary">
+                        <div><a href="javascript:history.back()"><svg style="width: 1.5rem; height: 1.5rem;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4L8 12L16 20" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+                        <p class="h5 excpt">원단 발주서 작성</p>
+                        <div><a class="glyphicon" aria-hidden="true"></a></div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                        <select class="ipt">
-                            <option value="###">###</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">radio</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <div class="ipt-select-checkbox"><input id="radio-1" type="radio" name="radio-1"><label for="radio-1"><span>###</span></label></div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <div class="ipt-select-checkbox"><input id="radio-2" type="radio" name="radio-1" checked><label for="radio-2"><span>###</span></label></div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="ipt-select-switch type-2">
-                            <input type="radio" name="view" value="radio-3" id="radio-3" checked>
-                            <label for="radio-3">###</label>
-                            <input type="radio" name="view" value="radio-4" id="radio-4">
-                            <label for="radio-4" class="on">###</label>
-                            <span class="marble"></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                        <div class="ipt-select-switch type-1"><input type="checkbox" id="checkbox-3"><label for="checkbox-3"><span class="marble"></span></label></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                        <div class="ipt-select-switch type-1"><input type="checkbox" id="checkbox-4" checked><label for="checkbox-4"><span class="marble"></span></label></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">checkbox</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="ipt-select-checkbox"><input id="checkbox-1" type="checkbox"><label for="checkbox-1"><span>###</span></label></div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="ipt-select-checkbox"><input id="checkbox-2" type="checkbox" checked><label for="checkbox-2"><span>###</span></label></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">input</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <textarea class="ipt">###</textarea>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="ipt-select-file preview-image"><label class="upload-name" for="file-1">파일선택</label><input type="file" id="file-1">
-                            <div class="img-wrap"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt" value="###">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt" value="###" disabled>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt fcs" value="###">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt ic-error" value="###">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt ic-search" value="###">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="ipt-search-button">
-                            <input type="text" placeholder="###" class="ipt" value="###">
-                            <a href="" class="ipt ic-search"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt ic-lock" value="###">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt ic-unLock" value="###">
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <input type="text" placeholder="###" class="ipt ic-date" value="###" readonly>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">button</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn">###</a> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn disabled">###</a> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn focus">###</a> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn active">###</a> </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">tab</p>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="tab-wrap">
-                            <div class="tab">
-                                <input type="radio" name="css-tabs" id="tab-1" class="tab-switch">
-                                <label for="tab-1" class="tab-label">Tab 1</label>
-                                <div class="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                                    asperiores quo quibusdam neque aut officia perspiciatis dignissimos cupiditate.
-                                    Similique ipsum corrupti necessitatibus quidem beatae quibusdam aut tempore
-                                    molestias voluptatem molestiae reiciendis eum assumenda debitis adipisci omnis
-                                    facere quo, delectus et. Id, assumenda! Facilis facere quae dolore atque obcaecati
-                                    nobis dolorum adipisci accusantium natus. Aspernatur, consequatur qui. Iusto magni
-                                    natus optio iure culpa non ab voluptatum, expedita incidunt omnis blanditiis
-                                    consectetur quos explicabo sed? Aliquam eius, debitis cumque perspiciatis non id
-                                    nesciunt laudantium rerum molestias repudiandae, quod quos sapiente cupiditate iste.
-                                    Libero fugiat molestias optio soluta et at nostrum aperiam voluptates.</div>
+                    <section class="b-lightGrey">
+                        <form action="">
+                            <div class="main">
+                                <div class="item-wrap">
+                                    <div class="item"><p class="fs14 fwB">지종 배합을 위해 해당 항목을 선택하세요.</p></div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item openModal" data-modal="select_t01" data-title="골선택" data-next-modal='select_t03'>
+                                        <p class="fs14 fwB">1.골선택</p>
+                                        <span>
+                                            <span class="placeholder">선택</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="select_t03" data-title="지종코드"  data-col="3">
+                                        <p class="fs14 fwB">2.지종코드</p>
+                                        <span>
+                                            <span class="placeholder"></span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                        <div class="w100p hide">
+                                            <div class="cntryCWrap c-primary">
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                    <p class="excpt t-center">###</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item openModal" data-modal="number_t01" data-title="원단규격">
+                                        <p class="fs14 fwB">3.원단규격</p>
+                                        <span>
+                                            <span class="placeholder">선택</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="select_t04" data-title="상자형식 선택">
+                                        <p class="fs14 fwB">4.상자형식</p>
+                                        <span>
+                                            <span class="placeholder">선택</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="number_t04" data-title="상자규격(스코어)">
+                                        <p class="fs14 fwB">5.상자규격(스코어)</p>
+                                        <span>
+                                            <span class="placeholder">선택</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="select_t04" data-title="원단코팅">
+                                        <p class="fs14 fwB">6.원단코팅</p>
+                                        <span>
+                                            <span class="placeholder">선택</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item openModal" data-modal="number_t03" data-title="발주수량">
+                                        <p class="fs14 fwB">7.발주수량</p>
+                                        <span>
+                                            <span class="placeholder">입력하세요</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="date_t01" data-title="납기일">
+                                        <p class="fs14 fwB">8.납기일</p>
+                                        <span>
+                                            <span class="placeholder">선택</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="select_t05" data-title="납품처">
+                                        <p class="fs14 fwB">9.납품처</p>
+                                        <span>
+                                            <span class="placeholder">입력하세요</span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="item openModal" data-modal="input_t01" data-title="비고(요청사항)" data-inputplaceholder="내용을 입력해주세요(20자 내외, 공백포함)">
+                                        <p class="fs14 fwB">10.비고(요청사항)</p>
+                                        <span>
+                                            <span class="placeholder"></span>
+                                            <svg style="width: 1.5rem; height: 1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 17L14.5 12L9.5 7" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                        <div class="w100p" style="margin-top: .813rem;">
+                                            <span class="placeholder">입력하세요.</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab">
-                                <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch">
-                                <label for="tab-2" class="tab-label">Tab 2</label>
-                                <div class="tab-content">test2</div>
-                            </div>
-                            <div class="tab">
-                                <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
-                                <label for="tab-3" class="tab-label">Tab 3</label>
-                                <div class="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Obcaecati minus voluptatum ipsum distinctio ad! Illum sapiente ducimus impedit
-                                    minima officiis earum magnam illo. Corporis atque placeat incidunt sapiente natus
-                                    ex.</div>
-                            </div>
-                            <div class="tab">
-                                <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
-                                <label for="tab-4" class="tab-label">Tab 4</label>
-                                <div class="tab-content">test4</div>
-                            </div>
-                        </div>
-                    </div>
+                        </form>
+                    </section>
+                    <footer class="footer-t02">
+                        <div><a href="./fCart.html" class="flex-center-center"><span>장바구니 담기</span></a></div>
+                    </footer>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="title">table</p>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                        <div class="table-common">
-                            <table>
-                                <thead>
-                                    <tr><th>###</th><th>###</th><th>###</th><th>###</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                    <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
-                                </tbody>
-                            </table>
+                <div class="modal">
+                    <!-- 골선택 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-select_t01 modal_t03">
+                            <div class="modal-content">
+                                <div class='modal_t03-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">1</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class="modal-img bgC" style="background-image: url(/resources/images/images/temp-gol.png);"></div>
+                                <div class="modal-gol ps16 mt20">
+                                    <p class="fs14 c-darkGrey fwB">특성</p>
+                                    <p class="fs14 c-darkGrey fwN mt8" style="height: 2.5rem">일반적으로 많이 사용하는 종이로, 10kg 이내 박스에 주로 사용</p>
+                                </div>
+                                <div class='modal_selectList scrollY col3'>
+                                    <ul>
+                                        <li class='active'><span>A</span></li>
+                                        <li><span>B</span></li>
+                                        <li><span>E</span></li>
+                                        <li><span>C</span></li>
+                                        <li><span>AA</span></li>
+                                        <li><span>BA</span></li>
+                                        <li><span>BB</span></li>
+                                        <li><span>EB</span></li>
+                                        <li><span>AAA</span></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-
+                    </div>
+                    <!-- 지종코드 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-select_t03 modal_t03">
+                            <div class="modal-content">
+                                <div class='modal_t03-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">2</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class='cntryCWrap'>
+                                    <ul>
+                                        <li class='deleteItem' data-ismodfy='1'><span class='excpt'>S1</span></li>
+                                        <li class='deleteItem' data-ismodfy='1'><span class='excpt'>K1</span></li>
+                                        <li class='deleteItem' data-ismodfy='1'><span class='excpt'>CK2</span><span class='deleteItem-icon'><svg style='width: 0.5rem; height: 0.5rem' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 6.75L7 0.75' stroke='#222222'/><path d='M7 6.75L1 0.75' stroke='#222222'/></svg></span></li>
+                                        <li class='deleteItem focus' data-ismodfy='0'><span class='excpt'></span></li>
+                                        <li class='deleteItem' data-ismodfy='0'><span class='excpt'></span></li>
+                                        <li class='deleteItem' data-ismodfy='0'><span class='excpt'></span></li>
+                                        <li class='deleteItem' data-ismodfy='0'><span class='excpt'></span></li>
+                                    </ul>
+                                </div>
+                                <div class='modal_selectList col4'>
+                                    <ul>
+                                        <li><span class='excpt'>S1</span></li>
+                                        <li><span class='excpt'>KT</span></li>
+                                        <li><span class='excpt'>CK2</span></li>
+                                        <li><span class='excpt'>SC2</span></li>
+                                        <li><span class='excpt'>K1</span></li>
+                                        <li><span class='excpt'>CK</span></li>
+                                        <li><span class='excpt'>CA</span></li>
+                                        <li><span class='excpt'>SK</span></li>
+                                        <li><span class='excpt'>WR</span></li>
+                                        <li><span class='excpt'>L1</span></li>
+                                        <li><span class='excpt'>L2</span></li>
+                                        <li><span class='excpt'>Y1</span></li>
+                                        <li><span class='excpt'>L3</span></li>
+                                        <li><span class='excpt'>Y2</span></li>
+                                        <li><span class='excpt'>WK</span></li>
+                                        <li><span class='excpt'>W1</span></li>
+                                        <li><span class='excpt'>E1</span></li>
+                                        <li><span class='excpt'>E2</span></li>
+                                        <li><span class='excpt'>E3</span></li>
+                                        <li><span class='excpt'>E4</span></li>
+                                        <li><span class='excpt'>P1</span></li>
+                                        <li><span class='excpt'>P5</span></li>
+                                        <li><span class='excpt'>SC</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 원단규격 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-number_t01 modal_t04">
+                            <div class="modal-content">
+                                <div class='modal_t04-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">3</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <p class='dscpt ps16'></p>
+                                <div class='row'>
+                                    <div class='col'><input type='number' pattern='\\d*'' class='ipt' placeholder='장'></div>
+                                    <div class='col mltpl'><svg style='width: 1.5rem; height: 1.5rem' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M12.3335 11.2929L4.68709 3.64648L3.97998 4.35359L11.6264 12L3.97998 19.6465L4.68709 20.3536L12.3335 12.7071L19.98 20.3536L20.6871 19.6465L13.0406 12L20.6871 4.35359L19.98 3.64648L12.3335 11.2929Z' fill='#424242'/></svg></div>
+                                    <div class='col'><input type='number' pattern='\\d*'' class='ipt' placeholder='폭'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 상자형식 선택 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-select_t04 modal_t03">
+                            <div class="modal-content">
+                                <div class='modal_t03-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">4</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class='modal_optionList scrollY'>
+                                    <ul>
+                                        <li class='btn focus'><span class='excpt'>MIX</span></li>
+                                        <li class='btn'><span class='excpt'>PAD</span></li>
+                                        <li class='btn'><span class='excpt'>JAE</span></li>
+                                        <li class='btn'><span class='excpt'>A-1</span></li>
+                                        <li class='btn'><span class='excpt'>A-3</span></li>
+                                        <li class='btn'><span class='excpt'>A-5</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 상자규격(스코어) -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-number_t04 modal_t04">
+                            <div class="modal-content">
+                                <div class="modal_t04-header">
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">5</span>/10</span>
+                                    <p class="dscpt  fwB t-center">상자규격(스코어)</p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z" fill="#424242"></path></svg></a>
+                                </div>
+                            <p class="dscpt ps16">선택한 상자 형식</p>
+                            <div class="p16"><div class="ipt focus flex-center-center" style="background-color: rgb(205 207 227 / 30%)"><span class="excpt">TEST</span></div></div>
+                            <div class="row mb10 scoreWrap">
+                                <div class="col-12 dscpt">상자규격(스코어)를 입력하세요</div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col-12 p0"></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"><input type="number" pattern="\d*" '="" class="ipt" placeholder="장"><p class="excpt">###</p></div>
+                                <div class="col"></div>
+                                <div class="col"></div>
+                                <div class="col"></div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- 발주수량 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-number_t03 modal_t04">
+                            <div class="modal-content">
+                                <div class='modal_t03-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">7</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class='modal_optionList' style="height: unset;">
+                                    <ul>
+                                        <li class='mt0'><input type='number' pattern='\\d*'' class='ipt h50' placeholder="발주 수량을 입력하세요"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 납기일 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-date_t01 modal_t06">
+                            <div class="modal-content">
+                                <div class='modal_t03-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">8</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class='modal_optionList' style="height: unset;">
+                                    <ul>
+                                        <li class='mt0' style="display: block; height: auto"><div class='datepricker_t01'><input type='hidden' id='datepickerValue'></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 납품처 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-select_t05 modal_t03">
+                            <div class="modal-content">
+                                <div class='modal_t03-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">9</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class='modal_dlvryList'>
+                                    <ul>
+                                        <li class='btn focus'><span class='dlvryTitle'><span class="excpt">"+"납품처 이름"+"</span><span class="commonDlvry">기본납품처</span></span><span class='dlvryAddress'>"+"(13486) 경기도 성남시 분당구 판교로 255번길 9-22, 판교 우림 W-CITY"+"</span><span class='dlvryAdmin'>"+"김진우"+" | "+"010-0000-0000"+"</span></li>
+                                        <li class='btn focus disabled'><span class='dlvryTitle'><span class="excpt">"+"납품처 이름"+"</span><span class="commonDlvry">기본납품처</span></span><span class='dlvryAddress'>"+"(13486) 경기도 성남시 분당구 판교로 255번길 9-22, 판교 우림 W-CITY"+"</span><span class='dlvryAdmin'>"+"김진우"+" | "+"010-0000-0000"+"</span></li>
+                                        <li class='btn'><span class='dlvryTitle'><span class="excpt">"+"납품처 이름"+"</span><span class="commonDlvry">기본납품처</span></span><span class='dlvryAddress'>"+"(13486) 경기도 성남시 분당구 판교로 255번길 9-22, 판교 우림 W-CITY"+"</span><span class='dlvryAdmin'>"+"김진우"+" | "+"010-0000-0000"+"</span></li>
+                                    </ul>
+                                    <div class="insertDlvry">
+                                        <a href="" class="flex-col-center">선택된 납품처를 기본 납품처로 설정 <svg style="width: 1rem; height: 1rem" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4.5L10 8L6 11.5" stroke="#424AAD" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                        <div>
+                                            <p><svg style="width: 1rem; height: 1rem; margin-right: .5rem" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="8" fill="#CDCFE3"/><rect x="7" y="4" width="2" height="2" fill="#424242"/><rect x="7" y="7" width="2" height="4" fill="#424242"/></svg>납품처 추가는 담당자의 승인이 필요합니다.</p>
+                                            <a href="">담당자 연락하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 비고 -->
+                    <div class="modal-wrap" data-show='0'>
+                        <div class="modal-bg modal-close"></div>
+                        <div class="modal-content-wrap modal-input_t01 modal_t06">
+                            <div class="modal-content">
+                                <div class='modal_t06-header modal-header'>
+                                    <span style='width: 3rem' class="fwN fs16 c-mediumGrey"><span class="c-primary">10</span>/10</span>
+                                    <p class='dscpt  fwB t-center'></p>
+                                    <a class='modal-close' style='width: 3rem'><svg style='width: 1.5rem; height: 1.5rem; float: right' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M13.0607 12.3536L18.7071 6.70711L18 6L12.3536 11.6464L6.70711 6L6 6.70711L11.6464 12.3536L6 18L6.70711 18.7071L12.3536 13.0607L18 18.7071L18.7071 18L13.0607 12.3536Z' fill='#424242'/></svg></a>
+                                </div>
+                                <div class='modal_optionList' style="height: unset;">
+                                    <ul>
+                                        <li class='mt0'><input type='text' class='ipt h50' placeholder="내용을 입력해주세요(20자 내외, 공백포함)" maxlength="20"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
