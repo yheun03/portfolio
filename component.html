@@ -8,11 +8,13 @@
     <title>컴포넌트</title>
     <link rel="stylesheet" href="./resources/styles/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="./resources/styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./resources/styles/slick/slick.css">
     <link rel="stylesheet" href="./resources/styles/common.css">
     <link rel="stylesheet" href="./resources/styles/layout.css">
     <script src="./resources/scripts/jquery-1.6.0.min.js"></script>
     <script src="./resources/scripts/jquery-ui/jquery-ui.min.js"></script>
     <script src="./resources/scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="./resources/scripts/slick/slick.min.js"></script>
     <script src="./resources/scripts/script.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
@@ -148,6 +150,15 @@
         <!-- sidebar-wrapper  -->
         <main class="page-content">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="slider">
+                            <div><p style="background-color: rgba(0,0,0,.4); position: absolute; width: 100%; height: 100%; color: white; line-height: 208px; text-align: center;">test1</p><img src="./resources/images/slide/temp1.png" alt=""></div>
+                            <div><p style="background-color: rgba(0,0,0,.4); position: absolute; width: 100%; height: 100%; color: white; line-height: 208px; text-align: center;">test2</p><img src="./resources/images/slide/temp2.png" alt=""></div>
+                            <div><p style="background-color: rgba(0,0,0,.4); position: absolute; width: 100%; height: 100%; color: white; line-height: 208px; text-align: center;">test3</p><img src="./resources/images/slide/temp3.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <p class="title">select</p>
@@ -335,9 +346,17 @@
     <!-- page-wrapper -->
     <script>
         $('.ic-date').datepicker({
-                dateFormat: 'yy-mm-dd',
-            })
-            .datepicker("setDate", new Date());
+            dateFormat: 'yy-mm-dd',
+        }).datepicker("setDate", new Date());
+        $('#slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // autoplay: true,
+            // autoplaySpeed: 2000,
+            dots: true,
+            prevArrow : "<a class='slick-prev'></a>",
+            nextArrow : "<a class='slick-next'></a>"
+        });
     </script>
 </body>
 
