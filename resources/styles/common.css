@@ -9,10 +9,11 @@ ul,ol,li{list-style:none;}
 table{width:100%;border-spacing:0;border-collapse:collapse;}
 img,fieldset{border:0; width: 100%;}
 main,header,section,nav,footer,aside,article,figure{display:block;}
+label{cursor: pointer;}
 .clear {clear:both;}
 .clear:after { content:""; display:block; clear:both;}
-
 [class^="col-"]{margin: 10px 0;}
+
 /* color */
 :root{
 	--white: #ffffff;
@@ -65,6 +66,8 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 .c-mediumPrimary {color: var(--mediumPrimary) !important;}
 .b-lightPrimary {background-color: var(--lightPrimary); color: var(--white);}
 .c-lightPrimary {color: var(--lightPrimary) !important;}
+.b-lightRed {background-color: var(--lightRed)}
+.c-lightRed {color: var(--lightRed) !important;}
 .b-red {background-color: var(--red)}
 .c-red {color: var(--red) !important;}
 .b-orange {background-color: var(--orange)}
@@ -76,24 +79,24 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 
 
 /* Form */
-/* 기본 인풋 */
-textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resize: none;}
-.ipt{width: 100%; height: 45px; border: 1px solid var(--lightPrimary); border-radius: 10px; padding: 0 10px; background: var(--white) right 7px center/16px no-repeat; color: var(--primary); font-weight: 900; outline: none !important; box-shadow: none;}
-.ipt[disabled],
-.ipt:not(.ic-date)[readonly]{background-color: var(--mediumGrey); color: var(--grey); cursor: not-allowed;}
-.ipt.fcs{border: 1px solid var(--primary);}
-.ipt[class^="ipt ic-"]{padding-right: 30px;}
-.ipt.ic-error{border: 1px solid var(--lightRed); color: var(--red); background-image: url(../images/icons/ic-error-red.svg);}
-.ipt.ic-search{background-image: url(../images/icons/ic-search.svg);}
-.ipt.ic-lock{background-image: url(../images/icons/ic-lock.svg);}
-.ipt.ic-unLock{background-image: url(../images/icons/ic-unLock.svg);}
-.ipt.ic-date{background-image: url(../images/icons/ic-calendar.svg); cursor: pointer;}
-.ipt.ic-error:focus,
-.ipt.ic-error:active{border-color: var(--red);}
-*:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):focus,
-*:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):active{border-color: var(--primary);}
-.ipt::placeholder{color: var(--lightPrimary); font-weight: 500;  text-transform: capitalize;}
-.ipt.ic-error::placeholder{color: var(--red);}
+	/* 기본 인풋 */
+	textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resize: none;}
+	.ipt{width: 100%; height: 45px; border: 1px solid var(--lightPrimary); border-radius: 10px; padding: 0 10px; background: var(--white) right 7px center/16px no-repeat; color: var(--primary); font-weight: 900; outline: none !important; box-shadow: none;}
+	.ipt[disabled],
+	.ipt:not(.ic-date)[readonly]{background-color: var(--mediumGrey); color: var(--grey); cursor: not-allowed;}
+	.ipt.fcs{border: 1px solid var(--primary);}
+	.ipt[class^="ipt ic-"]{padding-right: 30px;}
+	.ipt.ic-error{border: 1px solid var(--lightRed); color: var(--red); background-image: url(../images/icons/ic-error-red.svg);}
+	.ipt.ic-search{background-image: url(../images/icons/ic-search.svg);}
+	.ipt.ic-lock{background-image: url(../images/icons/ic-lock.svg);}
+	.ipt.ic-unLock{background-image: url(../images/icons/ic-unLock.svg);}
+	.ipt.ic-date{background-image: url(../images/icons/ic-calendar.svg); cursor: pointer;}
+	.ipt.ic-error:focus,
+	.ipt.ic-error:active{border-color: var(--red);}
+	*:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):focus,
+	*:not([class^="ipt-"]) > .ipt:not(.ic-error):not([disabled]):not([disabled]):active{border-color: var(--primary);}
+	.ipt::placeholder{color: var(--lightPrimary); font-weight: 500;  text-transform: capitalize;}
+	.ipt.ic-error::placeholder{color: var(--red);}
 /* 파일찾기 + 이미지 선택 시 이미지 뷰어 */
 .ipt-select-file{display: flex; align-items: center; flex-direction: column; position: relative;}
 .ipt-select-file input[type="file"] { display: none; }
@@ -110,8 +113,8 @@ textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resiz
 .ipt-select-checkbox label::before{content: ""; position: absolute; left: 0; width: var(--chcHgh); height: var(--chcHgh); border-radius: 4px; border: 1px solid var(--lightPrimary);}
 .ipt-select-checkbox label::after{content: ""; position: absolute; width: var(--chcHgh); height: var(--chcHgh); left: 0; top: 50%; transform: translateY(-50%);}
 .ipt-select-checkbox input:checked~label::before{background: var(--gra-primary);}
-.ipt-select-checkbox input:checked~label::after{background: url(../images/icons/ic-check-white.svg) center/ calc(var(--chcHgh) - var(--chcPdg) * 2) no-repeat;}
-.ipt-select-checkbox input[type=radio]:checked~label::after{background: url(../images/icons/ic-circle-white.svg) center/ calc(var(--chcHgh) / 2) no-repeat;}
+.ipt-select-checkbox input:checked~label::after{background: url(../images/icons/white/ic-check.svg) center/ calc(var(--chcHgh) - var(--chcPdg) * 2) no-repeat;}
+.ipt-select-checkbox input[type=radio]:checked~label::after{background: url(../images/icons/white/ic-circle.svg) center/ calc(var(--chcHgh) / 2) no-repeat;}
 /* 인풋 타입 라디오 + on off가 아닌 좌우 동글 움직임 */
 .ipt-select-switch.type-1 input{display: none;}
 .ipt-select-switch.type-1 label{overflow: hidden; position: relative; display: block; width: calc(var(--chcHgh) * 2); height: var(--chcHgh); padding: var(--chcPdg); border-radius: var(--chcHgh); background: linear-gradient(90deg, var(--mediumGrey), var(--mediumGrey)); transition: all .3s; display: flex; justify-content: flex-start;}
