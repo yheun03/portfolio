@@ -102,7 +102,7 @@ label{cursor: pointer;}
 .ipt-select-file input[type="file"] { display: none; }
 .ipt-select-file .upload-name{width: 100%; line-height: 45px; height: 45px; border: 1px solid var(--lightPrimary); border-radius: 10px; padding: 0 35px 0 10px; background: var(--white) url(../images/icons/ic-file.svg) right 10px center/16px no-repeat; color: var(--primary); font-weight: 900; outline: none !important; box-shadow: none;}
 .ipt-select-file .upload-thumb-wrap {display: inline-block; border: 1px solid var(--lightPrimary); height: 100%;}
-.ipt-select-file .upload-display img {height: 100% !important;}
+.ipt-select-file .upload-display img {height: 100% !important}
 .ipt-select-file .img-wrap{display: flex; max-height: 200px;}
 /* 인풋 타입 체크박스 + 라디오 */
 .ipt-select-checkbox{display: flex;}
