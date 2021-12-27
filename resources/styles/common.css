@@ -77,7 +77,16 @@ label{cursor: pointer;}
 .b-gra-red {background-image: var(--gra-red); color: var(--white);}
 .c-gra-red {background-image: var(--gra-red); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
 
-
+/* Slick */
+	.slick-slide{position: relative;}
+	.slick-prev,
+	.slick-next{display: block; width: 30px; height: 30px; border: 1px solid white; border-radius: 50%; position: absolute; top: 50%; transform: translateY(-50%); left: 5px; z-index: 10; background: transparent url(../images/icons/white/ic-arrow-left.svg) no-repeat 45% center/10px; cursor: pointer;}
+	.slick-next{left: unset; right: 5px; background-image: url(../images/icons/white/ic-arrow-right.svg); background-position-x: 55%;}
+	.slick-dots{position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex;}
+	.slick-dots li{height: 7px;}
+	.slick-dots li + li{margin-left: 5px;}
+	.slick-dots .slick-active button{background-color: var(--grey);}
+	.slick-dots button{width: 7px; height: 7px; border-radius: 50%; border: none; color: transparent; background: var(--lightGrey);}
 /* Form */
 	/* 기본 인풋 */
 	textarea.ipt {padding: 11.74px 10px; border:1px solid var(--lightPrimary); resize: none;}
