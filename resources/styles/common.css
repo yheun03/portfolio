@@ -12,6 +12,7 @@ main,header,section,nav,footer,aside,article,figure{display:block;}
 label{cursor: pointer;}
 .clear {clear:both;}
 .clear:after { content:""; display:block; clear:both;}
+.row{margin: 0;}
 [class^="col-"]{margin: 10px 0;}
 
 /* color */
@@ -34,7 +35,6 @@ label{cursor: pointer;}
 	--gra-primary: linear-gradient(90deg, #3D47CD, #623DCD);
 	--gra-red: linear-gradient(90deg, #FFC2C2, #FFDECB);
 	--header-height: 31px;
-	--sideBar-width: 195px;
 	--chcHgh: 45px;
 	--chcPdg: 4px;
 	--tabHeight: 40px;
