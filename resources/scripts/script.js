@@ -66,11 +66,6 @@ $(document).ready(function(){
       });
 
       $(".sidebar-control").click(function(){
-        $(".sidebar-control").toggleClass("active")
-        if($(this).hasClass("active")){
-            $(".page-wrapper").addClass("toggled");
-        }else{
-            $(".page-wrapper").removeClass("toggled");
-        }
+        $(".sidebar-wrapper").toggleClass("toggled")
       })
 })
