@@ -1,0 +1,8 @@
+#header{z-index: 0;}
+#header h1{mix-blend-mode:color;}
+#header path{backdrop-filter: invert(1);}
+#header a{z-index: 10;}
+.section-1{padding: 285px 40px 120px; height: 152px; box-sizing: content-box;}
+.section-1 p{mix-blend-mode: difference; color: white; font-family: 'Godo', sans-serif; font-size: 76px; line-height: 1; position: fixed;}
+.section-1 img{width: 300px; right: 20px; font-family: 'Godo', sans-serif; font-size: 76px; line-height: 1; position: fixed;}
+.section-2{background: url(../images/images/main-img.jpg) no-repeat center/cover; mix-blend-mode:screen; backdrop-filter: invert(1); height: 850px; z-index: 1;}
