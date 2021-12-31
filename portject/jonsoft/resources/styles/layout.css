@@ -1,13 +1,13 @@
 #loading{width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; background-color: rgba(0,0,0,.4); z-index: 50;}
 #loading > img{width: 40px; height: 40px; animation: loading linear 1.5s infinite;}
 
-#header{position: fixed; top: 0; width: 100%; height: var(--header-height); background: var(--mediumPrimary); z-index: 10; display: flex; justify-content: space-between; padding: 4px 7.5px 4px 0;}
+#header{position: fixed; top: 0; width: 100%; /*height: var(--header-height);*/ background: transparent; z-index: 10; display: flex; justify-content: space-between; padding: 28px 32px 0}
 #header > div{height: 100%; display: flex; align-items: center;}
-#header .sidebar-control{width: var(--header-height); height: var(--header-height); background: url(../images/icons/white/ic-hamburger.svg) center/16px no-repeat; cursor: pointer;}
-#header h1{margin: 0; height: 100%;}
+#header h1{margin: 0; height: 100%; padding-top: 12px;}
 #header h1 img{width: unset; height: 100%; vertical-align: top;}
 #header .btn{font-size: 12px; font-weight: 400; border-radius: 4px; padding: 0 4px 0 24px; background: url(../images/icons/white/ic-logout.svg) 4px center/16px no-repeat; color: white;}
-
+#header .sidebar-control a{font-family: 'Godo', sans-serif; margin-right: 3px;}
+#header .sidebar-control img{width: unset;}
 @keyframes loading {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
@@ -77,7 +77,7 @@
 .badge-sonar { display: inline-block; background-color: #980303; border-radius: 50%; height: 8px; width: 8px; position: absolute; top: 0;}
 .badge-sonar:after { content: ""; position: absolute; top: 0; left: 0; border: 2px solid #980303; opacity: 0; border-radius: 50%; width: 100%; height: 100%; animation: sonar 1.5s infinite;}
 /*--------------------------page-content-----------------------------*/
-.container {width: 100%; margin: 0; padding: 50px}
+.container {width: 100%; margin: 0; /*padding: 50px*/}
 /*----------------toggeled sidebar----------------*/
 .sidebar-wrapper.toggled {left: 0px;}
 .sidebar-wrapper.toggled ~ .container {padding: 50px 50px 50px calc(var(--sidebar-width) + 50px);}

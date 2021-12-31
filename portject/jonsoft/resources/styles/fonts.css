@@ -69,3 +69,28 @@ http://scripts.sil.org/OFL
 	font-display: swap;
 	src: local('Pretendard Thin'), url('../fonts/Pretendard-Thin.woff2') format('woff2'), url('../fonts/Pretendard-Thin.woff') format('woff');
 }
+@font-face {
+	font-family: 'Godo';
+	font-style: normal;
+	font-weight: 400;
+	src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+  }
+  
+  @font-face {
+	font-family: 'Godo';
+	font-style: normal;
+	font-weight: 700;
+	src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+  }
+/* @font-face {
+	font-family: 'Godo';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/GodoM.otf') format('otf'), url('../fonts/GodoM.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Godo';
+	font-style: bold;
+	font-weight: 700;
+	src: url('../fonts/GodoB.otf') format('otf'), url('../fonts/GodoB.ttf') format('ttf');
+} */
