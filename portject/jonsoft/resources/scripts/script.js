@@ -86,9 +86,10 @@ $(document).ready(function(){
         if(scrollValue >= section2Top + ($(".section-2").height() - $("body").height())){
             $(".section-2").css({"background-attachment":"unset"})
             $(".section-1 p").css({"position":"absolute", "top":"calc("+ (section2Top + ($(".section-2").height() - $("body").height()) + 285) + "px)"})
-            $(".section-1 p.title").css({"top":"unset", "bottom":"calc("+ (section2Top + ($(".section-2").height() - $("body").height()) + 285) + "px)"})
+            $(".section-1 p.title").css({"bottom":"unset", "top":"calc("+ (section2Top + ($(".section-2").height() - $("body").height()) + 679) + "px)"})
         }else{
             $(".section-1 p").css({"position":"fixed", "top":"unset"})
+            $(".section-1 p.title").css({"bottom":"130px"})
         }
     });
 
