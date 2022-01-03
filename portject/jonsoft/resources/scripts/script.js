@@ -71,13 +71,24 @@ $(document).ready(function(){
 
     $(window).scroll(function () {
         var scrollValue = $(document).scrollTop();
+        let section2Top = $(".section-2").offset().top;
+        let opacityStart = 800
+        let opacityEnd = 1300
+        let pTitleOpacity = (scrollValue - opacityStart) / (opacityEnd - opacityStart)
+
         console.log(scrollValue);
-        if(scrollValue >= $(".section-2").offset().top){
-            // $(".section-2").addClass("active")
+        if(scrollValue >= section2Top){ // 만약 현재 스크롤 값이 .section-2의 시작값보다 크면
             $(".section-2").css({"background-attachment":"fixed", "background-position":"bottom"})
+
+            $(".section-1 p.title").css({"opacity":pTitleOpacity})
+
         }else{$(".section-2").css({"background-attachment":"unset", "background-position":"top"})}
-        if(scrollValue >= $(".section-2").offset().top + $(".section-2").height() / 2){
+        if(scrollValue >= section2Top + ($(".section-2").height() - $("body").height())){
             $(".section-2").css({"background-attachment":"unset"})
+            $(".section-1 p").css({"position":"absolute", "top":"calc("+ (section2Top + ($(".section-2").height() - $("body").height()) + 285) + "px)"})
+            $(".section-1 p.title").css({"top":"unset", "bottom":"calc("+ (section2Top + ($(".section-2").height() - $("body").height()) + 285) + "px)"})
+        }else{
+            $(".section-1 p").css({"position":"fixed", "top":"unset"})
         }
     });
 
