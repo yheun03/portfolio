@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon_night.ico">
+        <title>식자재 관리의 새로운 방법을 만나다, 뉴밋</title>
+        <link rel="stylesheet" href="./resources/styles/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="./resources/styles/slick/slick.css">
+        <link rel="stylesheet" href="./resources/styles/aos/aos.css">
+        <link rel="stylesheet" href="./resources/styles/common.css">
+        <link rel="stylesheet" href="./resources/styles/layout.css">
+        <script src="./resources/scripts/jquery-1.6.0.min.js"></script>
+        <script src="./resources/scripts/jquery-ui/jquery-ui.min.js"></script>
+        <script src="./resources/scripts/slick/slick.min.js"></script>
+        <script src="./resources/scripts/aos/aos.js"></script>
+        <script src="./resources/scripts/script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    </head>
+    <body>
+        <div id="root">
+            <div id="phone">
+                <header style="filter: unset">
+                    <div>
+                        <a href="javascript:history.back()"><i class="fa fa-arrow-left"></i></a>
+                        <p>레시피 등록하기</p>
+                    </div>
+                </header>
+                <section style="padding-bottom: 165px">
+                    <div class="container">
+                        <ul class="ipt-area">
+                            <li>
+                                <p><span class="title">첫번째 단계 설명</span></p>
+                                <div>
+                                    <div class="img-wrap">
+                                        <label class="temp" for="camera" style="height: 174px;">
+                                            <input type="file" hidden id="camera">
+                                            <div>
+                                                <i class="fa-solid fa-camera"></i>
+                                                <span>눌러서 추가하기</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <textarea class="ipt mt10" rows="2" placeholder="첫번째 단계에 대해 설명해 주세요."></textarea>
+                            </li>
+                            <li>
+                                <a href="" class="btn type4"><i class="fa-solid fa-plus mr10"></i> 타이머</a>
+                            </li>
+                            <li>
+                                <p><span class="title">필요한 재료</span></p>
+                                <a href="" class="btn"><i class="fa-solid fa-plus mr10"></i> 재료 추가하기</a>
+                                <table>
+                                    <colgroup>
+                                        <col width="10%">
+                                        <col width="45%">
+                                        <col width="45%">
+                                    </colgroup>
+                                    <tr>
+                                        <td><a href=""><i class="fa-solid fa-xmark"></i></a></td>
+                                        <td><input type="text" class="ipt"></td>
+                                        <td><select class="ipt"><option value="">1포기</option></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href=""><i class="fa-solid fa-xmark"></i></a></td>
+                                        <td><input type="text" class="ipt"></td>
+                                        <td><select class="ipt"><option value="">1포기</option></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href=""><i class="fa-solid fa-xmark"></i></a></td>
+                                        <td><input type="text" class="ipt"></td>
+                                        <td><select class="ipt"><option value="">1포기</option></select></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <p><span class="title">필요한 도구</span></p>
+                                <div>
+                                    <input type="text" class="ipt">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <footer class="footer-nav">
+                    <div class="scroll-nav">
+                        <ul>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href="" class="active"></a></li>
+                        </ul>
+                        <a href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="" class="btn type2">미리보기</a>
+                        <a href="javascript:if(confirm('저장?')){location.href='./내레시피관리.html'}" class="btn">저장</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script>
+            $( function() {
+                $( "#sortable" ).sortable();
+            } );
+        </script>
+    </body>
+</html>
