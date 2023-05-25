@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Eun's page">
+  <meta property="fb:app_id" content="595103571017897">
+  <meta property="og:url" content="http://eyh208.cafe24.com">
+  <meta property="og:description" content="은영환의 포트폴리오 사이트입니다.">
+  <meta property="og:image" content="http://eyh208.cafe24.com/img/younghwan.jpg">
+  <title>Eun's Page</title>
+  <script src="./js/jquery-1.12.3.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="icon" href="./img/ico.png">
+  <link rel="stylesheet" href="./style/index.css">
+  <link rel="stylesheet" href="./style/sub_page.css">
+  <link rel="stylesheet" href="./style/reactive_type.css">
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <script>
+  $(document).ready(function(){
+    function move_main_page(){
+      $( 'html, body' ).css({"background":"none"})
+      $( 'html, body' ).animate( { scrollTop : 0 }, 0 );
+      $("#main_page").css({"display":"block"});
+      $("#sub_page").css({"display":"none"});
+      $("#sub_page > div").css({"display":"none"});
+      $(".sub_title").css({"margin-left":"calc(45% - 150px)","opacity":0});
+      $("#profile").css({"opacity":0});
+      $("#life_graph").css({"opacity":0});
+      $(".main_img > div > div > ul").css({"height":0});
+      $(".main_img > div > div > div:nth-child(2)").css({"display":"block"});
+      $(".main_img > div > div > div:nth-child(3)").css({"display":"none"});
+    }
+    function open_portfolio(){
+      move_main_page();
+      $("#main_page").css({"display":"none"});
+      $("#sub_page").css({"display":"block"});
+      $("#sub_page > div:nth-child(1)").css({"display":"block"});
+      setTimeout(function () {
+          $(".sub_title").css({"margin-left":"calc(50% - 150px)","opacity":"1"});
+      },400);
+      setTimeout(function () {
+          $("#portfolio_list").css({"opacity":"1"});
+      },1000)
+    }
+    open_portfolio();
+  })
+  </script>
+  <style>
+    .contents{height: 900px;}
+  </style>
+</head>
+
+<body>
+  <div id="sub_page">
+    <div>
+      <div class="menu_wrap">
+        <div>
+          <ul>
+            <li><a href="./1.html">자기소개</a></li>
+            <li><a href="./2.html">일생</a></li>
+            <li><a href="./3.html">포트폴리오</a></li>
+            <li><a href="./4.html">도움 주신 분들</a></li>
+          </ul>
+          <img class="open_menu" src="./img/menu.png" alt="핸드폰 메뉴를 여는 이미지입니다.">
+          <img class="close_menu" src="./img/menu.png" alt="핸드폰 메뉴를 닫는 이미지입니다." style="display: none">
+        </div>
+      </div>
+      <div id="main_img3" class="main_img">
+        <div>
+          <div>
+            <div>
+              <a href="./index.html">
+                <img src="./img/home.png" alt="서브페이지 여는 페이지로 이동하는 이미지입니다.">
+              </a>
+            </div>
+            <div>
+              <span>포트폴리오</span>
+              <span><span></span></span>
+            </div>
+            <div>
+              <span>포트폴리오</span>
+              <span><span></span></span>
+            </div>
+            <ul>
+              <li><a href="./1.html">자기소개</a></li>
+              <li><a href="./2.html">일생</a></li>
+              <li><a href="./3.html">포트폴리오</a></li>
+              <li><a href="./4.html">도움 주신 분들</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="sub_title">
+          <span>Portfolio</span>
+          포트폴리오
+          <div></div>
+        </div>
+
+        <div id="portfolio_list">
+          <div id="pc_ver">
+            <h3>PC버전</h3>
+            <div class="link_wrap">
+              <a href="./MC" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/mc_logo.png" alt="MC의 로고 이미지입니다">
+                </div>
+                <p>Meeting for Competition</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/jcorpsystem" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/jcropsystem.png" alt="제이콥시스템의 로고 이미지입니다">
+                </div>
+                <p>㈜제이콥시스템</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/German_soccer" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/germany.png" alt="독일 축구 국가대표 팀 로고이미지입니다.">
+                </div>
+                <p>독일 축구 국가대표팀</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/Seoul_Digitech_High_School" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/sdhs.png" alt="#">
+                </div>
+                <p>서울 디지텍고등학교</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/Smoking_Prevention" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/no.png" alt="#">
+                </div>
+                <p>흡연예방공모전</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/Web_Design" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/web.png" alt="#">
+                </div>
+                <p>웹 디자인 실기 문제 연습</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/project_beoLee" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/web.png" alt="#">
+                </div>
+                <p>프로젝트 - 이비오</p>
+              </a>
+            </div>
+            <div class="link_wrap">
+              <a href="./portfolio/jonsoft" target="_blank">
+                <div>
+                  <img src="./img/portfolio_link_img/web.png" alt="#">
+                </div>
+                <p>조앤소프트㈜</p>
+              </a>
+            </div>
+          </div>
+
+          <div id="reactive_ver">
+            <h3>반응형 버전</h3>
+            <ul>
+              <li><a href="./MC"><img src="./img/portfolio_link_img/mc_logo.png" alt="#"><p>MC</p></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
