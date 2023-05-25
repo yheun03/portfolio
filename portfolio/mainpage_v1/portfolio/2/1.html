@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Eun's page">
+  <meta property="fb:app_id" content="595103571017897">
+  <meta property="og:url" content="http://eyh208.cafe24.com">
+  <meta property="og:description" content="은영환의 포트폴리오 사이트입니다.">
+  <meta property="og:image" content="http://eyh208.cafe24.com/img/younghwan.jpg">
+  <title>Eun's Page</title>
+  <script src="./js/jquery-1.12.3.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="icon" href="./img/ico.png">
+  <link rel="stylesheet" href="./style/index.css">
+  <link rel="stylesheet" href="./style/sub_page.css">
+  <link rel="stylesheet" href="./style/reactive_type.css">
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <script>
+    $(document).ready(function(){
+      function move_main_page(){
+        $( 'html, body' ).css({"background":"none"})
+        $( 'html, body' ).animate( { scrollTop : 0 }, 0 );
+        $("#main_page").css({"display":"block"});
+        $("#sub_page").css({"display":"none"});
+        $("#sub_page > div").css({"display":"none"});
+        $(".sub_title").css({"margin-left":"calc(45% - 150px)","opacity":0});
+        $("#profile").css({"opacity":0});
+        $("#life_graph").css({"opacity":0});
+        $(".main_img > div > div > ul").css({"height":0});
+        $(".main_img > div > div > div:nth-child(2)").css({"display":"block"});
+        $(".main_img > div > div > div:nth-child(3)").css({"display":"none"});
+      }
+      function open_my(){
+        move_main_page();
+        $("#main_page").css({"display":"none"});
+        $("#sub_page").css({"display":"block"});
+        $("#sub_page > div:nth-child(1)").css({"display":"block"});
+        setTimeout(function () {
+            $(".sub_title").css({"margin-left":"calc(50% - 150px)","opacity":"1"});
+        },400);
+        setTimeout(function () {
+            $("#profile").css({"opacity":"1"});
+        },1000)
+      }
+      open_my();
+    })
+  </script>
+</head>
+
+<body>
+  <div class="menu_wrap">
+    <div>
+      <ul>
+        <li>자기소개</li>
+        <li>일생</li>
+        <li>포트폴리오</li>
+        <li>도움 주신 분들</li>
+      </ul>
+      <img class="open_menu" src="./img/menu.png" alt="핸드폰 메뉴를 여는 이미지입니다.">
+      <img class="close_menu" src="./img/menu.png" alt="핸드폰 메뉴를 닫는 이미지입니다." style="display: none">
+    </div>
+  </div>
+  <div id="sub_page">
+    <div>
+      <div class="menu_wrap">
+        <div>
+          <ul>
+            <li><a href="./1.html">자기소개</a></li>
+            <li><a href="./2.html">일생</a></li>
+            <li><a href="./3.html">포트폴리오</a></li>
+            <li><a href="./4.html">도움 주신 분들</a></li>
+          </ul>
+          <img class="open_menu" src="./img/menu.png" alt="핸드폰 메뉴를 여는 이미지입니다.">
+          <img class="close_menu" src="./img/menu.png" alt="핸드폰 메뉴를 닫는 이미지입니다." style="display: none">
+        </div>
+      </div>
+      <div id="main_img1" class="main_img">
+        <div>
+          <div>
+            <div>
+              <a href="./index.html">
+                <img src="./img/home.png" alt="서브페이지 여는 페이지로 이동하는 이미지입니다.">
+              </a>
+            </div>
+            <div>
+              <span>자기소개</span>
+              <span><span></span></span>
+            </div>
+            <div>
+              <span>자기소개</span>
+              <span><span></span></span>
+            </div>
+            <ul>
+              <li><a href="./1.html">자기소개</a></li>
+              <li><a href="./2.html">일생</a></li>
+              <li><a href="./3.html">포트폴리오</a></li>
+              <li><a href="./4.html">도움 주신 분들</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="sub_title">
+          <span>Profile</span>
+          자기소개
+          <div></div>
+        </div>
+        <div id="profile">
+          <div id="one_line_introduction">
+            <p><img src="./img/one_line_information_start.png" alt="여는 큰따옴표 이미지입니다.">
+              항상 배고픈 고등학생! 은영환 입니다
+              <img src="./img/one_line_information_end.png" alt="닫는 큰따움표 이미지입니다.">
+            </p>
+          </div>
+          <div id="img_box">
+            <div class="private"></div>
+            <img src="./img/icon.jpg" alt="서브페이지 여는 페이지로 이동하는 이미지입니다.">
+          </div>
+          <div id="information_box">
+            <table cellpadding=0 cellspacing=0>
+              <tr>
+                <th>이름</th>
+                <td>은영환</td>
+              </tr>
+              <tr>
+                <th>출생</th>
+                <td>2003년 02월 08일 (만 16세)</td>
+              </tr>
+              <tr>
+                <th>신체</th>
+                <td>178cm, 75kg, AB형</td>
+              </tr>
+              <tr>
+                <th>주소</th>
+                <td>서울특별시 용산구 이태원동 회나무로18 (202호)</td>
+              </tr>
+              <tr>
+                <th>E-Mail</th>
+                <td>eyh208@gmail.com</td>
+              </tr>
+              <tr>
+                <th>전화번호</th>
+                <td>010 - 4192 - 6501</td>
+              </tr>
+              <tr>
+                <th>소속</th>
+                <td>서울디지텍고등학교 / 조앤소프트㈜</td>
+              </tr>
+              <tr>
+                <th>취미</th>
+                <td>운동 / 플룻 / 사진찍기</td</tr> <tr style="line-height: 18px; padding-top: 15px;" class="pt">
+                <th valign=top rowspan="6">교내수상</th>
+                <td>1. 다문화 UCC 공모전 3위
+              </tr>
+              <tr>
+                <td>2. 흡연예방 공모전 (앱,웹,영상,게임제작 부문) 3위</td>
+              </tr>
+              <tr>
+                <td>3. 다문화수기공모전 4위<br></td>
+              </tr>
+              <tr>
+                <td>4. 교과우수상(컴퓨터그래픽, 체육)</td>
+              </tr>
+              <tr>
+                <td>5. 독후감쓰기 공모전 2위</td>
+              </tr>
+              <tr>
+                <td>6. 표창장(체육행사 우수학생)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
