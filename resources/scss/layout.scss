@@ -1,20 +1,20 @@
 @charset 'utf-8';
-@import 'common';
+@import "common";
 
-body{
+body {
     min-width: 1660px;
 }
-html, body{
-    background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FFFFFF;
+html,
+body {
+    background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ffffff;
 }
 body > div,
-section > div{
+section > div {
     padding: 160px 64px;
     background-color: white;
     position: relative;
 }
-
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,27 +24,27 @@ header{
     justify-content: space-between;
     padding: 9px 64px;
     z-index: 10;
-    & > *{
+    & > * {
         max-height: 100%;
         font: 500 12px/14px var(--font);
         color: var(--black);
-        &.logo{
+        &.logo {
             width: 45px;
             height: 45px;
             border: 1px solid var(--black);
         }
     }
-    span{
+    span {
         transform: rotate(90deg) translate(70px, -120px);
     }
 }
-footer{
+footer {
     background-color: var(--black);
     color: white;
     text-align: center;
     padding: 100px 0;
     font: 500 14px/18px var(--font);
-    address{
+    address {
         font-size: 12px;
         line-height: 14px;
         color: var(--gray);
@@ -52,143 +52,143 @@ footer{
     }
 }
 
-.area-welcome{
+.area-welcome {
     height: 760px;
     padding: 0;
-    background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FFFFFF;
+    background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ffffff;
     overflow: hidden;
-    & > div{
+    & > div {
         display: flex;
         animation: loop 60s linear infinite;
-        div{
+        div {
             display: flex;
             gap: 75px;
             white-space: nowrap;
             margin-right: 75px;
         }
     }
-    span{
+    span {
         font: 900 160px/190px var(--font);
         color: transparent;
         text-transform: uppercase;
         -webkit-text-stroke: 2px var(--black);
-        text-shadow: -800px 190px var(--black), -1600px 380px var(--black), -2400px 570px var(--black),;
-        &:not(:first-child)::before{
+        text-shadow: -800px 190px var(--black), -1600px 380px var(--black), -2400px 570px var(--black);
+        &:not(:first-child)::before {
             content: "#";
         }
     }
     @keyframes loop {
         100% {
-          transform: translateX(calc(-4940.63px - 75px));
+            transform: translateX(calc(-4940.63px - 75px));
         }
     }
 }
-.area-intro{
+.area-intro {
     padding-top: 0;
-    div{
+    div {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        &.wrap-title{
+        &.wrap-title {
             height: 375px;
-            *{
+            * {
                 display: block;
             }
-            div{
+            div {
                 margin-top: -520px;
                 z-index: 1;
             }
         }
-        &.wrap-dscpt{
+        &.wrap-dscpt {
             align-items: flex-end;
             font: 500 16px/30px var(--font);
             color: var(--black);
             text-align: right;
         }
     }
-    h1{
+    h1 {
         font: 500 46px/80px var(--font);
     }
-    img{
+    img {
         height: 550px;
         box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.07);
     }
-    span{
+    span {
         font: 700 40px/60px var(--font);
         text-align: right;
         margin-top: 10px;
     }
-    a{
+    a {
         border: 1px solid var(--black);
         padding: 5px 10px;
         color: inherit;
     }
 }
 .area-working,
-.area-history{
-    background-color: #F6F6F6;
+.area-history {
+    background-color: #f6f6f6;
     display: flex;
     justify-content: center;
     gap: 155px;
-    & > ul{
+    & > ul {
         flex: 0 790px;
-        & > li{
+        & > li {
             font: 500 16px/30px var(--font);
-            & + li{
+            & + li {
                 margin-top: 56px;
             }
         }
     }
-    b{
+    b {
         display: block;
         font-size: 20px;
         margin-bottom: 30px;
     }
-    span{
-        &:not(.letterSpacing){
+    span {
+        &:not(.letterSpacing) {
             font: {
                 weight: 500;
                 size: 12px;
-            };
+            }
             color: #8f8f8f;
             margin-left: 4px;
         }
-        &.letterSpacing{
+        &.letterSpacing {
             letter-spacing: 4.61px;
         }
     }
 }
-.area-working{
-    & > ul{
-        & > li{
+.area-working {
+    & > ul {
+        & > li {
             list-style-type: "✓ ";
         }
     }
 }
-.area-history{
-    & > ul{
-        & > li{
+.area-history {
+    & > ul {
+        & > li {
             display: flex;
-            & > *{
+            & > * {
                 flex: 1;
             }
         }
     }
-    .career{
-        li:last-child{
+    .career {
+        li:last-child {
             margin-top: 30px;
         }
-        b span{
+        b span {
             cursor: help;
         }
     }
-    .education{
-        &::after{
+    .education {
+        &::after {
             content: "* 일학습병행제로 전문학사 취득";
             color: var(--red);
             font-size: 12px;
         }
-        .adtDsc > span:first-child::after{
+        .adtDsc > span:first-child::after {
             content: "*";
             color: var(--red);
             position: absolute;
@@ -196,23 +196,23 @@ footer{
         }
     }
 }
-.area-projects{
+.area-projects {
     padding: 0;
-    .progress{
+    .progress {
         position: sticky;
         top: 63px;
         left: 0;
         width: 100%;
         display: flex;
         z-index: 9;
-        li{
+        li {
             flex: 1;
             font: 500 16px/30px var(--font);
             text-align: center;
             padding-top: 2px;
             box-sizing: content-box;
             position: relative;
-            &:first-child::before{
+            &:first-child::before {
                 content: "";
                 position: absolute;
                 top: 0;
@@ -220,13 +220,13 @@ footer{
                 height: 2px;
                 background-color: var(--black);
             }
-            a{
+            a {
                 display: block;
                 color: inherit;
             }
         }
     }
-    .nav{
+    .nav {
         position: sticky;
         top: 50%;
         left: 0;
@@ -234,47 +234,47 @@ footer{
         display: flex;
         z-index: 8;
         justify-content: space-between;
-        li{
+        li {
             position: relative;
-            a{
+            a {
                 display: block;
                 color: inherit;
                 width: 100px;
                 height: 100px;
                 background: url(../images/icons/ic-arrow.svg) center/cover;
             }
-            &:first-child{
+            &:first-child {
                 transform: rotate(180deg);
             }
         }
     }
-    & > ul:not(.progress, .nav){
+    & > ul:not(.progress, .nav) {
         padding: 160px 198px;
-        & > li{
+        & > li {
             display: flex;
             gap: 244px;
         }
     }
-    h2{
+    h2 {
         text-align: left;
         margin-bottom: 60px;
     }
-    p{
+    p {
         font: 500 16px/30px var(--font);
         margin-bottom: 60px;
     }
-    .screen{
+    .screen {
         position: relative;
         width: 426px;
         min-width: 426px;
         height: 880px;
         padding: 18px 21px;
-        & *{
+        & * {
             width: 100%;
             height: 100%;
             position: relative;
         }
-        img{
+        img {
             position: absolute;
             top: 0;
             left: 0;
@@ -282,29 +282,29 @@ footer{
             height: 100%;
             object-fit: contain;
             display: none;
-            &:first-child{
+            &:first-child {
                 display: block;
             }
         }
-        .mockup{
+        .mockup {
             position: absolute;
             top: 0;
             left: 0;
             background: url(../images/iPhone.webp) center/contain no-repeat;
         }
-        & + div{
+        & + div {
             display: flex;
             flex-direction: column;
-            h2{
+            h2 {
                 flex: unset;
-                & + div > div{
+                & + div > div {
                     display: none;
-                    &:first-child{
+                    &:first-child {
                         display: block;
                     }
                 }
             }
-            li{
+            li {
                 display: inline-block;
                 width: 212px;
                 height: 212px;
@@ -313,8 +313,8 @@ footer{
                 text-align: center;
                 font: 500 16px/212px var(--font);
                 color: white;
-                &:not(:first-child){
-                    margin-left: -44px; 
+                &:not(:first-child) {
+                    margin-left: -44px;
                 }
             }
         }
