@@ -81,8 +81,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  font: 500 16px/30px var(--font);
   vertical-align: baseline;
   box-sizing: border-box;
   text-decoration: none;
@@ -123,32 +122,42 @@ table {
   --gray: #8f8f8f;
   --deepLightGray: #f6f6f6;
   --lightGray: #dcdcdc;
+  --white: #ffffff;
   --red: #FD5146;
   --blue: #00498C;
+}
+
+h1 {
+  font: 500 46px/80px var(--font);
+  color: var(--black);
 }
 
 h2 {
   flex: 0 385px;
   font: 500 50px/80px var(--font);
+  color: var(--black);
   text-align: right;
 }
 
 b {
-  font-weight: 800;
+  display: block;
+  font: 800 20px/30px var(--font);
+  margin-bottom: 30px;
 }
 
 body {
   min-width: 1660px;
 }
 
-html, body {
-  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FFFFFF;
+html,
+body {
+  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ffffff;
 }
 
 body > div,
 section > div {
   padding: 160px 64px;
-  background-color: white;
+  background-color: var(--white);
   position: relative;
 }
 
@@ -179,7 +188,7 @@ header span {
 
 footer {
   background-color: var(--black);
-  color: white;
+  color: var(--white);
   text-align: center;
   padding: 100px 0;
   font: 500 14px/18px var(--font);
@@ -194,7 +203,7 @@ footer address {
 .area-welcome {
   height: 760px;
   padding: 0;
-  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FFFFFF;
+  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ffffff;
   overflow: hidden;
 }
 .area-welcome > div {
@@ -243,19 +252,15 @@ footer address {
 }
 .area-intro div.wrap-dscpt {
   align-items: flex-end;
-  font: 500 16px/30px var(--font);
   color: var(--black);
   text-align: right;
 }
-.area-intro h1 {
-  font: 500 46px/80px var(--font);
-}
 .area-intro img {
-  height: 550px;
-  box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.07);
+  filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
 }
 .area-intro span {
   font: 700 40px/60px var(--font);
+  color: var(--black);
   text-align: right;
   margin-top: 10px;
 }
@@ -266,8 +271,12 @@ footer address {
 }
 
 .area-working,
+.area-projects {
+  background-color: #f6f6f6;
+}
+
+.area-working,
 .area-history {
-  background-color: #F6F6F6;
   display: flex;
   justify-content: center;
   gap: 155px;
@@ -276,25 +285,14 @@ footer address {
 .area-history > ul {
   flex: 0 790px;
 }
-.area-working > ul > li,
-.area-history > ul > li {
-  font: 500 16px/30px var(--font);
-}
 .area-working > ul > li + li,
 .area-history > ul > li + li {
   margin-top: 56px;
 }
-.area-working b,
-.area-history b {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 30px;
-}
 .area-working span:not(.letterSpacing),
 .area-history span:not(.letterSpacing) {
-  font-weight: 500;
   font-size: 12px;
-  color: #8f8f8f;
+  color: var(--gray);
   margin-left: 4px;
 }
 .area-working span.letterSpacing,
@@ -343,7 +341,6 @@ footer address {
 }
 .area-projects .progress li {
   flex: 1;
-  font: 500 16px/30px var(--font);
   text-align: center;
   padding-top: 2px;
   box-sizing: content-box;
@@ -392,11 +389,9 @@ footer address {
 }
 .area-projects h2 {
   text-align: left;
-  margin-bottom: 60px;
 }
 .area-projects p {
-  font: 500 16px/30px var(--font);
-  margin-bottom: 60px;
+  margin: 60px 0;
 }
 .area-projects .screen {
   position: relative;
@@ -449,7 +444,7 @@ footer address {
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
   font: 500 16px/212px var(--font);
-  color: white;
+  color: var(--white);
 }
 .area-projects .screen + div li:not(:first-child) {
   margin-left: -44px;
