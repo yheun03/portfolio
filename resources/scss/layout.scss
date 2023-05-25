@@ -11,7 +11,7 @@ body {
 body > div,
 section > div {
     padding: 160px 64px;
-    background-color: white;
+    background-color: var(--white);
     position: relative;
 }
 header {
@@ -40,7 +40,7 @@ header {
 }
 footer {
     background-color: var(--black);
-    color: white;
+    color: var(--white);
     text-align: center;
     padding: 100px 0;
     font: 500 14px/18px var(--font);
@@ -101,20 +101,16 @@ footer {
         }
         &.wrap-dscpt {
             align-items: flex-end;
-            font: 500 16px/30px var(--font);
             color: var(--black);
             text-align: right;
         }
     }
-    h1 {
-        font: 500 46px/80px var(--font);
-    }
     img {
-        height: 550px;
-        box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.07);
+        filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
     }
     span {
         font: 700 40px/60px var(--font);
+        color: var(--black);
         text-align: right;
         margin-top: 10px;
     }
@@ -125,32 +121,24 @@ footer {
     }
 }
 .area-working,
-.area-history {
+.area-projects{
     background-color: #f6f6f6;
+}
+.area-working,
+.area-history {
     display: flex;
     justify-content: center;
     gap: 155px;
     & > ul {
         flex: 0 790px;
-        & > li {
-            font: 500 16px/30px var(--font);
-            & + li {
-                margin-top: 56px;
-            }
+        & > li + li {
+            margin-top: 56px;
         }
-    }
-    b {
-        display: block;
-        font-size: 20px;
-        margin-bottom: 30px;
     }
     span {
         &:not(.letterSpacing) {
-            font: {
-                weight: 500;
-                size: 12px;
-            }
-            color: #8f8f8f;
+            font-size: 12px;
+            color: var(--gray);
             margin-left: 4px;
         }
         &.letterSpacing {
@@ -159,19 +147,15 @@ footer {
     }
 }
 .area-working {
-    & > ul {
-        & > li {
-            list-style-type: "✓ ";
-        }
+    & > ul > li {
+        list-style-type: "✓ ";
     }
 }
 .area-history {
-    & > ul {
-        & > li {
-            display: flex;
-            & > * {
-                flex: 1;
-            }
+    & > ul > li {
+        display: flex;
+        & > * {
+            flex: 1;
         }
     }
     .career {
@@ -207,7 +191,6 @@ footer {
         z-index: 9;
         li {
             flex: 1;
-            font: 500 16px/30px var(--font);
             text-align: center;
             padding-top: 2px;
             box-sizing: content-box;
@@ -257,11 +240,9 @@ footer {
     }
     h2 {
         text-align: left;
-        margin-bottom: 60px;
     }
     p {
-        font: 500 16px/30px var(--font);
-        margin-bottom: 60px;
+        margin: 60px 0;
     }
     .screen {
         position: relative;
@@ -281,7 +262,7 @@ footer {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            display: none; 
+            display: none;
             &:first-child {
                 display: block;
             }
@@ -312,7 +293,7 @@ footer {
                 background-color: rgba(0, 0, 0, 0.4);
                 text-align: center;
                 font: 500 16px/212px var(--font);
-                color: white;
+                color: var(--white);
                 &:not(:first-child) {
                     margin-left: -44px;
                 }

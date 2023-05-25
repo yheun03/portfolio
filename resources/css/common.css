@@ -80,8 +80,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  font: 500 16px/30px var(--font);
   vertical-align: baseline;
   box-sizing: border-box;
   text-decoration: none;
@@ -122,16 +121,25 @@ table {
   --gray: #8f8f8f;
   --deepLightGray: #f6f6f6;
   --lightGray: #dcdcdc;
+  --white: #ffffff;
   --red: #FD5146;
   --blue: #00498C;
+}
+
+h1 {
+  font: 500 46px/80px var(--font);
+  color: var(--black);
 }
 
 h2 {
   flex: 0 385px;
   font: 500 50px/80px var(--font);
+  color: var(--black);
   text-align: right;
 }
 
 b {
-  font-weight: 800;
+  display: block;
+  font: 800 20px/30px var(--font);
+  margin-bottom: 30px;
 }
