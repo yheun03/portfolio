@@ -432,6 +432,12 @@ footer address {
 .area-projects .screen + div h2 {
   flex: unset;
 }
+.area-projects .screen + div h2 + div > div {
+  display: none;
+}
+.area-projects .screen + div h2 + div > div:first-child {
+  display: block;
+}
 .area-projects .screen + div li {
   display: inline-block;
   width: 212px;

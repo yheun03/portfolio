@@ -294,6 +294,12 @@ footer{
             flex-direction: column;
             h2{
                 flex: unset;
+                & + div > div{
+                    display: none;
+                    &:first-child{
+                        display: block;
+                    }
+                }
             }
             li{
                 display: inline-block;
