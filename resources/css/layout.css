@@ -423,7 +423,7 @@ footer address {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(../images/iPhone.png) center/contain no-repeat;
+  background: url(../images/iPhone.webp) center/contain no-repeat;
 }
 .area-projects .screen + div {
   display: flex;
