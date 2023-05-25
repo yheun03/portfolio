@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon_night.ico">
+        <title>식자재 관리의 새로운 방법을 만나다, 뉴밋</title>
+        <link rel="stylesheet" href="./resources/styles/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="./resources/styles/slick/slick.css">
+        <link rel="stylesheet" href="./resources/styles/aos/aos.css">
+        <link rel="stylesheet" href="./resources/styles/common.css">
+        <link rel="stylesheet" href="./resources/styles/layout.css">
+        <script src="./resources/scripts/jquery-1.6.0.min.js"></script>
+        <script src="./resources/scripts/jquery-ui/jquery-ui.min.js"></script>
+        <script src="./resources/scripts/slick/slick.min.js"></script>
+        <script src="./resources/scripts/aos/aos.js"></script>
+        <script src="./resources/scripts/script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    </head>
+    <body>
+        <div id="modal">
+            <div></div>
+            <div class="modal-wrap type2 hide" data-modalNm="sort">
+                <div class="modal-footer">
+                    <a href="javascript:modalClose()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></a>
+                    <ul>
+                        <li><a href=""><span><i class="fa fa-pen"></span></i> 이름 내림차순</a></li>
+                        <li><a href=""><span><i class="fa fa-trash"></span></i> 이름 오름차순</a></li>
+                        <li><a href=""><span><i class="fa fa-pen"></span></i> 종류 내림차순</a></li>
+                        <li><a href=""><span><i class="fa fa-trash"></span></i> 종류 오름차순</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-wrap type2 hide" data-modalNm="ingreSetting">
+                <div class="modal-footer">
+                    <a href="javascript:modalClose()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></a>
+                    <ul>
+                        <li><a href=""><span><i class="fa fa-pen" style="color: #787878;"></span></i> 식자재 편집</a></li>
+                        <li><a href=""><span><i class="fa fa-trash" style="color: #FF5454;"></span></i> 식자재 삭제</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-wrap hide" data-modalNm="openIngreDetails">
+                <div class="modal-section">
+                    <div class="ingreDetails">
+                        <div>
+                            <div class="ingreImg"></div>
+                        </div>
+                        <div>
+                            <p class="title">돼지고기 앞다리살</p>
+                            <dl>
+                                <dt>구입일자 / 유통기한</dt>
+                                <dd>22.12.23 ~ 22.12.23</dd>
+                                <dt>양</dt>
+                                <dd>400g</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <ul>
+                        <li><a href="javascript:modalClose()">닫기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="root">
+            <div id="phone">
+                <header>
+                    <div>
+                        <p>식자재 관리</p>
+                    </div>
+                    <a href=""><a href="" class="btn small"><i class="fa fa-list mr10"></i> 정렬 기준</a></a>
+                </header>
+                <section>
+                    <div class="container">
+                        <div class="searchArea">
+                            <input type="text" class="ipt search" placeholder="검색하고 싶은 식자재를 입력해주세요!">
+                        </div>
+                        <div class="ingreList">
+                            <p class="title">육류</p>
+                            <ul>
+                                <li>
+                                    <p><span>돼지고기 앞다리살</span> <a href="javascript:openModal(ingreSetting)"><i class="fa fa-ellipsis"></i></a></p>
+                                    <div class="ingreDetails">
+                                        <div>
+                                            <div class="ingreImg"></div>
+                                        </div>
+                                        <div>
+                                            <dl>
+                                                <dt>구입일자 / 유통기한</dt>
+                                                <dd>22.12.23 ~ 22.12.23</dd>
+                                                <dt>양</dt>
+                                                <dd>400g</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ingreList">
+                            <p class="title">육류</p>
+                            <ul>
+                                <li>
+                                    <p><span>돼지고기 앞다리살</span> <a href="javascript:openModal(ingreSetting)"><i class="fa fa-ellipsis"></i></a></p>
+                                    <div class="ingreDetails">
+                                        <div>
+                                            <div class="ingreImg"></div>
+                                        </div>
+                                        <div>
+                                            <dl>
+                                                <dt>구입일자 / 유통기한</dt>
+                                                <dd>22.12.23 ~ 22.12.23</dd>
+                                                <dt>양</dt>
+                                                <dd>400g</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span>돼지고기 앞다리살</span> <a href="javascript:openModal(ingreSetting)"><i class="fa fa-ellipsis"></i></a></p>
+                                    <div class="ingreDetails">
+                                        <div>
+                                            <div class="ingreImg"></div>
+                                        </div>
+                                        <div>
+                                            <dl>
+                                                <dt>구입일자 / 유통기한</dt>
+                                                <dd>22.12.23 ~ 22.12.23</dd>
+                                                <dt>양</dt>
+                                                <dd>400g</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ingreList">
+                            <p class="title">육류</p>
+                            <ul>
+                                <li>
+                                    <p><span>돼지고기 앞다리살</span> <a href="javascript:openModal(ingreSetting)"><i class="fa fa-ellipsis"></i></a></p>
+                                    <div class="ingreDetails">
+                                        <div>
+                                            <div class="ingreImg"></div>
+                                        </div>
+                                        <div>
+                                            <dl>
+                                                <dt>구입일자 / 유통기한</dt>
+                                                <dd>22.12.23 ~ 22.12.23</dd>
+                                                <dt>양</dt>
+                                                <dd>400g</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span>돼지고기 앞다리살</span> <a href="javascript:openModal(ingreSetting)"><i class="fa fa-ellipsis"></i></a></p>
+                                    <div class="ingreDetails">
+                                        <div>
+                                            <div class="ingreImg"></div>
+                                        </div>
+                                        <div>
+                                            <dl>
+                                                <dt>구입일자 / 유통기한</dt>
+                                                <dd>22.12.23 ~ 22.12.23</dd>
+                                                <dt>양</dt>
+                                                <dd>400g</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span>돼지고기 앞다리살</span> <a href="javascript:openModal(ingreSetting)"><i class="fa fa-ellipsis"></i></a></p>
+                                    <div class="ingreDetails">
+                                        <div>
+                                            <div class="ingreImg"></div>
+                                        </div>
+                                        <div>
+                                            <dl>
+                                                <dt>구입일자 / 유통기한</dt>
+                                                <dd>22.12.23 ~ 22.12.23</dd>
+                                                <dt>양</dt>
+                                                <dd>400g</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                    <div id="floating-area">
+                        <a href="./식자재등록.html" class="btn square"><i class="fa fa-plus"></i></a>
+                    </div>
+                    <ul>
+                        <li class="active"><a href="./나의냉장고.html"><i class="fa fa-utensils"></i></a></li>
+                        <li><a href="./메인화면.html"><i class="fa fa-home"></i></a></li>
+                        <li><a href="./마이페이지.html"><i class="fa fa-user"></i></a></li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

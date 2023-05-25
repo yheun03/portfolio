@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon_night.ico">
+    <title>컴포넌트</title>
+    <link rel="stylesheet" href="./resources/styles/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="./resources/styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./resources/styles/slick/slick.css">
+    <link rel="stylesheet" href="./resources/styles/aos/aos.css">
+    <link rel="stylesheet" href="./resources/styles/common.css">
+    <link rel="stylesheet" href="./resources/styles/layout.css">
+    <script src="./resources/scripts/jquery-1.6.0.min.js"></script>
+    <script src="./resources/scripts/jquery-ui/jquery-ui.min.js"></script>
+    <!-- <script src="./resources/scripts/bootstrap/bootstrap.min.js"></script> -->
+    <script src="./resources/scripts/slick/slick.min.js"></script>
+    <script src="./resources/scripts/aos/aos.js"></script>
+    <script src="./resources/scripts/script.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+</head>
+
+<body>
+    <div id="loading">
+        <img src="./resources/images/icons/ic-spinner.svg" alt="">
+    </div>
+    <div id="header">
+        <div>
+            <a class="sidebar-control active"></a>
+            <h1><img src="./resources/images/icons/logo.png" alt=""></h1>
+        </div>
+        <div>
+            <a class="btn">로그아웃</a>
+        </div>
+    </div>
+    <nav id="sidebar" class="sidebar-wrapper toggled">
+        <div class="sidebar-content">
+            <div class="sidebar-brand">
+                <a href="#">pro sidebar</a>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="https://yheun03.github.io/portfolio/portject/mainpage_v1/img/me.jpeg" alt="User picture">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Eun <strong>YoungHwan</strong></span>
+                    <span class="user-role">Publisher</span>
+                    <span class="user-status">
+                        <i class="fa fa-circle"></i>
+                        <span>Online</span>
+                    </span>
+                </div>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="sidebar-search">
+                <div>
+                    <div class="input-group">
+                        <input type="text" placeholder="###" class="ipt ic-search" value="###">
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar-search  -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="header-menu"><span>General</span></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-tachometer-alt"></i><span>Dashboard</span><span class="badge badge-pill badge-warning">New</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">Dashboard 1<span class="badge badge-pill badge-success">Pro</span></a></li>
+                                <li><a href="#">Dashboard 2</a></li>
+                                <li><a href="#">Dashboard 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-shopping-cart"></i><span>E-commerce</span><span class="badge badge-pill badge-danger">3</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Credit cart</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="far fa-gem"></i><span>Components</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">General</a></li>
+                                <li><a href="#">Panels</a></li>
+                                <li><a href="#">Tables</a></li>
+                                <li><a href="#">Icons</a></li>
+                                <li><a href="#">Forms</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-chart-line"></i><span>Charts</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">Pie chart</a></li>
+                                <li><a href="#">Line chart</a></li>
+                                <li><a href="#">Bar chart</a></li>
+                                <li><a href="#">Histogram</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-globe"></i><span>Maps</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">Google maps</a></li>
+                                <li><a href="#">Open street map</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-menu"><span>Extra</span></li>
+                    <li><a href="#"><i class="fa fa-book"></i><span>Documentation</span><span class="badge badge-pill badge-primary">Beta</span></a></li>
+                    <li><a href="#"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
+                    <li><a href="#"><i class="fa fa-folder"></i><span>Examples</span></a></li>
+                </ul>
+            </div>
+            <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+            <a href="#">
+                <i class="fa fa-bell"></i>
+                <span class="badge badge-pill badge-warning notification">3</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-envelope"></i>
+                <span class="badge badge-pill badge-success notification">7</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-cog"></i>
+                <span class="badge-sonar"></span>
+            </a>
+            <a href="#">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="slider">
+                    <div><p style="background-color: rgba(0,0,0,.4); position: absolute; width: 100%; height: 100%; color: white; line-height: 208px; text-align: center;">test1</p><img src="./resources/images/slide/temp1.png" alt=""></div>
+                    <div><p style="background-color: rgba(0,0,0,.4); position: absolute; width: 100%; height: 100%; color: white; line-height: 208px; text-align: center;">test2</p><img src="./resources/images/slide/temp2.png" alt=""></div>
+                    <div><p style="background-color: rgba(0,0,0,.4); position: absolute; width: 100%; height: 100%; color: white; line-height: 208px; text-align: center;">test3</p><img src="./resources/images/slide/temp3.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">select</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <select class="ipt">
+                    <option value="###">###</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">radio</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                <div class="ipt-select-checkbox"><input id="radio-1" type="radio" name="radio-1"><label for="radio-1"><span>###</span></label></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                <div class="ipt-select-checkbox"><input id="radio-2" type="radio" name="radio-1" checked><label for="radio-2"><span>###</span></label></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="ipt-select-switch type-2">
+                    <input type="radio" name="view" value="radio-3" id="radio-3" checked>
+                    <label for="radio-3">###</label>
+                    <input type="radio" name="view" value="radio-4" id="radio-4">
+                    <label for="radio-4" class="on">###</label>
+                    <span class="marble"></span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <div class="ipt-select-switch type-1"><input type="checkbox" id="checkbox-3"><label for="checkbox-3"><span class="marble"></span></label></div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <div class="ipt-select-switch type-1"><input type="checkbox" id="checkbox-4" checked><label for="checkbox-4"><span class="marble"></span></label></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">checkbox</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="ipt-select-checkbox"><input id="checkbox-1" type="checkbox"><label for="checkbox-1"><span>ipt-select-checkbox</span></label></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="ipt-select-checkbox"><input id="checkbox-2" type="checkbox" checked><label for="checkbox-2"><span>ipt-select-checkbox</span></label></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">input</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <textarea class="ipt">textarea.ipt</textarea>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="ipt-select-file preview-image">
+                    <label class="upload-name" for="file-1">파일선택</label>
+                    <input type="file" id="file-1">
+                    <div class="img-wrap"></div>
+                </div>
+            </div>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="search" placeholder=".ipt" class="ipt" value=".ipt">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt[:disabled]" class="ipt" value=".ipt[:disabled]" disabled>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.fcs" class="ipt fcs" value=".ipt.fcs">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.ic-error" class="ipt ic-error" value=".ipt.ic-error">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.ic-search" class="ipt ic-search" value=".ipt.ic-search">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="ipt-search-button">
+                    <input type="text" placeholder=".ipt-search-button > .ipt" class="ipt" value=".ipt-search-button > .ipt">
+                    <a href="" class="ipt ic-search"></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.ic-lock" class="ipt ic-lock" value=".ipt.ic-lock">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.ic-unLock" class="ipt ic-unLock" value=".ipt.ic-unLock">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.number" class="ipt number" value="5,000">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <input type="text" placeholder=".ipt.ic-date" class="ipt ic-date" value=".ipt.ic-date" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">button</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn">.btn</a> </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn disabled">.btn.disabled</a> </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn focus">.btn.focus</a> </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <a class="btn active">.btn.active</a> </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">tab</p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="tab-wrap">
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-1" class="tab-switch">
+                        <label for="tab-1" class="tab-label">Tab 1</label>
+                        <div class="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                            asperiores quo quibusdam neque aut officia perspiciatis dignissimos cupiditate.
+                            Similique ipsum corrupti necessitatibus quidem beatae quibusdam aut tempore
+                            molestias voluptatem molestiae reiciendis eum assumenda debitis adipisci omnis
+                            facere quo, delectus et. Id, assumenda! Facilis facere quae dolore atque obcaecati
+                            nobis dolorum adipisci accusantium natus. Aspernatur, consequatur qui. Iusto magni
+                            natus optio iure culpa non ab voluptatum, expedita incidunt omnis blanditiis
+                            consectetur quos explicabo sed? Aliquam eius, debitis cumque perspiciatis non id
+                            nesciunt laudantium rerum molestias repudiandae, quod quos sapiente cupiditate iste.
+                            Libero fugiat molestias optio soluta et at nostrum aperiam voluptates.</div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch">
+                        <label for="tab-2" class="tab-label">Tab 2</label>
+                        <div class="tab-content">test2</div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                        <label for="tab-3" class="tab-label">Tab 3</label>
+                        <div class="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Obcaecati minus voluptatum ipsum distinctio ad! Illum sapiente ducimus impedit
+                            minima officiis earum magnam illo. Corporis atque placeat incidunt sapiente natus
+                            ex.</div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+                        <label for="tab-4" class="tab-label">Tab 4</label>
+                        <div class="tab-content">test4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="title">table</p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  data-aos="fade-up" aos-offset="300" aos-easing="ease-in-sine" aos-duration="500">
+
+                <div class="table-common">
+                    <table>
+                        <thead>
+                            <tr><th>###</th><th>###</th><th>###</th><th>###</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                            <tr><td>###</td><td>###</td><td>###</td><td>###</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.ic-date').datepicker({
+            dateFormat: 'yy-mm-dd',
+        }).datepicker("setDate", new Date());
+        $('#slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // autoplay: true,
+            // autoplaySpeed: 2000,
+            dots: true,
+            prevArrow : "<a class='slick-prev'></a>",
+            nextArrow : "<a class='slick-next'></a>"
+        });
+        AOS.init();
+    </script>
+</body>
+
+</html>

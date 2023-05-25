@@ -1,0 +1,141 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none;}
+li{list-style: none;}
+html, body{width: 100%; height: 100%;}
+
+section > #header{overflow: hidden; width: 100%; height: calc(100vh - 50px); position: relative; background: #0F4B81; font-family: 'Poppins', sans-serif; float: left;}
+section > #header > div{width: 80%; height: 318px; position: relative; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 1;}
+section > #header > div > h1{color: white; font-weight: normal;}
+section > #header > div > h1:nth-child(1){font-size: 20px;}
+section > #header > div > h1:nth-child(2){font-size: 80px;}
+section > #header > div > p{color: #00FFC2}
+section > #header > span.star{width: 2px; height: 2px; background: rgba(255,255,255,0.8); position: absolute; top: 20px; left: 20px; box-shadow: 0 0 1px 1px grey;}
+section > #header > span#cir{z-index: 0; width: 3200px; height: 1700px; border-radius: 50%; background: linear-gradient( to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0)); position: absolute; top: 33vh; left: -2000px; transform: rotate(-2deg);}
+
+
+section{width: 100%; height: 100vh; background: #101010; top: 0; right: 0; overflow-y: scroll; font-family: 'Nanum Gothic', sans-serif; z-index: 1; float: left;}
+section > div#section{width: 100%; }
+
+/* .section_wrap */
+section > div#section > div{width: 80%; height: 480px; margin: 10% 10% 2% 10%; float: left; position: relative;}
+section > div#section > div > h2{color: white; padding: 30px 0;}
+
+/* .infor_wrap_1 */
+section > div#section > div > div#infor_wrap_1{width: 100%; height: 392px; float: left; position: relative; overflow-y: scroll;}
+section > div#section > div > div#infor_wrap_1 > ul{width: 100%; height: auto}
+section > div#section > div > div#infor_wrap_1 > ul > li{width: 100%; height: 170px}
+section > div#section > div > div#infor_wrap_1 > ul > li > a{width: 100%; height: 150px; padding: 10px 0; float: left; position: relative;}
+section > div#section > div > div#infor_wrap_1 > ul > li:nth-child(1) > a > span{background-image: url("../img/test.png"); background-size: contain; background-repeat: no-repeat; background-position: center;}
+section > div#section > div > div#infor_wrap_1 > ul > li:nth-child(2) > a > span{background-image: url("../img/test.png"); background-size: contain; background-repeat: no-repeat; background-position: center;}
+section > div#section > div > div#infor_wrap_1 > ul > li:nth-child(3) > a > span{background-image: url("../img/mc_logo.png"); background-size: contain; background-repeat: no-repeat; background-position: center;}
+section > div#section > div > div#infor_wrap_1 > ul > li:nth-child(4) > a > span{background-image: url("../img/jonsoft.png"); background-size: contain; background-repeat: no-repeat; background-position: center;}
+section > div#section > div > div#infor_wrap_1 > ul > li:nth-child(5) > a > span{background-image: url("../img/jcropsystem.png"); background-size: cover; background-repeat: no-repeat; background-position: center;}
+section > div#section > div > div#infor_wrap_1 > ul > li > a > span{width: 250px; height: 150px; background: white; float: left; position: relative;}
+section > div#section > div > div#infor_wrap_1 > ul > li > a > div{width: calc(100% - 250px); box-sizing: border-box; padding: 5px 10px; float: left;}
+section > div#section > div > div#infor_wrap_1 > ul > li > a > div > h3{color: white; font-weight: 400; padding-bottom: 10px}
+section > div#section > div > div#infor_wrap_1 > ul > li > a > div > p{color: white; font-size: 14px;}
+section > div#section > div > div#infor_wrap_1 > ul > li > a > div > span{color: white; font-size: 14px; position: absolute; bottom: 10px}
+/* .infor_wrap_2 */
+section > div#section > div:nth-child(2){height: 617px;}
+section > div#section > div:nth-child(2) > h2 > a{width: 30px; text-align: right; font-size: 16px; line-height: 28px; position: absolute; right: 0; cursor: pointer; color: white}
+section > div#section > div > div#infor_wrap_2{width: 100%; height: 529px; float: left; position: relative;}
+section > div#section > div > div#infor_wrap_2 > div#table::before{content: ""; width: 100px; height: 100px; position: absolute; background: url(../img/me.jpeg); background-size: cover; background-position: center; top: 0; left: 50%; border-radius: 50%; transform: translate(-50%, -50%);}
+section > div#section > div > div#infor_wrap_2 > div#table{width: 100%; color: white; border: 2px solid white; margin-top: 50px; position: relative; box-sizing: border-box;}
+section > div#section > div > div#infor_wrap_2 > div#table > div{width: 100%; height: 50px; line-height: 50px;}
+section > div#section > div > div#infor_wrap_2 > div#table > div:nth-child(1){margin-top: 75px;}
+section > div#section > div > div#infor_wrap_2 > div#table > div:nth-child(7){margin-bottom: 50px;}
+section > div#section > div > div#infor_wrap_2 > div#table > div > p:nth-child(1){width: 30%; padding: 0 5%; float: left; text-align: right;}
+section > div#section > div > div#infor_wrap_2 > div#table > div > p:nth-child(2){width: 50%; padding: 0 5%; float: left;}
+section > div#section > div > div#infor_wrap_2 > div#table > div > a:nth-child(2){width: 50%; padding: 0 5%; float: left; color: white;}
+section > div#section > div > div#infor_wrap_2 > div#table > div > p > a > img{height: 20px; padding: 15px 0; float: left; cursor: pointer}
+/* .infor_wrap_3 */
+section > div#section > div > div#infor_wrap_3{height: 392px; overflow-y: scroll; position: relative;}
+section > div#section > div > div#infor_wrap_3 > div#supporter_list{width: 100%; height: calc(33px * 21 + 69px + 10px); position: absolute; color: white;}
+section > div#section > div > div#infor_wrap_3 > div#supporter_list table{margin: 0 auto;}
+section > div#section > div > div#infor_wrap_3 > div#supporter_list th{font-size: 9px;}
+section > div#section > div > div#infor_wrap_3 > div#supporter_list th, td{padding: 9px; padding-right: 0; font-size: 11px; cursor: pointer}
+section > div#section > div > div#infor_wrap_3 > div#supporter_list p{width: 100%; font-size: 10px; text-align: center; margin-top: 50px; cursor: default;}
+section > div#section > div > div#infor_wrap_3 > div#supporter_list a{color: white;}
+
+/* .infor_wrap_4 */
+section > div#section > div:nth-child(4){height: 777px;}
+section > div#section > div > form#infor_wrap_4{width: 100%; height: 479px; float: left; position: relative;}
+section > div#section > div > form#infor_wrap_4 > div{width: 100%; height: 100px; float: left; position: relative;}
+section > div#section > div > form#infor_wrap_4 > div:nth-child(4){height: 200px;}
+section > div#section > div > form#infor_wrap_4 > div > h3{color: white; font-size: 14px; font-weight: normal; box-sizing: border-box; padding: 5px 3px 10px 2px;}
+section > div#section > div > form#infor_wrap_4 > div > h3::after{content: "*"; color: #00FFC2;}
+section > div#section > div > form#infor_wrap_4 > div > input{width: 100%; border: none; height: 30px; box-sizing: border-box; padding: 0 5px; font-family: 'Nanum Gothic', sans-serif;}
+section > div#section > div > form#infor_wrap_4 > div > textarea{width: 100%; border: none; height: 130px; box-sizing: border-box; padding: 5px 5px; font-family: 'Nanum Gothic', sans-serif;}
+section > div#section > div > form#infor_wrap_4 > div > button{width: 100%; border: none; height: 35px; background: #0086FF; color: white; cursor: pointer;}
+section > div#section > div > form#infor_wrap_4 > div > a{color: white; line-height: 35px; font-size: 14px; font-weight: bold; margin-top: 5px; display: block;}
+section > div#section > div > form#infor_wrap_4 > div > a:nth-child(2){margin-top: 20px;}
+section > div#section > div > form#infor_wrap_4 > div > a > img{width: 25px; height: 25px; margin: 5px 10px 5px 5px; float: left;}
+/* .infor_wrap_4 */
+section > div#section > footer.section_wrap{height: 150px; width: 100%; padding-bottom: 50px; float: left; position: relative; background: black;}
+section > div#section > footer.section_wrap > div#infor_wrap_5{width: 80%; margin: 0 10%; float: left; position: relative; color: white}
+section > div#section > footer.section_wrap > div#infor_wrap_5 > div#social_logo{width: 140px; height: 40px; position: absolute; top: 30px; left: 50%; transform: translateX(-50%);}
+section > div#section > footer.section_wrap > div#infor_wrap_5 > div#social_logo > a > img{width: 40px; height: 40px; margin: 0 15px; float: left;}
+section > div#section > footer.section_wrap > div#infor_wrap_5 > ul#f_info{width: 100%; text-align: center; font-size: 12px; height: 40px; margin-top: 100px; cursor: default;}
+
+
+section > span{position: fixed; height: 435px; top: 50%; left: 10%; transform: translateY(-50%); z-index: 2;}
+section > span > button{border: none; width: 150px; height: 40px; line-height: 40px; background: white; color: #0F4B81; border-radius: 20px; font-size: 20px; margin-top: 75px; z-index: 10; cursor: pointer; position: absolute; bottom: 0}
+section > span > button:focus{outline: none}
+section > p#nav{position:fixed; bottom:0; right:0; width: 100%; height:50px; background:rgba(0,0,0,.5); backdrop-filter:blur(2px); color: white; text-align: center; line-height: 50px; cursor: pointer}
+
+section > p#nav::before{content: ""; background: white; transform: rotate(25deg); position: absolute; width: 10px; height: 2px; top: 50%; left: calc(50% - 9px);}
+section > p#nav::after{content: ""; background: white; transform: rotate(-25deg); position: absolute; width: 10px; height: 2px; top: 50%; left: calc(50%);}
+
+section::-webkit-scrollbar {width: 2px; height: 2px;}
+/* section::-webkit-scrollbar {display: none} */
+section::-webkit-scrollbar-track {width: 2px; height: 2px; background: #101010;}
+section::-webkit-scrollbar-thumb {background: #00FFC2; border-radius: 2px;}
+
+.infor_wrap::-webkit-scrollbar {width: 2px; height: 2px;}
+.infor_wrap::-webkit-scrollbar-track {width: 2px; height: 2px; background: #2A2A2A;}
+.infor_wrap::-webkit-scrollbar-thumb {background: #00FFC2; border-radius: 2px;}
+
+
+/* @media ( min-width : 881px ){
+    *{display: none}
+} */
+@media ( max-width : 570px ){
+    section > #header > div{height: 285px}
+    section > div#header > div > h1:nth-child(1){font-size: 16px}
+    section > div#header > div > h1:nth-child(2){font-size: 70px}
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > span{width: 200px}
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > div{width: calc(100% - 200px);}
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > p{font-size: 11px;}
+}
+@media ( max-width : 500px ){
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > span{width: 170px}
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > div{width: calc(100% - 170px);}
+
+    section > div#section > div > div#infor_wrap_2 > div#table > div > p > a > img{height: 12px; padding: 19px 0}
+    section > div#section > div > div#infor_wrap_2 > div#table > div > p{font-size: 12px;}
+    section > div#section > div > div#infor_wrap_2 > div#table > div > a{font-size: 12px;}
+}
+@media ( max-width : 430px ){
+
+    section > div#header > div{height: 205px}
+    section > div#header > div > h1:nth-child(1){font-size: 12px}
+    section > div#header > div > h1:nth-child(2){font-size: 50px}
+    section > div#header > div > p{font-size: 12px}
+}
+@media ( max-width : 400px ){
+    section > div#section > div > div#infor_wrap_1 > ul > li > a{height: 20C0px; overflow: hidden; padding: 0}
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > span{width: 120px; height: 150px}
+    section > div#section > div > div#infor_wrap_1 > ul > li > a > div{width: calc(100% - 120px); height: 200px; }
+}
+@media ( max-width : 380px ){
+
+    section > div#section > div > div#infor_wrap_2 > div#table > div > p > a > img{height: 10px; padding: 20px 0}
+    section > div#section > div > div#infor_wrap_2 > div#table > div > p{font-size: 10px;}
+    section > div#section > div > div#infor_wrap_2 > div#table > div > a{font-size: 10px;}
+}
+@media ( max-width : 305px ){
+    section > #header > div{height: 193px}
+    section > div#header > div > h1:nth-child(1){font-size: 12px}
+    section > div#header > div > h1:nth-child(2){font-size: 47px}
+    section > div#header > div > p{font-size: 12px}
+}

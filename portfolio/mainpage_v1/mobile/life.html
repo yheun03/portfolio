@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>life</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Poppins&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="./script/jquery-1.12.3.js"></script>
+    <style>
+        *{margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif;}
+        body{background: #0F4B81; overflow-X: hidden;}
+        #c_wrap{width: 100%; height: 90vh; overflow: hidden; position: fixed;}
+        span#cir{z-index: 0; width: 3200px; height: 1700px; border-radius: 50%; background: linear-gradient( to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0)); position: absolute; top: 33vh; left: -2000px; transform: rotate(-2deg);}
+        span.star{z-index: -1; width: 2px; height: 2px; background: rgba(255,255,255,0.8); position: absolute; top: 20px; left: 20px; box-shadow: 0 0 1px 1px grey;}
+
+        #wrap{width: calc(100% - 50px); margin: 50px auto; height: auto; position: relative;}
+
+        #wrap > div:nth-child(1){width: 100%; height: 365px; float: left; color: white; padding-left: 20px; margin-top: 250px; position: relative;}
+        #wrap > div:nth-child(1)::before{content: ""; position: absolute; width: 2px; height: 3575px; background: white; left: 0; top: 50px}
+        #wrap > div:nth-child(1) > h1{font-size: 50px; position: relative;}
+        #wrap > div:nth-child(1) > h1::before{content: ""; width: 15px; height: 15px; position: absolute; left: calc(-20px - 15px/2); top: 50%; border-radius: 50%; transform: translateY(-60%); background: white}
+        #wrap > div:nth-child(1) > p{font-size: 16px;}
+        #wrap > div:nth-child(1) > p:nth-child(2){margin-top: 10px}
+        #wrap > div:nth-child(1) > p:nth-child(3){font-weight: 900; margin: 20px 0; font-size: 30px}
+        #wrap > div:nth-child(1) > p:nth-child(4){background: white; margin-top: 30px; padding: 15px; width: calc(100% - 70px); font-size: 25px; font-weight: 900; color: #0F4B81; display: block;}
+
+
+        #wrap > div:nth-child(2){width: 100%; height: auto; float: left; color: white; padding-left: 20px; margin-top: 200px; position: relative;}
+        #wrap > div:nth-child(2) > div{width: 100%; float: left; padding-bottom: 100px;}
+        #wrap > div:nth-child(2) > div > div{width: 100%; float: left; position: relative;}
+        #wrap > div:nth-child(2) > div > div > h3{font-size: 30px; line-height: 40px; width: 40px; height: 382px; float: left;}
+        #wrap > div:nth-child(2) > div > div > h3::before{content: ""; width: 15px; height: 15px; position: absolute; left: calc(-20px - 15px/2); top: 20px; border-radius: 50%; transform: translateY(-50%); background: white}
+        #wrap > div:nth-child(2) > div > div > p{font-size: 14px; width: calc(100% - 90px); height: 16px; padding-left: 50px; margin-bottom: 20px; float: left;}
+        #wrap > div:nth-child(2) > div > div > p:nth-child(2){margin-top: 18px;}
+
+
+        @media (min-width: 576px){
+        /* NOTE : h3 높이 */
+        #wrap > div:nth-child(2) > div:nth-child(01) > div > h3{height: calc(36*22px);}
+        #wrap > div:nth-child(2) > div:nth-child(02) > div > h3{height: calc(36*17px);}
+        #wrap > div:nth-child(2) > div:nth-child(03) > div > h3{height: calc(36*5px);}
+        #wrap > div:nth-child(2) > div:nth-child(04) > div > h3{height: calc(36*2px);}
+        #wrap > div:nth-child(2) > div:nth-child(05) > div > h3{height: calc(36*3px);}
+        #wrap > div:nth-child(2) > div:nth-child(06) > div > h3{height: calc(36*2px);}
+        #wrap > div:nth-child(2) > div:nth-child(07) > div > h3{height: calc(36*2px);}
+        #wrap > div:nth-child(2) > div:nth-child(08) > div > h3{height: calc(36*1px);}
+        #wrap > div:nth-child(2) > div:nth-child(09) > div > h3{height: calc(36*1px);}
+        #wrap > div:nth-child(2) > div:nth-child(10) > div > h3{height: calc(36*1px);}
+        }
+
+
+        body::-webkit-scrollbar {width: 2px; height: 2px;}
+        body::-webkit-scrollbar-track {width: 2px; height: 2px; background: #0F4B81;}
+        body::-webkit-scrollbar-thumb {background: #00FFC2; border-radius: 2px;}
+
+        @media (max-width: 575px){
+            #wrap > div:nth-child(1)::before{height: 3945px;}
+            #wrap > div:nth-child(2) > div > div > h3{width: 100%; height: 40px;}
+            #wrap > div:nth-child(2) > div > div > p{width: 100%; padding-left: 0;}
+        }
+
+        @media (max-width: 495px) {
+            #wrap > div:nth-child(1) > h1{font-size: 40px; position: relative;}
+            #wrap > div:nth-child(1) > p{font-size: 14px;}
+            #wrap > div:nth-child(1) > p:nth-child(2){margin-top: 10px}
+            #wrap > div:nth-child(1) > p:nth-child(3){font-weight: 900; margin: 20px 0; font-size: 20px}
+            #wrap > div:nth-child(1) > p:nth-child(4){background: white; margin-top: 30px; padding: 15px; width: calc(100% - 70px); font-size: 20px; font-weight: 900; color: #0F4B81; display: block;}
+
+            #wrap > div:nth-child(2) > div > div > p{font-size: 12px}
+        }
+        
+
+        @media (max-width: 418px) {
+            #wrap > div:nth-child(2) > div > div > p{font-size: 10px}
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="c_wrap">
+        <span id="cir"></span>
+    </div>
+    <div id="wrap">
+        <div>
+            <h1>Eun<br>Young Hwan</h1>
+            <p>은영환 (殷永煥) 2003년 2월 8일 (만 17세)</p>
+            <p>Front-End & JAVA Developer</p>
+            <p>항상 배고픈 고등학생 은영환입니다</p>
+        </div>
+        
+        <div>
+            <div>
+                <div class="history_right">
+                    <h3>2019</h3>
+                    <p>정보처리기능사 취득</p>
+                    <p>서울 디지텍고등학교 SDHS 컨퍼런스에서 웹 디자인 동아리 대표로 발표</p>
+                    <p>IoT 메이커스 해커톤 참가 5위 수상</p>
+                    <p>서울 디지텍고등학교 오케스트라 연주 ( 용산 아트홀 대극장 )</p>
+                    <p>DevFest on Campus 2019 참여</p>
+                    <p>조앤소프트㈜ 이직</p>
+                    <p>서울시 연합동아리 ( 깜냥깜냥 ) 창설, 회장 임명</p>
+                    <p>서울 디지텍고등학교 SNS 홍보부 특별채용</p>
+                    <p>모두의 메이커월드 베스트 팀워크상 ( 동상 ) 수상</p>
+                    <p>학원일요휴무제 숙의 민주주의 공론화 시민참여단 [ 고등학생 대표 ] 위촉</p>
+                    <p>웰컴 투 메이커월드 입상 수상</p>
+                    <p>'유관순 열사' 순국 99주기 추모제 참여</p>
+                    <p>서울 디지텍고등학교 문화동아리 ( MC ) 창설, 회장 임명</p>
+                    <p>그린메이커톤 완성도상 ( 최우수상 ) 수상</p>
+                    <p>웹디자인기능사 취득</p>
+                    <p>서울 디지텍고등학교 "MOD" 동아리 회장 임명</p>
+                    <p>용산구 주최 3.1운동 재현행사 참여</p>
+                    <p>㈜제이콥시스템 취직</p>
+                    <p>서울 디지텍고등학교 독후감쓰기 공모전 2위 수상</p>
+                    <p>서울 디지텍고등학교 교과우수상 수상</p>
+                    <p>서울 디지텍고등학교 오케스트라 회장 임명</p>
+                    <p>서울 디지텍고등학교 방과후 팀 프로젝트 팀장 임명</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_left">
+                    <h3>2018</h3>
+                    <p>서울 디지텍고등학교 다문화 수기 공모전 4위 수상</p>
+                    <p>전국 중고등학생 연합 진보 동아리 ( 너랑낭랑 ) 가입</p>
+                    <p>서울 디지텍고등학교 SDHS 컨퍼런스에서 "MOD" 동아리 대표로 발표</p>
+                    <p>서울 디지텍고등학교 오케스트라 연주 ( 용산 아트홀 대극장 )</p>
+                    <p>서울 디지텍고등학교 진로멘토 임명</p>
+                    <p>서울 디지텍고등학교 학생회 홍보부 임명</p>
+                    <p>유관순 열사' 순국 98주기 추모제 참여</p>
+                    <p>서울 디지텍고등학교 학생회 선도부 임명</p>
+                    <p>서울 디지텍고등학교 흡연 예방 공모전 3위 수상</p>
+                    <p>서울 디지텍고등학교 다문화 UCC 공모전 3위 수상</p>
+                    <p>디스코드 채널 " 모두의 배그 " 관리자 임명</p>
+                    <p>정보기술자격 A등급 취득</p>
+                    <p>서울 디지텍고등학교 오케스트라 가입</p>
+                    <p>서울 디지텍고등학교 웹 디자인 동아리 "MOD" 가입</p>
+                    <p>서울 디지텍고등학교 제 1학기 학급 부회장 취임</p>
+                    <p>서울 디지텍고등학교 입학</p>
+                    <p>서울 장안중학교 졸업</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_right">
+                    <h3>2017</h3>
+                    <p>사회인 야구 시작 [ 2부리그 ]</p>
+                    <p>서울 장안중학교 대표 학교 스포츠클럽대회 - 배드민턴 선발 출전</p>
+                    <p>서울 장안중학교 학생회 페이지 건설, 총관리자 임명</p>
+                    <p>서울 장안중학교 학생회 홍보부장 취임</p>
+                    <p>서울 장안중학교 제 1학기 학급회장 취임</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_left">
+                    <h3>2015</h3>
+                    <p>서울 장안중학교 입학</p>
+                    <p>서울 면목초등학교 졸업</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_right">
+                    <h3>2014</h3>
+                    <p>서울 면목초등학교 전학</p>
+                    <p>제6회 한국나비골프협회장배 전국 나비골프대회 6학년부 1위</p>
+                    <p>미래창조과학부장관상 취득</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_left">
+                    <h3>2013</h3>
+                    <p>제4회 한국나비골프 초등연맹회장배 전국 나비골프대회 5학년부 1위</p>
+                    <p>정읍청소년과학탐구대회 동상</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_right">
+                    <h3>2012</h3>
+                    <p>정읍 옹동초등학교 전학</p>
+                    <p>광주 서광초등학교 전학</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_left">
+                    <h3>2011</h3>
+                    <p>전주 삼천남초등학교 전학</p>
+                </div>
+            </div>
+            <div>
+                <div class="history_right">
+                    <h3>2009</h3>
+                    <p>전주 송북초등학교 입학</p>
+                </div>
+            </div>
+            <div style="margin-bottom: 150px">
+                <div class="history_left">
+                    <h3>2003</h3>
+                    <p>2월 8일 출생</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    // NOTE : 랜덤 별
+    var min = 15;
+    var max = 25;
+    var RandVal = Math.floor(Math.random() * (max - min + 1)) + min;
+    for (var j = 1; j <= RandVal; j++) {
+        $("#c_wrap").append("<span class='star'></span>");
+        for (var i = 1; i <= RandVal + 2; i++) {
+            w_max = $("body").width() - $("section").width();
+            h_max = $("#cir").offset().top
+            var w = Math.floor(Math.random() * (w_max - 10 + 1)) + 10;
+            var h = Math.floor(Math.random() * (h_max - 10 + 1)) + 10;
+            $(".star:nth-child(" + i + ")").css({
+                "top": h,
+                "left": w
+            });
+            $(".star:nth-child(1) , .star:nth-child(8) , .star:nth-child(9) , .star:nth-child(10) , .star:nth-child(17) , .star:nth-child(19) , .star:nth-child(25)").css({
+                "opacity": "0.25"
+            });
+            $(".star:nth-child(2) , .star:nth-child(4) , .star:nth-child(5) , .star:nth-child(6)").css({
+                "opacity": "0.5"
+            });
+            $(".star:nth-child(3) , .star:nth-child(11) , .star:nth-child(13) , .star:nth-child(15)").css({
+                "opacity": "0.75"
+            });
+        }
+    }
+    setInterval(function () {
+        for (var i = 1; i <= RandVal + 2; i++) {
+            var w = Math.floor(Math.random() * (w_max - 10 + 1)) + 10;
+            var h = Math.floor(Math.random() * (h_max - 10 + 1)) + 10;
+            $(".star:nth-child(" + i + ")").animate({
+                "top": h,
+                "left": w
+            }, 30000, "linear");
+        }
+    }, 1000);
+
+    
+    var b_width = $("body").width();
+    if(b_width > 880){
+        window.location.replace("../home/life.html")
+    }
+    $(window).resize(function() {
+        var b_width = $("body").width();
+        console.log(b_width)
+        if(b_width > 880){
+            window.location.replace("../home/life.html")
+        }
+    });
+</script>
+</html>
