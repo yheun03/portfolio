@@ -310,18 +310,18 @@ footer address {
 .area-history > ul > li > * {
   flex: 1;
 }
-.area-history .career li:last-child {
+.area-history [data-hstry=career] li:last-child {
   margin-top: 30px;
 }
-.area-history .career b span {
+.area-history [data-hstry=career] b span {
   cursor: help;
 }
-.area-history .education::after {
+.area-history [data-hstry=education]::after {
   content: "* 일학습병행제로 전문학사 취득";
   color: var(--red);
   font-size: 12px;
 }
-.area-history .education .adtDsc > span:first-child::after {
+.area-history [data-hstry=education] .adtDsc > span:first-child::after {
   content: "*";
   color: var(--red);
   position: absolute;
@@ -340,11 +340,11 @@ footer address {
   z-index: 9;
 }
 .area-projects .progress li {
+  position: relative;
   flex: 1;
   text-align: center;
   padding-top: 2px;
   box-sizing: content-box;
-  position: relative;
 }
 .area-projects .progress li:first-child::before {
   content: "";
@@ -423,20 +423,20 @@ footer address {
   left: 0;
   background: url(../images/iPhone.webp) center/contain no-repeat;
 }
-.area-projects .screen + div {
+.area-projects .wrap-dscpt {
   display: flex;
   flex-direction: column;
 }
-.area-projects .screen + div h2 {
+.area-projects .wrap-dscpt h2 {
   flex: unset;
 }
-.area-projects .screen + div h2 + div > div {
+.area-projects .wrap-dscpt > div > div {
   display: none;
 }
-.area-projects .screen + div h2 + div > div:first-child {
+.area-projects .wrap-dscpt > div > div:first-child {
   display: block;
 }
-.area-projects .screen + div li {
+.area-projects .wrap-dscpt li {
   display: inline-block;
   width: 212px;
   height: 212px;
@@ -446,6 +446,12 @@ footer address {
   font: 500 16px/212px var(--font);
   color: var(--white);
 }
-.area-projects .screen + div li:not(:first-child) {
+.area-projects .wrap-dscpt li:not(:first-child) {
   margin-left: -44px;
+}
+.area-projects .wrap-dscpt [data-prjName=inu] li {
+  background-color: rgba(249, 187, 23, 0.4);
+}
+.area-projects .wrap-dscpt [data-prjName=tailim] li {
+  background-color: rgba(62, 71, 205, 0.4);
 }
