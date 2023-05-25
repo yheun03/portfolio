@@ -158,7 +158,7 @@ footer {
             flex: 1;
         }
     }
-    .career {
+    [data-hstry='career'] {
         li:last-child {
             margin-top: 30px;
         }
@@ -166,7 +166,7 @@ footer {
             cursor: help;
         }
     }
-    .education {
+    [data-hstry='education'] {
         &::after {
             content: "* 일학습병행제로 전문학사 취득";
             color: var(--red);
@@ -190,11 +190,11 @@ footer {
         display: flex;
         z-index: 9;
         li {
+            position: relative;
             flex: 1;
             text-align: center;
             padding-top: 2px;
             box-sizing: content-box;
-            position: relative;
             &:first-child::before {
                 content: "";
                 position: absolute;
@@ -273,30 +273,40 @@ footer {
             left: 0;
             background: url(../images/iPhone.webp) center/contain no-repeat;
         }
-        & + div {
-            display: flex;
-            flex-direction: column;
-            h2 {
-                flex: unset;
-                & + div > div {
-                    display: none;
-                    &:first-child {
-                        display: block;
-                    }
-                }
+    }
+    .wrap-dscpt {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            flex: unset;
+        }
+        & > div > div {
+            display: none;
+            &:first-child {
+                display: block;
             }
-            li {
-                display: inline-block;
-                width: 212px;
-                height: 212px;
-                border-radius: 50%;
-                background-color: rgba(0, 0, 0, 0.4);
-                text-align: center;
-                font: 500 16px/212px var(--font);
-                color: var(--white);
-                &:not(:first-child) {
-                    margin-left: -44px;
-                }
+        }
+        li {
+            display: inline-block;
+            width: 212px;
+            height: 212px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font: 500 16px/212px var(--font);
+            color: var(--white);
+            &:not(:first-child) {
+                margin-left: -44px;
+            }
+        }
+        [data-prjName='inu'] {
+            li{
+                background-color: rgba(249, 187, 23, 0.4);
+            }
+        }
+        [data-prjName='tailim'] {
+            li{
+                background-color: rgba(62, 71, 205, 0.4);
             }
         }
     }
