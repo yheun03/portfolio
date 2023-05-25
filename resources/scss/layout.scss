@@ -34,6 +34,9 @@ header{
             border: 1px solid var(--black);
         }
     }
+    span{
+        transform: rotate(90deg) translate(70px, -120px);
+    }
 }
 footer{
     background-color: var(--black);

@@ -173,6 +173,9 @@ header > *.logo {
   height: 45px;
   border: 1px solid var(--black);
 }
+header span {
+  transform: rotate(90deg) translate(70px, -120px);
+}
 
 footer {
   background-color: var(--black);
