@@ -141,8 +141,9 @@ body {
   min-width: 1660px;
 }
 
-html, body {
-  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FFFFFF;
+html,
+body {
+  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ffffff;
 }
 
 body > div,
@@ -194,7 +195,7 @@ footer address {
 .area-welcome {
   height: 760px;
   padding: 0;
-  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FFFFFF;
+  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ffffff;
   overflow: hidden;
 }
 .area-welcome > div {
@@ -267,7 +268,7 @@ footer address {
 
 .area-working,
 .area-history {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   display: flex;
   justify-content: center;
   gap: 155px;
