@@ -26,5 +26,9 @@ $(document).ready(()=>{
 
     // NOTE: .area-project 내부의 기능
     // 최초개발일 : 20230525
-    // 수  정  일 : 20230525
+    // 수  정  일 : 20230528
+    let project_list = $("[data-prjName]");
+    for(let i = 0; i < project_list.length; i++){
+        console.log(project_list.get(i))
+    }
 })
