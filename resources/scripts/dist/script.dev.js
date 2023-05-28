@@ -30,6 +30,12 @@ $(document).ready(function () {
     target.attr("title", "단순 입퇴사일 계산 : " + year_2 + "년 " + month_2 + "개월차");
   } // NOTE: .area-project 내부의 기능
   // 최초개발일 : 20230525
-  // 수  정  일 : 20230525
+  // 수  정  일 : 20230528
 
+
+  var project_list = $("[data-prjName]");
+
+  for (var i = 0; i < project_list.length; i++) {
+    console.log(project_list.get(i));
+  }
 });
