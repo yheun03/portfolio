@@ -29,6 +29,9 @@ $(document).ready(()=>{
     // 수  정  일 : 20230528
     let project_list = $("[data-prjName]");
     for(let i = 0; i < project_list.length; i++){
+        $(".progress a:nth-child("+i+")").click(()=>{
+            $(".screen, .wrap-dscpt").children().children().show().siblings().hide()
+        })
         console.log(project_list.get(i))
     }
 })

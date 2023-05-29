@@ -160,6 +160,11 @@ section > div {
   background-color: var(--white);
   position: relative;
 }
+body > div > div,
+section > div > div {
+  max-width: 1920px;
+  margin: auto;
+}
 
 header {
   position: fixed;
@@ -380,10 +385,10 @@ footer address {
 .area-projects .nav li:first-child {
   transform: rotate(180deg);
 }
-.area-projects > ul:not(.progress, .nav) {
+.area-projects > div {
   padding: 160px 198px;
 }
-.area-projects > ul:not(.progress, .nav) > li {
+.area-projects > div > ul > li {
   display: flex;
   gap: 244px;
 }
