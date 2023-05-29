@@ -36,6 +36,9 @@ $(document).ready(function () {
   var project_list = $("[data-prjName]");
 
   for (var i = 0; i < project_list.length; i++) {
+    $(".progress a:nth-child(" + i + ")").click(function () {
+      $(".screen, .wrap-dscpt").children().children().show().siblings().hide();
+    });
     console.log(project_list.get(i));
   }
 });

@@ -13,6 +13,10 @@ section > div {
     padding: 160px 64px;
     background-color: var(--white);
     position: relative;
+    & > div{
+        max-width: 1920px;
+        margin: auto;
+    }
 }
 header {
     position: fixed;
@@ -231,9 +235,9 @@ footer {
             }
         }
     }
-    & > ul:not(.progress, .nav) {
+    & > div {
         padding: 160px 198px;
-        & > li {
+        & > ul > li {
             display: flex;
             gap: 244px;
         }
