@@ -119,7 +119,7 @@ table {
 :root {
   --font: "Pretendard";
   --black: #111111;
-  --gray: #595959;
+  --gray: #757575;
   --deepLightGray: #f6f6f6;
   --lightGray: #dcdcdc;
   --white: #ffffff;
@@ -206,7 +206,7 @@ footer {
 footer address {
   font-size: 12px;
   line-height: 14px;
-  color: #9E9E9E;
+  color: #7D7D7D;
   margin-top: 16px;
 }
 
@@ -272,7 +272,7 @@ footer address {
   font: 700 40px/60px var(--font);
   color: var(--black);
   text-align: right;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .area-intro a {
   border: 1px solid var(--black);
