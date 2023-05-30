@@ -125,6 +125,7 @@ table {
   --white: #ffffff;
   --red: #FD5146;
   --blue: #00498C;
+  --height-header: 80px;
 }
 
 h1 {
@@ -174,10 +175,11 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  height: var(--height-header);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 9px 64px;
+  padding-inline: 64px;
   z-index: 10;
 }
 header > * {
@@ -280,7 +282,7 @@ footer address {
 
 .area-working,
 .area-projects {
-  background-color: #f6f6f6;
+  background-color: var(--deepLightGray);
 }
 
 .area-working,
@@ -346,6 +348,16 @@ footer address {
   width: 100%;
   display: flex;
   z-index: 9;
+  background: var(--deepLightGray);
+}
+.area-projects .progress::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--height-header);
+  left: 0;
+  top: calc(var(--height-header) * -1);
+  background: var(--deepLightGray);
 }
 .area-projects .progress li {
   position: relative;
