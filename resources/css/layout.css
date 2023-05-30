@@ -302,7 +302,7 @@ footer address {
 .area-working span:not(.letterSpacing),
 .area-history span:not(.letterSpacing) {
   font-size: 10px;
-  color: var(--gray);
+  color: #949494;
   margin-left: 4px;
 }
 .area-working span.letterSpacing,
