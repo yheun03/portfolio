@@ -147,7 +147,8 @@ footer {
     span {
         &:not(.letterSpacing) {
             font-size: 10px;
-            color: var(--gray);
+            // color: var(--gray);
+            color: #949494;
             margin-left: 4px;
         }
         &.letterSpacing {
