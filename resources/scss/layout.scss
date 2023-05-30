@@ -146,7 +146,7 @@ footer {
     }
     span {
         &:not(.letterSpacing) {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--gray);
             margin-left: 4px;
         }
@@ -193,7 +193,7 @@ footer {
     padding: 0;
     .progress {
         position: sticky;
-        top: 63px;
+        top: var(--height-header);
         left: 0;
         width: 100%;
         display: flex;
@@ -208,20 +208,22 @@ footer {
             top: calc(var(--height-header) * -1);
             background: var(--deepLightGray);
         }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--black);
+            transition: 3s linear;
+        }
         li {
             position: relative;
             flex: 1;
             text-align: center;
             padding-top: 2px;
             box-sizing: content-box;
-            &:first-child::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 2px;
-                background-color: var(--black);
-            }
             a {
                 display: block;
                 color: inherit;
@@ -244,6 +246,10 @@ footer {
                 width: 100px;
                 height: 100px;
                 background: url(../images/icons/ic-arrow.svg) center/cover;
+                transition: .2s;
+                &:hover{
+                    background-position-y: -4px;
+                }
             }
             &:first-child {
                 transform: rotate(180deg);
