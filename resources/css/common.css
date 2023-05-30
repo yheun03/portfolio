@@ -124,6 +124,7 @@ table {
   --white: #ffffff;
   --red: #FD5146;
   --blue: #00498C;
+  --height-header: 80px;
 }
 
 h1 {

@@ -27,10 +27,11 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--height-header);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 9px 64px;
+    padding-inline: 64px;
     z-index: 10;
     & > * {
         max-height: 100%;
@@ -130,7 +131,7 @@ footer {
 }
 .area-working,
 .area-projects{
-    background-color: #f6f6f6;
+    background-color: var(--deepLightGray);
 }
 .area-working,
 .area-history {
@@ -197,6 +198,16 @@ footer {
         width: 100%;
         display: flex;
         z-index: 9;
+        background: var(--deepLightGray);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: var(--height-header);
+            left: 0;
+            top: calc(var(--height-header) * -1);
+            background: var(--deepLightGray);
+        }
         li {
             position: relative;
             flex: 1;
