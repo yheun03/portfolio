@@ -1,9 +1,11 @@
 "use strict";
 
+var _this = void 0;
+
 $(document).ready(function () {
   // NOTE: .area-history 내부의 경력 자동 세팅
   // 최초개발일 : 20230525
-  // 수  정  일 : 20230525
+  // 수  정  일 : 20230530
   var year = new Date().getFullYear(); // 년도
 
   var month = new Date().getMonth() + 1; // 월
@@ -16,7 +18,7 @@ $(document).ready(function () {
   month = diff % 12;
   var year_2 = parseInt(diff_2 / 12);
   var month_2 = diff_2 % 12;
-  var target = $(".career b span");
+  var target = $("[data-hstryFg='career'] b span");
 
   if (month == 0) {
     target.html(year + "년차");
@@ -30,15 +32,21 @@ $(document).ready(function () {
     target.attr("title", "단순 입퇴사일 계산 : " + year_2 + "년 " + month_2 + "개월차");
   } // NOTE: .area-project 내부의 기능
   // 최초개발일 : 20230525
-  // 수  정  일 : 20230528
+  // 수  정  일 : 20230530
 
 
-  var project_list = $("[data-prjName]");
+  var showProject = $("#showProject");
+  showProject.change(function () {
+    console.log(_this.value);
+  }); // let project_list = $(".wrap-dscpt > div > div");
+  // for(let i = 1; i < project_list.length + 1; i++){
+  //     $(".progress li:nth-child("+ i +") a").click(()=>{
+  //         $(".screen > div > img:nth-child("+i+")").show().siblings().hide();
+  //         $(".wrap-dscpt > div > div:nth-child("+i+")").show().siblings().hide();
+  //     })
+  // }
 
-  for (var i = 0; i < project_list.length; i++) {
-    $(".progress a:nth-child(" + i + ")").click(function () {
-      $(".screen, .wrap-dscpt").children().children().show().siblings().hide();
-    });
-    console.log(project_list.get(i));
-  }
+  $("a[href='#']").click(function () {
+    return false;
+  });
 });

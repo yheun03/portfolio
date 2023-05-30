@@ -1,7 +1,7 @@
 $(document).ready(()=>{
     // NOTE: .area-history 내부의 경력 자동 세팅
     // 최초개발일 : 20230525
-    // 수  정  일 : 20230525
+    // 수  정  일 : 20230530
     let year = new Date().getFullYear(); // 년도
     let month = new Date().getMonth() + 1  // 월
     const oldDate = new Date('2020-06');
@@ -12,7 +12,7 @@ $(document).ready(()=>{
     month = diff%12;
     let year_2 = parseInt(diff_2/12);
     let month_2 = diff_2%12;
-    let target = $(".career b span")
+    let target = $("[data-hstryFg='career'] b span")
     if(month == 0){
         target.html(year+"년차")
     }else{
@@ -26,12 +26,20 @@ $(document).ready(()=>{
 
     // NOTE: .area-project 내부의 기능
     // 최초개발일 : 20230525
-    // 수  정  일 : 20230528
-    let project_list = $("[data-prjName]");
-    for(let i = 0; i < project_list.length; i++){
-        $(".progress a:nth-child("+i+")").click(()=>{
-            $(".screen, .wrap-dscpt").children().children().show().siblings().hide()
-        })
-        console.log(project_list.get(i))
-    }
+    // 수  정  일 : 20230530
+    let showProject = $("#showProject");
+    showProject.change(()=>{
+        console.log(this.value)
+    })
+    // let project_list = $(".wrap-dscpt > div > div");
+    // for(let i = 1; i < project_list.length + 1; i++){
+    //     $(".progress li:nth-child("+ i +") a").click(()=>{
+    //         $(".screen > div > img:nth-child("+i+")").show().siblings().hide();
+    //         $(".wrap-dscpt > div > div:nth-child("+i+")").show().siblings().hide();
+    //     })
+    // }
+
+    $("a[href='#']").click(()=>{
+        return false;
+    })
 })
