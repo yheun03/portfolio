@@ -42,4 +42,6 @@ $(document).ready(()=>{
     $("a[href='#']").click(()=>{
         return false;
     })
+
+    alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")
 })
