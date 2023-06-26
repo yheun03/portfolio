@@ -29,6 +29,12 @@ $(document).ready(()=>{
     // 수  정  일 : 20230626
     $(".slick").slick({
         dots: true,
+        customPaging : function(slider, i) {
+            var title, target;
+            target = i + 2
+            title = $(".slick-slide:nth-child("+target+") p b").text()
+            return '<a class="dot">'+title+'</a>';
+        },
         prevArrow: $('.nav li:first-child a'),
         nextArrow: $('.nav li:last-child a')
     })
