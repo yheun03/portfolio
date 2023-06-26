@@ -35,6 +35,12 @@ $(document).ready(function () {
 
   $(".slick").slick({
     dots: true,
+    customPaging: function customPaging(slider, i) {
+      var title, target;
+      target = i + 2;
+      title = $(".slick-slide:nth-child(" + target + ") p b").text();
+      return '<a class="dot">' + title + '</a>';
+    },
     prevArrow: $('.nav li:first-child a'),
     nextArrow: $('.nav li:last-child a')
   });
