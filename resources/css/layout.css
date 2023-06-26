@@ -341,45 +341,6 @@ footer address {
 .area-projects {
   padding: 0;
 }
-.area-projects .progress {
-  position: sticky;
-  top: var(--height-header);
-  left: 0;
-  width: 100%;
-  display: flex;
-  z-index: 9;
-  background: var(--deepLightGray);
-}
-.area-projects .progress::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: var(--height-header);
-  left: 0;
-  top: calc(var(--height-header) * -1);
-  background: var(--deepLightGray);
-}
-.area-projects .progress::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--black);
-  transition: 3s linear;
-}
-.area-projects .progress li {
-  position: relative;
-  flex: 1;
-  text-align: center;
-  padding-top: 2px;
-  box-sizing: content-box;
-}
-.area-projects .progress li a {
-  display: block;
-  color: inherit;
-}
 .area-projects .nav {
   position: sticky;
   top: 50%;
@@ -409,9 +370,23 @@ footer address {
 .area-projects > div {
   padding: 160px 198px;
 }
-.area-projects > div > ul > li {
+.area-projects > div .slick {
   display: flex;
+  flex-direction: column-reverse;
+}
+.area-projects > div .slick-slide {
+  display: flex !important;
   gap: 244px;
+}
+.area-projects > div .slick-dots {
+  display: none;
+  position: sticky;
+  top: var(--height-header);
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 9;
+  background: var(--deepLightGray);
 }
 .area-projects h2 {
   text-align: left;

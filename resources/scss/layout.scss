@@ -191,45 +191,7 @@ footer {
 }
 .area-projects {
     padding: 0;
-    .progress {
-        position: sticky;
-        top: var(--height-header);
-        left: 0;
-        width: 100%;
-        display: flex;
-        z-index: 9;
-        background: var(--deepLightGray);
-        &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: var(--height-header);
-            left: 0;
-            top: calc(var(--height-header) * -1);
-            background: var(--deepLightGray);
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--black);
-            transition: 3s linear;
-        }
-        li {
-            position: relative;
-            flex: 1;
-            text-align: center;
-            padding-top: 2px;
-            box-sizing: content-box;
-            a {
-                display: block;
-                color: inherit;
-            }
-        }
-    }
+    
     .nav {
         position: sticky;
         top: 50%;
@@ -258,9 +220,23 @@ footer {
     }
     & > div {
         padding: 160px 198px;
-        & > ul > li {
+        .slick{
             display: flex;
-            gap: 244px;
+            flex-direction: column-reverse;
+            &-slide {
+                display: flex !important;
+                gap: 244px;
+            }
+            &-dots{
+                display: none;
+                position: sticky;
+                top: var(--height-header);
+                left: 0;
+                width: 100%;
+                display: flex;
+                z-index: 9;
+                background: var(--deepLightGray);
+            }
         }
     }
     h2 {
