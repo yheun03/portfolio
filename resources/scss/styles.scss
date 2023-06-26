@@ -1,2 +1,49 @@
 @charset 'utf-8';
 @import 'layout';
+
+// NOTE: Mobile S
+@media (max-width: 320px    ){
+
+}
+// NOTE: Mobile M
+@media (max-width: 375px    ){
+
+}
+// NOTE: Mobile L
+@media (max-width: 425px    ){
+
+}
+// NOTE: Tablet
+@media (max-width: 768px    ){
+
+}
+// NOTE: Laptop
+@media (max-width: 1024px   ){
+    .area-history > ul{
+        & > li{
+            flex-basis: 100%;
+        }
+    }
+
+}
+// NOTE: Laptop L
+@media (max-width: 1440px   ){
+    .area-working,
+    .area-history{
+        flex-direction: column;
+        h2{
+            flex: unset;
+            text-align: unset;
+        }
+    }
+    .area-history > ul > li{
+        flex-direction: column;
+    }
+    .area-projects{
+        display: none;
+    }
+}
+// NOTE: 4K
+// @media (max-width: 2560px   ){
+
+// }

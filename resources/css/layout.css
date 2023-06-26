@@ -146,10 +146,6 @@ b {
   margin-bottom: 30px;
 }
 
-body {
-  min-width: 1660px;
-}
-
 html,
 body {
   background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
@@ -294,11 +290,14 @@ footer address {
 }
 .area-working > ul,
 .area-history > ul {
+  display: flex;
+  flex-wrap: wrap;
   flex: 0 790px;
+  gap: 54px 20px;
 }
-.area-working > ul > li + li,
-.area-history > ul > li + li {
-  margin-top: 56px;
+.area-working > ul > li,
+.area-history > ul > li {
+  flex: 1 1 calc(50% - 20px);
 }
 .area-working span:not(.letterSpacing),
 .area-history span:not(.letterSpacing) {
@@ -312,6 +311,7 @@ footer address {
 }
 
 .area-working > ul > li {
+  flex-basis: 100%;
   list-style-type: "✓ ";
 }
 
