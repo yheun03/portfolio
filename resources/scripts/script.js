@@ -26,23 +26,26 @@ $(document).ready(()=>{
 
     // NOTE: .area-project 내부의 기능
     // 최초개발일 : 20230525
-    // 수  정  일 : 20230626
+    // 수  정  일 : 20230627
     $(".slick").slick({
         dots: true,
         customPaging : function(slider, i) {
-            var title, target;
-            target = i + 2
-            title = $(".slick-slide:nth-child("+target+") p b").text()
-            return '<a class="dot">'+title+'</a>';
+            return $(".slick-slide:nth-child("+ (i + 2) +") p b").text();
         },
-        prevArrow: $('.nav li:first-child a'),
-        nextArrow: $('.nav li:last-child a')
+        prevArrow: $('.nav.prev'),
+        nextArrow: $('.nav.next')
     })
 
+    var dom = $(".nav");
+    dom.detach();
+    $(".slick").prepend(dom)
+    $(".slick-list").before($(".nav"))
+    $(".prev").before($(".slick-dots"))
     $("a[href='#']").click(()=>{
         return false;
     })
-    // alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")
+
+    alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")
 
 
 })
