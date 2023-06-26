@@ -167,7 +167,7 @@ footer {
             flex: 1;
         }
     }
-    [data-hstry='career'] {
+    [data-hstryfg='career'] {
         li:last-child {
             margin-top: 30px;
         }
@@ -175,7 +175,7 @@ footer {
             cursor: help;
         }
     }
-    [data-hstry='education'] {
+    [data-hstryfg='education'] {
         &::after {
             content: "* 일학습병행제로 전문학사 취득";
             color: var(--red);

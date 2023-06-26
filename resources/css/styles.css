@@ -320,18 +320,18 @@ footer address {
 .area-history > ul > li > * {
   flex: 1;
 }
-.area-history [data-hstry=career] li:last-child {
+.area-history [data-hstryfg=career] li:last-child {
   margin-top: 30px;
 }
-.area-history [data-hstry=career] b span {
+.area-history [data-hstryfg=career] b span {
   cursor: help;
 }
-.area-history [data-hstry=education]::after {
+.area-history [data-hstryfg=education]::after {
   content: "* 일학습병행제로 전문학사 취득";
   color: var(--red);
   font-size: 12px;
 }
-.area-history [data-hstry=education] .adtDsc > span:first-child::after {
+.area-history [data-hstryfg=education] .adtDsc > span:first-child::after {
   content: "*";
   color: var(--red);
   position: absolute;
