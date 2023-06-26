@@ -247,6 +247,15 @@ footer {
             display: flex;
             z-index: 9;
             background: var(--deepLightGray);
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: var(--height-header);
+                bottom: 100%;
+                left: 0;
+                background-color: var(--deepLightGray);
+            }
             & > li{
                 flex: 1;
                 &.slick-active{
