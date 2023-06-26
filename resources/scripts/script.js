@@ -41,6 +41,7 @@ $(document).ready(()=>{
     $(".slick").prepend(dom)
     $(".slick-list").before($(".nav"))
     $(".prev").before($(".slick-dots"))
+    
     $("a[href='#']").click(()=>{
         return false;
     })
