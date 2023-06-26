@@ -345,38 +345,29 @@ footer address {
 .area-projects .nav {
   position: sticky;
   top: 50%;
-  left: 0;
-  width: 100%;
-  display: flex;
+  left: 100%;
+  display: inline-block;
   z-index: 8;
-  justify-content: space-between;
-}
-.area-projects .nav li {
-  position: relative;
-}
-.area-projects .nav li a {
-  display: block;
-  color: inherit;
   width: 100px;
   height: 100px;
   background: url(../images/icons/ic-arrow.svg) center/cover;
   transition: 0.2s;
 }
-.area-projects .nav li a:hover {
+.area-projects .nav:hover {
   background-position-y: -4px;
 }
-.area-projects .nav li:first-child {
+.area-projects .nav.prev {
+  right: unset;
+  left: 0;
   transform: rotate(180deg);
 }
 .area-projects .slick {
   width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
   margin: 0;
   max-width: unset;
 }
 .area-projects .slick-list {
-  padding: 160px 200px;
+  padding: 160px calc((100vw - 1660px) / 2);
 }
 .area-projects .slick-slide {
   display: flex !important;
@@ -410,21 +401,19 @@ footer address {
 }
 .area-projects .slick-dots > li {
   flex: 1;
-}
-.area-projects .slick-dots > li.slick-active a {
-  box-shadow: inset 0 2px 0 var(--black);
-}
-.area-projects .slick-dots > li.slick-active a, .area-projects .slick-dots > li:hover a {
-  opacity: 1;
-}
-.area-projects .slick-dots > li a {
-  display: block;
   text-align: center;
   font: 500 16px/30px var(--font);
   padding: 0 20px;
   cursor: pointer;
   opacity: 0.2;
   transition: 0.2s;
+}
+.area-projects .slick-dots > li.slick-active {
+  box-shadow: inset 0 2px 0 var(--black);
+}
+.area-projects .slick-dots > li.slick-active, .area-projects .slick-dots > li:hover {
+  opacity: 1;
+  color: var(--black);
 }
 .area-projects h2 {
   text-align: left;
