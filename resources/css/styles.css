@@ -398,6 +398,15 @@ footer address {
   z-index: 9;
   background: var(--deepLightGray);
 }
+.area-projects .slick-dots::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--height-header);
+  bottom: 100%;
+  left: 0;
+  background-color: var(--deepLightGray);
+}
 .area-projects .slick-dots > li {
   flex: 1;
 }
