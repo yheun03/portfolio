@@ -386,6 +386,7 @@ footer address {
   display: flex;
   z-index: 9;
   background: var(--deepLightGray);
+  display: none !important;
 }
 .area-projects h2 {
   text-align: left;
