@@ -1,7 +1,5 @@
 "use strict";
 
-var _this = void 0;
-
 $(document).ready(function () {
   // NOTE: .area-history 내부의 경력 자동 세팅
   // 최초개발일 : 20230525
@@ -32,26 +30,14 @@ $(document).ready(function () {
     target.attr("title", "단순 입퇴사일 계산 : " + year_2 + "년 " + month_2 + "개월차");
   } // NOTE: .area-project 내부의 기능
   // 최초개발일 : 20230525
-  // 수  정  일 : 20230530
+  // 수  정  일 : 20230626
 
 
-  var showProject = $("#showProject");
-  showProject.change(function () {
-    console.log(_this.value);
+  $(".slick").slick({
+    dots: true,
+    prevArrow: $('.nav li:first-child a'),
+    nextArrow: $('.nav li:last-child a')
   });
-  var project_list = $(".wrap-dscpt > div > div");
-
-  var _loop = function _loop(i) {
-    $(".progress li:nth-child(" + i + ") a").click(function () {
-      $(".screen > div > img:nth-child(" + i + ")").show().siblings().hide();
-      $(".wrap-dscpt > div > div:nth-child(" + i + ")").show().siblings().hide();
-    });
-  };
-
-  for (var i = 1; i < project_list.length + 1; i++) {
-    _loop(i);
-  }
-
   $("a[href='#']").click(function () {
     return false;
   }); // alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")

@@ -10,9 +10,11 @@
     <meta property="og:description" content="더 나은 내일을 위해 쉼 없이 달려가는 웹 퍼블리셔 은영환입니다." />
     <meta name="description" content="웹 퍼블리셔 은영환에 대한 설명과 함께 경험한 일들을 정리한 포트폴리오 사이트, 제작 일자: 2023년 5월 25일">
     <title>웹 퍼블리셔 은영환</title>
+    <link rel="stylesheet" href="./resources/css/slick/slick.css">
     <link rel="stylesheet" href="./resources/css/styles.css">
     <link rel="shortcut icon" href="#">
     <script src="./resources/scripts/jquery-3.3.1.min.js"></script>
+    <script src="./resources/scripts/slick/slick.min.js"></script>
     <script src="./resources/scripts/script.js"></script>
 </head>
 <body>
@@ -97,24 +99,16 @@
             </ul>
         </div>
         <div class="area-projects">
-            <input type="hidden" id="showProject" value="1">
-            <ul class="progress">
-                <li><a href="javascript:;">조앤소프트(주) 홈페이지 리뉴얼 프로젝트</a></li>
-                <li><a href="javascript:;">인천대학교 공과대학 리뉴얼 프로젝트</a></li>
-                <li><a href="javascript:;">태림포장 수·발주 시스템 프로젝트</a></li>
-            </ul>
             <ul class="nav">
                 <li><a href="#" aria-label="이전 프로젝트 내용 보기 버튼"></a></li>
                 <li><a href="#" aria-label="다음 프로젝트 내용 보기 버튼"></a></li>
             </ul>
             <div>
-                <ul>
+                <ul class="slick">
                     <li>
                         <div class="screen">
                             <div>
                                 <img src="./resources/images/project/jonsoft.webp" alt="웹 퍼블리셔 은영환이 개발한 '조앤소프트(주)의 홈페이지 리뉴얼 프로젝트를 일부 캡쳐한 이미지입니다." loading="lazy">
-                                <img src="./resources/images/project/inu.webp" alt="웹 퍼블리셔 은영환이 개발한 '인천대학교의 홈페이지 리뉴얼 프로젝트를 일부 캡쳐한 이미지입니다." loading="lazy">
-                                <img src="./resources/images/project/tailim.webp" alt="웹 퍼블리셔 은영환이 개발한 '태림포장의 수발주 자동화 앱 프로젝트를 일부 캡쳐한 이미지입니다." loading="lazy">
                             </div>
                             <div class="mockup"></div>
                         </div>
@@ -129,6 +123,19 @@
                                         <li>더 나은 UX</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="screen">
+                            <div>
+                                <img src="./resources/images/project/inu.webp" alt="웹 퍼블리셔 은영환이 개발한 '인천대학교의 홈페이지 리뉴얼 프로젝트를 일부 캡쳐한 이미지입니다.">
+                            </div>
+                            <div class="mockup"></div>
+                        </div>
+                        <div class="wrap-dscpt">
+                            <h2>제가<br/>작업한 프로젝트를<br/>소개합니다 🙌</h2>
+                            <div>
                                 <div data-prjName="inu">
                                     <p><b>인천대학교 공과대학 홈페이지 및 상세 홈페이지 리뉴얼 프로젝트</b>조앤소프트(주) 재직 중 인천대학교 공과대학 홈페이지 리뉴얼 프로젝트에 퍼블리셔로써 참가했습니다<br/>모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.<br/>민주평화통일자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다.<br/>모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 국회는 법률에 저촉되지 아니하는 범위안에서 의사와 내부규율에 관한 규칙을 제정할 수 있다.</p>
                                     <ul>
@@ -137,6 +144,19 @@
                                         <li>더 나은 UX</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="screen">
+                            <div>
+                                <img src="./resources/images/project/tailim.webp" alt="웹 퍼블리셔 은영환이 개발한 '태림포장의 수발주 자동화 앱 프로젝트를 일부 캡쳐한 이미지입니다.">
+                            </div>
+                            <div class="mockup"></div>
+                        </div>
+                        <div class="wrap-dscpt">
+                            <h2>제가<br/>작업한 프로젝트를<br/>소개합니다 🙌</h2>
+                            <div>
                                 <div data-prjName="tailim">
                                     <p><b>태림포장 온라인 수·발주 시스템 프로젝트</b>조앤소프트(주) 재직 중 디지털 클러스터 사업의 일환으로 진행한 프로젝트입니다.<br/>모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.<br/>민주평화통일자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다.<br/>모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 국회는 법률에 저촉되지 아니하는 범위안에서 의사와 내부규율에 관한 규칙을 제정할 수 있다.</p>
                                     <ul>

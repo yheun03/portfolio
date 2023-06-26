@@ -26,22 +26,17 @@ $(document).ready(()=>{
 
     // NOTE: .area-project 내부의 기능
     // 최초개발일 : 20230525
-    // 수  정  일 : 20230530
-    let showProject = $("#showProject");
-    showProject.change(()=>{
-        console.log(this.value)
+    // 수  정  일 : 20230626
+    $(".slick").slick({
+        dots: true,
+        prevArrow: $('.nav li:first-child a'),
+        nextArrow: $('.nav li:last-child a')
     })
-    let project_list = $(".wrap-dscpt > div > div");
-    for(let i = 1; i < project_list.length + 1; i++){
-        $(".progress li:nth-child("+ i +") a").click(()=>{
-            $(".screen > div > img:nth-child("+i+")").show().siblings().hide();
-            $(".wrap-dscpt > div > div:nth-child("+i+")").show().siblings().hide();
-        })
-    }
 
     $("a[href='#']").click(()=>{
         return false;
     })
-
     // alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")
+
+
 })
