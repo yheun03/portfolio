@@ -228,7 +228,6 @@ footer {
                 gap: 244px;
             }
             &-dots{
-                display: none;
                 position: sticky;
                 top: var(--height-header);
                 left: 0;
@@ -236,6 +235,7 @@ footer {
                 display: flex;
                 z-index: 9;
                 background: var(--deepLightGray);
+                display: none !important;
             }
         }
     }
