@@ -78,10 +78,13 @@ footer {
     }
     span {
         font: 900 160px/190px var(--font);
-        color: transparent;
+        // color: transparent;
+        // -webkit-text-stroke: 2px var(--black);
         text-transform: uppercase;
-        -webkit-text-stroke: 2px var(--black);
-        text-shadow: -800px 190px var(--black), -1600px 380px var(--black), -2400px 570px var(--black);
+        text-shadow:
+            -800px 190px var(--black),
+            -1600px 380px var(--black),
+            -2400px 570px var(--black);
         &:not(:first-child)::before {
             content: "#";
         }
@@ -117,11 +120,16 @@ footer {
     img {
         filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
     }
-    span {
-        font: 700 40px/60px var(--font);
-        color: var(--black);
-        text-align: right;
-        margin-top: 10px;
+    .wrap{
+        &-title span {
+            font: 700 40px/60px var(--font);
+            color: var(--black);
+            text-align: right;
+            margin-top: 10px;
+        }
+        &-dscpt span{
+            text-decoration: underline;
+        }
     }
     a {
         border: 1px solid var(--black);

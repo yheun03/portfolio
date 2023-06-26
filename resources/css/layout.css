@@ -228,9 +228,7 @@ footer address {
 }
 .area-welcome span {
   font: 900 160px/190px var(--font);
-  color: transparent;
   text-transform: uppercase;
-  -webkit-text-stroke: 2px var(--black);
   text-shadow: -800px 190px var(--black), -1600px 380px var(--black), -2400px 570px var(--black);
 }
 .area-welcome span:not(:first-child)::before {
@@ -268,11 +266,14 @@ footer address {
 .area-intro img {
   filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
 }
-.area-intro span {
+.area-intro .wrap-title span {
   font: 700 40px/60px var(--font);
   color: var(--black);
   text-align: right;
   margin-top: 10px;
+}
+.area-intro .wrap-dscpt span {
+  text-decoration: underline;
 }
 .area-intro a {
   border: 1px solid var(--black);
