@@ -1,10 +1,6 @@
 @charset 'utf-8';
 @import "common";
 
-body {
-    min-width: 1660px;
-    
-}
 html,
 body {
     background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
@@ -147,9 +143,12 @@ footer {
     justify-content: center;
     gap: 155px;
     & > ul {
+        display: flex;
+        flex-wrap: wrap;
         flex: 0 790px;
-        & > li + li {
-            margin-top: 56px;
+        gap: 54px 20px;
+        & > li{
+            flex: 1 1 calc(50% - 20px)
         }
     }
     span {
@@ -165,6 +164,7 @@ footer {
 }
 .area-working {
     & > ul > li {
+        flex-basis: 100%;
         list-style-type: "✓ ";
     }
 }
@@ -221,8 +221,6 @@ footer {
     }
     .slick{
         width: 100%;
-        // display: flex;
-        // flex-direction: column-reverse;
         margin: 0;
         max-width: unset;
         &-list{
