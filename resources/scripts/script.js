@@ -31,17 +31,17 @@ $(document).ready(()=>{
     showProject.change(()=>{
         console.log(this.value)
     })
-    // let project_list = $(".wrap-dscpt > div > div");
-    // for(let i = 1; i < project_list.length + 1; i++){
-    //     $(".progress li:nth-child("+ i +") a").click(()=>{
-    //         $(".screen > div > img:nth-child("+i+")").show().siblings().hide();
-    //         $(".wrap-dscpt > div > div:nth-child("+i+")").show().siblings().hide();
-    //     })
-    // }
+    let project_list = $(".wrap-dscpt > div > div");
+    for(let i = 1; i < project_list.length + 1; i++){
+        $(".progress li:nth-child("+ i +") a").click(()=>{
+            $(".screen > div > img:nth-child("+i+")").show().siblings().hide();
+            $(".wrap-dscpt > div > div:nth-child("+i+")").show().siblings().hide();
+        })
+    }
 
     $("a[href='#']").click(()=>{
         return false;
     })
 
-    alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")
+    // alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다.")
 })
