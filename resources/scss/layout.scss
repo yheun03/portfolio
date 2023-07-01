@@ -316,10 +316,20 @@ footer {
         h2 {
             flex: unset;
         }
-        & > div > div {
+        & > div > div[data-prjName] {
             display: none;
             &:first-child {
                 display: block;
+            }
+            &[data-prjName='inu'] {
+                li{
+                    background-color: rgba(249, 187, 23, 0.4);
+                }
+            }
+            &[data-prjName='tailim'] {
+                li{
+                    background-color: rgba(62, 71, 205, 0.4);
+                }
             }
         }
         li {
@@ -335,16 +345,6 @@ footer {
             color: var(--white);
             &:not(:first-child) {
                 margin-left: -44px;
-            }
-        }
-        [data-prjName='inu'] {
-            li{
-                background-color: rgba(249, 187, 23, 0.4);
-            }
-        }
-        [data-prjName='tailim'] {
-            li{
-                background-color: rgba(62, 71, 205, 0.4);
             }
         }
     }
