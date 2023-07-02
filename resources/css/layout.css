@@ -128,22 +128,17 @@ table {
   --height-header: 80px;
 }
 
-h1 {
+h1, h2 {
   font: 500 46px/80px var(--font);
   color: var(--black);
 }
 
 h2 {
-  flex: 0 385px;
-  font: 500 50px/80px var(--font);
-  color: var(--black);
   text-align: right;
 }
 
 b {
-  display: block;
   font: 800 20px/30px var(--font);
-  margin-bottom: 30px;
 }
 
 html,
@@ -214,7 +209,7 @@ footer address {
 }
 .area-welcome > div {
   display: flex;
-  animation: loop 10s linear infinite;
+  animation: loop 60s linear infinite;
 }
 .area-welcome > div div {
   display: flex;
@@ -262,11 +257,11 @@ footer address {
 .area-intro img {
   filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
 }
-.area-intro .wrap-title span {
-  font: 700 40px/60px var(--font);
-  color: var(--black);
+.area-intro .wrap-title > div h1 {
   text-align: right;
   margin-top: 10px;
+  font-weight: 700;
+  line-height: 100%;
 }
 .area-intro .wrap-dscpt span {
   text-decoration: underline;
@@ -298,6 +293,15 @@ footer address {
 .area-working > ul > li,
 .area-history > ul > li {
   flex: 1 1 calc(50% - 20px);
+}
+.area-working h2,
+.area-history h2 {
+  flex: 0 385px;
+}
+.area-working b,
+.area-history b {
+  display: block;
+  margin-bottom: 30px;
 }
 .area-working span:not(.letterSpacing),
 .area-history span:not(.letterSpacing) {

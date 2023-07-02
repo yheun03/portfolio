@@ -29,7 +29,10 @@
 // NOTE: Laptop L
 @media (max-width: 1440px   ){
     .area-intro{
-        // picture
+        img{
+            width: 280px;
+            height: auto;
+        }
     }
 
     .area-working,
