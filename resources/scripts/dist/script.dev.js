@@ -48,8 +48,8 @@ $(document).ready(function () {
   $(".prev").before($(".slick-dots"));
   $("a[href='#']").click(function () {
     return false;
-  });
-  alert("모바일 반응형과 애니메이션, 기능은 개발 중입니다.\n기다려 주셔서 감사합니다."); // NOTE: 유저 인터렉티브 효과 추가
+  }); // alert("모바일 반응형과 애니메이션은 개발 중입니다.\n기다려 주셔서 감사합니다.")
+  // NOTE: 유저 인터렉티브 효과 추가
   // 최초개발일 : 20230702
   // 수  정  일 : -
 
