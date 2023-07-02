@@ -64,7 +64,7 @@ footer {
     overflow: hidden;
     & > div {
         display: flex;
-        animation: loop 60s linear infinite;
+        animation: loop 10s linear infinite;
         div {
             display: flex;
             gap: 75px;
@@ -80,14 +80,26 @@ footer {
         text-shadow:
             -800px 190px var(--black),
             -1600px 380px var(--black),
-            -2400px 570px var(--black);
+            -2400px 570px var(--black),
+            
+            5015px 0 var(--black),
+            4215px 190px var(--black),
+            3415px 380px var(--black),
+            2615px 570px var(--black),
+
+            -5015px 0 var(--black),
+            -5815px 190px var(--black),
+            -6615px 380px var(--black),
+            -7415px 570px var(--black)
+            
+            ;
         &:not(:first-child)::before {
             content: "#";
         }
     }
     @keyframes loop {
         100% {
-            transform: translateX(calc(-4940.63px - 75px));
+            transform: translateX(calc(-4940px - 75px));
         }
     }
 }
