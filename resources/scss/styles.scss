@@ -46,10 +46,28 @@
     .area-history > ul > li{
         flex-direction: column;
     }
-    .area-projects{
-        display: none;
+    // .area-projects{
+    //     display: none;
+    // }
+    // h1, h2 {
+    //     font-size: 30px;
+    //     line-height: 162%;
+    // }
+    // h2{
+    //     text-align: right;
+    // }
+    // b{
+    //     font: 800 20px/30px var(--font);
+    // }
+}
+
+// CUSTOM
+@media (max-width: 1600px   ){
+    .area-projects .slick-slide{
+        gap: 100px;
     }
 }
+
 // NOTE: 4K
 // @media (max-width: 2560px   ){
 

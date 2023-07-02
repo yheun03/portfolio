@@ -431,9 +431,7 @@ footer address {
 .area-projects .screen {
   position: relative;
   width: 426px;
-  min-width: 426px;
-  height: 880px;
-  padding: 18px 21px;
+  aspect-ratio: 1/2.0657276995;
 }
 .area-projects .screen * {
   width: 100%;
@@ -446,11 +444,8 @@ footer address {
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 5.6% 4.7%;
   object-fit: contain;
-  display: none;
-}
-.area-projects .screen img:first-child {
-  display: block;
 }
 .area-projects .screen .mockup {
   position: absolute;
@@ -481,7 +476,7 @@ footer address {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: min(212px, 36%);
+  width: min(212px, 35%);
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.64);
