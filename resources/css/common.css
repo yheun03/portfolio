@@ -127,20 +127,15 @@ table {
   --height-header: 80px;
 }
 
-h1 {
+h1, h2 {
   font: 500 46px/80px var(--font);
   color: var(--black);
 }
 
 h2 {
-  flex: 0 385px;
-  font: 500 50px/80px var(--font);
-  color: var(--black);
   text-align: right;
 }
 
 b {
-  display: block;
   font: 800 20px/30px var(--font);
-  margin-bottom: 30px;
 }
