@@ -7,10 +7,13 @@
 }
 // NOTE: Mobile M
 @media (max-width: 375px    ){
-
 }
 // NOTE: Mobile L
 @media (max-width: 425px    ){
+    body > div,
+    section > div{
+        padding: 100px 20px;
+    }
 
 }
 // NOTE: Tablet

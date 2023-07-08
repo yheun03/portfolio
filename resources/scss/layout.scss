@@ -33,11 +33,6 @@ header {
         max-height: 100%;
         font: 500 12px/14px var(--font);
         color: var(--black);
-        &.logo {
-            width: 45px;
-            height: 45px;
-            border: 1px solid var(--black);
-        }
     }
     span {
         transform: rotate(90deg) translate(70px, -120px);
@@ -129,11 +124,10 @@ footer {
         filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
     }
     .wrap{
-        &-title > div h1 {
+        &-title span {
             text-align: right;
+            font: 700 46px/1 var(--font);
             margin-top: 10px;
-            font-weight: 700;
-            line-height: 100%;
         }
         &-dscpt span{
             text-decoration: underline;
