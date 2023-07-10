@@ -1,0 +1,16 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_626_26)">
+<rect width="50" height="500" rx="25" fill="black"/>
+<path d="M450 25C450 11.1929 461.193 0 475 0V0C488.807 0 500 11.1929 500 25V475C500 488.807 488.807 500 475 500V500C461.193 500 450 488.807 450 475V25Z" fill="black"/>
+<rect x="500" y="225" width="50" height="500" rx="25" transform="rotate(90 500 225)" fill="black"/>
+<rect x="225" y="250" width="50" height="250" rx="25" fill="black"/>
+<rect y="500" width="50" height="275" rx="25" transform="rotate(-90 0 500)" fill="black"/>
+<rect y="50" width="50" height="275" rx="25" transform="rotate(-90 0 50)" fill="black"/>
+<path d="M25 25L250 250L475 25" stroke="black" stroke-width="50"/>
+</g>
+<defs>
+<clipPath id="clip0_626_26">
+<rect width="500" height="500" fill="white"/>
+</clipPath>
+</defs>
+</svg>
