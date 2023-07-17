@@ -7,12 +7,12 @@ body {
     background: -webkit-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
     background: -moz-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
     background: -o-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
+    position: relative;
 }
-body > div,
 section > div {
+    position: relative;
     padding: 160px 64px;
     background-color: var(--white);
-    position: relative;
     & > div{
         max-width: 1920px;
         margin: auto;
@@ -34,8 +34,8 @@ header {
         font: 500 12px/14px var(--font);
         color: var(--black);
     }
-    span {
-        transform: rotate(90deg) translate(70px, -120px);
+    .email {
+        opacity: 0;
     }
 }
 footer {

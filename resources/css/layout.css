@@ -147,15 +147,14 @@ body {
   background: -webkit-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
   background: -moz-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
   background: -o-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
-}
-
-body > div,
-section > div {
-  padding: 160px 64px;
-  background-color: var(--white);
   position: relative;
 }
-body > div > div,
+
+section > div {
+  position: relative;
+  padding: 160px 64px;
+  background-color: var(--white);
+}
 section > div > div {
   max-width: 1920px;
   margin: auto;
@@ -178,8 +177,8 @@ header > * {
   font: 500 12px/14px var(--font);
   color: var(--black);
 }
-header span {
-  transform: rotate(90deg) translate(70px, -120px);
+header .email {
+  opacity: 0;
 }
 
 footer {
