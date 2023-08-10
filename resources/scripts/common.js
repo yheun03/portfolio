@@ -24,9 +24,10 @@ $(document).ready(()=>{
         target.attr("title", "단순 입퇴사일 계산 : "+year_2+"년 "+month_2+"개월차")
     }
 
-    // NOTE: .area-project 내부의 기능
+    // NOTE: .area-project 내부의 기능  -- 삭제
     // 최초개발일 : 20230525
     // 수  정  일 : 20230627
+    // 최종수정일 : 20230810
     $(".slick").slick({
         dots: true,
         customPaging : function(slider, i) {
