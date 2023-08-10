@@ -363,13 +363,7 @@ footer address {
 .area-projects .slick-slide {
   display: flex !important;
   padding: 0 100px;
-  opacity: 0.2;
-  transform: scale(0.8);
   transition: 0.2s;
-}
-.area-projects .slick-slide.slick-active {
-  opacity: 1;
-  transform: unset;
 }
 .area-projects .slick-slide > div {
   flex: 1;
