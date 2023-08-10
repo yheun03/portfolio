@@ -242,12 +242,12 @@ footer {
             display: flex !important;
             // margin: 0 100px;
             padding: 0 100px;
-            opacity: 0.2;
-            transform: scale(.8);
+            // opacity: 0.2;
+            // transform: scale(.8);
             transition: .2s;
             &.slick-active{
-                opacity: 1;
-                transform: unset;
+                // opacity: 1;
+                // transform: unset;
             }
             & > div{
                 flex: 1;
