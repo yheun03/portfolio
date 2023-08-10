@@ -240,7 +240,6 @@ footer {
         // }
         &-slide {
             display: flex !important;
-            align-items: flex-start;
             // margin: 0 100px;
             padding: 0 100px;
             opacity: 0.2;
@@ -258,7 +257,7 @@ footer {
         &-dots{
             display: flex;
             justify-content: center;
-            gap: 4px;
+            gap: 8px;
             margin-top: 64px;
             li{
                 width: 8px;
