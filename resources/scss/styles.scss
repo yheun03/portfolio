@@ -17,7 +17,13 @@
 }
 // NOTE: Tablet
 @media (max-width: 768px    ){
-
+    .area-projects{
+        .wrap-dscpt{   
+            a{
+                width: 100%;
+            }
+        }
+    }
 }
 // NOTE: Laptop
 @media (max-width: 1024px   ){
@@ -26,7 +32,31 @@
             flex-basis: 100%;
         }
     }
-
+    .area-projects{
+        .screen{
+            margin: {
+                right: 0;
+                bottom: 56px;
+            }
+        }
+        .wrap-dscpt{
+            h3{
+                font-size: 28px;
+            }
+            p{
+                font-size: 20px;
+            }
+            a{
+                margin: {
+                    top: 24px;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    .slick-slide{
+        flex-direction: column;
+    }
 }
 // NOTE: Laptop L
 @media (max-width: 1440px   ){
@@ -65,9 +95,9 @@
 
 // CUSTOM
 @media (max-width: 1600px   ){
-    .area-projects .slick-slide{
-        gap: 100px;
-    }
+    // .area-projects .slick-slide{
+    //     gap: 100px;
+    // }
 }
 
 // NOTE: 4K

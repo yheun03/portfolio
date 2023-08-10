@@ -34,19 +34,16 @@ $(document).ready(function () {
   // 최종수정일 : 20230810
 
 
-  $(".slick").slick({
+  $(".project-list").slick({
     dots: true,
-    customPaging: function customPaging(slider, i) {
-      return $(".slick-slide:nth-child(" + (i + 2) + ") p b").text();
-    },
     prevArrow: $('.nav.prev'),
     nextArrow: $('.nav.next')
   });
   var dom = $(".nav");
   dom.detach();
-  $(".slick").prepend(dom);
-  $(".slick-list").before($(".nav"));
-  $(".prev").before($(".slick-dots"));
+  $(".project-list").prepend(dom); // $(".slick-list").before($(".nav"))
+  // $(".prev").before($(".slick-dots"))
+
   $("a[href='#']").click(function () {
     return false;
   }); // alert("모바일 반응형과 애니메이션은 개발 중입니다.\n기다려 주셔서 감사합니다.")
