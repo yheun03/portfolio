@@ -28,20 +28,17 @@ $(document).ready(()=>{
     // 최초개발일 : 20230525
     // 수  정  일 : 20230627
     // 최종수정일 : 20230810
-    $(".slick").slick({
+    $(".project-list").slick({
         dots: true,
-        customPaging : function(slider, i) {
-            return $(".slick-slide:nth-child("+ (i + 2) +") p b").text();
-        },
         prevArrow: $('.nav.prev'),
         nextArrow: $('.nav.next')
     })
 
     var dom = $(".nav");
     dom.detach();
-    $(".slick").prepend(dom)
-    $(".slick-list").before($(".nav"))
-    $(".prev").before($(".slick-dots"))
+    $(".project-list").prepend(dom)
+    // $(".slick-list").before($(".nav"))
+    // $(".prev").before($(".slick-dots"))
     
     $("a[href='#']").click(()=>{
         return false;

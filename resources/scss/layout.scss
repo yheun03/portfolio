@@ -210,7 +210,6 @@ footer {
 
 .area-projects {
     padding: 0;
-    
     .nav {
         position: sticky;
         top: 50%;
@@ -230,17 +229,20 @@ footer {
             transform: rotate(180deg);
         }
     }
+
     .slick{
-        width: 100%;
-        margin: 0;
-        max-width: unset;
-        &-list{
-            padding: 160px calc((100vw - 1660px) / 2);
-        }
+        // width: 100%;
+        // margin: 0;
+        // max-width: unset;
+        // &-list{
+        //     width: 1200px;
+        //     margin: auto;
+        // }
         &-slide {
             display: flex !important;
-            gap: 244px;
-            margin: 0 200px;
+            align-items: flex-start;
+            // margin: 0 100px;
+            padding: 0 100px;
             opacity: 0.2;
             transform: scale(.8);
             transition: .2s;
@@ -248,110 +250,108 @@ footer {
                 opacity: 1;
                 transform: unset;
             }
-        }
-        &-dots{
-            position: sticky;
-            top: var(--height-header);
-            left: 0;
-            width: 100%;
-            display: flex;
-            z-index: 9;
-            background: var(--deepLightGray);
-            &::before{
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: var(--height-header);
-                bottom: 100%;
-                left: 0;
-                background-color: var(--deepLightGray);
-            }
-            & > li{
+            & > div{
                 flex: 1;
-                text-align: center;
-                font: 500 16px/30px var(--font);
-                padding: 0 20px;
+            }
+        }
+
+        &-dots{
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 64px;
+            li{
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: var(--deepLightGray);
+                text-indent: -9999px;
                 cursor: pointer;
-                opacity: .2;
-                transition: .2s;
                 &.slick-active{
-                    box-shadow: inset 0 2px 0 var(--black);
-                }
-                &.slick-active,
-                &:hover{
-                    opacity: 1;
-                    color: var(--black);
+                    background-color: var(--gray);
                 }
             }
         }
-    }
-    h2 {
-        text-align: left;
-    }
-    p {
-        margin: 60px 0;
-        flex: 1;
     }
     .screen {
         position: relative;
-        width: 426px;
-        // height: 880px;
-        aspect-ratio: 1/2.0657276995305165;
+        margin-right: 56px;
         & * {
             width: 100%;
             height: 100%;
             position: relative;
         }
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 5.6% 4.7%;
-            object-fit: contain;
+        &.pc{
+            aspect-ratio: 1/0.8424453280318092;
+            img{
+                padding: 2.4% 2.4% 28.2% 2.4%;
+                object-fit: cover;
+                object-position: top;
+            }
+            .mockup {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url(../images/iMac_Front.svg) center/contain no-repeat;
+            }
         }
-        .mockup {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: url(../images/iPhone.webp) center/contain no-repeat;
-        }
+        // &.mobile{
+        //     width: 426px;
+        //     aspect-ratio: 1/2.0657276995305165;
+        //     img {
+        //         position: absolute;
+        //         top: 0;
+        //         left: 0;
+        //         width: 100%;
+        //         height: 100%;
+        //         padding: 5.6% 4.7%;
+        //         object-fit: contain;
+        //     }
+        //     .mockup {
+        //         position: absolute;
+        //         top: 0;
+        //         left: 0;
+        //         background: url(../images/iPhone.webp) center/contain no-repeat;
+        //     }
+        // }
     }
-    .wrap-dscpt {
+    .wrap-dscpt{
         display: flex;
         flex-direction: column;
-        h2 {
-            flex: unset;
+        justify-content: space-between;
+        h3{
+            text-align: left;
         }
-        & > div > div[data-prjName] {
-            display: none;
-            &:first-child {
-                display: block;
-            }
-            &[data-prjName='inu'] {
-                li{
-                    background-color: rgba(249, 187, 23, 0.4);
-                }
-            }
-            &[data-prjName='tailim'] {
-                li{
-                    background-color: rgba(62, 71, 205, 0.4);
-                }
+        p{
+            font-size: 20px;
+            margin-top: 8px;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+            li{
+                font-size: 14px;
+                padding: 0 12px;
+                border: 1px solid #0acdce40;
+                color: #0acdce;
+                border-radius: 30px;
             }
         }
-        li {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: min(212px, 35%);
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.64);
+        a{
+            margin-bottom: 28.2%;
+            display: inline-block;
+            width: 180px;
+            background-color: #0acdce40;
+            color: #0acdce;
             text-align: center;
-            color: var(--white);
-            &:not(:first-child) {
-                margin-left: -24px;
+            padding: 0 48px;
+            font: 700 18px/56px 'Pretendard';
+            border-radius: 30px;
+            &:hover {
+                background-color: #0acdce;
+                color: #222222;
             }
         }
     }
