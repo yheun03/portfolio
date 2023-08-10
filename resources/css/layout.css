@@ -266,18 +266,6 @@ footer address {
 }
 
 .area-working,
-.area-projects {
-  background-color: var(--deepLightGray);
-}
-
-.area-working b,
-.area-history b,
-.area-projects b {
-  display: block;
-  margin-bottom: 30px;
-}
-
-.area-working,
 .area-history {
   display: flex;
   justify-content: center;
@@ -294,6 +282,11 @@ footer address {
 .area-history > ul > li {
   flex: 1 1 calc(50% - 20px);
 }
+.area-working b,
+.area-history b {
+  display: block;
+  margin-bottom: 30px;
+}
 .area-working h2,
 .area-history h2 {
   flex: 0 385px;
@@ -309,6 +302,9 @@ footer address {
   letter-spacing: 4.61px;
 }
 
+.area-working {
+  background-color: var(--deepLightGray);
+}
 .area-working > ul > li {
   flex-basis: 100%;
   list-style-type: "✓ ";
