@@ -397,6 +397,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }), null !== e.$dots && (e.$slides.not(e.$slideTrack.find(".slick-cloned")).each(function (t) {
       var s = o.indexOf(t);
       i(this).attr({
+        role: "tabpanel",
         id: "slick-slide" + e.instanceUid + t,
         tabindex: -1
       }), -1 !== s && i(this).attr({
@@ -405,7 +406,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }), e.$dots.attr("class", "slick-dots").find("li").each(function (s) {
       var n = o[s];
       i(this).find("button").first().attr({
+        role: "tab",
         id: "slick-slide-control" + e.instanceUid + s,
+        "aria-controls": "slick-slide" + e.instanceUid + n,
         "aria-label": s + 1 + " of " + t,
         "aria-selected": null,
         tabindex: "-1"
