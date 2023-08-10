@@ -461,6 +461,25 @@ section > div {
   }
 }
 @media (max-width: 1024px) {
+  .area-intro div.wrap-title {
+    height: 155px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .area-intro div.wrap-title h1 {
+    display: none;
+  }
+  .area-intro div.wrap-title div span {
+    display: none;
+  }
+  .area-intro div.wrap-dscpt p {
+    text-align: left;
+    margin-top: 20px;
+  }
+  .area-intro div.wrap-dscpt a {
+    display: none;
+  }
+
   .area-history > ul > li {
     flex-basis: 100%;
   }
