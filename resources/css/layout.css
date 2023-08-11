@@ -365,6 +365,9 @@ footer address {
   padding: 0 100px;
   transition: 0.2s;
 }
+.area-projects .slick-slide:focus {
+  cursor: ew-resize;
+}
 .area-projects .slick-slide > div {
   flex: 1;
 }
