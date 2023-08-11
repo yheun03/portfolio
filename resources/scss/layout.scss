@@ -249,6 +249,9 @@ footer {
                 // opacity: 1;
                 // transform: unset;
             // }
+            &:focus{
+                cursor: ew-resize;
+            }
             & > div{
                 flex: 1;
             }

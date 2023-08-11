@@ -365,6 +365,9 @@ footer address {
   padding: 0 100px;
   transition: 0.2s;
 }
+.area-projects .slick-slide:focus {
+  cursor: ew-resize;
+}
 .area-projects .slick-slide > div {
   flex: 1;
 }
@@ -449,18 +452,52 @@ footer address {
   color: #222222;
 }
 
-@media (max-width: 425px) {
-  body > div,
-section > div {
-    padding: 100px 20px;
+@media (max-width: 1440px) {
+  .area-intro img {
+    width: 280px;
+    height: auto;
   }
-}
-@media (max-width: 768px) {
-  .area-projects .wrap-dscpt a {
-    width: 100%;
+
+  .area-working,
+.area-history {
+    flex-direction: column;
+  }
+  .area-working h2,
+.area-history h2 {
+    flex: unset;
+    text-align: unset;
+  }
+
+  .area-history > ul > li {
+    flex-direction: column;
   }
 }
 @media (max-width: 1024px) {
+  header {
+    padding: 0 10px;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 46px;
+  }
+
+  b {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  section > div {
+    padding: 100px 64px;
+  }
+
+  .area-welcome {
+    height: 570px;
+  }
+
+  .area-intro img {
+    width: 200px;
+  }
   .area-intro div.wrap-title {
     height: 155px;
     flex-direction: column-reverse;
@@ -480,8 +517,19 @@ section > div {
     display: none;
   }
 
+  .area-working b {
+    margin-bottom: 18px;
+  }
+  .area-working ul {
+    gap: unset;
+  }
+
   .area-history > ul > li {
     flex-basis: 100%;
+  }
+
+  .area-working, .area-history {
+    gap: 55px;
   }
 
   .area-projects .screen {
@@ -498,28 +546,41 @@ section > div {
     margin-top: 24px;
     margin-bottom: 0;
   }
+  .area-projects .nav {
+    width: 64px;
+    height: 64px;
+  }
+  .area-projects .slick-slide {
+    padding: 64px;
+  }
 
   .slick-slide {
     flex-direction: column;
   }
 }
-@media (max-width: 1440px) {
-  .area-intro img {
-    width: 280px;
-    height: auto;
+@media (max-width: 768px) {
+  .area-welcome {
+    height: 320px;
+  }
+  .area-welcome > div {
+    display: none;
+    visibility: hidden;
   }
 
-  .area-working,
-.area-history {
-    flex-direction: column;
+  .area-projects .wrap-dscpt a {
+    width: 100%;
   }
-  .area-working h2,
-.area-history h2 {
-    flex: unset;
-    text-align: unset;
+  .area-projects .nav {
+    width: 50px;
+    height: 50px;
   }
-
-  .area-history > ul > li {
-    flex-direction: column;
+  .area-projects .slick-slide {
+    padding: 50px;
+  }
+}
+@media (max-width: 425px) {
+  body > div,
+section > div {
+    padding: 100px 20px;
   }
 }
