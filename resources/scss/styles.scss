@@ -44,11 +44,11 @@
     }
     h2{
         font-size: 30px;
-        line-height: 46px;
+        // line-height: 46px;
     }
     b{
         font-size: 18px;
-        line-height: 27px;
+        // line-height: 27px;
     }
     section > div{
         padding: 100px 64px;
@@ -141,6 +141,10 @@
 
 // NOTE: Tablet
 @media (max-width: 768px    ){
+    body > div,
+    section > div{
+        padding: 100px 32px;
+    }
     .area-welcome{
         height: 320px;
         & > div{
@@ -169,10 +173,6 @@
 
 // NOTE: Mobile L
 @media (max-width: 425px    ){
-    body > div,
-    section > div{
-        padding: 100px 20px;
-    }
 }
 
 // NOTE: Mobile M
