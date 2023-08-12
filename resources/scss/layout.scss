@@ -31,7 +31,7 @@ header {
     z-index: 10;
     & > * {
         max-height: 100%;
-        font: 500 12px/14px var(--font);
+        font: 500 12px/1 var(--font);
         color: var(--black);
     }
     .email {
@@ -43,7 +43,7 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 100px 0;
-    font: 500 14px/18px var(--font);
+    font: 500 14px/130% var(--font);
     address {
         font-size: 12px;
         line-height: 14px;
@@ -143,12 +143,13 @@ footer {
 .area-history {
     display: flex;
     justify-content: center;
-    gap: 155px;
+    gap: 120px;
     & > ul {
         display: flex;
         flex-wrap: wrap;
-        flex: 0 790px;
+        flex: 1;
         gap: 54px 20px;
+        margin-top: 16px;
         & > li{
             flex: 1 1 calc(50% - 20px)
         }
@@ -158,7 +159,7 @@ footer {
         margin-bottom: 30px;
     }
     h2{
-	    flex: 0 385px;
+	    flex: 0 375px;
     }
     span {
         &:not(.letterSpacing) {

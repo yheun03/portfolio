@@ -129,7 +129,7 @@ table {
 }
 
 h1, h2 {
-  font: 500 46px/80px var(--font);
+  font: 500 46px/176% var(--font);
   color: var(--black);
 }
 
@@ -142,7 +142,7 @@ h3 {
 }
 
 b {
-  font: 800 20px/30px var(--font);
+  font: 800 20px/150% var(--font);
 }
 
 html,
@@ -178,7 +178,7 @@ header {
 }
 header > * {
   max-height: 100%;
-  font: 500 12px/14px var(--font);
+  font: 500 12px/1 var(--font);
   color: var(--black);
 }
 header .email {
@@ -190,7 +190,7 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 100px 0;
-  font: 500 14px/18px var(--font);
+  font: 500 14px/130% var(--font);
 }
 footer address {
   font-size: 12px;
@@ -273,14 +273,15 @@ footer address {
 .area-history {
   display: flex;
   justify-content: center;
-  gap: 155px;
+  gap: 120px;
 }
 .area-working > ul,
 .area-history > ul {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 790px;
+  flex: 1;
   gap: 54px 20px;
+  margin-top: 16px;
 }
 .area-working > ul > li,
 .area-history > ul > li {
@@ -293,7 +294,7 @@ footer address {
 }
 .area-working h2,
 .area-history h2 {
-  flex: 0 385px;
+  flex: 0 375px;
 }
 .area-working span:not(.letterSpacing),
 .area-history span:not(.letterSpacing) {
