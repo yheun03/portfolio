@@ -29,6 +29,8 @@ $(document).ready(()=>{
     // 수  정  일 : 20230627
     // 최종수정일 : 20230810
     $(".project-list").slick({
+        fade: true,
+        centerMode: true,
         dots: true,
         prevArrow: $('.nav.prev'),
         nextArrow: $('.nav.next')

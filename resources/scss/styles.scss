@@ -22,6 +22,13 @@
     .area-history > ul > li{
         flex-direction: column;
     }
+    .area-projects{
+        .slick{
+            &-slide{
+                padding: 0 100px;
+            }
+        }
+    }
     // .area-projects{
     //     display: none;
     // }
