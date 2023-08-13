@@ -81,10 +81,11 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: 500 16px/30px var(--font);
+  font: 500 16px/180% var(--font);
   vertical-align: baseline;
   box-sizing: border-box;
   text-decoration: none;
+  word-break: keep-all;
 }
 
 /* HTML5 display-role reset for older browsers */
