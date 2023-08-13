@@ -81,10 +81,11 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: 500 16px/30px var(--font);
+  font: 500 16px/180% var(--font);
   vertical-align: baseline;
   box-sizing: border-box;
   text-decoration: none;
+  word-break: keep-all;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -194,7 +195,6 @@ footer {
 }
 footer address {
   font-size: 12px;
-  line-height: 14px;
   color: #7D7D7D;
   margin-top: 16px;
 }
@@ -449,7 +449,7 @@ footer address {
   color: #0acdce;
   text-align: center;
   padding: 0 48px;
-  font: 700 18px/56px "Pretendard";
+  font: 700 18px/310% var(--font);
   border-radius: 30px;
 }
 .area-projects .wrap-dscpt a:hover {
