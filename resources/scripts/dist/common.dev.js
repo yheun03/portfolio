@@ -35,6 +35,8 @@ $(document).ready(function () {
 
 
   $(".project-list").slick({
+    fade: true,
+    centerMode: true,
     dots: true,
     prevArrow: $('.nav.prev'),
     nextArrow: $('.nav.next')

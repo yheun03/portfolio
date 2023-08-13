@@ -273,13 +273,13 @@ footer address {
 .area-history {
   display: flex;
   justify-content: center;
-  gap: 120px;
+  gap: 155px;
 }
 .area-working > ul,
 .area-history > ul {
   display: flex;
   flex-wrap: wrap;
-  flex: 1;
+  flex: 0 900px;
   gap: 54px 20px;
   margin-top: 16px;
 }
@@ -287,18 +287,22 @@ footer address {
 .area-history > ul > li {
   flex: 1 1 calc(50% - 20px);
 }
+.area-working > ul > li li,
+.area-history > ul > li li {
+  font-size: 14px;
+}
 .area-working b,
 .area-history b {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .area-working h2,
 .area-history h2 {
-  flex: 0 375px;
+  flex: 0 385px;
 }
 .area-working span:not(.letterSpacing),
 .area-history span:not(.letterSpacing) {
-  font-size: 12px;
+  font-size: 10px;
   color: var(--gray);
   margin-left: 4px;
 }
@@ -328,7 +332,7 @@ footer address {
   cursor: help;
 }
 .area-history [data-hstryfg=education]::after {
-  content: "* 일학습병행제로 전문학사 취득";
+  content: "* 일학습병행 사업으로 전문학사 취득";
   color: var(--red);
   font-size: 12px;
 }
@@ -363,7 +367,7 @@ footer address {
 }
 .area-projects .slick-slide {
   display: flex !important;
-  padding: 0 100px;
+  padding: 0 160px;
   transition: 0.2s;
 }
 .area-projects .slick-slide:focus {
