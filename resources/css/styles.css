@@ -81,11 +81,12 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: 500 16px/180% var(--font);
   vertical-align: baseline;
   box-sizing: border-box;
   text-decoration: none;
   word-break: keep-all;
+  font: 500 16px/180% var(--font);
+  color: var(--black);
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -120,7 +121,7 @@ table {
 :root {
   --font: "Pretendard";
   --black: #111111;
-  --gray: #757575;
+  --gray: #7D7D7D;
   --deepLightGray: #f6f6f6;
   --lightGray: #dcdcdc;
   --white: #ffffff;
@@ -146,19 +147,9 @@ b {
   font: 800 20px/150% var(--font);
 }
 
-html,
-body {
-  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
-  background: -webkit-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
-  background: -moz-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
-  background: -o-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, #111111 100%), var(--black);
-  position: relative;
-}
-
 section > div {
   position: relative;
   padding: 160px 64px;
-  background-color: var(--white);
 }
 section > div > div {
   max-width: 1920px;
@@ -182,20 +173,21 @@ header > * {
   font: 500 12px/1 var(--font);
   color: var(--black);
 }
-header .email {
-  opacity: 0;
-}
 
 footer {
   background-color: var(--black);
-  color: var(--white);
   text-align: center;
   padding: 100px 0;
-  font: 500 14px/130% var(--font);
+  font: 500 14px/120% var(--font);
+}
+footer p {
+  color: var(--white);
+  font: inherit;
 }
 footer address {
+  font: inherit;
   font-size: 12px;
-  color: #7D7D7D;
+  color: var(--gray);
   margin-top: 16px;
 }
 
@@ -205,11 +197,8 @@ footer address {
   background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), var(--white);
   overflow: hidden;
 }
-.area-welcome > div {
-  display: flex;
+.area-welcome div {
   animation: loop 60s linear infinite;
-}
-.area-welcome > div div {
   display: flex;
   gap: 75px;
   white-space: nowrap;
@@ -245,11 +234,9 @@ footer address {
 }
 .area-intro div.wrap-title div {
   margin-top: -520px;
-  z-index: 1;
 }
 .area-intro div.wrap-dscpt {
   align-items: flex-end;
-  color: var(--black);
   text-align: right;
 }
 .area-intro img {
@@ -266,7 +253,6 @@ footer address {
 .area-intro a {
   border: 1px solid var(--black);
   padding: 5px 10px;
-  color: inherit;
 }
 
 .area-working,
@@ -319,17 +305,8 @@ footer address {
   list-style-type: "✓ ";
 }
 
-.area-history > ul > li {
-  display: flex;
-}
-.area-history > ul > li > * {
-  flex: 1;
-}
-.area-history [data-hstryfg=career] li:last-child {
+.area-history [data-hstryfg=career] li + li {
   margin-top: 30px;
-}
-.area-history [data-hstryfg=career] b span {
-  cursor: help;
 }
 .area-history [data-hstryfg=education]::after {
   content: "* 일학습병행 사업으로 전문학사 취득";
@@ -345,6 +322,13 @@ footer address {
 
 .area-projects {
   padding: 0;
+}
+.area-projects h3 {
+  text-align: left;
+}
+.area-projects p {
+  font-size: 20px;
+  margin-top: 8px;
 }
 .area-projects .nav {
   position: sticky;
@@ -368,9 +352,10 @@ footer address {
 .area-projects .slick-slide {
   display: flex !important;
   padding: 0 160px;
+  gap: 56px;
   transition: 0.2s;
 }
-.area-projects .slick-slide:focus {
+.area-projects .slick-slide:focus, .area-projects .slick-slide:hover {
   cursor: ew-resize;
 }
 .area-projects .slick-slide > div {
@@ -379,7 +364,9 @@ footer address {
 .area-projects .slick-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
+  height: 16px;
+  gap: 12px;
   margin-top: 64px;
 }
 .area-projects .slick-dots li {
@@ -389,13 +376,15 @@ footer address {
   background-color: var(--deepLightGray);
   text-indent: -9999px;
   cursor: pointer;
+  transition: 0.2s;
 }
 .area-projects .slick-dots li.slick-active {
   background-color: var(--gray);
+  transform: scale(1.25);
+  box-shadow: 0px 0px 6px var(--gray);
 }
 .area-projects .screen {
   position: relative;
-  margin-right: 56px;
 }
 .area-projects .screen * {
   width: 100%;
@@ -415,13 +404,6 @@ footer address {
   top: 0;
   left: 0;
   background: url(../images/iMac_Front.svg) center/contain no-repeat;
-}
-.area-projects h3 {
-  text-align: left;
-}
-.area-projects p {
-  font-size: 20px;
-  margin-top: 8px;
 }
 .area-projects .wrap-dscpt {
   display: flex;
