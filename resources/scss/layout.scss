@@ -136,6 +136,9 @@ footer {
             flex: 1 1 calc(50% - 20px);
             li{
                 font-size: 14px;
+                *{
+                    font: inherit;
+                }
             }
         }
     }
@@ -153,7 +156,7 @@ footer {
             margin-left: 4px;
         }
         &.letterSpacing {
-            letter-spacing: 4.61px;
+            letter-spacing: 4px;
         }
     }
 }
