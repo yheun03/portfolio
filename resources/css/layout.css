@@ -139,7 +139,7 @@ h2 {
 }
 
 h3 {
-  font: 700 32px/normal "Pretendard";
+  font: 600 32px/100% var(--font);
 }
 
 b {
@@ -416,17 +416,17 @@ footer address {
   left: 0;
   background: url(../images/iMac_Front.svg) center/contain no-repeat;
 }
+.area-projects h3 {
+  text-align: left;
+}
+.area-projects p {
+  font-size: 20px;
+  margin-top: 8px;
+}
 .area-projects .wrap-dscpt {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.area-projects .wrap-dscpt h3 {
-  text-align: left;
-}
-.area-projects .wrap-dscpt p {
-  font-size: 20px;
-  margin-top: 8px;
 }
 .area-projects .wrap-dscpt ul {
   display: flex;
