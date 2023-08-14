@@ -4,10 +4,10 @@
 // NOTE: Laptop L
 @media (max-width: 1440px   ){
     .area-intro{
+        img{
+            width: 280px;
+        }
         .wrap-title{
-            img{
-                width: 280px;
-            }
             span{
                 font-size: 30px;
             }
@@ -31,7 +31,6 @@
         ul{
             flex: unset;
             margin: 0;
-            gap: 40px;
         }
     }
     .area-projects{
@@ -78,18 +77,17 @@
                 }
             }
             &-dscpt{
+                flex-direction: row-reverse;
                 p{
                     text-align: left;
                     margin-top: 20px;
                 }
-                a{
-                    display: none;
-                }
             }
         }
     }
-    
-    .area-working{
+    .area-working,
+    .area-history{
+        gap: 55px;
         b{
             margin-bottom: 18px;
         }
@@ -98,15 +96,6 @@
                 flex-basis: 100%;
             }
         }
-    }
-    .area-history > ul{
-        & > li{
-            flex-basis: 100%;
-        }
-    }
-    .area-working,
-    .area-history{
-        gap: 55px;
     }
     .area-projects{
         $nav-size : 64px;
@@ -133,12 +122,11 @@
         }
         .slick{
             &-slide{
-                padding: $nav-size;
+                flex-direction: column;
+                gap: unset;
+                padding: 0 $nav-size;
             }
         }
-    }
-    .slick-slide{
-        flex-direction: column;
     }
 }
 
