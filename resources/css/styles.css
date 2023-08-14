@@ -416,17 +416,17 @@ footer address {
   left: 0;
   background: url(../images/iMac_Front.svg) center/contain no-repeat;
 }
+.area-projects h3 {
+  text-align: left;
+}
+.area-projects p {
+  font-size: 20px;
+  margin-top: 8px;
+}
 .area-projects .wrap-dscpt {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.area-projects .wrap-dscpt h3 {
-  text-align: left;
-}
-.area-projects .wrap-dscpt p {
-  font-size: 20px;
-  margin-top: 8px;
 }
 .area-projects .wrap-dscpt ul {
   display: flex;
@@ -531,7 +531,7 @@ footer address {
     margin-bottom: 18px;
   }
   .area-working ul {
-    gap: unset;
+    flex: unset;
   }
 
   .area-history > ul > li {
@@ -546,10 +546,10 @@ footer address {
     margin-right: 0;
     margin-bottom: 56px;
   }
-  .area-projects .wrap-dscpt h3 {
+  .area-projects h3 {
     font-size: 24px;
   }
-  .area-projects .wrap-dscpt p {
+  .area-projects p {
     font-size: 16px;
   }
   .area-projects .wrap-dscpt a {
@@ -595,5 +595,36 @@ section > div {
   }
   .area-projects .slick-slide {
     padding: 50px;
+  }
+}
+@media (max-width: 600px) {
+  h1,
+h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  b {
+    font-size: 16px;
+  }
+
+  .wrap-dscpt p,
+footer p {
+    font-size: 14px;
+  }
+  .wrap-dscpt p span,
+footer p span {
+    font-size: inherit;
+  }
+
+  footer {
+    padding: 64px 0;
+  }
+
+  .area-working b {
+    margin-bottom: 10px;
   }
 }

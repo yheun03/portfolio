@@ -323,17 +323,17 @@ footer {
         //     }
         // }
     }
+    h3{
+        text-align: left;
+    }
+    p{
+        font-size: 20px;
+        margin-top: 8px;
+    }
     .wrap-dscpt{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        h3{
-            text-align: left;
-        }
-        p{
-            font-size: 20px;
-            margin-top: 8px;
-        }
         ul{
             display: flex;
             flex-wrap: wrap;
