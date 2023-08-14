@@ -241,6 +241,7 @@ footer address {
 }
 .area-intro img {
   filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
+  height: auto;
 }
 .area-intro .wrap-title span {
   text-align: right;
