@@ -278,8 +278,8 @@ footer address {
 .area-history > ul > li li {
   font-size: 14px;
 }
-.area-working > ul > li li *,
-.area-history > ul > li li * {
+.area-working > ul > li li > span,
+.area-history > ul > li li > span {
   font: inherit;
 }
 .area-working b,
@@ -613,9 +613,6 @@ footer p span {
     padding: 100px 24px;
   }
 
-  .area-intro img {
-    width: 200px;
-  }
   .area-intro div.wrap-dscpt {
     flex-direction: row;
   }
