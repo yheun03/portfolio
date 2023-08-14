@@ -1,18 +1,9 @@
 @charset 'utf-8';
 @import "common";
 
-html,
-body {
-    background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
-    background: -webkit-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
-    background: -moz-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
-    background: -o-linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(17, 17, 17, 17) 100%), var(--black);
-    position: relative;
-}
 section > div {
     position: relative;
     padding: 160px 64px;
-    background-color: var(--white);
     & > div{
         max-width: 1920px;
         margin: auto;
@@ -34,19 +25,20 @@ header {
         font: 500 12px/1 var(--font);
         color: var(--black);
     }
-    .email {
-        opacity: 0;
-    }
 }
 footer {
     background-color: var(--black);
-    color: var(--white);
     text-align: center;
     padding: 100px 0;
-    font: 500 14px/130% var(--font);
+    font: 500 14px/120% var(--font);
+    p{
+        color: var(--white);
+        font: inherit;
+    }
     address {
+        font: inherit;
         font-size: 12px;
-        color: #7D7D7D;
+        color: var(--gray);
         margin-top: 16px;
     }
 }
@@ -56,20 +48,15 @@ footer {
     padding: 0;
     background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), var(--white);
     overflow: hidden;
-    & > div {
-        display: flex;
+    div {
         animation: loop 60s linear infinite;
-        div {
-            display: flex;
-            gap: 75px;
-            white-space: nowrap;
-            margin-right: 75px;
-        }
+        display: flex;
+        gap: 75px;
+        white-space: nowrap;
+        margin-right: 75px;
     }
     span {
         font: 900 160px/190px var(--font);
-        // color: transparent;
-        // -webkit-text-stroke: 2px var(--black);
         text-transform: uppercase;
         text-shadow:
             -800px 190px var(--black),
@@ -84,9 +71,7 @@ footer {
             -5015px 0 var(--black),
             -5815px 190px var(--black),
             -6615px 380px var(--black),
-            -7415px 570px var(--black)
-            
-            ;
+            -7415px 570px var(--black);
         &:not(:first-child)::before {
             content: "#";
         }
@@ -110,12 +95,10 @@ footer {
             }
             div {
                 margin-top: -520px;
-                z-index: 1;
             }
         }
         &.wrap-dscpt {
             align-items: flex-end;
-            color: var(--black);
             text-align: right;
         }
     }
@@ -135,7 +118,6 @@ footer {
     a {
         border: 1px solid var(--black);
         padding: 5px 10px;
-        color: inherit;
     }
 }
 .area-working,
@@ -143,12 +125,10 @@ footer {
     display: flex;
     justify-content: center;
     gap: 155px;
-    // gap: 120px;
     & > ul {
         display: flex;
         flex-wrap: wrap;
         flex: 0 900px;
-        // flex: 1;
         gap: 54px 20px;
         margin-top: 16px;
         & > li{
@@ -164,7 +144,6 @@ footer {
     }
     h2{
         flex: 0 385px;
-	    // flex: 0 375px;
     }
     span {
         &:not(.letterSpacing) {
@@ -185,18 +164,9 @@ footer {
     }
 }
 .area-history {
-    & > ul > li {
-        display: flex;
-        & > * {
-            flex: 1;
-        }
-    }
     [data-hstryfg='career'] {
-        li:last-child {
+        li + li {
             margin-top: 30px;
-        }
-        b span {
-            cursor: help;
         }
     }
     [data-hstryfg='education'] {
@@ -216,6 +186,13 @@ footer {
 
 .area-projects {
     padding: 0;
+    h3{
+        text-align: left;
+    }
+    p{
+        font-size: 20px;
+        margin-top: 8px;
+    }
     .nav {
         position: sticky;
         top: 50%;
@@ -235,38 +212,26 @@ footer {
             transform: rotate(180deg);
         }
     }
-
     .slick{
-        // width: 100%;
-        // margin: 0;
-        // max-width: unset;
-        // &-list{
-        //     width: 1200px;
-        //     margin: auto;
-        // }
         &-slide {
             display: flex !important;
-            // margin: 0 100px;
             padding: 0 160px;
-            // opacity: 0.2;
-            // transform: scale(.8);
+            gap: 56px;
             transition: .2s;
-            // &.slick-active{
-                // opacity: 1;
-                // transform: unset;
-            // }
-            &:focus{
+            &:focus,
+            &:hover{
                 cursor: ew-resize;
             }
             & > div{
                 flex: 1;
             }
         }
-
         &-dots{
             display: flex;
             justify-content: center;
-            gap: 8px;
+            align-items: center;
+            height: 16px;
+            gap: 12px;
             margin-top: 64px;
             li{
                 width: 8px;
@@ -275,15 +240,17 @@ footer {
                 background-color: var(--deepLightGray);
                 text-indent: -9999px;
                 cursor: pointer;
+                transition: .2s;
                 &.slick-active{
                     background-color: var(--gray);
+                    transform: scale(1.25);
+                    box-shadow: 0px 0px 6px var(--gray);
                 }
             }
         }
     }
     .screen {
         position: relative;
-        margin-right: 56px;
         & * {
             width: 100%;
             height: 100%;
@@ -303,32 +270,6 @@ footer {
                 background: url(../images/iMac_Front.svg) center/contain no-repeat;
             }
         }
-        // &.mobile{
-        //     width: 426px;
-        //     aspect-ratio: 1/2.0657276995305165;
-        //     img {
-        //         position: absolute;
-        //         top: 0;
-        //         left: 0;
-        //         width: 100%;
-        //         height: 100%;
-        //         padding: 5.6% 4.7%;
-        //         object-fit: contain;
-        //     }
-        //     .mockup {
-        //         position: absolute;
-        //         top: 0;
-        //         left: 0;
-        //         background: url(../images/iPhone.webp) center/contain no-repeat;
-        //     }
-        // }
-    }
-    h3{
-        text-align: left;
-    }
-    p{
-        font-size: 20px;
-        margin-top: 8px;
     }
     .wrap-dscpt{
         display: flex;

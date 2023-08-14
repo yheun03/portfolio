@@ -80,11 +80,12 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: 500 16px/180% var(--font);
   vertical-align: baseline;
   box-sizing: border-box;
   text-decoration: none;
   word-break: keep-all;
+  font: 500 16px/180% var(--font);
+  color: var(--black);
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -119,7 +120,7 @@ table {
 :root {
   --font: "Pretendard";
   --black: #111111;
-  --gray: #757575;
+  --gray: #7D7D7D;
   --deepLightGray: #f6f6f6;
   --lightGray: #dcdcdc;
   --white: #ffffff;
