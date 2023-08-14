@@ -306,8 +306,8 @@ footer address {
   list-style-type: "✓ ";
 }
 
-.area-history [data-hstryfg=career] li + li {
-  margin-top: 30px;
+.area-history [data-hstryfg=career] li + li:not(:nth-child(2)) {
+  margin-top: 20px;
 }
 .area-history [data-hstryfg=education]::after {
   content: "* 일학습병행 사업으로 전문학사 취득";
@@ -450,6 +450,7 @@ footer address {
 
   .area-working ul li {
     flex-basis: calc(50% - 20px);
+    list-style: none;
   }
 
   .area-working,
@@ -490,7 +491,7 @@ footer address {
   }
 
   section > div {
-    padding: 100px 64px;
+    padding: 100px 30px;
   }
 
   .area-welcome {
@@ -529,15 +530,28 @@ footer address {
 .area-history ul li {
     flex-basis: 100%;
   }
+  .area-working ul[data-hstryfg=career] li + li:not(:nth-child(2)),
+.area-history ul[data-hstryfg=career] li + li:not(:nth-child(2)) {
+    margin-top: 18px;
+  }
 
+  .area-projects p {
+    font-size: 16px;
+  }
+  .area-projects li {
+    font-size: 12px;
+  }
   .area-projects .screen {
     margin-right: 0;
     margin-bottom: 56px;
   }
-  .area-projects p {
-    font-size: 16px;
+  .area-projects .wrap-dscpt ul {
+    margin-top: 12px;
   }
   .area-projects .wrap-dscpt a {
+    font-size: 14px;
+    width: 150px;
+    padding: 0;
     margin-top: 24px;
     margin-bottom: 0;
   }
@@ -550,37 +564,11 @@ footer address {
     gap: unset;
     padding: 0 64px;
   }
+  .area-projects .slick-dots {
+    margin-top: 24px;
+  }
 }
 @media (max-width: 768px) {
-  body > div,
-section > div {
-    padding: 100px 32px;
-  }
-
-  .area-intro .wrap-title img {
-    width: 200px;
-  }
-
-  .area-welcome {
-    height: 320px;
-  }
-  .area-welcome > div {
-    display: none;
-    visibility: hidden;
-  }
-
-  .area-projects .wrap-dscpt a {
-    width: 100%;
-  }
-  .area-projects .nav {
-    width: 50px;
-    height: 50px;
-  }
-  .area-projects .slick-slide {
-    padding: 50px;
-  }
-}
-@media (max-width: 600px) {
   h1,
 h2 {
     font-size: 24px;
@@ -607,7 +595,93 @@ footer p span {
     padding: 64px 0;
   }
 
-  .area-working b {
+  section > div {
+    padding: 100px 24px;
+  }
+
+  .area-intro img {
+    width: 200px;
+  }
+  .area-intro div.wrap-dscpt {
+    flex-direction: row;
+  }
+  .area-intro div.wrap-dscpt a {
+    display: none;
+  }
+
+  .area-welcome {
+    height: 320px;
+  }
+  .area-welcome > div {
+    display: none;
+  }
+
+  .area-working b,
+.area-history b {
     margin-bottom: 10px;
+  }
+  .area-working ul[data-hstryfg=career] li + li:not(:nth-child(2)),
+.area-history ul[data-hstryfg=career] li + li:not(:nth-child(2)) {
+    margin-top: 10px;
+  }
+
+  .area-projects .wrap-dscpt a {
+    width: 100%;
+  }
+  .area-projects .nav {
+    width: 50px;
+    height: 50px;
+  }
+  .area-projects .nav:hover {
+    background-position: center;
+  }
+  .area-projects .slick-slide {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 425px) {
+  section > div {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .area-welcome {
+    height: 180px;
+  }
+
+  .area-intro img {
+    width: 140px;
+  }
+
+  .area-working,
+.area-history {
+    gap: 36px;
+  }
+  .area-working ul,
+.area-history ul {
+    gap: 24px;
+  }
+
+  .area-projects .nav {
+    width: 32px;
+    height: 32px;
+  }
+  .area-projects .slick-slide {
+    padding-inline: 32px;
+  }
+  .area-projects .slick-dots {
+    gap: 9px;
+  }
+  .area-projects .slick-dots li {
+    width: 6px;
+    height: 6px;
+  }
+  .area-projects .slick-dots li.slick-active {
+    box-shadow: 0px 0px 4px var(--gray);
   }
 }

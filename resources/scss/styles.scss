@@ -17,6 +17,7 @@
         ul{
             li{
                 flex-basis: calc(50% - 20px);
+                list-style: none;
             }
         }
     }
@@ -57,7 +58,7 @@
         font-size: 18px;
     }
     section > div{
-        padding: 100px 64px;
+        padding: 100px 30px;
     }
     .area-welcome{
         height: 570px;
@@ -95,21 +96,35 @@
             li{
                 flex-basis: 100%;
             }
+            &[data-hstryfg='career'] {
+                li + li:not(:nth-child(2)) {
+                    margin-top: 18px;
+                }
+            }
         }
     }
     .area-projects{
         $nav-size : 64px;
+        p{
+            font-size: 16px;
+        }
+        li{
+            font-size: 12px;
+        }
         .screen{
             margin: {
                 right: 0;
                 bottom: 56px;
             }
         }
-        p{
-            font-size: 16px;
-        }
         .wrap-dscpt{
+            ul{
+                margin-top: 12px;
+            }
             a{
+                font-size: 14px;
+                width: 150px;
+                padding: 0;
                 margin: {
                     top: 24px;
                     bottom: 0;
@@ -126,68 +141,15 @@
                 gap: unset;
                 padding: 0 $nav-size;
             }
+            &-dots{
+                margin-top: 24px;
+            }
         }
     }
 }
 
 // NOTE: Tablet
 @media (max-width: 768px    ){
-    body > div,
-    section > div{
-        padding: 100px 32px;
-    }
-    .area-intro{
-        .wrap-title{
-            img{
-                width: 200px;
-            }
-        }
-    }
-    .area-welcome{
-        height: 320px;
-        & > div{
-            display: none;
-            visibility: hidden;
-        }
-    }
-    .area-projects{
-        .wrap-dscpt{   
-            a{
-                width: 100%;
-            }
-        }
-        .nav{
-            width: 50px;
-            height: 50px;
-        }
-        .slick{
-            &-slide{
-                padding: 50px;
-            }
-        }
-    }
-    
-}
-
-// NOTE: Mobile L
-@media (max-width: 425px    ){
-}
-
-// NOTE: Mobile M
-@media (max-width: 375px    ){
-}
-
-// NOTE: Mobile S
-@media (max-width: 320px    ){
-
-}
-
-// CUSTOM
-@media (max-width: 1600px   ){
-
-}
-
-@media (max-width: 600px   ){
     h1,
     h2{
         font-size: 24px;
@@ -210,11 +172,121 @@
     footer{
         padding: 64px 0;
     }
-    .area-working{
+    section > div{
+        padding: 100px 24px;
+    }
+    .area-intro {
+        img{
+            width: 200px;
+        }
+        div.wrap-dscpt{
+            flex-direction: row;
+            a{
+                display: none;
+            }
+        }
+    }
+    .area-welcome{
+        height: 320px;
+        & > div{
+            display: none;
+        }
+    }
+    .area-working,
+    .area-history{
         b{
             margin-bottom: 10px;
         }
+        ul{
+            &[data-hstryfg='career'] {
+                li + li:not(:nth-child(2)) {
+                    margin-top: 10px;
+                }
+            }
+        }
     }
+    .area-projects{
+        $nav-size: 50px;
+        .wrap-dscpt{   
+            a{
+                width: 100%;
+            }
+        }
+        .nav{
+            width: $nav-size;
+            height: $nav-size;
+            &:hover{
+                background-position: center;
+            }
+        }
+        .slick{
+            &-slide{
+                padding: 0 $nav-size;
+            }
+        }
+    }
+}
+
+// NOTE: Mobile L
+@media (max-width: 425px    ){
+    section > div{
+        padding: {
+            top: 50px;
+            bottom: 50px;
+        };
+    }
+    footer{
+        padding: {
+            top: 50px;
+            bottom: 50px;
+        }
+    }
+    .area-welcome{
+        height: 180px;
+    }
+    .area-intro{
+        img{
+            width: 140px;
+        }
+    }
+    .area-working,
+    .area-history{
+        gap: 36px;
+        ul{
+            gap: 24px;
+        }
+    }
+    .area-projects{
+        $nav-size: 32px;
+        .nav{
+            width: $nav-size;
+            height: $nav-size;
+        }
+        .slick{
+            &-slide{
+                padding-inline: $nav-size;
+            }
+            &-dots{
+                gap: 9px;
+                li{
+                    width: 6px;
+                    height: 6px;
+                    &.slick-active{
+                        box-shadow: 0px 0px 4px var(--gray);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// NOTE: Mobile M
+@media (max-width: 375px    ){
+}
+
+// NOTE: Mobile S
+@media (max-width: 320px    ){
+
 }
 
 // NOTE: 4K
