@@ -150,6 +150,15 @@
 
 // NOTE: Tablet
 @media (max-width: 768px    ){
+    header{
+        height: 40px;
+        img{
+            height: 32px;
+        }
+        span{
+            font-size: 10px;
+        }
+    }
     h1,
     h2{
         font-size: 24px;
@@ -229,6 +238,12 @@
 
 // NOTE: Mobile L
 @media (max-width: 425px    ){
+    header{
+        height: 32px;
+        img{
+            height: 24px;
+        }
+    }
     section > div{
         padding: {
             top: 50px;

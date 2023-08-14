@@ -278,6 +278,10 @@ footer address {
 .area-history > ul > li li {
   font-size: 14px;
 }
+.area-working > ul > li li *,
+.area-history > ul > li li * {
+  font: inherit;
+}
 .area-working b,
 .area-history b {
   display: block;
@@ -295,7 +299,7 @@ footer address {
 }
 .area-working span.letterSpacing,
 .area-history span.letterSpacing {
-  letter-spacing: 4.61px;
+  letter-spacing: 4px;
 }
 
 .area-working {
