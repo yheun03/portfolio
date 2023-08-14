@@ -139,7 +139,7 @@ h2 {
 }
 
 h3 {
-  font: 700 32px/normal "Pretendard";
+  font: 600 32px/100% var(--font);
 }
 
 b {
@@ -195,7 +195,6 @@ footer {
 }
 footer address {
   font-size: 12px;
-  line-height: 14px;
   color: #7D7D7D;
   margin-top: 16px;
 }
@@ -450,7 +449,7 @@ footer address {
   color: #0acdce;
   text-align: center;
   padding: 0 48px;
-  font: 700 18px/56px "Pretendard";
+  font: 700 18px/310% var(--font);
   border-radius: 30px;
 }
 .area-projects .wrap-dscpt a:hover {
@@ -459,9 +458,12 @@ footer address {
 }
 
 @media (max-width: 1440px) {
-  .area-intro img {
+  .area-intro .wrap-title img {
     width: 280px;
     height: auto;
+  }
+  .area-intro .wrap-title span {
+    font-size: 36px;
   }
 
   .area-working,
@@ -544,6 +546,12 @@ footer address {
     margin-right: 0;
     margin-bottom: 56px;
   }
+  .area-projects .wrap-dscpt h3 {
+    font-size: 24px;
+  }
+  .area-projects .wrap-dscpt p {
+    font-size: 16px;
+  }
   .area-projects .wrap-dscpt a {
     margin-top: 24px;
     margin-bottom: 0;
@@ -564,6 +572,10 @@ footer address {
   body > div,
 section > div {
     padding: 100px 32px;
+  }
+
+  .area-intro .wrap-title img {
+    width: 200px;
   }
 
   .area-welcome {

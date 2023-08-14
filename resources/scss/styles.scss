@@ -5,9 +5,14 @@
 // NOTE: Laptop L
 @media (max-width: 1440px   ){
     .area-intro{
-        img{
-            width: 280px;
-            height: auto;
+        .wrap-title{
+            img{
+                width: 280px;
+                height: auto;
+            }
+            span{
+                font-size: 36px;
+            }
         }
     }
 
@@ -118,10 +123,10 @@
         }
         .wrap-dscpt{
             h3{
-                // font-size: 28px;
+                font-size: 24px;
             }
             p{
-                // font-size: 20px;
+                font-size: 16px;
             }
             a{
                 margin: {
@@ -130,7 +135,6 @@
                 }
             }
         }
-
         .nav{
             width: 64px;
             height: 64px;
@@ -151,6 +155,13 @@
     body > div,
     section > div{
         padding: 100px 32px;
+    }
+    .area-intro{
+        .wrap-title{
+            img{
+                width: 200px;
+            }
+        }
     }
     .area-welcome{
         height: 320px;
