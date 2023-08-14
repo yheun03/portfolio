@@ -306,8 +306,8 @@ footer address {
   list-style-type: "✓ ";
 }
 
-.area-history [data-hstryfg=career] li + li {
-  margin-top: 30px;
+.area-history [data-hstryfg=career] li + li:not(:nth-child(2)) {
+  margin-top: 20px;
 }
 .area-history [data-hstryfg=education]::after {
   content: "* 일학습병행 사업으로 전문학사 취득";

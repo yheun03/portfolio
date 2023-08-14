@@ -166,8 +166,8 @@ footer {
 }
 .area-history {
     [data-hstryfg='career'] {
-        li + li {
-            margin-top: 30px;
+        li + li:not(:nth-child(2)) {
+            margin-top: 20px;
         }
     }
     [data-hstryfg='education'] {
