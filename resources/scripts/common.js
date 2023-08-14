@@ -36,6 +36,10 @@ $(document).ready(()=>{
         return false;
     })
 
+    $("aside").click(()=>{
+        $("aside").toggleClass("dark");
+    })
+
     // NOTE: 유저 인터렉티브 효과 추가
     // 최초개발일 : 20230702
     // 수  정  일 : -

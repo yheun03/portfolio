@@ -37,6 +37,9 @@ $(document).ready(function () {
   $(".project-list").prepend(dom);
   $("a[href='#']").click(function () {
     return false;
+  });
+  $("aside").click(function () {
+    $("aside").toggleClass("dark");
   }); // NOTE: 유저 인터렉티브 효과 추가
   // 최초개발일 : 20230702
   // 수  정  일 : -

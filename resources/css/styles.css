@@ -126,7 +126,8 @@ table {
   --lightGray: #dcdcdc;
   --white: #ffffff;
   --red: #FD5146;
-  --blue: #00498C;
+  --sky: #CCDBE8;
+  --mint: #0acdce;
   --height-header: 80px;
 }
 
@@ -145,6 +146,10 @@ h3 {
 
 b {
   font: 800 20px/150% var(--font);
+}
+
+body {
+  background-color: var(--white);
 }
 
 section > div {
@@ -194,7 +199,7 @@ footer address {
 .area-welcome {
   height: 760px;
   padding: 0;
-  background: linear-gradient(180deg, rgba(0, 73, 140, 0.2) 0%, rgba(0, 0, 0, 0) 100%), var(--white);
+  background: linear-gradient(180deg, var(--sky) 0%, var(--white) 100%), var(--white);
   overflow: hidden;
 }
 .area-welcome div {
@@ -425,7 +430,7 @@ footer address {
   font-size: 14px;
   padding: 0 12px;
   border: 1px solid #0acdce40;
-  color: #0acdce;
+  color: var(--mint);
   border-radius: 30px;
 }
 .area-projects .wrap-dscpt a {
@@ -433,14 +438,14 @@ footer address {
   display: inline-block;
   width: 180px;
   background-color: #0acdce40;
-  color: #0acdce;
+  color: var(--mint);
   text-align: center;
   padding: 0 48px;
   font: 700 18px/310% var(--font);
   border-radius: 30px;
 }
 .area-projects .wrap-dscpt a:hover {
-  background-color: #0acdce;
+  background-color: var(--mint);
   color: #222222;
 }
 
@@ -702,4 +707,7 @@ footer p span {
   .area-projects .slick-dots li.slick-active {
     box-shadow: 0px 0px 4px var(--gray);
   }
+}
+@media (prefers-color-scheme: dark) {
+  /* 다크 모드에 적용할 스타일 정의 */
 }
