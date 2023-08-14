@@ -138,7 +138,7 @@ h2 {
 }
 
 h3 {
-  font: 700 32px/normal "Pretendard";
+  font: 600 32px/100% var(--font);
 }
 
 b {
