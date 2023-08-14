@@ -441,7 +441,7 @@ footer address {
 }
 
 @media (max-width: 1440px) {
-  .area-intro .wrap-title img {
+  .area-intro img {
     width: 280px;
   }
   .area-intro .wrap-title span {
@@ -466,7 +466,6 @@ footer address {
 .area-history ul {
     flex: unset;
     margin: 0;
-    gap: 40px;
   }
 
   .area-projects .slick-slide {
@@ -510,28 +509,25 @@ footer address {
 .area-intro div.wrap-title div span {
     display: none;
   }
+  .area-intro div.wrap-dscpt {
+    flex-direction: row-reverse;
+  }
   .area-intro div.wrap-dscpt p {
     text-align: left;
     margin-top: 20px;
-  }
-  .area-intro div.wrap-dscpt a {
-    display: none;
-  }
-
-  .area-working b {
-    margin-bottom: 18px;
-  }
-  .area-working ul li {
-    flex-basis: 100%;
-  }
-
-  .area-history > ul > li {
-    flex-basis: 100%;
   }
 
   .area-working,
 .area-history {
     gap: 55px;
+  }
+  .area-working b,
+.area-history b {
+    margin-bottom: 18px;
+  }
+  .area-working ul li,
+.area-history ul li {
+    flex-basis: 100%;
   }
 
   .area-projects .screen {
@@ -550,11 +546,9 @@ footer address {
     height: 64px;
   }
   .area-projects .slick-slide {
-    padding: 64px;
-  }
-
-  .slick-slide {
     flex-direction: column;
+    gap: unset;
+    padding: 0 64px;
   }
 }
 @media (max-width: 768px) {
