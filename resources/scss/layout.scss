@@ -104,6 +104,7 @@ footer {
     }
     img {
         filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
+        height: auto;
     }
     .wrap{
         &-title span {
@@ -185,6 +186,7 @@ footer {
 }
 
 .area-projects {
+    $nav-size: 100px;
     padding: 0;
     h3{
         text-align: left;
@@ -199,8 +201,8 @@ footer {
         left: 100%;
         display: inline-block;
         z-index: 8;
-        width: 100px;
-        height: 100px;
+        width: $nav-size;
+        height: $nav-size;
         background: url(../images/icons/ic-arrow.svg) center/cover;
         transition: .2s;
         &:hover{

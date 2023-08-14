@@ -241,6 +241,7 @@ footer address {
 }
 .area-intro img {
   filter: drop-shadow(3px 3px 14px rgba(0, 0, 0, 0.07));
+  height: auto;
 }
 .area-intro .wrap-title span {
   text-align: right;
@@ -442,24 +443,30 @@ footer address {
 @media (max-width: 1440px) {
   .area-intro .wrap-title img {
     width: 280px;
-    height: auto;
   }
   .area-intro .wrap-title span {
-    font-size: 36px;
+    font-size: 30px;
+  }
+
+  .area-working ul li {
+    flex-basis: calc(50% - 20px);
   }
 
   .area-working,
 .area-history {
     flex-direction: column;
+    gap: 80px;
   }
   .area-working h2,
 .area-history h2 {
     flex: unset;
     text-align: unset;
   }
-
-  .area-history > ul > li {
-    flex-direction: column;
+  .area-working ul,
+.area-history ul {
+    flex: unset;
+    margin: 0;
+    gap: 40px;
   }
 
   .area-projects .slick-slide {
@@ -472,7 +479,11 @@ footer address {
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
   }
 
   b {
@@ -495,10 +506,8 @@ footer address {
     flex-direction: column-reverse;
     align-items: flex-start;
   }
-  .area-intro div.wrap-title h1 {
-    display: none;
-  }
-  .area-intro div.wrap-title div span {
+  .area-intro div.wrap-title h1,
+.area-intro div.wrap-title div span {
     display: none;
   }
   .area-intro div.wrap-dscpt p {
@@ -512,24 +521,22 @@ footer address {
   .area-working b {
     margin-bottom: 18px;
   }
-  .area-working ul {
-    flex: unset;
+  .area-working ul li {
+    flex-basis: 100%;
   }
 
   .area-history > ul > li {
     flex-basis: 100%;
   }
 
-  .area-working, .area-history {
+  .area-working,
+.area-history {
     gap: 55px;
   }
 
   .area-projects .screen {
     margin-right: 0;
     margin-bottom: 56px;
-  }
-  .area-projects h3 {
-    font-size: 24px;
   }
   .area-projects p {
     font-size: 16px;
