@@ -544,6 +544,13 @@ footer address {
 }
 
 @media (max-width: 1440px) {
+  .area-popup .popup-wrap {
+    width: 90%;
+  }
+  .area-popup .popup-body-content {
+    width: calc(100% - 64px);
+  }
+
   .area-intro img {
     width: 280px;
   }
@@ -595,6 +602,21 @@ footer address {
 
   section > div {
     padding: 100px 30px;
+  }
+
+  .area-popup .popup-body-content div {
+    margin: 18px 0;
+  }
+  .area-popup .popup-body-content div figcaption {
+    font-size: 12px;
+  }
+  .area-popup .popup-body-content h5 {
+    font-size: 18px;
+    margin: 40px 0 18px;
+  }
+  .area-popup .popup-body-content p {
+    margin: 18px 0;
+    font-size: 16px;
   }
 
   .area-welcome {
@@ -712,6 +734,44 @@ footer p span {
     padding: 100px 24px;
   }
 
+  .area-popup .popup-wrap {
+    width: 100%;
+    flex-direction: column;
+  }
+  .area-popup .popup-wrap h4 {
+    width: 280px;
+  }
+  .area-popup .popup-wrap ul {
+    margin-top: 32px;
+  }
+  .area-popup .popup-header {
+    padding: 20px 20px 30px;
+    flex-direction: unset;
+    flex-basis: unset;
+    border-right: 0 none;
+    border-bottom: 1px solid var(--lightGray);
+  }
+  .area-popup .popup-header a {
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    border-radius: unset;
+  }
+  .area-popup .popup-body-content {
+    width: 100%;
+  }
+  .area-popup .popup-body-content div {
+    margin: 18px 0;
+  }
+  .area-popup .popup-body-content div figcaption {
+    font-size: 12px;
+  }
+  .area-popup .popup-body-content h5,
+.area-popup .popup-body-content p,
+.area-popup .popup-body-content figcaption {
+    padding: 0 20px;
+  }
+
   .area-intro div.wrap-dscpt {
     flex-direction: row;
   }
@@ -765,6 +825,45 @@ footer p span {
   footer {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  .area-popup {
+    padding: 0;
+  }
+  .area-popup .popup-wrap {
+    flex-direction: column;
+  }
+  .area-popup .popup-wrap h4 {
+    width: 280px;
+  }
+  .area-popup .popup-wrap ul {
+    margin-top: 32px;
+  }
+  .area-popup .popup-header {
+    padding: 20px 20px 30px;
+    flex-direction: unset;
+    border-right: 0 none;
+    border-bottom: 1px solid var(--lightGray);
+  }
+  .area-popup .popup-header a {
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    border-radius: unset;
+  }
+  .area-popup .popup-body-content {
+    width: 100%;
+  }
+  .area-popup .popup-body-content div {
+    margin: 18px 0;
+  }
+  .area-popup .popup-body-content div figcaption {
+    font-size: 12px;
+  }
+  .area-popup .popup-body-content h5,
+.area-popup .popup-body-content p,
+.area-popup .popup-body-content figcaption {
+    padding: 0 20px;
   }
 
   .area-welcome {

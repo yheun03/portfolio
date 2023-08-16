@@ -3,6 +3,18 @@
 
 // NOTE: Laptop L
 @media (max-width: 1440px   ){
+    .area-popup{
+        .popup{
+            &-wrap{
+                width: 90%;
+            }
+            &-body{
+                &-content{
+                    width: calc(100% - 64px)
+                }
+            }
+        }
+    }
     .area-intro{
         img{
             width: 280px;
@@ -59,6 +71,28 @@
     }
     section > div{
         padding: 100px 30px;
+    }
+    .area-popup{
+        .popup{
+            &-body{
+                &-content{
+                    div{
+                        margin: 18px 0;
+                        figcaption{
+                            font-size: 12px;
+                        }
+                    }
+                    h5{
+                        font-size: 18px;
+                        margin: 40px 0 18px;
+                    }
+                    p{
+                        margin: 18px 0;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
     }
     .area-welcome{
         height: 570px;
@@ -184,6 +218,51 @@
     section > div{
         padding: 100px 24px;
     }
+    .area-popup{
+        .popup{
+            &-wrap{
+                width: 100%;
+                flex-direction: column;
+                h4{
+                    width: 280px;
+                }
+                ul{
+                    margin-top: 32px;
+                }
+            }
+            &-header{
+                padding: 20px 20px 30px;
+                flex-direction: unset;
+                flex-basis: unset;
+                border: {
+                    right: 0 none;
+                    bottom: 1px solid var(--lightGray);
+                }
+                a{
+                    width: 32px;
+                    height: 32px;
+                    text-indent: -9999px;
+                    border-radius: unset;
+                }
+            }
+            &-body{
+                &-content{
+                    width: 100%;
+                    div{
+                        margin: 18px 0;
+                        figcaption{
+                            font-size: 12px;
+                        }
+                    }
+                    h5,
+                    p,
+                    figcaption{
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+    }
     .area-intro {
         div.wrap-dscpt{
             flex-direction: row;
@@ -251,6 +330,50 @@
         padding: {
             top: 50px;
             bottom: 50px;
+        }
+    }
+    .area-popup{
+        padding: 0;
+        .popup{
+            &-wrap{
+                flex-direction: column;
+                h4{
+                    width: 280px;
+                }
+                ul{
+                    margin-top: 32px;
+                }
+            }
+            &-header{
+                padding: 20px 20px 30px;
+                flex-direction: unset;
+                border: {
+                    right: 0 none;
+                    bottom: 1px solid var(--lightGray);
+                }
+                a{
+                    width: 32px;
+                    height: 32px;
+                    text-indent: -9999px;
+                    border-radius: unset;
+                }
+            }
+            &-body{
+                &-content{
+                    width: 100%;
+                    div{
+                        margin: 18px 0;
+                        figcaption{
+                            font-size: 12px;
+                        }
+                    }
+                    h5,
+                    p,
+                    figcaption{
+                        padding: 0 20px;
+                    }
+                }
+            }
         }
     }
     .area-welcome{
