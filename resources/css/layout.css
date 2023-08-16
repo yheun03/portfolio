@@ -249,6 +249,7 @@ footer address {
 .area-popup .popup-body-content {
   width: 754px;
   margin: 40px auto;
+  counter-reset: number 0;
 }
 .area-popup .popup-body-content div {
   display: flex;
@@ -279,6 +280,10 @@ footer address {
 .area-popup .popup-body-content h5 {
   font: 700 21px/normal var(--font);
   margin: 54px 0 24px;
+}
+.area-popup .popup-body-content h5::before {
+  counter-increment: number 1;
+  content: counter(number) ". ";
 }
 .area-popup .popup-body-content p {
   font: 400 18px/normal var(--font);
