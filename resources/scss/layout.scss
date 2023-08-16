@@ -123,6 +123,7 @@ footer {
             &-content{
                 width: 754px;
                 margin: 40px auto;
+                counter-reset: number 0;
                 div{
                     display: flex;
                     gap: 20px;
@@ -153,6 +154,10 @@ footer {
                 h5{
                     font: 700 21px/normal var(--font);
                     margin: 54px 0 24px;
+                    &::before{
+                        counter-increment: number 1;
+                        content: counter(number)'. ';
+                    }
                 }
                 p{
                     font: 400 18px/normal var(--font);
