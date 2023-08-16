@@ -196,6 +196,95 @@ footer address {
   margin-top: 16px;
 }
 
+.area-popup {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+}
+.area-popup .popup-wrap {
+  display: flex;
+  width: min(1456px, 100%);
+  height: 100%;
+  background-color: var(--white);
+}
+.area-popup .popup-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 316px;
+  border-right: 1px solid var(--lightGray);
+  padding: 50px 42px;
+}
+.area-popup .popup-header h4 {
+  font: 700 36px/120% var(--font);
+}
+.area-popup .popup-header ul {
+  margin-top: 120px;
+}
+.area-popup .popup-header li {
+  font: 400 16px/normal var(--font);
+  color: var(--gray);
+}
+.area-popup .popup-header li::before {
+  content: "#";
+}
+.area-popup .popup-header li + li {
+  margin-top: 10px;
+}
+.area-popup .popup-header a {
+  width: 80px;
+  font: 400 16px/42px var(--font);
+  color: var(--white);
+  background-color: var(--black);
+  text-align: center;
+  border-radius: 42px;
+}
+.area-popup .popup-body {
+  flex: 1;
+  overflow-y: auto;
+}
+.area-popup .popup-body-content {
+  width: 754px;
+  margin: 40px auto;
+}
+.area-popup .popup-body-content div {
+  display: flex;
+  gap: 20px;
+  height: 416px;
+  border: 1px solid black;
+  margin: 24px 0;
+}
+.area-popup .popup-body-content div + * {
+  margin-top: 54px;
+}
+.area-popup .popup-body-content div + div {
+  margin: 20px 0;
+}
+.area-popup .popup-body-content div:has(figcaption) {
+  margin-bottom: 36px;
+}
+.area-popup .popup-body-content div img,
+.area-popup .popup-body-content div figure {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.area-popup .popup-body-content div figcaption {
+  font: 400 14px/normal var(--font);
+  text-align: right;
+}
+.area-popup .popup-body-content h5 {
+  font: 700 21px/normal var(--font);
+  margin: 54px 0 24px;
+}
+.area-popup .popup-body-content p {
+  font: 400 18px/normal var(--font);
+  margin: 24px 0;
+}
+
 .area-welcome {
   height: 760px;
   padding: 0;
