@@ -664,15 +664,15 @@ footer address {
   .area-projects p {
     font-size: 16px;
   }
-  .area-projects li {
-    font-size: 12px;
-  }
   .area-projects .screen {
     margin-right: 0;
     margin-bottom: 56px;
   }
   .area-projects .wrap-dscpt ul {
     margin-top: 12px;
+  }
+  .area-projects .wrap-dscpt ul li {
+    font-size: 12px;
   }
   .area-projects .wrap-dscpt button {
     font-size: 14px;
