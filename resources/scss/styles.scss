@@ -142,9 +142,6 @@
         p{
             font-size: 16px;
         }
-        li{
-            font-size: 12px;
-        }
         .screen{
             margin: {
                 right: 0;
@@ -154,6 +151,9 @@
         .wrap-dscpt{
             ul{
                 margin-top: 12px;
+                li{
+                    font-size: 12px;
+                }
             }
             button{
                 font-size: 14px;
