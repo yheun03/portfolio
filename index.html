@@ -63,18 +63,16 @@
     </aside> -->
     <section>
         <div class="area-popup">
-            <div class="popup-wrap">
+            <div class="popup-wrap" id="project-portfolio">
                 <div class="popup-header">
                     <div>
-                        <h4>스마트앱을 통해 업무를 간편하게</h4>
+                        <h4>나를 효과적으로 소개하자</h4>
                         <ul>
-                            <li>모바일 발주 시스템</li>
-                            <li>스마트폰 앱</li>
-                            <li>IOS</li>
-                            <li>ANDROID</li>
+                            <li>풀 반응형 웹페이지</li>
+                            <li>자기어필 웹페이지</li>
                         </ul>
                     </div>
-                    <a href="#">닫기</a>
+                    <button onclick="popupClose()">닫기</button>
                 </div>
                 <div class="popup-body">
                     <div class="popup-body-content">
@@ -86,20 +84,15 @@
                         </div>
                         <h5>프로젝트 배경</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex doloremque perferendis fugiat blanditiis eum iure dicta. Laudantium cum odio quo ratione dicta illo ut, magni dignissimos sunt magnam adipisci possimus assumenda officia officiis tenetur enim doloribus illum! Rem quibusdam fuga optio recusandae tenetur, esse corrupti quia aliquam, voluptatibus, alias eius aspernatur libero quam error voluptas autem minus architecto perspiciatis exercitationem assumenda praesentium nesciunt! Illo est amet adipisci officiis ut consequuntur eum magnam aperiam quam quae provident asperiores repudiandae ducimus, non mollitia sapiente quia error maiores inventore corrupti exercitationem sint. Vel recusandae modi ab aperiam veniam in magni ipsam! Doloremque!</p>
-                        <h5>프로젝트 배경</h5>
+                        <h5>프로젝트 목적</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex doloremque perferendis fugiat blanditiis eum iure dicta. Laudantium cum odio quo ratione dicta illo ut, magni dignissimos sunt magnam adipisci possimus assumenda officia officiis tenetur enim doloribus illum! Rem quibusdam fuga optio recusandae tenetur, esse corrupti quia aliquam, voluptatibus, alias eius aspernatur libero quam error voluptas autem minus architecto perspiciatis exercitationem assumenda praesentium nesciunt! Illo est amet adipisci officiis ut consequuntur eum magnam aperiam quam quae provident asperiores repudiandae ducimus, non mollitia sapiente quia error maiores inventore corrupti exercitationem sint. Vel recusandae modi ab aperiam veniam in magni ipsam! Doloremque!</p>
                         <div>
                             <figure>
                                 <img src="./resources/images/photo-1920.webp" alt="">
                             </figure>
                         </div>
-                        <h5>프로젝트 배경</h5>
+                        <h5>UI UX 디자인</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex doloremque perferendis fugiat blanditiis eum iure dicta. Laudantium cum odio quo ratione dicta illo ut, magni dignissimos sunt magnam adipisci possimus assumenda officia officiis tenetur enim doloribus illum! Rem quibusdam fuga optio recusandae tenetur, esse corrupti quia aliquam, voluptatibus, alias eius aspernatur libero quam error voluptas autem minus architecto perspiciatis exercitationem assumenda praesentium nesciunt! Illo est amet adipisci officiis ut consequuntur eum magnam aperiam quam quae provident asperiores repudiandae ducimus, non mollitia sapiente quia error maiores inventore corrupti exercitationem sint. Vel recusandae modi ab aperiam veniam in magni ipsam! Doloremque!</p>
-                        <div>
-                            <figure>
-                                <img src="./resources/images/photo-1920.webp" alt="">
-                            </figure>
-                        </div>
                         <div class="double">
                             <figure>
                                 <img src="./resources/images/photo-1920.webp" alt="">
@@ -110,14 +103,84 @@
                                 <figcaption>태리미 메인화면</figcaption>
                             </figure>
                         </div>
-                        <div class="double">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-wrap" id="project-jonsoft">
+                <div class="popup-header">
+                    <div>
+                        <h4>홈페이지를 통해 회사소개를 간편하게</h4>
+                        <ul>
+                            <li>반응형 웹페이지</li>
+                            <li>스마트폰 앱</li>
+                            <li>IOS</li>
+                            <li>ANDROID</li>
+                        </ul>
+                    </div>
+                    <button onclick="popupClose()">닫기</button>
+                </div>
+                <div class="popup-body">
+                    <div class="popup-body-content">
+                        <div>
                             <figure>
                                 <img src="./resources/images/photo-1920.webp" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./resources/images/photo-1920.webp" alt="">
+                                <figcaption>태리미 메인화면</figcaption>
                             </figure>
                         </div>
+                        <h5>프로젝트 배경</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex doloremque perferendis fugiat blanditiis eum iure dicta. Laudantium cum odio quo ratione dicta illo ut, magni dignissimos sunt magnam adipisci possimus assumenda officia officiis tenetur enim doloribus illum! Rem quibusdam fuga optio recusandae tenetur, esse corrupti quia aliquam, voluptatibus, alias eius aspernatur libero quam error voluptas autem minus architecto perspiciatis exercitationem assumenda praesentium nesciunt! Illo est amet adipisci officiis ut consequuntur eum magnam aperiam quam quae provident asperiores repudiandae ducimus, non mollitia sapiente quia error maiores inventore corrupti exercitationem sint. Vel recusandae modi ab aperiam veniam in magni ipsam! Doloremque!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-wrap" id="project-inu">
+                <div class="popup-header">
+                    <div>
+                        <h4>스마트앱을 통해 업무를 간편하게</h4>
+                        <ul>
+                            <li>모바일 발주 시스템</li>
+                            <li>스마트폰 앱</li>
+                            <li>IOS</li>
+                            <li>ANDROID</li>
+                        </ul>
+                    </div>
+                    <button onclick="popupClose()">닫기</button>
+                </div>
+                <div class="popup-body">
+                    <div class="popup-body-content">
+                        <div>
+                            <figure>
+                                <img src="./resources/images/photo-1920.webp" alt="">
+                                <figcaption>태리미 메인화면</figcaption>
+                            </figure>
+                        </div>
+                        <h5>프로젝트 배경</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex doloremque perferendis fugiat blanditiis eum iure dicta. Laudantium cum odio quo ratione dicta illo ut, magni dignissimos sunt magnam adipisci possimus assumenda officia officiis tenetur enim doloribus illum! Rem quibusdam fuga optio recusandae tenetur, esse corrupti quia aliquam, voluptatibus, alias eius aspernatur libero quam error voluptas autem minus architecto perspiciatis exercitationem assumenda praesentium nesciunt! Illo est amet adipisci officiis ut consequuntur eum magnam aperiam quam quae provident asperiores repudiandae ducimus, non mollitia sapiente quia error maiores inventore corrupti exercitationem sint. Vel recusandae modi ab aperiam veniam in magni ipsam! Doloremque!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-wrap" id="project-tailim">
+                <div class="popup-header">
+                    <div>
+                        <h4>스마트앱을 통해 업무를 간편하게</h4>
+                        <ul>
+                            <li>모바일 발주 시스템</li>
+                            <li>스마트폰 앱</li>
+                            <li>IOS</li>
+                            <li>ANDROID</li>
+                        </ul>
+                    </div>
+                    <button onclick="popupClose()">닫기</button>
+                </div>
+                <div class="popup-body">
+                    <div class="popup-body-content">
+                        <div>
+                            <figure>
+                                <img src="./resources/images/photo-1920.webp" alt="">
+                                <figcaption>태리미 메인화면</figcaption>
+                            </figure>
+                        </div>
+                        <h5>프로젝트 배경</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex doloremque perferendis fugiat blanditiis eum iure dicta. Laudantium cum odio quo ratione dicta illo ut, magni dignissimos sunt magnam adipisci possimus assumenda officia officiis tenetur enim doloribus illum! Rem quibusdam fuga optio recusandae tenetur, esse corrupti quia aliquam, voluptatibus, alias eius aspernatur libero quam error voluptas autem minus architecto perspiciatis exercitationem assumenda praesentium nesciunt! Illo est amet adipisci officiis ut consequuntur eum magnam aperiam quam quae provident asperiores repudiandae ducimus, non mollitia sapiente quia error maiores inventore corrupti exercitationem sint. Vel recusandae modi ab aperiam veniam in magni ipsam! Doloremque!</p>
                     </div>
                 </div>
             </div>
@@ -217,7 +280,7 @@
                                 <li>Adobe Illustrator</li>
                             </ul>
                         </div>
-                        <a href="#">상세보기</a>
+                        <button onclick="popupOpen('portfolio')">상세보기</button>
                     </div>
                 </div>
                 <div>
@@ -245,7 +308,7 @@
                                 <li>Adobe Illustrator</li>
                             </ul>
                         </div>
-                        <a href="#">상세보기</a>
+                        <button onclick="popupOpen('jonsoft')">상세보기</button>
                     </div>
                 </div>
                 <div>
@@ -271,7 +334,7 @@
                                 <li>Sketch</li>
                             </ul>
                         </div>
-                        <a href="#">상세보기</a>
+                        <button onclick="popupOpen('inu')">상세보기</button>
                     </div>
                 </div>
                 <div>
@@ -298,7 +361,7 @@
                                 <li>Adobe Illustrator</li>
                             </ul>
                         </div>
-                        <a href="#">상세보기</a>
+                        <button onclick="popupOpen('tailim')">상세보기</button>
                     </div>
                 </div>
             </div>
@@ -382,5 +445,17 @@
         <p>본 페이지는 상업적 목적이 아닌,<br/>개인 포트폴리오용으로 제작되었습니다.</p>
         <address>Copyright 2023. 은영환. All rights reserved.</address>
     </footer>
+    <script>
+        // NOTE: 프로젝트 상세 팝업
+        // 최초개발일 : 20230817
+        // 수  정  일 : -
+        function popupOpen(target){
+            $(".area-popup").css({"display":"unset"});
+            $("#project-"+target).css({"display":"flex"})
+        }
+        function popupClose(){
+            $(".area-popup, .popup-wrap").css({"display":"none"});
+        }
+    </script>
 </body>
 </html>
