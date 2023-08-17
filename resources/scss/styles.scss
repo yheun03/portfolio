@@ -155,7 +155,7 @@
             ul{
                 margin-top: 12px;
             }
-            a{
+            button{
                 font-size: 14px;
                 width: 150px;
                 padding: 0;
@@ -238,11 +238,12 @@
                     right: 0 none;
                     bottom: 1px solid var(--lightGray);
                 }
-                a{
+                button{
                     width: 32px;
                     height: 32px;
                     text-indent: -9999px;
                     border-radius: unset;
+                    background: url(../images/icons/ic-close.svg) center/24px no-repeat;
                 }
             }
             &-body{
@@ -293,7 +294,7 @@
     .area-projects{
         $nav-size: 50px;
         .wrap-dscpt{   
-            a{
+            button{
                 width: 100%;
             }
         }
@@ -336,42 +337,8 @@
         padding: 0;
         .popup{
             &-wrap{
-                flex-direction: column;
                 h4{
-                    width: 280px;
-                }
-                ul{
-                    margin-top: 32px;
-                }
-            }
-            &-header{
-                padding: 20px 20px 30px;
-                flex-direction: unset;
-                border: {
-                    right: 0 none;
-                    bottom: 1px solid var(--lightGray);
-                }
-                a{
-                    width: 32px;
-                    height: 32px;
-                    text-indent: -9999px;
-                    border-radius: unset;
-                }
-            }
-            &-body{
-                &-content{
-                    width: 100%;
-                    div{
-                        margin: 18px 0;
-                        figcaption{
-                            font-size: 12px;
-                        }
-                    }
-                    h5,
-                    p,
-                    figcaption{
-                        padding: 0 20px;
-                    }
+                    width: 50%;
                 }
             }
         }

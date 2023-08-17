@@ -205,7 +205,7 @@ footer address {
   display: none;
 }
 .area-popup .popup-wrap {
-  display: flex;
+  display: none;
   width: min(1456px, 100%);
   height: 100%;
   background-color: var(--white);
@@ -234,13 +234,15 @@ footer address {
 .area-popup .popup-header li + li {
   margin-top: 10px;
 }
-.area-popup .popup-header a {
+.area-popup .popup-header button {
   width: 80px;
   font: 400 16px/42px var(--font);
   color: var(--white);
   background-color: var(--black);
   text-align: center;
+  border: unset;
   border-radius: 42px;
+  cursor: pointer;
 }
 .area-popup .popup-body {
   flex: 1;
@@ -253,9 +255,8 @@ footer address {
 }
 .area-popup .popup-body-content div {
   display: flex;
+  align-items: center;
   gap: 20px;
-  height: 416px;
-  border: 1px solid black;
   margin: 24px 0;
 }
 .area-popup .popup-body-content div + * {
@@ -267,11 +268,9 @@ footer address {
 .area-popup .popup-body-content div:has(figcaption) {
   margin-bottom: 36px;
 }
-.area-popup .popup-body-content div img,
-.area-popup .popup-body-content div figure {
+.area-popup .popup-body-content div img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  padding-inline: 16px;
 }
 .area-popup .popup-body-content div figcaption {
   font: 400 14px/normal var(--font);
@@ -527,7 +526,7 @@ footer address {
   color: var(--mint);
   border-radius: 30px;
 }
-.area-projects .wrap-dscpt a {
+.area-projects .wrap-dscpt button {
   margin-bottom: 28.2%;
   display: inline-block;
   width: 180px;
@@ -536,9 +535,11 @@ footer address {
   text-align: center;
   padding: 0 48px;
   font: 700 18px/310% var(--font);
+  border: none;
   border-radius: 30px;
+  cursor: pointer;
 }
-.area-projects .wrap-dscpt a:hover {
+.area-projects .wrap-dscpt button:hover {
   background-color: var(--mint);
   color: #222222;
 }
@@ -673,7 +674,7 @@ footer address {
   .area-projects .wrap-dscpt ul {
     margin-top: 12px;
   }
-  .area-projects .wrap-dscpt a {
+  .area-projects .wrap-dscpt button {
     font-size: 14px;
     width: 150px;
     padding: 0;
@@ -751,11 +752,12 @@ footer p span {
     border-right: 0 none;
     border-bottom: 1px solid var(--lightGray);
   }
-  .area-popup .popup-header a {
+  .area-popup .popup-header button {
     width: 32px;
     height: 32px;
     text-indent: -9999px;
     border-radius: unset;
+    background: url(../images/icons/ic-close.svg) center/24px no-repeat;
   }
   .area-popup .popup-body-content {
     width: 100%;
@@ -795,7 +797,7 @@ footer p span {
     margin-top: 10px;
   }
 
-  .area-projects .wrap-dscpt a {
+  .area-projects .wrap-dscpt button {
     width: 100%;
   }
   .area-projects .nav {
@@ -830,40 +832,8 @@ footer p span {
   .area-popup {
     padding: 0;
   }
-  .area-popup .popup-wrap {
-    flex-direction: column;
-  }
   .area-popup .popup-wrap h4 {
-    width: 280px;
-  }
-  .area-popup .popup-wrap ul {
-    margin-top: 32px;
-  }
-  .area-popup .popup-header {
-    padding: 20px 20px 30px;
-    flex-direction: unset;
-    border-right: 0 none;
-    border-bottom: 1px solid var(--lightGray);
-  }
-  .area-popup .popup-header a {
-    width: 32px;
-    height: 32px;
-    text-indent: -9999px;
-    border-radius: unset;
-  }
-  .area-popup .popup-body-content {
-    width: 100%;
-  }
-  .area-popup .popup-body-content div {
-    margin: 18px 0;
-  }
-  .area-popup .popup-body-content div figcaption {
-    font-size: 12px;
-  }
-  .area-popup .popup-body-content h5,
-.area-popup .popup-body-content p,
-.area-popup .popup-body-content figcaption {
-    padding: 0 20px;
+    width: 50%;
   }
 
   .area-welcome {
