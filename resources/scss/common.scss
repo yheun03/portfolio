@@ -21,10 +21,12 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font: 500 16px/30px var(--font);
 	vertical-align: baseline;
     box-sizing: border-box;
     text-decoration: none;
+	word-break: keep-all;
+	font: 500 16px/180% var(--font);
+	color: var(--black);
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -53,22 +55,26 @@ table {
 :root{
     --font: 'Pretendard';
     --black: #111111;
-    --gray: #757575;
+    --gray: #7D7D7D;
     --deepLightGray: #f6f6f6;
     --lightGray: #dcdcdc;
     --white: #ffffff;
     --red: #FD5146;
-    --blue: #00498C;
+	--sky: #CCDBE8;
+    --mint: #0acdce;
 	--height-header: 80px;
 }
 
 h1, h2 {
-	font: 500 46px/80px var(--font);
+	font: 500 46px/176% var(--font);
 	color: var(--black);
 }
 h2{
 	text-align: right;
 }
+h3{
+	font: 600 32px/100% var(--font);
+}
 b{
-	font: 800 20px/30px var(--font);
+	font: 800 20px/150% var(--font);
 }
