@@ -11,14 +11,23 @@
     <link href="./resume/resume_2023.css" media="screen, print" rel="stylesheet" type="text/css">
     <title>퍼블리셔 은영환 이력서 보기</title>
     <style>
-        .desc{
+        .desc,
+        dd{
             word-break: keep-all !important;
         }
         .pageOver{
             page-break-after: always;
         }
+        .bdn-child > div{
+            border-top: unset !important;
+            padding-bottom: 16px !important;
+        }
+        .bdn-child > div + div{
+            padding-top: unset !important;
+        }
         @media print {
-            .desc{
+            .desc,
+            dd{
                 word-break: keep-all !important;
             }
             body, html {
@@ -323,139 +332,375 @@
                         </div>
                     </div>
                 </div>
-                <div class="part part_only_career">
+                <div class="part part_only_career pageOver">
                     <div class="box_tit">
                         <h2 class="tit">경력기술서</h2>
                     </div>
-                    <div class="box_con">
+                    <div class="box_con bdn-child">
                         <div class="box_list">
-                            <p class="desc"><b>[SI]</b> OMS 리뉴얼<br>
-                                - 고객사: 깨끗한 나라<br>
-                                - 수행 기간: 2024년 7월 ~<br>
-                                - 사용 도구: Visual Studio Code, Figma<br>
-                                - 사용 언어: HTML, SCSS, Vue.js<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 깨끗한 나라 사의 OMS를 리뉴얼 하는 프로젝트의 퍼블리싱을 담당했습니다. 두 달의 기간이 주어졌는데, 열의를 갖고 개발에 임한 결과 한 달도
-                                채 되지 않아 업무를 끝냈습니다. 남은 기간동안 개인의 능력 개발 겸 자발적으로 프론트엔드 공부를 하며 프로젝트의 Vue 컴포넌트 개발에
-                                이바지했습니다.<br>
-                                <br>
-                                <b>[SI]</b> SCM 리뉴얼<br>
-                                - 고객사: 대양제지<br>
-                                - 수행 기간: 2024년 5월 ~ 2024년 6월 (2개월)<br>
-                                - 사용 도구: Visual Studio Code, Figma<br>
-                                - 사용 언어: HTML, SCSS<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 대양제지 사의 SCM 서비스를 신규 구축하는 프로젝트에 퍼블리싱을 담당했습니다. 그동안 진행한 다수 프로젝트에서 컴포넌트 정리를 해왔기에
-                                공수를 60% 줄이는 성과가 있었습니다.<br>
-                                <br>
-                                <b>[자사 솔루션 개발]</b> Robo TMS<br>
-                                - 수행 기간: 2024년 2월 ~ 2024년 4월 (3개월)<br>
-                                - 사용 도구: Visual Studio Code, Figma<br>
-                                - 사용 언어: HTML, SCSS, Vue.js<br>
-                                - 기여도: 기획 30%, 퍼블리싱 100%, 디자인 80%<br>
-                                - 업무 내용: TMS 서비스를 운영하면서 여러 고객들의 요구사항과 문의사항을 해결하는 등의 경험을 기반으로 자사 솔루션인 Robo TMS를 개발하는
-                                프로젝트에 기획 및 퍼블리싱을 담당했습니다. 특히 고객용 어플리케이션의 UI, UX 디자인부터 퍼블리싱까지 맡은 프로젝트로, 애정이 많이 갔던 프로젝트입니다.
-                                개편된 UI와 더 편한 UX 개발로 고객의 만족도를 이끌어냈습니다.<br>
-                                <br>
-                                <b>[SI]</b> SCM 리뉴얼<br>
-                                - 고객사: 대양판지<br>
-                                - 수행 기간: 2023년 8월 ~ 2024년 1월 (5개월)<br>
-                                - 사용 도구: Visual Studio Code, Figma<br>
-                                - 사용 언어: HTML, SCSS, React<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 대양판지 사의 SCM 서비스를 리뉴얼하는 프로젝트에 퍼블리싱을 맡았습니다. 고객 버전은 HTML로 퍼블리싱을 했고, 관리자 버전은 HTML로
-                                퍼블리싱을 한 이후에 React 구조에 맞게 컴포넌트를 제작했습니다.<br>
-                                <br>
-                                <b>[SM]</b> TMS 보수<br>
-                                - 고객사: 태림포장<br>
-                                - 수행 기간: 2023년 7월 (1개월)<br>
-                                - 사용 도구: 넥사크로<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: TMS 서비스 운영을 하면서 이슈 레포트를 작성했고, 레포트에서 반복되는 이슈에 대해 해결하는 프로젝트에서 퍼블리싱을 맡았습니다. UX를
-                                개선하고, 더 깔끔하고 심플한 UI를 구축하여 넥사크로를 활용해 보수 작업을 했습니다.<br>
-                                <br>
-                                <b>[SM]</b> TMS 운영<br>
-                                - 고객사 : 태림포장, 대영포장<br>
-                                - 수행 기간: 2023년 5월 ~ 2023년 6월 (2개월)<br>
-                                - 사용 도구: 넥사크로<br>
-                                - 기여도: 이슈 보고서 작성 100%<br>
-                                - 업무 내용: TMS 서비스의 속도 저하 이슈가 발생하여 해결하기 위해 투입되었습니다. 단위 테스트를 통해서 이슈가 발생되는 특정 부분을 찾아 내었습니다.
-                                투입된 원인을 해결했고, 해결하는 과정에서 서비스가 익숙해졌기에 자발적으로 고객사 응대에 나섰습니다. 이로 인해 속도 저하, 화면 오류 등의 고객 불편 사항
-                                발생시 즉시 해결했고 해결하지 못하는 이슈 발생 시 개발팀에 신속하게 보고했습니다. 해결이 된 이슈들은 이슈 케이스 등의 산출물을 제작했고, 이는 같은 이슈
-                                발생 시 해결하는데 큰 도움이 되었습니다. 실제로 일 평균 15건 이상의 불편사항 접수가 2건으로 획기적으로 단축된 성과를 보였습니다.<br>
-                                <br>
-                                <b>[자사 솔루션 개발]</b> Robo MES<br>
-                                - 수행 기간: 2022년 8월 ~ 2023년 4월 (8개월)<br>
-                                - 사용 도구: 웹스퀘어, Figma<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: MES 스마트팩토리 프로젝트에서 다진 노하우를 기반으로 자사 솔루션을 개발했습니다. 퍼블리싱을 100% 담당하여 모듈 단위의 컴포넌트를
-                                구축했고, 이를 통해 공수를 약 40% 줄였습니다.<br>
-                                <br>
-                                <b>[자사 홈페이지]</b> 홈페이지 리뉴얼<br>
-                                - 수행 기간: 2022년 1월 ~ 2022년 3월 (3개월)<br>
-                                - 사용 도구: Visual Studio Code, Figma, FileZilla, 후이즈 호스팅 서비스<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%, 디자인 40%, UX 기획 25%<br>
-                                - 연결링크: 포트폴리오 부분 포트폴리오 2<br>
-                                - 업무 내용: 기존 회사 홈페이지는 상당히 단조롭고, 전문성이 느껴지지 않아 신뢰성이 가지 않는 단방향 소통 기반으로 한 홈페이지였습니다. 그렇기에 자사
-                                홈페이지 리뉴얼 프로젝트를 건의드렸습니다. 회사 홈페이지에서 보여야 할 내용 기획을 도맡아 했고, 이를 위해 다양한 성공적인 홈페이지의 레퍼런스를 수집 및
-                                활용했습니다. 성공적으로 퍼블리싱을 하고 검색 결과에 따른 접근성을 증진시키기 위해 SEO를 준수했고, 오픈 그래프 프로토콜을 관리했습니다. 프로젝트를 마친
-                                후엔 후이즈 호스팅 대행 서비스를 통해 클라우드에 업로드 했고, 지속적으로 관리하고 있습니다.<br>
-                                <br>
-                                <b>[SI]</b> TOMS 서비스 구축<br>
-                                - 고객사: 태림포장<br>
-                                - 수행 기간: 2021년 10월 ~ 2021년 12월 (2개월)<br>
-                                - 사용 도구: Visual Studio Code, Figma<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%, 디자인 30%, UX 기획 25%<br>
-                                - 업무 내용: 태림포장 사내 원지, 박스 주문 서비스를 리뉴얼하고 구축함에 따라 필요한 어플리케이션을 퍼블리싱 했습니다. 디자이너와 Figma를 통해
-                                소통했고 사용법을 익혀 고객사의 요구사항을 정확히 반영해서 직접 디자인 했습니다. 그 결과 스마트 앱 어워드 2022 업무향상분야 대상을 수상했습니다.<br>
-                                <br>
-                                <b>[SI·SM]</b> 스마트팩토리 정부사업 프로젝트<br>
-                                - 고객사: 테라에코, 썬겔, 다우기업, 신애전자 등<br>
-                                - 수행 기간: 2021년 5월 ~ 2022년 7월 (15개월)<br>
-                                - 사용 도구: 전자정부프레임워크, Adobe Xd<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%, 디자인 20%<br>
-                                - 업무 내용: 테라에코 사의 MES 도입과 스마트팩토리 구축 사업의 퍼블리싱을 담당하였습니다. 단회성 프로젝트가 아닌, 자사 솔루션으로 개발해 감에 따라
-                                썬겔, 다우기업, 신애전자 등의 기업과 업무 협약을 맺어갔고, 각 기업의 브랜드 철학과 색상을 반영해 맞춤 디자인을 해드려 큰 만족도를 이끌어냈습니다. 이는
-                                추후 자사 Robo MES 솔루션 구축의 기반이 되었습니다.<br>
-                                <br>
-                                <b>[SM]</b> 인천대학교 공과대학 홈페이지 리뉴얼<br>
-                                - 고객사: 인천대학교<br>
-                                - 수행 기간: 2021년 3월 ~ 2021년 4월 (2개월)<br>
-                                - 사용 도구: Visual Studio Code, Adobe Xd<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 인천대학교 공과대학 홈페이지 리뉴얼 프로젝트에 퍼블리싱을 담당했습니다. 학교 측에서 공유해 주신 브로슈어와 공식 홈페이지의 교수님 데이터가
-                                맞지 않았지만, 이번 프로젝트를 하면서 주인의식을 갖고 학교에 건의를 드려 정확한 정보로 수정 및 추가 되었습니다.<br>
-                                <br>
-                                <b>[SI]</b> TOS 리뉴얼<br>
-                                - 고객사: 태림포장<br>
-                                - 수행 기간: 2021년 1월 ~ 2021년 2월 (2개월)<br>
-                                - 사용 도구: 전자정부프레임워크, Sketch<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 태림포장 사내 주문 시스템 리뉴얼 프로젝트의 퍼블리싱을 담당했습니다. 전자정부프레임워크를 처음 사용한 프로젝트라 첫 세팅에 실수가 많았지만
-                                검색으로 해결해 나갔습니다.<br>
-                                <br>
-                                <b>[SI]</b> 광장 파트너스 홈페이지<br>
-                                - 고객사: 광장 파트너스<br>
-                                - 수행 기간: 2020년 11월 ~ 2020년 12월 (2개월)<br>
-                                - 사용 도구: Visual Studio Code, Sketch<br>
-                                - 사용 언어: HTML, CSS, jQuery<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 광장 파트너스 사의 홈페이지를 퍼블리싱 했습니다.<br>
-                                <br>
-                                <b>[SI]</b> 하마 어플리케이션<br>
-                                - 고객사: 광장 파트너스<br>
-                                - 수행 기간: 2020년 9월 ~ 2020년 10월 (2개월)<br>
-                                - 사용 도구: Visual Studio Code, Sketch<br>
-                                - 사용 언어: HTML, CSS, JavaScript<br>
-                                - 기여도: 퍼블리싱 100%<br>
-                                - 업무 내용: 부동산 건축 서비스를 구축함에 있어서 필요한 어플리케이션을 퍼블리싱 했습니다. 퍼블리싱 한 이후 웹앱 형식으로 빌드했습니다.
-                            </p>
+                            <p class="desc"><b>[SI]</b> OMS 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>깨끗한 나라</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2024년 7월 ~</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS, Vue.js</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>깨끗한 나라 사의 OMS를 리뉴얼 하는 프로젝트의 퍼블리싱을 담당했습니다. 두 달의 기간이 주어졌는데, 열의를 갖고 개발에 임한 결과 한 달도
+                                    채 되지 않아 업무를 끝냈습니다. 남은 기간동안 개인의 능력 개발 겸 자발적으로 프론트엔드 공부를 하며 프로젝트의 Vue 컴포넌트 개발에
+                                    이바지했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> SCM 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>대양제지</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2024년 5월 ~ 2024년 6월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>대양제지 사의 SCM 서비스를 신규 구축하는 프로젝트에 퍼블리싱을 담당했습니다. 그동안 진행한 다수 프로젝트에서 컴포넌트 정리를 해왔기에
+                                    공수를 60% 줄이는 성과가 있었습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[자사 솔루션 개발]</b> Robo TMS</p>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2024년 2월 ~ 2024년 4월 (3개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS, Vue.js</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>기획 30%, 퍼블리싱 100%, 디자인 80%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>TMS 서비스를 운영하면서 여러 고객들의 요구사항과 문의사항을 해결하는 등의 경험을 기반으로 자사 솔루션인 Robo TMS를 개발하는 프로젝트에 기획 및 퍼블리싱을 담당했습니다. 특히 고객용 어플리케이션의 UI, UX 디자인부터 퍼블리싱까지 맡은 프로젝트로, 애정이 많이 갔던 프로젝트입니다. 개편된 UI와 더 편한 UX 개발로 고객의 만족도를 이끌어냈습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> SCM 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>대양판지</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2023년 8월 ~ 2024년 1월 (5개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS, React</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>대양판지 사의 SCM 서비스를 리뉴얼하는 프로젝트에 퍼블리싱을 맡았습니다. 고객 버전은 HTML로 퍼블리싱을 했고, 관리자 버전은 HTML로 퍼블리싱을 한 이후에 React 구조에 맞게 컴포넌트를 제작했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list pageOver">
+                            <p class="desc"><b>[SM]</b> TMS 보수</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2023년 7월 (1개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>넥사크로</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>TMS 서비스 운영을 하면서 이슈 레포트를 작성했고, 레포트에서 반복되는 이슈에 대해 해결하는 프로젝트에서 퍼블리싱을 맡았습니다. UX를 개선하고, 더 깔끔하고 심플한 UI를 구축하여 넥사크로를 활용해 보수 작업을 했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SM]</b> TMS 운영</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장, 대영포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2023년 5월 ~ 2023년 6월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>넥사크로</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>이슈 보고서 작성 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>TMS 서비스의 속도 저하 이슈가 발생하여 해결하기 위해 투입되었습니다. 단위 테스트를 통해서 이슈가 발생되는 특정 부분을 찾아 내었습니다. 투입된 원인을 해결했고, 해결하는 과정에서 서비스가 익숙해졌기에 자발적으로 고객사 응대에 나섰습니다. 이로 인해 속도 저하, 화면 오류 등의 고객 불편 사항 발생시 즉시 해결했고 해결하지 못하는 이슈 발생 시 개발팀에 신속하게 보고했습니다. 해결이 된 이슈들은 이슈 케이스 등의 산출물을 제작했고, 이는 같은 이슈 발생 시 해결하는데 큰 도움이 되었습니다. 실제로 일 평균 15건 이상의 불편사항 접수가 2건으로 획기적으로 단축된 성과를 보였습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[자사 솔루션 개발]</b> Robo MES</p>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2022년 8월 ~ 2023년 4월 (8개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>웹스퀘어, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>MES 스마트팩토리 프로젝트에서 다진 노하우를 기반으로 자사 솔루션을 개발했습니다. 퍼블리싱을 100% 담당하여 모듈 단위의 컴포넌트를 구축했고, 이를 통해 공수를 약 40% 줄였습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[자사 홈페이지]</b> 홈페이지 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2022년 1월 ~ 2022년 3월 (3개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma, FileZilla, 후이즈 호스팅 서비스</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%, 디자인 40%, UX 기획 25%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>연결링크:</dt>
+                                <dd>포트폴리오 부분 포트폴리오 2</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>기존 회사 홈페이지는 상당히 단조롭고, 전문성이 느껴지지 않아 신뢰성이 가지 않는 단방향 소통 기반으로 한 홈페이지였습니다. 그렇기에 자사 홈페이지 리뉴얼 프로젝트를 건의드렸습니다. 회사 홈페이지에서 보여야 할 내용 기획을 도맡아 했고, 이를 위해 다양한 성공적인 홈페이지의 레퍼런스를 수집 및 활용했습니다. 성공적으로 퍼블리싱을 하고 검색 결과에 따른 접근성을 증진시키기 위해 SEO를 준수했고, 오픈 그래프 프로토콜을 관리했습니다. 프로젝트를 마친 후엔 후이즈 호스팅 대행 서비스를 통해 클라우드에 업로드 했고, 지속적으로 관리하고 있습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> TOMS 서비스 구축</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 10월 ~ 2021년 12월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%, 디자인 30%, UX 기획 25%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>태림포장 사내 원지, 박스 주문 서비스를 리뉴얼하고 구축함에 따라 필요한 어플리케이션을 퍼블리싱 했습니다. 디자이너와 Figma를 통해 소통했고 사용법을 익혀 고객사의 요구사항을 정확히 반영해서 직접 디자인 했습니다. 그 결과 스마트 앱 어워드 2022 업무향상분야 대상을 수상했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI·SM]</b> 스마트팩토리 정부사업 프로젝트</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>테라에코, 썬겔, 다우기업, 신애전자 등</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 5월 ~ 2022년 7월 (15개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>전자정부프레임워크, Adobe Xd</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%, 디자인 20%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>테라에코 사의 MES 도입과 스마트팩토리 구축 사업의 퍼블리싱을 담당하였습니다. 단회성 프로젝트가 아닌, 자사 솔루션으로 개발해 감에 따라 썬겔, 다우기업, 신애전자 등의 기업과 업무 협약을 맺어갔고, 각 기업의 브랜드 철학과 색상을 반영해 맞춤 디자인을 해드려 큰 만족도를 이끌어냈습니다. 이는 추후 자사 Robo MES 솔루션 구축의 기반이 되었습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SM]</b> 인천대학교 공과대학 홈페이지 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>인천대학교</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 3월 ~ 2021년 4월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Adobe Xd</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>인천대학교 공과대학 홈페이지 리뉴얼 프로젝트에 퍼블리싱을 담당했습니다. 학교 측에서 공유해 주신 브로슈어와 공식 홈페이지의 교수님 데이터가 맞지 않았지만, 이번 프로젝트를 하면서 주인의식을 갖고 학교에 건의를 드려 정확한 정보로 수정 및 추가 되었습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> TOS 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 1월 ~ 2021년 2월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>전자정부프레임워크, Sketch</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>태림포장 사내 주문 시스템 리뉴얼 프로젝트의 퍼블리싱을 담당했습니다. 전자정부프레임워크를 처음 사용한 프로젝트라 첫 세팅에 실수가 많았지만 검색으로 해결해 나갔습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> 광장 파트너스 홈페이지</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>광장 파트너스</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2020년 11월 ~ 2020년 12월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Sketch</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>광장 파트너스 사의 홈페이지를 퍼블리싱 했습니다</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> 하마 어플리케이션</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>광장 파트너스</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2020년 9월 ~ 2020년 10월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Sketch</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, JavaScript</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도:</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>부동산 건축 서비스를 구축함에 있어서 필요한 어플리케이션을 퍼블리싱 했습니다. 퍼블리싱 한 이후 웹앱 형식으로 빌드했습니다.</dd>
+                            </dl>
                         </div>
                     </div>
                 </div>
@@ -505,7 +750,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="part part_etc">
+                <div class="part part_etc pageOver">
                     <div class="box_tit">
                         <h2 class="tit">경험/활동/교육</h2>
                     </div>
@@ -698,7 +943,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="part part_cert">
+                <div class="part part_cert pageOver">
                     <div class="box_tit">
                         <h2 class="tit">수상</h2>
                     </div>
@@ -768,7 +1013,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="part part_portfolio">
+                <div class="part part_portfolio pageOver">
                     <div class="box_tit">
                         <h2 class="tit">포트폴리오 및 기타문서</h2>
                     </div>
