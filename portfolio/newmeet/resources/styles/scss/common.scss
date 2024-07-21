@@ -1,0 +1,792 @@
+@charset 'utf-8';
+@import 'font.scss';
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+    box-sizing: border-box;
+    text-decoration: none;
+	word-break: keep-all;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img{
+    display: block;
+}
+a,
+button {
+    cursor: pointer;
+    outline: unset;
+}
+
+$font: 'Pretendard';
+$font-01white: #ffffff;
+$font-02black: #111111;
+$font-03grey: #505050;
+$font-04grey: #767676;
+$font-disabled: #999999;
+
+$mb-d3-sb: 600 40px/52px $font;
+$mb-d4-sb: 600 36px/44px $font;
+$mb-h4-sb: 600 20px/28px $font;
+$mb-h4-rg: 400 20px/28px $font;
+$mb-h5-sb: 600 18px/26px $font;
+$mb-t1-sb: 600 24px/34px $font;
+$mb-t4-sb: 600 16px/24px $font;
+$mb-t4-rg: 400 16px/24px $font;
+$mb-t5-sb: 600 18px/26px $font;
+$mb-b1-sb: 600 15px/22px $font;
+$mb-b2-sb: 600 14px/20px $font;
+$mb-b2-rg: 400 14px/20px $font;
+$mb-b2-lt: 200 14px/20px $font;
+$mb-b3-rg: 400 13px/18px $font;
+$mb-b4-rg: 400 12px/18px $font;
+$mb-c1-sb: 600 13px/18px $font;
+$mb-c1-rg: 400 13px/18px $font;
+$mb-c2-sb: 600 12px/18px $font;
+$mb-c2-rg: 400 12px/18px $font;
+$mb-c3-rg: 400 11px/16px $font;
+
+$btn1-rg: 400 16px/24px $font;
+$btn2-sb: 600 14px/20px $font;
+$btn2-rg: 400 14px/20px $font;
+$btn4-rg: 400 12px/18px $font;
+
+$line-black: #111111;
+$line-light: #F1F1F5;
+$line-regular: #E5E5EC;
+
+$bg-black: #111111;
+$bg-white: #ffffff;
+$bg-regular: #F1F1F5;
+$bg-red: #DC0000;
+$bg-dim: rgba($bg-black, 0.4);
+
+$brand: #33BA8A;
+
+// NOTE: 인풋
+.ipt{
+    & + &{
+        margin-top: 24px;
+    }
+    span{
+        font: $mb-b2-rg;
+        color: $font-02black;
+        letter-spacing: -0.025em;
+        &.body-error{
+            font: $mb-c1-rg;
+            color: $bg-red;
+            margin-top: 8px;
+        }
+    }
+    input,
+    select,
+    textarea{
+        flex: 1;
+        display: inline-block;
+        font: $mb-t4-rg;
+        color: $font-02black;
+        letter-spacing: -0.025em;
+        padding: 14px 16px;
+        border: 1px solid $line-regular;
+        border-radius: 6px;
+        resize: none;
+        &::placeholder{
+            color: $font-04grey;
+        }
+        &:focus{
+            outline: unset;
+            background-color: rgba($brand, 0.2);
+        }
+    }
+    select{
+        option{
+            background-color: $bg-white;
+        }
+    }
+    textarea{
+        min-height: 154px;
+    }
+
+    & > div{
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    label{
+        position: relative;
+        display: flex;
+        gap: 8px;
+        cursor: pointer;
+        input{
+            display: none;
+        }
+        // checkbox 기반
+        &::before{
+            content: "";
+            display: block;
+            font-size: 20px;
+            width: 1em;
+            aspect-ratio: 1;
+            background: $bg-white url(/resources/images/icons/ic-toggle.svg) 0/2em no-repeat;
+            border: 1px solid $line-regular;
+            transition: 0.2s;
+        }
+        &:has(input:checked)::before{
+            background-position: -1em;
+            background-color: $brand;
+            border-color: $brand;
+        }
+        // radio 형태 수정
+        &:has(input[type=radio])::before{
+            border-radius: 50%;
+        }
+        &:has(input.toggle){
+            padding-left: 36px;
+            &::before{
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: $bg-white;
+                border: unset;
+                box-shadow: 1px 1px 3px 0 rgba($bg-black, 0.1);
+                border-radius: 50%;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 36px;
+                height: 12px;
+                border-radius: 6px;
+                background-color: $bg-regular;
+                z-index: -1;
+            }
+            span{
+                padding-left: 8px;
+            }
+        }
+        &:has(input.toggle:checked){
+            &::before{
+                box-shadow: unset;
+                background-color: $brand;
+                left: 16px;
+            }
+        }
+    }
+}
+
+// NOTE: 버튼
+.btn{
+    display: block;
+    background-color: unset;
+    border: unset;
+    outline: unset;
+    background-color: #F7F7FB;
+    border: 1px solid #F7F7FB;
+    font: $btn1-rg;
+    letter-spacing: -0.025em;
+    color: $font-03grey;
+    padding: 14px 16px;
+    border-radius: 6px;
+
+    &.sm{
+        font: $btn4-rg;
+        padding: 3px 8px;
+        border-radius: 4px;
+    }
+
+    &.clear{
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    &.primary{
+        background-color: $brand;
+        color: $font-01white;
+        border-color: $brand;
+
+        &.rvs{
+            background-color: $bg-white;
+            color: $font-02black;
+            border-color: $brand;
+        }
+    }
+
+    &.login{
+        width: 327px;
+        img{
+            width: 100%;
+        }
+    }
+
+    &.white{
+        background-color: $bg-white;
+        color: $font-02black;
+        border-color: $line-regular;
+    }
+
+    &.square{
+        width: 50px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        img{
+            width: 20px;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+        &.sm{
+            width: 40px;
+            border-radius: 8px;
+        }
+        &.primary{
+            background-color: $brand;
+            border-color: $brand;
+        }
+    }
+    &.full{
+        width: 100%;
+        text-align: center;
+    }
+    &-more{
+        font: $mb-c2-rg;
+        color: $font-02black;
+        letter-spacing: -0.025em;
+        padding-right: 12px;
+        background: url(/resources/images/icons/ic-arrow-right.svg) right center/12px no-repeat;
+    }
+}
+// NOTE: LIST
+[class^=list]{
+    & > h2{
+        font: $mb-t5-sb;
+        letter-spacing: -0.025em;
+        color: $font-02black;
+        display: flex;
+        align-items: center;
+        a{
+            margin-left: auto;
+        }
+    }
+    & > p{
+        font: $mb-c1-rg;
+        letter-spacing: -0.025em;
+        color: $font-04grey;
+    }
+    & > ul{
+        margin-top: 16px;
+    }
+}
+.review-star{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    ul{
+        display: inline-flex;
+    }
+    li{
+        font-size: 12px;
+        display: inline-block;
+        width: 1em;
+        aspect-ratio: 1;
+        background: url(/resources/images/icons/ic-star.svg) 0/3em no-repeat;
+        &.active{
+            background-position: -1em;
+        }
+    }
+    span{
+        font: $mb-c1-rg;
+        letter-spacing: 0.025em;
+        color: $font-02black;
+        vertical-align: bottom;
+    }
+    label{
+        font-size: 24px;
+        width: 1em;
+        aspect-ratio: 1;
+        object-fit: cover;
+        background: url(/resources/images/icons/ic-star.svg) -2em / 3em no-repeat;
+        &:has(input:checked) ~ label{
+            background-position: 0;
+        }
+    }
+}
+.list{
+    border-top: 1px solid $line-light;
+    li{
+        border-bottom: 1px solid $line-light;
+        & > *{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+        }
+        & > a{
+            padding-right: 20px;
+            background: url(/resources/images/icons/ic-arrow-right-b.svg) right 20px center/20px no-repeat;
+        }
+        .ipt > div{
+            margin: unset;
+        }
+    }
+    span{
+        font: $mb-t4-sb;
+        letter-spacing: -0.025em;
+        color: $font-02black;
+    }
+    // 소비기한 임박 식자재
+    &-useByDate{
+        & > ul{
+            width: 100%;
+            overflow: auto;
+            white-space: nowrap;
+            margin-top: 16px;
+            li{
+                width: 70px;
+                display: inline-block;
+                padding: 8px 11px;
+                & + li{
+                    margin-left: 4px;
+                }
+                a{
+                    position: relative;
+                    & > span{
+                        position: absolute;
+                        top: -4px;
+                        right: -7px;
+                        background-color: $bg-red;
+                        border-radius: 4px;
+                        padding-inline: 4px;
+                        font: $mb-c3-rg;
+                        color: $font-01white;
+                    }
+                }
+            }
+        }
+        img{
+            width: 48px;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+        p{
+            font: $mb-c2-rg;
+            color: $font-03grey;
+            letter-spacing: -0.025em;
+            text-align: center;
+            margin-top: 4px;
+        }
+    }
+    // 레시피
+    &-recipe{
+        & > ul{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 32px 16px;
+        }
+        a{
+            .r{
+                &-chef{
+                    font: $mb-c2-sb;
+                    color: $font-02black;
+                    letter-spacing: -0.025em;
+                }
+                &-title{
+                    font: $mb-c1-rg;
+                    color: $font-03grey;
+                    letter-spacing: -0.025em;
+                    margin-top: 2px;
+                    word-break: break-word;
+                }
+            }
+            & > div{
+                margin-top: 16px;
+            }
+        }
+        img{
+            width: 100%;
+            aspect-ratio: 1.2/1;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 12px -1px rgb(35 48 59 / 10%);
+        }
+    }
+    // 식자재 리스트
+    &-food{
+        & + &{
+            margin-top: 24px;
+        }
+        & > ul{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+        a{
+            div{
+                margin-top: 12px
+            }
+        }
+
+        img{
+            width: 100%;
+            aspect-ratio: 1.8;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 8px 12px -1px rgb(35 48 59 / 10%);
+        }
+
+        &.detail{
+            ul{
+                grid-template-columns: 1fr;
+            }
+            a{
+                display: flex;
+            }
+            div{
+                padding-left: 14px;
+            }
+            span{
+                display: block;
+                &.f{
+                    &-name{
+                        font: $mb-h5-sb;
+                        letter-spacing: -0.025em;
+                        color: $font-02black;
+                    }
+                    &-size::before{
+                        content: unset;
+                    }
+                    &-addDate{
+                        margin-top: 24px;
+                        &::before{
+                            content: "구매일자 : ";
+                        }
+                    }
+                    &-useByDate::before{
+                        content: "소비기한 : ";
+                    }
+                }
+            }
+            img{
+                width: 124px;
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+        }
+    }
+    // 해시태그
+    &-tag{
+        ul{
+            margin-top: unset;
+        }
+        li{
+            font: $mb-c3-rg;
+            letter-spacing: -0.025em;
+            color: $font-02black;
+            padding: 2px 4px;
+            background-color: #F7F7FB;
+            display: inline-block;
+        }
+    }
+
+    // 식자재 캘린더 내 식자재들
+    &-foodBuyUseByDate{
+        h2{
+            font: $mb-h4-rg;
+            letter-spacing: -0.025em;
+            color: $font-02black;
+            align-items: baseline;
+            margin-top: 38px;
+            span{
+                font: $mb-d3-sb;
+            }
+        }
+        ul{
+            li{
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-top: 12px;
+                p + p{
+                    margin-top: 4px;
+                }
+            }
+            img{
+                width: 70px;
+                aspect-ratio: 70/64;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+.tab{
+    ul{
+        display: flex;
+        gap: 26px;
+        li{
+            position: relative;
+            font: $mb-b2-rg;
+            letter-spacing: -0.025em;
+            color: $font-02black;
+            &.active{
+                font: $mb-b2-sb;
+            }
+            & + li{
+                &::before{
+                    content: "";
+                    width: 2px;
+                    aspect-ratio: 1;
+                    background-color: rgba($bg-black, 0.2);
+                    position: absolute;
+                    left: -12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &[data-color]{
+                    background-color: red;
+                    color: attr(data-color)
+                }
+            }
+        }
+        a{
+            color: inherit;
+        }
+    }
+    &-filter{
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            td{
+                border: 1px solid $line-regular;
+                font: $mb-b2-rg;
+                color: $font-04grey;
+                a{
+                    display: block;
+                    padding-block: 12px;
+                    text-align: center;
+                    font: inherit;
+                    letter-spacing: -0.025em;
+                    color: inherit;
+                }
+                &.active{
+                    font: $mb-b2-sb;
+                    border-color: $line-black;
+                    box-shadow: inset 0 0 0 1px $line-black;
+                    color: $font-02black;
+                }
+            }
+        }
+    }
+}
+.imageUploader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > *{
+        display: block;
+        width: 100%;
+        aspect-ratio: 335/188;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    label{
+        background-color: #C1C6CF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        p{
+            font: $mb-b4-rg;
+            letter-spacing: -0.025em;
+            color: $font-01white;
+        }
+        .ic-camera{
+            font-size: 36px;
+            width: 1em;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after{
+                content: "";
+                display: block;
+                background: url(/resources/images/icons/ic-camera.svg) 0/2em no-repeat;
+                width: 1em;
+                aspect-ratio: 1;
+            }
+        }
+    }
+    img{
+        display: none;
+        box-shadow: 1px 1px 3px 0 rgba($bg-black, 0.1);
+    }
+}
+// NOTE: 데이트피커 커스텀
+.ui-datepicker{
+    &-header{
+        display: flex;
+        align-items: center;
+        .ui{
+            &-corner-all{
+                text-indent: -9999px;
+                width: 48px;
+                aspect-ratio: 1;
+                background: url(/resources/images/icons/datepicker/ic-prev.svg) center/24px no-repeat;
+                &.ui-datepicker-next{
+                    background-image: url(/resources/images/icons/datepicker/ic-next.svg);
+                }
+            }
+            &-datepicker-title{
+                order: -1;
+                margin-right: auto;
+                select{
+                    font: $mb-b2-rg;
+                    letter-spacing: -0.025em;
+                    color: $font-02black;
+                    padding: 10px 8px;
+                    border: unset;
+                }
+            }
+        }
+    }
+    &-calendar{
+        width: 100%;
+        tr > *{
+            position: relative;
+            font: $mb-t4-rg;
+            letter-spacing: -0.025em;
+            color: $font-02black;
+            padding-block: 12px;
+            text-align: center;
+            color: $font-02black;
+            a{
+                color: inherit;
+            }
+        }
+        td{
+            &.ui-datepicker{
+                &-today,
+                &-current-day{
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 32px;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        border: 1px solid $brand;
+                        z-index: -1;
+                    }
+                }
+                &-today{
+                    color: $brand;
+                }
+                &-current-day{
+                    color: $font-01white !important;
+                    &::before{
+                        background-color: $brand;
+                    }
+                }
+            }
+            &.useByDate{
+                a::before{
+                    content: "";
+                    position: absolute;
+                    width: 3px;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    background-color: #39C3B6;
+                    bottom: 1.5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                &.buyDate{
+                    a{
+                        &::before{
+                            left: 19px;
+                            transform: unset;
+                        }
+                        &::after{
+                            left: unset;
+                            right: 19px;
+                            transform: unset;
+                        }
+                    }
+                }
+            }
+            &.buyDate{
+                a::after{
+                    content: "";
+                    position: absolute;
+                    width: 3px;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    background-color: #6100FF;
+                    bottom: 1.5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+.f-name,
+.f-size,
+.f-addDate,
+.f-useByDate{
+    &,
+    &::before{
+        font: $mb-c1-rg;
+        letter-spacing: -0.025em;
+        color: $font-02black;
+    }
+}
+.f-size::before{
+    content: " - ";
+}
+.f-useByDate::before{
+    content: " ~ ";
+}
