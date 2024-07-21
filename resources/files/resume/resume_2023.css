@@ -1454,7 +1454,6 @@ button:disabled svg {color:var(--gray50)}
 .print_wrap .resume_part .part.part_career .box_list .date + .desc ~ .faculty {margin-top:16px}
 .print_wrap .resume_part .part.part_career_desc .box_list {padding-left:0}
 .print_wrap .resume_part .part.part_career_desc .box_list .desc {margin-top:0}
-.print_wrap .resume_part .part.part_portfolio .faculty dt {width:50px}
 .print_wrap .resume_part .faculty {width:auto;margin-top:2px;position:relative;flex-wrap:nowrap;align-items:center;letter-spacing:normal}
 .print_wrap .resume_part .faculty:first-child {margin-top:12px}
 .print_wrap .resume_part .faculty + .faculty {padding-left:16px}
