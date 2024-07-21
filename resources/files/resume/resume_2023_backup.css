@@ -1384,7 +1384,7 @@ button:disabled svg {color:var(--gray50)}
 .print_wrap .resume_part .part .box_tit .tit {font-size:22px;color:var(--gray130);margin-right:12px;line-height:32px}
 .print_wrap .resume_part .part .box_tit .txt {font-size:14px;color:var(--blue100);line-height:20px}
 .print_wrap .resume_part .part .box_tit .txt +.txt {display:inline-block;color:var(--gray80);margin-left:4px}
-.print_wrap .resume_part .part .box_con {position:relative;box-sizing:border-box;padding-bottom:36px}
+.print_wrap .resume_part .part .box_con {position:relative;box-sizing:border-box;padding-bottom:50px}
 .print_wrap .resume_part .part .box_list {position:relative;padding:24px 0 24px 174px}
 .print_wrap .resume_part .part .box_list + .box_list .tit_left {top:25px}
 .print_wrap .resume_part .part .box_list .tit_left {position:absolute;left:0;flex-wrap:wrap;color:var(--gray130);font-size:18px;line-height:30px;font-weight:bold}
@@ -1459,7 +1459,7 @@ button:disabled svg {color:var(--gray50)}
 .print_wrap .resume_part .faculty:first-child {margin-top:12px}
 .print_wrap .resume_part .faculty + .faculty {padding-left:16px}
 .print_wrap .resume_part .faculty + .faculty:before {display:inline-block;position:absolute;top:50%;left:0;transform:translateY(-50%);width:1px;height:12px;background:var(--gray40);content: ""}
-.print_wrap .resume_part .faculty dt {width:60px;color:var(--gray80);line-height:24px;-webkit-text-size-adjust: none}
+.print_wrap .resume_part .faculty dt {width:auto;color:var(--gray80);line-height:24px;-webkit-text-size-adjust: none}
 .print_wrap .resume_part .faculty dd {width:auto;flex-shrink:0;padding:0 14px 0 0;color:var(--gray130);line-height:24px;-webkit-text-size-adjust: none}
 .print_wrap .resume_part .faculty dt + dd {padding:0 16px 0 8px}
 .print_wrap .resume_part .faculty dd:before {content:none}
