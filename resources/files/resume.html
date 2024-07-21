@@ -11,245 +11,183 @@
     <link href="./resume/resume_2023.css" media="screen, print" rel="stylesheet" type="text/css">
     <title>퍼블리셔 은영환 이력서 보기</title>
     <style>
+        .desc{
+            word-break: keep-all !important;
+        }
+        .pageOver{
+            page-break-after: always;
+        }
         @media print {
-
-            body,
-            html {
+            body, html {
                 margin-top: -1px;
                 width: 210mm;
                 height: 297mm;
-                -webkit-print-color-adjust: exact
+                -webkit-print-color-adjust: exact 
             }
-
-            section,
-            div,
-            p,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
+            section, div, p, h1, h2, h3, h4, h5, h6 {
                 break-before: avoid;
                 break-after: avoid;
-                break-inside: avoid
+                break-inside: avoid 
             }
-
-            .resume_part .part *,
-            .print_wrap *,
-            .resume_letter,
-            .resume_skill {
-                line-height: 1.8 !important
+            .resume_part .part *, .print_wrap *, .resume_letter, .resume_skill {
+                line-height: 1.8 !important 
             }
-
-            .part_only_career .box_list,
-            .part_etc .box_list,
-            .part_letter .box_list {
-                display: block !important
+            .part_only_career .box_list, .part_etc .box_list, .part_letter .box_list {
+                display: block !important 
             }
-
             .part_letter .box_list .desc {
-                page-break-inside: auto
+                page-break-inside: auto ;
             }
-
             .part_etc .box_list .date {
-                top: 24px !important
+                top: 24px !important 
             }
-
-            .part_table,
-            .part_table * {
+            .part_table, .part_table * {
                 break-before: avoid;
                 break-after: avoid;
-                break-inside: avoid
+                break-inside: avoid 
             }
-
             .part_table .svq_view .total_result {
                 display: table;
-                table-layout: fixed
+                table-layout: fixed 
             }
-
             .part_table .svq_view .radar_graph {
                 display: table-cell;
                 float: none;
                 margin-right: 0;
-                width: 50%
+                width: 50% 
             }
-
             .part_table .svq_view .result_detail {
                 display: table-cell;
                 padding-left: 40px;
-                width: 49%
+                width: 49% 
             }
-
-            .project .link button,
-            .skill_box .skill_item {
-                margin: 0 4px 4px 0
+            .project .link button, .skill_box .skill_item {
+                margin: 0 4px 4px 0 
             }
-
             .skill_box.soft_delete .skill_item {
-                background: var(--blue30)
+                background: var(--blue30) 
             }
-
             .resume_dashboard {
-                background: var(--gray30)
+                background: var(--gray30) 
             }
-
             .resume_dashboard .item+.item {
-                border-left: 1px solid var(--gray40)
+                border-left: 1px solid var(--gray40) 
             }
-
             .resume_view .resume_top .user_state {
-                background: var(--gray30)
+                background: var(--gray30) 
             }
-
             #resume_print_area {
-                width: 930px
+                width: 930px 
             }
-
             .resume_part .part .guide_txt {
-                display: block
+                display: block 
             }
-
             .resume_part .part .guide_txt {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_letter {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_letter .tit {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_letter .txt {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_letter .core_tit {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_letter .core_list li:before {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_skill .tit {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .skill_box.view .skill_item {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .skill_box.soft_view .skill_item {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_tit .tit {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_list .tit_left {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_list .date {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_list .date .work {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_list .tit {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_list .desc {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part .box_list .military_info li {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .part.part_cert .box_list .faculty dt {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .faculty dd {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .personality .unit_result dl dt {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .personality .unit_result dl:first-child dd {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .personality .unit_result dl .type_num {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .personality .unit_result dl dd {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_part .personality .result_detail .wrap_detail_info {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .part_table .wrap_result .tit_result {
-                color: #000 !important
+                color: #000 !important 
             }
-
             .print_wrap .resume_view .user_info li+li:after {
-                background: #d3d5da
+                background: #d3d5da 
             }
-
             .print_wrap .resume_dashboard {
-                border-top: 1px solid #d3d5da
+                border-top: 1px solid #d3d5da 
             }
-
             .print_wrap .resume_dashboard .item {
-                border: 1px solid #d3d5da
+                border: 1px solid #d3d5da 
             }
-
             .print_wrap .resume_skill {
-                border-top: 1px solid #d3d5da
+                border-top: 1px solid #d3d5da 
             }
-
             .print_wrap .resume_part .part .box_tit {
-                border-bottom: 1px solid #d3d5da
+                border-bottom: 1px solid #d3d5da 
             }
-
             .print_wrap .resume_part .part .box_list .tit .badge {
-                border: 1px solid #d3d5da
+                border: 1px solid #d3d5da 
             }
-
             .print_wrap .resume_part .part .box_list .military_info li+li:before {
-                background-color: #d3d5da
+                background-color: #d3d5da 
             }
-
             .print_wrap .resume_part .part.part_cert .box_list .faculty dt+dd:before {
-                background: #d3d5da
+                background: #d3d5da 
             }
-
             .print_wrap .resume_part .faculty+.faculty:before {
-                background: #d3d5da
+                background: #d3d5da 
             }
-
             .print_wrap .wrap_preview_file {
-                border: 1px solid #d3d5da
+                border: 1px solid #d3d5da 
             }
         }
-
         @page {
             margin: 10mm;
-            size: A4
+            size: A4 
         }
     </style>
 </head>
