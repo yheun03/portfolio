@@ -12,190 +12,63 @@
     <title>퍼블리셔 은영환 이력서 보기</title>
     <style>
         .desc,
-        dd{
-            word-break: keep-all !important;
-        }
-        .pageOver{
-            page-break-after: always;
-        }
-        .bdn-child > div{
-            border-top: unset !important;
-            padding-bottom: 16px !important;
-        }
-        .bdn-child > div + div{
-            padding-top: unset !important;
-        }
+        dd{ word-break: keep-all !important; }
+        .pageOver{ page-break-after: always; }
+        .bdn-child > div{ border-top: unset !important; padding-bottom: 16px !important; }
+        .bdn-child > div + div{ padding-top: unset !important; }
         @media print {
-            .desc,
-            dd{
-                word-break: keep-all !important;
-            }
-            body, html {
-                margin-top: -1px;
-                width: 210mm;
-                height: 297mm;
-                -webkit-print-color-adjust: exact 
-            }
-            section, div, p, h1, h2, h3, h4, h5, h6 {
-                break-before: avoid;
-                break-after: avoid;
-                break-inside: avoid 
-            }
-            .resume_part .part *, .print_wrap *, .resume_letter, .resume_skill {
-                line-height: 1.8 !important 
-            }
-            .part_only_career .box_list, .part_etc .box_list, .part_letter .box_list {
-                display: block !important 
-            }
-            .part_letter .box_list .desc {
-                page-break-inside: auto ;
-            }
-            .part_etc .box_list .date {
-                top: 24px !important 
-            }
-            .part_table, .part_table * {
-                break-before: avoid;
-                break-after: avoid;
-                break-inside: avoid 
-            }
-            .part_table .svq_view .total_result {
-                display: table;
-                table-layout: fixed 
-            }
-            .part_table .svq_view .radar_graph {
-                display: table-cell;
-                float: none;
-                margin-right: 0;
-                width: 50% 
-            }
-            .part_table .svq_view .result_detail {
-                display: table-cell;
-                padding-left: 40px;
-                width: 49% 
-            }
-            .project .link button, .skill_box .skill_item {
-                margin: 0 4px 4px 0 
-            }
-            .skill_box.soft_delete .skill_item {
-                background: var(--blue30) 
-            }
-            .resume_dashboard {
-                background: var(--gray30) 
-            }
-            .resume_dashboard .item+.item {
-                border-left: 1px solid var(--gray40) 
-            }
-            .resume_view .resume_top .user_state {
-                background: var(--gray30) 
-            }
-            #resume_print_area {
-                width: 930px 
-            }
-            .resume_part .part .guide_txt {
-                display: block 
-            }
-            .resume_part .part .guide_txt {
-                color: #000 !important 
-            }
-            .print_wrap .resume_letter {
-                color: #000 !important 
-            }
-            .print_wrap .resume_letter .tit {
-                color: #000 !important 
-            }
-            .print_wrap .resume_letter .txt {
-                color: #000 !important 
-            }
-            .print_wrap .resume_letter .core_tit {
-                color: #000 !important 
-            }
-            .print_wrap .resume_letter .core_list li:before {
-                color: #000 !important 
-            }
-            .print_wrap .resume_skill .tit {
-                color: #000 !important 
-            }
-            .print_wrap .skill_box.view .skill_item {
-                color: #000 !important 
-            }
-            .print_wrap .skill_box.soft_view .skill_item {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_tit .tit {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_list .tit_left {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_list .date {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_list .date .work {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_list .tit {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_list .desc {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part .box_list .military_info li {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .part.part_cert .box_list .faculty dt {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .faculty dd {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .personality .unit_result dl dt {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .personality .unit_result dl:first-child dd {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .personality .unit_result dl .type_num {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .personality .unit_result dl dd {
-                color: #000 !important 
-            }
-            .print_wrap .resume_part .personality .result_detail .wrap_detail_info {
-                color: #000 !important 
-            }
-            .print_wrap .part_table .wrap_result .tit_result {
-                color: #000 !important 
-            }
-            .print_wrap .resume_view .user_info li+li:after {
-                background: #d3d5da 
-            }
-            .print_wrap .resume_dashboard {
-                border-top: 1px solid #d3d5da 
-            }
-            .print_wrap .resume_dashboard .item {
-                border: 1px solid #d3d5da 
-            }
-            .print_wrap .resume_skill {
-                border-top: 1px solid #d3d5da 
-            }
-            .print_wrap .resume_part .part .box_tit {
-                border-bottom: 1px solid #d3d5da 
-            }
-            .print_wrap .resume_part .part .box_list .tit .badge {
-                border: 1px solid #d3d5da 
-            }
-            .print_wrap .resume_part .part .box_list .military_info li+li:before {
-                background-color: #d3d5da 
-            }
-            .print_wrap .resume_part .part.part_cert .box_list .faculty dt+dd:before {
-                background: #d3d5da 
-            }
-            .print_wrap .resume_part .faculty+.faculty:before {
-                background: #d3d5da 
-            }
-            .print_wrap .wrap_preview_file {
-                border: 1px solid #d3d5da 
-            }
+            .desc, dd{ word-break: keep-all !important; }
+            body, html { margin-top: -1px; width: 210mm; height: 297mm; -webkit-print-color-adjust: exact }
+            section, div, p, h1, h2, h3, h4, h5, h6 { break-before: avoid; break-after: avoid; break-inside: avoid }
+            .resume_part .part *, .print_wrap *, .resume_letter, .resume_skill { line-height: 1.8 !important }
+            .part_only_career .box_list, .part_etc .box_list, .part_letter .box_list { display: block !important }
+            .part_letter .box_list .desc { page-break-inside: auto ;}
+            .part_etc .box_list .date { top: 24px !important }
+            .part_table, .part_table * { break-before: avoid; break-after: avoid; break-inside: avoid }
+            .part_table .svq_view .total_result {display: table; table-layout: fixed }
+            .part_table .svq_view .radar_graph { display: table-cell; float: none; margin-right: 0; width: 50% }
+            .part_table .svq_view .result_detail { display: table-cell; padding-left: 40px; width: 49% }
+            .project .link button, .skill_box .skill_item {margin: 0 4px 4px 0 }
+            .skill_box.soft_delete .skill_item {background: var(--blue30) }
+            .resume_dashboard {background: var(--gray30) }
+            .resume_dashboard .item+.item {border-left: 1px solid var(--gray40) }
+            .resume_view .resume_top .user_state {background: var(--gray30) }
+            #resume_print_area {width: 930px }
+            .resume_part .part .guide_txt {display: block }
+            .resume_part .part .guide_txt {color: #000 !important }
+            .print_wrap .resume_letter {color: #000 !important }
+            .print_wrap .resume_letter .tit {color: #000 !important }
+            .print_wrap .resume_letter .txt {color: #000 !important }
+            .print_wrap .resume_letter .core_tit {color: #000 !important }
+            .print_wrap .resume_letter .core_list li:before {color: #000 !important }
+            .print_wrap .resume_skill .tit {color: #000 !important }
+            .print_wrap .skill_box.view .skill_item {color: #000 !important }
+            .print_wrap .skill_box.soft_view .skill_item {color: #000 !important }
+            .print_wrap .resume_part .part .box_tit .tit {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .tit_left {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .date {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .date .work {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .tit {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .desc {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .military_info li {color: #000 !important }
+            .print_wrap .resume_part .part.part_cert .box_list .faculty dt {color: #000 !important }
+            .print_wrap .resume_part .faculty dd {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl dt {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl:first-child dd {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl .type_num {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl dd {color: #000 !important }
+            .print_wrap .resume_part .personality .result_detail .wrap_detail_info {color: #000 !important }
+            .print_wrap .part_table .wrap_result .tit_result {color: #000 !important }
+            .print_wrap .resume_view .user_info li+li:after {background: #d3d5da }
+            .print_wrap .resume_dashboard {border-top: 1px solid #d3d5da }
+            .print_wrap .resume_dashboard .item {border: 1px solid #d3d5da }
+            .print_wrap .resume_skill {border-top: 1px solid #d3d5da }
+            .print_wrap .resume_part .part .box_tit {border-bottom: 1px solid #d3d5da }
+            .print_wrap .resume_part .part .box_list .tit .badge {border: 1px solid #d3dad6 }
+            .print_wrap .resume_part .part .box_list .military_info li+li:before {background-color: #d3d5da }
+            .print_wrap .resume_part .part.part_cert .box_list .faculty dt+dd:before {background: #d3d5da }
+            .print_wrap .resume_part .faculty+.faculty:before {background: #d3d5da }
+            .print_wrap .wrap_preview_file {border: 1px solid #d3d5da }
         }
         @page {
             margin: 10mm;
@@ -204,8 +77,8 @@
     </style>
 </head>
 
-<!-- <body> -->
-<body onload="window.print();">
+<body>
+<!-- <body onload="window.print();"> -->
     <div id="resume_print_area" class="print_area">
         <div class="print_wrap">
             <h2 class="blind">이력서 VIEW</h2>
@@ -356,7 +229,7 @@
                                 <dd>HTML, SCSS, Vue.js</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -385,7 +258,7 @@
                                 <dd>HTML, SCSS</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -409,7 +282,7 @@
                                 <dd>HTML, SCSS, Vue.js</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>기획 30%, 퍼블리싱 100%, 디자인 80%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -436,7 +309,7 @@
                                 <dd>HTML, SCSS, React</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -459,7 +332,11 @@
                                 <dd>넥사크로</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>사용 언어</dt>
+                                <dd>XML, CSS</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -482,7 +359,7 @@
                                 <dd>넥사크로</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>이슈 보고서 작성 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -505,7 +382,7 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -528,7 +405,7 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%, 디자인 40%, UX 기획 25%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -559,7 +436,7 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%, 디자인 30%, UX 기획 25%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -586,7 +463,7 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%, 디자인 20%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -613,7 +490,7 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -640,12 +517,12 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
                                 <dt>업무 내용</dt>
-                                <dd>태림포장 사내 주문 시스템 리뉴얼 프로젝트의 퍼블리싱을 담당했습니다. 전자정부프레임워크를 처음 사용한 프로젝트라 첫 세팅에 실수가 많았지만 검색으로 해결해 나갔습니다.</dd>
+                                <dd>태림포장 사내 주문 시스템 리뉴얼 프로젝트의 퍼블리싱을 담당했습니다.</dd>
                             </dl>
                         </div>
                         <div class="box_list">
@@ -667,7 +544,7 @@
                                 <dd>HTML, CSS, jQuery</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -694,7 +571,7 @@
                                 <dd>HTML, CSS, JavaScript</dd>
                             </dl>
                             <dl class="faculty full_type">
-                                <dt>기여도:</dt>
+                                <dt>기여도</dt>
                                 <dd>퍼블리싱 100%</dd>
                             </dl>
                             <dl class="faculty full_type">
@@ -1036,7 +913,9 @@
                             </dl>
                             <dl class="faculty full_type">
                                 <dt>작품소개</dt>
-                                <dd>기존 회사 홈페이지는 상당히 단조롭고, 전문성이 느껴지지 않아 신뢰성이 가지 않는 단방향 소통 기반으로 한 홈페이지였습니다. 그렇기에 자사 홈페이지 리뉴얼 프로젝트를 건의드렸습니다. 회사 홈페이지에서 보여야 할 내용 기획을 도맡아 했고, 이를 위해 다양한 성공적인 홈페이지의 레퍼런스를 수집 및 활용했습니다. 성공적으로 퍼블리싱을 하고 검색 결과에 따른 접근성을 증진시키기 위해 SEO를 준수했고, 오픈 그래프 프로토콜을 관리했습니다. 프로젝트를 마친 후엔 후이즈 호스팅 대행 서비스를 통해 클라우드에 업로드 했고, 지속적으로 관리하고 있습니다.</dd>
+                                <dd>
+                                    기존 회사 홈페이지의 단조롭고 신뢰성을 주지 못하는 문제를 해결하기 위해 홈페이지 리뉴얼 프로젝트를 주도했습니다. 기획부터 실행까지 전 과정을 담당하며, 성공적인 홈페이지 레퍼런스를 분석하고 이를 반영한 체계적인 기획을 수행했습니다. 퍼블리싱 후에는 SEO 최적화와 소셜 미디어 연동을 통해 접근성을 증진시키고, 오픈 그래프 프로토콜을 관리하여 소셜 미디어와의 연동성을 높였습니다. 리뉴얼 완료 후 홈페이지를 클라우드에 업로드하고 지속적으로 관리하여 최적의 상태를 유지했습니다. 이 리뉴얼을 통해 회사의 신뢰성과 전문성을 대외적으로 강화하는 데 기여했습니다.
+                                </dd>
                             </dl>
                         </div>
                         <div class="box_list">
@@ -1054,13 +933,13 @@
                             </dl>
                             <dl class="faculty full_type">
                                 <dt>작업 툴</dt>
-                                <dd>Visual Studio Code, Adobe Photoshop, Adobe Illustrator, Figma</dd>
+                                <dd>Visual Studio Code, Figma, Adobe Photoshop, Adobe Illustrator</dd>
                             </dl>
                             <dl class="faculty full_type">
                                 <dt>작품소개</dt>
-                                <dd>제가 직접 기획과 디자인, 퍼블리싱 한 "자기 어필" 웹 페이지입니다.
-                                    본 페이지에서는 제 SCSS 능력과 화면 배치 능력, UI-UX 적 관점을 확인할 수 있습니다.
-                                    현재 제작 중이며 학사 내 평가와 자격증 시험 등의 사유로 8월 말 완성을 목표로 하고 있습니다.</dd>
+                                <dd>
+                                    기획, 디자인, 퍼블리싱 전 과정을 직접 담당하여 자기 어필 웹 페이지를 제작했습니다. 이 프로젝트는 SCSS를 활용한 코드 재사용성과 유지보수성 향상, 효율적 스타일링 작업, 일관된 디자인에 중점을 두었습니다. 사용자 편의성을 고려한 반응형 웹 디자인을 통해 다양한 디바이스에서 일관된 사용자 경험을 제공하며, 직관적인 네비게이션과 깔끔한 디자인으로 사용자 만족도를 높였습니다. 기획 단계에서는 명확한 목표 설정의 중요성을 깨달았고, 디자인 과정에서는 최신 트렌드와 인터페이스 원칙을 반영하여 가독성을 개선했습니다. 퍼블리싱 작업에서는 SCSS로 스타일링을 최적화하며 코드 복잡도를 줄였습니다. 프로젝트 관리 과정에서 일정 준수와 효율성의 중요성을 체감했고, SCSS와 JavaScript 심화 기능을 학습하여 정교한 웹 페이지 구현이 가능해졌습니다. 사용자 피드백을 반영한 UX 개선을 통해 사용자 중심 사고 능력을 키웠습니다.
+                                </dd>
                             </dl>
                         </div>
                         <div class="box_list">
@@ -1081,7 +960,9 @@
                             </dl>
                             <dl class="faculty full_type">
                                 <dt>작품소개</dt>
-                                <dd>캡스톤 디자인 과목에서 진행한 작품입니다. 저는 아이디어 기획, 추상화, UI와 UX를 담당했고, 백엔드 개발 팀원 1명과 서버 및 OCR 개발 팀원 1명으로 진행했습니다.</dd>
+                                <dd>
+                                    이 작품은 캡스톤 디자인 과목에서 진행한 프로젝트로, 저는 아이디어 기획, 추상화, UI와 UX를 담당했습니다. 팀은 백엔드 개발을 맡은 팀원 1명과 서버 및 OCR 개발을 담당한 팀원 1명으로 구성되었습니다. 저는 사용자 경험을 최적화하고 직관적인 인터페이스를 설계하는 데 주력했으며, 팀원들과의 협업을 통해 기능적이고 사용자 친화적인 UIUX를 도출했습니다. 이 프로젝트를 통해 기획과 디자인의 중요성을 다시 한번 실감하게 되었고, 협업을 통해 실질적인 개발 경험을 쌓을 수 있었습니다.
+                                </dd>
                             </dl>
                         </div>
                         <div class="box_list">
@@ -1102,7 +983,9 @@
                             </dl>
                             <dl class="faculty full_type">
                                 <dt>작품소개</dt>
-                                <dd>한국공학대학교 학생들을 대상으로 하는 블라인드 매칭 서비스입니다. 2023년 9월에 서비스를 실시했고 1차 [ 연인, 친구매칭 (171명) ], 2차 [ 과팅, 연인, 친구 매칭 (121명) ] 진행했습니다. 높은 만족도와 여러 기획 아이디어를 주신 결과 2024년에 친구 매칭을 메인으로 하는 공팅 - 친구버전을 만들기로 했고, 더 나은 UI와 UX를 설계했습니다.</dd>
+                                <dd>
+                                    이 작품은 한국공학대학교 학생들을 위한 블라인드 매칭 서비스로, 2023년 9월 첫 서비스를 시작했습니다. 1차에서는 연인과 친구 매칭을 통해 171명이 참여했으며, 2차에서는 과팅, 연인, 친구 매칭으로 121명이 참여했습니다. 서비스는 높은 만족도를 기록했고, 사용자 피드백을 바탕으로 향후 개선 방향을 구체화했습니다. 2024년에는 친구 매칭을 주제로 한 '공팅 - 친구버전'을 출시할 예정입니다. 새로운 버전에서는 향상된 UI와 UX를 설계하여 사용자 경험을 극대화하고, 서비스의 접근성과 편의성을 대폭 개선할 계획입니다. 이를 통해 더 많은 학생들이 공팅을 통해 새로운 친구를 만날 수 있도록 지원할 것입니다.
+                                </dd>
                             </dl>
                         </div>
                     </div>
@@ -1114,34 +997,70 @@
                     <div class="box_con">
                         <div class="box_list">
                             <h3 class="tit">성장과정</h3>
-                            <p class="desc">"Output을 도출하는 퍼블리셔"
+                            <p class="desc">
+                                <b>"실질적 경험을 통해 기술적 역량을 강화한 퍼블리셔"</b>
                                 <br><br>
-                                대한민국이 IT 강국으로 자리 잡은 시점에서 프로그래밍 기술을 배우는 것은 미래를 위한 가치 투자라고 생각했기 때문에 고등학교 입시부터 개발 직무를 배울 수
-                                있는 특성화 고등학교를 선택했습니다.
-                                <br>
-                                웹 개발을 효율적으로 배우고 성장하는 방법은 "확실한 아웃풋"이라고 생각했고, 고등학교 1학년부터 웹 개발에 필요한 기초인 HTML과 CSS,
-                                JavaScript를 배웠습니다. 교육과정을 이수하면서 역량을 확인하기 위해 꾸준히 동아리 내에서 기술 토의 시간을 가졌고, 수업 내용을 기반으로 토이
-                                프로젝트를 진행하며 아웃풋을 도출하려고 노력했습니다.
+                                웹 퍼블리셔로서의 저의 성장 과정은 체계적이고 실질적인 경험의 연속이었습니다. IT 강국 대한민국에서 웹 개발에 대한 깊은 열정을 가지고, 고등학교 시절부터 미래의 IT 인재로서의 길을 확립하기 위해 특성화 고등학교를 선택했습니다. 이곳에서 웹 개발의 기초부터 심화까지 철저하게 배우면서, 기술적 역량을 검증하고 강화하는 것을 최우선으로 삼았습니다. HTML, CSS, JavaScript를 습득한 후, 동아리 활동과 기술 토의 시간을 통해 실력을 쌓았고, 이를 바탕으로 여러 토이 프로젝트를 실행하며 실전 경험을 축적했습니다.
                                 <br><br>
-                                웹 개발을 시작한 지 1년이 지난2019년 8월, 서울특별시교육청이 주최한 "그린 메이커톤" 대회에 참여했습니다. 평소 꼼꼼한 성격을 가졌던 저는 이번
-                                대회에서 완성도상을 수상하게 되었고, 이는 첫 대외활동 수상이자 웹 개발에 흥미를 가지게 된 큰 계기가 되었습니다. 곧바로 두 달 뒤 "제 3회 웰컴 투
-                                메이커 월드" 대회에 참가해 아이디어를 인정받아 미래상을 수상받았고, 이후 매년 대회에 참가해 눈에 뚜렷한 성과를 도출해 내었습니다.<br>
+                                2019년 8월, 서울특별시교육청 주최의 “그린 메이커톤” 대회에서 완성도상을 수상하면서 웹 개발의 첫 대외활동에서 두각을 나타냈습니다. 이 경험은 웹 개발에 대한 흥미와 자신감을 더욱 강화시켰고, 기술적 도전의 즐거움을 깨닫는 계기가 되었습니다. 이후, 두 달 만에 “제 3회 웰컴 투 메이커 월드” 대회에 참가하여 아이디어를 인정받아 미래상을 수상했습니다. 이는 기술적 성과와 창의력을 동시에 입증하며, 퍼블리셔로서의 방향성을 확립하는 데 큰 도움이 되었습니다. 매년 진행된 대회에서의 성과는 저의 기술적 역량과 문제 해결 능력을 지속적으로 검증하는 기회가 되었습니다.
                                 <br><br>
-                                이처럼 단순히 배움에서 그치지 않고 아웃풋을 도출하고, 꾸준히 자신의 실력을 확인하는 학습 방법은 퍼블리셔로서 한 걸음 더 성장하는 발판이 되었습니다.
+                                이러한 과정에서 배움의 깊이를 넘어 실질적인 아웃풋을 도출하고, 자신의 역량을 검증하는 것이 얼마나 중요한지를 깊이 깨달았습니다. 철저한 준비와 꼼꼼한 접근 방식이 개발 과정에서 큰 장점이 되었고, 이를 통해 실질적인 성과를 이루어냈습니다. 또한, 학습과 성장을 반복하며 끊임없이 도전하고 발전하는 것이 중요하다는 것을 체험했습니다. 이러한 경험은 저를 더욱 성장한 퍼블리셔로 만들어 주었고, 차세대 웹 개발자로서의 준비를 철저히 하는 데 큰 도움이 되었습니다.
+                                <br><br>
+                                이제, 이러한 경험을 바탕으로 웹 퍼블리셔로서의 전문성과 기술적 역량을 한층 강화하여, 혁신적인 웹 개발 솔루션을 제공하며 성과를 창출하는 데 주력하고자 합니다.
+                            </p>
+                        </div>
+                        <div class="box_list pageOver">
+                            <h3 class="tit">성격의 장단점</h3>
+                            <p class="desc">
+                                <b>"세부 사항에 대한 꼼꼼함으로 높은 완성도를 유지하는 퍼블리셔"</b>
+                                <br><br>
+                                저는 꼼꼼하고 성실한 성격을 지니고 있습니다. 이러한 성향은 웹 개발 분야에서 큰 장점으로 작용하고 있습니다. 최근 OMS 리뉴얼 프로젝트에서는 퍼블리싱을 100% 담당하며, 주어진 기간보다 훨씬 빠르게, 한 달도 채 되지 않아 업무를 완료했습니다. HTML, SCSS, Vue.js를 활용하여 웹 페이지의 세부적인 디자인과 기능을 효과적으로 구현하며, 모든 세부 사항까지 철저히 점검하여 높은 완성도를 유지했습니다. 이러한 철저하고 성실한 접근 방식 덕분에 프로젝트는 예상보다 훨씬 빠르게 마무리될 수 있었고, 고객에게 만족스러운 결과를 제공할 수 있었습니다.
+                                <br><br>
+                                그러나 세부 사항에 지나치게 집중하다 보면 전체적인 흐름을 놓칠 수 있습니다. 예를 들어, SCM 리뉴얼 프로젝트에서 세부적인 컴포넌트 정리 작업에 집중하다 보니 일정 관리에 도전이 있었습니다. 이를 극복하기 위해, 최근에는 프로젝트 관리 기법을 활용하여 우선순위를 명확히 하고 전체 관점을 유지하려는 노력을 기울이고 있습니다. 간트차트를 사용하여 작업의 우선순위를 명확히 정하고, 전체 일정과 일정을 주기적으로 모니터링하여 지연이 발생하지 않도록 조정하였습니다.
+                                <br><br>
+                                협업 과정에서 꼼꼼함이 가끔 의견 조율에 도전이 될 수 있습니다. 하지만 이를 해결하기 위해 팀의 목표를 우선시하며, 개방적인 태도로 팀원들과 소통하고 다양한 의견을 수용하는 것을 중요하게 생각합니다. 팀원들의 피드백을 적극적으로 반영하고, 협력하는 과정에서 발생할 수 있는 갈등을 최소화하여 팀 전체의 성과를 높이는 데 기여하고 있습니다. 이러한 접근 방식은 팀워크를 강화하고 프로젝트의 성공을 이끄는 데 중요한 역할을 하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">전공 선택 이유와 적성</h3>
+                            <p class="desc">
+                                <b>"웹 개발의 기술적 매력과 창의적 문제 해결을 통해 전문성을 발휘하는 퍼블리셔"</b>
+                                <br><br>
+                                저는 고등학교 시절부터 IT와 프로그래밍에 대한 깊은 흥미를 느꼈습니다. 이 분야는 창의성과 문제 해결 능력을 요구하는 동시에, 급변하는 기술 환경에 적응하며 성장할 수 있는 기회를 제공합니다. 웹 개발의 기초를 배우면서 HTML, CSS, JavaScript의 기술적 매력을 실감하였고, 이는 제 적성과 열정에 부합한다고 느꼈습니다. 특히, 프로젝트를 통해 사용자의 요구를 충족시키고, 실질적인 문제를 해결하는 과정에서 큰 만족감을 느꼈습니다.
+                                <br><br>
+                                웹 개발은 단순한 기술적 작업을 넘어 사용자의 요구를 충족시키고, 실질적인 문제를 해결하는 과정에서 큰 만족감을 제공합니다. 프로젝트를 통해 직접 문제를 해결하고, 사용자 경험을 개선하는 과정에서 제 창의성을 발휘할 수 있었습니다. 이는 저에게 도전과 성취감을 동시에 안겨주었고, 이 분야에 대한 열정을 더욱 강화시켰습니다.
+                                <br><br>
+                                전공을 선택한 이유는 이러한 적성과 흥미를 바탕으로 한 것입니다. 웹 개발 분야는 기술의 발전과 함께 새로운 도전과 기회를 지속적으로 제공합니다. 저의 문제 해결 능력과 창의성은 이 분야에서 중요한 자산이 되었으며, 팀 프로젝트와 다양한 대회에서 경험한 협업 능력은 제 기술적 역량을 한층 강화하는 데 도움이 되었습니다.
+                                <br><br>
+                                앞으로도 웹 개발 분야에서 제 전문성을 높여가며, 지속적으로 기술을 학습하고 문제를 해결해 나가는 것이 제 목표입니다. 이 분야에서의 성장과 발전을 통해, 더욱 창의적이고 효과적인 해결책을 제시하며, 성공적인 경험을 쌓고자 합니다.
+                            </p>
+                        </div>
+                        <div class="box_list pageOver">
+                            <h3 class="tit">지원동기</h3>
+                            <p class="desc">
+                                <b>"기술적 도전과 창의적 문제 해결을 통해 회사의 혁신적 프로젝트에 기여하고자 하는 퍼블리셔"</b>
+                                <br><br>
+                                웹 개발에 대한 깊은 관심과 열정이 커짐에 따라, 이 분야에서 제 기술적 역량을 실질적으로 발휘하고 싶다는 강한 의지를 가지게 되었습니다. 웹 개발은 기초부터 심화까지 다양한 기술을 다루며, 지속적으로 변화하는 기술 환경 속에서 창의적이고 혁신적인 문제 해결을 요구하는 분야입니다. 저는 이러한 도전에 매력을 느끼며, 기술적 문제를 해결하고 사용자 경험을 향상시키는 과정에서 큰 만족감을 느꼈습니다. 특히, 기술적 도전과 창의적인 문제 해결을 통해 성과를 내는 과정이 제게는 큰 보람이자 성장의 기회가 되었습니다.
+                                <br><br>
+                                회사는 젊고 혁신적인 IT 인재들이 모여 협업하며, 다양한 기술적 도전과 창의적인 프로젝트를 수행하는 역동적인 환경을 갖추고 있다고 알고 있습니다. 저는 이러한 환경에서 제 기술적 역량과 문제 해결 능력을 최대한으로 활용하고, 실무 경험을 쌓으며 성장해 나가고 싶습니다. 최근 OMS 리뉴얼 프로젝트에서처럼, 빠르게 변화하는 요구에 대응하며 높은 품질의 퍼블리싱을 제공한 경험이 이러한 목표를 달성하는 데 큰 도움이 될 것입니다.
+                                <br><br>
+                                특히, 다양한 팀 프로젝트와 대회에서 얻은 경험은 저의 협업과 소통 능력을 강화하는 데 큰 도움이 되었으며, 이는 회사의 혁신적인 프로젝트에서도 중요한 역할을 할 것입니다. 저는 팀원들과의 원활한 소통과 협력을 통해 프로젝트를 성공적으로 이끌어내고, 문제 해결 과정에서 창의적인 접근 방식을 통해 실질적인 가치를 더하는 일원이 되고자 합니다. 또한, 회사의 비전과 목표에 깊이 공감하며, 그 일원으로서 기여하고 싶다는 마음가짐을 가지고 있습니다.
+                                <br><br>
+                                회사의 역동적인 환경에서 제 기술적 역량과 문제 해결 능력을 발휘하며, 회사의 목표 달성에 기여하고, 지속적으로 성장해 나가고 싶습니다. 다양한 프로젝트에서의 경험을 바탕으로, 회사의 혁신적이고 도전적인 프로젝트에 실질적인 가치를 더하며, 함께 성공적인 미래를 만들어 나가고 싶습니다.
                             </p>
                         </div>
                         <div class="box_list">
                             <h3 class="tit">입사 후 포부</h3>
-                            <p class="desc">"소통과 성장의 퍼블리셔"
+                            <p class="desc">
+                                <b>"팀워크와 최신 기술을 통해 회사의 목표 달성에 기여할 퍼블리셔"</b>
                                 <br><br>
-                                저는 고등학생 시절부터 다양한 팀 프로젝트와 대회에 참가하며 다양한 주제와 아이디어를 도출하고 기술을 구현하는 경험을 쌓았습니다. 이러한 실무 경험과 
-                                협업 능력을 바탕으로, 회사의 프로젝트를 성공적으로 수행하며 함께 성장하는 퍼블리셔가 되고 싶습니다.
+                                입사 후에는 젊고 패기 넘치는 자세로 회사의 비전과 목표를 실현하는 데 전념하고자 합니다. 웹 개발에 대한 열정과 다양한 실무 경험을 바탕으로, 회사의 프로젝트를 성공적으로 이끌며 함께 성장하는 퍼블리셔로 자리매김하겠습니다. 특히, 소통과 협업의 중요성을 깊이 이해하고 있으며, 다양한 팀원들과의 협력을 통해 프로젝트의 목표를 효과적으로 달성하는 데 기여하고자 합니다.
                                 <br><br>
-                                저는 다양한 프로젝트를 수행하며 소통의 중요성을 깊이 깨달았습니다. 개발은 협업이 필수적인 직무이기에, 저는 항상 다양한 의견을 수용하고 소통하는
-                                태도를 유지해 왔습니다. 앞으로도 팀원들과 원활하게 소통하며, 함께 성장하는 퍼블리셔가 되겠습니다.
+                                저는 팀워크와 소통을 통해 협업의 가치를 체감하며 성장해왔습니다. 다양한 팀 프로젝트와 대회에서 쌓은 경험을 통해, 기술적 의견을 조율하고, 다양한 아이디어를 반영하여 최상의 결과를 도출해내는 능력을 갖추었습니다. 이러한 경험을 바탕으로, 입사 후에도 팀원들과 원활하게 소통하고, 공동의 목표를 향해 협력하여 프로젝트를 성공적으로 수행할 것입니다.
                                 <br><br>
-                                부족한 개발 지식을 보완하기 위해 자격증 취득과 개인 공부를 꾸준히 하여 실무에 필요한 역량을 키우고 있습니다. 퍼블리셔는 기획자, 디자이너,
-                                프론트엔드 개발자 사이에서 소통하는 중요한 역할을 담당한다고 생각합니다. 저는 Vue.js와 React를 공부하여, 퍼블리싱 시 프론트엔드 개발자들이 작업하기 쉽게 준비하는 퍼블리셔가 되겠습니다. 이를 통해 기획자와 디자이너, 개발자 모두와 원활하게 협업할 수 있는 미래 인재가 되도록 노력하겠습니다.
+                                기술적인 측면에서도 발전을 지속할 계획입니다. 현재 Vue.js와 React를 공부하며, 최신 웹 개발 트렌드를 습득하고 있습니다. 퍼블리셔로서 기획자, 디자이너, 프론트엔드 개발자 간의 원활한 소통을 위해 이러한 기술적 배경을 활용하고자 합니다. 자격증 취득과 개인 학습을 통해 실무에 필요한 역량을 계속해서 보강하며, 최신 기술을 익히고 적용하여 회사의 기술적 리더십을 지원할 것입니다.
+                                <br><br>
+                                궁극적으로, 저의 젊은 에너지와 끊임없는 노력으로 회사의 목표 달성에 기여하고, 개인적으로는 웹 개발 분야에서의 전문성을 더욱 높여가겠습니다. 도전과 성장의 과정에서 얻은 교훈을 바탕으로, 창의적이고 혁신적인 솔루션을 제시하며, 미래의 웹 개발 분야에서 두각을 나타낼 수 있는 인재로 성장해 나가겠습니다.
                             </p>
                         </div>
                     </div>
