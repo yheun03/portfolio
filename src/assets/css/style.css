@@ -126,6 +126,23 @@ http://scripts.sil.org/OFL
   unicode-range: U+0031;
   letter-spacing: 100px;
 }
+h1 {
+  font: 500 46px/120% "Pretendard";
+  color: #111111;
+}
+
+h2 {
+  font: 500 50px/120% "Pretendard";
+  color: #111111;
+}
+
+.btn {
+  font: 400 16px/120% "Pretendard";
+  border: 1px solid #111111;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
 footer {
   background-color: #111111;
   padding: 100px 200px;
@@ -137,4 +154,72 @@ footer address {
   font: 400 12px/120% "Pretendard";
   color: #8F8F8F;
   margin-top: 16px;
+}
+
+.area-intro {
+  display: none;
+  padding-inline: 64px;
+}
+.area-intro h1 {
+  line-height: 80px;
+}
+.area-intro > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.area-intro picture {
+  transform: translateY(-180px);
+}
+.area-intro p {
+  text-align: right;
+  font: 400 16px/120% "Pretendard";
+  line-height: 30px;
+}
+.area-information {
+  padding: 160px 64px;
+  display: grid;
+  grid-template-columns: 385px 1fr;
+  gap: 155px;
+  background-color: #F6F6F6;
+}
+.area-information h2 {
+  line-height: 80px;
+  text-align: right;
+}
+.area-information p, .area-information li {
+  font: 400 16px/120% "Pretendard";
+  line-height: 30px;
+  color: #111111;
+  white-space: nowrap;
+}
+.area-information li span.align {
+  letter-spacing: 4.61px;
+}
+.area-information li span:last-child {
+  font: 400 12px/120% "Pretendard";
+  color: #8F8F8F;
+  margin-left: 4px;
+}
+.area-information .title {
+  font: 800 20px/120% "Pretendard";
+  margin-bottom: 16px;
+}
+.area-information > ul {
+  display: flex;
+  gap: 56px 20px;
+  flex-direction: column;
+}
+.area-information.type-history {
+  background-color: unset;
+}
+.area-information.type-history > ul {
+  flex-wrap: wrap;
+  flex-direction: unset;
+}
+.area-information.type-history > ul > li {
+  flex: 1 1 calc(50% - 10px);
+}
+.area-projects {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
