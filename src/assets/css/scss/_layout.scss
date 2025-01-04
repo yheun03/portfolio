@@ -4,3 +4,82 @@
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/modal';
+
+.area{
+    // 한 줄 어필 및 증명사진, 이력서 보기 버튼
+    &-intro{
+
+        display: none;
+
+        padding-inline: 64px;
+        h1{
+            line-height: 80px;
+        }
+        & > div{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        picture{
+            transform: translateY(-180px);
+        }
+        p{
+            text-align: right;
+            font: v.$b2-400;
+            line-height: 30px;
+        }
+    }
+
+    &-information{
+        $thisGap: 20px;
+        padding: 160px 64px;
+        display: grid;
+        grid-template-columns: 385px 1fr;
+        gap: 155px;
+        background-color: v.$black9;
+        h2{
+            line-height: 80px;
+            text-align: right;
+        }
+        p, li{
+            font: v.$b2-400;
+            line-height: 30px;
+            color: v.$black0;
+            white-space: nowrap;
+        }
+        li span{
+            &.align{
+                letter-spacing: 4.61px;
+            }
+            &:last-child{
+                font: v.$c1-400;
+                color: v.$black5;
+                margin-left: 4px;
+            }
+        }
+        .title{
+            font: v.$t4-800;
+            margin-bottom: 16px;
+        }
+        & > ul{
+            display: flex;
+            gap: 56px $thisGap;
+            flex-direction: column;
+        }
+        
+        &.type-history{
+            background-color: unset;
+            & > ul{
+                flex-wrap: wrap;
+                flex-direction: unset;
+                & > li{
+                    flex: 1 1 calc(50% - $thisGap / 2);
+                }
+            }
+        }
+    }
+
+    &-projects{
+        display: none;
+    }
+}
