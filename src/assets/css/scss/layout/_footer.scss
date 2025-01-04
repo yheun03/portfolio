@@ -1,0 +1,15 @@
+@charset 'utf-8';
+@use '../index' as v;
+
+footer{
+    background-color: v.$black0;
+    padding: 100px 200px;
+    text-align: center;
+    font: v.$b3-400;
+    color: v.$white;
+    address{
+        font: v.$c1-400;
+        color: v.$black5;
+        margin-top: 16px;
+    }
+}
