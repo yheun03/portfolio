@@ -1,0 +1,131 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+  outline: unset;
+  color: inherit;
+}
+
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: block;
+  src: local("Pretendard SemiBold"), url("/src/assets/font/Pretendard/Pretendard-SemiBold.woff2") format("woff2"), url("/src/assets/font/Pretendard/Pretendard-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: block;
+  src: local("Pretendard Medium"), url("/src/assets/font/Pretendard/Pretendard-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: block;
+  src: local("Pretendard Regular"), url("/src/assets/font/Pretendard/Pretendard-Regular.woff2") format("woff2"), url("/src/assets/font/Pretendard/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: block;
+  src: local("Pretendard Light"), url("/src/assets/font/Pretendard/Pretendard-Light.woff2") format("woff2"), url("/src/assets/font/Pretendard/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "NanumSquare";
+  font-weight: 300;
+  font-display: block;
+  src: local("☺"), url("/src/assets/font/NanumSquare/NanumSquareL.otf") format("opentype"), url("/src/assets/font/NanumSquare/NanumSquareL.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumSquare";
+  font-weight: 500;
+  font-display: block;
+  src: local("☺"), url("/src/assets/font/NanumSquare/NanumSquareB.otf") format("opentype");
+}
+@font-face {
+  font-family: "DsDigi";
+  font-weight: 400;
+  font-display: block;
+  src: local("☺"), url("/src/assets/font/DsDigi/DS-DIGI.TTF") format("truetype");
+}
+@font-face {
+  font-family: "DsDigi";
+  font-weight: 700;
+  font-display: block;
+  src: local("☺"), url("/src/assets/font/DsDigi/DS-DIGIB.TTF") format("truetype");
+}
+@font-face {
+  font-family: "DsDigi";
+  font-weight: 400;
+  font-display: block;
+  src: local("☺"), url("/src/assets/font/DsDigi/DS-DIGI.TTF") format("truetype");
+  unicode-range: U+0031;
+  letter-spacing: 100px;
+}
+@font-face {
+  font-family: "DsDigi";
+  font-weight: 700;
+  font-display: block;
+  src: local("☺"), url("/src/assets/font/DsDigi/DS-DIGIB.TTF") format("truetype");
+  unicode-range: U+0031;
+  letter-spacing: 100px;
+}
+.area-popup {
+  background-color: red;
+}/*# sourceMappingURL=style.css.map */
