@@ -1,0 +1,103 @@
+@charset 'utf-8';
+@use 'index' as v;
+
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+  
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/ 
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 600;
+    font-display: block;
+    src: local("Pretendard SemiBold"), url(v.$url+"font/Pretendard/Pretendard-SemiBold.woff2") format("woff2"), url(v.$url+"font/Pretendard/Pretendard-SemiBold.woff") format("woff");
+} 
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 500;
+    font-display: block;
+    src: local("Pretendard Medium"), url(v.$url+"font/Pretendard/Pretendard-Medium.otf") format("opentype");
+} 
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-display: block;
+    src: local("Pretendard Regular"), url(v.$url+"font/Pretendard/Pretendard-Regular.woff2") format("woff2"), url(v.$url+"font/Pretendard/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 300;
+    font-display: block;
+    src: local("Pretendard Light"), url(v.$url+"font/Pretendard/Pretendard-Light.woff2") format("woff2"), url(v.$url+"font/Pretendard/Pretendard-Light.woff") format("woff");
+}
+
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 300;
+    font-display: block;
+    src: local('☺'),
+    url(v.$url+"font/NanumSquare/NanumSquareL.otf") format('opentype'),
+    url(v.$url+"font/NanumSquare/NanumSquareL.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 500;
+    font-display: block;
+    src: local('☺'),
+    url(v.$url+"font/NanumSquare/NanumSquareB.otf") format('opentype'),
+}
+// @font-face {
+//     font-family: 'NanumSquare';
+//     font-weight: 300;
+//     font-display: block;
+//     src: local('☺'),
+//     url(v.$url+"font/NanumSquare/NanumSquareL.otf") format('opentype'),
+//     url(v.$url+"font/NanumSquare/NanumSquareL.ttf") format('truetype');
+// }
+
+
+
+@font-face {
+    font-family: 'DsDigi';
+    font-weight: 400;
+    font-display: block;
+    src: local('☺'),
+    url(v.$url+"font/DsDigi/DS-DIGI.TTF") format('truetype');
+}
+@font-face {
+    font-family: 'DsDigi';
+    font-weight: 700;
+    font-display: block;
+    src: local('☺'),
+    url(v.$url+"font/DsDigi/DS-DIGIB.TTF") format('truetype');
+}
+
+@font-face {
+    font-family: 'DsDigi';
+    font-weight: 400;
+    font-display: block;
+    src: local('☺'),
+    url(v.$url+"font/DsDigi/DS-DIGI.TTF") format('truetype');
+    unicode-range: U+0031;
+    letter-spacing: 100px;
+}
+@font-face {
+    font-family: 'DsDigi';
+    font-weight: 700;
+    font-display: block;
+    src: local('☺'),
+    url(v.$url+"font/DsDigi/DS-DIGIB.TTF") format('truetype');
+    unicode-range: U+0031;
+    letter-spacing: 100px;
+}
+// @font-face {
+//     font-family: 'DsDigi';
+//     font-weight: 700;
+//     font-display: block;
+//     src: local('☺'),
+//     url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff") format('truetype');
+// }
