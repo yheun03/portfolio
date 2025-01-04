@@ -12,6 +12,7 @@ $font-main: 'Pretendard';
     $t1-500      : 500 50px/120% $font-main;
     $t2-500      : 500 46px/120% $font-main;
     $t3-500      : 500 32px/120% $font-main;
+    $t3-700      : 700 32px/120% $font-main;
     $t4-500      : 500 20px/120% $font-main;
     $t4-800      : 800 20px/120% $font-main;
 
@@ -30,13 +31,15 @@ $font-main: 'Pretendard';
 // 색상들
     // 기본색상
     $black0      : #111111;
-    $black5      : #8F8F8F;
+    $black4      : #8F8F8F;
+    $black7      : #A0A0A0;
     $black9      : #F6F6F6;
     $white       : #ffffff;
     $red         : #FD5146;
 
     // 주 색상
     $primary-600 : #0acdce;
+    $sky         : #CCDBE8;
 
     // 상태
     $success      : #32C771;
