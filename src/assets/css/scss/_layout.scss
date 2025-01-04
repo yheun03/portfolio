@@ -4,14 +4,20 @@
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/modal';
-
 .area{
+    &-wel{
+        width: 100vw;
+        height: 760px;
+        border: 1px solid violet;
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+    }
     // 한 줄 어필 및 증명사진, 이력서 보기 버튼
     &-intro{
+        padding: 30px 64px 160px;
 
-        display: none;
-
-        padding-inline: 64px;
         h1{
             line-height: 80px;
         }
@@ -34,7 +40,8 @@
         $thisGap: 20px;
         padding: 160px 64px;
         display: grid;
-        grid-template-columns: 385px 1fr;
+        grid-template-columns: 385px minmax(auto, 800px);
+        justify-content: center;
         gap: 155px;
         background-color: v.$black9;
         h2{
@@ -80,6 +87,5 @@
     }
 
     &-projects{
-        display: none;
     }
 }
