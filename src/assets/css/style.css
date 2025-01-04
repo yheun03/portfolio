@@ -125,4 +125,16 @@ http://scripts.sil.org/OFL
   src: local("☺"), url("/src/assets/font/DsDigi/DS-DIGIB.TTF") format("truetype");
   unicode-range: U+0031;
   letter-spacing: 100px;
+}
+footer {
+  background-color: #111111;
+  padding: 100px 200px;
+  text-align: center;
+  font: 400 14px/120% "Pretendard";
+  color: #ffffff;
+}
+footer address {
+  font: 400 12px/120% "Pretendard";
+  color: #8F8F8F;
+  margin-top: 16px;
 }/*# sourceMappingURL=style.css.map */
