@@ -5,15 +5,17 @@
 @use 'layout/footer';
 @use 'layout/modal';
 .area{
-    &-wel{
+    // 애니메이션 배경
+    &-welcome{
+        background: linear-gradient(180deg, v.$sky 0%, v.$white 100%), v.$white;
         width: 100vw;
         height: 760px;
-        border: 1px solid violet;
         canvas{
             width: 100%;
             height: 100%;
         }
     }
+
     // 한 줄 어필 및 증명사진, 이력서 보기 버튼
     &-intro{
         padding: 30px 64px 160px;
@@ -27,7 +29,8 @@
             align-items: flex-end;
         }
         picture{
-            transform: translateY(-180px);
+            margin-top: -100%;
+            transform: translateY(-160px);
         }
         p{
             text-align: right;
@@ -35,7 +38,7 @@
             line-height: 30px;
         }
     }
-
+    // 강점 및 자격증과 같은 정보
     &-information{
         $thisGap: 20px;
         padding: 160px 64px;
@@ -60,7 +63,7 @@
             }
             &:last-child{
                 font: v.$c1-400;
-                color: v.$black5;
+                color: v.$black4;
                 margin-left: 4px;
             }
         }
@@ -85,7 +88,7 @@
             }
         }
     }
-
+    // 포트폴리오 설명 페이지
     &-projects{
     }
 }
