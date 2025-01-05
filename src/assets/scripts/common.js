@@ -55,5 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     drawTexts();
 
     //모달 컨트롤
-    
+    const closeButton = document.querySelector(".modal-close");
+    const modal = document.querySelector(".modal");
+  
+    if (closeButton && modal) {
+        closeButton.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
 });
