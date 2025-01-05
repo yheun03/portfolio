@@ -15,7 +15,6 @@
             height: 100%;
         }
     }
-
     // 한 줄 어필 및 증명사진, 이력서 보기 버튼
     &-intro{
         padding: 30px 64px 160px;
@@ -90,5 +89,119 @@
     }
     // 포트폴리오 설명 페이지
     &-projects{
+        position: relative;
+        height: 100dvh;
+        padding: 160px 64px;
+        .proj{
+            height: 100%;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 520px 1fr;
+            gap: 155px;
+            &-list{
+                height: 100%;
+            }
+            &-information{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        p{
+            font: v.$b3-400;
+            line-height: 30px;
+            color: v.$black0;
+            margin-top: 30px;
+        }
+        p.title{
+            font: v.$t4-800;
+            margin-top: 60px;
+        }   
+        ul{
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+            li{
+                font: v.$b4-400;
+                color: v.$primary-600;
+                border-radius: 16px;
+                padding: 8px 12px;
+                border: 1px solid rgba(v.$primary-600, 0.4);
+            }
+        }
+        .btn{
+            margin-top: auto;
+        }
+
+        .slick{
+            &-control{
+                width: 80px;
+                height: 80px;
+                position: sticky;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                &.prev{
+                    left: unset;
+                    right: 0;
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //작업용으로 잠시 지우기
+        section > div:not(&){display: none;}
     }
 }

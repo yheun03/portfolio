@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 애니메이션 시작
-    drawTexts();
+    // drawTexts();
 
     //모달 컨트롤
     const closeButton = document.querySelector(".modal-close");

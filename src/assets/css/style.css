@@ -159,6 +159,12 @@ h5 {
 }
 .btn.bg-black {
   background-color: #111111;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.btn.bg-primary {
+  background-color: #0acdce;
+  border-color: #0acdce;
   color: #ffffff;
 }
 
@@ -185,6 +191,7 @@ footer address {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 .modal-content {
   position: relative;
@@ -332,4 +339,65 @@ footer address {
 }
 .area-information.type-history > ul > li {
   flex: 1 1 calc(50% - 10px);
+}
+.area-projects {
+  position: relative;
+  height: 100dvh;
+  padding: 160px 64px;
+}
+.area-projects .proj {
+  height: 100%;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 155px;
+}
+.area-projects .proj-list {
+  height: 100%;
+}
+.area-projects .proj-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.area-projects p {
+  font: 400 16px/120% "Pretendard";
+  line-height: 30px;
+  color: #111111;
+  margin-top: 30px;
+}
+.area-projects p.title {
+  font: 800 20px/120% "Pretendard";
+  margin-top: 60px;
+}
+.area-projects ul {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.area-projects ul li {
+  font: 400 14px/120% "Pretendard";
+  color: #0acdce;
+  border-radius: 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(10, 205, 206, 0.4);
+}
+.area-projects .btn {
+  margin-top: auto;
+}
+.area-projects .slick-control {
+  width: 80px;
+  height: 80px;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+.area-projects .slick-control.prev {
+  left: unset;
+  right: 0;
+}
+section > div:not(.area-projects) {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
