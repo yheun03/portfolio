@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // .area-welcome의 움직이는 텍스트 애니메이션
     const canvas = document.getElementById('animatedCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -51,4 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 애니메이션 시작
     drawTexts();
+
+    //모달 컨트롤
+    
 });
