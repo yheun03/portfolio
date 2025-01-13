@@ -4,6 +4,12 @@
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/modal';
+
+[class*=area-] > section{
+    max-width: v.$width-device;
+    margin: auto;
+}
+
 .area{
     // 애니메이션 배경
     &-welcome{
@@ -18,33 +24,30 @@
     // 한 줄 어필 및 증명사진, 이력서 보기 버튼
     &-intro{
         padding: 30px 64px 160px;
-
-        h1{
-            line-height: 80px;
-        }
-        & > div{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-        picture{
-            margin-top: -100%;
-            transform: translateY(-160px);
-        }
-        p{
-            text-align: right;
-            font: v.$b3-400;
-            line-height: 30px;
+        section{
+            h1{
+                line-height: 80px;
+            }
+            p{
+                text-align: right;
+                font: v.$b3-400;
+                line-height: 30px;
+            }
+            picture{
+                margin-top: -100%;
+                transform: translateY(-160px);
+            }
+            & > div{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
         }
     }
     // 강점 및 자격증과 같은 정보
     &-information{
         $thisGap: 20px;
         padding: 160px 64px;
-        display: grid;
-        grid-template-columns: 385px minmax(auto, 800px);
-        justify-content: center;
-        gap: 155px;
         background-color: v.$black9;
         h2{
             line-height: 80px;
@@ -70,19 +73,27 @@
             font: v.$t4-800;
             margin-bottom: 16px;
         }
-        & > ul{
-            display: flex;
-            gap: 56px $thisGap;
-            flex-direction: column;
+        section{
+            display: grid;
+            grid-template-columns: 385px 1fr;
+            justify-content: center;
+            gap: 155px;
+            & > ul{
+                display: flex;
+                gap: 56px $thisGap;
+                flex-direction: column;
+            }
         }
         
         &.type-history{
             background-color: unset;
-            & > ul{
-                flex-wrap: wrap;
-                flex-direction: unset;
-                & > li{
-                    flex: 1 1 calc(50% - $thisGap / 2);
+            section{
+                & > ul{
+                    flex-wrap: wrap;
+                    flex-direction: unset;
+                    & > li{
+                        flex: 1 1 calc(50% - $thisGap / 2);
+                    }
                 }
             }
         }
@@ -92,15 +103,14 @@
         position: relative;
         height: 100dvh;
         padding: 160px 64px;
+        h2{
+            line-height: 80px;
+        }
         .proj{
-            height: 100%;
             border: 1px solid black;
             display: grid;
             grid-template-columns: 520px 1fr;
             gap: 155px;
-            &-list{
-                height: 100%;
-            }
             &-information{
                 display: flex;
                 flex-direction: column;
@@ -112,11 +122,11 @@
             line-height: 30px;
             color: v.$black0;
             margin-top: 30px;
+            &.title{
+                font: v.$t4-800;
+                margin-top: 60px;
+            }
         }
-        p.title{
-            font: v.$t4-800;
-            margin-top: 60px;
-        }   
         ul{
             display: flex;
             gap: 8px;
@@ -131,23 +141,10 @@
             }
         }
         .btn{
-            margin-top: auto;
+            justify-self: end;
+            margin-block: 60px 160px;
         }
 
-        .slick{
-            &-control{
-                width: 80px;
-                height: 80px;
-                position: sticky;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 0;
-                &.prev{
-                    left: unset;
-                    right: 0;
-                }
-            }
-        }
         
         
         
