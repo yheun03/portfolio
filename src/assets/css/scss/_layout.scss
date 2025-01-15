@@ -130,19 +130,34 @@
             background-color: white;
             cursor: ew-resize;
 
-            &-screen{
-                margin-top: 40px;
-                &-pc{
-                    position: relative;
-                    width: 100%;
-                    background: url(v.$url+'/images/mockup-iMac.svg') center/contain no-repeat;
-                    aspect-ratio: 2014/1696;
-                    padding: calc(50/2014 * 100%) calc(48/2014 * 100%) 0;
+            &-screen-mockup{
+                position: relative;
+                width: 100%;
+                background: url(v.$url+'/images/mockup-iMac.svg') center/contain no-repeat;
+                aspect-ratio: 2014/1696;
+                padding: calc(50/2014 * 100%) calc(48/2014 * 100%) 0;
 
-                    img{
-                        width: 100%;
-                        aspect-ratio: 1918/1078;
-                        object-fit: cover;
+                img{
+                    position: relative;
+                    z-index: -1;
+                    width: 100%;
+                    aspect-ratio: 1918/1078;
+                    object-fit: cover;
+                }
+
+                &-wrap{
+                    width: 100%;
+                    &.type-mb{
+                        padding-inline: 30% 10%;
+                        .proj-screen-mockup{
+                            background-image: url(v.$url+'/images/mockup-iPhone.svg');
+                            aspect-ratio: 432/880;
+                            padding: calc(18/432 * 100%) calc(21/432 * 100%) 0;
+                        }
+                        img{
+                            aspect-ratio: 390/844;
+                            border-radius: 5%;
+                        }
                     }
                 }
             }
