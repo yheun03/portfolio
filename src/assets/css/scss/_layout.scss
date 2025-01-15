@@ -5,9 +5,11 @@
 @use 'layout/footer';
 @use 'layout/modal';
 
-[class*=area-] > section{
-    max-width: v.$width-device;
-    margin: auto;
+[class*=area-] > section:not([class*=init]){
+    & , & section{
+        max-width: v.$width-device;
+        margin: auto;
+    }
 }
 
 .area{
@@ -98,53 +100,121 @@
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // 포트폴리오 설명 페이지
     &-projects{
         position: relative;
-        height: 100dvh;
-        padding: 160px 64px;
-        h2{
-            line-height: 80px;
+        padding: 160px 0;
+        section{
+            max-width: v.$width-device;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 660px 1fr;
+            gap: 155px;
         }
         .proj{
-            border: 1px solid black;
-            display: grid;
-            grid-template-columns: 520px 1fr;
-            gap: 155px;
+            background-color: white;
+            cursor: ew-resize;
+
+            &-screen{
+                margin-top: 40px;
+                &-pc{
+                    position: relative;
+                    width: 100%;
+                    background: url(v.$url+'/images/mockup-iMac.svg') center/contain no-repeat;
+                    aspect-ratio: 2014/1696;
+                    padding: calc(50/2014 * 100%) calc(48/2014 * 100%) 0;
+
+                    img{
+                        width: 100%;
+                        aspect-ratio: 1918/1078;
+                        object-fit: cover;
+                    }
+                }
+            }
+
             &-information{
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
-        p{
-            font: v.$b3-400;
-            line-height: 30px;
-            color: v.$black0;
-            margin-top: 30px;
-            &.title{
-                font: v.$t4-800;
-                margin-top: 60px;
+        // proj-information 내부
+            h2{
+                line-height: 80px;
             }
-        }
-        ul{
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 24px;
-            li{
-                font: v.$b4-400;
-                color: v.$primary-600;
-                border-radius: 16px;
-                padding: 8px 12px;
-                border: 1px solid rgba(v.$primary-600, 0.4);
+            p{
+                font: v.$b3-400;
+                line-height: 30px;
+                color: v.$black0;
+                margin-top: 30px;
+                &.title{
+                    font: v.$t4-800;
+                    margin-top: 60px;
+                }
             }
+            ul{
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                margin-top: 24px;
+                li{
+                    font: v.$b4-400;
+                    color: v.$primary-600;
+                    border-radius: 16px;
+                    padding: 8px 12px;
+                    border: 1px solid rgba(v.$primary-600, 0.4);
+                }
+            }
+            .btn{
+                justify-self: end;
+                margin-block: 60px 160px;
+            }
+
+        .swiper{
+            &-btn{
+                position: sticky;
+                top: 50%;
+                // transform: translateY(-50%);
+                left: 0;
+                width: 80px;
+                margin-top: -80px;
+                aspect-ratio: 1;
+                border: unset;
+                cursor: pointer;
+                background: url(v.$url-icon + '/80/ic-arrow-left.svg') center/80px no-repeat;
+                &.btn-gotoNext{
+                    background-image: url(v.$url-icon + '/80/ic-arrow-right.svg');
+                    left: 100%;
+                }
+            }
+            // &-btn{
+            //     position: sticky;  /* 스크롤에 따라 고정 */
+            //     top: 50%;         /* 수직 가운데 정렬 */
+            //     transform: translateY(-50%);  /* 정확한 가운데 정렬 */
+            //     z-index: 10;      /* 다른 요소 위로 */
+            //     background: none; /* 배경 제거 */
+            //     border: none;     /* 테두리 제거 */
+            //     padding: 0;       /* 여백 제거 */
+            //     width: auto;      /* 불필요한 영역 제거 */
+            //     height: auto;     /* 불필요한 영역 제거 */
+            //     cursor: pointer;
+            // }
         }
-        .btn{
-            justify-self: end;
-            margin-block: 60px 160px;
-        }
-
         
         
         
@@ -154,51 +224,15 @@
         
         
         
+
+
+
+
+
         
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //작업용으로 잠시 지우기
-        section > div:not(&){display: none;}
     }
 }
+//작업용으로 잠시 지우기
+// .area-welcome,.area-intro,.area-information{display: none;}

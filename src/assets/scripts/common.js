@@ -65,18 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const swiper = new Swiper('.swiper', {
-        // centeredSlides: true,
-        spaceBetween: 30,
-        loop: true,
-
-        // UI 세팅
+        slidesPerView: 1,           // 한 번에 한 슬라이드만 보이게 설정
+        centeredSlides: true,       // 슬라이드를 가운데 정렬
+        preloadImages: false,       // 이미지를 미리 로드하지 않음
+        lazy: {
+            loadPrevNext: true,     // 이전/다음 슬라이드를 미리 로드
+        },
         pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+            el: ".swiper-pagination",
+            clickable: true,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            prevEl: '.btn-gotoPrev',
+            nextEl: '.btn-gotoNext',
         },
     });
+    // const swiper = new Swiper('.swiper', {
+    //     slidesPerView: "auto",
+    //     centeredSlides: true,
+    //     grabCursor: true,
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //         clickable: true,
+    //     },
+    //     navigation: {
+    //         prevEl: '.btn-gotoPrev',
+    //         nextEl: '.btn-gotoNext',
+    //     },
+    // });
 });
