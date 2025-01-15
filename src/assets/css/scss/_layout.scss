@@ -118,7 +118,7 @@
     // 포트폴리오 설명 페이지
     &-projects{
         position: relative;
-        padding: 160px 0;
+        padding: 160px 0 0;
         section{
             max-width: v.$width-device;
             margin: auto;
@@ -204,18 +204,20 @@
             &-btn{
                 position: sticky;
                 top: 50%;
-                // transform: translateY(-50%);
                 left: 0;
                 width: 80px;
                 margin-top: -80px;
                 aspect-ratio: 1;
                 border: unset;
+                z-index: 2;
                 cursor: pointer;
                 background: url(v.$url-icon + '/80/ic-arrow-left.svg') center/80px no-repeat;
                 &.btn-gotoNext{
                     background-image: url(v.$url-icon + '/80/ic-arrow-right.svg');
                     left: 100%;
                 }
+            }
+            &-pagination{
             }
             // &-btn{
             //     position: sticky;  /* 스크롤에 따라 고정 */
