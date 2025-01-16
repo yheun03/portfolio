@@ -62,6 +62,7 @@
         }
         .content{
             gap: 60px;
+            align-items: center;
         }
         .swiper-btn{
             width: 60px;
@@ -71,6 +72,80 @@
         right: 16px;
     }
 }
+@media (max-width: 1480px) {
+    [class*=area]{
+        padding-inline: unset;
+    }
+    .area-projects{
+        .content{
+            grid-template-columns: 48.529412% 1fr;
+        }
+    }
+    .area-information{
+        .content{
+            grid-template-columns: auto 1fr;
+        }
+    }
+}
+@media (max-width: 1200px) {
+    [class*=area]{
+        padding-block: 80px;
+    }
+    .area-information{
+        padding-top: 20px;
+        .content{
+            gap: 80px;
+            h2{
+                top: 0;
+                padding-top: 40px;
+                padding-bottom: 20px;
+                background-color: v.$black-50;
+                box-shadow: 0 40px 20px 20px v.$black-50;
+            }
+        }
+        &.type-history{
+            .content{
+                h2{
+                    background-color: v.$white;
+                    box-shadow: 0 40px 20px 20px v.$white;
+                }
+            }
+        }
+    }
+}
+// 태블릿 모드 전환
+@media (max-width: 1080px) {
+    .area-information,
+    .area-projects{
+        h2{
+            font-size: 32px;
+            line-height: 48px;
+        }
+    }
+    
+    .content{
+        max-width: unset;
+        width: 100%;
+    }
+    .area-information{
+        .content{
+            grid-template-columns: 1fr;
+            h2{
+                text-align: left;
+                box-shadow: 0 20px 16px 16px var(--black-50);
+                padding-bottom: 4px;
+            }
+        }
+    }
+    .area-projects .content{
+        grid-template-columns: 1fr;
+    }
+    footer{
+        padding-inline: 24px;
+    }
+}
+
+
 @media (max-width: 768px) {
     .footer {
       text-align: center;
