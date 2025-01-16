@@ -17,7 +17,7 @@
     border-radius: 8px;
     padding: calc($size/2);
     margin-bottom: $size*2;
-    box-shadow: 0 0 10px 0 v.$black9;
+    box-shadow: 0 0 10px 0 v.$black-50;
     z-index: 100;
     &::before{
         content: "";

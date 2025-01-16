@@ -2,14 +2,14 @@
 @use '../index' as v;
 
 footer{
-    background-color: v.$black0;
+    background-color: v.$init-black-950;
     padding: 100px 200px;
     text-align: center;
     font: v.$b4-400;
-    color: v.$white;
+    color: v.$init-white;
     address{
         font: v.$c1-400;
-        color: v.$black4;
+        color: v.$init-black-400;
         margin-top: 16px;
     }
 }

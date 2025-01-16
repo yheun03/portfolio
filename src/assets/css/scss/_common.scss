@@ -4,36 +4,36 @@
 // 타이틀
 h1{
     font: v.$t2-500;
-    color: v.$black0;
+    color: v.$black-950;
 }
 h2{
     font: v.$t1-500;
-    color: v.$black0;
+    color: v.$black-950;
 }
 h4{
     font: v.$t3-700;
-    color: v.$black0;
+    color: v.$black-950;
 }
 h5{
     font: v.$t4-800;
-    color: v.$black0;
+    color: v.$black-950;
 }
 
 // 버튼 - 본래 컴포넌트 파일을 따로 빼야 하나, 본 페이지는 작은 프로젝트이기에 합침.
 .btn{
     font: v.$btn1-400;
     background-color: v.$white;
-    border: 1px solid v.$black0;
+    border: 1px solid v.$black-950;
     padding: 12px 16px;
     border-radius: 6px;
-    color: v.$black0;
+    color: v.$black-950;
     &.type-round{
         border-radius: 100px;
         padding: 10px 20px;
     }
     &.bg{
         &-black{
-            background-color: v.$black0;
+            background-color: v.$black-950;
             border-color: v.$white;
             color: v.$white;
         }

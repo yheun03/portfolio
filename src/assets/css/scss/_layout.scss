@@ -19,7 +19,10 @@
         background: linear-gradient(180deg, v.$sky 0%, v.$white 100%), v.$white;
         width: 100%;
         height: 760px;
+        position: relative;
         canvas{
+            position: absolute;
+            top: 0;
             width: 100%;
             height: 100%;
         }
@@ -36,7 +39,7 @@
                 text-align: right;
                 font: v.$b3-400;
                 line-height: 30px;
-                color: v.$black0;
+                color: v.$black-950;
             }
             picture{
                 margin-top: -100%;
@@ -53,7 +56,7 @@
     &-information{
         $thisGap: 20px;
         padding: 160px 64px;
-        background-color: v.$black9;
+        background-color: v.$black-50;
         h2{
             line-height: 80px;
             text-align: right;
@@ -61,7 +64,7 @@
         p, li{
             font: v.$b3-400;
             line-height: 30px;
-            color: v.$black0;
+            color: v.$black-950;
             white-space: nowrap;
         }
         li span{
@@ -70,7 +73,7 @@
             }
             &:last-child{
                 font: v.$c1-400;
-                color: v.$black4;
+                color: v.$black-400;
                 margin-left: 4px;
             }
         }
@@ -163,7 +166,7 @@
             p{
                 font: v.$b3-400;
                 line-height: 30px;
-                color: v.$black0;
+                color: v.$black-950;
                 margin-top: 30px;
                 &.title{
                     font: v.$t4-800;
