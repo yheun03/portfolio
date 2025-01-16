@@ -78,7 +78,12 @@
             display: grid;
             grid-template-columns: 385px 800px;
             justify-content: center;
+            align-items: flex-start;
             gap: 155px;
+            h2{
+                position: sticky;
+                top: 30px;
+            }
             & > ul{
                 display: flex;
                 gap: 56px $thisGap;
