@@ -29,15 +29,19 @@ $font-main              : 'Pretendard';
 
 
     :root {
-        --black0        : #111111;
-        --black4        : #8F8F8F;
-        --black7        : #A0A0A0;
-        --black9        : #F6F6F6;
+        --black-50      : #f6f6f6;
+        --black-100     : #e7e7e7;
+        --black-200     : #d1d1d1;
+        --black-300     : #b0b0b0;
+        --black-400     : #888888;
+        --black-500     : #6d6d6d;
+        --black-600     : #5d5d5d;
+        --black-700     : #4f4f4f;
+        --black-800     : #454545;
+        --black-900     : #3d3d3d;
+        --black-950     : #111111;  // 주 컬러
+
         --white         : #ffffff;
-        --sky           : #CCDBE8;
-        --success       : #32C771;
-        --warning       : #FFAA00;
-        --error         : #EB5757;
 
         // 강조색상
         --primary-50    : #f0f5fe;
@@ -63,17 +67,41 @@ $font-main              : 'Pretendard';
         --secondary-800 : #636670;
         --secondary-900 : #53565c;
         --secondary-950 : #303136;
+
+        --sky           : #CCDBE8;
+        --success       : #32C771;
+        --warning       : #FFAA00;
+        --error         : #EB5757;
+
+        
+        --init-black-50      : #f6f6f6;
+        --init-black-100     : #e7e7e7;
+        --init-black-200     : #d1d1d1;
+        --init-black-300     : #b0b0b0;
+        --init-black-400     : #888888;
+        --init-black-500     : #6d6d6d;
+        --init-black-600     : #5d5d5d;
+        --init-black-700     : #4f4f4f;
+        --init-black-800     : #454545;
+        --init-black-900     : #3d3d3d;
+        --init-black-950     : #111111;  // 주 컬러
+
+        --init-white         : #ffffff;
     }
     body.mode-dark{
-        --black0        : #F0F0F0;
-        --black4        : #B0B0B0;
-        --black7        : #8A8A8A;
-        --black9        : #1A1A1A;
+        --black-50      : #111111;  // 주 컬러
+        --black-100     : #1a1a1a;
+        --black-200     : #232323;
+        --black-300     : #2e2e2e;
+        --black-400     : #3a3a3a;
+        --black-500     : #474747;
+        --black-600     : #5e5e5e;
+        --black-700     : #787878;
+        --black-800     : #9b9b9b;
+        --black-900     : #c5c5c5;
+        --black-950     : #e8e8e8;
+
         --white         : #1E1E1E;
-        --sky           : #3A4B5C;
-        --success       : #3EDC85;
-        --warning       : #FFC533;
-        --error         : #FF6B6B;
 
         --primary-50    : #1a2551;
         --primary-100   : #233985;
@@ -98,15 +126,40 @@ $font-main              : 'Pretendard';
         --secondary-800 : #adb2c0;
         --secondary-900 : #c6cbd4;
         --secondary-950 : #e1e3e7;
+
+        --sky           : #3A4B5C;
+        --success       : #3EDC85;
+        --warning       : #FFC533;
+        --error         : #FF6B6B;
     }
 
 // 색상들
     // 기본색상
-    $black0             : var(--black0);
-    $black4             : var(--black4);
-    $black7             : var(--black7);
-    $black9             : var(--black9);
+    $black-50           : var(--black-50);
+    $black-100          : var(--black-100);
+    $black-200          : var(--black-200);
+    $black-300          : var(--black-300);
+    $black-400          : var(--black-400);
+    $black-500          : var(--black-500);
+    $black-600          : var(--black-600);
+    $black-700          : var(--black-700);
+    $black-800          : var(--black-800);
+    $black-900          : var(--black-900);
+    $black-950          : var(--black-950);
     $white              : var(--white);
+
+    $init-black-50           : var(--init-black-50);
+    $init-black-100          : var(--init-black-100);
+    $init-black-200          : var(--init-black-200);
+    $init-black-300          : var(--init-black-300);
+    $init-black-400          : var(--init-black-400);
+    $init-black-500          : var(--init-black-500);
+    $init-black-600          : var(--init-black-600);
+    $init-black-700          : var(--init-black-700);
+    $init-black-800          : var(--init-black-800);
+    $init-black-900          : var(--init-black-900);
+    $init-black-950          : var(--init-black-950);
+    $init-white              : var(--init-white);
 
     $primary-50         : var(--primary-50);
     $primary-100        : var(--primary-100);
