@@ -29,7 +29,50 @@
     .mode-dark &{
         &::before{
             background: url(v.$url + '/icons/24/ic-sun.svg') center/cover;
-            filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(70deg) brightness(108%) contrast(108%);
+            filter: v.$set-white;
         }
+    }
+}
+
+.content{
+    max-width: v.$width-device;
+    width: auto;
+    margin: auto;
+    padding-inline: 24px;
+}
+/* Footer 반응형 */
+@media (max-width: 1785px) {
+    .set-mode{
+        right: 16px;
+    }
+}
+@media (max-width: 1740px) {
+    .content{
+        max-width: 100%;
+        padding-inline: 60px;
+        .area-information &{
+            grid-template-columns: auto 700px;
+        }
+    }
+    .area-projects{
+        .proj-screen-mockup-wrap.type-mb{
+            width: 400px;
+            padding-inline: unset;
+            margin: auto;
+        }
+        .content{
+            gap: 60px;
+        }
+        .swiper-btn{
+            width: 60px;
+        }
+    }
+    .set-mode{
+        right: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .footer {
+      text-align: center;
     }
 }
