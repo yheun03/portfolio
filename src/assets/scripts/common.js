@@ -66,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,           // 한 번에 한 슬라이드만 보이게 설정
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
