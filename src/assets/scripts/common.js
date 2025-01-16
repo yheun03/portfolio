@@ -78,4 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.btn-gotoNext',
         },
     });
+    
+    const modeToggleButton = document.querySelector('.btn.set-mode');
+
+    // 사용자의 시스템 다크 모드 여부 확인
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // 시스템이 다크 모드인 경우 body에 mode-dark 클래스 추가
+    if (isDarkMode) {
+        document.body.classList.add('mode-dark');
+    }
+
+    // 버튼 클릭 시 다크 모드 토글
+    modeToggleButton.addEventListener('click', function() {
+        document.body.classList.toggle('mode-dark');
+    });
+
+    // 시스템 다크 모드 설정이 변경될 때 실시간 반영
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (e.matches) {
+        document.body.classList.add('mode-dark');
+        } else {
+        document.body.classList.remove('mode-dark');
+        }
+    });
 });
