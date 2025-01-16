@@ -15,9 +15,9 @@
     right: $size*2;
     float: right;
     border-radius: 8px;
-    padding: $size/2;
+    padding: calc($size/2);
     margin-bottom: $size*2;
-    box-shadow: 0 0 10px 0 rgba(v.$black0, 0.1);
+    box-shadow: 0 0 10px 0 v.$black9;
     z-index: 100;
     &::before{
         content: "";
