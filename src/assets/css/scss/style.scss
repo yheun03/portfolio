@@ -40,7 +40,7 @@
     margin: auto;
     padding-inline: 24px;
 }
-/* Footer 반응형 */
+
 @media (max-width: 1785px) {
     .set-mode{
         right: 16px;
@@ -108,6 +108,9 @@
             height: auto;
         }
     }
+    .area-projects{
+        padding-bottom: unset;
+    }
     .area-information{
         // padding-top: 20px;
         .content{
@@ -124,7 +127,7 @@
             .content{
                 h2{
                     background-color: v.$white;
-                    box-shadow: 0 40px 20px 20px v.$white;
+                    box-shadow: 0 40px 40px 0px v.$white;
                 }
             }
         }
@@ -134,9 +137,13 @@
 @media (max-width: 1080px) {
     .area-information,
     .area-projects{
-        h2{
-            font-size: 32px;
-            line-height: 48px;
+        .content{
+            gap: 56px;
+            h2{
+                font-size: 32px;
+                line-height: 48px;
+                margin-top: -30px;
+            }
         }
     }
     
@@ -152,10 +159,28 @@
                 box-shadow: 0 20px 16px 16px var(--black-50);
                 padding-bottom: 4px;
             }
+            ul{
+                gap: 48px;
+            }
+        }
+        &.type-history{
+            .content{
+                ul{
+                    column-gap: 16px;
+                }
+            }
         }
     }
-    .area-projects .content{
-        grid-template-columns: 1fr;
+    .area-projects{
+        .content{
+            grid-template-columns: 1fr;
+        }
+        .btn{
+            margin-bottom: 8px;
+        }
+        .proj-screen-mockup-wrap.type-mb{
+            width: 40%;
+        }
     }
     footer{
         padding-inline: 24px;
@@ -164,11 +189,6 @@
 
 
 @media (max-width: 980px) {
-    .area{
-        &-welcome{
-            // height: 160px;
-        }
-    }
     .area-intro{
         .content{
             position: relative;
@@ -199,9 +219,9 @@
     .area-information{
         padding-block: 40px;
         .content{
-            gap: 40px;
+            // gap: 40px;
             ul{
-                gap: 24px;
+                // gap: 24px;
             }
         }
     }
@@ -230,5 +250,62 @@
     }
     .footer {
       text-align: center;
+    }
+}
+@media (max-width: 650px) {
+    .area-welcome{
+        height: 20dvh;
+    }
+    .area-intro{
+        img{
+            width: 24dvw;
+        }
+    }
+    .area-information{
+        .content{
+            display: block;
+            p{
+                white-space: normal;
+            }
+            & > ul{
+                padding-top: 80px;
+                ul{
+                    li{
+                        display: flex;
+                        flex-direction: column;
+                        br{
+                            display: none;
+                        }
+                        &:not(:last-child){
+                            margin-bottom: 16px;
+                        }
+                        span{
+                            margin-left: unset;
+                            order: -1;
+                            &.align{
+                                order: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .area-information{
+        .content{
+            & > ul{
+                display: block;
+                & > li{
+                    & + li{
+                        margin-top: 48px;
+                    }
+                }
+            }
+            li{
+                white-space: normal;
+            }
+        }
     }
 }
