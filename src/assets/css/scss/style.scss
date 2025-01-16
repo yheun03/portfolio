@@ -4,3 +4,32 @@
 @use 'fonts';
 @use 'common';
 @use 'layout';
+
+// 다크모드 설정 버튼
+.set-mode{
+    $size: 24px;
+    background-color: v.$secondary-100;
+    border: unset;
+    position: sticky;
+    top: calc(100% - $size*4);
+    right: $size*2;
+    float: right;
+    border-radius: 8px;
+    padding: $size/2;
+    margin-bottom: $size*2;
+    box-shadow: 0 0 10px 0 rgba(v.$black0, 0.1);
+    z-index: 100;
+    &::before{
+        content: "";
+        width: $size;
+        display: block;
+        aspect-ratio: 1;
+        background: url(v.$url + '/icons/24/ic-moon.svg') center/cover;
+    }
+    .mode-dark &{
+        &::before{
+            background: url(v.$url + '/icons/24/ic-sun.svg') center/cover;
+            filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(70deg) brightness(108%) contrast(108%);
+        }
+    }
+}

@@ -1,83 +1,115 @@
 @charset 'utf-8';
 
-$url: '/src/assets/';
-$url-icon: $url + 'icons/';
-
-$red: red;
+$url                    : '/src/assets/';
+$url-icon               : $url + 'icons/';
 
 // 폰트들
-$font-main: 'Pretendard';
+$font-main              : 'Pretendard';
 
     // 제목
-    $t1-500      : 500 50px/120% $font-main;
-    $t2-500      : 500 46px/120% $font-main;
-    $t3-500      : 500 32px/120% $font-main;
-    $t3-700      : 700 32px/120% $font-main;
-    $t4-500      : 500 20px/120% $font-main;
-    $t4-800      : 800 20px/120% $font-main;
+    $t1-500             : 500 50px/120% $font-main;
+    $t2-500             : 500 46px/120% $font-main;
+    $t3-500             : 500 32px/120% $font-main;
+    $t3-700             : 700 32px/120% $font-main;
+    $t4-500             : 500 20px/120% $font-main;
+    $t4-800             : 800 20px/120% $font-main;
 
     // 설명
-    $b1-400      : 400 40px/120% $font-main;
-    $b2-400      : 400 18px/120% $font-main;
-    $b3-400      : 400 16px/120% $font-main;
-    $b4-400      : 400 14px/120% $font-main;
-    $b5-400      : 400 12px/120% $font-main;
+    $b1-400             : 400 40px/120% $font-main;
+    $b2-400             : 400 18px/120% $font-main;
+    $b3-400             : 400 16px/120% $font-main;
+    $b4-400             : 400 14px/120% $font-main;
+    $b5-400             : 400 12px/120% $font-main;
 
     // 부가설명
-    $c1-400      : 400 12px/120% $font-main;
+    $c1-400             : 400 12px/120% $font-main;
 
     // 버튼
-    $btn1-400    : 400 16px/120% $font-main;
+    $btn1-400           : 400 16px/120% $font-main;
 
 
     :root {
-        --black0:       #111111;
-        --black4:       #8F8F8F;
-        --black7:       #A0A0A0;
-        --black9:       #F6F6F6;
-        --white:        #ffffff;
-        --red:          #FD5146;
-        --primary-600:  #0acdce;
-        --sky:          #CCDBE8;
-        --success:      #32C771;
-        --warning:      #FFAA00;
-        --error:        #EB5757;
+        --black0        : #111111;
+        --black4        : #8F8F8F;
+        --black7        : #A0A0A0;
+        --black9        : #F6F6F6;
+        --white         : #ffffff;
+        --red           : #FD5146;
+        --primary-600   : #0acdce;
+        --sky           : #CCDBE8;
+        --success       : #32C771;
+        --warning       : #FFAA00;
+        --error         : #EB5757;
+
+        --secondary-50  : #f6f6f7;
+        --secondary-100 : #eef0f1;
+        --secondary-200 : #e0e3e5;
+        --secondary-300 : #ccd0d5;
+        --secondary-400 : #b6bbc3;
+        --secondary-500 : #a2a8b2;
+        --secondary-600 : #858a97;  // 주 컬러
+        --secondary-700 : #797d89;
+        --secondary-800 : #636670;
+        --secondary-900 : #53565c;
+        --secondary-950 : #303136;
     }
-    @media (prefers-color-scheme: dark) {
-        :root {
-                        /* Dark Mode 색상 */
-            --black0:       #F0F0F0;  /* 배경 또는 기본 텍스트 색상 - 밝은 회색으로 가독성 유지 */
-            --black4:       #B0B0B0;  /* 서브 텍스트 또는 보조 정보 - 중간 밝기의 회색 */
-            --black7:       #8A8A8A;  /* 비활성화 요소나 경계선 - 어두운 회색 */
-            --black9:       #1A1A1A;  /* 주 배경 색상 - 깊은 어두운 회색 */
-            --white:        #1E1E1E;  /* 카드나 입력창 배경 - 검은색보다 약간 밝은 회색 */
-            --red:          #FF6B66;  /* 경고 또는 오류 - 어두운 배경에서 잘 보이는 밝은 레드 */
-            --primary-600:  #12E1F0;  /* 주요 버튼 또는 포인트 색상 - 더 밝고 선명한 청록색 */
-            --sky:          #3A4B5C;  /* 배경이나 강조선 - 어두운 하늘색 계열 */
-            --success:      #3EDC85;  /* 성공 메시지 - 어두운 배경에서 눈에 띄는 밝은 초록색 */
-            --warning:      #FFC533;  /* 경고 - 어두운 배경에서 강조되는 노란색 */
-            --error:        #FF6B6B;  /* 오류 - 더 선명하고 밝은 빨간색 */
-        }
+    body.mode-dark{
+        --black0        : #F0F0F0;
+        --black4        : #B0B0B0;
+        --black7        : #8A8A8A;
+        --black9        : #1A1A1A;
+        --white         : #1E1E1E;
+        --red           : #FF6B66;
+        --primary-600   : #12E1F0;
+        --sky           : #3A4B5C;
+        --success       : #3EDC85;
+        --warning       : #FFC533;
+        --error         : #FF6B6B;
+
+
+        --secondary-50  : #232427;
+        --secondary-100 : #2e2f33;
+        --secondary-200 : #3a3b41;
+        --secondary-300 : #484a52;
+        --secondary-400 : #585b66;
+        --secondary-500 : #6a6d7a;
+        --secondary-600 : #7f8390;  // 주 컬러
+        --secondary-700 : #959aa7;
+        --secondary-800 : #adb2c0;
+        --secondary-900 : #c6cbd4;
+        --secondary-950 : #e1e3e7;
     }
 
 // 색상들
     // 기본색상
-    $black0      : var(--black0);
-    $black4      : var(--black4);
-    $black7      : var(--black7);
-    $black9      : var(--black9);
-    $white       : var(--white);
-    $red         : var(--red);
+    $black0             : var(--black0);
+    $black4             : var(--black4);
+    $black7             : var(--black7);
+    $black9             : var(--black9);
+    $white              : var(--white);
+    $red                : var(--red);
+
+    $secondary-50       : var(--secondary-50);
+    $secondary-100      : var(--secondary-100);
+    $secondary-200      : var(--secondary-200);
+    $secondary-300      : var(--secondary-300);
+    $secondary-400      : var(--secondary-400);
+    $secondary-500      : var(--secondary-500);
+    $secondary-600      : var(--secondary-600);
+    $secondary-700      : var(--secondary-700);
+    $secondary-800      : var(--secondary-800);
+    $secondary-900      : var(--secondary-900);
+    $secondary-950      : var(--secondary-950);
 
     // 주 색상
-    $primary-600 : var(--primary-600);
-    $sky         : var(--sky);
+    $primary-600        : var(--primary-600);
+    $sky                : var(--sky);
 
     // 상태
-    $success      : var(--success);
-    $warning      : var(--warning);
-    $error        : var(--error);
+    $success            : var(--success);
+    $warning            : var(--warning);
+    $error              : var(--error);
 
 // 사이즈
     // 가로
-    $width-device : 1440px;
+    $width-device       : 1440px;
