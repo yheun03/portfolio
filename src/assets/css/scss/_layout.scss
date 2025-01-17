@@ -129,7 +129,14 @@
                     z-index: -1;
                     width: 100%;
                     aspect-ratio: 1918/1078;
-                    object-fit: cover;
+                    transition: 10s linear;
+                    object: {
+                        fit: cover;
+                        position: top;
+                    }
+                }
+                &:hover img{
+                    object-position: bottom;
                 }
 
                 &-wrap{
