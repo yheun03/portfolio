@@ -198,7 +198,7 @@
                 border: unset;
                 z-index: 2;
                 cursor: pointer;
-                background: url(v.$url-icon + '/80/ic-arrow-left.svg') center/cover;
+                background: url(v.$url-icon + '/80/ic-arrow-left.svg') center/contain no-repeat;
                 &.btn-gotoNext{
                     background-image: url(v.$url-icon + '/80/ic-arrow-right.svg');
                     left: 100%;
