@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href=".">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link href="./resume/reset-fonts.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./resume/pattern.css" media="screen, print" rel="stylesheet" type="text/css">
+    <link href="./resume/resume_2023.css" media="screen, print" rel="stylesheet" type="text/css">
+    <title>퍼블리셔 은영환 이력서 보기</title>
+    <style>
+        .desc,
+        dd{ word-break: keep-all !important; }
+        .pageOver{ page-break-after: always; }
+        .bdn-child > div{ border-top: unset !important; padding-bottom: 16px !important; }
+        .bdn-child > div + div{ padding-top: unset !important; }
+        @media print {
+            .desc, dd{ word-break: keep-all !important; }
+            body, html { margin-top: -1px; width: 210mm; height: 297mm; -webkit-print-color-adjust: exact }
+            section, div, p, h1, h2, h3, h4, h5, h6 { break-before: avoid; break-after: avoid; break-inside: avoid }
+            .resume_part .part *, .print_wrap *, .resume_letter, .resume_skill { line-height: 1.8 !important }
+            .part_only_career .box_list, .part_etc .box_list, .part_letter .box_list { display: block !important }
+            .part_letter .box_list .desc { page-break-inside: auto ;}
+            .part_etc .box_list .date { top: 24px !important }
+            .part_table, .part_table * { break-before: avoid; break-after: avoid; break-inside: avoid }
+            .part_table .svq_view .total_result {display: table; table-layout: fixed }
+            .part_table .svq_view .radar_graph { display: table-cell; float: none; margin-right: 0; width: 50% }
+            .part_table .svq_view .result_detail { display: table-cell; padding-left: 40px; width: 49% }
+            .project .link button, .skill_box .skill_item {margin: 0 4px 4px 0 }
+            .skill_box.soft_delete .skill_item {background: var(--blue30) }
+            .resume_dashboard {background: var(--gray30) }
+            .resume_dashboard .item+.item {border-left: 1px solid var(--gray40) }
+            .resume_view .resume_top .user_state {background: var(--gray30) }
+            #resume_print_area {width: 930px }
+            .resume_part .part .guide_txt {display: block }
+            .resume_part .part .guide_txt {color: #000 !important }
+            .print_wrap .resume_letter {color: #000 !important }
+            .print_wrap .resume_letter .tit {color: #000 !important }
+            .print_wrap .resume_letter .txt {color: #000 !important }
+            .print_wrap .resume_letter .core_tit {color: #000 !important }
+            .print_wrap .resume_letter .core_list li:before {color: #000 !important }
+            .print_wrap .resume_skill .tit {color: #000 !important }
+            .print_wrap .skill_box.view .skill_item {color: #000 !important }
+            .print_wrap .skill_box.soft_view .skill_item {color: #000 !important }
+            .print_wrap .resume_part .part .box_tit .tit {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .tit_left {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .date {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .date .work {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .tit {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .desc {color: #000 !important }
+            .print_wrap .resume_part .part .box_list .military_info li {color: #000 !important }
+            .print_wrap .resume_part .part.part_cert .box_list .faculty dt {color: #000 !important }
+            .print_wrap .resume_part .faculty dd {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl dt {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl:first-child dd {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl .type_num {color: #000 !important }
+            .print_wrap .resume_part .personality .unit_result dl dd {color: #000 !important }
+            .print_wrap .resume_part .personality .result_detail .wrap_detail_info {color: #000 !important }
+            .print_wrap .part_table .wrap_result .tit_result {color: #000 !important }
+            .print_wrap .resume_view .user_info li+li:after {background: #d3d5da }
+            .print_wrap .resume_dashboard {border-top: 1px solid #d3d5da }
+            .print_wrap .resume_dashboard .item {border: 1px solid #d3d5da }
+            .print_wrap .resume_skill {border-top: 1px solid #d3d5da }
+            .print_wrap .resume_part .part .box_tit {border-bottom: 1px solid #d3d5da }
+            .print_wrap .resume_part .part .box_list .tit .badge {border: 1px solid #d3dad6 }
+            .print_wrap .resume_part .part .box_list .military_info li+li:before {background-color: #d3d5da }
+            .print_wrap .resume_part .part.part_cert .box_list .faculty dt+dd:before {background: #d3d5da }
+            .print_wrap .resume_part .faculty+.faculty:before {background: #d3d5da }
+            .print_wrap .wrap_preview_file {border: 1px solid #d3d5da }
+        }
+        @page {
+            margin: 10mm;
+            size: A4 
+        }
+    </style>
+</head>
+
+<!-- <body> -->
+<body onload="window.print();">
+    <div id="resume_print_area" class="print_area">
+        <div class="print_wrap">
+            <h2 class="blind">이력서 VIEW</h2>
+            <section class="resume_basic">
+                <div class="resume_view">
+                    <div class="resume_top">
+                        <h1 class="user_name">은영환</h1>
+                        <div class="user_state">경력</div>
+                    </div>
+                    <p class="user_desc">남, 2003 (21세)</p>
+                    <ul class="user_info">
+                        <li class="user_email">eyh***@naver.com</li>
+                        <li class="user_phone"><span>010-****-6501 </span></li>
+                        <li class="user_address">서울 관악구</li>
+                    </ul>
+                    <div class="picture_box">
+                        <div class="picture">
+                            <div class="picture"><img alt="" src="./resume/picture" border="0"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="resume_dashboard">
+                    <li class="item">
+                        <strong class="tit career">경력</strong>
+                        <p class="txt">
+                            <span class="txt_top">
+                                <span class="emph">조앤소프트㈜</span>
+                                <span class="badge_state">재직중</span>
+                            </span>
+                            <span class="txt_bottom">총 3년 11개월</span>
+                        </p>
+                    </li>
+                    <li class="item">
+                        <strong class="tit education">학력</strong>
+                        <p class="txt">
+                            <span class="txt_top">
+                                <span class="emph">한국공학대학교</span>
+                            </span>
+                            <span class="txt_bottom">대학교(4년) 재학중</span>
+                        </p>
+                    </li>
+                    <li class="item">
+                        <strong class="tit payment">희망연봉</strong>
+                        <p class="txt">
+                            <span class="txt_top">
+                                <span class="emph">면접 후 결정</span>
+                            </span>
+                        </p>
+                    </li>
+                    <li class="item">
+                        <strong class="tit file">포트폴리오</strong>
+                        <p class="txt">
+                            <a href="https://yheun03.github.io/portfolio/" class="portfolio ico_pdf05" target="_blank">
+                                <span>https://yheun03.github.io/portfolio/</span>
+                            </a>
+                            <a href="http://jonsoft.co.kr/" class="portfolio ico_pdf05" target="_blank">
+                                <span>http://jonsoft.co.kr/</span>
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="resume_letter">
+                <h3 class="tit">간략 소개 </h3>
+                <p>저는 3년 11개월간 UIUX팀에서 주임으로 근무하면서 웹 퍼블리싱 업무를 수행해 왔습니다. 다양한 프로젝트를 성공적으로 완료하고, 웹 디자인과 사용자 경험에 대한 열정으로 더 좋은 결과물을 만들기 위해 노력해 왔습니다. 팀원들과의 협업을 통해 웹 사이트의 시각적인 면과 기능을 향상하는 일을 재미있게 하고 있습니다.</p>
+                <p class="core_tit">핵심 역량</p>
+                <ul class="core_list">
+                    <li>디자인 시안을 바탕으로 고객의 요구사항에 맞는 UX를 제공합니다.</li>
+                    <li>사용자가 원활하게 이용할 수 있는 UI 컴포넌트를 개발함에 큰 재미를 느낍니다.</li>
+                    <li>팀과 함께 일할 때, 높은 소통 능력을 바탕으로 문제 발생 시 빠르게 해결합니다.</li>
+                    <li>새로운 기술과 트렌드를 배우며 성장하려고 노력합니다.</li>
+                </ul>
+            </section>
+            <section class="resume_skill">
+                <h3 class="tit">나의 스킬</h3>
+                <div class="skill_box view">
+                    <span class="skill_item TipBox">HTML5</span>
+                    <span class="skill_item TipBox">CSS3</span>
+                    <span class="skill_item TipBox">Scss</span>
+                    <span class="skill_item TipBox">JavaScript</span>
+                    <span class="skill_item TipBox">jQuery</span>
+                    <span class="skill_item TipBox">Adobe Illustrator</span>
+                    <span class="skill_item TipBox">Adobe Photoshop</span>
+                    <span class="skill_item TipBox">Figma</span>
+                    <span class="skill_item TipBox">Sketch</span>
+                    <span class="skill_item TipBox">Vue.js</span>
+                    <span class="skill_item TipBox">React</span>
+                    <span class="skill_item TipBox">Spring Boot</span>
+                    <span class="skill_item TipBox">UI/UX디자인</span>
+                    <span class="skill_item TipBox">Figma</span>
+                    <span class="skill_item TipBox">반응형웹</span>
+                    <span class="skill_item TipBox">Zeplin</span>
+                    <span class="skill_item TipBox">스토리보드</span>
+                    <span class="skill_item TipBox">iOS</span>
+                    <span class="skill_item TipBox">크로스브라우징</span>
+                </div>
+            </section>
+            <div class="resume_part">
+                <div class="part part_career">
+                    <div class="box_tit">
+                        <h2 class="tit">경력</h2>
+                        <span class="txt">총 3년 11개월</span>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list certification">
+                            <h3 class="tit">
+                                <span class="company_name">조앤소프트㈜(JO&amp;soft)</span>
+                                <div class="job_team_name">
+                                    <span>UIUX팀 · 주임 4년차</span><span>· 퍼블리셔</span>
+                                </div>
+                            </h3>
+                            <span class="date">2020.09~<span class="work">재직중</span></span>
+                            <p class="desc">웹 퍼블리셔로서 다양한 웹 프로젝트를 성공적으로 완료한 전문가입니다. 웹 디자인을 현실화하는 역할을 담당하며, 사용자 친화적인
+                                인터페이스와 웹 사이트의 시각적인 요소를 최적화하고자 노력하고 있습니다. 웹 디자인과 사용자 경험에 대한 열정으로 시작한 직무이기에, 다양한 프로젝트를 통해
+                                웹사이트의 시각적인 면과 기능을 향상하는 일을 재밌게 작업하고 있습니다.<br>
+                                <br>
+                                이처럼, 다양한 프로젝트에서 퍼블리싱 업무를 수행하면서 기획부터 디자인, 퍼블리싱까지 종합적인 역할을 해왔습니다. 사용자 중심의 인터페이스 구성과 웹 사이트의
+                                성능 향상에 이바지하며, 팀원들과 협업하여 프로젝트를 성공적으로 완료하는 것이 저의 주요 목표입니다.
+                            </p>
+                            <dl class="faculty">
+                                <dt>근무지역</dt>
+                                <dd>경기</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_only_career pageOver">
+                    <div class="box_tit">
+                        <h2 class="tit">경력기술서</h2>
+                    </div>
+                    <div class="box_con bdn-child">
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> OMS 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>깨끗한 나라</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2024년 7월 ~</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS, Vue.js</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>깨끗한 나라 사의 OMS를 리뉴얼 하는 프로젝트의 퍼블리싱을 담당했습니다. 두 달의 기간이 주어졌는데, 열의를 갖고 개발에 임한 결과 한 달도
+                                    채 되지 않아 업무를 끝냈습니다. 남은 기간에 개인의 능력 개발 겸 자발적으로 프론트엔드 공부를 하며 프로젝트의 Vue 컴포넌트 개발에
+                                    이바지했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> SCM 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>대양제지</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2024년 5월~2024년 6월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>대양제지 사의 SCM 서비스를 신규 구축하는 프로젝트에 퍼블리싱을 담당했습니다. 그동안 진행한 다수 프로젝트에서 컴포넌트 정리를 해왔기에
+                                    공수를 60% 줄이는 성과가 있었습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[자사 솔루션 개발]</b> Robo TMS</p>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2024년 2월~2024년 4월 (3개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS, Vue.js</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>기획 30%, 퍼블리싱 100%, 디자인 80%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>TMS 서비스를 운영하면서 여러 고객의 요구사항과 문의 사항을 해결하는 등의 경험을 기반으로 자사 솔루션인 Robo TMS를 개발하는 프로젝트에 기획 및 퍼블리싱을 담당했습니다. 특히 고객용 애플리케이션의 UI, UX 디자인부터 퍼블리싱까지 맡은 프로젝트로, 애정이 많이 갔던 프로젝트입니다. 개편된 UI와 더 편한 UX 개발로 고객의 만족도를 끌어냈습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> SCM 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>대양판지</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2023년 8월~2024년 1월 (5개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, SCSS, React</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>대양판지 사의 SCM 서비스를 리뉴얼하는 프로젝트에 퍼블리싱을 맡았습니다. 고객 버전은 HTML로 퍼블리싱을 했고, 관리자 버전은 HTML로 퍼블리싱을 한 이후에 React 구조에 맞게 컴포넌트를 제작했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list pageOver">
+                            <p class="desc"><b>[SM]</b> TMS 보수</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2023년 7월 (1개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>넥사크로</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>XML, CSS</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>TMS 서비스 운영을 하면서 이슈 리포트를 작성했고, 리포트에서 반복되는 이슈에 대해 해결하는 프로젝트에서 퍼블리싱을 맡았습니다. UX를 개선하고, 더 깔끔하고 심플한 UI를 구축하여 넥사크로를 활용해 보수 작업을 했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SM]</b> TMS 운영</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장, 대영포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2023년 5월~2023년 6월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>넥사크로</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>이슈 보고서 작성 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>TMS 서비스의 속도 저하 이슈가 발생하여 해결하기 위해 투입되었습니다. 단위 테스트를 통해서 이슈가 발생하는 특정 부분을 찾아내었습니다. 투입된 원인을 해결했고, 해결하는 과정에서 서비스가 익숙해졌기에 자발적으로 고객사 응대에 나섰습니다. 이에 따라 속도 저하, 화면 오류 등의 고객 불편 사항 발생 시 즉시 해결했고 해결하지 못하는 이슈 발생 시 개발팀에 신속하게 보고했습니다. 해결된 이슈들은 이슈 케이스 등의 산출물을 제작했고, 이는 같은 이슈 발생 시 해결하는 데 큰 도움이 되었습니다. 실제로 일평균 15건 이상의 불편 사항 접수가 2건으로, 획기적으로 단축된 성과를 보였습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[자사 솔루션 개발]</b> Robo MES</p>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2022년 8월~2023년 4월 (8개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>웹스퀘어, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>MES 스마트팩토리 프로젝트에서 다진 노하우를 기반으로 자사 솔루션을 개발했습니다. 퍼블리싱을 100% 담당하여 모듈 단위의 컴포넌트를 구축했고, 이를 통해 공수를 약 40% 줄였습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[자사 홈페이지]</b> 홈페이지 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2022년 1월~2022년 3월 (3개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma, FileZilla, 후이즈 호스팅 서비스</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%, 디자인 40%, UX 기획 25%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>연결링크:</dt>
+                                <dd>포트폴리오 부분 포트폴리오 1</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>기존 회사 홈페이지는 상당히 단조롭고, 전문성이 느껴지지 않아 신뢰성이 가지 않는 단방향 소통 기반으로 한 홈페이지였습니다. 그렇기에 자사 홈페이지 리뉴얼 프로젝트를 건의드렸습니다. 회사 홈페이지에서 보여야 할 내용 기획을 도맡아 했고, 이를 위해 다양한 성공적인 홈페이지의 레퍼런스를 수집 및 활용했습니다. 성공적으로 퍼블리싱을 하고 검색 결과에 따른 접근성을 증진하기 위해 SEO를 준수했고, 오픈 그래프 프로토콜을 관리했습니다. 프로젝트를 마친 후엔 후이즈 호스팅 대행 서비스를 통해 클라우드에 올렸고, 지속해서 관리하고 있습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> TOMS 서비스 구축</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 10월~2021년 12월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%, 디자인 30%, UX 기획 25%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>태림포장 사내 원지, 박스 주문 서비스를 리뉴얼하고 구축함에 따라 필요한 애플리케이션을 퍼블리싱 했습니다. 디자이너와 Figma를 통해 소통했고 사용법을 익혀 고객사의 요구사항을 정확히 반영해서 직접 디자인했습니다. 그 결과 스마트 앱 어워드 2022 업무향상 분야 대상을 받았습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list pageOver">
+                            <p class="desc"><b>[SI·SM]</b> 스마트팩토리 정부 사업 프로젝트</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>테라에코, 썬겔, 다우기업, 신애전자 등</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 5월~2022년 7월 (15개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>전자정부 프레임워크, Adobe Xd</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%, 디자인 20%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>테라에코 사의 MES 도입과 스마트팩토리 구축 사업의 퍼블리싱을 담당하였습니다. 일회성 프로젝트가 아닌, 자사 솔루션으로 개발해 감에 따라 썬겔, 다우기업, 신애전자 등의 기업과 업무 협약을 맺어갔고, 각 기업의 브랜드 철학과 색상을 반영해 맞춤 디자인을 해드려 큰 만족도를 끌어냈습니다. 이는 추후 자사 Robo MES 솔루션 구축의 기반이 되었습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SM]</b> 인천대학교 공과대학 홈페이지 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>인천대학교</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 3월~2021년 4월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Adobe Xd</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>인천대학교 공과대학 홈페이지 리뉴얼 프로젝트에 퍼블리싱을 담당했습니다. 학교 측에서 공유해 주신 브로슈어와 공식 홈페이지의 교수님 데이터가 맞지 않았지만, 이번 프로젝트를 하면서 주인의식을 갖고 학교에 건의드려 정확한 정보로 수정 및 추가 되었습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> TOS 리뉴얼</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>태림포장</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2021년 1월~2021년 2월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>전자정부 프레임워크, Sketch</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>태림포장 사내 주문 시스템 리뉴얼 프로젝트의 퍼블리싱을 담당했습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> 광장 파트너스 홈페이지</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>광장 파트너스</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2020년 11월~2020년 12월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Sketch</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, jQuery</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>광장 파트너스 사의 홈페이지를 퍼블리싱 했습니다</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <p class="desc"><b>[SI]</b> 하마 애플리케이션</p>
+                            <dl class="faculty full_type">
+                                <dt>고객사</dt>
+                                <dd>광장 파트너스</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>수행 기간</dt>
+                                <dd>2020년 9월~2020년 10월 (2개월)</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Sketch</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>사용 언어</dt>
+                                <dd>HTML, CSS, JavaScript</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>기여도</dt>
+                                <dd>퍼블리싱 100%</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>업무 내용</dt>
+                                <dd>부동산 건축 서비스를 구축하면서 필요한 애플리케이션을 퍼블리싱 했습니다. 퍼블리싱 한 이후 웹앱 형식으로 빌드했습니다.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_education">
+                    <div class="box_tit">
+                        <h2 class="tit">학력</h2>
+                        <span class="txt">대학교(4년) 재학중</span>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list">
+                            <h3 class="tit">
+                                <span>한국공학대학교</span>(4년제) <span class="job_team_name">
+                                    <span>컴퓨터전자공학과 인공지능트랙</span> </span>
+                            </h3>
+                            <span class="date">
+                                <span>2023.03 ~</span>
+                                <span class="status">편입/재학중</span>
+                            </span>
+                            <dl class="faculty">
+                                <dt>학점</dt>
+                                <dd>4.43/4.5</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">
+                                <span>배화여자대학교</span>(2·3년제) <span class="job_team_name">
+                                    <span>모바일소프트웨어과</span> </span>
+                            </h3>
+                            <span class="date">
+                                <span>2021.02~2023.02</span>
+                                <span class="status">졸업</span>
+                            </span>
+                            <dl class="faculty">
+                                <dt>학점</dt>
+                                <dd>4.27/4.5</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">
+                                <span>서울디지텍고등학교</span> <span class="job_team_name">
+                                    <span>특성화/마이스터고 IoT과</span> </span>
+                            </h3>
+                            <span class="date">
+                                <span>2018.03~2021.02</span>
+                                <span class="status">졸업</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_etc pageOver">
+                    <div class="box_tit">
+                        <h2 class="tit">경험/활동/교육</h2>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list">
+                            <h3 class="tit">한국공학대학교<span class="badge">교내활동</span></h3>
+                            <span class="date">2023.04~2024.02</span>
+                            <p class="desc">학회장으로서 학우와 학교를 연결하며 다양한 활동을 펼친 경험이 있습니다.<br>
+                                <br>
+                                기존에는 없었던 학생회 설립을 끌어내어 학생들의 목소리를 대변하고 소통의 기회를 마련했습니다. 학과 점퍼, MT, 해커톤과 같은 다양한 프로그램을 기획,
+                                주최하여 학우들의 교류와 성장을 촉진했습니다. 이러한 노력을 통해 학생들의 학업과 경험의 폭을 넓히는데 이바지하였으며, 이는 리더십과 조직 능력을 성장시킬 수
+                                있었던 경험이었습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">한국공학대학교<span class="badge">교내활동</span></h3>
+                            <span class="date">2023.03~2023.03</span>
+                            <p class="desc">3학년 학과 대표로서의 활동을 통해 리더십과 문제 해결 경험을 키웠습니다.<br>
+                                <br>
+                                팀원들과 협력하여 다양한 프로젝트를 성공적으로 이끌며, 이견 조율과 소통 능력을 발전시켰습니다. 셔틀버스 배차와 주차 문제 등 학과 내 갈등 해결과 문제
+                                대응을 통해 효과적인 문제해결력을 갖추었으며, 이는 신뢰를 쌓고 조화로운 분위기 조성에 도움이 되었습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울디지텍고등학교 특별 프로젝트<span class="badge">교내활동</span></h3>
+                            <span class="date">2020.06~2020.07</span>
+                            <p class="desc">고등학교의 제안으로 "전교 정부회장 투표 페이지 개발 TF팀"의 팀장을 맡아 프로젝트를 끌어 나갔습니다.<br>
+                                <br>
+                                후보자 정보 페이지의 반응형 개발을 주도하고, 팀원들을 끌어나가는 과정에서 많은 도전과 기회를 마주하게 되었습니다. 팀원 각자의 장점을 파악하고 이를 살려
+                                업무를 분담함으로써 효율적인 업무 진행을 끌어내는 것이 중요하다는 것을 배웠습니다. 특히 클라이언트인 교학팀의 만족감을 얻은 것은 큰 성취였습니다. 리더로서
+                                팀원들을 조화롭게 이끄는 능력과 기술적인 역량을 통해 프로젝트를 성공적으로 마무리한 것이 자랑스러웠습니다.<br>
+                                이 경험을 통해 협업의 중요성을 깨닫게 되었습니다. 팀원들과의 원활한 소통과 업무 분담을 통해 복잡한 프로젝트를 성공적으로 완수할 수 있음을 깨달았습니다.
+                                또한, 팀원들을 이끄는 리더로서 책임감과 조화롭게 협력하는 능력의 중요성을 더욱 느낄 수 있었습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울디지텍고등학교 특별 프로젝트<span class="badge">교내활동</span></h3>
+                            <span class="date">2020.04~2020.05</span>
+                            <p class="desc">고등학교의 제안으로 참여한 "여기저기 흩어져 있는 초,중,고의 다양한 학습 정보를 한눈에 볼 수 있도록 모아놓은 웹페이지 개발 TF팀"
+                                에 팀원으로서 참여하게 되었습니다.<br>
+                                <br>
+                                다양한 학습 정보를 효과적으로 한곳에 모아 보여주기 위한 웹페이지 개발은 상당한 기술적인 도전이었지만, 팀원들과의 원활한 의사소통과 역할 분담, 문제 해결
+                                능력으로, 성공적으로 수행할 수 있었습니다. 우리 팀의 노력과 열정은 서울특별시 교육청에서 인정받았고, 교육청의 블로그 및 다양한 뉴스 기사에 발표되었습니다.
+                                이는 팀원들의 협업 능력과 프로젝트의 성과를 인정받은 결과로, 저희 모두 큰 자랑스러움을 느낀 순간이었습니다.<br>
+                                이 경험을 통해 협업의 중요성과 팀원 간의 신뢰가 얼마나 중요한 요소인지를 깨달았습니다. 또한, 어려운 문제에 대한 해결 능력을 기르는 과정에서 성장하고
+                                발전하는 것을 몸소 느꼈습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울특별시 청소년 연합 자기개발 동아리 MC<span class="badge">동아리</span></h3>
+                            <span class="date">2019.09~2022.11</span>
+                            <p class="desc">MC는 기존 학교 동아리의 틀을 벗어나, 개인의 성장과 발전을 위한 특별한 시간을 마련하였습니다.<br>
+                                <br>
+                                동아리 내에서는 각종 교내외대회, 봉사, 컨퍼런스등 다양한 대외 활동을 적극 기획하고 실행하였습니다. 이러한 활동들을 통해 학우들의 능력 향상과 실전 경험을
+                                도모하였습니다. 취업한 선배들과의 교류를 통해 사회생활을 간접적으로 배울 수 있는 시간을 마련하였습니다. 선배들의 경험과 조언을 듣고 배울 기회를 제공하여,
+                                실무에서 요구되는 능력을 갖출 수 있었습니다. 또한, 팀 프로젝트를 통해 협업 능력, 위기 대응력, 의사소통 능력을 향상하는 중요한 경험을 할 수
+                                있었습니다.<br>
+                                이러한 경험을 통해 "2020 명동 루프탑 캐릭터 메이커톤" 대상, "제5회 G AI &amp; IoT 메이커톤" 최우수상 등의 다양한 대회에서 수상하는
+                                경험을 얻을 수 있었습니다. 이러한 성과는 동아리원 모두의 노력과 협력 덕분에 가능했습니다. MC는 졸업 후에도 학교 내 소프트웨어 계열 대표 동아리로
+                                자리매김하게 되었습니다. 교내에서만 활동한 것이 아닌 서울특별시 전체로 더 나아가기 위해 성동구립청소년센터 "미래로운 동아리" 정부 사업에 제안서를 제출했고,
+                                발탁되어 2020년 1년간 열심히 활동했고, 높은 성과로 인해 대표 동아리로 선출되어 여러 기사가 발행되기도 했습니다. 이 경험을 바탕으로 졸업 후에도
+                                사회에서 더 큰 성취를 이뤄나가고자 하는 의지가 더욱 강해졌습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울특별시 청소년 연합 영상 동아리 깜냥깜냥<span class="badge">동아리</span></h3>
+                            <span class="date">2019.08~2019.12</span>
+                            <p class="desc">회장으로서, 예비 고등학생들을 위한 유용한 정보를 담은 영상물을 제작하고자 노력해 왔습니다.<br>
+                                <br>
+                                "깜냥깜냥"은 '자신의 힘을 다하여'라는 뜻의 순우리말로, 고등학교 분류 별로 다양한 실제 경험을 담은 영상을 제작하여 예비 고등학생들이 미래의 학교 선택에
+                                도움을 주고자 하는 목표를 하고 있습니다.<br>
+                                이를 통해 예비 고등학생들은 자신의 관심 분야와 성향에 맞는 학교를 선택하는 데 도움을 받을 수 있었습니다. 특히 단방향 소통이 아닌, 댓글을 통해 양방향
+                                소통을 지향했고, 실제로 댓글로 예비 고등학생들의 다양한 질문으로 의문점을 해결해 주었습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울디지텍고등학교<span class="badge">교내활동</span></h3>
+                            <span class="date">2018.10~2021.02</span>
+                            <p class="desc">진로 멘토로서 활동한 경험을 통해 학생들의 진로 선택에 도움을 주고자 노력하였습니다. 이 경험은 가르침과 영감을 전달하는 동시에,
+                                리더십과 멘토링 능력을 향상하는 기회를 주었습니다.<br>
+                                <br>
+                                학생들이 진로를 선택하는 과정은 매우 중요하며, 이를 함께 고민하고 지원해 주는 것은 젊은 세대의 미래를 함께 만드는 일이라고 생각합니다. 진로 멘토로서 참여한
+                                활동에서는 학생들의 흥미와 능력을 파악하고, 그들이 관심이 있는 분야에 대한 정보와 조언을 제공하였습니다. 멘토링 과정에서 중요한 것은 학생들과 솔직하고 열린
+                                대화를 나누는 것이었습니다. 그래서 학생들에게 제 경험과 고민을 솔직하게 공유하며, 학생들의 궁금한 점과 우려를 들어주었습니다. 이를 통해 학생들이 더 나은
+                                선택을 할 수 있도록 도움을 주고자 하였습니다.<br>
+                                이 경험을 통해 학생들과 소통하고 지도하는 능력을 키우는 중요한 계기가 되었습니다. 또한, 다양한 분야와 관심사를 가진 학생들과 함께하며 존중과 이해를
+                                바탕으로 도움을 주는 것이 얼마나 보람 있는 일인지를 깨달았습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울디지텍고등학교<span class="badge">교내활동</span></h3>
+                            <span class="date">2018.10~2021.02</span>
+                            <p class="desc">고등학교에서 홍보부로 활동한 경험은 의사소통 능력과 창의성을 키우는 데 큰 영향을 미쳤습니다. 이 활동을 통해 학교의 가치와 매력을 널리
+                                알리는 역할을 수행하며, 다양한 사람들과 연결되는 기회가 닿게 되었습니다.<br>
+                                <br>
+                                포스터, 안내서, 영상 등 다양한 매체를 활용하여 학교의 특징과 장점을 강조하고 학생들에게 소식을 전달하였습니다. 이 과정에서 디자인과 문구 선택 등에 큰
+                                주의를 기울이며 눈에 띄는 홍보 자료를 제작하였습니다. 홍보부 활동을 통해 의사소통 능력을 크게 향상할 수 있었습니다. 다양한 사람들과 협력하고, 학교의
+                                이벤트를 설명하고 홍보하는 과정에서 많은 대화와 논의를 거치면서 원활한 의사소통의 중요성을 체감하게 되었습니다. 또한, 타인의 의견을 수렴하고 효과적으로
+                                전달하는 방법을 배워 나가는 과정에서 의사결정과 조율 능력도 향상되었습니다.<br>
+                                이 경험을 통해 배운 것은 브랜딩과 소통의 중요성입니다. 제가 참여한 홍보부 활동은 학교의 명성과 학생들의 관심을 높이는 중요한 역할을 하였습니다. 이를 통해
+                                성취감을 느끼면서도, 더 나아가서는 사회에서의 마케팅과 소통 분야에서도 큰 역할을 해낼 수 있을 것이라는 자신감을 갖게 되었습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울디지텍고등학교<span class="badge">교내활동</span></h3>
+                            <span class="date">2018.09~2021.02</span>
+                            <p class="desc">고등학교에서 선도부로 활동하며, 책임감을 느끼고 강화하였습니다. 학교와 학생들의 기대를 충족시키기 위해 최선을 다하는 과정에서, 자신의
+                                역할과 책임을 자각하게 되었습니다. 어려운 상황에서도 포기하지 않고 최선을 다하는 자세를 기르게 되었습니다.</p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">서울디지텍고등학교 웹디자인 동아리 MOD<span class="badge">교내활동</span></h3>
+                            <span class="date">2018.03~2019.04</span>
+                            <p class="desc">MOD는 방과후 시간에 웹에 대해서 학습하는 동아리입니다.<br>
+                                <br>
+                                동아리 선배들에게서 웹 개발에 대해 가르침을 받았고, 다양한 과제와 포트폴리오를 통해 웹 기술을 학습했습니다. 이를 통해 웹 개발의 기초를 탄탄히 하는 계기가
+                                되었습니다. 1년간 열정적인 활동을 했고, 리더쉽과 애교심을 인정받아 회장에 선발되었습니다. 회장이 된 후엔 동기와 후배들을 양성하는데 크게 기여를 했습니다.
+                                교내 기능반 선발을 위한 과제를 직접 만들기도 했고, 웹 개발을 할 때 제 노하우를 공유해 좀 더 흥미를 느낄 수 있도록 지원했습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_cert">
+                    <div class="box_tit">
+                        <h2 class="tit">자격</h2>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list">
+                            <h3 class="tit">컴퓨터활용능력1급 </h3>
+                            <span class="date">2024.05 </span>
+                            <dl class="faculty">
+                                <dt>필기합격</dt>
+                                <dd>대한상공회의소</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">정보처리기사 </h3>
+                            <span class="date">2023.08 </span>
+                            <dl class="faculty">
+                                <dt>필기합격</dt>
+                                <dd>한국산업인력공단</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">NCS SW개발_L5</h3>
+                            <span class="date">2022.12 </span>
+                            <dl class="faculty">
+                                <dt>최종합격</dt>
+                                <dd>한국산업인력공단</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">NCA</h3>
+                            <span class="date">2022.03 </span>
+                            <dl class="faculty">
+                                <dt>최종합격</dt>
+                                <dd>네이버 클라우드</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">2종보통운전면허 </h3>
+                            <span class="date">2021.03 </span>
+                            <dl class="faculty">
+                                <dt>최종합격</dt>
+                                <dd>경찰청(운전면허시험관리단)</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">정보처리산업기사 </h3>
+                            <span class="date">2020.09 </span>
+                            <dl class="faculty">
+                                <dt>최종합격</dt>
+                                <dd>한국산업인력공단</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">정보처리기능사 </h3>
+                            <span class="date">2019.12 </span>
+                            <dl class="faculty">
+                                <dt>최종합격</dt>
+                                <dd>한국산업인력공단</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">웹디자인기능사 </h3>
+                            <span class="date">2019.04 </span>
+                            <dl class="faculty">
+                                <dt>최종합격</dt>
+                                <dd>한국산업인력공단</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_cert pageOver">
+                    <div class="box_tit">
+                        <h2 class="tit">수상</h2>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list">
+                            <h3 class="tit">2023 일학습병행 우수사례 경진대회 대상</h3>
+                            <span class="date">2023.09 </span>
+                            <dl class="faculty">
+                                <dd>고용노동부</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">2022 메이커톤「지구(EARTH)」 우수상</h3>
+                            <span class="date">2022.11 </span>
+                            <dl class="faculty">
+                                <dd>창업진흥원</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">한반도 체인지 메이커톤 우수상</h3>
+                            <span class="date">2021.01 </span>
+                            <dl class="faculty">
+                                <dd>한반도평화만들기/더 브릿지</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">제5회 G AI &amp; IoT 메이커톤 최우수상</h3>
+                            <span class="date">2020.11 </span>
+                            <dl class="faculty">
+                                <dd>광주과학기술원 창업진흥센터</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">2020 명동 루프탑 캐릭터 메이커톤 대상</h3>
+                            <span class="date">2020.10 </span>
+                            <dl class="faculty">
+                                <dd>창업진흥원/주식회사맵씨</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">제6회 신한 29초 영화제 일반부 특별상</h3>
+                            <span class="date">2020.09 </span>
+                            <dl class="faculty">
+                                <dd>한국경제신문영상콘텐츠전략본부</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">모두의 메이커 학교 베스트팀워크상</h3>
+                            <span class="date">2019.10 </span>
+                            <dl class="faculty">
+                                <dd>서울특별시평생교육진흥원</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">제 3회 웰컴 투 메이커 월드 미래상</h3>
+                            <span class="date">2019.10 </span>
+                            <dl class="faculty">
+                                <dd>한국산업진흥협회</dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">그린 메이커톤 완성도상</h3>
+                            <span class="date">2019.08 </span>
+                            <dl class="faculty">
+                                <dd>진로직업체험지원센터</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_portfolio pageOver">
+                    <div class="box_tit">
+                        <h2 class="tit">포트폴리오 및 기타문서</h2>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list">
+                            <h3 class="tit_left">포트폴리오</h3>
+                            <a href="http://jonsoft.co.kr/" target="_blank" alt="http://jonsoft.co.kr/"
+                                title="http://jonsoft.co.kr/" class="file_link"><span>http://jonsoft.co.kr/</span></a>
+                            <dl class="faculty">
+                                <dt>작업기간</dt>
+                                <dd>2022.01.03~2022.03.04</dd>
+                            </dl>
+                            <dl class="faculty">
+                                <dt>작업인원</dt>
+                                <dd>2명</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma, Adobe Photoshop, Adobe Illustrator</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작품소개</dt>
+                                <dd>
+                                    기존 회사 홈페이지의 단조롭고 신뢰성을 주지 못하는 문제를 해결하기 위해 홈페이지 리뉴얼 프로젝트를 주도했습니다. 기획부터 실행까지 전 과정을 담당하며, 성공적인 홈페이지 레퍼런스를 분석하고 이를 반영한 체계적인 기획을 수행했습니다. 퍼블리싱 후에는 SEO 최적화와 소셜 미디어 연동을 통해 접근성을 증진하고, 오픈 그래프 프로토콜을 관리하여 소셜 미디어와의 연동성을 높였습니다. 리뉴얼 완료 후 홈페이지를 클라우드에 업로드하고 지속해서 관리하여 최적의 상태를 유지했습니다. 이 리뉴얼을 통해 회사의 신뢰성과 전문성을 대외적으로 강화하는 데 기여했습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit_left">포트폴리오</h3>
+                            <a href="https://yheun03.github.io/portfolio/" target="_blank"
+                                alt="https://yheun03.github.io/portfolio/" title="https://yheun03.github.io/portfolio/"
+                                class="file_link"><span>https://yheun03.github.io/portfolio/</span></a>
+                            <dl class="faculty">
+                                <dt>작업기간</dt>
+                                <dd>2023.06.01~2023.09.01</dd>
+                            </dl>
+                            <dl class="faculty">
+                                <dt>작업인원</dt>
+                                <dd>1명</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma, Adobe Photoshop, Adobe Illustrator</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작품소개</dt>
+                                <dd>
+                                    기획, 디자인, 퍼블리싱 전 과정을 직접 담당하여 자기 어필 웹 페이지를 제작했습니다. 이 프로젝트는 SCSS를 활용한 코드 재사용성과 유지보수성 향상, 효율적 스타일링 작업, 일관된 디자인에 중점을 두었습니다. 사용자 편의성을 고려한 반응형 웹 디자인을 통해 다양한 디바이스에서 일관된 사용자 경험을 제공하며, 직관적인 UX와 깔끔한 UI로 사용자 만족도를 높였습니다. 기획 단계에서는 명확한 목표 설정의 중요성을 깨달았고, 디자인 과정에서는 최신 트렌드와 인터페이스 원칙을 반영하여 가독성을 개선했습니다. 퍼블리싱 작업에서는 SCSS로 스타일링을 최적화하며 코드 복잡도를 줄였습니다. 프로젝트 관리 과정에서 일정 준수와 효율성의 중요성을 체감했고, SCSS와 JavaScript 심화 기능을 학습하여 정교한 웹 페이지 구현이 가능해졌습니다. 사용자 피드백을 반영한 UX 개선을 통해 사용자 중심 사고 능력을 키웠습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit_left">포트폴리오</h3>
+                            <a href="https://yheun03.github.io/portfolio/portfolio/newmeet/" target="_blank" alt="https://yheun03.github.io/portfolio/portfolio/newmeet/"
+                                title="https://yheun03.github.io/portfolio/portfolio/newmeet/" class="file_link"><span>https://yheun03.github.io/portfolio/portfolio/newmeet/</span></a>
+                            <dl class="faculty">
+                                <dt>작업기간</dt>
+                                <dd>2024.03.09~2024.06.22</dd>
+                            </dl>
+                            <dl class="faculty">
+                                <dt>작업인원</dt>
+                                <dd>1명</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작품소개</dt>
+                                <dd>
+                                    이 작품은 캡스톤 디자인 과목에서 진행한 프로젝트로, 저는 아이디어 기획, 추상화, UI와 UX를 담당했습니다. 팀은 백엔드 개발을 맡은 팀원 1명과 서버 및 OCR 개발을 담당한 팀원 1명으로 구성되었습니다. 저는 사용자 경험을 최적화하고 직관적인 인터페이스를 설계하는 데 주력했으며, 팀원들과의 협업을 통해 기능적이고 사용자 친화적인 UIUX를 도출했습니다. 이 프로젝트를 통해 기획과 디자인의 중요성을 다시 한번 실감하게 되었고, 협업을 통해 실질적인 개발 경험을 쌓을 수 있었습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit_left">포트폴리오</h3>
+                            <a href="https://yheun03.github.io/portfolio/portfolio/gongting/intro.html" target="_blank" alt="https://yheun03.github.io/portfolio/portfolio/gongting/intro.html"
+                                title="https://yheun03.github.io/portfolio/portfolio/gongting/intro.html" class="file_link"><span>https://yheun03.github.io/portfolio/portfolio/gongting/intro.html</span></a>
+                            <dl class="faculty">
+                                <dt>작업기간</dt>
+                                <dd>2024.05.16~2024.05.24</dd>
+                            </dl>
+                            <dl class="faculty">
+                                <dt>작업인원</dt>
+                                <dd>1명</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작업 툴</dt>
+                                <dd>Visual Studio Code, Figma</dd>
+                            </dl>
+                            <dl class="faculty full_type">
+                                <dt>작품소개</dt>
+                                <dd>
+                                    이 작품은 한국공학대학교 학생들을 위한 블라인드 매칭 서비스로, 2023년 9월 첫 서비스를 시작했습니다. 1차에서는 연인과 친구 매칭을 통해 171명이 참여했으며, 2차에서는 과팅, 연인, 친구 매칭으로 121명이 참여했습니다. 서비스는 높은 만족도를 기록했고, 사용자 피드백을 바탕으로 향후 개선 방향을 구체화했습니다. 2024년에는 친구 매칭을 주제로 한 '공팅 - 친구 버전'을 출시할 예정입니다. 새로운 버전에서는 향상된 UI와 UX를 설계하여 사용자 경험을 극대화하고, 서비스의 접근성과 편의성을 대폭 개선할 계획입니다. 이를 통해 더 많은 학생이 공팅을 통해 새로운 친구를 만날 수 있도록 지원할 것입니다.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="part part_letter">
+                    <div class="box_tit">
+                        <h2 class="tit">자기소개서</h2>
+                    </div>
+                    <div class="box_con">
+                        <div class="box_list">
+                            <h3 class="tit">성장 과정</h3>
+                            <p class="desc">
+                                <b>"실질적 경험을 통해 기술적 역량을 강화한 퍼블리셔"</b>
+                                <br><br>
+                                저의 성장 과정은 체계적이고 실질적인 경험의 연속이었습니다. IT 강국 대한민국에서 웹 개발에 대한 깊은 열정을 가지고, 고등학교 시절부터 미래의 IT 인재로서의 길을 확립하기 위해 특성화 고등학교를 선택했습니다. 이곳에서 웹 개발의 기초부터 심화까지 철저하게 배우면서, 기술적 역량을 검증하고 강화하는 것을 최우선으로 삼았습니다. HTML, CSS, JavaScript를 습득한 후, 동아리 활동과 기술 토의 시간을 통해 실력을 쌓았고, 이를 바탕으로 여러 토이 프로젝트를 실행하며 실전 경험을 축적했습니다.
+                                <br><br>
+                                2019년 8월, 서울특별시교육청 주최의 “그린 메이커톤” 대회에서 완성도상을 수상하면서 웹 개발의 첫 대외활동에서 두각을 나타냈습니다. 이 경험은 웹 개발에 대한 흥미와 자신감을 더욱 강화했고, 기술적 도전의 즐거움을 깨닫는 계기가 되었습니다. 이후, 두 달 만에 “제3회 웰컴 투 메이커 월드” 대회에 참가하여 아이디어를 인정받아 미래상을 받았습니다. 이는 기술적 성과와 창의력을 동시에 입증하며, 퍼블리셔로서의 방향성을 확립하는 데 큰 도움이 되었습니다. 매년 진행된 대회에서의 성과는 저의 기술적 역량과 문제 해결 능력을 지속해서 검증하는 기회가 되었습니다.
+                                <br><br>
+                                이러한 과정에서 배움의 깊이를 넘어 실질적인 아웃풋을 도출하고, 자신의 역량을 검증하는 것이 얼마나 중요한지를 깊이 깨달았습니다. 철저한 준비와 꼼꼼한 접근 방식이 개발 과정에서 큰 장점이 되었고, 이를 통해 실질적인 성과를 이루어냈습니다. 또한, 학습과 성장을 반복하며 끊임없이 도전하고 발전하는 것이 중요하다는 것을 체험했습니다. 이러한 경험은 저를 더욱 성장한 퍼블리셔로 만들어 주었고, 차세대 웹 개발자로서의 준비를 철저히 하는 데 큰 도움이 되었습니다.
+                                <br><br>
+                                이제, 이러한 경험을 바탕으로 웹 퍼블리셔로서의 전문성과 기술적 역량을 한층 강화하여, 혁신적인 웹 개발 솔루션을 제공하며 성과를 창출하는 데 주력하고자 합니다.
+                            </p>
+                        </div>
+                        <div class="box_list pageOver">
+                            <h3 class="tit">성격의 장단점</h3>
+                            <p class="desc">
+                                <b>"세부 사항에 대한 꼼꼼함으로 높은 완성도를 유지하는 퍼블리셔"</b>
+                                <br><br>
+                                저는 꼼꼼하고 성실한 성격을 지니고 있습니다. 이러한 성향은 웹 개발 분야에서 큰 장점으로 작용하고 있습니다. 최근 OMS 리뉴얼 프로젝트에서는 퍼블리싱을 100% 담당하며, 주어진 기간보다 훨씬 빠르게, 한 달도 채 되지 않아 업무를 완료했습니다. HTML, SCSS, Vue.js를 활용하여 웹 페이지의 세부적인 디자인과 기능을 효과적으로 구현하며, 모든 세부 사항까지 철저히 점검하여 높은 완성도를 유지했습니다. 이러한 철저하고 성실한 접근 방식 덕분에 프로젝트는 예상보다 훨씬 빠르게 마무리될 수 있었고, 고객에게 만족스러운 결과를 제공할 수 있었습니다.
+                                <br><br>
+                                그러나 세부 사항에 지나치게 집중하다 보면 전체적인 흐름을 놓칠 수 있습니다. 예를 들어, SCM 리뉴얼 프로젝트에서 세부적인 컴포넌트 정리 작업에 집중하다 보니 일정 관리에 도전이 있었습니다. 이를 극복하기 위해, 최근에는 프로젝트 관리 기법을 활용하여 우선순위를 명확히 하고 전체 관점을 유지하려는 노력을 기울이고 있습니다. 간트차트를 사용하여 작업의 우선순위를 명확히 정하고, 전체 일정과 일정을 주기적으로 모니터링하여 지연이 발생하지 않도록 조정하였습니다.
+                                <br><br>
+                                협업 과정에서 꼼꼼함이 가끔 이견 조율에 도전이 될 수 있습니다. 하지만 이를 해결하기 위해 팀의 목표를 우선시하며, 개방적인 태도로 팀원들과 소통하고 다양한 의견을 수용하는 것을 중요하게 생각합니다. 팀원들의 피드백을 적극적으로 반영하고, 협력하는 과정에서 발생할 수 있는 갈등을 최소화하여 팀 전체의 성과를 높이는 데 기여하고 있습니다. 이러한 접근 방식은 팀워크를 강화하고 프로젝트의 성공을 이끄는 데 중요한 역할을 하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">전공 선택 이유와 적성</h3>
+                            <p class="desc">
+                                <b>"웹 개발의 기술적 매력과 창의적 문제 해결을 통해 전문성을 발휘하는 퍼블리셔"</b>
+                                <br><br>
+                                저는 고등학교 시절부터 IT와 프로그래밍에 대한 깊은 흥미를 느꼈습니다. 이 분야는 창의성과 문제 해결 능력을 요구하는 동시에, 급변하는 기술 환경에 적응하며 성장할 수 있는 기회를 제공합니다. 웹 개발의 기초를 배우면서 HTML, CSS, JavaScript의 기술적 매력을 실감하였고, 이는 제 적성과 열정에 부합한다고 느꼈습니다. 특히, 프로젝트를 통해 사용자의 요구를 충족시키고, 실질적인 문제를 해결하는 과정에서 큰 만족감을 느꼈습니다.
+                                <br><br>
+                                웹 개발은 단순한 기술적 작업을 넘어 사용자의 요구를 충족시키고, 실질적인 문제를 해결하는 과정에서 큰 만족감을 제공합니다. 프로젝트를 통해 직접 문제를 해결하고, 사용자 경험을 개선하는 과정에서 제 창의성을 발휘할 수 있었습니다. 이는 저에게 도전과 성취감을 동시에 안겨주었고, 이 분야에 대한 열정을 더욱 강화했습니다.
+                                <br><br>
+                                전공을 선택한 이유는 이러한 적성과 흥미를 바탕으로 한 것입니다. 웹 개발 분야는 기술의 발전과 함께 새로운 도전과 기회를 지속해서 제공합니다. 저의 문제 해결 능력과 창의성은 이 분야에서 중요한 자산이 되었으며, 팀 프로젝트와 다양한 대회에서 경험한 협업 능력은 제 기술적 역량을 한층 강화하는 데 도움이 되었습니다.
+                                <br><br>
+                                앞으로도 웹 개발 분야에서 제 전문성을 높여가며, 지속해서 기술을 학습하고 문제를 해결해 나가는 것이 제 목표입니다. 이 분야에서의 성장과 발전을 통해, 더 창의적이고 효과적인 해결책을 제시하며, 성공적인 경험을 쌓고자 합니다.
+                            </p>
+                        </div>
+                        <div class="box_list pageOver">
+                            <h3 class="tit">지원동기</h3>
+                            <p class="desc">
+                                <b>"기술적 도전과 창의적 문제 해결을 통해 회사의 혁신적 프로젝트에 기여하고자 하는 퍼블리셔"</b>
+                                <br><br>
+                                웹 개발에 대한 깊은 관심과 열정이 커짐에 따라, 이 분야에서 제 기술적 역량을 실질적으로 발휘하고 싶다는 강한 의지를 가지게 되었습니다. 웹 개발은 기초부터 심화까지 다양한 기술을 다루며, 지속해서 변화하는 기술 환경 속에서 창의적이고 혁신적인 문제 해결을 요구하는 분야입니다. 저는 이러한 도전에 매력을 느끼며, 기술적 문제를 해결하고 사용자 경험을 향상하는 과정에서 큰 만족감을 느꼈습니다. 특히, 기술적 도전과 창의적인 문제 해결을 통해 성과를 내는 과정이 제게는 큰 보람이자 성장의 기회가 되었습니다. 
+                                <br><br>
+                                회사는 젊고 혁신적인 IT 인재들이 모여 협업하며, 다양한 기술적 도전과 창의적인 프로젝트를 수행하는 역동적인 환경을 갖추고 있다고 알고 있습니다. 저는 이러한 환경에서 제 기술적 역량과 문제 해결 능력을 최대한으로 활용하고, 실무 경험을 쌓으며 성장해 나가고 싶습니다. 최근 OMS 리뉴얼 프로젝트에서처럼, 빠르게 변화하는 요구에 대응하며 높은 품질의 퍼블리싱을 제공한 경험이 이러한 목표를 달성하는 데 큰 도움이 될 것입니다. 
+                                <br><br>
+                                특히, 다양한 팀 프로젝트와 대회에서 얻은 경험은 저의 협업과 소통 능력을 강화하는 데 큰 도움이 되었으며, 이는 회사의 혁신적인 프로젝트에서도 중요한 역할을 할 것입니다. 저는 팀원들과의 원활한 소통과 협력을 통해 프로젝트를 성공적으로 끌어내고, 문제 해결 과정에서 창의적인 접근 방식을 통해 실질적인 가치를 더하는 일원이 되고자 합니다. 또한, 회사의 비전과 목표에 깊이 공감하며, 그 일원으로서 기여하고 싶다는 마음가짐을 가지고 있습니다.
+                                <br><br>
+                                회사의 역동적인 환경에서 제 기술적 역량과 문제 해결 능력을 발휘하며, 회사의 목표 달성에 기여하고, 지속해서 성장해 나가고 싶습니다. 다양한 프로젝트에서의 경험을 바탕으로, 회사의 혁신적이고 도전적인 프로젝트에 실질적인 가치를 더하며, 함께 성공적인 미래를 만들어 나가고 싶습니다.
+                            </p>
+                        </div>
+                        <div class="box_list">
+                            <h3 class="tit">입사 후 포부</h3>
+                            <p class="desc">
+                                <b>"팀워크와 최신 기술을 통해 회사의 목표 달성에 기여할 퍼블리셔"</b>
+                                <br><br>
+                                입사 후에는 젊고 패기 넘치는 자세로 회사의 비전과 목표를 실현하는 데 전념하고자 합니다. 웹 개발에 대한 열정과 다양한 실무 경험을 바탕으로, 회사의 프로젝트를 성공적으로 이끌며 함께 성장하는 퍼블리셔로 자리매김하겠습니다. 특히, 소통과 협업의 중요성을 깊이 이해하고 있으며, 다양한 팀원들과의 협력을 통해 프로젝트의 목표를 효과적으로 달성하는 데 기여하고자 합니다.
+                                <br><br>
+                                저는 팀워크와 소통을 통해 협업의 가치를 체감하며 성장해 왔습니다. 다양한 팀 프로젝트와 대회에서 쌓은 경험을 통해, 기술적 이견을 조율하고, 다양한 아이디어를 반영하여 최상의 결과를 도출해 내는 능력을 갖추었습니다. 이러한 경험을 바탕으로, 입사 후에도 팀원들과 원활하게 소통하고, 공동의 목표를 향해 협력하여 프로젝트를 성공적으로 수행할 것입니다.
+                                <br><br>
+                                기술적인 측면에서도 발전을 지속할 계획입니다. 현재 Vue.js와 React를 공부하며, 최신 웹 개발 트렌드를 습득하고 있습니다. 퍼블리셔로서 기획자, 디자이너, 프론트엔드 개발자 간의 원활한 소통을 위해 이러한 기술적 배경을 활용하고자 합니다. 자격증 취득과 개인 학습을 통해 실무에 필요한 역량을 계속해서 보강하며, 최신 기술을 익히고 적용하여 회사의 기술적 리더십을 지원할 것입니다.
+                                <br><br>
+                                궁극적으로, 저의 젊은 에너지와 끊임없는 노력으로 회사의 목표 달성에 기여하고, 개인적으로는 웹 개발 분야에서의 전문성을 더욱 높여가겠습니다. 도전과 성장의 과정에서 얻은 교훈을 바탕으로, 창의적이고 혁신적인 솔루션을 제시하며, 미래의 웹 개발 분야에서 두각을 나타낼 수 있는 인재로 성장해 나가겠습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="svg_pattern" style="display:none">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <symbol id="TipBox_tail" viewBox="0 0 32 32">
+                <path d="M8.5 19L16 9L23.5 19H8.5Z" fill="inherit"></path>
+                <path d="M16 8L23.5 18H32V19H23L16 9.66667L9 19H0V18H8.5L16 8Z" fill="currentColor"></path>
+            </symbol>
+            <symbol id="TipBox_tail_side" viewBox="0 0 32 32">
+                <path d="M31.5 26V9L21 18.5H0V26H31.5Z" fill="inherit"></path>
+                <path d="M31 10.2038L20.9472 19H0V18H20.5714L32 8V26H31V10.2038Z" fill="currentColor"></path>
+            </symbol>
+            <symbol id="svg_my_8" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M7 0c3.866 0 7 3.134 7 7 0 1.756-.647 3.36-1.714 4.59l.068.056 3.394 3.395c.195.195.195.511 0 .707-.174.173-.443.193-.638.058l-.07-.058-3.394-3.394-.056-.068C10.36 13.353 8.756 14 7 14c-3.866 0-7-3.134-7-7s3.134-7 7-7zm0 1C3.686 1 1 3.686 1 7s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z"
+                    transform="translate(-1125 -399) translate(447 335) translate(678 64) translate(4 4)"></path>
+            </symbol>
+            <symbol id="svg_my_9" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8" fill="#67738E"></circle>
+                <path d="M9 9L15 15" stroke="white"></path>
+                <path d="M15 9L9 15" stroke="white"></path>
+            </symbol>
+            <symbol id="svg_my_10" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M8.947 0c.66 0 1.243.432 1.435 1.063l.357 1.177.022.008c.184.067.366.143.547.228l.03.015 1.09-.58c.537-.287 1.19-.218 1.654.161l.112.101.633.633c.467.467.573 1.184.263 1.767l-.581 1.087.136.304.114.295 1.178.36c.586.178 1 .693 1.056 1.294l.007.14v.894c0 .66-.432 1.243-1.063 1.435l-1.178.358-.115.298-.12.272-.016.028.582 1.09c.287.537.218 1.19-.162 1.654l-.101.112-.633.633c-.467.467-1.184.573-1.767.263l-1.089-.582-.028.015c-.18.085-.363.162-.547.229l-.024.007-.357 1.178c-.179.586-.694 1-1.295 1.056l-.14.007h-.894c-.66 0-1.243-.431-1.435-1.063L6.26 14.76l-.295-.114-.304-.136-1.087.58c-.538.288-1.19.219-1.655-.161l-.112-.101-.633-.633c-.466-.467-.573-1.184-.262-1.766l.58-1.09-.136-.301-.107-.274-.008-.023-1.177-.357c-.586-.179-1-.694-1.056-1.295L0 8.948v-.895c0-.66.431-1.243 1.063-1.435l1.177-.359.115-.294.12-.272.016-.032-.58-1.089c-.287-.537-.218-1.19.161-1.654l.102-.112.632-.632c.467-.467 1.184-.574 1.766-.263l1.089.58.303-.136.295-.114.36-1.178c.178-.586.693-1 1.294-1.056L8.053 0zm0 1h-.894c-.22 0-.414.144-.478.354L7.14 2.778c-.048.158-.171.282-.329.331-.31.097-.618.227-.928.388-.146.076-.32.075-.466-.002l-1.316-.702c-.194-.103-.433-.068-.589.088l-.632.632c-.156.156-.191.395-.088.589l.702 1.316c.077.145.078.32.002.466-.162.311-.292.619-.389.928-.049.158-.173.28-.331.329l-1.423.434c-.21.064-.354.258-.354.478v.895c0 .22.144.414.354.478l1.423.433c.158.048.282.171.331.329.098.31.228.62.389.926.076.147.076.322-.002.467l-.702 1.317c-.104.194-.068.433.088.589l.632.633c.156.155.395.19.589.087l1.316-.702c.146-.078.32-.078.467-.002.309.162.616.291.926.388.158.049.282.173.33.331l.434 1.424c.064.21.258.354.478.354h.894c.22 0 .414-.144.478-.354l.433-1.423c.049-.159.172-.283.33-.332.312-.097.62-.227.926-.387.146-.077.321-.077.468.001l1.316.702c.194.104.433.068.589-.087l.633-.633c.155-.156.191-.395.087-.589l-.702-1.316c-.078-.147-.078-.322-.001-.468.16-.305.29-.614.387-.925.049-.158.173-.282.332-.33l1.423-.433c.21-.064.354-.258.354-.479v-.894c0-.22-.144-.414-.354-.478l-1.424-.434c-.158-.048-.282-.172-.331-.33-.097-.31-.226-.617-.388-.926-.076-.146-.076-.321.002-.467l.702-1.316c.104-.194.068-.433-.087-.589l-.633-.632c-.156-.156-.395-.192-.589-.088l-1.317.702c-.145.078-.32.078-.467.002-.307-.162-.616-.291-.926-.388-.158-.049-.281-.173-.33-.332l-.433-1.423C9.361 1.144 9.167 1 8.947 1zM8.5 6C9.88 6 11 7.119 11 8.5S9.881 11 8.5 11 6 9.881 6 8.5 7.12 6 8.5 6zm0 1C7.671 7 7 7.671 7 8.5S7.671 10 8.5 10 10 9.329 10 8.5 9.329 7 8.5 7z"
+                    transform="translate(-446 -645) translate(446 645) translate(4 3)"></path>
+            </symbol>
+            <symbol id="svg_my_16" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M13.018 1.158c.685-.672 1.784-.667 2.463.012l2.347 2.348c.677.69.667 1.798-.023 2.474L5.567 18c-.327.321-.767.501-1.226.501H1.2c-.525 0-.95-.425-.95-.95v-3.13c0-.47.189-.92.524-1.25zm-1.802 3.869L1.825 14.24c-.048.047-.075.112-.075.179V17h2.591c.044 0 .086-.011.124-.033l.051-.039 9.39-9.211-2.69-2.69zM14.42 2.23c-.097-.097-.254-.098-.352-.002l-1.781 1.748 2.689 2.689 1.778-1.744c.082-.08.097-.204.047-.297l-.039-.052z"
+                    transform="translate(-676 -899) translate(447 895) translate(229 4) translate(2.75 2.5)"></path>
+            </symbol>
+            <symbol id="recommend_before" viewBox="0 0 24 24">
+                <g clip-path="url(#clip0_recommend_before)">
+                    <path
+                        d="M17.8494 8.96149C17.8494 12.3847 15.0743 15.1595 11.6514 15.1595C8.22856 15.1595 5.45312 12.3847 5.45312 8.96149C5.45312 5.5383 8.22791 2.76318 11.6511 2.76318C15.0743 2.76318 17.8491 5.53797 17.8491 8.96116L17.8494 8.96149Z"
+                        fill="#FFDF39"></path>
+                    <path
+                        d="M11.9997 2C7.8577 2 4.5 5.34108 4.5 9.46122C4.5 12.1829 7.00858 14.7159 7.00858 14.7159C7.63841 15.3477 8.21786 16.5963 8.21786 17.49V17.7204C8.21786 18.6125 8.88114 19.3427 9.77326 19.3427H14.2277C15.1195 19.3427 15.7929 18.6125 15.7929 17.7204V17.49C15.7929 16.5966 16.3622 15.348 16.9908 14.7159C16.9908 14.7159 19.5 12.1832 19.5 9.46122C19.4997 5.34108 16.142 2 11.9997 2ZM11.7387 5.06771C10.6566 5.06771 9.68496 5.50269 8.97628 6.21073C8.2689 6.92006 7.83424 7.89169 7.83424 8.97248C7.83424 9.29798 7.56934 9.56288 7.24416 9.56288C6.91898 9.56288 6.65375 9.29831 6.65375 8.97248C6.65375 6.16413 8.92871 3.88885 11.739 3.88885C12.0642 3.88885 12.3281 4.15147 12.3281 4.47763C12.3281 4.80378 12.0645 5.06771 11.7387 5.06771Z"
+                        fill="#FFDF39"></path>
+                    <path
+                        d="M8.25 19.0713H15.75C15.75 20.2548 14.7906 21.2141 13.6071 21.2141H10.3929C9.20939 21.2141 8.25 20.2548 8.25 19.0713Z"
+                        fill="#8491A7"></path>
+                    <path d="M8.25 18H15.75V19.1429H8.25V18Z" fill="#96A0B5"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.5065 12.5318C14.7018 12.3365 14.7018 12.0199 14.5065 11.8247C14.3113 11.6294 13.9947 11.6294 13.7994 11.8247L12.0052 13.6189L10.211 11.8247C10.0157 11.6294 9.69913 11.6294 9.50387 11.8247C9.30861 12.0199 9.30861 12.3365 9.50387 12.5318L11.5052 14.5331V16.734C11.5052 17.0101 11.729 17.234 12.0052 17.234C12.2813 17.234 12.5052 17.0101 12.5052 16.734V14.5331L14.5065 12.5318Z"
+                        fill="#FF9839"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_recommend_before">
+                        <rect width="24" height="24" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="recommend_after" viewBox="0 0 24 24">
+                <g clip-path="url(#clip0_recommend_after)">
+                    <path
+                        d="M2 5.7C2 5.3134 2.3134 5 2.7 5L12 5L21.3 5C21.6866 5 22 5.3134 22 5.7V17.3333C22 17.8856 21.5523 18.3333 21 18.3333H3C2.44772 18.3333 2 17.8856 2 17.3333V5.7Z"
+                        fill="#77CEBD"></path>
+                    <mask id="mask0_672_148679" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="5"
+                        width="20" height="14">
+                        <path
+                            d="M2.5 5.7C2.5 5.58954 2.58954 5.5 2.7 5.5H12H21.3C21.4105 5.5 21.5 5.58954 21.5 5.7V17.3333C21.5 17.6095 21.2761 17.8333 21 17.8333H3C2.72386 17.8333 2.5 17.6095 2.5 17.3333V5.7Z"
+                            fill="#4BC4AC" stroke="#35B398"></path>
+                    </mask>
+                    <g mask="url(#mask0_672_148679)">
+                        <path d="M12 5H2L12 11.6667L22 5H12Z" fill="white"></path>
+                    </g>
+                    <path
+                        d="M12.8329 9.53066C12.5475 9.6374 12.3097 9.82832 12.1196 10.1009L12.0837 10.1542C12.044 10.2131 11.9574 10.2131 11.9178 10.1542L11.8834 10.1032L11.827 10.0263C11.6264 9.76819 11.3815 9.59439 11.0929 9.50461C10.7159 9.39687 10.3576 9.43424 10.0227 9.61562C9.70672 9.78742 9.47532 10.0551 9.33189 10.4132C9.18731 10.7741 9.18731 11.215 9.3256 11.7332C9.39377 11.9231 9.48321 12.0954 9.59793 12.2639L9.62711 12.3056L9.69613 12.3979L9.77916 12.5021L9.87598 12.6184L9.98634 12.7466L10.11 12.887L10.3056 13.1052L10.3899 13.1955L10.5012 13.3096L10.6328 13.4406L10.7779 13.5821L10.9298 13.7275L11.0817 13.87C11.1067 13.8931 11.1313 13.9159 11.1556 13.9381L11.2948 14.064C11.3388 14.1031 11.38 14.139 11.4172 14.1706L11.9058 14.5693C11.951 14.6059 12.0116 14.6133 12.0638 14.5888C12.0685 14.5866 12.073 14.5837 12.0772 14.5805L12.1237 14.5454L12.5314 14.2146C12.5645 14.1876 12.602 14.1558 12.6429 14.1201L12.7745 14.0031L12.9197 13.87L13.0716 13.7275L13.2235 13.5822L13.4365 13.3734L13.5588 13.25L13.6575 13.147L13.7826 13.0087L13.9547 12.8156L14.1254 12.6185L14.2222 12.5022L14.3053 12.398L14.3743 12.3057C14.3846 12.2913 14.3944 12.2774 14.4035 12.264C14.5182 12.0955 14.6077 11.9231 14.6715 11.747C14.8141 11.215 14.8141 10.7741 14.6695 10.4132C14.5261 10.0551 14.2947 9.78745 13.9787 9.61565C13.6438 9.43427 13.2855 9.39689 12.9119 9.50364L12.8329 9.53066Z"
+                        fill="#FF025D"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_recommend_after">
+                        <rect width="24" height="24" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="more_arrow" viewBox="0 0 14 7">
+                <g clip-path="url(#clip0_more_arrow)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.00026 5.23966L12.3397 0.974449C12.5155 0.833972 12.7897 0.843462 12.952 0.995645C13.1143 1.14783 13.1034 1.38507 12.9275 1.52555L7.29418 6.02555C7.12819 6.15815 6.87233 6.15815 6.70634 6.02555L1.07301 1.52555C0.897152 1.38507 0.886186 1.14783 1.04851 0.995645C1.21084 0.843462 1.48499 0.833972 1.66085 0.974449L7.00026 5.23966Z"
+                        fill="#666666"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_more_arrow">
+                        <rect width="14" height="7" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="subscribe_after_search" fill="none" viewBox="0 0 16 16">
+                <g clip-path="url(#clip0_subscribe_after_search)">
+                    <circle cx="7" cy="7" r="5.5" stroke="#8491A7"></circle>
+                    <path d="M11.4 11.4L14.6 14.6" stroke="#8491A7" stroke-linecap="square"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_subscribe_after_search">
+                        <rect width="16" height="16" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="subscribe_after_set" fill="none" viewBox="0 0 16 16">
+                <g clip-path="url(#clip0_subscribe_after_set)">
+                    <rect width="16" height="16" fill="none"></rect>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.95453 2.83905L9.6968 1.99233C9.51738 1.40286 8.97364 1 8.35747 1H7.64236C7.02633 1 6.48269 1.40268 6.30314 1.99196L6.04495 2.83937C5.94056 2.87938 5.83717 2.92279 5.73466 2.96943L4.9521 2.55212C4.40841 2.26218 3.73908 2.3618 3.30339 2.79749L2.79749 3.30339C2.3618 3.73908 2.26218 4.40841 2.55212 4.9521L2.96936 5.73453C2.92259 5.83714 2.87907 5.94056 2.83899 6.04494L1.99185 6.30312C1.40262 6.48271 1 7.02632 1 7.64231V8.35803C1 8.97416 1.4028 9.51787 1.99221 9.69733L2.83909 9.95518C2.87915 10.0595 2.92261 10.1629 2.96927 10.2652L2.55191 11.0481C2.26213 11.5917 2.3617 12.2608 2.79719 12.6965L3.30319 13.2027C3.73896 13.6386 4.40859 13.7382 4.9524 13.4481L5.73441 13.0308C5.837 13.0775 5.94052 13.121 6.04506 13.161L6.30314 14.008C6.48269 14.5973 7.02633 15 7.64236 15H8.35747C8.97364 15 9.51738 14.5971 9.6968 14.0077L9.9545 13.1611C10.0592 13.121 10.1628 13.0776 10.2653 13.0309L11.0478 13.4483C11.5915 13.7383 12.2609 13.6387 12.6967 13.203L13.203 12.6967C13.6387 12.2609 13.7383 11.5915 13.4483 11.0478L13.0309 10.2653C13.0775 10.163 13.1209 10.0596 13.1609 9.95505L14.0077 9.69731C14.5971 9.51789 15 8.97415 15 8.35798V7.64236C15 7.02633 14.5973 6.48269 14.008 6.30314L13.161 6.04506C13.121 5.94052 13.0775 5.837 13.0308 5.73441L13.4481 4.9524C13.7382 4.40859 13.6386 3.73896 13.2027 3.30319L12.6965 2.79719C12.2608 2.3617 11.5917 2.26213 11.0481 2.55191L10.2652 2.96928C10.1626 2.92256 10.0591 2.87908 9.95453 2.83905ZM7.64236 2H8.35747C8.53352 2 8.68887 2.1151 8.74014 2.28352L9.08666 3.42196C9.12523 3.54868 9.22404 3.64809 9.35053 3.68743C9.59838 3.76452 9.84535 3.86835 10.0914 3.99724C10.2086 4.05861 10.3485 4.0581 10.4652 3.99589L11.5185 3.43435C11.6738 3.35156 11.865 3.38001 11.9895 3.50443L12.4957 4.01043C12.6202 4.13494 12.6487 4.32626 12.5658 4.48164L12.0042 5.53416C11.9419 5.65088 11.9414 5.79084 12.0027 5.90804C12.132 6.15485 12.2354 6.40083 12.3126 6.64896C12.3519 6.77541 12.4513 6.8742 12.5779 6.9128L13.7166 7.25973C13.8849 7.31102 14 7.46635 14 7.64236V8.35798C14 8.53403 13.8849 8.68938 13.7165 8.74065L12.578 9.08717C12.4514 9.12572 12.352 9.22445 12.3126 9.35084C12.2349 9.60016 12.1311 9.84731 12.003 10.0909C11.9414 10.2082 11.9418 10.3484 12.0042 10.4653L12.5659 11.5185C12.6488 11.6738 12.6204 11.8651 12.4959 11.9896L11.9896 12.4959C11.8651 12.6204 11.6738 12.6488 11.5185 12.5659L10.4653 12.0042C10.3484 11.9418 10.2082 11.9414 10.0909 12.003C9.84713 12.1312 9.60006 12.235 9.35053 12.3126C9.22404 12.3519 9.12523 12.4513 9.08666 12.578L8.74014 13.7165C8.68887 13.8849 8.53352 14 8.35747 14H7.64236C7.46635 14 7.31102 13.8849 7.25973 13.7166L6.9128 12.5779C6.8742 12.4513 6.77541 12.3519 6.64896 12.3126C6.40083 12.2354 6.15485 12.132 5.90804 12.0027C5.79084 11.9414 5.65088 11.9419 5.53416 12.0042L4.48164 12.5658C4.32626 12.6487 4.13494 12.6202 4.01043 12.4957L3.50443 11.9895C3.38001 11.865 3.35156 11.6738 3.43435 11.5185L3.99589 10.4652C4.0581 10.3485 4.05861 10.2086 3.99724 10.0914C3.86867 9.84596 3.76451 9.5986 3.68666 9.35021C3.64714 9.22411 3.5479 9.12567 3.42148 9.08718L2.28349 8.74069C2.11509 8.68941 2 8.53407 2 8.35803V7.64231C2 7.46631 2.11503 7.31099 2.28339 7.25968L3.42158 6.91279C3.54802 6.87425 3.64726 6.77574 3.68673 6.64959C3.76406 6.4024 3.86774 6.15629 3.99754 5.90749C4.05862 5.79043 4.05799 5.65076 3.99586 5.53425L3.43449 4.48155C3.35165 4.32621 3.38012 4.13498 3.5046 4.01049L4.01049 3.5046C4.13498 3.38012 4.32621 3.35165 4.48155 3.43449L5.53425 3.99586C5.65076 4.05799 5.79043 4.05862 5.90749 3.99754C6.15485 3.86849 6.40119 3.76494 6.64959 3.68723C6.77575 3.64777 6.87427 3.54851 6.9128 3.42206L7.25973 2.28342C7.31102 2.11505 7.46635 2 7.64236 2ZM9 8C9 8.55228 8.55228 9 8 9C7.44772 9 7 8.55228 7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8ZM10 8C10 9.10457 9.10457 10 8 10C6.89543 10 6 9.10457 6 8C6 6.89543 6.89543 6 8 6C9.10457 6 10 6.89543 10 8Z"
+                        fill="#8491A7"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_subscribe_after_set">
+                        <rect width="16" height="16" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="subscribe_before_tag" fill="none" viewBox="0 0 24 24">
+                <g clip-path="url(#clip0_subscribe_before_tag)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.14733 9.90989C4.78571 10.5298 4.784 11.296 5.14286 11.9176L10.4197 21.0573C10.972 22.0139 12.1951 22.3416 13.1517 21.7894L20.0799 17.7894C21.0365 17.2371 21.3643 16.0139 20.812 15.0573L15.5352 5.91759C15.1763 5.29603 14.5119 4.91442 13.7942 4.91761L9.18725 4.93813C8.47908 4.94128 7.82538 5.31869 7.46857 5.9304L5.14733 9.90989ZM11.1151 10.2061C11.7301 9.85103 11.9408 9.0647 11.5857 8.44975C11.2307 7.8348 10.4444 7.62411 9.82942 7.97915C9.21447 8.33419 9.00378 9.12052 9.35882 9.73547C9.71386 10.3504 10.5002 10.5611 11.1151 10.2061Z"
+                        fill="#D7DCE5"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_subscribe_before_tag">
+                        <rect width="24" height="24" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="subscribe_before_apply" fill="none" viewBox="0 0 16 16">
+                <g clip-path="url(#clip0_subscribe_before_apply)">
+                    <rect width="16" height="16" fill="none"></rect>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1.5 3.00684V11C1.5 11.8284 2.17157 12.5 3 12.5H8C8.27614 12.5 8.5 12.2761 8.5 12C8.5 11.7239 8.27614 11.5 8 11.5H3C2.72386 11.5 2.5 11.2761 2.5 11V3.93426L7.72265 7.41603C7.8906 7.52799 8.1094 7.52799 8.27735 7.41603L13.5 3.93426V7V9.5C13.5 9.77614 13.7239 10 14 10C14.2761 10 14.5 9.77614 14.5 9.5V7V3.00684V3M13.444 2.76977L8 6.39907L2.55604 2.76977C2.63933 2.60948 2.80688 2.5 3 2.5H13C13.1931 2.5 13.3607 2.60948 13.444 2.76977ZM14.5 2.99041C14.4948 2.1664 13.8252 1.5 13 1.5H3C2.17477 1.5 1.50519 2.1664 1.50003 2.99042"
+                        fill="#8491A7"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.5 10.5C12.5 10.2239 12.2761 10 12 10C11.7239 10 11.5 10.2239 11.5 10.5V12H10C9.72386 12 9.5 12.2239 9.5 12.5C9.5 12.7761 9.72386 13 10 13H11.5V14.5C11.5 14.7761 11.7239 15 12 15C12.2761 15 12.5 14.7761 12.5 14.5V13H14C14.2761 13 14.5 12.7761 14.5 12.5C14.5 12.2239 14.2761 12 14 12H12.5V10.5Z"
+                        fill="#8491A7"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_subscribe_before_apply">
+                        <rect width="16" height="16" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+            <symbol id="subscribe_before_save" fill="none" viewBox="0 0 16 16">
+                <g clip-path="url(#clip0_subscribe_before_save)">
+                    <rect width="16" height="16" fill="none"></rect>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.99985 1.5C8.27599 1.5 8.49985 1.72386 8.49985 2V8.20707L10.4747 6.2322C10.67 6.03694 10.9866 6.03694 11.1818 6.2322C11.3771 6.42746 11.3771 6.74404 11.1818 6.9393L8.3534 9.76773L7.99985 10.1213L7.6463 9.76773L4.81787 6.9393C4.62261 6.74404 4.62261 6.42746 4.81787 6.2322C5.01313 6.03694 5.32972 6.03694 5.52498 6.2322L7.49985 8.20707V2C7.49985 1.72386 7.72371 1.5 7.99985 1.5ZM2.5 7C2.5 6.72386 2.27614 6.5 2 6.5C1.72386 6.5 1.5 6.72386 1.5 7V13C1.5 13.2761 1.72386 13.5 2 13.5H14C14.2761 13.5 14.5 13.2761 14.5 13V7C14.5 6.72386 14.2761 6.5 14 6.5C13.7239 6.5 13.5 6.72386 13.5 7V12.5H2.5V7Z"
+                        fill="#8491A7"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_subscribe_before_save">
+                        <rect width="16" height="16" fill="none"></rect>
+                    </clipPath>
+                </defs>
+            </symbol>
+        </svg>
+    </div>
+</body>
+</html>
