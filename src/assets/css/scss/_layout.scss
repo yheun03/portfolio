@@ -68,11 +68,11 @@
             }
             &:not(.align){
                 font: v.$c1-400;
-                color: v.$black-600;
+                color: v.$black-800;
                 margin-left: 4px;
             }
         }
-        .title{
+        h3.title{
             font: v.$t4-800;
             margin-bottom: 16px;
         }
@@ -165,10 +165,11 @@
             line-height: 30px;
             color: v.$black-950;
             margin-top: 30px;
-            &.title{
-                font: v.$t4-800;
-                margin-top: 60px;
-            }
+        }
+        h3.title{
+            font: v.$t4-800;
+            margin-top: 60px;
+            color: v.$black-950;
         }
         ul{
             display: flex;
