@@ -189,17 +189,20 @@
         }
 
         .swiper{
+            margin: unset;
+            width: 100%;
             &-btn{
                 position: sticky;
                 top: 50%;
                 left: 0;
                 width: 80px;
-                margin-top: -80px;
+                transform: translateY(-50%);
                 aspect-ratio: 1;
                 border: unset;
                 z-index: 2;
                 cursor: pointer;
                 background: url(v.$url-icon + '/80/ic-arrow-left.svg') center/contain no-repeat;
+                float: left;
                 &.btn-gotoNext{
                     background-image: url(v.$url-icon + '/80/ic-arrow-right.svg');
                     left: 100%;
