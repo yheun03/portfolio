@@ -176,6 +176,9 @@
 
 
 @media (max-width: 980px) {
+    .btn{
+        font-size: 12px;
+    }
     .area-intro{
         .content{
             position: relative;
@@ -301,6 +304,7 @@
                             order: -1;
                             &.align{
                                 order: 1;
+                                letter-spacing: unset;
                             }
                         }
                     }
