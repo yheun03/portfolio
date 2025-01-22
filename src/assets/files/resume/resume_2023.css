@@ -1458,7 +1458,7 @@ button:disabled svg {color:var(--gray50)}
 .print_wrap .resume_part .faculty:first-child {margin-top:12px}
 .print_wrap .resume_part .faculty + .faculty {padding-left:16px}
 .print_wrap .resume_part .faculty + .faculty:before {display:inline-block;position:absolute;top:50%;left:0;transform:translateY(-50%);width:1px;height:12px;background:var(--gray40);content: ""}
-.print_wrap .resume_part .faculty dt {width:60px;color:var(--gray80);line-height:24px;-webkit-text-size-adjust: none}
+.print_wrap .resume_part .faculty dt {width:80px;color:var(--gray80);line-height:24px;-webkit-text-size-adjust: none}
 .print_wrap .resume_part .faculty dd {width:auto;flex-shrink:0;padding:0 14px 0 0;color:var(--gray130);line-height:24px;-webkit-text-size-adjust: none}
 .print_wrap .resume_part .faculty dt + dd {padding:0 16px 0 8px}
 .print_wrap .resume_part .faculty dd:before {content:none}
