@@ -77,6 +77,11 @@
             grid-template-columns: auto, minmax(auto, 700px);
         }
     }
+    .modal{
+        &-body{
+            padding-inline: 20px;
+        }
+    }
 }
 @media (max-width: 1300px) {
     .content{
@@ -134,7 +139,6 @@
     }
     .area-information{
         .content{
-            
             display: block;
         }
         h2{
@@ -171,6 +175,62 @@
     }
     footer{
         padding-inline: 24px;
+    }
+    
+    .modal{
+        $thisMargin: 24px;
+        &-content{
+            margin: unset;
+            grid-template: auto / auto;
+            width: 100%;
+            height: 100%;
+            max-width: unset;
+            max-height: unset;
+            margin: unset;
+        }
+        &-header{
+            background-color: v.$white;
+            padding: $thisMargin;
+            h4{
+                margin-top: 8px;
+            }
+            ul{
+                margin-top: 20px;
+            }
+            .btn{
+                $thisSize: 40px;
+                margin-left: -4px;
+                background: url(v.$url-icon+"/24/ic-arrow-left.svg") center/$thisSize no-repeat;
+                padding: unset;
+                width: $thisSize;
+                aspect-ratio: 1;
+                border-radius: unset;
+                text-indent: -9999px;
+                order: -1;
+            }
+        }
+        &-body{
+            padding-inline: $thisMargin;
+            .wrap{
+                margin: unset;
+                max-width: unset;
+                padding-bottom: 20px;
+            }
+            figure,
+            .wrap-img{
+                margin-inline: -$thisMargin;
+            }
+            figcaption{
+                margin-inline: $thisMargin;
+            }
+
+            h5{
+                margin-top: 32px;
+            }
+            p{
+                margin-top: 24px;
+            }
+        }
     }
 }
 
@@ -253,6 +313,11 @@
             &.type-mb{
                 width: 33%;
             }
+        }
+    }
+    .modal{
+        h4{
+
         }
     }
 }

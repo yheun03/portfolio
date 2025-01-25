@@ -19,17 +19,19 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: v.$black-950;
+      background-color: v.$init-black-950;
       opacity: 0.4;
       z-index: -1;
     }
     
     &-content{
+        $thisMargin: 40px;
         position: relative;
-        width: 100%;
-        margin-inline: 24px;
+        width: calc(100% - $thisMargin * 2);
         max-width: 1500px;
-        height: 800px;
+        height: calc(100% - $thisMargin * 2);
+        max-height: 800px;
+        margin-inline: $thisMargin;
         overflow-y: auto;
         background-color: v.$white;
         display: grid;
@@ -48,7 +50,7 @@
             margin-top: 120px;
             li{
                 font: v.$b3-400;
-                color: v.$black-300;
+                color: v.$black-500;
                 margin-bottom: 10px;
                 &::before{
                     content: "#";
@@ -65,35 +67,38 @@
             width: 100%;
             max-width: 920px;
             margin: 40px auto;
-            figure{
+        }
+        figure{
+            margin-top: 24px;
+            &:first-child{
+                margin-top: unset;
+            }
+            figcaption{
+                text-align: right;
+                font: v.$b4-400;
+                color: v.$black-500;
+                margin-top: 12px;
+            }
+        }
+        img{
+            max-width: 100%;
+        }
+        h5{
+            margin-top: 80px;
+        }
+        p{
+            font: v.$b2-400;
+            line-height: 27px;
+            color: v.$black-400;
+            margin-top: 40px;
+            & + div{
                 margin-top: 24px;
-                figcaption{
-                    text-align: right;
-                    font: v.$b4-400;
-                    color: v.$black-300;
-                    margin-top: 12px;
-                }
             }
-            img{
-                max-width: 100%;
-            }
-            h5{
-                margin-top: 80px;
-            }
-            p{
-                font: v.$b2-400;
-                line-height: 27px;
-                color: v.$black-400;
-                margin-top: 40px;
-                & + div{
-                    margin-top: 24px;
-                }
-            }
-            .wrap-img{
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); // 자동 크기 조정
-                justify-items: center;
-            }
+        }
+        .wrap-img{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); // 자동 크기 조정
+            justify-items: center;
         }
     }
 }
