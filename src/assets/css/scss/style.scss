@@ -187,10 +187,15 @@
             max-width: unset;
             max-height: unset;
             margin: unset;
+
+            &.active{
+                display: unset;
+            }
         }
         &-header{
             background-color: v.$white;
             padding: $thisMargin;
+            height: unset;
             h4{
                 margin-top: 8px;
             }
@@ -203,10 +208,13 @@
                 background: url(v.$url-icon+"/24/ic-arrow-left.svg") center/1em no-repeat;
                 padding: unset;
                 width: 1em;
-                aspect-ratio: 1;
+                height: 1em;
+                border: unset;
                 border-radius: unset;
+                margin-top: unset;
                 text-indent: -9999px;
                 order: -1;
+                filter: v.$set-black-950;
             }
         }
         &-body{
@@ -214,7 +222,7 @@
             .wrap{
                 margin: unset;
                 max-width: unset;
-                padding-bottom: 20px;
+                padding-bottom: 64px;
             }
             figure,
             .wrap-img{
@@ -223,7 +231,6 @@
             figcaption{
                 margin-inline: $thisMargin;
             }
-
             h5{
                 margin-top: 60px;
             }
@@ -238,6 +245,10 @@
 @media (max-width: 980px) {
     .btn{
         font-size: 12px;
+        padding: 8px 12px;
+        &.type-round{
+            padding: 8px 16px;
+        }
     }
     .area-intro{
         .content{
@@ -254,12 +265,6 @@
                     text-align: left;
                     margin-top: 48px;
                 }
-            }
-        }
-        .btn{
-            padding: 8px 12px;
-            &.type-round{
-                padding-inline: 16px;
             }
         }
         img{
@@ -463,6 +468,11 @@
         address{
             font-size: 10px;
             margin-top: 4px;
+        }
+    }
+    .modal{
+        .btn{
+            font-size: 24px;
         }
     }
 }
