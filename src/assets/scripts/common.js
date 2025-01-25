@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeToggleButton = document.querySelector('.btn.set-mode');
 
     // 사용자의 시스템 다크 모드 여부 확인
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     // 시스템이 다크 모드인 경우 body에 mode-dark 클래스 추가
     if (isDarkMode) {
