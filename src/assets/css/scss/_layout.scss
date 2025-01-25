@@ -70,6 +70,9 @@
                 font: v.$c1-400;
                 color: v.$black-600;
                 margin-left: 4px;
+                .mode-dark &{
+                    color: v.$black-800;
+                }
             }
         }
         .title{
