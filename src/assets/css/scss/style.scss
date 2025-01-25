@@ -198,11 +198,11 @@
                 margin-top: 20px;
             }
             .btn{
-                $thisSize: 40px;
+                font-size: 40px;
                 margin-left: -4px;
-                background: url(v.$url-icon+"/24/ic-arrow-left.svg") center/$thisSize no-repeat;
+                background: url(v.$url-icon+"/24/ic-arrow-left.svg") center/1em no-repeat;
                 padding: unset;
-                width: $thisSize;
+                width: 1em;
                 aspect-ratio: 1;
                 border-radius: unset;
                 text-indent: -9999px;
@@ -225,7 +225,7 @@
             }
 
             h5{
-                margin-top: 32px;
+                margin-top: 60px;
             }
             p{
                 margin-top: 24px;
@@ -317,7 +317,7 @@
     }
     .modal{
         h4{
-
+            font-size: 28px;
         }
     }
 }
@@ -382,6 +382,34 @@
             margin-top: 16px;
         }
     }
+    .modal{
+        .btn{
+            font-size: 32px;
+        }
+        ul{
+            margin-top: 8px;
+            li{
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+        }
+        figure{
+            figcaption{
+                font-size: 12px;
+            }
+        }
+        h4{
+            font-size: 24px;
+        }
+        h5{
+            font-size: 18px;
+            margin-top: 32px;
+        }
+        p{
+            font-size: 14px;
+            margin-top: 12px;
+        }
+    }
 }
 @media (max-width: 480px) {
     h2{
@@ -435,6 +463,15 @@
         address{
             font-size: 10px;
             margin-top: 4px;
+        }
+    }
+}
+
+// 모달용 반응형
+@media (max-height: 700px) {
+    .modal{
+        &-header{
+            position: relative;
         }
     }
 }
