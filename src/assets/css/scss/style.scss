@@ -172,6 +172,12 @@
         .btn{
             margin-bottom: 8px;
         }
+        .swiper-pagination{
+            gap: 12px;
+            &-bullet{
+                width: 8px;
+            }
+        }
     }
     footer{
         padding-inline: 24px;
@@ -390,6 +396,7 @@
     .modal{
         .btn{
             font-size: 32px;
+            padding: unset;
         }
         ul{
             margin-top: 8px;
@@ -482,6 +489,21 @@
     .modal{
         &-header{
             position: relative;
+            padding-top: 59px;
+            .btn{
+                position: fixed;
+                top: 24px;
+                left: 24px;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 200%;
+                    height: 200%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
         }
     }
 }
