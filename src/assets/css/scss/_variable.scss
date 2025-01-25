@@ -88,7 +88,8 @@ $font-main              : 'Pretendard';
 
         --init-white         : #ffffff;
 
-        --set-white     : invert(100%) sepia(6%) saturate(0%) hue-rotate(70deg) brightness(108%) contrast(108%);
+        --set-white          : invert(100%) sepia(6%) saturate(0%) hue-rotate(70deg) brightness(108%) contrast(108%);
+        --set-black-950      : invert(0%) sepia(19%) saturate(7167%) hue-rotate(41deg) brightness(112%) contrast(87%);
     }
     body.mode-dark{
         --black-50      : #111111;  // 주 컬러
@@ -135,6 +136,7 @@ $font-main              : 'Pretendard';
         --error         : #FF6B6B;
 
         --set-white     : invert(100%) sepia(0%) saturate(1662%) hue-rotate(133deg) brightness(112%) contrast(82%);
+        --set-black-950      : invert(97%) sepia(9%) saturate(86%) hue-rotate(276deg) brightness(112%) contrast(82%);
     }
 
 // 색상들
@@ -190,6 +192,7 @@ $font-main              : 'Pretendard';
     $secondary-950      : var(--secondary-950);
 
     $set-white          : var(--set-white);
+    $set-black-950          : var(--set-black-950);
 
     // 주 색상
     $sky                : var(--sky);
