@@ -54,16 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 애니메이션 시작
     drawTexts();
 
-    //모달 컨트롤
-    const closeButton = document.querySelector(".modal-close");
-    const modal = document.querySelector(".modal");
-  
-    if (closeButton && modal) {
-        closeButton.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-    }
-
+    // area-project 리스트 스와이퍼
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,           // 한 번에 한 슬라이드만 보이게 설정
         autoplay: {
@@ -79,7 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.btn-gotoNext',
         },
     });
+
+
+    // 상세보기 버튼과 모달 컨트롤
+    const detailButtons = document.querySelectorAll(".proj-information .btn");
+    const modals = document.querySelectorAll(".modal-content");
+    const modalCloseButtons = document.querySelectorAll(".modal-close");
+
+    // 상세보기 버튼 클릭 시
+    detailButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            const targetModal = modals[index];
+            if (targetModal) {
+                targetModal.classList.add("active"); // 해당 모달에 active 클래스 추가
+            }
+        });
+    });
+
+    // 닫기 버튼 클릭 시
+    modalCloseButtons.forEach((closeButton) => {
+        closeButton.addEventListener("click", () => {
+            modals.forEach((modal) => {
+                modal.classList.remove("active"); // 모든 모달의 active 클래스 제거
+            });
+        });
+    });
     
+    // 다크모드 세팅
     const modeToggleButton = document.querySelector('.btn.set-mode');
 
     // 사용자의 시스템 다크 모드 여부 확인

@@ -70,6 +70,9 @@
                 font: v.$c1-400;
                 color: v.$black-800;
                 margin-left: 4px;
+                .mode-dark &{
+                    color: v.$black-800;
+                }
             }
         }
         h3.title{
@@ -113,6 +116,7 @@
         }
         .proj{
             cursor: ew-resize;
+            user-select: none;
             &-screen-mockup{
                 position: relative;
                 width: 100%;
@@ -221,6 +225,10 @@
                     min-width: 100px;
                     aspect-ratio: 1;
                 }
+                &:disabled{
+                    opacity: 0.4;
+                    cursor: not-allowed;
+                }
             }
             &-pagination{
                 position: relative;
@@ -229,6 +237,7 @@
                 justify-content: center;
                 gap: 16px;
                 top: unset;
+                margin-top: 24px;
                 &-bullet{
                     display: inline-block;
                     width: 12px;
