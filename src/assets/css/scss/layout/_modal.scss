@@ -73,6 +73,16 @@
             width: 100%;
             max-width: 920px;
             margin: 40px auto;
+            counter-reset: section-counter;
+            section > h5::before {
+                counter-increment: section-counter;
+                content: counter(section-counter) ". ";
+            }
+        }
+        section:first-child{
+            & > *:first-child{
+                margin-top: unset;
+            }
         }
         figure{
             margin-top: 24px;

@@ -224,6 +224,10 @@
                     min-width: 100px;
                     aspect-ratio: 1;
                 }
+                &:disabled{
+                    opacity: 0.4;
+                    cursor: not-allowed;
+                }
             }
             &-pagination{
                 position: relative;
