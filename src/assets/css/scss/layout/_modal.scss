@@ -29,10 +29,10 @@
     &-content{
         $thisMargin: 40px;
         position: relative;
-        width: calc(100% - $thisMargin * 2);
-        max-width: 1500px;
-        height: calc(100% - $thisMargin * 2);
-        max-height: 800px;
+        width: 1500px;
+        max-width: calc(100% - $thisMargin * 2);
+        height: 800px;
+        max-height: calc(100% - $thisMargin * 2);
         margin-inline: $thisMargin;
         overflow-y: auto;
         background-color: v.$white;
