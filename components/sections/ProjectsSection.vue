@@ -62,11 +62,11 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import type { ProjectItem } from "@core/types/site";
 
-import matemateThumb from "~/src/assets/images/project/matemate/thumbnail-pc.png";
-import gongtingThumb from "~/src/assets/images/project/gongting/thumbnail-mb.png";
-import matemate1 from "~/src/assets/images/project/matemate/modal/modal-01.png";
-import matemate2 from "~/src/assets/images/project/matemate/modal/modal-02.png";
-import matemate3 from "~/src/assets/images/project/matemate/modal/modal-03.png";
+import matemateThumb from "~/assets/images/project/matemate/thumbnail-pc.png";
+import gongtingThumb from "~/assets/images/project/gongting/thumbnail-mb.png";
+import matemate1 from "~/assets/images/project/matemate/modal/modal-01.png";
+import matemate2 from "~/assets/images/project/matemate/modal/modal-02.png";
+import matemate3 from "~/assets/images/project/matemate/modal/modal-03.png";
 
 const modules = [Navigation, Pagination, Autoplay];
 const activeProject = ref<ProjectItem | null>(null);
