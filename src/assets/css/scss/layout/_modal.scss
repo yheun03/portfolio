@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
+
     &::after {
         content: "";
         position: absolute;
@@ -22,11 +23,12 @@
         opacity: 0.4;
         z-index: -1;
     }
-    
-    &:has(.modal-content.active){
+
+    &:has(.modal-content.active) {
         display: flex;
     }
-    &-content{
+
+    &-content {
         $thisMargin: 40px;
         position: relative;
         width: 1500px;
@@ -38,11 +40,13 @@
         background-color: v.$white;
         display: none;
         grid-template: auto / 320px 1fr;
-        &.active{
+
+        &.active {
             display: grid;
         }
     }
-    &-header{
+
+    &-header {
         padding: 50px 48px;
         height: inherit;
         position: sticky;
@@ -52,78 +56,97 @@
         flex-direction: column;
         align-items: flex-start;
         z-index: 1;
-        ul{
+
+        ul {
             margin-top: 120px;
-            li{
+
+            li {
                 font: v.$b3-400;
                 color: v.$black-500;
                 margin-bottom: 10px;
-                &::before{
+
+                &::before {
                     content: "#";
                 }
             }
         }
-        .btn{
+
+        .btn {
             margin-top: auto;
         }
     }
-    &-body{
+
+    &-body {
         padding-inline: 32px;
-        .wrap{
+
+        .wrap {
             width: 100%;
             max-width: 920px;
             margin: 40px auto;
             counter-reset: section-counter;
-            section > h5::before {
+
+            section>h5::before {
                 counter-increment: section-counter;
                 content: counter(section-counter) ". ";
             }
         }
-        section:first-child{
-            & > *:first-child{
+
+        section:first-child {
+            &>*:first-child {
                 margin-top: unset;
             }
         }
-        figure{
+
+        figure {
             margin-top: 24px;
-            &:first-child{
+
+            &:first-child {
                 margin-top: unset;
             }
-            figcaption{
+
+            figcaption {
                 text-align: right;
                 font: v.$b4-400;
                 color: v.$black-500;
                 margin-top: 12px;
             }
         }
-        img{
+
+        img {
             max-width: 100%;
         }
-        h5{
+
+        h5 {
             margin-top: 80px;
         }
-        p{
+
+        p {
             font: v.$b2-400;
             line-height: 180%;
             color: v.$black-500;
             margin-top: 40px;
-            & + div{
+
+            &+div {
                 margin-top: 24px;
             }
         }
-        .wrap-img{
+
+        .wrap-img {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); // 자동 크기 조정
             justify-items: center;
         }
     }
-    .mode-dark &{
+
+    .mode-dark & {
+
         figcaption,
         li,
-        p{
+        p {
             color: v.$black-800;
         }
-        img{
+
+        img {
             filter: brightness(0.9) contrast(0.9);
         }
     }
