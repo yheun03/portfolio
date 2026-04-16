@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-nuxt3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.10.1",
+    "axios": "^1.9.0",
+    "chart.js": "^4.4.9",
+    "nuxt": "^3.17.3",
+    "pinia": "^3.0.2",
+    "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "sass": "^1.86.3"
+  }
+}
