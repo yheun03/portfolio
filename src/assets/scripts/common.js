@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // .area-welcome의 움직이는 텍스트 애니메이션
     const canvas = document.getElementById('animatedCanvas');
     const ctx = canvas.getContext('2d');
@@ -12,16 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = containerHeight;
 
     // 고정 폰트 크기와 속도 설정 (비율에 상관없이 고정)
-    const fontSize = canvas.height/4;
+    const fontSize = canvas.height / 4;
     const fixedFontSize = 80; // 고정된 폰트 크기
     const spd = 1; // 고정된 속도
-    const wrd = "EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ";
+    const wrd = 'EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ';
 
     const texts = [
-        { text: wrd, y: fontSize * 0.8, speed: spd, offset: 0 },          // 첫 번째 줄
+        { text: wrd, y: fontSize * 0.8, speed: spd, offset: 0 }, // 첫 번째 줄
         { text: wrd, y: fontSize * 1.8, speed: spd, offset: -fixedFontSize * 10 }, // 두 번째 줄
         { text: wrd, y: fontSize * 2.8, speed: spd, offset: -fixedFontSize * 10 * 2 }, // 세 번째 줄
-        { text: wrd, y: fontSize * 3.8, speed: spd, offset: -fixedFontSize * 10 * 3 }  // 네 번째 줄
+        { text: wrd, y: fontSize * 3.8, speed: spd, offset: -fixedFontSize * 10 * 3 }, // 네 번째 줄
     ];
 
     // 텍스트 그리기 함수
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = `900 ${fontSize}px Pretendard`; // 고정된 폰트 크기 설정
         ctx.lineWidth = 2; // 고정된 글자 두께 설정
-        ctx.strokeStyle = "#000";
+        ctx.strokeStyle = '#000';
 
         texts.forEach((item) => {
             // 한 줄에 동일한 텍스트를 이어서 배치
@@ -56,13 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // area-project 리스트 스와이퍼
     const swiper = new Swiper('.swiper', {
-        slidesPerView: 1,           // 한 번에 한 슬라이드만 보이게 설정
+        slidesPerView: 1, // 한 번에 한 슬라이드만 보이게 설정
         autoplay: {
             delay: 10000,
         },
-        autoHeight : true,
+        autoHeight: true,
         pagination: {
-            el: ".swiper-pagination",
+            el: '.swiper-pagination',
             clickable: true,
         },
         navigation: {
@@ -71,31 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-
     // 상세보기 버튼과 모달 컨트롤
-    const detailButtons = document.querySelectorAll(".proj-information .btn");
-    const modals = document.querySelectorAll(".modal-content");
-    const modalCloseButtons = document.querySelectorAll(".modal-close");
+    const detailButtons = document.querySelectorAll('.proj-information .btn');
+    const modals = document.querySelectorAll('.modal-content');
+    const modalCloseButtons = document.querySelectorAll('.modal-close');
 
     // 상세보기 버튼 클릭 시
     detailButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
+        button.addEventListener('click', () => {
             const targetModal = modals[index];
             if (targetModal) {
-                targetModal.classList.add("active"); // 해당 모달에 active 클래스 추가
+                targetModal.classList.add('active'); // 해당 모달에 active 클래스 추가
             }
         });
     });
 
     // 닫기 버튼 클릭 시
     modalCloseButtons.forEach((closeButton) => {
-        closeButton.addEventListener("click", () => {
+        closeButton.addEventListener('click', () => {
             modals.forEach((modal) => {
-                modal.classList.remove("active"); // 모든 모달의 active 클래스 제거
+                modal.classList.remove('active'); // 모든 모달의 active 클래스 제거
             });
         });
     });
-    
+
     // 다크모드 세팅
     const modeToggleButton = document.querySelector('.btn.set-mode');
 
@@ -108,16 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 버튼 클릭 시 다크 모드 토글
-    modeToggleButton.addEventListener('click', function() {
+    modeToggleButton.addEventListener('click', function () {
         document.body.classList.toggle('mode-dark');
     });
 
     // 시스템 다크 모드 설정이 변경될 때 실시간 반영
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         if (e.matches) {
-        document.body.classList.add('mode-dark');
+            document.body.classList.add('mode-dark');
         } else {
-        document.body.classList.remove('mode-dark');
+            document.body.classList.remove('mode-dark');
         }
     });
 });

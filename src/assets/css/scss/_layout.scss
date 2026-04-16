@@ -5,182 +5,218 @@
 @use 'layout/footer';
 @use 'layout/modal';
 
-.area{
+.area {
+
     // 애니메이션 배경
-    &-welcome{
+    &-welcome {
         background: linear-gradient(180deg, v.$sky 0%, v.$white 100%), v.$white;
         width: 100%;
         height: 760px;
         position: relative;
-        canvas{
+
+        canvas {
             position: absolute;
             top: 0;
             width: 100%;
             height: 100%;
         }
     }
+
     // 한 줄 어필 및 증명사진, 이력서 보기 버튼
-    &-intro{
+    &-intro {
         padding: 30px 64px 160px;
         background-color: v.$white;
-        h1{
+
+        h1 {
             line-height: 80px;
         }
-        p{
+
+        p {
             text-align: right;
             font: v.$b3-400;
             line-height: 30px;
             color: v.$black-950;
         }
-        picture{
+
+        picture {
             margin-top: -100%;
             transform: translateY(-160px);
         }
-        .content{
-            & > div{
+
+        .content {
+            &>div {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
             }
         }
     }
+
     // 강점 및 자격증과 같은 정보
-    &-information{
+    &-information {
         $thisGap: 20px;
         padding: 160px 64px;
         background-color: v.$black-50;
-        h2{
+
+        h2 {
             line-height: 160%;
             text-align: right;
             white-space: nowrap;
             position: sticky;
             top: 30px;
         }
-        p, li{
+
+        p,
+        li {
             font: v.$b3-400;
             line-height: 180%;
             color: v.$black-950;
             white-space: nowrap;
         }
-        li span{
-            &.align{
+
+        li span {
+            &.align {
                 letter-spacing: 4.61px;
             }
-            &:not(.align){
+
+            &:not(.align) {
                 font: v.$c1-400;
                 color: v.$black-800;
                 margin-left: 4px;
-                .mode-dark &{
+
+                .mode-dark & {
                     color: v.$black-800;
                 }
             }
         }
-        h3.title{
+
+        h3.title {
             font: v.$t4-800;
             margin-bottom: 16px;
         }
-        .content{
+
+        .content {
             display: grid;
             grid-template-columns: 385px 800px;
             justify-content: center;
             align-items: flex-start;
             gap: 155px;
-            & > ul{
+
+            &>ul {
                 display: flex;
                 gap: 56px $thisGap;
                 flex-direction: column;
             }
         }
-        &.type-history{
+
+        &.type-history {
             background-color: v.$white;
-            .content{
-                & > ul{
+
+            .content {
+                &>ul {
                     flex-wrap: wrap;
                     flex-direction: unset;
-                    & > li{
+
+                    &>li {
                         flex: 1 1 calc(50% - $thisGap / 2);
                     }
                 }
             }
         }
     }
+
     // 포트폴리오 설명 페이지
-    &-projects{
+    &-projects {
         position: relative;
         padding: 160px 0 0;
         background-color: v.$white;
-        .content{
+
+        .content {
             display: grid;
             grid-template-columns: 660px 1fr;
             gap: 155px;
         }
-        .proj{
+
+        .proj {
             cursor: ew-resize;
             user-select: none;
-            &-screen-mockup{
+
+            &-screen-mockup {
                 position: relative;
                 width: 100%;
                 background: url(v.$url+'/images/mockup-iMac.svg') center/contain no-repeat;
                 aspect-ratio: 2014/1696;
                 padding: calc(51/2014 * 100%) calc(48/2014 * 100%) 0;
 
-                img{
+                img {
                     position: relative;
                     z-index: -1;
                     width: 100%;
                     aspect-ratio: 1918/1078;
                     transition: 10s linear;
+
                     object: {
                         fit: cover;
                         position: top;
                     }
                 }
-                &:hover img{
+
+                &:hover img {
                     object-position: bottom;
                 }
-                &-wrap{
+
+                &-wrap {
                     width: 100%;
-                    &.type-mb{
+
+                    &.type-mb {
                         padding-inline: 30% 10%;
-                        .proj-screen-mockup{
+
+                        .proj-screen-mockup {
                             background-image: url(v.$url+'/images/mockup-iPhone.svg');
                             aspect-ratio: 432/880;
                             padding: calc(18/432 * 100%) calc(21/432 * 100%) 0;
                         }
-                        img{
+
+                        img {
                             aspect-ratio: 390/844;
                             border-radius: 5%;
                         }
                     }
                 }
             }
-            &-information{
+
+            &-information {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
+
         // proj-information 내부
-        h2{
+        h2 {
             line-height: 160%;
         }
-        p{
+
+        p {
             font: v.$b3-400;
             line-height: 30px;
             color: v.$black-950;
             margin-top: 30px;
         }
-        h3.title{
+
+        h3.title {
             font: v.$t4-800;
             margin-top: 60px;
             color: v.$black-950;
         }
-        ul{
+
+        ul {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
             margin-top: 24px;
-            li{
+
+            li {
                 font: v.$b4-400;
                 color: v.$primary-600;
                 border-radius: 16px;
@@ -188,15 +224,17 @@
                 border: 1px solid v.$primary-400;
             }
         }
-        .btn{
+
+        .btn {
             justify-self: end;
             margin-block: 40px 80px;
         }
 
-        .swiper{
+        .swiper {
             margin: unset;
             width: 100%;
-            &-btn{
+
+            &-btn {
                 position: sticky;
                 top: 50%;
                 left: 0;
@@ -208,14 +246,17 @@
                 cursor: pointer;
                 background: url(v.$url-icon + '/80/ic-arrow-left.svg') center/contain no-repeat;
                 float: left;
-                &.btn-gotoNext{
+
+                &.btn-gotoNext {
                     background-image: url(v.$url-icon + '/80/ic-arrow-right.svg');
                     left: 100%;
                 }
-                .mode-dark &{
+
+                .mode-dark & {
                     filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(70deg) brightness(108%) contrast(108%);
                 }
-                &::after{
+
+                &::after {
                     content: "";
                     position: absolute;
                     top: 50%;
@@ -225,12 +266,14 @@
                     min-width: 100px;
                     aspect-ratio: 1;
                 }
-                &:disabled{
+
+                &:disabled {
                     opacity: 0.4;
                     cursor: not-allowed;
                 }
             }
-            &-pagination{
+
+            &-pagination {
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -238,7 +281,8 @@
                 gap: 16px;
                 top: unset;
                 margin-top: 24px;
-                &-bullet{
+
+                &-bullet {
                     display: inline-block;
                     width: 12px;
                     height: auto;
