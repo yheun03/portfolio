@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ['@pinia/nuxt'],
-    css: ['~/assets/scss/main.scss', 'swiper/css', '~/src/assets/css/style.min.css'],
+    css: ['~/assets/styles/index.scss', 'swiper/css'],
     runtimeConfig: {
         public: {
             apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || '/api',
