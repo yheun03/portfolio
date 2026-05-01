@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 type TabKey = "awards" | "certifications" | "roles" | "activities";
-import { highlights } from "~/data/highlights";
+import { highlights } from "~/core/data/highlights";
 
 const { t } = useLocale();
 const tabs = computed<{ key: TabKey; label: string }[]>(() => [

@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import { skills } from "~/data/skills";
+import { skills } from "~/core/data/skills";
 const { t, pick } = useLocale();
 </script>

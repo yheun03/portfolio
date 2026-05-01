@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import { profile } from "~/data/profile";
+import { profile } from "~/core/data/profile";
 const { t } = useLocale();
 </script>

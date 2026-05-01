@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { workCategories, works, type WorkItem, type WorkCategory } from "~/data/works";
+import { workCategories, works, type WorkItem, type WorkCategory } from "~/core/data/works";
 
 const { t, pick } = useLocale();
 const selected = ref<WorkCategory>("all");

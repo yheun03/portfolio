@@ -17,6 +17,6 @@
 </template>
 
 <script setup lang="ts">
-import { journey, journeySummary } from "~/data/journey";
+import { journey, journeySummary } from "~/core/data/journey";
 const { t, pick } = useLocale();
 </script>

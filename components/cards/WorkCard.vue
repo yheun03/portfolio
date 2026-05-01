@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from "~/data/works";
+import type { WorkItem } from "~/core/data/works";
 
 defineEmits<{ (e: "select"): void }>();
 defineProps<{

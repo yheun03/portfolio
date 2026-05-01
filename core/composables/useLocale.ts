@@ -1,11 +1,11 @@
-import ko from "~/core/i18n/ko.json";
-import en from "~/core/i18n/en.json";
-import { useLocaleStore } from "~/stores/localeStore";
+import ko from '~/core/i18n/ko.json';
+import en from '~/core/i18n/en.json';
+import { useLocaleStore } from '~/core/stores/localeStore';
 
-const messages: Record<"ko" | "en", Record<string, any>> = { ko, en };
+const messages: Record<'ko' | 'en', Record<string, any>> = { ko, en };
 
 const getByPath = (obj: Record<string, any>, path: string): string => {
-    return path.split(".").reduce((acc: any, key: string) => acc?.[key], obj) ?? path;
+    return path.split('.').reduce((acc: any, key: string) => acc?.[key], obj) ?? path;
 };
 
 export const useLocale = () => {
