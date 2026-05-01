@@ -5,6 +5,10 @@ export const useCountUp = (end: number, duration = 1200) => {
     const start = () => {
         if (started.value) return;
         started.value = true;
+        if (import.meta.client && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            value.value = end;
+            return;
+        }
         const startTime = performance.now();
 
         const tick = (now: number) => {

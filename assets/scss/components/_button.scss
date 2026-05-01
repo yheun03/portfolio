@@ -3,25 +3,32 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.65rem 1rem;
+    padding: 0.7rem 1.05rem;
     border-radius: 9999px;
     border: 1px solid var(--color-border);
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    backdrop-filter: blur(8px);
 
     &:focus-visible {
         outline: 2px solid var(--color-primary);
         outline-offset: 2px;
     }
 
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-soft);
+    }
+
     &--primary {
-        background: var(--color-primary);
+        background: var(--gradient-accent);
         color: #fff;
-        border-color: var(--color-primary);
+        border-color: color-mix(in srgb, var(--color-primary) 70%, #fff);
     }
 
     &--ghost {
-        background: transparent;
+        background: var(--color-glass);
         color: var(--color-text);
+        box-shadow: var(--shadow-glow);
     }
 }

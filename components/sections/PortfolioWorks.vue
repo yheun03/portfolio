@@ -1,6 +1,9 @@
 <template>
     <section id="works" class="section">
         <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
+        <p class="works__lead" data-animate>
+            {{ locale === "ko" ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.` : `Explore ${filteredWorks.length} projects through interactive cards.` }}
+        </p>
 
         <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
             <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`" role="tab"
@@ -19,11 +22,19 @@
                 @select="activeWork = work" />
         </div>
 
-        <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true"
-            :aria-label="locale === 'ko' ? '프로젝트 상세 정보' : 'Project detail information'">
-            <BaseCard :animate="false">
-                <h3>{{ pick(activeWork.title) }}</h3>
-                <p style="margin-top: 0.25rem">{{ activeWork.period }} · {{ pick(activeWork.type) }}</p>
+        <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true" aria-labelledby="works-modal-title"
+            aria-describedby="works-modal-description" @click.self="closeModal">
+            <div ref="modalCardRef" class="works__modal-content" @click.stop>
+            <BaseCard :animate="false" class="works__modal-card">
+                <div class="works__modal-head">
+                    <h3 id="works-modal-title">{{ pick(activeWork.title) }}</h3>
+                    <button ref="closeButtonRef" type="button" class="base-button base-button--ghost works__modal-close"
+                        :aria-label="locale === 'ko' ? '상세 모달 닫기' : 'Close detail modal'"
+                        @click="closeModal">
+                        {{ locale === 'ko' ? '닫기' : 'Close' }}
+                    </button>
+                </div>
+                <p id="works-modal-description" style="margin-top: 0.25rem">{{ activeWork.period }} · {{ pick(activeWork.type) }}</p>
                 <p style="margin-top: 0.5rem"><strong>{{ locale === 'ko' ? '역할' : 'Role' }}:</strong> {{ pick(activeWork.role) }}</p>
                 <p style="margin-top: 0.5rem">{{ pick(activeWork.introduction) }}</p>
                 <p style="margin-top: 0.75rem"><strong>{{ locale === 'ko' ? '내가 한 일' : 'My Contributions' }}</strong></p>
@@ -38,10 +49,8 @@
                 <ul>
                     <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                 </ul>
-                <button type="button" class="base-button base-button--ghost"
-                    :aria-label="locale === 'ko' ? '상세 모달 닫기' : 'Close detail modal'"
-                    @click="activeWork = null">{{ locale === 'ko' ? '닫기' : 'Close' }}</button>
             </BaseCard>
+            </div>
         </div>
     </section>
 </template>
@@ -52,9 +61,61 @@ import { workCategories, works, type WorkItem, type WorkCategory } from "~/core/
 const { t, pick, locale } = useLocale();
 const selected = ref<WorkCategory>("all");
 const activeWork = ref<WorkItem | null>(null);
+const closeButtonRef = ref<HTMLButtonElement | null>(null);
+const modalCardRef = ref<HTMLElement | null>(null);
 
 const filteredWorks = computed(() => {
     if (selected.value === "all") return works;
     return works.filter((work) => work.category === selected.value);
+});
+
+const closeModal = () => {
+    activeWork.value = null;
+};
+
+const handleEscape = (event: KeyboardEvent) => {
+    if (event.key === "Escape" && activeWork.value) {
+        closeModal();
+    }
+    if (event.key !== "Tab" || !activeWork.value || !modalCardRef.value) return;
+
+    const focusables = modalCardRef.value.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const current = document.activeElement as HTMLElement | null;
+
+    if (event.shiftKey && current === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && current === last) {
+        event.preventDefault();
+        first.focus();
+    }
+};
+
+watch(
+    () => activeWork.value,
+    (work) => {
+        if (!import.meta.client) return;
+        document.body.style.overflow = work ? "hidden" : "";
+        if (work) {
+            nextTick(() => closeButtonRef.value?.focus());
+        }
+    }
+);
+
+onBeforeUnmount(() => {
+    if (!import.meta.client) return;
+    document.body.style.overflow = "";
+    window.removeEventListener("keydown", handleEscape);
+});
+
+onMounted(() => {
+    if (!import.meta.client) return;
+    window.addEventListener("keydown", handleEscape);
 });
 </script>

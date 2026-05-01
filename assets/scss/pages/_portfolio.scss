@@ -1,10 +1,82 @@
 .portfolio-page {
+    position: relative;
     scroll-behavior: smooth;
+    z-index: 1;
+}
+
+.app-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.app-background__orb {
+    position: absolute;
+    width: clamp(240px, 36vw, 520px);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    filter: blur(58px);
+    opacity: 0.42;
+}
+
+.app-background__orb--one {
+    top: -8%;
+    left: -10%;
+    background: color-mix(in srgb, var(--color-primary) 42%, #22d3ee);
+}
+
+.app-background__orb--two {
+    right: -12%;
+    bottom: 12%;
+    background: color-mix(in srgb, #a78bfa 54%, var(--color-primary));
+}
+
+.page-layer {
+    position: relative;
+    z-index: 1;
+}
+
+.page-layer--works,
+.page-layer--capability,
+.page-layer--contact {
+    margin-top: 1.2rem;
+}
+
+.section {
+    padding: clamp(3.5rem, 7vw, 5.5rem) 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 960px;
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+}
+
+.section-title__description {
+    max-width: 72ch;
 }
 
 .hero__branding {
     color: var(--color-text-muted);
     margin-bottom: 1.25rem;
+}
+
+.hero__intro-card {
+    padding: 1.15rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-glass);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero__role {
+    margin-top: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .hero__badges {
@@ -14,15 +86,6 @@
     padding: 0;
     margin: 0 0 1.25rem;
     list-style: none;
-}
-
-.hero__badges li {
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.hero__badges li:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.03);
 }
 
 .hero__stats,
@@ -48,44 +111,81 @@
 .highlights__tabs button {
     border: 1px solid var(--color-border);
     border-radius: 9999px;
-    background: transparent;
-    padding: 0.35rem 0.75rem;
+    background: var(--color-glass-strong);
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.works__filters button:hover,
+.highlights__tabs button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
 }
 
 .works__filters .is-active,
 .highlights__tabs .is-active {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    background: var(--gradient-accent);
+    border-color: color-mix(in srgb, var(--color-primary) 70%, #fff);
     color: #fff;
+}
+
+.works__lead {
+    color: var(--color-text-muted);
+    margin-top: -0.25rem;
 }
 
 .works__modal {
     position: fixed;
     inset: 0;
-    background: color-mix(in srgb, #000 40%, transparent);
+    background: var(--color-overlay);
     display: grid;
     place-items: center;
     padding: 1rem;
-    z-index: 80;
+    z-index: 120;
+    backdrop-filter: blur(4px);
 }
 
 .works__modal .base-card {
-    width: min(720px, 100%);
-    max-height: 80vh;
+    width: min(760px, 100%);
+    max-height: 82vh;
     overflow: auto;
 }
 
+.works__modal-content {
+    width: min(760px, 100%);
+}
+
+.works__modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.works__modal-close {
+    flex-shrink: 0;
+}
+
 .work-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .work-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 28px color-mix(in srgb, var(--color-primary) 18%, transparent);
+    box-shadow: var(--shadow-soft);
 }
 
 .work-card__button {
-    margin-top: 0.75rem;
+    margin-top: 0.85rem;
+}
+
+.work-card__footer {
+    margin-top: auto;
 }
 
 .journey__timeline {
@@ -139,7 +239,7 @@
 
 @media (max-width: 767px) {
     .section {
-        padding: 3.25rem 1rem;
+        padding: 3.1rem 1rem;
     }
 
     .hero__cta {
