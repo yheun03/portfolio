@@ -11,6 +11,15 @@
 </template>
 
 <script setup lang="ts">
+import AppLayout from "~/components/Layout/AppLayout.vue";
+import PortfolioHero from "~/components/sections/PortfolioHero.vue";
+import PortfolioAbout from "~/components/sections/PortfolioAbout.vue";
+import PortfolioWorks from "~/components/sections/PortfolioWorks.vue";
+import PortfolioJourney from "~/components/sections/PortfolioJourney.vue";
+import PortfolioToolbox from "~/components/sections/PortfolioToolbox.vue";
+import PortfolioHighlights from "~/components/sections/PortfolioHighlights.vue";
+import PortfolioContact from "~/components/sections/PortfolioContact.vue";
+
 const { t } = useLocale();
 useIntersectionAnimation();
 
