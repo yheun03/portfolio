@@ -6,7 +6,8 @@
         <ul class="work-card__tech">
             <li v-for="tech in work.tech" :key="tech">{{ tech }}</li>
         </ul>
-        <button class="work-card__button" :aria-label="detailAriaLabel || `${item.title} ${detailLabel}`" @click="$emit('select')">
+        <button type="button" class="work-card__button" :aria-label="detailAriaLabel || `${item.title} ${detailLabel}`"
+            @click="$emit('select')">
             {{ detailLabel }}
         </button>
     </BaseCard>
