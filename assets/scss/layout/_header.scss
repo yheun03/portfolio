@@ -3,24 +3,25 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 3px;
-    background: var(--color-primary);
+    height: 4px;
+    background: var(--gradient-accent);
     transform-origin: left center;
-    z-index: 60;
+    z-index: 90;
 }
 
 .app-header {
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 80;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.75rem 1rem;
+    padding: 0.8rem 1rem;
     border-bottom: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
-    backdrop-filter: blur(8px);
+    background: var(--color-glass-strong);
+    box-shadow: var(--shadow-glow);
+    backdrop-filter: blur(16px);
 }
 
 .app-header__nav {
@@ -30,6 +31,7 @@
 
 .app-header__nav .is-active {
     color: var(--color-primary);
+    text-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .app-header__actions {
@@ -40,19 +42,23 @@
 .app-header__menu-btn {
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    background: transparent;
+    background: var(--color-glass-strong);
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
 }
 
 .mobile-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: fixed;
+    inset: 64px 0 0 0;
     display: grid;
     gap: 0.75rem;
-    padding: 1rem;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
+    align-content: start;
+    padding: 1.5rem 1rem 2rem;
+    background: var(--color-glass-strong);
+    border-top: 1px solid var(--color-border);
+    backdrop-filter: blur(16px);
+    z-index: 79;
 }
 
 @media (min-width: 1024px) {

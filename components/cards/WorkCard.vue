@@ -1,15 +1,17 @@
 <template>
-    <BaseCard class="work-card">
+    <BaseCard class="work-card" data-motion="lift">
         <h3>{{ item.title }}</h3>
         <p class="work-card__meta">{{ work.period }} · {{ item.type }}</p>
         <p>{{ item.summary }}</p>
         <ul class="work-card__tech">
             <li v-for="tech in work.tech" :key="tech">{{ tech }}</li>
         </ul>
-        <button type="button" class="work-card__button" :aria-label="detailAriaLabel || `${item.title} ${detailLabel}`"
-            @click="$emit('select')">
-            {{ detailLabel }}
-        </button>
+        <div class="work-card__footer">
+            <button type="button" class="work-card__button" :aria-label="detailAriaLabel || `${item.title} ${detailLabel}`"
+                @click="$emit('select')">
+                {{ detailLabel }}
+            </button>
+        </div>
     </BaseCard>
 </template>
 

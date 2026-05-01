@@ -1,13 +1,18 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-    devtools: { enabled: true },
+    compatibilityDate: '2026-05-02',
+    devtools: { enabled: process.env.NODE_ENV !== 'production' },
     experimental: { appManifest: false },
     features: { inlineStyles: false },
 
-    // app: {
-    //     baseURL: '/jonsoft-framework/',
-    // },
+    app: {
+        head: {
+            link: [
+                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+            ],
+        },
+    },
 
     modules: ['@pinia/nuxt'],
     css: ['~/assets/scss/main.scss'],
@@ -29,7 +34,6 @@ export default defineNuxtConfig({
 
     vite: {
         build: {
-            cssCodeSplit: false,
             chunkSizeWarningLimit: 900,
         },
         server: {

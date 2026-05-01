@@ -1,7 +1,14 @@
 export const useIntersectionAnimation = () => {
+    let observer: IntersectionObserver | null = null;
+
     onMounted(() => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.querySelectorAll<HTMLElement>("[data-animate]").forEach((el) => el.classList.add("is-visible"));
+            return;
+        }
+
         const targets = document.querySelectorAll<HTMLElement>("[data-animate]");
-        const observer = new IntersectionObserver(
+        observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -12,6 +19,11 @@ export const useIntersectionAnimation = () => {
             },
             { threshold: 0.2 }
         );
-        targets.forEach((el) => observer.observe(el));
+        targets.forEach((el) => observer?.observe(el));
+    });
+
+    onBeforeUnmount(() => {
+        observer?.disconnect();
+        observer = null;
     });
 };

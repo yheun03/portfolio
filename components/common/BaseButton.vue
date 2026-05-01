@@ -3,7 +3,7 @@
         <slot>{{ label }}</slot>
     </button>
     <a v-else class="base-button" :class="`base-button--${variant}`" :href="href" :aria-label="ariaLabel || label"
-        target="_blank" rel="noreferrer">
+        target="_blank" rel="noopener noreferrer">
         <slot>{{ label }}</slot>
     </a>
 </template>

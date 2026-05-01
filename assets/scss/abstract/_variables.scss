@@ -9,8 +9,15 @@ $bp-desktop: 1440px;
     --color-bg: #ffffff;
     --color-surface: #f8fafc;
     --color-text: #0f172a;
-    --color-text-muted: #64748b;
+    --color-text-muted: #475569;
     --color-border: #e2e8f0;
+    --color-glass: color-mix(in srgb, #ffffff 72%, transparent);
+    --color-glass-strong: color-mix(in srgb, #ffffff 86%, transparent);
+    --color-overlay: color-mix(in srgb, #020617 44%, transparent);
+    --shadow-soft: 0 10px 30px color-mix(in srgb, #0f172a 10%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, #ffffff 55%, transparent) inset;
+    --gradient-accent: linear-gradient(120deg, #60a5fa 0%, #a78bfa 40%, #22d3ee 100%);
+    --radius-card: 1.2rem;
 }
 
 [data-theme="dark"] {
@@ -19,6 +26,12 @@ $bp-desktop: 1440px;
     --color-bg: #0f172a;
     --color-surface: #1e293b;
     --color-text: #f8fafc;
-    --color-text-muted: #94a3b8;
+    --color-text-muted: #cbd5e1;
     --color-border: #334155;
+    --color-glass: color-mix(in srgb, #0f172a 78%, transparent);
+    --color-glass-strong: color-mix(in srgb, #0f172a 92%, transparent);
+    --color-overlay: color-mix(in srgb, #020617 60%, transparent);
+    --shadow-soft: 0 20px 45px color-mix(in srgb, #020617 55%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, #93c5fd 18%, transparent) inset;
+    --gradient-accent: linear-gradient(120deg, #60a5fa 0%, #818cf8 40%, #22d3ee 100%);
 }
