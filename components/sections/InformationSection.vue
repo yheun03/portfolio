@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import type { SkillItem } from "@core/types/site";
+import type { SkillItem } from "../../core/types/site";
 
 const skills: SkillItem[] = [
     {

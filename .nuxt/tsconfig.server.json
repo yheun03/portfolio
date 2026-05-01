@@ -120,7 +120,7 @@
         "../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
       ],
       "@core": [
-        "../../../../../../core"
+        "./core"
       ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables/v3"

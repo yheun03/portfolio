@@ -60,7 +60,7 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import type { ProjectItem } from "@core/types/site";
+import type { ProjectItem } from "../../core/types/site";
 
 import matemateThumb from "~/assets/images/project/matemate/thumbnail-pc.png";
 import gongtingThumb from "~/assets/images/project/gongting/thumbnail-mb.png";
