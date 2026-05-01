@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import type { PortfolioProject } from '@core/types/portfolio';
+import type { PortfolioProject } from '../types/portfolio';
 
 export const usePortfolioStore = defineStore('portfolio', () => {
     const projects = ref<PortfolioProject[]>([]);

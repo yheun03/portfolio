@@ -107,7 +107,7 @@
         "../server/*"
       ],
       "@core": [
-        "../../../../../../core"
+        "./core"
       ],
       "#app": [
         "../node_modules/nuxt/dist/app"
@@ -128,7 +128,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/ae40658f-6b85-4918-bc1f-348ffbd24e7e.json"
+        "../node_modules/mocked-exports/lib/proxy"
       ],
       "#components": [
         "./components"
@@ -175,14 +175,13 @@
     "./nuxt.d.ts",
     "../node_modules/runtime",
     "../node_modules/dist/runtime",
-    "..",
-    "../../../../../../core"
+    ".."
   ],
   "exclude": [
     "../dist",
     "../.data",
     "../node_modules/runtime/server",
     "../node_modules/dist/runtime/server",
-    "../.output"
+    "dev"
   ]
 }
