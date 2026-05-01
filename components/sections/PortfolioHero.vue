@@ -1,9 +1,11 @@
 <template>
     <section id="hello" class="section section--hero">
-        <div class="hero__intro-card" data-animate>
+        <div class="hero__intro-card hero__stack" data-animate>
             <BaseSectionTitle :eyebrow="t('nav.hello')" :title="t('hero.title')" :description="t('hero.subtitle')" />
-            <p class="hero__branding">{{ t("hero.branding") }}</p>
-            <p class="hero__role">{{ pick(profile.role) }}</p>
+            <div class="hero__identity hero__stack">
+                <p class="hero__branding">{{ t("hero.branding") }}</p>
+                <p class="hero__role">{{ pick(profile.role) }}</p>
+            </div>
         </div>
 
         <ul class="hero__badges">
