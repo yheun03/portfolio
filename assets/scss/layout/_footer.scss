@@ -3,5 +3,5 @@
     text-align: center;
     color: var(--color-text-muted);
     border-top: 1px solid var(--color-border);
-    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
 }

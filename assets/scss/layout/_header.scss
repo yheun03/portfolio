@@ -19,8 +19,9 @@
     gap: 1rem;
     padding: 0.8rem 1rem;
     border-bottom: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    background: var(--color-glass-2-strong);
     box-shadow: var(--shadow-glow), 0 10px 28px color-mix(in srgb, #0f172a 14%, transparent);
+    backdrop-filter: blur(10px);
 }
 
 .app-header__nav {
@@ -38,7 +39,7 @@
 
 .app-header__nav a:hover {
     color: var(--color-text);
-    background: var(--color-surface-strong);
+    background: var(--color-glass-2);
 }
 
 .app-header__nav .is-active {
@@ -55,7 +56,7 @@
 .app-header__menu-btn {
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    background: var(--color-surface-strong);
+    background: var(--color-glass-2-strong);
     color: var(--color-text);
     font-weight: 600;
     padding: 0.5rem 0.7rem;
@@ -66,7 +67,7 @@
 .app-header__menu-btn {
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
-    background: var(--color-surface-strong);
+    background: var(--color-glass-2-strong);
     color: var(--color-text);
     font-weight: 700;
     padding: 0.45rem 0.72rem;
@@ -96,8 +97,9 @@
     gap: 0.75rem;
     align-content: start;
     padding: 1.5rem 1rem 2rem;
-    background: color-mix(in srgb, var(--color-surface) 96%, var(--color-bg));
+    background: var(--color-glass-2-strong);
     border-top: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
     z-index: 79;
 }
 

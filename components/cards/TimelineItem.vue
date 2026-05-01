@@ -1,5 +1,6 @@
 <template>
     <li class="timeline-item" data-animate>
+        <p class="technical-label">Milestone</p>
         <p class="timeline-item__period">{{ period }}</p>
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>

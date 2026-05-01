@@ -4,34 +4,45 @@ $bp-laptop: 1024px;
 $bp-desktop: 1440px;
 
 :root {
-    --color-primary: #4f46e5;
-    --color-primary-dark: #4338ca;
-    --color-bg: #f3f4f6;
+    --color-primary: #315bff;
+    --color-primary-dark: #2349de;
+    --color-bg: #f4f7ff;
     --color-surface: #ffffff;
-    --color-surface-strong: #eef2ff;
+    --color-surface-strong: #edf3ff;
     --color-text: #0f172a;
-    --color-text-muted: #475569;
-    --color-border: #dbe2ea;
-    --color-overlay: color-mix(in srgb, #020617 62%, transparent);
-    --shadow-soft: 0 12px 28px color-mix(in srgb, #0f172a 12%, transparent);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, #cbd5e1 58%, transparent) inset;
-    --gradient-accent: linear-gradient(125deg, #4f46e5 0%, #7c3aed 42%, #0ea5e9 100%);
-    --gradient-surface: linear-gradient(165deg, #ffffff 0%, #f4f6ff 100%);
-    --radius-card: 1.2rem;
+    --color-text-muted: #4c5f87;
+    --color-border: #d5def0;
+    --color-overlay: color-mix(in srgb, #020617 64%, transparent);
+    --color-glass-2: color-mix(in srgb, #ffffff 76%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, #ffffff 88%, transparent);
+    --shadow-soft: 0 12px 30px color-mix(in srgb, #1e293b 12%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, #dbe7ff 70%, transparent) inset;
+    --gradient-accent: linear-gradient(125deg, #315bff 0%, #4f46e5 45%, #22c1ee 100%);
+    --gradient-surface: linear-gradient(165deg, #ffffff 0%, #f4f7ff 100%);
+    --gradient-noise: radial-gradient(circle at 12% 20%, color-mix(in srgb, #315bff 18%, transparent), transparent 45%),
+        radial-gradient(circle at 86% 76%, color-mix(in srgb, #7c3aed 16%, transparent), transparent 44%);
+    --radius-card: 1.25rem;
+    --space-section-y: clamp(3.4rem, 6vw, 5.2rem);
+    --space-section-gap: clamp(1rem, 2vw, 1.5rem);
+    --space-block-gap: clamp(0.8rem, 1.5vw, 1.1rem);
 }
 
 [data-theme="dark"] {
-    --color-primary: #818cf8;
-    --color-primary-dark: #6366f1;
-    --color-bg: #0b1020;
-    --color-surface: #111a30;
-    --color-surface-strong: #17233d;
+    --color-primary: #6f90ff;
+    --color-primary-dark: #4d6ee8;
+    --color-bg: #060b18;
+    --color-surface: #0f1a31;
+    --color-surface-strong: #162646;
     --color-text: #f8fafc;
-    --color-text-muted: #cbd5e1;
-    --color-border: #27324a;
+    --color-text-muted: #a9b7d7;
+    --color-border: #233554;
     --color-overlay: color-mix(in srgb, #020617 74%, transparent);
-    --shadow-soft: 0 18px 36px color-mix(in srgb, #020617 62%, transparent);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, #334155 55%, transparent) inset;
-    --gradient-accent: linear-gradient(125deg, #818cf8 0%, #a78bfa 45%, #22d3ee 100%);
-    --gradient-surface: linear-gradient(165deg, #111a30 0%, #182742 100%);
+    --color-glass-2: color-mix(in srgb, #122345 72%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
+    --shadow-soft: 0 20px 42px color-mix(in srgb, #020617 66%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, #3b4f7f 58%, transparent) inset;
+    --gradient-accent: linear-gradient(125deg, #6f90ff 0%, #8166ff 48%, #22d3ee 100%);
+    --gradient-surface: linear-gradient(165deg, #0f1a31 0%, #132448 100%);
+    --gradient-noise: radial-gradient(circle at 12% 20%, color-mix(in srgb, #315bff 24%, transparent), transparent 45%),
+        radial-gradient(circle at 86% 76%, color-mix(in srgb, #7c3aed 22%, transparent), transparent 44%);
 }
