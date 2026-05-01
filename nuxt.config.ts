@@ -10,14 +10,14 @@ export default defineNuxtConfig({
     // },
 
     modules: ['@pinia/nuxt'],
-    css: ['ag-grid-community/styles/ag-theme-quartz.css', '~/assets/scss/main.scss'],
+    css: ['~/assets/scss/main.scss'],
 
     imports: {
         dirs: ['~/composables', '~/core/composables'],
     },
 
     pinia: {
-        storesDirs: ['~/stores', '~/core/store'],
+        storesDirs: ['~/stores'],
     },
 
     components: [
@@ -25,15 +25,6 @@ export default defineNuxtConfig({
         { path: "~/components/cards", pathPrefix: false },
         { path: "~/components/sections", pathPrefix: false },
         { path: "~/components/Layout", pathPrefix: false },
-    ],
-
-    plugins: [
-        '~/core/plugins/preferences.client',
-        '~/core/plugins/axios',
-        '~/core/plugins/iconify',
-        '~/core/plugins/ag-grid.client',
-        '~/core/plugins/route-tabs.client',
-        '~/core/plugins/global-css-no-inline.client',
     ],
 
     vite: {
@@ -72,6 +63,6 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
-        scanDirs: ['core/api/server'],
+        scanDirs: ['core/server'],
     },
 });

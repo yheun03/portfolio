@@ -1,5 +1,5 @@
-import ko from "~/locales/ko.json";
-import en from "~/locales/en.json";
+import ko from "~/core/i18n/ko.json";
+import en from "~/core/i18n/en.json";
 import { useLocaleStore } from "~/stores/localeStore";
 
 const messages: Record<"ko" | "en", Record<string, any>> = { ko, en };
