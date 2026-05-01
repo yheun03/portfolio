@@ -1,53 +1,53 @@
 export const aboutContent = {
     intro: {
-        ko: "안녕하세요, 은영환입니다. 저는 퍼블리싱을 단순히 화면을 구현하는 일이 아니라, 사용자 경험과 구조, 협업까지 함께 설계하는 일이라고 생각합니다.",
-        en: "Hi, I am Eunyounghwan. I see publishing not just as visual implementation but as designing user experience, structure, and collaboration together."
+        ko: '안녕하세요, 은영환입니다. 저는 퍼블리싱을 단순히 화면을 구현하는 일이 아니라, 사용자 경험과 구조, 협업까지 함께 설계하는 일이라고 생각합니다.',
+        en: 'Hi, I am Eunyounghwan. I see publishing not just as visual implementation but as designing user experience, structure, and collaboration together.',
     },
     paragraphs: {
         ko: [
-            "기업 홈페이지 운영부터 스마트팩토리·물류 시스템, 자사 솔루션 구축까지 다양한 프로젝트를 경험하며 퍼블리싱 100% 수행은 물론, UI/UX 개선, 다국어 대응, SEO, 문서화, 교육 지원까지 폭넓게 맡아왔습니다.",
-            "빠르게 만드는 것보다 잘 유지되는 구조를 중요하게 생각하고, 작은 디테일까지 놓치지 않는 꼼꼼함으로 완성도를 높입니다.",
-            "최근에는 Vue 3 기반 구조 설계와 컴포넌트 중심 개발 방식에 집중하며, 퍼블리셔를 넘어 프론트엔드로 확장할 수 있는 기반을 넓혀가고 있습니다."
+            '기업 홈페이지 운영부터 스마트팩토리·물류 시스템, 자사 솔루션 구축까지 다양한 프로젝트를 경험하며 퍼블리싱 100% 수행은 물론, UI/UX 개선, 다국어 대응, SEO, 문서화, 교육 지원까지 폭넓게 맡아왔습니다.',
+            '빠르게 만드는 것보다 잘 유지되는 구조를 중요하게 생각하고, 작은 디테일까지 놓치지 않는 꼼꼼함으로 완성도를 높입니다.',
+            '최근에는 Vue 3 기반 구조 설계와 컴포넌트 중심 개발 방식에 집중하며, 퍼블리셔를 넘어 프론트엔드로 확장할 수 있는 기반을 넓혀가고 있습니다.',
         ],
         en: [
-            "From corporate websites to smart-factory/logistics systems and in-house solutions, I have owned 100% publishing delivery along with UI/UX improvements, i18n, SEO, documentation, and training support.",
-            "I prioritize maintainable structure over short-term speed and focus on detail-oriented quality.",
-            "Recently, I am focusing on Vue 3 architecture and component-driven development to expand from publishing into frontend leadership."
-        ]
+            'From corporate websites to smart-factory/logistics systems and in-house solutions, I have owned 100% publishing delivery along with UI/UX improvements, i18n, SEO, documentation, and training support.',
+            'I prioritize maintainable structure over short-term speed and focus on detail-oriented quality.',
+            'Recently, I am focusing on Vue 3 architecture and component-driven development to expand from publishing into frontend leadership.',
+        ],
     },
-    keywords: ["꼼꼼함", "성실함", "구조적 사고", "사용자 중심", "유지보수성", "협업 친화성", "실행력", "리더십"],
+    keywords: ['꼼꼼함', '성실함', '구조적 사고', '사용자 중심', '유지보수성', '협업 친화성', '실행력', '리더십'],
     principles: [
         {
-            title: { ko: "사용자 경험", en: "User Experience" },
+            title: { ko: '사용자 경험', en: 'User Experience' },
             description: {
-                ko: "보기에만 좋은 화면보다 실제로 쓰기 편한 화면을 만드는 것을 중요하게 생각합니다.",
-                en: "I prioritize interfaces that are practically usable, not only visually pleasing."
-            }
+                ko: '보기에만 좋은 화면보다 실제로 쓰기 편한 화면을 만드는 것을 중요하게 생각합니다.',
+                en: 'I prioritize interfaces that are practically usable, not only visually pleasing.',
+            },
         },
         {
-            title: { ko: "유지보수 가능한 구조", en: "Maintainable Structure" },
+            title: { ko: '유지보수 가능한 구조', en: 'Maintainable Structure' },
             description: {
-                ko: "프로젝트가 길어질수록 구조의 힘이 중요합니다. 반복을 줄이고 공통화를 높입니다.",
-                en: "As projects grow, structure matters more. I reduce duplication and increase reuse."
-            }
+                ko: '프로젝트가 길어질수록 구조의 힘이 중요합니다. 반복을 줄이고 공통화를 높입니다.',
+                en: 'As projects grow, structure matters more. I reduce duplication and increase reuse.',
+            },
         },
         {
-            title: { ko: "명확한 커뮤니케이션", en: "Clear Communication" },
+            title: { ko: '명확한 커뮤니케이션', en: 'Clear Communication' },
             description: {
-                ko: "디자이너·개발자·고객의 언어를 연결하며 설명 가능한 산출물을 지향합니다.",
-                en: "I bridge designers, developers, and clients with explainable outputs."
-            }
-        }
+                ko: '디자이너·개발자·고객의 언어를 연결하며 설명 가능한 산출물을 지향합니다.',
+                en: 'I bridge designers, developers, and clients with explainable outputs.',
+            },
+        },
     ],
     workflow: [
-        { ko: "요구사항과 화면 목적을 먼저 파악합니다.", en: "Clarify requirements and screen purpose first." },
-        { ko: "구조와 공통 요소를 먼저 정리합니다.", en: "Organize structure and common elements early." },
-        { ko: "반복 스타일은 SCSS 컴포넌트화합니다.", en: "Componentize repeated styles with SCSS." },
-        { ko: "협업자가 이해하기 쉬운 형태로 문서화합니다.", en: "Document for collaboration readability." },
-        { ko: "빠른 납기에서도 품질 우선순위를 유지합니다.", en: "Keep quality priorities under fast schedules." }
+        { ko: '요구사항과 화면 목적을 먼저 파악합니다.', en: 'Clarify requirements and screen purpose first.' },
+        { ko: '구조와 공통 요소를 먼저 정리합니다.', en: 'Organize structure and common elements early.' },
+        { ko: '반복 스타일은 SCSS 컴포넌트화합니다.', en: 'Componentize repeated styles with SCSS.' },
+        { ko: '협업자가 이해하기 쉬운 형태로 문서화합니다.', en: 'Document for collaboration readability.' },
+        { ko: '빠른 납기에서도 품질 우선순위를 유지합니다.', en: 'Keep quality priorities under fast schedules.' },
     ],
     direction: {
-        ko: "퍼블리싱을 기반으로 실무 경험을 쌓아왔고, 앞으로는 컴포넌트 설계와 프론트엔드 구조 이해도를 더 깊게 가져가며 UI 개발 전반을 주도할 수 있는 인재로 성장하는 것이 목표입니다.",
-        en: "Built on publishing foundations, my goal is to lead UI development by deepening component architecture and frontend structural understanding."
-    }
+        ko: '퍼블리싱을 기반으로 실무 경험을 쌓아왔고, 앞으로는 컴포넌트 설계와 프론트엔드 구조 이해도를 더 깊게 가져가며 UI 개발 전반을 주도할 수 있는 인재로 성장하는 것이 목표입니다.',
+        en: 'Built on publishing foundations, my goal is to lead UI development by deepening component architecture and frontend structural understanding.',
+    },
 };

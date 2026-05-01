@@ -10,13 +10,8 @@
             </ul>
         </BaseCard>
         <ul class="journey__timeline">
-            <TimelineItem
-                v-for="item in journey"
-                :key="item.period"
-                :period="item.period"
-                :title="pick(item.title)"
-                :description="pick(item.description)"
-            />
+            <TimelineItem v-for="item in journey" :key="item.period" :period="item.period" :title="pick(item.title)"
+                :description="pick(item.description)" />
         </ul>
     </section>
 </template>

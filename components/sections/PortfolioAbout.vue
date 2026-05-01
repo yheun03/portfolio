@@ -5,16 +5,14 @@
             <p>{{ pick(aboutContent.intro) }}</p>
             <p v-for="text in pick(aboutContent.paragraphs)" :key="text">{{ text }}</p>
             <ul class="about__keywords">
-                <li v-for="keyword in aboutContent.keywords" :key="keyword"><BaseBadge>{{ keyword }}</BaseBadge></li>
+                <li v-for="keyword in aboutContent.keywords" :key="keyword">
+                    <BaseBadge>{{ keyword }}</BaseBadge>
+                </li>
             </ul>
         </BaseCard>
         <div class="about__cards about__cards--spaced">
-            <IntroCard
-                v-for="principle in aboutContent.principles"
-                :key="pick(principle.title)"
-                :title="pick(principle.title)"
-                :description="pick(principle.description)"
-            />
+            <IntroCard v-for="principle in aboutContent.principles" :key="pick(principle.title)"
+                :title="pick(principle.title)" :description="pick(principle.description)" />
         </div>
         <BaseCard class="about__workflow">
             <h3 class="about__workflow-title">일하는 방식</h3>
