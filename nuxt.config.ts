@@ -20,7 +20,12 @@ export default defineNuxtConfig({
         storesDirs: ['~/stores', '~/core/store'],
     },
 
-    components: true,
+    components: [
+        { path: "~/components/common", pathPrefix: false },
+        { path: "~/components/cards", pathPrefix: false },
+        { path: "~/components/sections", pathPrefix: false },
+        { path: "~/components/Layout", pathPrefix: false },
+    ],
 
     plugins: [
         '~/core/plugins/preferences.client',
