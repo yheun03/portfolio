@@ -3,35 +3,19 @@
         <BaseSectionTitle eyebrow="Works" :title="t('works.title')" />
 
         <div class="works__filters" role="tablist" aria-label="프로젝트 필터">
-            <button
-                v-for="category in workCategories"
-                :key="category.key"
-                :id="`works-tab-${category.key}`"
-                role="tab"
-                :aria-controls="`works-panel-${category.key}`"
-                :aria-selected="selected === category.key"
-                :tabindex="selected === category.key ? 0 : -1"
-                :class="{ 'is-active': selected === category.key }"
-                @click="selected = category.key"
-            >
+            <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`" role="tab"
+                :aria-controls="`works-panel-${category.key}`" :aria-selected="selected === category.key"
+                :tabindex="selected === category.key ? 0 : -1" :class="{ 'is-active': selected === category.key }"
+                @click="selected = category.key">
                 {{ pick(category.label) }}
             </button>
         </div>
 
-        <div
-            :id="`works-panel-${selected}`"
-            class="works__grid"
-            role="tabpanel"
-            :aria-labelledby="`works-tab-${selected}`"
-        >
-            <WorkCard
-                v-for="work in filteredWorks"
-                :key="work.id"
-                :work="work"
+        <div :id="`works-panel-${selected}`" class="works__grid" role="tabpanel"
+            :aria-labelledby="`works-tab-${selected}`">
+            <WorkCard v-for="work in filteredWorks" :key="work.id" :work="work"
                 :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
-                :detail-label="t('works.detail')"
-                @select="activeWork = work"
-            />
+                :detail-label="t('works.detail')" @select="activeWork = work" />
         </div>
 
         <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true" aria-label="프로젝트 상세 정보">
@@ -52,7 +36,8 @@
                 <ul>
                     <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                 </ul>
-                <button class="base-button base-button--ghost" aria-label="상세 모달 닫기" @click="activeWork = null">Close</button>
+                <button class="base-button base-button--ghost" aria-label="상세 모달 닫기"
+                    @click="activeWork = null">Close</button>
             </BaseCard>
         </div>
     </section>

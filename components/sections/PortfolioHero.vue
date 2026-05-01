@@ -10,13 +10,8 @@
         </ul>
 
         <div class="hero__stats">
-            <StatCard
-                v-for="(stat, idx) in convertedStats"
-                :key="stat.label"
-                :label="stat.label"
-                :value="statValues[idx]"
-                :suffix="stat.suffix"
-            />
+            <StatCard v-for="(stat, idx) in convertedStats" :key="stat.label" :label="stat.label"
+                :value="statValues[idx]" :suffix="stat.suffix" />
         </div>
 
         <div class="hero__cta">

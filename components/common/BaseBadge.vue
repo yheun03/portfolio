@@ -1,3 +1,5 @@
 <template>
-    <span class="base-badge"><slot /></span>
+    <span class="base-badge">
+        <slot />
+    </span>
 </template>

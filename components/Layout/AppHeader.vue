@@ -2,25 +2,16 @@
     <header class="app-header">
         <a class="app-header__brand" href="#hello">Eun</a>
         <nav class="app-header__nav" aria-label="섹션 네비게이션">
-            <a
-                v-for="link in links"
-                :key="link.href"
-                :href="link.href"
-                :class="{ 'is-active': activeId === link.href.slice(1) }"
-            >
+            <a v-for="link in links" :key="link.href" :href="link.href"
+                :class="{ 'is-active': activeId === link.href.slice(1) }">
                 {{ link.label }}
             </a>
         </nav>
         <div class="app-header__actions">
             <LanguageToggle />
             <ThemeToggle />
-            <button
-                class="app-header__menu-btn"
-                aria-label="모바일 메뉴 열기"
-                :aria-expanded="menuOpen"
-                aria-controls="mobile-menu-panel"
-                @click="menuOpen = !menuOpen"
-            >
+            <button class="app-header__menu-btn" aria-label="모바일 메뉴 열기" :aria-expanded="menuOpen"
+                aria-controls="mobile-menu-panel" @click="menuOpen = !menuOpen">
                 Menu
             </button>
         </div>
