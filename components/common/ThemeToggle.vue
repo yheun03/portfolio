@@ -1,5 +1,5 @@
 <template>
-    <button class="theme-toggle"
+    <button type="button" class="theme-toggle"
         :aria-label="theme === 'dark' ? (locale === 'ko' ? '라이트 모드 전환' : 'Switch to light mode') : (locale === 'ko' ? '다크 모드 전환' : 'Switch to dark mode')"
         @click="toggleTheme">
         {{ theme === "dark" ? "Light" : "Dark" }}

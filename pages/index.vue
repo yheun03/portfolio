@@ -1,22 +1,12 @@
 <template>
     <AppLayout :links="navLinks" :active-id="activeId" :footer-text="t('footer.copyright')">
-        <div class="page-layer page-layer--hero">
-            <PortfolioHero />
-        </div>
-
-        <div class="page-layer page-layer--works">
-            <PortfolioWorks />
-        </div>
-
-        <div class="page-layer page-layer--capability">
-            <PortfolioAbout />
-            <PortfolioJourney />
-            <PortfolioToolbox />
-            <PortfolioHighlights />
-        </div>
-
-        <div class="page-layer page-layer--contact">
-            <PortfolioContact />
+        <div
+            v-for="layer in pageLayers"
+            :key="layer.name"
+            class="page-layer"
+            :class="`page-layer--${layer.name}`"
+        >
+            <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
         </div>
     </AppLayout>
 </template>
@@ -31,6 +21,20 @@ const PortfolioJourney = defineAsyncComponent(() => import("~/components/section
 const PortfolioToolbox = defineAsyncComponent(() => import("~/components/sections/PortfolioToolbox.vue"));
 const PortfolioHighlights = defineAsyncComponent(() => import("~/components/sections/PortfolioHighlights.vue"));
 const PortfolioContact = defineAsyncComponent(() => import("~/components/sections/PortfolioContact.vue"));
+const pageLayers = [
+    { name: "hero", sections: [{ key: "hello", component: PortfolioHero }] },
+    { name: "works", sections: [{ key: "works", component: PortfolioWorks }] },
+    {
+        name: "capability",
+        sections: [
+            { key: "about", component: PortfolioAbout },
+            { key: "journey", component: PortfolioJourney },
+            { key: "toolbox", component: PortfolioToolbox },
+            { key: "highlights", component: PortfolioHighlights },
+        ],
+    },
+    { name: "contact", sections: [{ key: "contact", component: PortfolioContact }] },
+] as const;
 
 const { t, initLocale, locale } = useLocale();
 const { initTheme } = useTheme();

@@ -8,7 +8,9 @@
         <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
             <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`" role="tab"
                 :aria-controls="`works-panel-${category.key}`" :aria-selected="selected === category.key"
-                :tabindex="selected === category.key ? 0 : -1" :class="{ 'is-active': selected === category.key }"
+                :tabindex="selected === category.key ? 0 : -1"
+                class="ui-tab-button"
+                :class="{ 'is-active': selected === category.key }"
                 @click="selected = category.key">
                 {{ pick(category.label) }}
             </button>
@@ -29,23 +31,23 @@
                 <div class="works__modal-head">
                     <h3 id="works-modal-title">{{ pick(activeWork.title) }}</h3>
                     <button ref="closeButtonRef" type="button" class="base-button base-button--ghost works__modal-close"
-                        :aria-label="locale === 'ko' ? '상세 모달 닫기' : 'Close detail modal'"
+                        :aria-label="labels.closeModalAria"
                         @click="closeModal">
-                        {{ locale === 'ko' ? '닫기' : 'Close' }}
+                        {{ labels.close }}
                     </button>
                 </div>
-                <p id="works-modal-description" style="margin-top: 0.25rem">{{ activeWork.period }} · {{ pick(activeWork.type) }}</p>
-                <p style="margin-top: 0.5rem"><strong>{{ locale === 'ko' ? '역할' : 'Role' }}:</strong> {{ pick(activeWork.role) }}</p>
-                <p style="margin-top: 0.5rem">{{ pick(activeWork.introduction) }}</p>
-                <p style="margin-top: 0.75rem"><strong>{{ locale === 'ko' ? '내가 한 일' : 'My Contributions' }}</strong></p>
+                <p id="works-modal-description" class="works__meta">{{ activeWork.period }} · {{ pick(activeWork.type) }}</p>
+                <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(activeWork.role) }}</p>
+                <p class="works__intro">{{ pick(activeWork.introduction) }}</p>
+                <p class="works__section-title"><strong>{{ labels.contributions }}</strong></p>
                 <ul>
                     <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                 </ul>
-                <p v-if="activeWork.achievements.length" style="margin-top: 0.75rem"><strong>{{ locale === 'ko' ? '성과' : 'Results' }}</strong></p>
+                <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results }}</strong></p>
                 <ul v-if="activeWork.achievements.length">
                     <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                 </ul>
-                <p style="margin-top: 0.75rem"><strong>{{ locale === 'ko' ? '포인트' : 'Key Points' }}</strong></p>
+                <p class="works__section-title"><strong>{{ labels.points }}</strong></p>
                 <ul>
                     <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                 </ul>
@@ -63,6 +65,14 @@ const selected = ref<WorkCategory>("all");
 const activeWork = ref<WorkItem | null>(null);
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
 const modalCardRef = ref<HTMLElement | null>(null);
+const labels = computed(() => ({
+    close: locale.value === "ko" ? "닫기" : "Close",
+    closeModalAria: locale.value === "ko" ? "상세 모달 닫기" : "Close detail modal",
+    role: locale.value === "ko" ? "역할" : "Role",
+    contributions: locale.value === "ko" ? "내가 한 일" : "My Contributions",
+    results: locale.value === "ko" ? "성과" : "Results",
+    points: locale.value === "ko" ? "포인트" : "Key Points",
+}));
 
 const filteredWorks = computed(() => {
     if (selected.value === "all") return works;

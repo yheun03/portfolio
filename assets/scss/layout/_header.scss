@@ -19,9 +19,8 @@
     gap: 1rem;
     padding: 0.8rem 1rem;
     border-bottom: 1px solid var(--color-border);
-    background: var(--color-glass-strong);
-    box-shadow: var(--shadow-glow);
-    backdrop-filter: blur(16px);
+    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    box-shadow: var(--shadow-glow), 0 10px 28px color-mix(in srgb, #0f172a 14%, transparent);
 }
 
 .app-header__nav {
@@ -29,9 +28,23 @@
     gap: 0.75rem;
 }
 
+.app-header__nav a {
+    position: relative;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    color: var(--color-text-muted);
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.app-header__nav a:hover {
+    color: var(--color-text);
+    background: var(--color-surface-strong);
+}
+
 .app-header__nav .is-active {
     color: var(--color-primary);
-    text-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 30%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 18%, transparent);
+    text-shadow: 0 0 14px color-mix(in srgb, var(--color-primary) 26%, transparent);
 }
 
 .app-header__actions {
@@ -42,10 +55,38 @@
 .app-header__menu-btn {
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    background: var(--color-glass-strong);
+    background: var(--color-surface-strong);
     color: var(--color-text);
     font-weight: 600;
     padding: 0.5rem 0.7rem;
+}
+
+.language-toggle,
+.theme-toggle,
+.app-header__menu-btn {
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    background: var(--color-surface-strong);
+    color: var(--color-text);
+    font-weight: 700;
+    padding: 0.45rem 0.72rem;
+    line-height: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.language-toggle:hover,
+.theme-toggle:hover,
+.app-header__menu-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+    border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+}
+
+.language-toggle:focus-visible,
+.theme-toggle:focus-visible,
+.app-header__menu-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .mobile-menu {
@@ -55,9 +96,8 @@
     gap: 0.75rem;
     align-content: start;
     padding: 1.5rem 1rem 2rem;
-    background: var(--color-glass-strong);
+    background: color-mix(in srgb, var(--color-surface) 96%, var(--color-bg));
     border-top: 1px solid var(--color-border);
-    backdrop-filter: blur(16px);
     z-index: 79;
 }
 

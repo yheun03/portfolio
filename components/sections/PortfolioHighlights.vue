@@ -4,7 +4,9 @@
         <div class="highlights__tabs" role="tablist" :aria-label="locale === 'ko' ? '하이라이트 탭' : 'Highlights tabs'">
             <button v-for="tab in tabs" :key="tab.key" :id="`highlights-tab-${tab.key}`" role="tab"
                 :aria-controls="`highlights-panel-${tab.key}`" :aria-selected="activeTab === tab.key"
-                :tabindex="activeTab === tab.key ? 0 : -1" :class="{ 'is-active': activeTab === tab.key }"
+                :tabindex="activeTab === tab.key ? 0 : -1"
+                class="ui-tab-button"
+                :class="{ 'is-active': activeTab === tab.key }"
                 @click="activeTab = tab.key">
                 {{ tab.label }}
             </button>
@@ -13,7 +15,7 @@
         <div :id="`highlights-panel-${activeTab}`" class="highlights__panel" role="tabpanel"
             :aria-labelledby="`highlights-tab-${activeTab}`">
             <HighlightCard :title="activeTabLabel" :items="activeItems" />
-            <p style="margin-top: 0.75rem">{{ activeDescription }}</p>
+            <p class="highlights__description">{{ activeDescription }}</p>
         </div>
     </section>
 </template>
