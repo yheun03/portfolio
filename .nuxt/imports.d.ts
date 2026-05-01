@@ -33,4 +33,3 @@ export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { useTheme } from '../core/composables/useTheme';
 export { usePortfolioStore } from '../core/stores/usePortfolioStore';
 export { defineStore, acceptHMRUpdate, usePinia, storeToRefs } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
-export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
