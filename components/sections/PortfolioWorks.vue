@@ -21,7 +21,7 @@
 
         <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true"
             :aria-label="locale === 'ko' ? '프로젝트 상세 정보' : 'Project detail information'">
-            <BaseCard>
+            <BaseCard :animate="false">
                 <h3>{{ pick(activeWork.title) }}</h3>
                 <p style="margin-top: 0.25rem">{{ activeWork.period }} · {{ pick(activeWork.type) }}</p>
                 <p style="margin-top: 0.5rem"><strong>{{ locale === 'ko' ? '역할' : 'Role' }}:</strong> {{ pick(activeWork.role) }}</p>
@@ -38,7 +38,7 @@
                 <ul>
                     <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                 </ul>
-                <button class="base-button base-button--ghost"
+                <button type="button" class="base-button base-button--ghost"
                     :aria-label="locale === 'ko' ? '상세 모달 닫기' : 'Close detail modal'"
                     @click="activeWork = null">{{ locale === 'ko' ? '닫기' : 'Close' }}</button>
             </BaseCard>
