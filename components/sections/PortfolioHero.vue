@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { profile } from "~/data/profile";
+import { profile } from "~/core/data/profile";
 
 const { t, pick } = useLocale();
 const convertedStats = computed(() => profile.stats.map((item) => ({ ...item, label: pick(item.label) })));

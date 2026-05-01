@@ -1,4 +1,4 @@
-import { useThemeStore } from "~/stores/themeStore";
+import { useThemeStore } from '~/core/stores/themeStore';
 
 export const useTheme = () => {
     const store = useThemeStore();

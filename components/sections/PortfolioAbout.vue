@@ -25,6 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import { aboutContent } from "~/data/about";
+import { aboutContent } from "~/core/data/about";
 const { t, pick } = useLocale();
 </script>
