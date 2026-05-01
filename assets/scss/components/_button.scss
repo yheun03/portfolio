@@ -1,0 +1,27 @@
+.base-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+
+    &--primary {
+        background: var(--color-primary);
+        color: #fff;
+        border-color: var(--color-primary);
+    }
+
+    &--ghost {
+        background: transparent;
+        color: var(--color-text);
+    }
+}

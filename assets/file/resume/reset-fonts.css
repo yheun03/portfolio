@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(https://www.saraminimage.co.kr/sri/font/Pretendard-Bold.subset.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-display: swap;
+    src: local('Pretendard SemiBold'), url(https://www.saraminimage.co.kr/sri/font/Pretendard-SemiBold.subset.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(https://www.saraminimage.co.kr/sri/font/Pretendard-Regular.subset.woff) format('woff');
+}
+
+html{color:#000;background:#fff}
+body{font-size:13px;line-height:1.231;* font-size:small;* font:x-small}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, b, strong, input, textarea, button, select {margin:0;padding:0;font-family:"Pretendard","Malgun Gothic",dotum,gulim,sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+table{font-size:100%}
+table.n0{border-collapse:collapse;border-spacing:0}
+td.n0,th.n0{margin:0;padding:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:inherit;font-weight:inherit}
+ol,ul,li{list-style:none}
+caption,th{text-align:left}
+q:before,q:after{content:''}
+del,ins{text-decoration:none}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+legend{color:#000}
+a{color:#444;text-decoration:none;}
+input,button,textarea,select,option{font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{line-height:normal}
+pre,code,kbd,samp,tt{font-size:108%;line-height:100%}
+input[type=checkbox]{margin-right:3px}
+
+.hidden,.blind{position:absolute;width:1px;height:1px;clip:rect(1px,1px,1px,1px)}
+.ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}

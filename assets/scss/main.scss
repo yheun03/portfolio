@@ -1,1 +1,4 @@
-@use "../styles/index.scss";
+@use "base/index" as base;
+@use "components/index" as comp;
+@use "layout/index" as layout;
+@use "pages/index" as page;

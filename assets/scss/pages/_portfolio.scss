@@ -1,0 +1,177 @@
+.portfolio-page {
+    scroll-behavior: smooth;
+}
+
+.hero__branding {
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    list-style: none;
+}
+
+.hero__badges li {
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hero__badges li:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+}
+
+.hero__stats,
+.about__cards,
+.works__grid,
+.toolbox__grid,
+.contact__cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.hero__cta,
+.works__filters,
+.highlights__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.works__filters button,
+.highlights__tabs button {
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    background: transparent;
+    padding: 0.35rem 0.75rem;
+}
+
+.works__filters .is-active,
+.highlights__tabs .is-active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+.works__modal {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in srgb, #000 40%, transparent);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    z-index: 80;
+}
+
+.works__modal .base-card {
+    width: min(720px, 100%);
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.work-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--color-primary) 18%, transparent);
+}
+
+.work-card__button {
+    margin-top: 0.75rem;
+}
+
+.journey__timeline {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.about__keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.about__cards--spaced {
+    margin-top: 1rem;
+}
+
+.about__workflow {
+    margin-top: 1rem;
+}
+
+.about__workflow-title {
+    margin-bottom: 0.5rem;
+}
+
+.about__workflow-direction {
+    margin-top: 1rem;
+}
+
+.app-header__nav a:focus-visible,
+.mobile-menu a:focus-visible,
+.works__filters button:focus-visible,
+.highlights__tabs button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .hero__stats,
+    .about__cards,
+    .toolbox__grid,
+    .contact__cta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 3.25rem 1rem;
+    }
+
+    .hero__cta {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .hero__cta .base-button {
+        width: 100%;
+    }
+
+    .works__filters {
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+    }
+
+    .works__filters button,
+    .highlights__tabs button {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1024px) {
+    .works__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1440px) {
+    .works__grid,
+    .toolbox__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

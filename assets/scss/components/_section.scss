@@ -1,0 +1,23 @@
+.section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+}
+
+.section-title__eyebrow {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.section-title__title {
+    font-size: clamp(1.6rem, 2vw, 2.5rem);
+}
+
+.section-title__description {
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+}

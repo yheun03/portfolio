@@ -1,1 +1,3 @@
-/* Shared SCSS tokens/mixins entrypoint */
+@forward "variables";
+@forward "mixins";
+@forward "functions";

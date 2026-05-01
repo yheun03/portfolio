@@ -1,0 +1,66 @@
+.scroll-progress {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    transform-origin: left center;
+    z-index: 60;
+}
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+}
+
+.app-header__nav {
+    display: none;
+    gap: 0.75rem;
+}
+
+.app-header__nav .is-active {
+    color: var(--color-primary);
+}
+
+.app-header__actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.app-header__menu-btn {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: transparent;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+    .app-header__nav {
+        display: flex;
+    }
+    .app-header__menu-btn,
+    .mobile-menu {
+        display: none;
+    }
+}

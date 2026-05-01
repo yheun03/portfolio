@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "hello": "Hello",
+    "about": "About Me",
+    "works": "Works",
+    "journey": "Journey",
+    "toolbox": "Toolbox",
+    "highlights": "Highlights",
+    "contact": "Say Hi"
+  },
+  "hero": {
+    "title": "기분 좋은 인터랙션과 탄탄한 구조를 함께 만드는 웹 퍼블리셔",
+    "subtitle": "기업 홈페이지, 스마트팩토리·물류 시스템, 자사 솔루션 등 다양한 프로젝트에서 운영부터 신규 구축, 내부 리뉴얼까지 경험했습니다.",
+    "branding": "Publishing 기반으로 Frontend까지 확장 중인 UI 중심 실무형 인재",
+    "ctaWorks": "Works 보러가기",
+    "ctaJourney": "Journey 보기",
+    "ctaContact": "Contact 하기"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "퍼블리싱을 단순 구현이 아닌 사용자 경험, 구조, 협업까지 연결하는 일로 바라봅니다.",
+    "direction": "앞으로는 Vue 3 컴포넌트 설계와 프론트엔드 구조 주도 역량을 강화하고 있습니다."
+  },
+  "works": {
+    "title": "Works",
+    "all": "All",
+    "detail": "상세보기"
+  },
+  "journey": {
+    "title": "Journey",
+    "summary": "2020년부터 조앤소프트에서 구축과 운영 프로젝트를 수행하며 퍼블리싱 전 주기를 책임졌습니다."
+  },
+  "toolbox": {
+    "title": "Toolbox",
+    "copy": "구현만 하는 사람이 아니라, 협업 가능한 구조와 유지보수 가능한 화면을 만드는 퍼블리셔"
+  },
+  "highlights": {
+    "title": "Highlights",
+    "awards": "Awards",
+    "certifications": "Certifications",
+    "roles": "Professional Roles",
+    "activities": "Leadership / Activities"
+  },
+  "contact": {
+    "title": "Say Hi",
+    "description": "퍼블리싱, UI 개발, 구조 개선이 필요한 작업이라면 편하게 연락 주세요.",
+    "email": "메일 보내기",
+    "github": "GitHub 보기",
+    "portfolio": "포트폴리오 보기",
+    "archive": "프로젝트 아카이브 보기",
+    "resume": "이력서 다운로드"
+  },
+  "footer": {
+    "copyright": "© 2026 Eunyounghwan Portfolio"
+  }
+}

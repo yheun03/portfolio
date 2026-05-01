@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "hello": "Hello",
+    "about": "About Me",
+    "works": "Works",
+    "journey": "Journey",
+    "toolbox": "Toolbox",
+    "highlights": "Highlights",
+    "contact": "Say Hi"
+  },
+  "hero": {
+    "title": "A web publisher who creates delightful interaction with solid structure",
+    "subtitle": "I have worked on corporate websites, smart-factory and logistics systems, and in-house solutions across operation, new build, and renewal.",
+    "branding": "A UI-focused practitioner expanding from publishing to frontend",
+    "ctaWorks": "View Works",
+    "ctaJourney": "View Journey",
+    "ctaContact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I treat publishing as more than visuals: it connects UX, architecture, and collaboration.",
+    "direction": "I am deepening Vue 3 component architecture and frontend structure leadership."
+  },
+  "works": {
+    "title": "Works",
+    "all": "All",
+    "detail": "Details"
+  },
+  "journey": {
+    "title": "Journey",
+    "summary": "Since 2020, I have owned full publishing cycles across build and operation projects."
+  },
+  "toolbox": {
+    "title": "Toolbox",
+    "copy": "Not just implementation, but maintainable UI and collaboration-ready structure"
+  },
+  "highlights": {
+    "title": "Highlights",
+    "awards": "Awards",
+    "certifications": "Certifications",
+    "roles": "Professional Roles",
+    "activities": "Leadership / Activities"
+  },
+  "contact": {
+    "title": "Say Hi",
+    "description": "If you need publishing, UI development, or structural improvement, feel free to reach out.",
+    "email": "Send Email",
+    "github": "View GitHub",
+    "portfolio": "View Portfolio",
+    "archive": "View Project Archive",
+    "resume": "Download Resume"
+  },
+  "footer": {
+    "copyright": "© 2026 Eunyounghwan Portfolio"
+  }
+}
