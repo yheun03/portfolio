@@ -15,7 +15,16 @@ export const aboutContent = {
             'Recently, I am focusing on Vue 3 architecture and component-driven development to expand from publishing into frontend leadership.',
         ],
     },
-    keywords: ['꼼꼼함', '성실함', '구조적 사고', '사용자 중심', '유지보수성', '협업 친화성', '실행력', '리더십'],
+    keywords: [
+        { ko: '꼼꼼함', en: 'Detail-oriented' },
+        { ko: '성실함', en: 'Diligence' },
+        { ko: '구조적 사고', en: 'Structured thinking' },
+        { ko: '사용자 중심', en: 'User-centered' },
+        { ko: '유지보수성', en: 'Maintainability' },
+        { ko: '협업 친화성', en: 'Collaboration-friendly' },
+        { ko: '실행력', en: 'Execution' },
+        { ko: '리더십', en: 'Leadership' },
+    ],
     principles: [
         {
             title: { ko: '사용자 경험', en: 'User Experience' },

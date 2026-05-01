@@ -1,8 +1,8 @@
 <template>
     <section id="toolbox" class="section">
-        <BaseSectionTitle eyebrow="Toolbox" :title="t('toolbox.title')" :description="t('toolbox.copy')" />
+        <BaseSectionTitle :eyebrow="t('nav.toolbox')" :title="t('toolbox.title')" :description="t('toolbox.copy')" />
         <div class="toolbox__grid">
-            <SkillCard v-for="skill in skills" :key="skill.key" :title="skill.title" :items="skill.items"
+            <SkillCard v-for="skill in skills" :key="skill.key" :title="skill.title" :items="pick(skill.items)"
                 :description="pick(skill.description)" />
         </div>
     </section>

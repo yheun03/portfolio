@@ -1,19 +1,28 @@
 export const journeySummary = {
-    company: '조앤소프트㈜ JO&soft',
-    team: 'DX 솔루션 2팀 · 주임',
-    period: '2020.09 ~ 현재',
+    company: {
+        ko: '조앤소프트㈜ JO&soft',
+        en: 'JO&soft Co., Ltd.',
+    },
+    team: {
+        ko: 'DX 솔루션 2팀 · 주임',
+        en: 'DX Solution Team 2 · Associate',
+    },
+    period: {
+        ko: '2020.09 ~ 현재',
+        en: '2020.09 ~ Present',
+    },
     intro: {
         ko: '2020년부터 조앤소프트에서 다양한 웹 시스템 구축 및 운영 프로젝트를 수행하며 퍼블리싱 전반의 실질적인 업무를 책임져 왔습니다.',
         en: 'Since 2020, I have led practical publishing work across web system build and operation projects at JO&soft.',
     },
     roles: [
-        '퍼블리싱 100% 수행',
-        '구조 설계 및 공통화',
-        'CMS 커스터마이징',
-        '운영 유지보수',
-        'UI/UX 개선',
-        '문서화 및 교육 지원',
-        '협업사 및 고객 커뮤니케이션',
+        { ko: '퍼블리싱 100% 수행', en: '100% publishing ownership' },
+        { ko: '구조 설계 및 공통화', en: 'Architecture design and standardization' },
+        { ko: 'CMS 커스터마이징', en: 'CMS customization' },
+        { ko: '운영 유지보수', en: 'Operation maintenance' },
+        { ko: 'UI/UX 개선', en: 'UI/UX improvement' },
+        { ko: '문서화 및 교육 지원', en: 'Documentation and training support' },
+        { ko: '협업사 및 고객 커뮤니케이션', en: 'Partner and client communication' },
     ],
 };
 

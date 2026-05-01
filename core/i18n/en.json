@@ -52,5 +52,11 @@
     },
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"
+    },
+    "meta": {
+        "title": "2026 Portfolio | Eunyounghwan",
+        "description": "Portfolio of a web publisher building delightful interactions with solid structure.",
+        "ogTitle": "Eunyounghwan Portfolio 2026",
+        "ogDescription": "A UI-focused practitioner expanding from publishing to frontend."
     }
 }

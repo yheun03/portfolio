@@ -1,12 +1,12 @@
 <template>
     <section id="journey" class="section">
-        <BaseSectionTitle eyebrow="Journey" :title="t('journey.title')" :description="t('journey.summary')" />
+        <BaseSectionTitle :eyebrow="t('nav.journey')" :title="t('journey.title')" :description="t('journey.summary')" />
         <BaseCard style="margin-bottom: 1rem">
-            <h3>{{ journeySummary.company }}</h3>
-            <p>{{ journeySummary.team }} · {{ journeySummary.period }}</p>
+            <h3>{{ pick(journeySummary.company) }}</h3>
+            <p>{{ pick(journeySummary.team) }} · {{ pick(journeySummary.period) }}</p>
             <p style="margin-top: 0.75rem">{{ pick(journeySummary.intro) }}</p>
             <ul style="margin-top: 0.75rem">
-                <li v-for="role in journeySummary.roles" :key="role">{{ role }}</li>
+                <li v-for="role in journeySummary.roles" :key="pick(role)">{{ pick(role) }}</li>
             </ul>
         </BaseCard>
         <ul class="journey__timeline">
