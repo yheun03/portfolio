@@ -38,6 +38,63 @@
     z-index: 1;
 }
 
+.section-dock {
+    position: fixed;
+    right: clamp(0.75rem, 2vw, 1.2rem);
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    gap: 0.45rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    z-index: 85;
+}
+
+.section-dock__item {
+    position: relative;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+}
+
+.section-dock__dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-text-muted) 80%, transparent);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.section-dock__item.is-active .section-dock__dot {
+    transform: scale(1.18);
+    background: var(--color-primary);
+}
+
+.section-dock__label {
+    position: absolute;
+    right: calc(100% + 0.7rem);
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    color: var(--color-text);
+}
+
+.section-dock__item:hover .section-dock__label,
+.section-dock__item:focus-visible .section-dock__label {
+    opacity: 1;
+}
+
 .page-layer--works,
 .page-layer--capability,
 .page-layer--contact {
@@ -69,7 +126,7 @@
     padding: 1.15rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
-    background: var(--color-glass);
+    background: var(--gradient-surface);
     box-shadow: var(--shadow-soft);
 }
 
@@ -107,30 +164,6 @@
     margin: 1rem 0;
 }
 
-.works__filters button,
-.highlights__tabs button {
-    border: 1px solid var(--color-border);
-    border-radius: 9999px;
-    background: var(--color-glass-strong);
-    color: var(--color-text);
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.works__filters button:hover,
-.highlights__tabs button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
-}
-
-.works__filters .is-active,
-.highlights__tabs .is-active {
-    background: var(--gradient-accent);
-    border-color: color-mix(in srgb, var(--color-primary) 70%, #fff);
-    color: #fff;
-}
-
 .works__lead {
     color: var(--color-text-muted);
     margin-top: -0.25rem;
@@ -144,7 +177,6 @@
     place-items: center;
     padding: 1rem;
     z-index: 120;
-    backdrop-filter: blur(4px);
 }
 
 .works__modal .base-card {
@@ -155,6 +187,23 @@
 
 .works__modal-content {
     width: min(760px, 100%);
+}
+
+.works__meta {
+    margin-top: 0.25rem;
+}
+
+.works__role,
+.works__intro {
+    margin-top: 0.5rem;
+}
+
+.works__section-title {
+    margin-top: 0.75rem;
+}
+
+.highlights__description {
+    margin-top: 0.75rem;
 }
 
 .works__modal-head {
@@ -182,6 +231,7 @@
 
 .work-card__button {
     margin-top: 0.85rem;
+    width: 100%;
 }
 
 .work-card__footer {
@@ -222,8 +272,9 @@
 
 .app-header__nav a:focus-visible,
 .mobile-menu a:focus-visible,
-.works__filters button:focus-visible,
-.highlights__tabs button:focus-visible {
+.section-dock__item:focus-visible,
+.works__filters .ui-tab-button:focus-visible,
+.highlights__tabs .ui-tab-button:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
@@ -264,6 +315,10 @@
 }
 
 @media (min-width: 1024px) {
+    .section-dock {
+        display: grid;
+    }
+
     .works__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
