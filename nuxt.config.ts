@@ -1,35 +1,26 @@
-import { defineNuxtConfig } from "nuxt/config";
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
     experimental: { appManifest: false },
     features: { inlineStyles: false },
 
-    app: {
-        baseURL: '/jonsoft-framework/',
-    },
+    // app: {
+    //     baseURL: '/jonsoft-framework/',
+    // },
 
     modules: ['@pinia/nuxt'],
-    css: [
-        'ag-grid-community/styles/ag-theme-quartz.css',
-        '~/assets/scss/main.scss',
-    ],
+    css: ['ag-grid-community/styles/ag-theme-quartz.css', '~/assets/scss/main.scss'],
 
     imports: {
-        dirs: ['~/core/composables'],
+        dirs: ['~/composables', '~/core/composables'],
     },
 
     pinia: {
-        storesDirs: ['~/core/store'],
+        storesDirs: ['~/stores', '~/core/store'],
     },
 
-    components: [
-        { path: '~/components/Table', pathPrefix: false },
-        { path: '~/components/Section', pathPrefix: false },
-        { path: '~/components/Layout', pathPrefix: false },
-        { path: '~/components/Modal', pathPrefix: false },
-        { path: '~/components', pathPrefix: true },
-    ],
+    components: true,
 
     plugins: [
         '~/core/plugins/preferences.client',
@@ -43,6 +34,7 @@ export default defineNuxtConfig({
     vite: {
         build: {
             cssCodeSplit: false,
+            chunkSizeWarningLimit: 900,
         },
         server: {
             watch: {

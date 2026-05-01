@@ -1,0 +1,24 @@
+<template>
+    <BaseCard class="work-card">
+        <h3>{{ item.title }}</h3>
+        <p class="work-card__meta">{{ work.period }} · {{ item.type }}</p>
+        <p>{{ item.summary }}</p>
+        <ul class="work-card__tech">
+            <li v-for="tech in work.tech" :key="tech">{{ tech }}</li>
+        </ul>
+        <button class="work-card__button" :aria-label="`${item.title} 상세보기`" @click="$emit('select')">
+            {{ detailLabel }}
+        </button>
+    </BaseCard>
+</template>
+
+<script setup lang="ts">
+import type { WorkItem } from "~/data/works";
+
+defineEmits<{ (e: "select"): void }>();
+defineProps<{
+    work: WorkItem;
+    item: { title: string; type: string; summary: string };
+    detailLabel: string;
+}>();
+</script>
