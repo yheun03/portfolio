@@ -1,30 +1,80 @@
+import { defineNuxtConfig } from "nuxt/config";
+
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@pinia/nuxt'],
-    components: true,
-    pages: true,
-    experimental: {
-        appManifest: false,
+    experimental: { appManifest: false },
+    features: { inlineStyles: false },
+
+    app: {
+        baseURL: '/jonsoft-framework/',
     },
-    css: ['~/assets/styles/index.scss', 'swiper/css'],
+
+    modules: ['@pinia/nuxt'],
+    css: [
+        'ag-grid-community/styles/ag-theme-quartz.css',
+        '~/assets/scss/main.scss',
+    ],
+
+    imports: {
+        dirs: ['~/core/composables'],
+    },
+
+    pinia: {
+        storesDirs: ['~/core/store'],
+    },
+
+    components: [
+        { path: '~/components/Table', pathPrefix: false },
+        { path: '~/components/Section', pathPrefix: false },
+        { path: '~/components/Layout', pathPrefix: false },
+        { path: '~/components/Modal', pathPrefix: false },
+        { path: '~/components', pathPrefix: true },
+    ],
+
+    plugins: [
+        '~/core/plugins/preferences.client',
+        '~/core/plugins/axios',
+        '~/core/plugins/iconify',
+        '~/core/plugins/ag-grid.client',
+        '~/core/plugins/route-tabs.client',
+        '~/core/plugins/global-css-no-inline.client',
+    ],
+
     vite: {
+        build: {
+            cssCodeSplit: false,
+        },
         server: {
             watch: {
                 usePolling: true,
-                interval: 1000,
+                interval: 250,
+            },
+        },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    loadPaths: ['assets/scss'],
+                    additionalData: '@use "abstract/index" as *;',
+                },
             },
         },
     },
-    runtimeConfig: {
-        public: {
-            apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || '/api',
+
+    watchers: {
+        chokidar: {
+            usePolling: true,
+            interval: 250,
         },
     },
-    imports: {
-        dirs: ['core/composables', 'core/stores'],
+
+    runtimeConfig: {
+        public: {
+            apiBase: '/api',
+        },
     },
-    alias: {
-        '@core': './core',
+
+    nitro: {
+        preset: 'static',
+        scanDirs: ['core/api/server'],
     },
-    compatibilityDate: '2026-04-16',
 });
