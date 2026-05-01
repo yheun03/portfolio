@@ -1,22 +1,41 @@
 {
-    "name": "portfolio-nuxt3",
+    "name": "jonsoft-framework",
+    "version": "0.0.1",
     "private": true,
     "type": "module",
+    "engines": {
+        "node": ">=20 <23"
+    },
     "scripts": {
-        "dev": "ulimit -n 65536 && nuxt dev",
         "build": "nuxt build",
-        "preview": "nuxt preview"
+        "clean": "rm -rf .nuxt .output node_modules/.vite",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "deploy": "gh-pages -d .output/public",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
     },
     "dependencies": {
-        "@pinia/nuxt": "^0.10.1",
-        "axios": "^1.9.0",
-        "chart.js": "^4.4.9",
-        "nuxt": "^3.17.3",
-        "pinia": "^3.0.2",
-        "swiper": "^11.2.6"
+        "@ag-grid-community/locale": "^33.3.2",
+        "@iconify/vue": "^5.0.0",
+        "@pinia/nuxt": "^0.5.4",
+        "@toast-ui/editor": "^3.2.2",
+        "ag-grid-community": "^33.3.2",
+        "ag-grid-vue3": "^33.3.2",
+        "axios": "^1.7.7",
+        "chart.js": "^4.5.1",
+        "flatpickr": "^4.6.13",
+        "nouislider": "^15.8.1",
+        "nuxt": "^3.14.1593",
+        "pinia": "^2.2.4",
+        "swiper": "^11.2.6",
+        "vue": "^3.5.12",
+        "vue-chartjs": "^5.3.3",
+        "vue-router": "^4.4.5",
+        "xlsx": "^0.18.5"
     },
     "devDependencies": {
-        "@types/node": "^25.6.0",
-        "sass": "^1.86.3"
+        "gh-pages": "^6.3.0",
+        "sass": "^1.80.4"
     }
 }
