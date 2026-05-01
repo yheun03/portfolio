@@ -1,6 +1,6 @@
 <template>
     <section id="hello" class="section section--hero">
-        <BaseSectionTitle eyebrow="Hello" :title="t('hero.title')" :description="t('hero.subtitle')" />
+        <BaseSectionTitle :eyebrow="t('nav.hello')" :title="t('hero.title')" :description="t('hero.subtitle')" />
         <p class="hero__branding">{{ t("hero.branding") }}</p>
 
         <ul class="hero__badges">

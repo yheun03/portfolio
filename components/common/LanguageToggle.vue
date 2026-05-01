@@ -1,5 +1,5 @@
 <template>
-    <button class="language-toggle" aria-label="언어 전환" @click="toggleLocale">
+    <button class="language-toggle" :aria-label="locale === 'ko' ? '언어 전환' : 'Switch language'" @click="toggleLocale">
         {{ locale.toUpperCase() }}
     </button>
 </template>

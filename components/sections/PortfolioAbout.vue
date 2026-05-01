@@ -1,12 +1,12 @@
 <template>
     <section id="about" class="section">
-        <BaseSectionTitle eyebrow="About" :title="t('about.title')" :description="t('about.intro')" />
+        <BaseSectionTitle :eyebrow="t('nav.about')" :title="t('about.title')" :description="t('about.intro')" />
         <BaseCard>
             <p>{{ pick(aboutContent.intro) }}</p>
             <p v-for="text in pick(aboutContent.paragraphs)" :key="text">{{ text }}</p>
             <ul class="about__keywords">
-                <li v-for="keyword in aboutContent.keywords" :key="keyword">
-                    <BaseBadge>{{ keyword }}</BaseBadge>
+                <li v-for="keyword in aboutContent.keywords" :key="pick(keyword)">
+                    <BaseBadge>{{ pick(keyword) }}</BaseBadge>
                 </li>
             </ul>
         </BaseCard>
@@ -15,7 +15,7 @@
                 :title="pick(principle.title)" :description="pick(principle.description)" />
         </div>
         <BaseCard class="about__workflow">
-            <h3 class="about__workflow-title">일하는 방식</h3>
+            <h3 class="about__workflow-title">{{ locale === 'ko' ? '일하는 방식' : 'How I Work' }}</h3>
             <ul>
                 <li v-for="item in aboutContent.workflow" :key="pick(item)">{{ pick(item) }}</li>
             </ul>
@@ -26,5 +26,5 @@
 
 <script setup lang="ts">
 import { aboutContent } from "~/core/data/about";
-const { t, pick } = useLocale();
+const { t, pick, locale } = useLocale();
 </script>
