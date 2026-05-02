@@ -13,7 +13,7 @@
         "subtitle": "I have worked on corporate websites, smart-factory and logistics systems, and in-house solutions across operation, new build, and renewal.",
         "branding": "A UI-focused practitioner expanding from publishing to frontend",
         "ctaWorks": "View Works",
-        "ctaJourney": "View Journey",
+        "ctaToolbox": "View Toolbox",
         "ctaContact": "Contact"
     },
     "about": {
@@ -55,8 +55,8 @@
     },
     "meta": {
         "title": "2026 Portfolio | Eunyounghwan",
-        "description": "Portfolio of a web publisher building delightful interactions with solid structure.",
+        "description": "A 2026-ready portfolio for structural publishing and frontend UI development.",
         "ogTitle": "Eunyounghwan Portfolio 2026",
-        "ogDescription": "A UI-focused practitioner expanding from publishing to frontend."
+        "ogDescription": "A portfolio showing efficient layout systems, publishing quality, and frontend scalability."
     }
 }

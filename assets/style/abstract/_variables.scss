@@ -1,0 +1,46 @@
+$bp-mobile: 360px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1440px;
+
+:root {
+    --color-primary: #2456ff;
+    --color-primary-dark: #183fd1;
+    --color-bg: #f6f8fb;
+    --color-surface: #ffffff;
+    --color-surface-strong: #eef3f8;
+    --color-text: #0f172a;
+    --color-text-muted: #4c5f87;
+    --color-border: #d8e0ea;
+    --color-overlay: color-mix(in srgb, #020617 64%, transparent);
+    --color-glass-2: color-mix(in srgb, #ffffff 76%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, #ffffff 88%, transparent);
+    --shadow-soft: 0 14px 34px color-mix(in srgb, #172033 10%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, #e2eaf5 78%, transparent) inset;
+    --gradient-accent: linear-gradient(125deg, #2456ff 0%, #16a3d8 100%);
+    --gradient-surface: linear-gradient(165deg, #ffffff 0%, #f7f9fc 100%);
+    --gradient-noise: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+    --radius-card: 0.5rem;
+    --space-section-y: clamp(3.4rem, 6vw, 5.2rem);
+    --space-section-gap: clamp(1rem, 2vw, 1.5rem);
+    --space-block-gap: clamp(0.8rem, 1.5vw, 1.1rem);
+}
+
+[data-theme="dark"] {
+    --color-primary: #8aa3ff;
+    --color-primary-dark: #627dff;
+    --color-bg: #070b12;
+    --color-surface: #101722;
+    --color-surface-strong: #172131;
+    --color-text: #f8fafc;
+    --color-text-muted: #a9b7d7;
+    --color-border: #263244;
+    --color-overlay: color-mix(in srgb, #020617 74%, transparent);
+    --color-glass-2: color-mix(in srgb, #122345 72%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
+    --shadow-soft: 0 20px 42px color-mix(in srgb, #020617 58%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, #40506c 58%, transparent) inset;
+    --gradient-accent: linear-gradient(125deg, #8aa3ff 0%, #2dc5e8 100%);
+    --gradient-surface: linear-gradient(165deg, #101722 0%, #151f2f 100%);
+    --gradient-noise: linear-gradient(180deg, #070b12 0%, #101722 100%);
+}

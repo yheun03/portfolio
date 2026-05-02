@@ -14,7 +14,7 @@
                 </picture>
             </div>
             <div>
-                <a href="~/assets/files/resume.html" class="btn" aria-label="사람인 양식 이력서 보기">이력서 보기</a>
+                <a href="~/assets/file/resume.html" class="btn" aria-label="사람인 양식 이력서 보기">이력서 보기</a>
                 <p>
                     안녕하세요! 4년 차 웹 퍼블리셔 은영환입니다.😁
                     <br /><br />모듈 단위의 유지보수에 최적화된 퍼블리싱에 관심이 많습니다.
@@ -32,6 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import photoDesktop from "~/assets/images/photo-1920.webp";
-import photoMobile from "~/assets/images/photo-1440.webp";
+import photoDesktop from "~/assets/image/photo-1920.webp";
+import photoMobile from "~/assets/image/photo-1440.webp";
 </script>
