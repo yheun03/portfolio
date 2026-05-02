@@ -4,43 +4,73 @@ $bp-laptop: 1024px;
 $bp-desktop: 1440px;
 
 :root {
+    --font-display: "Outfit", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
     --color-primary: #2456ff;
     --color-primary-dark: #183fd1;
-    --color-bg: #f6f8fb;
+    --color-accent-hot: #ff5c8d;
+    --color-accent-mint: #0ecf9b;
+    --color-bg: #f4f6fb;
     --color-surface: #ffffff;
-    --color-surface-strong: #eef3f8;
-    --color-text: #0f172a;
-    --color-text-muted: #4c5f87;
-    --color-border: #d8e0ea;
+    --color-surface-strong: #e9eef6;
+    --color-text: #0a0f1a;
+    --color-text-muted: #4a5d82;
+    --color-border: #c9d5e6;
     --color-overlay: color-mix(in srgb, #020617 64%, transparent);
     --color-glass-2: color-mix(in srgb, #ffffff 76%, transparent);
     --color-glass-2-strong: color-mix(in srgb, #ffffff 88%, transparent);
-    --shadow-soft: 0 14px 34px color-mix(in srgb, #172033 10%, transparent);
+    --shadow-soft: 0 18px 44px color-mix(in srgb, #152038 14%, transparent);
+    --shadow-lift: 0 28px 70px color-mix(in srgb, #1e3a8a 18%, transparent);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, #e2eaf5 78%, transparent) inset;
-    --gradient-accent: linear-gradient(125deg, #2456ff 0%, #16a3d8 100%);
-    --gradient-surface: linear-gradient(165deg, #ffffff 0%, #f7f9fc 100%);
-    --gradient-noise: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
-    --radius-card: 0.5rem;
-    --space-section-y: clamp(3.4rem, 6vw, 5.2rem);
-    --space-section-gap: clamp(1rem, 2vw, 1.5rem);
-    --space-block-gap: clamp(0.8rem, 1.5vw, 1.1rem);
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 28%, transparent);
+    --gradient-accent: linear-gradient(118deg, #2456ff 0%, #9d4dff 52%, #12b8d6 100%);
+    --gradient-accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--color-primary) 22%, transparent),
+        color-mix(in srgb, var(--color-accent-hot) 14%, transparent)
+    );
+    --gradient-surface: linear-gradient(168deg, #ffffff 0%, #eef3fb 100%);
+    --gradient-noise: linear-gradient(185deg, #f8fafc 0%, #e8eef8 55%, #f4f6fb 100%);
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--color-primary) 26%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--color-accent-hot) 16%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--color-accent-mint) 14%, transparent), transparent 45%);
+    --radius-card: 0.65rem;
+    --radius-lg: 1.05rem;
+    --radius-xl: 1.45rem;
+    --space-section-y: clamp(3.8rem, 8vw, 6.5rem);
+    --space-section-gap: clamp(1.15rem, 2.4vw, 1.85rem);
+    --space-block-gap: clamp(0.85rem, 1.6vw, 1.2rem);
 }
 
 [data-theme="dark"] {
-    --color-primary: #8aa3ff;
-    --color-primary-dark: #627dff;
-    --color-bg: #070b12;
-    --color-surface: #101722;
-    --color-surface-strong: #172131;
-    --color-text: #f8fafc;
-    --color-text-muted: #a9b7d7;
-    --color-border: #263244;
+    --color-primary: #93a8ff;
+    --color-primary-dark: #6b7fff;
+    --color-accent-hot: #ff7eb3;
+    --color-accent-mint: #3ee8c5;
+    --color-bg: #050810;
+    --color-surface: #0d1424;
+    --color-surface-strong: #141d32;
+    --color-text: #f4f7ff;
+    --color-text-muted: #9fb1d6;
+    --color-border: #2a3f63;
     --color-overlay: color-mix(in srgb, #020617 74%, transparent);
     --color-glass-2: color-mix(in srgb, #122345 72%, transparent);
     --color-glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
-    --shadow-soft: 0 20px 42px color-mix(in srgb, #020617 58%, transparent);
+    --shadow-soft: 0 26px 56px color-mix(in srgb, #020617 62%, transparent);
+    --shadow-lift: 0 36px 80px color-mix(in srgb, #1e40af 22%, transparent);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, #40506c 58%, transparent) inset;
-    --gradient-accent: linear-gradient(125deg, #8aa3ff 0%, #2dc5e8 100%);
-    --gradient-surface: linear-gradient(165deg, #101722 0%, #151f2f 100%);
-    --gradient-noise: linear-gradient(180deg, #070b12 0%, #101722 100%);
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 35%, transparent);
+    --gradient-accent: linear-gradient(118deg, #93a8ff 0%, #c084fc 52%, #38bdf8 100%);
+    --gradient-accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--color-primary) 26%, transparent),
+        color-mix(in srgb, var(--color-accent-hot) 18%, transparent)
+    );
+    --gradient-surface: linear-gradient(168deg, #0d1424 0%, #121d34 100%);
+    --gradient-noise: linear-gradient(185deg, #050810 0%, #0d1424 55%, #0a1222 100%);
+    --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--color-primary) 34%, transparent), transparent 46%),
+        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--color-accent-hot) 22%, transparent), transparent 36%),
+        radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--color-accent-mint) 18%, transparent), transparent 48%);
 }

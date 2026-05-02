@@ -8,7 +8,19 @@ export default defineNuxtConfig({
 
     app: {
         head: {
-            link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+            link: [
+                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+                {
+                    rel: 'stylesheet',
+                    href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Outfit:wght@500;600;700;800;900&display=swap',
+                },
+                {
+                    rel: 'stylesheet',
+                    href: 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css',
+                },
+            ],
         },
     },
 
@@ -43,7 +55,7 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    loadPaths: ['asset/style'],
+                    loadPaths: ['assets/style'],
                     additionalData: '@use "abstract/index" as *;',
                 },
             },
