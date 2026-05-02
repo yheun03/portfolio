@@ -44,6 +44,7 @@ const baseUrl = computed(() => requestURL.origin || 'https://eun-portfolio.dev')
 const canonicalUrl = computed(() => `${baseUrl.value}/`);
 
 useIntersectionAnimation();
+usePortfolioGsap();
 
 const navLinks = computed(() =>
     SCROLL_SECTION_IDS.map((id) => ({
