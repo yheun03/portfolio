@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import LayoutAppHeader from "~/components/Layout/AppHeader.vue";
 import LayoutAppFooter from "~/components/Layout/AppFooter.vue";
-import SectionDock from "~/components/common/SectionDock.vue";
+import SectionDock from "~/components/Common/SectionDock.vue";
 const { locale } = useLocale();
 
 defineProps<{

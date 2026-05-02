@@ -11,8 +11,9 @@
         <div class="app-header__actions">
             <LanguageToggle />
             <ThemeToggle />
-            <button type="button" class="app-header__menu-btn" :aria-label="locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
-                aria-controls="mobile-menu-panel" @click="menuOpen = !menuOpen">
+            <button type="button" class="app-header__menu-btn"
+                :aria-label="locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
+                aria-controls="mobile-menu-panel" @click="onMobileMenuToggle">
                 Menu
             </button>
         </div>
@@ -24,6 +25,10 @@
 const menuOpen = ref(false);
 const { locale } = useLocale();
 defineProps<{ links: { href: string; label: string }[]; activeId: string }>();
+
+const onMobileMenuToggle = () => {
+    menuOpen.value = !menuOpen.value;
+};
 
 const closeOnEscape = (event: KeyboardEvent) => {
     if (event.key === "Escape") menuOpen.value = false;

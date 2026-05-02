@@ -1,11 +1,6 @@
 <template>
     <AppLayout :links="navLinks" :active-id="activeId" :footer-text="t('footer.copyright')">
-        <div
-            v-for="layer in pageLayers"
-            :key="layer.name"
-            class="page-layer"
-            :class="`page-layer--${layer.name}`"
-        >
+        <div v-for="layer in pageLayers" :key="layer.name" class="page-layer" :class="`page-layer--${layer.name}`">
             <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
         </div>
     </AppLayout>
@@ -14,13 +9,13 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import AppLayout from "~/components/Layout/AppLayout.vue";
-import PortfolioHero from "~/components/sections/PortfolioHero.vue";
-import PortfolioWorks from "~/components/sections/PortfolioWorks.vue";
-const PortfolioAbout = defineAsyncComponent(() => import("~/components/sections/PortfolioAbout.vue"));
-const PortfolioJourney = defineAsyncComponent(() => import("~/components/sections/PortfolioJourney.vue"));
-const PortfolioToolbox = defineAsyncComponent(() => import("~/components/sections/PortfolioToolbox.vue"));
-const PortfolioHighlights = defineAsyncComponent(() => import("~/components/sections/PortfolioHighlights.vue"));
-const PortfolioContact = defineAsyncComponent(() => import("~/components/sections/PortfolioContact.vue"));
+import PortfolioHero from "~/components/Section/PortfolioHero.vue";
+import PortfolioWorks from "~/components/Section/PortfolioWorks.vue";
+const PortfolioAbout = defineAsyncComponent(() => import("~/components/Section/PortfolioAbout.vue"));
+const PortfolioJourney = defineAsyncComponent(() => import("~/components/Section/PortfolioJourney.vue"));
+const PortfolioToolbox = defineAsyncComponent(() => import("~/components/Section/PortfolioToolbox.vue"));
+const PortfolioHighlights = defineAsyncComponent(() => import("~/components/Section/PortfolioHighlights.vue"));
+const PortfolioContact = defineAsyncComponent(() => import("~/components/Section/PortfolioContact.vue"));
 const pageLayers = [
     { name: "hero", sections: [{ key: "hello", component: PortfolioHero }] },
     { name: "works", sections: [{ key: "works", component: PortfolioWorks }] },
