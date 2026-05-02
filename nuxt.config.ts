@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     },
 
     pinia: {
-        storesDirs: ['~/stores'],
+        storesDirs: ['~/core/stores'],
     },
 
     components: [
