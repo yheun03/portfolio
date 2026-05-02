@@ -6,53 +6,53 @@
             ${filteredWorks.length} projects through interactive cards.` }}
         </p>
 
+        <!-- 탭: 역할만 — 실제 패널은 아래 renderer 한 곳 -->
         <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
             <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`" role="tab"
-                :aria-controls="`works-panel-${category.key}`" :aria-selected="worksUi.selectedCategory === category.key"
-                :tabindex="worksUi.selectedCategory === category.key ? 0 : -1" class="ui-tab-button"
-                :class="{ 'is-active': worksUi.selectedCategory === category.key }"
-                @click="worksUi.setCategory(category.key)">
+                :aria-controls="`works-panel-${category.key}`" :aria-selected="selectedCategory === category.key"
+                :tabindex="selectedCategory === category.key ? 0 : -1" class="ui-tab-button"
+                :class="{ 'is-active': selectedCategory === category.key }" @click="selectCategory(category.key)">
                 {{ pick(category.label) }}
             </button>
         </div>
 
-        <div :id="`works-panel-${worksUi.selectedCategory}`" class="works__grid" role="tabpanel"
-            :aria-labelledby="`works-tab-${worksUi.selectedCategory}`">
-            <WorkCard v-for="work in filteredWorks" :key="work.id" :work="work"
+        <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->
+        <div :id="`works-panel-${selectedCategory}`" :key="panelRenderKey" class="works__grid" role="tabpanel"
+            :aria-labelledby="`works-tab-${selectedCategory}`">
+            <WorkCard v-for="work in filteredWorks" :key="`${panelRenderKey}-${work.id}`" :work="work"
                 :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
                 :detail-label="t('works.detail')" :detail-aria-label="`${pick(work.title)} ${t('works.detail')}`"
-                @select="worksUi.openWork(work)" />
+                @select="openWork(work)" />
         </div>
 
-        <div v-if="worksUi.activeWork" class="works__modal" role="dialog" aria-modal="true"
-            aria-labelledby="works-modal-title" aria-describedby="works-modal-description"
-            @click.self="worksUi.closeModal">
+        <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true" aria-labelledby="works-modal-title"
+            aria-describedby="works-modal-description" @click.self="closeModal">
             <div ref="modalCardRef" class="works__modal-content" @click.stop>
                 <BaseCard :animate="false" class="works__modal-card">
                     <div class="works__modal-head">
-                        <h3 id="works-modal-title">{{ pick(worksUi.activeWork.title) }}</h3>
+                        <h3 id="works-modal-title">{{ pick(activeWork.title) }}</h3>
                         <button ref="closeButtonRef" type="button"
                             class="base-button base-button--ghost works__modal-close"
-                            :aria-label="labels.closeModalAria" @click="worksUi.closeModal">
+                            :aria-label="labels.closeModalAria" @click="closeModal">
                             {{ labels.close }}
                         </button>
                     </div>
-                    <p id="works-modal-description" class="works__meta">{{ worksUi.activeWork.period }} · {{
-                        pick(worksUi.activeWork.type) }}</p>
-                    <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(worksUi.activeWork.role) }}</p>
-                    <p class="works__intro">{{ pick(worksUi.activeWork.introduction) }}</p>
+                    <p id="works-modal-description" class="works__meta">{{ activeWork.period }} · {{
+                        pick(activeWork.type) }}</p>
+                    <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(activeWork.role) }}</p>
+                    <p class="works__intro">{{ pick(activeWork.introduction) }}</p>
                     <p class="works__section-title"><strong>{{ labels.contributions }}</strong></p>
                     <ul>
-                        <li v-for="item in worksUi.activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
+                        <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>
-                    <p v-if="worksUi.activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
+                    <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
                     }}</strong></p>
-                    <ul v-if="worksUi.activeWork.achievements.length">
-                        <li v-for="item in worksUi.activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
+                    <ul v-if="activeWork.achievements.length">
+                        <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>
                     <p class="works__section-title"><strong>{{ labels.points }}</strong></p>
                     <ul>
-                        <li v-for="item in worksUi.activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
+                        <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>
                 </BaseCard>
             </div>
@@ -61,14 +61,20 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-import { workCategories } from '~/core/data/works';
-import { useWorksUiStore } from '~/core/stores/worksUiStore';
-
-const worksUi = useWorksUiStore();
-const { filteredWorks } = storeToRefs(worksUi);
+import { useWorksTabRenderer } from '~/core/composables/useWorksTabRenderer';
 
 const { t, pick, locale } = useLocale();
+
+const {
+    workCategories,
+    selectedCategory,
+    filteredWorks,
+    activeWork,
+    panelRenderKey,
+    selectCategory,
+    openWork,
+    closeModal,
+} = useWorksTabRenderer();
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
 const modalCardRef = ref<HTMLElement | null>(null);
 
@@ -81,11 +87,11 @@ const labels = computed(() => ({
     points: locale.value === 'ko' ? '포인트' : 'Key Points',
 }));
 
-const modalOpen = computed(() => !!worksUi.activeWork);
+const modalOpen = computed(() => !!activeWork.value);
 
 useModal({
     isOpen: modalOpen,
-    onClose: () => worksUi.closeModal(),
+    onClose: () => closeModal(),
     containerRef: modalCardRef,
     initialFocusRef: closeButtonRef,
 });
