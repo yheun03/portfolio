@@ -13,10 +13,10 @@ export default defineNuxtConfig({
     },
 
     modules: ['@pinia/nuxt'],
-    css: ['~/assets/scss/main.scss'],
+    css: ['~/assets/style/main.scss'],
 
     imports: {
-        dirs: ['~/composables', '~/core/composables'],
+        dirs: ['~/core/composables'],
     },
 
     pinia: {
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    loadPaths: ['assets/scss'],
+                    loadPaths: ['asset/style'],
                     additionalData: '@use "abstract/index" as *;',
                 },
             },

@@ -4,7 +4,7 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.7rem 1.05rem;
-    border-radius: 0.78rem;
+    border-radius: var(--radius-card);
     border: 1px solid var(--color-border);
     cursor: pointer;
     transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease, border-color 0.24s ease, color 0.24s ease;
@@ -53,7 +53,7 @@
 
 .ui-tab-button {
     border: 1px solid var(--color-border);
-    border-radius: 999px;
+    border-radius: var(--radius-card);
     background: var(--color-surface-strong);
     color: var(--color-text);
     font-weight: 600;

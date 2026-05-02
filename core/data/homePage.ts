@@ -24,7 +24,8 @@ export const HOME_PAGE_LAYERS: readonly {
     readonly sectionKeys: readonly HomeSectionKey[];
 }[] = [
     { name: 'hero', sectionKeys: ['hello'] },
+    { name: 'profile', sectionKeys: ['about'] },
     { name: 'works', sectionKeys: ['works'] },
-    { name: 'capability', sectionKeys: ['about', 'journey', 'toolbox', 'highlights'] },
+    { name: 'capability', sectionKeys: ['journey', 'toolbox', 'highlights'] },
     { name: 'contact', sectionKeys: ['contact'] },
 ] as const;

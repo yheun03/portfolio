@@ -1,19 +1,21 @@
 <template>
-    <section id="journey" class="section">
+    <section id="journey" class="section section--journey">
         <BaseSectionTitle :eyebrow="t('nav.journey')" :title="t('journey.title')" :description="t('journey.summary')" />
-        <BaseCard class="journey__summary">
-            <p class="technical-label">Experience Timeline</p>
-            <h3 class="journey__summary-company">{{ pick(journeySummary.company) }}</h3>
-            <p class="journey__summary-meta">{{ pick(journeySummary.team) }} · {{ pick(journeySummary.period) }}</p>
-            <p class="journey__summary-intro">{{ pick(journeySummary.intro) }}</p>
-            <ul class="journey__summary-roles">
-                <li v-for="role in journeySummary.roles" :key="pick(role)">{{ pick(role) }}</li>
+        <div class="journey__flow">
+            <BaseCard class="journey__summary">
+                <p class="technical-label">Experience Timeline</p>
+                <h3 class="journey__summary-company">{{ pick(journeySummary.company) }}</h3>
+                <p class="journey__summary-meta">{{ pick(journeySummary.team) }} · {{ pick(journeySummary.period) }}</p>
+                <p class="journey__summary-intro">{{ pick(journeySummary.intro) }}</p>
+                <ul class="journey__summary-roles">
+                    <li v-for="role in journeySummary.roles" :key="pick(role)">{{ pick(role) }}</li>
+                </ul>
+            </BaseCard>
+            <ul class="journey__timeline">
+                <TimelineItem v-for="item in journey" :key="item.period" :period="item.period" :title="pick(item.title)"
+                    :description="pick(item.description)" />
             </ul>
-        </BaseCard>
-        <ul class="journey__timeline">
-            <TimelineItem v-for="item in journey" :key="item.period" :period="item.period" :title="pick(item.title)"
-                :description="pick(item.description)" />
-        </ul>
+        </div>
     </section>
 </template>
 

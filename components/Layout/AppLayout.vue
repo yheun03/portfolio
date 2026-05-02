@@ -2,10 +2,7 @@
     <ScrollProgress />
     <SectionDock :links="links" :active-id="activeId" />
     <a class="skip-link" href="#main-content">{{ locale === "ko" ? "본문으로 건너뛰기" : "Skip to main content" }}</a>
-    <div class="app-background" aria-hidden="true">
-        <div class="app-background__orb app-background__orb--one" />
-        <div class="app-background__orb app-background__orb--two" />
-    </div>
+    <div class="app-background" aria-hidden="true" />
     <LayoutAppHeader :links="links" :active-id="activeId" />
     <main id="main-content" class="portfolio-page">
         <slot />
