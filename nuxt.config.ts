@@ -8,9 +8,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
-            link: [
-                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-            ],
+            link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
         },
     },
 
@@ -26,10 +24,10 @@ export default defineNuxtConfig({
     },
 
     components: [
-        { path: "~/components/common", pathPrefix: false },
-        { path: "~/components/cards", pathPrefix: false },
-        { path: "~/components/sections", pathPrefix: false },
-        { path: "~/components/Layout", pathPrefix: false },
+        { path: '~/components/Common', pathPrefix: false },
+        { path: '~/components/Card', pathPrefix: false },
+        { path: '~/components/Section', pathPrefix: false },
+        { path: '~/components/Layout', pathPrefix: false },
     ],
 
     vite: {

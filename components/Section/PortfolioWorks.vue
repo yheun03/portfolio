@@ -2,16 +2,15 @@
     <section id="works" class="section">
         <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
         <p class="works__lead" data-animate>
-            {{ locale === "ko" ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.` : `Explore ${filteredWorks.length} projects through interactive cards.` }}
+            {{ locale === "ko" ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.` : `Explore
+            ${filteredWorks.length} projects through interactive cards.` }}
         </p>
 
         <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
             <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`" role="tab"
                 :aria-controls="`works-panel-${category.key}`" :aria-selected="selected === category.key"
-                :tabindex="selected === category.key ? 0 : -1"
-                class="ui-tab-button"
-                :class="{ 'is-active': selected === category.key }"
-                @click="selected = category.key">
+                :tabindex="selected === category.key ? 0 : -1" class="ui-tab-button"
+                :class="{ 'is-active': selected === category.key }" @click="selected = category.key">
                 {{ pick(category.label) }}
             </button>
         </div>
@@ -27,31 +26,33 @@
         <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true" aria-labelledby="works-modal-title"
             aria-describedby="works-modal-description" @click.self="closeModal">
             <div ref="modalCardRef" class="works__modal-content" @click.stop>
-            <BaseCard :animate="false" class="works__modal-card">
-                <div class="works__modal-head">
-                    <h3 id="works-modal-title">{{ pick(activeWork.title) }}</h3>
-                    <button ref="closeButtonRef" type="button" class="base-button base-button--ghost works__modal-close"
-                        :aria-label="labels.closeModalAria"
-                        @click="closeModal">
-                        {{ labels.close }}
-                    </button>
-                </div>
-                <p id="works-modal-description" class="works__meta">{{ activeWork.period }} · {{ pick(activeWork.type) }}</p>
-                <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(activeWork.role) }}</p>
-                <p class="works__intro">{{ pick(activeWork.introduction) }}</p>
-                <p class="works__section-title"><strong>{{ labels.contributions }}</strong></p>
-                <ul>
-                    <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
-                </ul>
-                <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results }}</strong></p>
-                <ul v-if="activeWork.achievements.length">
-                    <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
-                </ul>
-                <p class="works__section-title"><strong>{{ labels.points }}</strong></p>
-                <ul>
-                    <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
-                </ul>
-            </BaseCard>
+                <BaseCard :animate="false" class="works__modal-card">
+                    <div class="works__modal-head">
+                        <h3 id="works-modal-title">{{ pick(activeWork.title) }}</h3>
+                        <button ref="closeButtonRef" type="button"
+                            class="base-button base-button--ghost works__modal-close"
+                            :aria-label="labels.closeModalAria" @click="closeModal">
+                            {{ labels.close }}
+                        </button>
+                    </div>
+                    <p id="works-modal-description" class="works__meta">{{ activeWork.period }} · {{
+                        pick(activeWork.type) }}</p>
+                    <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(activeWork.role) }}</p>
+                    <p class="works__intro">{{ pick(activeWork.introduction) }}</p>
+                    <p class="works__section-title"><strong>{{ labels.contributions }}</strong></p>
+                    <ul>
+                        <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
+                    </ul>
+                    <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
+                    }}</strong></p>
+                    <ul v-if="activeWork.achievements.length">
+                        <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
+                    </ul>
+                    <p class="works__section-title"><strong>{{ labels.points }}</strong></p>
+                    <ul>
+                        <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
+                    </ul>
+                </BaseCard>
             </div>
         </div>
     </section>

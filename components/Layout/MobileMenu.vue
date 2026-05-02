@@ -1,6 +1,7 @@
 <template>
     <transition name="fade">
-        <nav v-if="open" :id="id" class="mobile-menu" :aria-label="locale === 'ko' ? '모바일 섹션 메뉴' : 'Mobile section menu'">
+        <nav v-if="open" :id="id" class="mobile-menu"
+            :aria-label="locale === 'ko' ? '모바일 섹션 메뉴' : 'Mobile section menu'">
             <a v-for="link in links" :key="link.href" :href="link.href" @click="$emit('close')">
                 {{ link.label }}
             </a>

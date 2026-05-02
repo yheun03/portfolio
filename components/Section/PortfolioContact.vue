@@ -1,12 +1,14 @@
 <template>
     <section id="contact" class="section">
-        <BaseSectionTitle :eyebrow="t('nav.contact')" :title="t('contact.title')" :description="t('contact.description')" />
+        <BaseSectionTitle :eyebrow="t('nav.contact')" :title="t('contact.title')"
+            :description="t('contact.description')" />
         <BaseCard class="contact__summary">
             <p class="technical-label">Collaboration</p>
             <p class="contact__summary-text">
                 {{ locale === "ko"
                     ? "프로젝트 맥락을 빠르게 파악하고, 구조 중심으로 일정과 품질을 함께 맞추는 협업을 지향합니다."
-                    : "I collaborate with a structure-first mindset, balancing delivery speed and quality with clear context sharing." }}
+                    : "I collaborate with a structure-first mindset, balancing delivery speed and quality with clear" +
+                    " context sharing." }}
             </p>
         </BaseCard>
         <div class="contact__cta">
