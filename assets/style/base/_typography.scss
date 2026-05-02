@@ -6,6 +6,7 @@ body {
     background: var(--color-bg);
     transition: background-color 0.3s ease, color 0.3s ease;
     text-wrap: pretty;
+    word-break: keep-all;
 }
 
 h1,
