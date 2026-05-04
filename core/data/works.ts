@@ -75,7 +75,7 @@ export const works: WorkItem[] = [
     {
         id: 'hanon',
         category: 'operation',
-        title: { ko: '한온시스템 홈페이지 운영', en: 'Hanon System Site Operation' },
+        title: { ko: '한온시스템 홈페이지 운영', en: 'Hanon Systems Website Operation' },
         period: '2025.08~',
         type: { ko: '운영', en: 'Operation' },
         role: { ko: '퍼블리싱 운영', en: 'Publishing Operation' },
@@ -131,7 +131,7 @@ export const works: WorkItem[] = [
     {
         id: 'hanjinkal',
         category: 'project',
-        title: { ko: '한진칼 및 계열사 리뉴얼', en: 'HanjinKAL Group Renewal' },
+        title: { ko: '한진칼 및 계열사 리뉴얼', en: 'HANJIN KAL and Affiliates Renewal' },
         period: '2025.02~07',
         type: { ko: '기업 사이트 / CMS', en: 'Corporate / CMS' },
         role: { ko: '컴포넌트 커스터마이징', en: 'Component Customizing' },
@@ -158,7 +158,7 @@ export const works: WorkItem[] = [
     {
         id: 'oms',
         category: 'project',
-        title: { ko: '깨끗한나라 OMS 리뉴얼', en: 'Kleannara OMS Renewal' },
+        title: { ko: '깨끗한나라 OMS 리뉴얼', en: 'KleanNara OMS Renewal' },
         period: '2024.07~2025.02',
         type: { ko: '시스템 리뉴얼', en: 'System Renewal' },
         role: { ko: '전체 퍼블리싱', en: 'Full Publishing' },
