@@ -17,32 +17,32 @@
         "ctaContact": "Contact"
     },
     "about": {
-        "title": "About Me",
+        "title": "How I design with taste and structure",
         "intro": "I treat publishing as more than visuals: it connects UX, architecture, and collaboration.",
         "direction": "I am deepening Vue 3 component architecture and frontend structure leadership."
     },
     "works": {
-        "title": "Works",
+        "title": "Projects that solved real problems",
         "all": "All",
         "detail": "Details"
     },
     "journey": {
-        "title": "Journey",
+        "title": "A growth path built through delivery",
         "summary": "Since 2020, I have owned full publishing cycles across build and operation projects."
     },
     "toolbox": {
-        "title": "Toolbox",
+        "title": "Tools and practices proven in production",
         "copy": "Not just implementation, but maintainable UI and collaboration-ready structure"
     },
     "highlights": {
-        "title": "Highlights",
+        "title": "Achievements and expertise at a glance",
         "awards": "Awards",
         "certifications": "Certifications",
         "roles": "Professional Roles",
         "activities": "Leadership / Activities"
     },
     "contact": {
-        "title": "Say Hi",
+        "title": "Let's talk about your next project",
         "description": "If you need publishing, UI development, or structural improvement, feel free to reach out.",
         "email": "Send Email",
         "github": "View GitHub",
