@@ -1,7 +1,7 @@
 export const journeySummary = {
     company: {
-        ko: '조앤소프트㈜ JO&soft',
-        en: 'JO&soft Co., Ltd.',
+        ko: '조앤소프트(주)',
+        en: 'JO&SOFT Co., Ltd.',
     },
     team: {
         ko: 'DX 솔루션 2팀 · 주임',
