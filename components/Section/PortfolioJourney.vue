@@ -17,11 +17,14 @@
                 <TimelineItem v-for="item in journey" :key="item.period" :period="item.period" :title="pick(item.title)"
                     :description="pick(item.description)" />
             </ul>
+            <a class="journey__next-link base-button base-button--ghost" href="#toolbox">
+                {{ locale === "ko" ? "이력은 충분히 봤어요. 기술 스택으로 이동" : "Enough timeline. Jump to toolbox" }}
+            </a>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
 import { journey, journeySummary } from "~/core/data/journey";
-const { t, pick } = useLocale();
+const { t, pick, locale } = useLocale();
 </script>

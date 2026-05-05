@@ -2,10 +2,18 @@
     position: relative;
     z-index: 1;
     min-height: 100vh;
+    padding-top: var(--layout-header-height);
     overflow-x: clip;
     counter-reset: section-count;
     background: var(--gradient-noise);
     scroll-behavior: smooth;
+}
+
+.section,
+.section *,
+.page-layer,
+.page-layer * {
+    min-width: 0;
 }
 
 .app-background {
@@ -170,8 +178,8 @@
     &__item {
         position: relative;
         display: grid;
-        width: 0.85rem;
-        height: 0.85rem;
+        width: 2.75rem;
+        height: 2.75rem;
         border-radius: 999px;
         place-items: center;
 
@@ -187,8 +195,8 @@
     }
 
     &__dot {
-        width: 0.45rem;
-        height: 0.45rem;
+        width: 0.55rem;
+        height: 0.55rem;
         border-radius: 999px;
         background: color-mix(in srgb, var(--color-text-muted) 80%, transparent);
         transition: transform 0.2s ease, background-color 0.2s ease;

@@ -19,6 +19,7 @@
         display: flex;
         gap: clamp(1rem, 4vw, 3rem);
         align-items: flex-start;
+        min-width: 0;
     }
 
     &__summary {
@@ -60,6 +61,11 @@
         .timeline-item:nth-child(2n) {
             margin-left: clamp(0rem, 8vw, 6rem);
         }
+    }
+
+    &__next-link {
+        display: none;
+        width: fit-content;
     }
 }
 

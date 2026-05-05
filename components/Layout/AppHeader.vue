@@ -13,10 +13,11 @@
         <div class="app-header__actions">
             <LanguageToggle />
             <ThemeToggle />
-            <button type="button" class="app-header__menu-btn"
-                :aria-label="locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
+            <button type="button" class="app-header__menu-btn" :aria-label="menuOpen
+                ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
+                : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
                 aria-controls="mobile-menu-panel" @click="onMobileMenuToggle">
-                Menu
+                {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
             </button>
         </div>
         <MobileMenu id="mobile-menu-panel" :open="menuOpen" :links="links" @close="menuOpen = false" />
@@ -40,7 +41,7 @@ watch(
     () => menuOpen.value,
     (open) => {
         if (!import.meta.client) return;
-        document.body.style.overflow = open ? "hidden" : "";
+        document.documentElement.classList.toggle("is-menu-open", open);
     }
 );
 
@@ -49,7 +50,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-    document.body.style.overflow = "";
+    document.documentElement.classList.remove("is-menu-open");
     window.removeEventListener("keydown", closeOnEscape);
 });
 </script>

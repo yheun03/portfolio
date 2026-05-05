@@ -18,10 +18,24 @@
         <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->
         <div :id="`works-panel-${selectedCategory}`" :key="panelRenderKey" class="works__grid" role="tabpanel"
             :aria-labelledby="`works-tab-${selectedCategory}`">
-            <WorkCard v-for="work in filteredWorks" :key="`${panelRenderKey}-${work.id}`" :work="work"
+            <WorkCard v-for="work in visibleWorks" :key="`${panelRenderKey}-${work.id}`" :work="work"
                 :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
                 :detail-label="t('works.detail')" :detail-aria-label="`${pick(work.title)} ${t('works.detail')}`"
                 @select="openWork(work)" />
+        </div>
+        <div v-if="hasMoreWorks || canCollapseWorks" class="works__list-control" aria-live="polite">
+            <p>
+                {{ locale === 'ko'
+                    ? `${visibleWorks.length} / ${filteredWorks.length}개 프로젝트 표시 중`
+                    : `Showing ${visibleWorks.length} of ${filteredWorks.length} projects` }}
+            </p>
+            <button v-if="hasMoreWorks" type="button" class="base-button base-button--ghost" @click="showMoreWorks">
+                {{ locale === 'ko' ? '프로젝트 더 보기' : 'Show more projects' }}
+            </button>
+            <button v-else-if="canCollapseWorks" type="button" class="base-button base-button--ghost"
+                @click="collapseWorks">
+                {{ locale === 'ko' ? '프로젝트 접기' : 'Collapse projects' }}
+            </button>
         </div>
 
         <Teleport to="body">
@@ -46,7 +60,7 @@
                             <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
                         <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
-                                }}</strong></p>
+                        }}</strong></p>
                         <ul v-if="activeWork.achievements.length">
                             <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
@@ -78,6 +92,13 @@ const {
 } = useWorksTabRenderer();
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
 const modalCardRef = ref<HTMLElement | null>(null);
+const visibleCount = ref(6);
+const initialVisibleCount = 6;
+const visibleStep = 6;
+
+const visibleWorks = computed(() => filteredWorks.value.slice(0, visibleCount.value));
+const hasMoreWorks = computed(() => visibleCount.value < filteredWorks.value.length);
+const canCollapseWorks = computed(() => filteredWorks.value.length > initialVisibleCount);
 
 const labels = computed(() => ({
     close: locale.value === 'ko' ? '닫기' : 'Close',
@@ -89,6 +110,19 @@ const labels = computed(() => ({
 }));
 
 const modalOpen = computed(() => !!activeWork.value);
+
+const showMoreWorks = () => {
+    visibleCount.value = Math.min(visibleCount.value + visibleStep, filteredWorks.value.length);
+};
+
+const collapseWorks = () => {
+    visibleCount.value = initialVisibleCount;
+    if (import.meta.client) document.querySelector("#works")?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+watch(selectedCategory, () => {
+    visibleCount.value = initialVisibleCount;
+});
 
 useModal({
     isOpen: modalOpen,

@@ -36,6 +36,6 @@ export const profile = {
         github: 'https://github.com/yheun03',
         portfolio: 'https://yheun03.github.io/portfolio/',
         archive: 'https://yheun03.github.io/jonsoft-project-orchem/',
-        resume: '/assets/file/resume.html',
+        resume: '/resume.html',
     },
 };
