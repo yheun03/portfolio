@@ -9,9 +9,7 @@ export const useIntersectionAnimation = () => {
 
     const observePendingTargets = () => {
         if (!observer) return;
-        mainEl
-            ?.querySelectorAll<HTMLElement>('[data-animate]:not(.is-visible)')
-            .forEach((el) => observer!.observe(el));
+        mainEl?.querySelectorAll<HTMLElement>('[data-animate]:not(.is-visible)').forEach((el) => observer!.observe(el));
     };
 
     let rafScheduled = false;
@@ -51,7 +49,7 @@ export const useIntersectionAnimation = () => {
                     }
                 });
             },
-            { threshold: 0.2 }
+            { threshold: 0.2 },
         );
 
         observePendingTargets();

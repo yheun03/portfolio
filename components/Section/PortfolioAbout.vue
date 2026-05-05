@@ -2,7 +2,8 @@
     <section id="about" class="section section--about">
         <div class="about__headline">
             <BaseSectionTitle :eyebrow="t('nav.about')" :title="t('about.title')" :description="t('about.intro')" />
-            <p class="about__side-note">{{ locale === 'ko' ? '좋은 화면은 감각과 구조가 같이 움직일 때 오래 갑니다.' : 'A good interface lasts when taste and structure move together.' }}</p>
+            <p class="about__side-note">{{ locale === 'ko' ? '좋은 화면은 감각과 구조가 같이 움직일 때 오래 갑니다.' : 'A good interface'
+                + 'lasts when taste and structure move together.' }}</p>
         </div>
         <BaseCard class="about__summary about__float about__float--summary">
             <p class="technical-label">Profile Summary</p>

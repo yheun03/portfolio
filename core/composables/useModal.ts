@@ -27,7 +27,7 @@ export function useModal(options: UseModalOptions) {
         if (event.key !== 'Tab' || !containerRef.value) return;
 
         const focusables = containerRef.value.querySelectorAll<HTMLElement>(
-            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
         );
         if (!focusables.length) return;
 

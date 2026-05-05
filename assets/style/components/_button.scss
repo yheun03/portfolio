@@ -42,12 +42,10 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-            110deg,
-            transparent 28%,
-            color-mix(in srgb, #fff 35%, transparent) 48%,
-            transparent 68%
-        );
+        background: linear-gradient(110deg,
+                transparent 28%,
+                color-mix(in srgb, #fff 35%, transparent) 48%,
+                transparent 68%);
         transform: translateX(-130%);
         transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
         pointer-events: none;

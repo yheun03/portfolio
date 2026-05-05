@@ -5,7 +5,7 @@ export const useCountUp = (end: number, duration = 1200) => {
     const start = () => {
         if (started.value) return;
         started.value = true;
-        if (import.meta.client && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        if (import.meta.client && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             value.value = end;
             return;
         }

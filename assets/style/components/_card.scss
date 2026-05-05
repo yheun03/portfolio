@@ -13,12 +13,10 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        145deg,
-        color-mix(in srgb, var(--color-primary) 8%, transparent) 0%,
-        transparent 42%,
-        color-mix(in srgb, var(--color-accent-mint) 5%, transparent) 100%
-    );
+    background: linear-gradient(145deg,
+            color-mix(in srgb, var(--color-primary) 8%, transparent) 0%,
+            transparent 42%,
+            color-mix(in srgb, var(--color-accent-mint) 5%, transparent) 100%);
     opacity: 0.55;
     pointer-events: none;
     z-index: -1;
