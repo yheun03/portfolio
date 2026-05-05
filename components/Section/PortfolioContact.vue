@@ -10,7 +10,7 @@
                 <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`">{{ letter }}</span>
             </a>
             <BaseCard class="contact__summary">
-                <p class="technical-label">Collaboration</p>
+                <BaseLabel tone="contact" label="Collaboration" />
                 <div class="contact__profile" aria-hidden="true">
                     <img src="/assets/image/photo-1440.webp" alt="" loading="lazy" />
                     <span>{{ locale === "ko" ? "열린 협업 가능" : "Open to collaborate" }}</span>

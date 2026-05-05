@@ -11,7 +11,7 @@
         "principles summary"
         "principles workflow";
     align-items: start;
-    gap: clamp(1rem, 3vw, 3rem);
+    gap: var(--space-fluid-lg);
 
     &::after {
         content: "structure / accessibility / maintainability";
@@ -22,9 +22,9 @@
         color: color-mix(in srgb, var(--color-text) 7%, transparent);
         font-family: var(--font-display);
         font-size: clamp(3rem, 9vw, 10rem);
-        font-weight: 900;
+        font-weight: var(--font-weight-black);
         line-height: 0.9;
-        letter-spacing: -0.05em;
+        letter-spacing: var(--tracking-tight);
         white-space: nowrap;
         pointer-events: none;
     }
@@ -37,9 +37,9 @@
 
     &__side-note {
         max-width: 34ch;
-        margin-top: 1.2rem;
+        margin-top: var(--space-7);
         color: var(--color-text-muted);
-        font-weight: 740;
+        font-weight: var(--font-weight-semibold);
     }
 
     &__float {
@@ -53,7 +53,7 @@
             grid-area: principles;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
+            gap: var(--space-6);
             align-self: end;
 
             .intro-card:nth-child(3) {
@@ -67,35 +67,35 @@
     }
 
     &__summary-intro {
-        font-weight: 680;
+        font-weight: var(--font-weight-semibold);
     }
 
     &__summary-paragraph+&__summary-paragraph {
-        margin-top: 0.65rem;
+        margin-top: var(--space-4);
     }
 
     &__keywords {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.44rem;
+        gap: var(--space-3);
         padding: 0;
-        margin: 1rem 0 0;
+        margin: var(--space-6) 0 0;
         list-style: none;
     }
 
     &__workflow-title {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
     }
 
     &__workflow-list {
         display: grid;
-        gap: 0.48rem;
+        gap: var(--space-3);
         margin: 0;
         padding-left: 1.1rem;
     }
 
     &__workflow-direction {
-        margin-top: 1rem;
+        margin-top: var(--space-6);
         color: var(--color-text-muted);
     }
 }

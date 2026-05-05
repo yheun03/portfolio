@@ -1,6 +1,6 @@
 <template>
     <BaseCard class="intro-card">
-        <p class="technical-label">Principle</p>
+        <BaseLabel tone="profile" label="Principle" />
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
     </BaseCard>

@@ -1,14 +1,22 @@
 .base-badge {
+    --badge-accent: var(--color-primary);
+    --badge-bg: var(--color-glass-2-strong);
+    --badge-color: var(--color-text);
+    --badge-padding-block: var(--space-2);
+    --badge-padding-inline: var(--space-4);
+    --badge-font-size: var(--font-size-xs);
+    --badge-font-weight: var(--font-weight-medium);
+
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    padding: 0.34rem 0.72rem;
+    gap: var(--space-1);
+    padding: var(--badge-padding-block) var(--badge-padding-inline);
     border-radius: 999px;
-    background: var(--color-glass-2-strong);
+    background: var(--badge-bg);
     border: 1px solid var(--color-border);
-    font-size: 0.78rem;
-    font-weight: 650;
-    color: var(--color-text);
+    font-size: var(--badge-font-size);
+    font-weight: var(--badge-font-weight);
+    color: var(--badge-color);
     box-shadow: var(--shadow-glow);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
 
@@ -17,12 +25,35 @@
         width: 0.38rem;
         height: 0.38rem;
         border-radius: 999px;
-        background: var(--color-primary);
-        box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-primary) 16%, transparent);
+        background: var(--badge-accent);
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--badge-accent) 16%, transparent);
     }
 
     &:hover {
         box-shadow: var(--shadow-soft);
         transform: translateY(-1px);
+    }
+
+    &--sm {
+        --badge-padding-block: 0.22rem;
+        --badge-padding-inline: 0.52rem;
+        --badge-font-size: 0.76rem;
+        --badge-font-weight: var(--font-weight-semibold);
+    }
+
+    &--toolbox {
+        --badge-accent: #315887;
+        --badge-color: var(--color-text-muted);
+        --badge-bg: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    }
+
+    &--work {
+        --badge-accent: var(--color-primary-dark);
+        --badge-color: var(--color-text-muted);
+        --badge-bg: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    }
+
+    &--plain::before {
+        display: none;
     }
 }

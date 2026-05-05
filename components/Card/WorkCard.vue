@@ -1,6 +1,6 @@
 <template>
     <BaseCard class="work-card" data-motion="lift">
-        <p class="technical-label">Case Study</p>
+        <BaseLabel tone="work" label="Case Study" />
         <h3>{{ item.title }}</h3>
         <p class="work-card__meta">{{ work.period }} · {{ item.type }}</p>
         <p>{{ item.summary }}</p>

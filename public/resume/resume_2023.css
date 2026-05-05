@@ -12235,7 +12235,7 @@ _:-ms-lang(x), selector hack은 only IE10 적용입니다.
 /*.toast_message{display:none;position:absolute;padding:0 20px;line-height:30px;border-radius:15px;color:#fff;text-align:center;background-color:rgba(25,25,25,0.8);box-sizing:border-box}*/
 @media \0screen {
     .toast_message {
-        background-color: #191919\9;
+        background-color: #19191919;
     }
 }
 /* 테두리 및 그림자
