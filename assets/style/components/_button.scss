@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
     padding: 0.72rem 1.15rem;
     border-radius: var(--radius-card);
     border: 1px solid var(--color-border);
@@ -20,6 +22,7 @@
     font-weight: 700;
     font-size: 0.92rem;
     letter-spacing: 0.01em;
+    text-align: center;
 
     &:focus-visible {
         outline: 2px solid var(--color-primary);
@@ -33,7 +36,7 @@
 
     &--primary {
         background: var(--gradient-accent);
-        color: #fff;
+        color: var(--color-on-accent);
         border-color: color-mix(in srgb, var(--color-primary) 55%, #fff);
         box-shadow: 0 14px 36px color-mix(in srgb, var(--color-primary) 35%, transparent);
     }
@@ -73,6 +76,8 @@
     font-weight: 650;
     font-size: 0.88rem;
     letter-spacing: 0.02em;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
     padding: 0.48rem 1rem;
     position: relative;
     overflow: hidden;
@@ -91,7 +96,7 @@
     }
 
     &.is-active {
-        color: #fff;
+        color: var(--color-on-accent);
         background: var(--gradient-accent);
         border-color: color-mix(in srgb, #fff 35%, var(--color-primary));
         box-shadow: 0 12px 32px color-mix(in srgb, var(--color-primary) 38%, transparent);

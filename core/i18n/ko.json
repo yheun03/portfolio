@@ -43,12 +43,12 @@
     },
     "contact": {
         "title": "함께 만들 다음 프로젝트 이야기",
-        "description": "퍼블리싱, UI 개발, 구조 개선이 필요한 작업이라면 편하게 연락 주세요.",
+        "description": "퍼블리싱, UI 개발, 구조 개선이 필요한 작업이라면 편하게 연락 주세요. 흐트러진 화면은 정리하고, 좋은 아이디어는 바로 화면에 앉혀둘게요.",
         "email": "메일 보내기",
         "github": "GitHub 보기",
         "portfolio": "포트폴리오 보기",
         "archive": "프로젝트 아카이브 보기",
-        "resume": "이력서 다운로드"
+        "resume": "이력서 보기"
     },
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"

@@ -18,9 +18,11 @@
 ========================================= */
 
 .app-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 80;
+    right: 0;
+    left: 0;
+    z-index: 100;
 
     display: flex;
     align-items: center;
@@ -28,6 +30,7 @@
     gap: 1rem;
 
     padding: 0.65rem 1.1rem;
+    min-height: var(--layout-header-height);
 
     border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
     background: color-mix(in srgb, var(--color-glass-2-strong) 92%, transparent);
@@ -40,6 +43,7 @@
         display: inline-flex;
         gap: 0.36rem;
         align-items: center;
+        min-height: 2.75rem;
         font-family: var(--font-display);
         font-size: 1rem;
         font-weight: 800;
@@ -59,6 +63,9 @@
         a {
             position: relative;
 
+            display: inline-flex;
+            min-height: 2.75rem;
+            align-items: center;
             padding: 0.42rem 0.72rem;
 
             border-radius: 999px;
@@ -85,7 +92,7 @@
             }
 
             &.is-active {
-                color: #fff;
+                color: var(--color-on-accent);
                 background: var(--gradient-accent);
                 box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 32%, transparent);
                 text-shadow: none;
@@ -112,6 +119,8 @@
 .language-toggle,
 .theme-toggle,
 .app-header__menu-btn {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
     padding: 0.48rem 0.78rem;
 
     border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-primary));
@@ -148,25 +157,85 @@
 
 .mobile-menu {
     position: fixed;
-    inset: 64px 0 0;
-    z-index: 79;
+    top: calc(var(--layout-header-height) + 0.75rem);
+    right: max(0.75rem, env(safe-area-inset-right));
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    z-index: 95;
 
     display: grid;
     align-content: start;
     gap: 0.75rem;
 
-    padding: 1.5rem 1rem 2rem;
+    width: min(22rem, calc(100vw - 1.5rem));
+    padding: 1.05rem;
 
-    border-top: 1px solid var(--color-border);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+    border-radius: var(--radius-xl);
     background: color-mix(in srgb, var(--color-glass-2-strong) 96%, transparent);
+    box-shadow: var(--shadow-lift), var(--shadow-glow);
     backdrop-filter: blur(14px);
+    overflow-y: auto;
+
+    &__backdrop {
+        position: fixed;
+        inset: var(--layout-header-height) 0 0;
+        z-index: 90;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        border: 0;
+        background: color-mix(in srgb, var(--color-bg) 48%, transparent);
+        backdrop-filter: blur(3px);
+        cursor: pointer;
+    }
+
+    &__eyebrow {
+        color: var(--color-primary);
+        font-family: var(--font-mono);
+        font-size: 0.76rem;
+        font-weight: 760;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
 
     a {
+        display: flex;
+        min-height: 2.75rem;
+        align-items: center;
+        padding-inline: 0.9rem;
+        border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+        border-radius: var(--radius-card);
+        background: color-mix(in srgb, var(--color-surface) 52%, transparent);
+        font-family: var(--font-display);
+        font-weight: 760;
+
+        &:hover {
+            background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+        }
+
         &:focus-visible {
             outline: 2px solid var(--color-primary);
             outline-offset: 2px;
         }
     }
+}
+
+.mobile-menu-fade-enter-active,
+.mobile-menu-fade-leave-active,
+.mobile-menu-drawer-enter-active,
+.mobile-menu-drawer-leave-active {
+    transition: opacity 0.24s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-fade-enter-from,
+.mobile-menu-fade-leave-to {
+    opacity: 0;
+}
+
+.mobile-menu-drawer-enter-from,
+.mobile-menu-drawer-leave-to {
+    opacity: 0;
+    transform: translateX(1.25rem);
 }
 
 /* =========================================

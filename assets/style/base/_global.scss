@@ -7,6 +7,22 @@ button {
     font: inherit;
 }
 
+img,
+svg,
+canvas,
+video {
+    max-width: 100%;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+html.is-menu-open {
+    overflow: hidden;
+}
+
 .accent-emoji {
     display: inline-grid;
     place-items: center;

@@ -11,6 +11,10 @@
             </a>
             <BaseCard class="contact__summary">
                 <p class="technical-label">Collaboration</p>
+                <div class="contact__profile" aria-hidden="true">
+                    <img src="/assets/image/photo-1440.webp" alt="" loading="lazy" />
+                    <span>{{ locale === "ko" ? "열린 협업 가능" : "Open to collaborate" }}</span>
+                </div>
                 <p class="contact__summary-text">
                     {{ locale === "ko"
                         ? "프로젝트 맥락을 빠르게 파악하고, 구조 중심으로 일정과 품질을 함께 맞추는 협업을 지향합니다."

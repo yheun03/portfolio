@@ -1,13 +1,18 @@
 .section--contact {
+    min-height: 55dvh;
+    display: grid;
+    align-items: center;
+
     .contact__composition {
         display: grid;
         grid-template-columns: minmax(280px, 0.75fr) minmax(360px, 1fr);
         grid-template-areas:
-            "title mail"
-            "summary mail"
+            "title summary"
+            "mail mail"
             "links links";
         gap: clamp(1rem, 3vw, 3rem);
         align-items: start;
+        width: 100%;
     }
 }
 
@@ -20,26 +25,35 @@
 
     &__mail-art {
         grid-area: mail;
-        justify-self: end;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.12em;
+        justify-self: stretch;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        gap: 0.08em;
+        max-width: 100%;
         color: var(--color-text);
         font-family: var(--font-display);
-        font-size: clamp(3rem, 5.8vw, 7.2rem);
+        font-size: clamp(2.35rem, 8vw, 8.75rem);
         font-weight: 850;
-        line-height: 0.9;
+        line-height: 0.95;
         letter-spacing: 0;
         text-decoration: none;
+        white-space: nowrap;
         filter: drop-shadow(0 12px 28px color-mix(in srgb, var(--color-primary) 25%, transparent));
 
         span {
-            transition: transform 0.2s ease, color 0.2s ease;
+            display: inline-block;
+            min-width: 0;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
         &:hover span:nth-child(2n) {
             color: var(--color-primary);
             transform: translateY(-0.15em) rotate(-4deg);
+        }
+
+        &:hover span:nth-child(2n + 1) {
+            color: color-mix(in srgb, var(--color-primary) 74%, var(--color-text));
+            transform: translateY(0.08em) rotate(3deg);
         }
     }
 
@@ -47,6 +61,30 @@
         grid-area: summary;
         background: var(--color-glass-2);
         backdrop-filter: blur(10px);
+        margin-top: 2em;
+    }
+
+    &__profile {
+        display: flex;
+        gap: 0.7rem;
+        align-items: center;
+        margin-bottom: 0.9rem;
+
+        img {
+            width: clamp(3rem, 5vw, 4.25rem);
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: top;
+            border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+            border-radius: 999px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        span {
+            color: var(--color-text);
+            font-family: var(--font-display);
+            font-weight: 760;
+        }
     }
 
     &__summary-text {
