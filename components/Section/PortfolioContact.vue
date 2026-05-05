@@ -1,5 +1,6 @@
 <template>
     <section id="contact" class="section section--contact">
+        <span class="section__emoji section__emoji--contact accent-emoji accent-emoji--soft" aria-hidden="true">💬</span>
         <div class="contact__composition">
             <BaseSectionTitle :eyebrow="t('nav.contact')" :title="t('contact.title')"
                 :description="t('contact.description')" />

@@ -86,6 +86,55 @@
     }
 }
 
+.section__emoji {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.section__emoji--about {
+    top: clamp(2rem, 5vw, 4rem);
+    right: clamp(0rem, 3vw, 2.4rem);
+    font-size: clamp(5rem, 11vw, 12rem);
+    opacity: 0.1;
+}
+
+.section__emoji--works {
+    top: clamp(1.5rem, 4vw, 3rem);
+    left: clamp(0rem, 3vw, 2rem);
+    font-size: clamp(4rem, 8vw, 8.5rem);
+    opacity: 0.11;
+}
+
+.section__emoji--journey {
+    top: clamp(2rem, 5vw, 4rem);
+    right: clamp(0rem, 4vw, 3rem);
+    font-size: clamp(4rem, 8vw, 8.5rem);
+    opacity: 0.1;
+}
+
+.section__emoji--toolbox {
+    right: clamp(0rem, 3vw, 2rem);
+    bottom: clamp(1rem, 4vw, 3rem);
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    opacity: 0.12;
+}
+
+.section__emoji--highlights {
+    top: clamp(1rem, 4vw, 3rem);
+    right: clamp(0rem, 3vw, 2rem);
+    font-size: clamp(3.2rem, 6vw, 6rem);
+    opacity: 0.18;
+}
+
+.section__emoji--contact {
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(0rem, 3vw, 2rem);
+    font-size: clamp(4rem, 9vw, 9rem);
+    opacity: 0.1;
+}
+
 .technical-label {
     display: inline-flex;
     align-items: center;
