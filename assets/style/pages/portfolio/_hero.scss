@@ -179,6 +179,14 @@
         place-items: center;
     }
 
+    &__apple-mark {
+        position: absolute;
+        right: clamp(0.85rem, 2vw, 1.4rem);
+        bottom: clamp(0.95rem, 2.4vw, 1.6rem);
+        font-size: clamp(1.25rem, 2.1vw, 1.75rem);
+        color: color-mix(in srgb, var(--color-primary) 78%, var(--color-text));
+    }
+
     &__floating-list,
     &__keyword-cloud {
         padding: 0;

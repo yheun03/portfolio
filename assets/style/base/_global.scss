@@ -7,6 +7,19 @@ button {
     font: inherit;
 }
 
+.accent-emoji {
+    display: inline-grid;
+    place-items: center;
+    line-height: 1;
+    transform-origin: 50% 58%;
+    animation: accent-emoji-float 3.2s ease-in-out infinite;
+}
+
+.accent-emoji--soft {
+    animation-duration: 4.1s;
+    animation-name: accent-emoji-glow;
+}
+
 .skip-link {
     position: fixed;
     left: 12px;
@@ -62,5 +75,37 @@ button {
     [data-theme="dark"] {
         --color-text-muted: #cbd5e1;
         --color-border: #94a3b8;
+    }
+}
+
+@keyframes accent-emoji-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.95;
+    }
+
+    45% {
+        transform: translateY(-3px) rotate(-5deg) scale(1.05);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(-1px) rotate(4deg) scale(0.98);
+    }
+}
+
+@keyframes accent-emoji-glow {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 0 color-mix(in srgb, var(--color-primary) 0%, transparent));
+    }
+
+    50% {
+        transform: translateY(-2px) scale(1.07);
+        filter: drop-shadow(0 0 10px color-mix(in srgb, var(--color-primary) 38%, transparent));
     }
 }
