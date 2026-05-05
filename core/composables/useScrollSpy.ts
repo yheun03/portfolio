@@ -1,70 +1,117 @@
 export const useScrollSpy = (sectionIds: string[]) => {
     const activeId = ref(sectionIds[0] ?? '');
-    let observer: IntersectionObserver | null = null;
+
     let mutationObserver: MutationObserver | null = null;
-    let scrollTicking = false;
+    let rafId: number | null = null;
+    let sections: HTMLElement[] = [];
+
+    /**
+     * viewport top 기준 active 판정 위치
+     * 0.45 = 화면 위에서 45% 내려온 지점
+     */
+    const ACTIVE_VIEWPORT_RATIO = 0.45;
 
     const getSections = () => sectionIds.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => Boolean(el));
 
-    const computeActiveFromViewport = () => {
-        const sections = getSections();
-        if (!sections.length) return;
+    const refreshSections = () => {
+        sections = getSections();
 
-        const viewportAnchor = window.innerHeight * 0.32;
-        const closest = sections
-            .map((section) => ({
-                id: section.id,
-                distance: Math.abs(section.getBoundingClientRect().top - viewportAnchor),
-            }))
-            .sort((a, b) => a.distance - b.distance)[0];
-
-        if (closest?.id) {
-            activeId.value = closest.id;
+        if (!activeId.value && sections[0]?.id) {
+            activeId.value = sections[0].id;
         }
     };
 
-    const onScroll = () => {
-        if (scrollTicking) return;
-        scrollTicking = true;
-        requestAnimationFrame(() => {
-            computeActiveFromViewport();
-            scrollTicking = false;
+    const computeActive = () => {
+        if (!sections.length) return;
+
+        const markerY = window.innerHeight * ACTIVE_VIEWPORT_RATIO;
+
+        /**
+         * 페이지 최상단에서는 무조건 첫 섹션 active
+         */
+        if (window.scrollY <= 2) {
+            activeId.value = sections[0].id;
+            return;
+        }
+
+        /**
+         * markerY 지점이 실제로 포함된 섹션 찾기
+         */
+        const currentSection = sections.find((section) => {
+            const rect = section.getBoundingClientRect();
+
+            return rect.top <= markerY && rect.bottom > markerY;
+        });
+
+        if (currentSection) {
+            activeId.value = currentSection.id;
+            return;
+        }
+
+        /**
+         * markerY에 정확히 걸리는 섹션이 없을 경우,
+         * markerY와 가장 가까운 섹션을 active 처리
+         */
+        let nearestSection = sections[0];
+        let nearestDistance = Number.POSITIVE_INFINITY;
+
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const distance = Math.abs(rect.top - markerY);
+
+            if (distance < nearestDistance) {
+                nearestDistance = distance;
+                nearestSection = section;
+            }
+        });
+
+        if (nearestSection?.id) {
+            activeId.value = nearestSection.id;
+        }
+    };
+
+    const scheduleCompute = () => {
+        if (rafId !== null) {
+            cancelAnimationFrame(rafId);
+        }
+
+        rafId = requestAnimationFrame(() => {
+            refreshSections();
+            computeActive();
+            rafId = null;
         });
     };
 
     onMounted(() => {
-        observer = new IntersectionObserver(
-            (entries) => {
-                const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-                if (visible.length > 0) activeId.value = visible[0].target.id;
-            },
-            { threshold: [0.12, 0.3, 0.5, 0.72], rootMargin: '-12% 0px -52% 0px' },
-        );
+        scheduleCompute();
 
-        const observeSections = () => {
-            const sections = getSections();
-            sections.forEach((el) => observer?.observe(el));
-            if (sections.length === sectionIds.length) {
-                mutationObserver?.disconnect();
-                mutationObserver = null;
-            }
-            computeActiveFromViewport();
-        };
+        mutationObserver = new MutationObserver(() => {
+            scheduleCompute();
+        });
 
-        observeSections();
-        mutationObserver = new MutationObserver(() => observeSections());
-        mutationObserver.observe(document.body, { childList: true, subtree: true });
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll, { passive: true });
+        mutationObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+
+        window.addEventListener('scroll', scheduleCompute, { passive: true });
+        window.addEventListener('resize', scheduleCompute, { passive: true });
+        window.addEventListener('hashchange', scheduleCompute);
     });
 
     onBeforeUnmount(() => {
-        observer?.disconnect();
-        observer = null;
         mutationObserver?.disconnect();
         mutationObserver = null;
-        window.removeEventListener('scroll', onScroll);
-        window.removeEventListener('resize', onScroll);
+
+        if (rafId !== null) {
+            cancelAnimationFrame(rafId);
+        }
+
+        rafId = null;
+
+        window.removeEventListener('scroll', scheduleCompute);
+        window.removeEventListener('resize', scheduleCompute);
+        window.removeEventListener('hashchange', scheduleCompute);
     });
 
     return { activeId };
