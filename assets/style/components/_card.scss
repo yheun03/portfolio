@@ -1,23 +1,23 @@
 .base-card {
     position: relative;
-    background: var(--gradient-surface);
+    overflow: hidden;
+    padding: 1.15rem 1.2rem;
     border: 1px solid color-mix(in srgb, var(--color-border) 88%, var(--color-primary));
     border-radius: var(--radius-lg);
-    padding: 1.15rem 1.2rem;
+    background: var(--gradient-surface);
     box-shadow: var(--shadow-soft), var(--shadow-glow);
-    overflow: hidden;
     isolation: isolate;
-}
 
-.base-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg,
-            color-mix(in srgb, var(--color-primary) 8%, transparent) 0%,
-            transparent 42%,
-            color-mix(in srgb, var(--color-accent-mint) 5%, transparent) 100%);
-    opacity: 0.55;
-    pointer-events: none;
-    z-index: -1;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(145deg,
+                color-mix(in srgb, var(--color-primary) 8%, transparent) 0%,
+                transparent 42%,
+                color-mix(in srgb, var(--color-accent-mint) 5%, transparent) 100%);
+        opacity: 0.55;
+        pointer-events: none;
+    }
 }

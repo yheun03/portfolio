@@ -1,0 +1,62 @@
+.section--contact {
+    .contact__composition {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.75fr) minmax(360px, 1fr);
+        grid-template-areas:
+            "title mail"
+            "summary mail"
+            "links links";
+        gap: clamp(1rem, 3vw, 3rem);
+        align-items: start;
+    }
+}
+
+.contact {
+    &__composition {
+        .section-title {
+            grid-area: title;
+        }
+    }
+
+    &__mail-art {
+        grid-area: mail;
+        justify-self: end;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.12em;
+        color: var(--color-text);
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 5.8vw, 7.2rem);
+        font-weight: 850;
+        line-height: 0.9;
+        letter-spacing: 0;
+        text-decoration: none;
+        filter: drop-shadow(0 12px 28px color-mix(in srgb, var(--color-primary) 25%, transparent));
+
+        span {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        &:hover span:nth-child(2n) {
+            color: var(--color-primary);
+            transform: translateY(-0.15em) rotate(-4deg);
+        }
+    }
+
+    &__summary {
+        grid-area: summary;
+        background: var(--color-glass-2);
+        backdrop-filter: blur(10px);
+    }
+
+    &__summary-text {
+        color: var(--color-text-muted);
+    }
+
+    &__cta {
+        grid-area: links;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}

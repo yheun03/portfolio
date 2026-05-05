@@ -1,5 +1,5 @@
 <template>
-    <section id="works" class="section">
+    <section id="works" class="section section--works">
         <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
         <p class="works__lead" data-animate>
             {{ locale === "ko" ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.` : `Explore

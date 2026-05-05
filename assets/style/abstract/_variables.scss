@@ -26,11 +26,9 @@ $bp-desktop: 1440px;
     --shadow-glow: 0 0 0 1px color-mix(in srgb, #e2eaf5 78%, transparent) inset;
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 28%, transparent);
     --gradient-accent: linear-gradient(118deg, #2456ff 0%, #9d4dff 52%, #12b8d6 100%);
-    --gradient-accent-soft: linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--color-primary) 22%, transparent),
-        color-mix(in srgb, var(--color-accent-hot) 14%, transparent)
-    );
+    --gradient-accent-soft: linear-gradient(135deg,
+            color-mix(in srgb, var(--color-primary) 22%, transparent),
+            color-mix(in srgb, var(--color-accent-hot) 14%, transparent));
     --gradient-surface: linear-gradient(168deg, #ffffff 0%, #eef3fb 100%);
     --gradient-noise: linear-gradient(185deg, #f8fafc 0%, #e8eef8 55%, #f4f6fb 100%);
     --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--color-primary) 26%, transparent), transparent 42%),
@@ -63,11 +61,9 @@ $bp-desktop: 1440px;
     --shadow-glow: 0 0 0 1px color-mix(in srgb, #40506c 58%, transparent) inset;
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 35%, transparent);
     --gradient-accent: linear-gradient(118deg, #93a8ff 0%, #c084fc 52%, #38bdf8 100%);
-    --gradient-accent-soft: linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--color-primary) 26%, transparent),
-        color-mix(in srgb, var(--color-accent-hot) 18%, transparent)
-    );
+    --gradient-accent-soft: linear-gradient(135deg,
+            color-mix(in srgb, var(--color-primary) 26%, transparent),
+            color-mix(in srgb, var(--color-accent-hot) 18%, transparent));
     --gradient-surface: linear-gradient(168deg, #0d1424 0%, #121d34 100%);
     --gradient-noise: linear-gradient(185deg, #050810 0%, #0d1424 55%, #0a1222 100%);
     --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--color-primary) 34%, transparent), transparent 46%),

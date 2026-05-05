@@ -1,127 +1,179 @@
 .scroll-progress {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+    z-index: 90;
+
     width: 100%;
     height: 5px;
+
     background: var(--gradient-accent);
-    transform-origin: left center;
-    z-index: 90;
     box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 45%, transparent);
+
+    transform-origin: left center;
 }
+
+/* =========================================
+   Header
+========================================= */
 
 .app-header {
     position: sticky;
     top: 0;
     z-index: 80;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+
     padding: 0.65rem 1.1rem;
+
     border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
     background: color-mix(in srgb, var(--color-glass-2-strong) 92%, transparent);
-    box-shadow: var(--shadow-glow), 0 16px 40px color-mix(in srgb, #0f172a 12%, transparent);
+    box-shadow:
+        var(--shadow-glow),
+        0 16px 40px color-mix(in srgb, #0f172a 12%, transparent);
     backdrop-filter: blur(14px) saturate(1.2);
+
+    &__nav {
+        display: none;
+        gap: 0.35rem;
+
+        padding: 0.25rem;
+
+        border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--color-surface-strong) 55%, transparent);
+
+        a {
+            position: relative;
+
+            padding: 0.42rem 0.72rem;
+
+            border-radius: 999px;
+
+            color: var(--color-text-muted);
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 650;
+            letter-spacing: 0.03em;
+
+            transition:
+                color 0.2s ease,
+                background-color 0.2s ease,
+                transform 0.2s ease;
+
+            &:hover {
+                color: var(--color-text);
+                background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--color-primary);
+                outline-offset: 2px;
+            }
+
+            &.is-active {
+                color: #fff;
+                background: var(--gradient-accent);
+                box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 32%, transparent);
+                text-shadow: none;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 0.45rem;
+    }
+
+    &__menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.app-header__nav {
-    display: none;
-    gap: 0.35rem;
-    padding: 0.25rem;
-    border-radius: 999px;
-    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-    background: color-mix(in srgb, var(--color-surface-strong) 55%, transparent);
-}
-
-.app-header__nav a {
-    position: relative;
-    padding: 0.42rem 0.72rem;
-    border-radius: 999px;
-    color: var(--color-text-muted);
-    font-family: var(--font-display);
-    font-weight: 650;
-    font-size: 0.82rem;
-    letter-spacing: 0.03em;
-    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-.app-header__nav a:hover {
-    color: var(--color-text);
-    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
-}
-
-.app-header__nav .is-active {
-    color: #fff;
-    background: var(--gradient-accent);
-    box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 32%, transparent);
-    text-shadow: none;
-}
-
-.app-header__actions {
-    display: flex;
-    gap: 0.45rem;
-}
-
-.app-header__menu-btn {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    background: var(--color-glass-2-strong);
-    color: var(--color-text);
-    font-weight: 600;
-    padding: 0.5rem 0.7rem;
-}
+/* =========================================
+   Header Action Button
+========================================= */
 
 .language-toggle,
 .theme-toggle,
 .app-header__menu-btn {
+    padding: 0.48rem 0.78rem;
+
     border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-primary));
     border-radius: var(--radius-card);
     background: color-mix(in srgb, var(--color-glass-2-strong) 94%, transparent);
+
     color: var(--color-text);
     font-family: var(--font-display);
-    font-weight: 700;
     font-size: 0.82rem;
-    padding: 0.48rem 0.78rem;
+    font-weight: 700;
     line-height: 1;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
     cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    &:hover {
+        border-color: color-mix(in srgb, var(--color-primary) 48%, var(--color-border));
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
 }
 
-.language-toggle:hover,
-.theme-toggle:hover,
-.app-header__menu-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
-    border-color: color-mix(in srgb, var(--color-primary) 48%, var(--color-border));
-}
-
-.language-toggle:focus-visible,
-.theme-toggle:focus-visible,
-.app-header__menu-btn:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-}
+/* =========================================
+   Mobile Menu
+========================================= */
 
 .mobile-menu {
     position: fixed;
-    inset: 64px 0 0 0;
-    display: grid;
-    gap: 0.75rem;
-    align-content: start;
-    padding: 1.5rem 1rem 2rem;
-    background: color-mix(in srgb, var(--color-glass-2-strong) 96%, transparent);
-    border-top: 1px solid var(--color-border);
-    backdrop-filter: blur(14px);
+    inset: 64px 0 0;
     z-index: 79;
+
+    display: grid;
+    align-content: start;
+    gap: 0.75rem;
+
+    padding: 1.5rem 1rem 2rem;
+
+    border-top: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-glass-2-strong) 96%, transparent);
+    backdrop-filter: blur(14px);
+
+    a {
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    }
 }
 
+/* =========================================
+   Responsive
+========================================= */
+
 @media (min-width: 1024px) {
-    .app-header__nav {
-        display: flex;
+    .app-header {
+        &__nav {
+            display: flex;
+        }
+
+        &__menu-btn {
+            display: none;
+        }
     }
 
-    .app-header__menu-btn,
     .mobile-menu {
         display: none;
     }
