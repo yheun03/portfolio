@@ -1,9 +1,11 @@
 <template>
     <BaseCard class="skill-card">
-        <p class="technical-label">Toolbox</p>
+        <BaseLabel tone="toolbox" label="Toolbox" />
         <h3>{{ title }}</h3>
         <ul>
-            <li v-for="item in items" :key="item">{{ item }}</li>
+            <li v-for="item in items" :key="item">
+                <BaseBadge size="sm" tone="toolbox" plain>{{ item }}</BaseBadge>
+            </li>
         </ul>
         <p>{{ description }}</p>
     </BaseCard>

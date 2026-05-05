@@ -1,6 +1,6 @@
 <template>
     <BaseCard class="stat-card">
-        <p class="technical-label">Metric</p>
+        <BaseLabel label="Metric" />
         <p class="stat-card__value">{{ value }}{{ suffix }}</p>
         <p class="stat-card__label">{{ label }}</p>
     </BaseCard>

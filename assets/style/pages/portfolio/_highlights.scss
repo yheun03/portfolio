@@ -2,9 +2,9 @@
     &__tabs {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.4rem;
+        gap: var(--space-2);
         width: fit-content;
-        padding: 0.38rem;
+        padding: var(--space-2);
         border: 1px solid color-mix(in srgb, var(--color-primary) 26%, var(--color-border));
         border-radius: 999px;
         background: color-mix(in srgb, var(--color-surface) 78%, transparent);
@@ -14,7 +14,7 @@
 
     &__panel {
         display: flex;
-        gap: 1rem;
+        gap: var(--space-6);
         align-items: stretch;
 
         .highlight-card {
@@ -25,8 +25,8 @@
     &__description {
         flex: 0 1 340px;
         align-self: start;
-        padding: 1rem;
-        margin-top: 2.2rem;
+        padding: var(--space-6);
+        margin-top: var(--space-9);
         border: 1px solid var(--color-border);
         border-radius: var(--radius-lg);
         background: var(--gradient-surface);
@@ -39,11 +39,27 @@
     background: var(--color-glass-2);
     backdrop-filter: blur(10px);
 
+    --card-flow-label: var(--space-4);
+    --card-flow-title: var(--space-5);
+    --card-list-gap: var(--space-2);
+
+    > :where(.base-label, .technical-label) {
+        margin-bottom: 0;
+    }
+
+    > :where(.base-label, .technical-label)+h3 {
+        margin-top: var(--card-flow-label);
+    }
+
+    >h3+ul {
+        margin-top: var(--card-flow-title);
+    }
+
     ul {
         display: grid;
-        gap: 0.48rem;
-        margin: 0;
-        padding-left: 1.1rem;
+        gap: var(--card-list-gap);
+        margin-bottom: 0;
+        padding-left: var(--space-7);
     }
 
     li {

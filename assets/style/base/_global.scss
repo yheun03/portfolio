@@ -16,7 +16,7 @@ video {
 
 :where(a, button, input, textarea, select, summary):focus-visible {
     outline: 2px solid var(--color-primary);
-    outline-offset: 3px;
+    outline-offset: var(--space-1);
 }
 
 html.is-menu-open {
@@ -38,9 +38,9 @@ html.is-menu-open {
 
 .skip-link {
     position: fixed;
-    left: 12px;
+    left: var(--space-5);
     top: -100px;
-    padding: 0.55rem 0.85rem;
+    padding: var(--space-3) var(--space-5);
     border-radius: 0.6rem;
     background: var(--color-surface-strong);
     border: 1px solid var(--color-border);
@@ -48,9 +48,9 @@ html.is-menu-open {
 }
 
 .skip-link:focus-visible {
-    top: 12px;
+    top: var(--space-5);
     outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    outline-offset: var(--space-1);
 }
 
 [data-animate] {

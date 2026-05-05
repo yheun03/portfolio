@@ -5,7 +5,7 @@
         <BaseSectionTitle :eyebrow="t('nav.journey')" :title="t('journey.title')" :description="t('journey.summary')" />
         <div class="journey__flow">
             <BaseCard class="journey__summary">
-                <p class="technical-label">Experience Timeline</p>
+                <BaseLabel tone="journey" label="Experience Timeline" />
                 <h3 class="journey__summary-company">{{ pick(journeySummary.company) }}</h3>
                 <p class="journey__summary-meta">{{ pick(journeySummary.team) }} · {{ pick(journeySummary.period) }}</p>
                 <p class="journey__summary-intro">{{ pick(journeySummary.intro) }}</p>

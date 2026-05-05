@@ -7,7 +7,7 @@
                 + 'lasts when taste and structure move together.' }}</p>
         </div>
         <BaseCard class="about__summary about__float about__float--summary">
-            <p class="technical-label">Profile Summary</p>
+            <BaseLabel tone="profile" label="Profile Summary" />
             <p class="about__summary-intro">{{ pick(aboutContent.intro) }}</p>
             <p v-for="text in pick(aboutContent.paragraphs)" :key="text" class="about__summary-paragraph">{{ text }}</p>
             <ul class="about__keywords">
@@ -21,7 +21,7 @@
                 :title="pick(principle.title)" :description="pick(principle.description)" />
         </div>
         <BaseCard class="about__workflow about__float about__float--workflow">
-            <p class="technical-label">Workflow</p>
+            <BaseLabel tone="profile" label="Workflow" />
             <h3 class="about__workflow-title">{{ locale === 'ko' ? '일하는 방식' : 'How I Work' }}</h3>
             <ul class="about__workflow-list">
                 <li v-for="item in aboutContent.workflow" :key="pick(item)">{{ pick(item) }}</li>

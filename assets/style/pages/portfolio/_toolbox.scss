@@ -14,15 +14,15 @@
     &__orbit {
         display: flex;
         flex-wrap: wrap;
-        gap: clamp(0.75rem, 2vw, 1.2rem);
+        gap: var(--space-fluid-sm);
         align-items: flex-start;
-        padding-top: clamp(1rem, 3vw, 2rem);
+        padding-top: var(--space-fluid-md);
 
         .skill-card {
             width: min(360px, 100%);
 
             &:nth-child(2n) {
-                margin-top: clamp(1.4rem, 4vw, 3rem);
+                margin-top: var(--space-fluid-lg);
             }
 
             &:nth-child(3n) {
@@ -33,8 +33,10 @@
 }
 
 .skill-card {
+    --card-flow-label: var(--space-4);
+    --card-flow-title: var(--space-4);
     display: grid;
-    gap: 0.8rem;
+    gap: 0;
     align-content: start;
     border-radius: var(--radius-lg);
     background: var(--color-glass-2);
@@ -44,22 +46,24 @@
         color: var(--color-text-muted);
     }
 
+    h3+ul {
+        margin-top: var(--card-flow-title);
+    }
+
+    ul+p {
+        margin-top: var(--card-flow-content);
+    }
+
     ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.44rem;
+        gap: var(--space-3);
         padding: 0;
-        margin: 0;
+        margin-bottom: 0;
         list-style: none;
     }
 
     li {
-        padding: 0.22rem 0.52rem;
-        border: 1px solid var(--color-border);
-        border-radius: 999px;
-        background: color-mix(in srgb, var(--color-surface) 72%, transparent);
-        color: var(--color-text-muted);
-        font-size: 0.76rem;
-        font-weight: 720;
+        display: contents;
     }
 }

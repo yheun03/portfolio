@@ -27,9 +27,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: var(--space-6);
 
-    padding: 0.65rem 1.1rem;
+    padding: var(--space-4) var(--space-7);
     min-height: var(--layout-header-height);
 
     border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
@@ -41,20 +41,20 @@
 
     &__brand {
         display: inline-flex;
-        gap: 0.36rem;
+        gap: var(--space-2);
         align-items: center;
-        min-height: 2.75rem;
+        min-height: var(--size-touch);
         font-family: var(--font-display);
-        font-size: 1rem;
-        font-weight: 800;
-        letter-spacing: 0.01em;
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight-black);
+        letter-spacing: var(--tracking-ui);
     }
 
     &__nav {
         display: none;
-        gap: 0.35rem;
+        gap: var(--space-2);
 
-        padding: 0.25rem;
+        padding: var(--space-1);
 
         border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
         border-radius: 999px;
@@ -64,17 +64,17 @@
             position: relative;
 
             display: inline-flex;
-            min-height: 2.75rem;
+            min-height: var(--size-touch);
             align-items: center;
-            padding: 0.42rem 0.72rem;
+            padding: var(--space-3) var(--space-4);
 
             border-radius: 999px;
 
             color: var(--color-text-muted);
             font-family: var(--font-display);
-            font-size: 0.82rem;
-            font-weight: 650;
-            letter-spacing: 0.03em;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            letter-spacing: var(--tracking-ui);
 
             transition:
                 color 0.2s ease,
@@ -102,7 +102,7 @@
 
     &__actions {
         display: flex;
-        gap: 0.45rem;
+        gap: var(--space-3);
     }
 
     &__menu-btn {
@@ -119,9 +119,9 @@
 .language-toggle,
 .theme-toggle,
 .app-header__menu-btn {
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-    padding: 0.48rem 0.78rem;
+    min-width: var(--size-touch);
+    min-height: var(--size-touch);
+    padding: var(--space-3) var(--space-5);
 
     border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-primary));
     border-radius: var(--radius-card);
@@ -129,9 +129,9 @@
 
     color: var(--color-text);
     font-family: var(--font-display);
-    font-size: 0.82rem;
-    font-weight: 700;
-    line-height: 1;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
 
     cursor: pointer;
     transition:
@@ -157,17 +157,17 @@
 
 .mobile-menu {
     position: fixed;
-    top: calc(var(--layout-header-height) + 0.75rem);
+    top: calc(var(--layout-header-height) + var(--space-5));
     right: max(0.75rem, env(safe-area-inset-right));
     bottom: max(0.75rem, env(safe-area-inset-bottom));
     z-index: 95;
 
     display: grid;
     align-content: start;
-    gap: 0.75rem;
+    gap: var(--space-5);
 
     width: min(22rem, calc(100vw - 1.5rem));
-    padding: 1.05rem;
+    padding: var(--space-6);
 
     border: 1px solid color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
     border-radius: var(--radius-xl);
@@ -192,22 +192,22 @@
     &__eyebrow {
         color: var(--color-primary);
         font-family: var(--font-mono);
-        font-size: 0.76rem;
-        font-weight: 760;
-        letter-spacing: 0.12em;
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-bold);
+        letter-spacing: var(--tracking-label);
         text-transform: uppercase;
     }
 
     a {
         display: flex;
-        min-height: 2.75rem;
+        min-height: var(--size-touch);
         align-items: center;
-        padding-inline: 0.9rem;
+        padding-inline: var(--space-5);
         border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
         border-radius: var(--radius-card);
         background: color-mix(in srgb, var(--color-surface) 52%, transparent);
         font-family: var(--font-display);
-        font-weight: 760;
+        font-weight: var(--font-weight-bold);
 
         &:hover {
             background: color-mix(in srgb, var(--color-primary) 10%, transparent);
