@@ -56,10 +56,11 @@
     .section--toolbox {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas: none;
+        min-height: auto;
     }
 
     .section--works .section-title,
-    .works__lead,
+    .section--works .section-title__description,
     .works__filters,
     .works__grid,
     .section--journey>.section-title,

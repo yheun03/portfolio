@@ -1,6 +1,7 @@
 <template>
     <section id="journey" class="section section--journey">
-        <span class="section__emoji section__emoji--journey accent-emoji accent-emoji--soft" aria-hidden="true">🧩</span>
+        <span class="section__emoji section__emoji--journey accent-emoji accent-emoji--soft"
+            aria-hidden="true">🧩</span>
         <BaseSectionTitle :eyebrow="t('nav.journey')" :title="t('journey.title')" :description="t('journey.summary')" />
         <div class="journey__flow">
             <BaseCard class="journey__summary">
