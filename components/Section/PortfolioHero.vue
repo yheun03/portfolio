@@ -17,6 +17,7 @@
 
             <aside class="hero__studio-card" :aria-label="locale === 'ko' ? '작업 방식 요약' : 'Work method summary'">
                 <p class="technical-label">Publishing System</p>
+                <span class="hero__wave" aria-hidden="true">👋</span>
                 <strong>{{ locale === "ko" ? "구조를 먼저 잡고, 화면의 밀도를 조율합니다." : "Structure first, then tune the visual" +
                     "density." }}</strong>
                 <span>{{ t("hero.branding") }}</span>
