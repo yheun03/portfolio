@@ -1,5 +1,6 @@
 <template>
     <section id="about" class="section section--about">
+        <span class="section__emoji section__emoji--about accent-emoji accent-emoji--soft" aria-hidden="true">🧭</span>
         <div class="about__headline">
             <BaseSectionTitle :eyebrow="t('nav.about')" :title="t('about.title')" :description="t('about.intro')" />
             <p class="about__side-note">{{ locale === 'ko' ? '좋은 화면은 감각과 구조가 같이 움직일 때 오래 갑니다.' : 'A good interface'
