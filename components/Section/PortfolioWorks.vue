@@ -46,7 +46,7 @@
                         <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>
                     <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
-                    }}</strong></p>
+                            }}</strong></p>
                     <ul v-if="activeWork.achievements.length">
                         <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>

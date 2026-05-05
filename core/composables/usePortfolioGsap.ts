@@ -11,10 +11,7 @@ export const usePortfolioGsap = () => {
             return;
         }
 
-        const [{ gsap }, { ScrollTrigger }] = await Promise.all([
-            import('gsap'),
-            import('gsap/ScrollTrigger'),
-        ]);
+        const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -103,7 +100,7 @@ export const usePortfolioGsap = () => {
                             end: 'bottom top',
                             scrub: true,
                         },
-                    }
+                    },
                 );
             });
         }, root);

@@ -229,7 +229,7 @@
     text-transform: uppercase;
 }
 
-.hero__availability span + span::before {
+.hero__availability span+span::before {
     content: "";
     display: inline-block;
     width: 0.44rem;
@@ -494,7 +494,7 @@
     font-weight: 680;
 }
 
-.about__summary-paragraph + .about__summary-paragraph {
+.about__summary-paragraph+.about__summary-paragraph {
     margin-top: 0.65rem;
 }
 
@@ -695,7 +695,7 @@
         ". flow";
 }
 
-.section--journey > .section-title {
+.section--journey>.section-title {
     grid-area: title;
     position: sticky;
     top: 5.25rem;
@@ -766,7 +766,7 @@
     align-items: start;
 }
 
-.section--toolbox > .section-title {
+.section--toolbox>.section-title {
     position: sticky;
     top: 5.25rem;
 }
@@ -925,6 +925,7 @@
 }
 
 @media (max-width: 1180px) {
+
     .hero__poster,
     .section--about,
     .section--contact .contact__composition {
@@ -942,9 +943,9 @@
     #works .works__lead,
     #works .works__filters,
     #works .works__grid,
-    .section--journey > .section-title,
+    .section--journey>.section-title,
     .journey__flow,
-    .section--toolbox > .section-title {
+    .section--toolbox>.section-title {
         position: static;
         grid-area: auto;
     }
@@ -1007,6 +1008,7 @@
 }
 
 @media (max-width: 767px) {
+
     .section,
     .section--hero {
         width: min(100% - 2rem, 100%);

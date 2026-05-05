@@ -1,6 +1,3 @@
 {
-    "extends": "./.nuxt/tsconfig.json",
-    "compilerOptions": {
-        "typeRoots": ["./core/types", "./node_modules/@types"]
-    }
+    "extends": "./.nuxt/tsconfig.json"
 }
