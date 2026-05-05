@@ -118,6 +118,7 @@
     }
 
     &__studio-card {
+        position: relative;
         grid-area: studio;
         align-self: center;
         justify-self: stretch;
@@ -162,6 +163,20 @@
             color: var(--color-text-muted);
             font-weight: 720;
         }
+    }
+
+    &__wave {
+        position: absolute;
+        top: clamp(0.75rem, 1.8vw, 1.2rem);
+        right: clamp(0.75rem, 1.8vw, 1.2rem);
+        display: grid;
+        width: clamp(2.6rem, 5vw, 4.2rem);
+        aspect-ratio: 1;
+        font-size: clamp(1.55rem, 3vw, 2.5rem);
+        line-height: 1;
+        transform-origin: 70% 70%;
+        animation: hero-wave 2.8s ease-in-out infinite;
+        place-items: center;
     }
 
     &__floating-list,
@@ -246,4 +261,27 @@
     opacity: 0.2;
     filter: invert(1);
     mix-blend-mode: screen;
+}
+
+@keyframes hero-wave {
+
+    0%,
+    54%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    8%,
+    24% {
+        transform: rotate(15deg);
+    }
+
+    16%,
+    32% {
+        transform: rotate(-9deg);
+    }
+
+    40% {
+        transform: rotate(7deg);
+    }
 }
