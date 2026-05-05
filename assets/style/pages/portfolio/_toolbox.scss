@@ -5,6 +5,8 @@
     >.section-title {
         position: sticky;
         top: 5.25rem;
+        align-self: start;
+        z-index: 2;
     }
 }
 

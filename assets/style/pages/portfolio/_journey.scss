@@ -8,6 +8,8 @@
         position: sticky;
         top: 5.25rem;
         grid-area: title;
+        align-self: start;
+        z-index: 2;
     }
 }
 

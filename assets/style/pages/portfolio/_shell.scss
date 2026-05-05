@@ -2,7 +2,7 @@
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: clip;
     counter-reset: section-count;
     background: var(--gradient-noise);
     scroll-behavior: smooth;

@@ -1,11 +1,9 @@
 <template>
     <section id="works" class="section section--works">
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
-        <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
-        <p class="works__lead" data-animate>
-            {{ locale === "ko" ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.` : `Explore
-            ${filteredWorks.length} projects through interactive cards.` }}
-        </p>
+        <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" :description="locale === 'ko'
+            ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.`
+            : `Explore ${filteredWorks.length} projects through interactive cards.`" />
 
         <!-- 탭: 역할만 — 실제 패널은 아래 renderer 한 곳 -->
         <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
@@ -27,8 +25,8 @@
         </div>
 
         <Teleport to="body">
-            <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true" aria-labelledby="works-modal-title"
-                aria-describedby="works-modal-description" @click.self="closeModal">
+            <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true"
+                aria-labelledby="works-modal-title" aria-describedby="works-modal-description" @click.self="closeModal">
                 <div ref="modalCardRef" class="works__modal-content" @click.stop>
                     <BaseCard :animate="false" class="works__modal-card">
                         <div class="works__modal-head">

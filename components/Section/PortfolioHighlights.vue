@@ -1,6 +1,7 @@
 <template>
     <section id="highlights" class="section section--highlights">
-        <span class="section__emoji section__emoji--highlights accent-emoji accent-emoji--soft" aria-hidden="true">✨</span>
+        <span class="section__emoji section__emoji--highlights accent-emoji accent-emoji--soft"
+            aria-hidden="true">✨</span>
         <BaseSectionTitle :eyebrow="t('nav.highlights')" :title="t('highlights.title')" />
         <div class="highlights__tabs" role="tablist" :aria-label="locale === 'ko' ? '하이라이트 탭' : 'Highlights tabs'">
             <button v-for="tab in tabs" :key="tab.key" :id="`highlights-tab-${tab.key}`" role="tab"

@@ -9,17 +9,21 @@
         position: sticky;
         top: 5.25rem;
         grid-area: title;
+        align-self: start;
+        z-index: 2;
     }
 }
 
 .works {
     &__lead {
         position: sticky;
-        top: 16rem;
+        top: 16.5rem;
         grid-area: lead;
+        align-self: start;
         max-width: 56ch;
         color: var(--color-text-muted);
         line-height: 1.7;
+        z-index: 2;
     }
 
     &__filters {
