@@ -5,6 +5,8 @@
     background: var(--gradient-noise);
     counter-reset: section-count;
     scroll-behavior: smooth;
+
+    overflow-x: hidden;
 }
 
 .app-background {
