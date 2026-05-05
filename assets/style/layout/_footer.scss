@@ -4,4 +4,12 @@
     color: var(--color-text-muted);
     border-top: 1px solid var(--color-border);
     background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+
+    &__emoji-line {
+        display: inline-flex;
+        gap: 0.6rem;
+        margin-bottom: 0.55rem;
+        color: color-mix(in srgb, var(--color-primary) 72%, var(--color-text));
+        font-size: 0.9rem;
+    }
 }

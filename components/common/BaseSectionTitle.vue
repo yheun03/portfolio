@@ -1,7 +1,12 @@
 <template>
     <header class="section-title" data-animate>
-        <p class="section-title__eyebrow">{{ eyebrow }}</p>
-        <h2 class="section-title__title">{{ title }}</h2>
+        <p class="section-title__eyebrow">
+            {{ eyebrow }}
+        </p>
+        <h2 class="section-title__title">
+            {{ title }}
+            <span class="section-title__spark accent-emoji accent-emoji--soft" aria-hidden="true">✦</span>
+        </h2>
         <p v-if="description" class="section-title__description">{{ description }}</p>
     </header>
 </template>

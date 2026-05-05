@@ -41,6 +41,13 @@
         text-wrap: balance;
     }
 
+    &__spark {
+        margin-left: 0.35rem;
+        color: color-mix(in srgb, var(--color-primary) 64%, #fff);
+        font-size: 0.75em;
+        vertical-align: super;
+    }
+
     &__description {
         max-width: 56ch;
         margin-top: 0.65rem;

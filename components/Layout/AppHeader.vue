@@ -1,6 +1,8 @@
 <template>
     <header class="app-header">
-        <a class="app-header__brand" href="#hello">Eun</a>
+        <a class="app-header__brand" href="#hello">
+            Eun
+        </a>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '섹션 네비게이션' : 'Section navigation'">
             <a v-for="link in links" :key="link.href" :href="link.href"
                 :class="{ 'is-active': activeId === link.href.slice(1) }"
