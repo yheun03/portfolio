@@ -1,55 +1,55 @@
 .section {
-    padding: var(--space-section-y) 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: var(--space-section-y) 1rem;
 }
 
 .section-title {
-    margin-bottom: var(--space-section-gap);
     position: relative;
-}
+    margin-bottom: var(--space-section-gap);
 
-.section-title__eyebrow {
-    font-family: var(--font-mono);
-    color: var(--color-primary);
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-size: 0.72rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 0.35rem;
-}
+    &__eyebrow {
+        display: inline-flex;
+        gap: 0.55rem;
+        align-items: center;
+        margin-bottom: 0.35rem;
+        color: var(--color-primary);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
 
-.section-title__eyebrow::after {
-    content: "";
-    flex: 1;
-    min-width: 2.5rem;
-    height: 2px;
-    border-radius: 999px;
-    background: var(--gradient-accent);
-    opacity: 0.85;
-}
+        &::after {
+            content: "";
+            flex: 1;
+            min-width: 2.5rem;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--gradient-accent);
+            opacity: 0.85;
+        }
+    }
 
-.section-title__title {
-    font-family: var(--font-display);
-    font-size: clamp(1.85rem, 3.2vw, 3rem);
-    font-weight: 900;
-    line-height: 1.06;
-    letter-spacing: -0.045em;
-    color: var(--color-text);
-    text-wrap: balance;
-}
+    &__title {
+        color: var(--color-text);
+        font-family: var(--font-display);
+        font-size: clamp(1.85rem, 3.2vw, 3rem);
+        font-weight: 900;
+        line-height: 1.06;
+        letter-spacing: -0.045em;
+        text-wrap: balance;
+    }
 
-.section-title__description {
-    color: var(--color-text-muted);
-    margin-top: 0.65rem;
-    max-width: 56ch;
-    font-size: clamp(0.95rem, 1.15vw, 1.08rem);
-    line-height: 1.65;
-}
+    &__description {
+        max-width: 56ch;
+        margin-top: 0.65rem;
+        color: var(--color-text-muted);
+        font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+        line-height: 1.65;
+    }
 
-.section-title--minimal .section-title__eyebrow::after {
-    display: none;
+    &--minimal &__eyebrow::after {
+        display: none;
+    }
 }

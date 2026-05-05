@@ -1,0 +1,101 @@
+.about__summary,
+.about__workflow {
+    background: var(--color-glass-2);
+    backdrop-filter: blur(10px);
+}
+
+.section--about {
+    grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1fr);
+    grid-template-areas:
+        "headline summary"
+        "principles summary"
+        "principles workflow";
+    align-items: start;
+    gap: clamp(1rem, 3vw, 3rem);
+
+    &::after {
+        content: "structure / accessibility / maintainability";
+        position: absolute;
+        left: max(0rem, calc((100vw - 1680px) / -2));
+        bottom: clamp(1rem, 4vw, 3rem);
+        z-index: -1;
+        color: color-mix(in srgb, var(--color-text) 7%, transparent);
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 9vw, 10rem);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+}
+
+.about {
+    &__headline {
+        grid-area: headline;
+    }
+
+    &__side-note {
+        max-width: 34ch;
+        margin-top: 1.2rem;
+        color: var(--color-text-muted);
+        font-weight: 740;
+    }
+
+    &__float {
+        width: auto;
+
+        &--summary {
+            grid-area: summary;
+        }
+
+        &--principles {
+            grid-area: principles;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            align-self: end;
+
+            .intro-card:nth-child(3) {
+                grid-column: 1 / -1;
+            }
+        }
+
+        &--workflow {
+            grid-area: workflow;
+        }
+    }
+
+    &__summary-intro {
+        font-weight: 680;
+    }
+
+    &__summary-paragraph+&__summary-paragraph {
+        margin-top: 0.65rem;
+    }
+
+    &__keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.44rem;
+        padding: 0;
+        margin: 1rem 0 0;
+        list-style: none;
+    }
+
+    &__workflow-title {
+        margin-bottom: 0.5rem;
+    }
+
+    &__workflow-list {
+        display: grid;
+        gap: 0.48rem;
+        margin: 0;
+        padding-left: 1.1rem;
+    }
+
+    &__workflow-direction {
+        margin-top: 1rem;
+        color: var(--color-text-muted);
+    }
+}

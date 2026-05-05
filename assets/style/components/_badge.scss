@@ -11,18 +11,18 @@
     color: var(--color-text);
     box-shadow: var(--shadow-glow);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
 
-.base-badge::before {
-    content: "";
-    width: 0.38rem;
-    height: 0.38rem;
-    border-radius: 999px;
-    background: var(--color-primary);
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-primary) 16%, transparent);
-}
+    &::before {
+        content: "";
+        width: 0.38rem;
+        height: 0.38rem;
+        border-radius: 999px;
+        background: var(--color-primary);
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-primary) 16%, transparent);
+    }
 
-.base-badge:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-soft);
+    &:hover {
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-1px);
+    }
 }

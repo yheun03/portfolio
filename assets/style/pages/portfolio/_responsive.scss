@@ -1,0 +1,193 @@
+@media (min-width: 768px) {
+    .works__grid .work-card {
+        grid-column: span 6;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-dock {
+        display: grid;
+    }
+
+    .works__grid .work-card:nth-child(4n + 1),
+    .works__grid .work-card:nth-child(4n + 4) {
+        grid-column: span 7;
+    }
+
+    .works__grid .work-card:nth-child(4n + 2),
+    .works__grid .work-card:nth-child(4n + 3) {
+        grid-column: span 5;
+    }
+}
+
+@media (min-width: 1920px) {
+    .section {
+        width: min(100% - 8rem, 2040px);
+    }
+
+    .section--hero {
+        width: min(100% - 8rem, 2240px);
+    }
+
+    .hero__poster {
+        grid-template-columns: minmax(720px, 1fr) minmax(500px, 0.58fr);
+        padding-inline: clamp(5rem, 6vw, 8rem);
+    }
+
+    .hero__mega-title {
+        font-size: clamp(6.4rem, 5.6vw, 9rem);
+    }
+
+    .hero__studio-card {
+        min-height: clamp(420px, 30vw, 560px);
+    }
+}
+
+@media (max-width: 1180px) {
+
+    .hero__poster,
+    .section--about,
+    .section--contact .contact__composition {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .section--works,
+    .section--journey,
+    .section--toolbox {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: none;
+    }
+
+    .section--works .section-title,
+    .works__lead,
+    .works__filters,
+    .works__grid,
+    .section--journey>.section-title,
+    .journey__flow,
+    .section--toolbox>.section-title {
+        position: static;
+        grid-area: auto;
+    }
+
+    .works__filters {
+        justify-self: start;
+    }
+
+    .hero__poster {
+        grid-template-areas:
+            "copy"
+            "studio"
+            "principles"
+            "keywords"
+            "actions"
+            "metrics";
+        align-items: start;
+    }
+
+    .section--about {
+        grid-template-areas:
+            "headline"
+            "summary"
+            "principles"
+            "workflow";
+    }
+
+    .section--contact .contact__composition {
+        grid-template-areas:
+            "title"
+            "mail"
+            "summary"
+            "links";
+    }
+
+    .hero__studio-card,
+    .hero__floating-list,
+    .hero__metric-strip {
+        justify-self: stretch;
+    }
+
+    .journey__flow,
+    .highlights__panel {
+        flex-direction: column;
+    }
+
+    .journey__summary {
+        position: static;
+        flex-basis: auto;
+    }
+
+    .journey__timeline .timeline-item:nth-child(2n) {
+        margin-left: 0;
+    }
+
+    .highlights__description {
+        flex-basis: auto;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .section,
+    .section--hero {
+        width: min(100% - 2rem, 100%);
+    }
+
+    .section:not(.section--hero) .section-title::before {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+    }
+
+    .hero__poster {
+        padding: 4.8rem 1rem 1rem;
+    }
+
+    .hero__availability {
+        right: 1rem;
+        justify-content: space-between;
+        white-space: normal;
+    }
+
+    .hero__mega-title {
+        max-width: 100%;
+        font-size: clamp(2.9rem, 13vw, 4.8rem);
+    }
+
+    .hero__studio-card {
+        min-height: auto;
+    }
+
+    .hero__actions .base-button {
+        width: 100%;
+    }
+
+    .hero__metric-strip .stat-card {
+        flex: 1 1 calc(50% - 0.55rem);
+        width: auto;
+    }
+
+    .about__float--principles {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbox__orbit .skill-card,
+    .toolbox__orbit .skill-card:nth-child(2n) {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .works__filters,
+    .highlights__tabs {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .works__filters button,
+    .highlights__tabs button {
+        white-space: nowrap;
+    }
+
+    .contact__mail-art {
+        font-size: clamp(2.2rem, 15vw, 4.5rem);
+    }
+}
