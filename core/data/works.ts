@@ -1,3 +1,7 @@
+/**
+ * 작업 데이터: `core/data/json/works/*.json` (카테고리별) + `personal.json`
+ * 보강 스크립트: `scripts/enrich-works-json.mjs`
+ */
 import awardJson from "./json/works/award.json";
 import operationJson from "./json/works/operation.json";
 import personalJson from "./json/works/personal.json";
