@@ -7,6 +7,13 @@
     counter-reset: section-count;
     background: var(--gradient-noise);
     scroll-behavior: smooth;
+
+    /** 맥 독처럼 기본은 숨김 — 펼쳤을 때 라벨이 왼쪽으로 나가므로 약간의 end 여백만 유지 */
+    &--section-dock {
+        @media (min-width: 1024px) {
+            padding-inline-end: clamp(1.25rem, 1.8vw + 0.6rem, 2.25rem);
+        }
+    }
 }
 
 .section,
@@ -150,12 +157,50 @@
     opacity: 0.1;
 }
 
-.section-dock {
+/** 오른쪽 끝 호버·포커스 시 맥 독처럼 네비가 미끄러져 나타남 */
+.section-dock-ribbon {
+    --section-dock-edge: var(--space-fluid-sm);
+    --section-content-w: min(100vw - var(--inset-page), var(--layout-content-max));
+    --section-margin-x: max(0px, calc((100vw - var(--section-content-w)) * 0.5));
     position: fixed;
-    top: 50%;
-    right: var(--space-fluid-sm);
+    top: 0;
+    bottom: 0;
+    right: max(
+        var(--section-dock-edge),
+        calc(var(--section-margin-x) - var(--section-dock-slot, 3.15rem))
+    );
     z-index: 85;
     display: none;
+    width: min(4.5rem, 12vw);
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: auto;
+    background: transparent;
+
+    @media (min-width: 1024px) {
+        display: flex;
+    }
+
+    &:hover .section-dock,
+    &:focus-within .section-dock {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        gap: var(--space-3);
+        padding: var(--space-3);
+        box-shadow: var(--shadow-lift), var(--shadow-glow);
+    }
+
+    &:hover .section-dock .section-dock__dot,
+    &:focus-within .section-dock .section-dock__dot {
+        width: 0.55rem;
+        height: 0.55rem;
+    }
+}
+
+.section-dock {
+    display: grid;
     gap: calc(var(--space-1) * 0.4);
     padding: var(--space-1);
     border: 1px solid color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
@@ -163,14 +208,19 @@
     background: var(--color-glass-2-strong);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(12px);
-    transform: translateY(-50%);
-    transition: gap 0.24s ease, padding 0.24s ease, box-shadow 0.24s ease;
+    pointer-events: none;
+    opacity: 0.88;
+    transform: translateX(calc(100% - 0.5rem));
+    transition:
+        transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1),
+        opacity 0.22s ease,
+        gap 0.24s ease,
+        padding 0.24s ease,
+        box-shadow 0.24s ease;
 
-    &:hover,
-    &:focus-within {
-        gap: var(--space-3);
-        padding: var(--space-3);
-        box-shadow: var(--shadow-lift), var(--shadow-glow);
+    .section-dock-ribbon:hover &,
+    .section-dock-ribbon:focus-within & {
+        pointer-events: auto;
     }
 
     &__item {
@@ -190,7 +240,7 @@
         &:hover .section-dock__label,
         &:focus-visible .section-dock__label {
             opacity: 1;
-            transform: translateY(-50%) translateX(-0.15rem);
+            transform: translateY(-50%) translateX(-0.12rem);
         }
 
         &.is-active .section-dock__dot {
@@ -212,10 +262,12 @@
         height: 0.55rem;
     }
 
+    /** 독(점) 기준 왼쪽 = 본문 쪽으로 섹션 타이틀 노출 */
     &__label {
         position: absolute;
         top: 50%;
         right: calc(100% + 0.7rem);
+        left: auto;
         padding: var(--space-3) var(--space-5);
         border: 1px solid var(--color-border);
         border-radius: 999px;
@@ -225,8 +277,16 @@
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-50%) translateX(0.25rem);
+        transform: translateY(-50%) translateX(0.2rem);
         transition: opacity 0.18s ease, transform 0.18s ease;
+        z-index: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .section-dock {
+        transition-duration: 0.01ms;
     }
 }
 
