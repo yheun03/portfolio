@@ -50,7 +50,7 @@
             "ko": "약 1개월",
             "en": "~1 month"
         },
-        "captures": ["/ver.2025/src/assets/images/og-image.png"],
+        "captures": ["/images/og-image.png"],
         "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
         "links": [
             {
