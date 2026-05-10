@@ -6,6 +6,11 @@ export default defineNuxtConfig({
     experimental: { appManifest: false },
     features: { inlineStyles: false },
 
+    /** 루트 응답이 JSON `Dev server is unavailable` 로 보일 때: 서버 기동 전에 브라우저를 연 경우·캐시 꼬임·포트 중복이 흔한 원인 */
+    devServer: {
+        host: 'localhost',
+    },
+
     app: {
         head: {
             script: [
@@ -55,8 +60,9 @@ export default defineNuxtConfig({
         },
         server: {
             watch: {
-                usePolling: true,
-                interval: 250,
+                usePolling: process.env.CHOKIDAR_USEPOLLING === '1',
+                interval: 300,
+                ignored: ['**/.git/**', '**/.output/**', '**/node_modules/**'],
             },
         },
         css: {
@@ -71,8 +77,9 @@ export default defineNuxtConfig({
 
     watchers: {
         chokidar: {
-            usePolling: true,
-            interval: 250,
+            usePolling: process.env.CHOKIDAR_USEPOLLING === '1',
+            interval: 300,
+            ignored: ['**/.git/**', '**/.output/**'],
         },
     },
 

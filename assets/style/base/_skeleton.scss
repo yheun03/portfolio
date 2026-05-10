@@ -14,12 +14,10 @@
     color: transparent !important;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
-    background: linear-gradient(
-        105deg,
-        color-mix(in srgb, var(--color-surface-strong) 72%, var(--color-border)) 0%,
-        color-mix(in srgb, var(--color-surface) 94%, var(--color-primary) 5%) 48%,
-        color-mix(in srgb, var(--color-surface-strong) 72%, var(--color-border)) 100%
-    );
+    background: linear-gradient(105deg,
+            color-mix(in srgb, var(--color-surface-strong) 72%, var(--color-border)) 0%,
+            color-mix(in srgb, var(--color-surface) 94%, var(--color-primary) 5%) 48%,
+            color-mix(in srgb, var(--color-surface-strong) 72%, var(--color-border)) 100%);
     background-size: 240% 100%;
     animation: skeleton-shimmer 1.35s ease-in-out infinite;
     border-radius: 0.32rem;
@@ -84,6 +82,7 @@ html.skeleton-active {
         .hero__availability span,
         .section-title__eyebrow,
         .section-title__title,
+        .section-title__description,
         .highlights__description,
         .hero__mega-title,
         .hero__subtitle,

@@ -2,18 +2,22 @@
     <section id="highlights" class="section section--highlights">
         <span class="section__emoji section__emoji--highlights accent-emoji accent-emoji--soft"
             aria-hidden="true">✨</span>
-        <BaseSectionTitle :eyebrow="t('nav.highlights')" :title="t('highlights.title')" />
-        <div class="highlights__tabs" role="tablist" :aria-label="locale === 'ko' ? '하이라이트 탭' : 'Highlights tabs'">
-            <button v-for="tab in tabs" :key="tab.key" :id="`highlights-tab-${tab.key}`" role="tab"
-                :aria-controls="`highlights-panel-${tab.key}`" :aria-selected="highlightsUi.activeTab === tab.key"
-                :tabindex="highlightsUi.activeTab === tab.key ? 0 : -1" class="ui-tab-button"
-                :class="{ 'is-active': highlightsUi.activeTab === tab.key }" @click="highlightsUi.setTab(tab.key)">
-                {{ tab.label }}
-            </button>
+        <div class="highlights__title-col">
+            <BaseSectionTitle :eyebrow="t('nav.highlights')" :title="t('highlights.title')"
+                :description="t('highlights.summary')" />
+            <div class="highlights__tabs lnb-tablist" role="tablist" aria-orientation="vertical"
+                :aria-label="locale === 'ko' ? '하이라이트 탭' : 'Highlights tabs'">
+                <button v-for="tab in tabs" :key="tab.key" :id="`highlights-tab-${tab.key}`" role="tab"
+                    :aria-controls="`highlights-panel-${tab.key}`" :aria-selected="highlightsUi.activeTab === tab.key"
+                    :tabindex="highlightsUi.activeTab === tab.key ? 0 : -1" class="ui-tab-button"
+                    :class="{ 'is-active': highlightsUi.activeTab === tab.key }" @click="highlightsUi.setTab(tab.key)">
+                    {{ tab.label }}
+                </button>
+            </div>
         </div>
 
-        <div :id="`highlights-panel-${highlightsUi.activeTab}`" class="highlights__panel" role="tabpanel"
-            :aria-labelledby="`highlights-tab-${highlightsUi.activeTab}`">
+        <div :id="`highlights-panel-${highlightsUi.activeTab}`" :key="highlightsUi.activeTab" class="highlights__panel"
+            role="tabpanel" :aria-labelledby="`highlights-tab-${highlightsUi.activeTab}`">
             <HighlightCard :title="activeTabLabel" :items="activeItems" />
             <p class="highlights__description">{{ activeDescription }}</p>
         </div>

@@ -1,32 +1,52 @@
+.section--highlights {
+    grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
+    column-gap: var(--space-6);
+    align-items: start;
+
+    .highlights__title-col {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        position: sticky;
+        top: 5.25rem;
+        align-self: start;
+        display: grid;
+        gap: var(--space-4);
+        padding-inline-end: var(--space-2);
+    }
+
+    .highlights__panel {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .section-title {
+        margin-bottom: 0;
+    }
+}
+
 .highlights {
     &__tabs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-        width: fit-content;
-        padding: var(--space-2);
-        border: 1px solid color-mix(in srgb, var(--color-primary) 26%, var(--color-border));
-        border-radius: 999px;
-        background: color-mix(in srgb, var(--color-surface) 78%, transparent);
-        box-shadow: var(--shadow-soft), var(--shadow-glow);
-        backdrop-filter: blur(16px) saturate(1.15);
+        align-self: stretch;
+        justify-self: start;
     }
 
     &__panel {
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.42fr);
         gap: var(--space-6);
-        align-items: stretch;
+        align-items: start;
 
         .highlight-card {
-            flex: 1 1 auto;
+            grid-column: 1;
+            min-width: 0;
         }
     }
 
     &__description {
-        flex: 0 1 340px;
+        grid-column: 2;
+        margin-top: 0;
         align-self: start;
         padding: var(--space-6);
-        margin-top: var(--space-9);
         border: 1px solid var(--color-border);
         border-radius: var(--radius-lg);
         background: var(--gradient-surface);
