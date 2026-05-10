@@ -1,19 +1,33 @@
 .section--works {
     grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
-    grid-template-areas:
-        "title filters"
-        "grid grid"
-        "control control";
+    column-gap: var(--space-6);
     align-items: start;
 
+    /* 왼쪽: 타이틀만 세로 관통 + sticky / 오른쪽: 탭 → 카드 → 컨트롤 */
     .works__title-col {
+        grid-column: 1;
+        grid-row: 1 / -1;
         position: sticky;
         top: 5.25rem;
-        grid-area: title;
         align-self: start;
-        z-index: 2;
         display: grid;
         gap: var(--space-3);
+        padding-inline-end: var(--space-2);
+    }
+
+    .works__filters {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .works__grid {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .works__list-control {
+        grid-column: 2;
+        grid-row: 3;
     }
 
     .section-title {
@@ -39,7 +53,7 @@
     }
 
     &__filters {
-        grid-area: filters;
+        align-self: start;
         justify-self: end;
         display: flex;
         flex-wrap: wrap;
@@ -54,7 +68,6 @@
     }
 
     &__grid {
-        grid-area: grid;
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: var(--space-6);
@@ -65,7 +78,6 @@
     }
 
     &__list-control {
-        grid-area: control;
         display: flex;
         gap: var(--space-5);
         align-items: center;
