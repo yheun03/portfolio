@@ -7,10 +7,6 @@
 }
 
 @media (min-width: 1024px) {
-    .section-dock {
-        display: grid;
-    }
-
     .works__grid .work-card:nth-child(4n + 1),
     .works__grid .work-card:nth-child(4n + 4),
     .personal__grid .work-card:nth-child(4n + 1),

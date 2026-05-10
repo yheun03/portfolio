@@ -4,7 +4,7 @@
     <a class="skip-link" href="#main-content">{{ locale === "ko" ? "본문으로 건너뛰기" : "Skip to main content" }}</a>
     <div class="app-background" aria-hidden="true" />
     <LayoutAppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
-    <main id="main-content" class="portfolio-page">
+    <main id="main-content" class="portfolio-page" :class="{ 'portfolio-page--section-dock': showSectionDock }">
         <slot />
     </main>
     <LayoutAppFooter :text="footerText" />
