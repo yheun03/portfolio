@@ -17,11 +17,9 @@
     },
     "dependencies": {
         "@pinia/nuxt": "^0.5.4",
-        "axios": "^1.7.7",
         "gsap": "^3.15.0",
         "nuxt": "^3.14.1593",
         "pinia": "^2.2.4",
-        "swiper": "^12.1.4",
         "vue": "^3.5.12",
         "vue-router": "^4.4.5"
     },

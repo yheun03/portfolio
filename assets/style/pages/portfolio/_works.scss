@@ -2,7 +2,8 @@
     grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
     grid-template-areas:
         "title filters"
-        "lead grid";
+        "grid grid"
+        "control control";
     align-items: start;
 
     .works__title-col {
@@ -37,17 +38,6 @@
         }
     }
 
-    &__lead {
-        position: sticky;
-        top: 16.5rem;
-        grid-area: lead;
-        align-self: start;
-        max-width: 56ch;
-        color: var(--color-text-muted);
-        line-height: var(--line-height-body);
-        z-index: 2;
-    }
-
     &__filters {
         grid-area: filters;
         justify-self: end;
@@ -75,7 +65,7 @@
     }
 
     &__list-control {
-        grid-column: 2;
+        grid-area: control;
         display: flex;
         gap: var(--space-5);
         align-items: center;

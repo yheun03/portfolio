@@ -1,5 +1,6 @@
 <template>
-    <AppLayout :links="navLinks" :active-id="activeId" :footer-text="t('footer.copyright')">
+    <AppLayout :links="sectionDockLinks" :header-links="headerNavLinks" :active-id="activeId"
+        :footer-text="t('footer.copyright')">
         <div v-for="layer in pageLayers" :key="layer.name" class="page-layer" :class="`page-layer--${layer.name}`">
             <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
         </div>
@@ -40,7 +41,6 @@ const pageLayers = HOME_PAGE_LAYERS.map((layer) => ({
 }));
 
 const { t, initLocale, locale } = useLocale();
-const { initTheme } = useTheme();
 const requestURL = useRequestURL();
 const baseUrl = computed(() => requestURL.origin || 'https://eun-portfolio.dev');
 const canonicalUrl = computed(() => `${baseUrl.value}/`);
@@ -48,12 +48,18 @@ const canonicalUrl = computed(() => `${baseUrl.value}/`);
 useIntersectionAnimation();
 usePortfolioGsap();
 
-const navLinks = computed(() =>
+const sectionDockLinks = computed(() =>
     SCROLL_SECTION_IDS.map((id) => ({
         href: `#${id}`,
         label: t(`nav.${id}`),
     }))
 );
+
+const headerNavLinks = computed(() => [
+    { href: '/', label: t('nav.home') },
+    { href: '/projects', label: t('nav.worksArchive') },
+    { href: '/personal', label: t('nav.personalArchive') },
+]);
 
 const { activeId } = useScrollSpy([...SCROLL_SECTION_IDS]);
 
@@ -83,7 +89,6 @@ useHead(() => ({
 }));
 
 onMounted(() => {
-    initTheme();
     initLocale();
 });
 </script>

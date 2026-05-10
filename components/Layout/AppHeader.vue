@@ -3,7 +3,7 @@
         <a class="app-header__brand" :href="brandHref">
             Eun
         </a>
-        <nav class="app-header__nav" :aria-label="locale === 'ko' ? '섹션 네비게이션' : 'Section navigation'">
+        <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
             <a v-for="link in links" :key="link.href" :href="link.href" :class="{ 'is-active': isNavActive(link.href) }"
                 :aria-current="isNavActive(link.href) ? 'true' : undefined">
                 {{ link.label }}
@@ -42,12 +42,17 @@ const props = withDefaults(
 );
 
 function isNavActive(href: string) {
-    if (props.activePath) {
-        if (href === "/") return route.path === "/";
-        return props.activePath === href;
-    }
     if (href.startsWith("#")) {
+        if (props.activePath) return false;
         return props.activeId === href.slice(1);
+    }
+    if (href.startsWith("/")) {
+        if (props.activePath) {
+            if (href === "/") return route.path === "/";
+            return props.activePath === href;
+        }
+        if (href === "/") return route.path === "/";
+        return route.path === href || route.path.startsWith(`${href}/`);
     }
     return false;
 }

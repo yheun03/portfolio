@@ -6,13 +6,13 @@
 
 ## 1. 디렉터리 한눈에 보기
 
-| 경로 | 역할 |
-|------|------|
-| `core/data/json/works/` | 경력·개인 **프로젝트** (카테고리별 JSON) |
-| `core/data/json/site/` | **프로필·소개·여정·스킬** 등 사이트 본문 |
-| `core/data/json/site/highlights/` | **수상·자격·역할·활동** 목록 + 탭 설명 |
-| `core/data/*.ts` | 위 JSON을 불러와 `export` (얇은 로더) + `works` 타입·조합 |
-| `core/i18n/ko.json`, `en.json` | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등) |
+| 경로                              | 역할                                                      |
+| --------------------------------- | --------------------------------------------------------- |
+| `core/data/json/works/`           | 경력·개인 **프로젝트** (카테고리별 JSON)                  |
+| `core/data/json/site/`            | **프로필·소개·여정·스킬** 등 사이트 본문                  |
+| `core/data/json/site/highlights/` | **수상·자격·역할·활동** 목록 + 탭 설명                    |
+| `core/data/*.ts`                  | 위 JSON을 불러와 `export` (얇은 로더) + `works` 타입·조합 |
+| `core/i18n/ko.json`, `en.json`    | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등)       |
 
 ---
 
@@ -22,10 +22,10 @@
   `project.json`, `operation.json`, `solution.json`, `renewal.json`, `award.json`, `personal.json`
 - 각 파일은 **객체 배열**이며, 항목 스키마는 `core/data/works.ts`의 `WorkItem`과 맞춥니다.
 - 공통으로 자주 쓰는 필드:
-  - `id`, `category`, `title` / `type` / `role` / `introduction` 등: `{ "ko": "...", "en": "..." }`
-  - `pin`: 메인 홈의 Works / Personal 섹션에 **대표 카드로만** 노출할지 (`true`만 표시)
-  - `duration`, `captures`, `languages`: 갤러리·상세 페이지용
-  - `tech`, `myWorks`, `achievements`, `points`: 상세·모달용
+    - `id`, `category`, `title` / `type` / `role` / `introduction` 등: `{ "ko": "...", "en": "..." }`
+    - `pin`: 메인 홈의 Works / Personal 섹션에 **대표 카드로만** 노출할지 (`true`만 표시)
+    - `duration`, `captures`, `languages`: 갤러리·상세 페이지용
+    - `tech`, `myWorks`, `achievements`, `points`: 상세·모달용
 
 **합쳐진 목록**은 `works.ts`에서 `careerWorks`(실무 JSON들 합침) + `personalWorksList` → 전체 `works`.
 
@@ -38,12 +38,12 @@
 
 ## 3. `core/data/json/site/` (본문 JSON)
 
-| 파일 | 용도 | TS 로더 |
-|------|------|---------|
-| `profile.json` | 이름, 역할, 키워드, 통계, 연락처 등 | `profile.ts` → `profile` |
-| `about.json` | 소개 문단, 키워드, 원칙, 워크플로 | `about.ts` → `aboutContent` |
+| 파일           | 용도                                   | TS 로더                                    |
+| -------------- | -------------------------------------- | ------------------------------------------ |
+| `profile.json` | 이름, 역할, 키워드, 통계, 연락처 등    | `profile.ts` → `profile`                   |
+| `about.json`   | 소개 문단, 키워드, 원칙, 워크플로      | `about.ts` → `aboutContent`                |
 | `journey.json` | `summary` + `timeline` (타임라인 배열) | `journey.ts` → `journeySummary`, `journey` |
-| `skills.json` | 툴박스(스킬 카드) 배열 | `skills.ts` → `skills` |
+| `skills.json`  | 툴박스(스킬 카드) 배열                 | `skills.ts` → `skills`                     |
 
 ---
 
@@ -58,11 +58,10 @@
 
 ## 5. TypeScript만 두는 파일 (JSON으로 안 옮긴 이유)
 
-| 파일 | 이유 |
-|------|------|
+| 파일          | 이유                                                                                          |
+| ------------- | --------------------------------------------------------------------------------------------- |
 | `homePage.ts` | 홈 **섹션 키**·**레이어 그룹** — `HomeSectionKey` 타입과 `pages/index.vue` 매핑과 맞추기 쉬움 |
-| `projects.ts` | 학교 showcase — **이미지 `import`** 가 필요해 Vite 번들 전제의 TS 유지 |
-| `works.ts` | 여러 JSON **병합**, `WorkItem` 타입, `getCareerWorkById` 등 |
+| `works.ts`    | 여러 JSON **병합**, `WorkItem` 타입, `getCareerWorkById` 등                                   |
 
 ---
 
@@ -77,10 +76,10 @@
 
 ## 7. 보조 스크립트
 
-- `scripts/enrich-works-json.mjs`  
-  - 대상: `core/data/json/works/*.json`  
-  - `pin`, `duration`, `captures`, `languages` 등 **기본 채움** (이미 있는 값은 유지)  
-  - **빌드 필수 아님** — 데이터 대량 정리할 때만 실행
+- `scripts/enrich-works-json.mjs`
+    - 대상: `core/data/json/works/*.json`
+    - `pin`, `duration`, `captures`, `languages` 등 **기본 채움** (이미 있는 값은 유지)
+    - **빌드 필수 아님** — 데이터 대량 정리할 때만 실행
 
 ```bash
 node scripts/enrich-works-json.mjs
@@ -90,12 +89,11 @@ node scripts/enrich-works-json.mjs
 
 ## 8. 수정 시 체크리스트
 
-1. **프로젝트 추가/수정** → 해당 카테고리 JSON (`works/`) + 필요 시 `public/sitemap.xml` URL 추가  
-2. **프로필·소개·여정·스킬** → `site/*.json`  
-3. **수상·자격증** → `site/highlights/*.json`  
-4. **헤더 문구·버튼** → `core/i18n/*.json`  
-5. **홈 섹션 순서/그룹** → `homePage.ts`  
-6. 이미지가 있는 showcase만 → `projects.ts` + `assets/...`
+1. **프로젝트 추가/수정** → 해당 카테고리 JSON (`works/`) + 필요 시 `public/sitemap.xml` URL 추가
+2. **프로필·소개·여정·스킬** → `site/*.json`
+3. **수상·자격증** → `site/highlights/*.json`
+4. **헤더 문구·버튼** → `core/i18n/*.json`
+5. **홈 섹션 순서/그룹** → `homePage.ts`
 
 ---
 
@@ -107,4 +105,4 @@ node scripts/enrich-works-json.mjs
 
 ---
 
-*마지막 정리 기준: 저장소 내 `core/data` · `core/i18n` 구조와 동일하게 유지할 것.*
+_마지막 정리 기준: 저장소 내 `core/data` · `core/i18n` 구조와 동일하게 유지할 것._
