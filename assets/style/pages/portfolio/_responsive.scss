@@ -1,12 +1,7 @@
-@media (min-width: 768px) {
-
-    .works__grid .work-card,
-    .personal__grid .work-card {
-        grid-column: span 6;
-    }
-}
+/* 데스크톱 전용: 카드 그리드 모자이크 등 (1024px 이상) */
 
 @media (min-width: 1024px) {
+
     .works__grid .work-card:nth-child(4n + 1),
     .works__grid .work-card:nth-child(4n + 4),
     .personal__grid .work-card:nth-child(4n + 1),
@@ -45,128 +40,13 @@
     }
 }
 
-@media (max-width: 1180px) {
-
-    .hero__poster,
-    .section--about,
-    .section--contact .contact__composition {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .section--journey,
-    .section--toolbox {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: none;
-        min-height: auto;
-    }
-
-    .section--journey>.section-title,
-    .journey__flow,
-    .section--toolbox>.section-title {
-        position: static;
-        grid-area: auto;
-    }
-
-    .hero__poster {
-        grid-template-areas:
-            "copy"
-            "studio"
-            "principles"
-            "keywords"
-            "actions"
-            "metrics";
-        align-items: start;
-    }
-
-    .section--about {
-        grid-template-areas:
-            "headline"
-            "summary"
-            "principles"
-            "workflow";
-    }
-
-    .section--contact .contact__composition {
-        grid-template-areas:
-            "title"
-            "mail"
-            "summary"
-            "links";
-        min-height: auto;
-    }
-
-    .hero__studio-card,
-    .hero__floating-list,
-    .hero__metric-strip {
-        justify-self: stretch;
-    }
-
-    .journey__flow {
-        flex-direction: column;
-    }
-
-    .journey__company-block {
-        flex-direction: column;
-    }
-
-    .highlights__panel {
-        grid-template-columns: 1fr;
-    }
-
-    .highlights__description {
-        grid-column: 1;
-    }
-
-    .journey__summary {
-        position: static;
-        flex-basis: auto;
-    }
-
-    .journey__timeline .timeline-item:nth-child(2n) {
-        margin-left: 0;
-    }
-
-}
-
-@media (max-width: 900px) {
-
-    .section--works,
-    .section--personal,
-    .section--highlights {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: none;
-        min-height: auto;
-    }
-
-    .section--works .works__title-col,
-    .section--works .section-title__description,
-    .section--personal .personal__head,
-    .section--highlights .highlights__title-col,
-    .works__filters,
-    .personal__cta,
-    .highlights__tabs,
-    .works__grid,
-    .personal__grid,
-    .highlights__panel,
-    .works__list-control {
-        position: static;
-        grid-area: auto;
-        grid-row: auto;
-        grid-column: auto;
-    }
-
-    .works__filters,
-    .personal__cta,
-    .highlights__tabs {
-        justify-self: start;
-    }
-}
+/* 좁은 폰 (767px 이하): 타이포·터치 여유만 보강 — 구조는 _touch.scss와 동일(단일 열) */
 
 @media (max-width: 767px) {
 
     .section,
     .section--hero {
-        width: min(100% - var(--space-9), 100%);
+        width: min(100% - var(--space-6), 100%);
     }
 
     .section:not(.section--hero) .section-title::before {
@@ -179,26 +59,20 @@
     }
 
     .hero__poster {
-        padding: calc(var(--layout-header-height) + var(--space-4)) var(--space-6) var(--space-6);
+        padding-top: calc(var(--layout-header-height) + var(--space-3));
     }
 
     .hero__availability {
-        right: var(--space-6);
         justify-content: space-between;
         white-space: normal;
     }
 
     .hero__mega-title {
-        max-width: 100%;
-        font-size: clamp(2.9rem, 13vw, 4.8rem);
+        font-size: clamp(2.75rem, 12vw, 4.5rem);
     }
 
     .hero__studio-card {
         min-height: auto;
-    }
-
-    .hero__actions .base-button {
-        width: 100%;
     }
 
     .hero__metric-strip .stat-card {
@@ -206,41 +80,13 @@
         width: auto;
     }
 
-    .about__float--principles {
-        grid-template-columns: 1fr;
-    }
-
-    .toolbox__orbit .skill-card,
-    .toolbox__orbit .skill-card:nth-child(2n) {
-        width: 100%;
-        margin-top: 0;
-    }
-
     .personal__cta {
         width: 100%;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-    }
-
-    .works__filters,
-    .highlights__tabs {
-        width: 100%;
-        overflow: visible;
-    }
-
-    .works__list-control {
-        flex-direction: column;
-        align-items: stretch;
-
-        .base-button {
-            width: 100%;
-        }
     }
 
     .contact__mail-art {
-        overflow-wrap: normal;
-        font-size: clamp(1.45rem, 7.2vw, 2.2rem);
-        white-space: nowrap;
+        overflow-wrap: anywhere;
+        font-size: clamp(1.35rem, 7vw, 2rem);
     }
 
     .section--contact {
@@ -249,28 +95,6 @@
 
     .journey__flow {
         gap: var(--space-6);
-    }
-
-    .journey__timeline {
-        display: grid;
-        grid-auto-columns: minmax(min(18rem, 82vw), 1fr);
-        grid-auto-flow: column;
-        gap: var(--space-5);
-        width: 100%;
-        overflow-x: auto;
-        overscroll-behavior-inline: contain;
-        padding: var(--space-1) 0 var(--space-5);
-        scroll-padding-inline: var(--space-3);
-        scroll-snap-type: inline mandatory;
-    }
-
-    .journey__timeline .timeline-item {
-        scroll-snap-align: start;
-    }
-
-    .journey__next-link {
-        display: inline-flex;
-        width: 100%;
     }
 
     :where(.base-label, .technical-label) {
