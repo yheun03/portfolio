@@ -1,0 +1,106 @@
+[
+    {
+        "id": "portfolio-2026",
+        "category": "personal",
+        "title": {
+            "ko": "포트폴리오 웹사이트",
+            "en": "Portfolio Website"
+        },
+        "period": "2026",
+        "type": {
+            "ko": "개인 / 웹",
+            "en": "Personal / Web"
+        },
+        "role": {
+            "ko": "기획·퍼블리싱·구현",
+            "en": "Planning, publishing, implementation"
+        },
+        "tech": ["Nuxt", "Vue 3", "SCSS", "TypeScript"],
+        "introduction": {
+            "ko": "실무 프로젝트와 별도로, 개인 신념에 맞춘 정보 구조·모션·접근성을 한 번에 실험해 정리한 스펙 기반 포트폴리오입니다.",
+            "en": "A spec-driven portfolio experimenting with information architecture, motion, and accessibility beyond client work."
+        },
+        "myWorks": [
+            {
+                "ko": "섹션 단위 레이아웃·타이포 스케일 정리",
+                "en": "Section-level layout and typographic scale"
+            },
+            {
+                "ko": "다크 모드·스크롤 연동 등 인터랙션 구성",
+                "en": "Dark mode and scroll-linked interactions"
+            },
+            {
+                "ko": "컴포넌트·스타일 일관성 유지를 위한 SCSS 구조",
+                "en": "SCSS structure for consistent components"
+            }
+        ],
+        "achievements": [],
+        "points": [
+            {
+                "ko": "개인 브랜딩·전달력",
+                "en": "Personal narrative and clarity"
+            },
+            {
+                "ko": "구현 품질 실험장",
+                "en": "Sandbox for craft and quality"
+            }
+        ],
+        "pin": true,
+        "duration": {
+            "ko": "약 2개월",
+            "en": "~2 months"
+        },
+        "captures": ["/images/projects/placeholder.svg"],
+        "languages": ["Nuxt", "Vue 3", "SCSS", "TypeScript"]
+    },
+    {
+        "id": "ui-playground",
+        "category": "personal",
+        "title": {
+            "ko": "UI 패턴 스터디",
+            "en": "UI Pattern Study"
+        },
+        "period": "2025~2026",
+        "type": {
+            "ko": "개인 / 실험",
+            "en": "Personal / Experiment"
+        },
+        "role": {
+            "ko": "디자인 시스템·마크업 실험",
+            "en": "Design system and markup experiments"
+        },
+        "tech": ["HTML", "SCSS", "Vue", "Figma"],
+        "introduction": {
+            "ko": "실서비스에 바로 옮기기 전, 카드·폼·네비게이션 등 반복 패턴을 작은 단위로 깨뜨려 보고 다시 조립하는 개인 스터디입니다.",
+            "en": "Small-scale breakdowns and rebuilds of cards, forms, and navigation before applying patterns to production."
+        },
+        "myWorks": [
+            {
+                "ko": "패턴별 접근성·반응형 시나리오 정리",
+                "en": "A11y and responsive scenarios per pattern"
+            },
+            {
+                "ko": "토큰·네이밍 규칙 시범 적용",
+                "en": "Trial token and naming conventions"
+            }
+        ],
+        "achievements": [],
+        "points": [
+            {
+                "ko": "재사용 가능한 패턴 사전",
+                "en": "Reusable pattern vocabulary"
+            },
+            {
+                "ko": "실무 적용 전 검증 습관",
+                "en": "Validate before shipping to production"
+            }
+        ],
+        "pin": true,
+        "duration": {
+            "ko": "약 12개월 (병행)",
+            "en": "~12 months (parallel)"
+        },
+        "captures": ["/images/projects/placeholder.svg"],
+        "languages": ["HTML", "SCSS", "Vue"]
+    }
+]

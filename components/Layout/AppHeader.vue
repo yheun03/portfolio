@@ -1,12 +1,11 @@
 <template>
     <header class="app-header">
-        <a class="app-header__brand" href="#hello">
+        <a class="app-header__brand" :href="brandHref">
             Eun
         </a>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '섹션 네비게이션' : 'Section navigation'">
-            <a v-for="link in links" :key="link.href" :href="link.href"
-                :class="{ 'is-active': activeId === link.href.slice(1) }"
-                :aria-current="activeId === link.href.slice(1) ? 'true' : undefined">
+            <a v-for="link in links" :key="link.href" :href="link.href" :class="{ 'is-active': isNavActive(link.href) }"
+                :aria-current="isNavActive(link.href) ? 'true' : undefined">
                 {{ link.label }}
             </a>
         </nav>
@@ -20,14 +19,38 @@
                 {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
             </button>
         </div>
-        <MobileMenu id="mobile-menu-panel" :open="menuOpen" :links="links" @close="menuOpen = false" />
+        <MobileMenu id="mobile-menu-panel" :open="menuOpen" :links="links" :active-path="activePath"
+            :active-id="activeId" @close="menuOpen = false" />
     </header>
 </template>
 
 <script setup lang="ts">
 const menuOpen = ref(false);
 const { locale } = useLocale();
-defineProps<{ links: { href: string; label: string }[]; activeId: string }>();
+const route = useRoute();
+
+const props = withDefaults(
+    defineProps<{
+        links: { href: string; label: string }[];
+        activeId: string;
+        brandHref?: string;
+        activePath?: string;
+    }>(),
+    {
+        brandHref: "#hello",
+    }
+);
+
+function isNavActive(href: string) {
+    if (props.activePath) {
+        if (href === "/") return route.path === "/";
+        return props.activePath === href;
+    }
+    if (href.startsWith("#")) {
+        return props.activeId === href.slice(1);
+    }
+    return false;
+}
 
 const onMobileMenuToggle = () => {
     menuOpen.value = !menuOpen.value;

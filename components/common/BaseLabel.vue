@@ -7,6 +7,6 @@
 <script setup lang="ts">
 defineProps<{
     label?: string;
-    tone?: "default" | "work" | "toolbox" | "highlight" | "journey" | "contact" | "profile";
+    tone?: "default" | "work" | "personal" | "toolbox" | "highlight" | "journey" | "contact" | "profile";
 }>();
 </script>

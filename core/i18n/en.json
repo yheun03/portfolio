@@ -1,8 +1,12 @@
 {
     "nav": {
         "hello": "Hello",
+        "home": "Home",
         "about": "About Me",
         "works": "Works",
+        "personal": "Personal",
+        "worksArchive": "All client works",
+        "personalArchive": "All personal projects",
         "journey": "Journey",
         "toolbox": "Toolbox",
         "highlights": "Highlights",
@@ -23,8 +27,36 @@
     },
     "works": {
         "title": "Projects that solved real problems",
+        "cardLabel": "Case Study",
         "all": "All",
-        "detail": "Details"
+        "detail": "Details",
+        "fullArchiveLink": "View full client project gallery"
+    },
+    "personal": {
+        "title": "Side projects & experiments",
+        "cardLabel": "Personal",
+        "ctaWorks": "View client works",
+        "ctaTab": "Open personal projects gallery",
+        "fullArchiveLink": "View full personal project gallery"
+    },
+    "gallery": {
+        "careerEyebrow": "Works archive",
+        "careerTitle": "Client & in-house project gallery",
+        "careerMetaTitle": "Client works gallery | Eunyounghwan",
+        "careerMetaDescription": "Screenshots, duration, languages, and narrative for each project.",
+        "personalEyebrow": "Personal",
+        "personalTitle": "Personal project gallery",
+        "personalMetaTitle": "Personal projects gallery | Eunyounghwan",
+        "personalMetaDescription": "Screenshots, duration, stack, and narrative for personal work.",
+        "duration": "Duration",
+        "languages": "Languages & core stack",
+        "techFull": "Tools & full stack",
+        "captures": "Screenshots",
+        "details": "Details",
+        "overview": "Overview",
+        "role": "Role",
+        "backToCareerList": "Back to client works",
+        "backToPersonalList": "Back to personal projects"
     },
     "journey": {
         "title": "A growth path built through delivery",

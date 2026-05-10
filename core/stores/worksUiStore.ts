@@ -6,7 +6,9 @@ export const useWorksUiStore = defineStore('worksUi', () => {
     const activeWorkId = ref<string | null>(null);
 
     const filteredWorks = computed(() => {
-        if (selectedCategory.value === 'all') return works;
+        if (selectedCategory.value === 'all') {
+            return works.filter((w) => w.category !== 'personal');
+        }
         return works.filter((w) => w.category === selectedCategory.value);
     });
 

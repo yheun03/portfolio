@@ -1,9 +1,13 @@
 <template>
     <section id="works" class="section section--works">
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
-        <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" :description="locale === 'ko'
-            ? `총 ${filteredWorks.length}개의 프로젝트를 인터랙티브 카드로 확인할 수 있습니다.`
-            : `Explore ${filteredWorks.length} projects through interactive cards.`" />
+        <div class="works__title-col">
+            <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')"
+                :description="worksSectionDescription" />
+            <p class="works__archive-link">
+                <NuxtLink to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
+            </p>
+        </div>
 
         <!-- 탭: 역할만 — 실제 패널은 아래 renderer 한 곳 -->
         <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
@@ -26,8 +30,8 @@
         <div v-if="hasMoreWorks || canCollapseWorks" class="works__list-control" aria-live="polite">
             <p>
                 {{ locale === 'ko'
-                    ? `${visibleWorks.length} / ${filteredWorks.length}개 프로젝트 표시 중`
-                    : `Showing ${visibleWorks.length} of ${filteredWorks.length} projects` }}
+                    ? `${visibleWorks.length} / ${pinnedFilteredWorks.length}개 대표(pin) 프로젝트 표시 중`
+                    : `Showing ${visibleWorks.length} of ${pinnedFilteredWorks.length} pinned projects` }}
             </p>
             <button v-if="hasMoreWorks" type="button" class="base-button base-button--ghost" @click="showMoreWorks">
                 {{ locale === 'ko' ? '프로젝트 더 보기' : 'Show more projects' }}
@@ -60,7 +64,7 @@
                             <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
                         <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
-                        }}</strong></p>
+                                }}</strong></p>
                         <ul v-if="activeWork.achievements.length">
                             <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
@@ -96,9 +100,18 @@ const visibleCount = ref(6);
 const initialVisibleCount = 6;
 const visibleStep = 6;
 
-const visibleWorks = computed(() => filteredWorks.value.slice(0, visibleCount.value));
-const hasMoreWorks = computed(() => visibleCount.value < filteredWorks.value.length);
-const canCollapseWorks = computed(() => filteredWorks.value.length > initialVisibleCount);
+/** 메인 페이지에는 JSON 의 pin === true 인 항목만 노출 */
+const pinnedFilteredWorks = computed(() => filteredWorks.value.filter((w) => w.pin));
+
+const worksSectionDescription = computed(() =>
+    locale.value === "ko"
+        ? `메인에는 pin으로 고정된 대표 실무 사례만 보입니다. 전체 목록·캡처·소요 시간은 프로젝트 페이지에서 확인할 수 있습니다. (현재 탭 기준 ${pinnedFilteredWorks.value.length}건)`
+        : `Only pinned highlights appear here. Full gallery with captures and duration is on the Projects page. (${pinnedFilteredWorks.value.length} in this tab.)`,
+);
+
+const visibleWorks = computed(() => pinnedFilteredWorks.value.slice(0, visibleCount.value));
+const hasMoreWorks = computed(() => visibleCount.value < pinnedFilteredWorks.value.length);
+const canCollapseWorks = computed(() => pinnedFilteredWorks.value.length > initialVisibleCount);
 
 const labels = computed(() => ({
     close: locale.value === 'ko' ? '닫기' : 'Close',
@@ -112,7 +125,7 @@ const labels = computed(() => ({
 const modalOpen = computed(() => !!activeWork.value);
 
 const showMoreWorks = () => {
-    visibleCount.value = Math.min(visibleCount.value + visibleStep, filteredWorks.value.length);
+    visibleCount.value = Math.min(visibleCount.value + visibleStep, pinnedFilteredWorks.value.length);
 };
 
 const collapseWorks = () => {

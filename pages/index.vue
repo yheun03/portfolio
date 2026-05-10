@@ -11,6 +11,7 @@ import { defineAsyncComponent, type Component } from 'vue';
 import AppLayout from '~/components/Layout/AppLayout.vue';
 import PortfolioHero from '~/components/Section/PortfolioHero.vue';
 import PortfolioWorks from '~/components/Section/PortfolioWorks.vue';
+import PortfolioPersonal from '~/components/Section/PortfolioPersonal.vue';
 import { HOME_PAGE_LAYERS, type HomeSectionKey, SCROLL_SECTION_IDS } from '~/core/data/homePage';
 
 const PortfolioAbout = defineAsyncComponent(() => import('~/components/Section/PortfolioAbout.vue'));
@@ -22,6 +23,7 @@ const PortfolioContact = defineAsyncComponent(() => import('~/components/Section
 const SECTION_COMPONENTS: Record<HomeSectionKey, Component> = {
     hello: PortfolioHero,
     works: PortfolioWorks,
+    personal: PortfolioPersonal,
     about: PortfolioAbout,
     journey: PortfolioJourney,
     toolbox: PortfolioToolbox,
