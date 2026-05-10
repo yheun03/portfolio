@@ -217,6 +217,12 @@
             outline: 2px solid var(--color-primary);
             outline-offset: 2px;
         }
+
+        &.is-active {
+            border-color: color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
+            background: var(--gradient-accent);
+            color: #fff;
+        }
     }
 }
 

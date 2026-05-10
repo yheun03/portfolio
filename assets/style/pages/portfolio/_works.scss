@@ -5,16 +5,38 @@
         "lead grid";
     align-items: start;
 
-    .section-title {
+    .works__title-col {
         position: sticky;
         top: 5.25rem;
         grid-area: title;
         align-self: start;
         z-index: 2;
+        display: grid;
+        gap: var(--space-3);
+    }
+
+    .section-title {
+        margin-bottom: 0;
     }
 }
 
 .works {
+    &__archive-link {
+        margin: 0;
+
+        a {
+            font-family: var(--font-display);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+
+            &:hover {
+                color: color-mix(in srgb, var(--color-primary) 85%, var(--color-text));
+            }
+        }
+    }
+
     &__lead {
         position: sticky;
         top: 16.5rem;

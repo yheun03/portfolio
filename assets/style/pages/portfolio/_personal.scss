@@ -1,0 +1,39 @@
+.section--personal {
+    .personal__head {
+        display: grid;
+        gap: var(--space-3);
+    }
+
+    .personal__archive-link {
+        margin: 0;
+
+        a {
+            font-family: var(--font-display);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+
+            &:hover {
+                color: color-mix(in srgb, var(--color-primary) 85%, var(--color-text));
+            }
+        }
+    }
+
+    .personal__grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--space-6);
+
+        .work-card {
+            grid-column: span 12;
+        }
+    }
+
+    .personal__cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        align-items: center;
+    }
+}

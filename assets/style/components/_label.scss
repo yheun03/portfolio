@@ -23,6 +23,10 @@
         --label-accent: var(--color-primary-dark);
     }
 
+    &--personal {
+        --label-accent: color-mix(in srgb, var(--color-accent-mint) 62%, var(--color-primary));
+    }
+
     &--toolbox {
         --label-accent: #315887;
     }

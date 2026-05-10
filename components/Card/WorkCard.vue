@@ -1,6 +1,7 @@
 <template>
     <BaseCard class="work-card" data-motion="lift">
-        <BaseLabel tone="work" label="Case Study" />
+        <BaseLabel :tone="variant === 'personal' ? 'personal' : 'work'"
+            :label="variant === 'personal' ? t('personal.cardLabel') : t('works.cardLabel')" />
         <h3>{{ item.title }}</h3>
         <p class="work-card__meta">{{ work.period }} · {{ item.type }}</p>
         <p>{{ item.summary }}</p>
@@ -20,10 +21,15 @@
 import type { WorkItem } from "~/core/data/works";
 
 defineEmits<{ (e: "select"): void }>();
-defineProps<{
-    work: WorkItem;
-    item: { title: string; type: string; summary: string };
-    detailLabel: string;
-    detailAriaLabel?: string;
-}>();
+const { t } = useLocale();
+withDefaults(
+    defineProps<{
+        work: WorkItem;
+        item: { title: string; type: string; summary: string };
+        detailLabel: string;
+        detailAriaLabel?: string;
+        variant?: "career" | "personal";
+    }>(),
+    { variant: "career" }
+);
 </script>
