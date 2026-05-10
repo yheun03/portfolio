@@ -35,7 +35,7 @@
     "personal": {
         "title": "Side projects & experiments",
         "cardLabel": "Personal",
-        "ctaWorks": "View client works",
+        "backToWorks": "Go to Client works (#works)",
         "ctaTab": "Open personal projects gallery",
         "fullArchiveLink": "View full personal project gallery"
     },

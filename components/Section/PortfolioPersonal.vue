@@ -10,18 +10,17 @@
             </p>
         </div>
 
+        <div class="personal__cta">
+            <NuxtLink class="base-button base-button--primary" to="/personal">
+                {{ t('personal.ctaTab') }}
+            </NuxtLink>
+        </div>
+
         <div class="personal__grid">
             <WorkCard v-for="work in personalWorks" :key="work.id" variant="personal" :work="work"
                 :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
                 :detail-label="t('works.detail')" :detail-aria-label="`${pick(work.title)} ${t('works.detail')}`"
                 @select="openWork(work)" />
-        </div>
-
-        <div class="personal__cta">
-            <a class="base-button base-button--ghost" href="#works">{{ t('personal.ctaWorks') }}</a>
-            <NuxtLink class="base-button base-button--primary" to="/personal">
-                {{ t('personal.ctaTab') }}
-            </NuxtLink>
         </div>
     </section>
 </template>

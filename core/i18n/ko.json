@@ -35,7 +35,7 @@
     "personal": {
         "title": "실무 밖에서 만든 것들",
         "cardLabel": "개인 프로젝트",
-        "ctaWorks": "실무 프로젝트 보기",
+        "backToWorks": "실무 프로젝트(Works) 섹션으로 이동",
         "ctaTab": "개인 프로젝트 전체 보기",
         "fullArchiveLink": "개인 프로젝트 전체 보기 (갤러리)"
     },

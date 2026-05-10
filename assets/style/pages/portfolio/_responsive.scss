@@ -1,5 +1,7 @@
 @media (min-width: 768px) {
-    .works__grid .work-card {
+
+    .works__grid .work-card,
+    .personal__grid .work-card {
         grid-column: span 6;
     }
 }
@@ -10,12 +12,16 @@
     }
 
     .works__grid .work-card:nth-child(4n + 1),
-    .works__grid .work-card:nth-child(4n + 4) {
+    .works__grid .work-card:nth-child(4n + 4),
+    .personal__grid .work-card:nth-child(4n + 1),
+    .personal__grid .work-card:nth-child(4n + 4) {
         grid-column: span 7;
     }
 
     .works__grid .work-card:nth-child(4n + 2),
-    .works__grid .work-card:nth-child(4n + 3) {
+    .works__grid .work-card:nth-child(4n + 3),
+    .personal__grid .work-card:nth-child(4n + 2),
+    .personal__grid .work-card:nth-child(4n + 3) {
         grid-column: span 5;
     }
 }
@@ -51,7 +57,6 @@
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .section--works,
     .section--journey,
     .section--toolbox {
         grid-template-columns: minmax(0, 1fr);
@@ -59,24 +64,11 @@
         min-height: auto;
     }
 
-    .section--works .works__title-col,
-    .section--works .section-title__description,
-    .works__filters,
-    .works__grid,
-    .works__list-control,
     .section--journey>.section-title,
     .journey__flow,
     .section--toolbox>.section-title {
         position: static;
         grid-area: auto;
-    }
-
-    .works__filters {
-        justify-self: start;
-    }
-
-    .works__list-control {
-        grid-column: auto;
     }
 
     .hero__poster {
@@ -130,6 +122,35 @@
     .highlights__description {
         flex-basis: auto;
         margin-top: 0;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .section--works,
+    .section--personal {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: none;
+        min-height: auto;
+    }
+
+    .section--works .works__title-col,
+    .section--works .section-title__description,
+    .section--personal .personal__head,
+    .works__filters,
+    .personal__cta,
+    .works__grid,
+    .personal__grid,
+    .works__list-control {
+        position: static;
+        grid-area: auto;
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .works__filters,
+    .personal__cta {
+        justify-self: start;
     }
 }
 
@@ -188,6 +209,7 @@
     }
 
     .works__filters,
+    .personal__cta,
     .highlights__tabs {
         width: 100%;
         overflow-x: auto;
