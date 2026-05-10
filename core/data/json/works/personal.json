@@ -1,57 +1,66 @@
 [
     {
-        "id": "portfolio-2026",
+        "id": "portfolio-2025",
         "category": "personal",
         "title": {
-            "ko": "포트폴리오 웹사이트",
-            "en": "Portfolio Website"
+            "ko": "포트폴리오 웹사이트 2025",
+            "en": "Portfolio Website 2025"
         },
-        "period": "2026",
+        "period": "2025",
         "type": {
-            "ko": "개인 / 웹",
-            "en": "Personal / Web"
+            "ko": "개인 / HTML 포트폴리오",
+            "en": "Personal / HTML Portfolio"
         },
         "role": {
-            "ko": "기획·퍼블리싱·구현",
-            "en": "Planning, publishing, implementation"
+            "ko": "기획·디자인 정리·퍼블리싱·인터랙션 구현",
+            "en": "Planning, design refinement, publishing, interaction implementation"
         },
-        "tech": ["Nuxt", "Vue 3", "SCSS", "TypeScript"],
+        "tech": ["HTML", "SCSS", "JavaScript", "jQuery", "Swiper"],
         "introduction": {
-            "ko": "실무 프로젝트와 별도로, 개인 신념에 맞춘 정보 구조·모션·접근성을 한 번에 실험해 정리한 스펙 기반 포트폴리오입니다.",
-            "en": "A spec-driven portfolio experimenting with information architecture, motion, and accessibility beyond client work."
+            "ko": "2025년에 제작한 정적 HTML 기반 포트폴리오입니다. 자기소개, 프로젝트 소개, 다크 모드, 캔버스 모션을 하나의 페이지 흐름으로 구성해 당시 퍼블리싱 역량과 화면 구성 방식을 기록했습니다.",
+            "en": "A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion."
         },
         "myWorks": [
             {
-                "ko": "섹션 단위 레이아웃·타이포 스케일 정리",
-                "en": "Section-level layout and typographic scale"
+                "ko": "HTML·SCSS 기반의 단일 페이지 포트폴리오 구조 설계",
+                "en": "Designed a single-page portfolio structure with HTML and SCSS"
             },
             {
-                "ko": "다크 모드·스크롤 연동 등 인터랙션 구성",
-                "en": "Dark mode and scroll-linked interactions"
+                "ko": "다크/라이트 모드, Swiper 프로젝트 영역, 모달 인터랙션 구현",
+                "en": "Implemented dark/light mode, Swiper project sections, and modal interactions"
             },
             {
-                "ko": "컴포넌트·스타일 일관성 유지를 위한 SCSS 구조",
-                "en": "SCSS structure for consistent components"
+                "ko": "프로필 이미지, 목업, OG 이미지, 이력서 정적 파일까지 함께 관리",
+                "en": "Managed profile images, mockups, OG image, and static resume assets together"
             }
         ],
         "achievements": [],
         "points": [
             {
-                "ko": "개인 브랜딩·전달력",
-                "en": "Personal narrative and clarity"
+                "ko": "Nuxt 기반 2026 포트폴리오 이전의 구조와 표현 방식을 비교할 수 있는 아카이브",
+                "en": "An archive that makes the structure and expression before the Nuxt-based 2026 portfolio easy to compare"
             },
             {
-                "ko": "구현 품질 실험장",
-                "en": "Sandbox for craft and quality"
+                "ko": "프레임워크 없이 정적 자산만으로 완성한 HTML 중심 작업",
+                "en": "HTML-first work completed with static assets and no application framework"
             }
         ],
         "pin": true,
         "duration": {
-            "ko": "약 2개월",
-            "en": "~2 months"
+            "ko": "약 1개월",
+            "en": "~1 month"
         },
-        "captures": ["/images/projects/placeholder.svg"],
-        "languages": ["Nuxt", "Vue 3", "SCSS", "TypeScript"]
+        "captures": ["/ver.2025/src/assets/images/og-image.png"],
+        "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
+        "links": [
+            {
+                "label": {
+                    "ko": "2025 버전 보기",
+                    "en": "Open 2025 version"
+                },
+                "href": "/ver.2025/index.html"
+            }
+        ]
     },
     {
         "id": "ui-playground",
