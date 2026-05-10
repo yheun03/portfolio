@@ -1,0 +1,387 @@
+/* =============================================================================
+   터치·태블릿 (1023px 이하)
+   PC용 12컬럼·2열 그리드를 그대로 줄이지 않고, 단일 열·블록 스택으로 재구성
+   ============================================================================= */
+
+@media (max-width: 1023.98px) {
+    :root {
+        --touch-pad-x: clamp(0.85rem, 3.2vw + 0.35rem, 1.65rem);
+        --touch-stack-gap: clamp(1.5rem, 4.2vw, 2.5rem);
+    }
+
+    .portfolio-page--section-dock {
+        padding-inline-end: 0;
+    }
+
+    .section {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding-inline: var(--touch-pad-x);
+        padding-block: var(--touch-stack-gap);
+        box-sizing: border-box;
+    }
+
+    .section--hero {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding-inline: var(--touch-pad-x);
+        padding-top: var(--space-fluid-md);
+        box-sizing: border-box;
+    }
+
+    /**
+     * `_shell.scss` 의 `.section:not(.section--hero) { display: grid }` 가 (0,2,0) 특이도라
+     * `.section--works` 등 단일 수정자 규칙으로는 덮어쓸 수 없음. 동일 선택자로 터치 스택 레이아웃 적용.
+     */
+    .section:not(.section--hero) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--touch-stack-gap);
+        grid-template-columns: none;
+        grid-template-areas: none;
+        align-items: stretch;
+    }
+
+    .section--contact {
+        min-height: auto;
+    }
+
+    /* ----- Hero: 세로 스토리 플로우 (그리드 영역 해제) ----- */
+    .hero__poster {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-fluid-md);
+        padding: var(--space-fluid-md) var(--space-5) var(--space-7);
+        border-radius: var(--radius-lg);
+    }
+
+    .hero__canvas {
+        order: 0;
+    }
+
+    .hero__availability {
+        position: relative;
+        top: auto;
+        left: auto;
+        order: 1;
+        align-self: flex-start;
+    }
+
+    .hero__copy-block {
+        order: 2;
+    }
+
+    .hero__studio-card {
+        order: 3;
+    }
+
+    .hero__floating-list {
+        order: 4;
+    }
+
+    .hero__keyword-cloud {
+        order: 5;
+    }
+
+    .hero__actions {
+        order: 6;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+
+    .hero__metric-strip {
+        order: 7;
+    }
+
+    .hero__scroll-cue {
+        order: 8;
+    }
+
+    .hero__mega-title {
+        max-width: none;
+    }
+
+    /* ----- About: 단일 열 카드 스택 ----- */
+    .about__headline,
+    .about__float,
+    .about__summary,
+    .about__cards,
+    .about__workflow {
+        grid-area: auto;
+        width: 100%;
+        max-width: none;
+    }
+
+    .about__side-note {
+        max-width: none;
+    }
+
+    .about__float--principles {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        grid-template-columns: none;
+        align-self: stretch;
+
+        .intro-card:nth-child(3) {
+            grid-column: unset;
+        }
+    }
+
+    /* ----- Contact ----- */
+    .section--contact .contact__composition {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+        grid-template-columns: none;
+        grid-template-areas: none;
+        align-items: stretch;
+    }
+
+    .contact__composition .section-title {
+        grid-area: auto;
+    }
+
+    .contact__mail-art {
+        grid-area: auto;
+        justify-self: stretch;
+        white-space: normal;
+        flex-wrap: wrap;
+        font-size: clamp(1.35rem, 6vw, 2rem);
+    }
+
+    .contact__summary,
+    .contact__cta {
+        grid-area: auto;
+        width: 100%;
+    }
+
+    .contact__cta {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: stretch;
+    }
+
+    /* ----- Journey / Toolbox: 타이틀 포함 세로 흐름 ----- */
+    .section--journey > .section-title,
+    .section--toolbox > .section-title {
+        position: static;
+        width: 100%;
+    }
+
+    .journey__flow {
+        flex-direction: column;
+        gap: var(--space-7);
+        width: 100%;
+        min-width: 0;
+    }
+
+    .journey__company-block {
+        flex-direction: column;
+        gap: var(--space-5);
+        padding-bottom: var(--space-6);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-primary));
+    }
+
+    .journey__company-block:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .journey__summary {
+        position: static;
+        flex: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    .journey__timeline {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        width: 100%;
+        overflow: visible;
+        padding: 0;
+        margin: 0;
+        scroll-snap-type: none;
+    }
+
+    .journey__timeline .timeline-item {
+        margin-left: 0;
+        scroll-snap-align: unset;
+        min-width: 0;
+    }
+
+    .journey__timeline .timeline-item:nth-child(2n) {
+        margin-left: 0;
+    }
+
+    .journey__next-link {
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .toolbox__orbit {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 0;
+        gap: var(--space-5);
+    }
+
+    .toolbox__orbit .skill-card {
+        width: 100% !important;
+        margin-top: 0 !important;
+        flex-basis: auto !important;
+    }
+
+    /* ----- Works / Personal / Highlights (그리드 해제 + 터치 전용 플로우) ----- */
+    .section--works .works__title-col,
+    .section--highlights .highlights__title-col {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+        padding-inline-end: 0;
+    }
+
+    .section--works .works__title-col .section-title__description,
+    .section--highlights .highlights__title-col .section-title__description {
+        max-width: none;
+        margin-top: 0;
+    }
+
+    .section--works .works__title-col,
+    .section--personal .personal__head,
+    .section--highlights .highlights__title-col,
+    .section--works .works__filters,
+    .personal__cta,
+    .section--highlights .highlights__tabs,
+    .section--works .works__grid,
+    .section--personal .personal__grid,
+    .highlights__panel,
+    .works__list-control {
+        position: static;
+        grid-area: auto;
+        grid-row: auto;
+        grid-column: auto;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+        padding-inline: 0;
+    }
+
+    .section--personal .personal__head {
+        position: static;
+    }
+
+    .personal__cta {
+        justify-self: stretch;
+        order: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .personal__head {
+        order: -1;
+    }
+
+    /** PC용 `.section--* .__grid { display:grid }` 특이도(0,2,0)를 그대로 덮음 */
+    .section--works .works__grid,
+    .section--personal .personal__grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-5);
+        min-width: 0;
+        grid-template-columns: none;
+    }
+
+    .section--works .works__grid .work-card,
+    .section--personal .personal__grid .work-card {
+        grid-column: unset !important;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    /**
+     * 좁은 화면: LNB 세로 레일 → 가로 스크롤 칩 (PC 그리드·왼쪽 액센트 제거)
+     */
+    .section--works .works__filters.lnb-tablist,
+    .section--highlights .highlights__tabs.lnb-tablist {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: var(--space-2);
+        width: 100%;
+        max-width: none;
+        margin-inline: calc(-1 * var(--touch-pad-x));
+        padding: var(--space-3) var(--touch-pad-x);
+        border-left: none;
+        border-bottom: 1px solid color-mix(in srgb, var(--color-border) 88%, var(--color-primary) 5%);
+        border-radius: 0;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+
+        .ui-tab-button {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: auto;
+            max-width: none;
+            min-width: 0;
+            min-height: var(--size-touch);
+            margin-left: 0;
+            padding: var(--space-2) var(--space-4);
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            border: 1px solid color-mix(in srgb, var(--color-border) 90%, var(--color-primary) 4%);
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+            font-size: var(--font-size-sm);
+
+            &:hover {
+                background: color-mix(in srgb, var(--color-primary) 9%, transparent);
+            }
+
+            &.is-active {
+                border-color: color-mix(in srgb, var(--color-primary) 52%, var(--color-border));
+                background: color-mix(in srgb, var(--color-primary) 16%, var(--color-surface));
+                color: var(--color-text);
+                box-shadow: none;
+            }
+        }
+    }
+
+    .works__list-control {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+
+        .base-button {
+            width: 100%;
+        }
+    }
+
+    .highlights__panel {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-5);
+        grid-template-columns: none;
+    }
+
+    .highlights__panel .highlight-card,
+    .highlights__description {
+        grid-column: auto;
+        width: 100%;
+    }
+}

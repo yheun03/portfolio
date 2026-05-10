@@ -2,13 +2,10 @@
     <section id="works" class="section section--works">
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__title-col">
-            <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')"
-                :description="worksSectionDescription" />
-            <p class="works__archive-link">
-                <NuxtLink to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
-            </p>
-            <!-- 카테고리: 세로 목록(항목 많을 때 pill 다줄 고정보다 읽기 쉬움) -->
-            <div class="works__filters lnb-tablist" role="tablist" aria-orientation="vertical"
+            <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
+            <!-- 카테고리: PC는 LNB 세로 / 좁은 화면은 가로 칩 레일 -->
+            <div class="works__filters lnb-tablist" role="tablist"
+                :aria-orientation="isNarrow ? 'horizontal' : 'vertical'"
                 :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
                 <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`"
                     role="tab" :aria-controls="`works-panel-${category.key}`"
@@ -18,6 +15,10 @@
                     {{ pick(category.label) }}
                 </button>
             </div>
+            <p class="section-title__description">{{ worksSectionDescription }}</p>
+            <p class="works__archive-link">
+                <NuxtLink to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
+            </p>
         </div>
 
         <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->
@@ -84,6 +85,7 @@
 import { useWorksTabRenderer } from '~/core/composables/useWorksTabRenderer';
 
 const { t, pick, locale } = useLocale();
+const { isNarrow } = useNarrowLayout();
 
 const {
     workCategories,
