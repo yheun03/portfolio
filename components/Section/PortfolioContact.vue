@@ -12,7 +12,7 @@
             <BaseCard class="contact__summary">
                 <BaseLabel tone="contact" label="Collaboration" />
                 <div class="contact__profile" aria-hidden="true">
-                    <img src="/assets/image/photo-1440.webp" alt="" loading="lazy" />
+                    <img src="/assets/image/photo-1440.webp" alt="" loading="lazy" decoding="async" fetchpriority="low" />
                     <span>{{ locale === "ko" ? "열린 협업 가능" : "Open to collaborate" }}</span>
                 </div>
                 <p class="contact__summary-text">

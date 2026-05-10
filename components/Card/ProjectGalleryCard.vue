@@ -1,7 +1,8 @@
 <template>
     <NuxtLink :to="to" class="gallery-card" data-motion="lift">
         <div class="gallery-card__media">
-            <img :src="coverSrc" :alt="coverAlt" loading="lazy" width="1200" height="675" />
+            <img :src="coverSrc" :alt="coverAlt" loading="lazy" decoding="async" fetchpriority="low" width="1200"
+                height="675" />
         </div>
         <div class="gallery-card__body">
             <p class="gallery-card__meta">
