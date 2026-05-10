@@ -10,12 +10,6 @@
             </p>
         </div>
 
-        <div class="personal__cta">
-            <NuxtLink class="base-button base-button--primary" to="/personal">
-                {{ t('personal.ctaTab') }}
-            </NuxtLink>
-        </div>
-
         <div class="personal__grid">
             <WorkCard v-for="work in personalWorks" :key="work.id" variant="personal" :work="work"
                 :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
