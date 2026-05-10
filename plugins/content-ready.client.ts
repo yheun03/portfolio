@@ -1,5 +1,5 @@
 /**
- * 폰트·window load 이후 skeleton-active 제거 (텍스트 스켈레톤 → 실제 타이포).
+ * 이전 빌드에서 남아있을 수 있는 텍스트 스켈레톤 상태를 정리합니다.
  */
 export default defineNuxtPlugin(() => {
     if (!import.meta.client) return;
@@ -11,23 +11,5 @@ export default defineNuxtPlugin(() => {
         root.classList.add('skeleton-ready');
     };
 
-    const fonts = (): Promise<unknown> => {
-        try {
-            return document.fonts?.ready ?? Promise.resolve();
-        } catch {
-            return Promise.resolve();
-        }
-    };
-
-    const loaded = (): Promise<void> =>
-        new Promise((resolve) => {
-            if (document.readyState === 'complete') resolve();
-            else window.addEventListener('load', () => resolve(), { once: true });
-        });
-
-    Promise.all([fonts().catch(() => undefined), loaded()]).then(() => {
-        requestAnimationFrame(() => requestAnimationFrame(finish));
-    });
-
-    window.setTimeout(finish, 6000);
+    requestAnimationFrame(finish);
 });

@@ -1,5 +1,29 @@
 export const usePortfolioGsap = () => {
     let cleanup: (() => void) | null = null;
+    let cancelled = false;
+
+    const afterInitialPaint = (callback: () => void) => {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                if ('requestIdleCallback' in window) {
+                    window.requestIdleCallback(callback, { timeout: 1200 });
+                } else {
+                    window.setTimeout(callback, 450);
+                }
+            });
+        });
+    };
+
+    const afterUserIntent = () =>
+        new Promise<void>((resolve) => {
+            const events: (keyof WindowEventMap)[] = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'];
+            const done = () => {
+                events.forEach((event) => window.removeEventListener(event, done));
+                resolve();
+            };
+
+            events.forEach((event) => window.addEventListener(event, done, { once: true, passive: true }));
+        });
 
     onMounted(async () => {
         if (!import.meta.client) return;
@@ -11,7 +35,13 @@ export const usePortfolioGsap = () => {
             return;
         }
 
+        await new Promise<void>((resolve) => afterInitialPaint(resolve));
+        if (cancelled) return;
+        await afterUserIntent();
+        if (cancelled) return;
+
         const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
+        if (cancelled) return;
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -25,8 +55,7 @@ export const usePortfolioGsap = () => {
             const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
             heroTimeline
                 .from('.hero__availability', { opacity: 0, y: -14, duration: 0.45 })
-                .from('.hero__mega-title', { opacity: 0, clipPath: 'inset(0 0 100% 0)', duration: 0.85 }, '-=0.12')
-                .from('.hero__subtitle, .hero__role', { opacity: 0, x: -22, stagger: 0.08, duration: 0.48 }, '-=0.42')
+                .from('.hero__subtitle, .hero__role', { opacity: 0, x: -22, stagger: 0.08, duration: 0.48 }, '-=0.12')
                 .from('.hero__studio-card', { opacity: 0, clipPath: 'inset(0 100% 0 0 round 18px)', duration: 0.68 }, '-=0.52')
                 .from('.hero__keyword-cloud li, .hero__floating-list li', { opacity: 0, scale: 0.92, stagger: 0.035, duration: 0.34 }, '-=0.26')
                 .from('.hero__actions .base-button, .hero__metric-strip .stat-card', { opacity: 0, x: 18, stagger: 0.04, duration: 0.36 }, '-=0.16');
@@ -114,6 +143,7 @@ export const usePortfolioGsap = () => {
     });
 
     onBeforeUnmount(() => {
+        cancelled = true;
         cleanup?.();
         cleanup = null;
     });
