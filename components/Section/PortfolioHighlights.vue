@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { highlights } from '~/core/data/highlights';
+import { highlights } from '~/core/data/site';
 import { useHighlightsUiStore } from '~/core/stores/highlightsUiStore';
 import type { HighlightTabKey } from '~/core/types/highlights';
 

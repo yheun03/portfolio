@@ -6,13 +6,13 @@
 
 ## 1. 디렉터리 한눈에 보기
 
-| 경로                              | 역할                                                      |
-| --------------------------------- | --------------------------------------------------------- |
-| `core/data/json/works/`           | 경력·개인 **프로젝트** (카테고리별 JSON)                  |
-| `core/data/json/site/`            | **프로필·소개·여정·스킬** 등 사이트 본문                  |
-| `core/data/json/site/highlights/` | **수상·자격·역할·활동** 목록 + 탭 설명                    |
-| `core/data/*.ts`                  | 위 JSON을 불러와 `export` (얇은 로더) + `works` 타입·조합 |
-| `core/i18n/ko.json`, `en.json`    | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등)       |
+| 경로                              | 역할                                                |
+| --------------------------------- | --------------------------------------------------- |
+| `core/data/json/works/`           | 경력·개인 **프로젝트** (카테고리별 JSON)            |
+| `core/data/json/site/`            | **프로필·소개·여정·스킬** 등 사이트 본문            |
+| `core/data/json/site/highlights/` | **수상·자격·역할·활동** 목록 + 탭 설명              |
+| `core/data/site.ts`, `works.ts`   | 사이트 JSON export + 작업 JSON 타입·조합            |
+| `core/i18n/ko.json`, `en.json`    | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등) |
 
 ---
 
@@ -38,12 +38,12 @@
 
 ## 3. `core/data/json/site/` (본문 JSON)
 
-| 파일           | 용도                                   | TS 로더                                    |
-| -------------- | -------------------------------------- | ------------------------------------------ |
-| `profile.json` | 이름, 역할, 키워드, 통계, 연락처 등    | `profile.ts` → `profile`                   |
-| `about.json`   | 소개 문단, 키워드, 원칙, 워크플로      | `about.ts` → `aboutContent`                |
-| `journey.json` | `summary` + `timeline` (타임라인 배열) | `journey.ts` → `journeySummary`, `journey` |
-| `skills.json`  | 툴박스(스킬 카드) 배열                 | `skills.ts` → `skills`                     |
+| 파일           | 용도                                   | TS export                      |
+| -------------- | -------------------------------------- | ------------------------------ |
+| `profile.json` | 이름, 역할, 키워드, 통계, 연락처 등    | `site.ts` → `profile`          |
+| `about.json`   | 소개 문단, 키워드, 원칙, 워크플로      | `site.ts` → `aboutContent`     |
+| `journey.json` | `summary` + `timeline` (타임라인 배열) | `site.ts` → `journeyCompanies` |
+| `skills.json`  | 툴박스(스킬 카드) 배열                 | `site.ts` → `skills`           |
 
 ---
 
@@ -52,7 +52,7 @@
 - `awards.json`, `certifications.json`, `roles.json`, `activities.json`: `{ "ko", "en" }` 항목 배열
 - `descriptions.json`: 탭별 설명 객체 (`awards`, `certifications`, …)
 
-로더: `core/data/highlights.ts` → `highlights` 객체.
+로더: `core/data/site.ts` → `highlights` 객체.
 
 ---
 

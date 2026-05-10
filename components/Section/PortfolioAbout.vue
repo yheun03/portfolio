@@ -32,6 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import { aboutContent } from "~/core/data/about";
+import { aboutContent } from "~/core/data/site";
 const { t, pick, locale } = useLocale();
 </script>

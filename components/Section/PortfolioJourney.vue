@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { journeyCompanies, type JourneyCompanyBlock } from "~/core/data/journey";
+import { journeyCompanies, type JourneyCompanyBlock } from "~/core/data/site";
 
 const { t, pick, locale } = useLocale();
 
