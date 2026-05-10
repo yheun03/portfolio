@@ -1,0 +1,28 @@
+const data = [
+    {
+        ko: 'i-AWARDS 평가위원',
+        en: 'i-AWARDS Evaluator',
+    },
+    {
+        ko: '편성기준 개발위원',
+        en: 'Curriculum Standards Development Committee',
+    },
+    {
+        ko: '출제/검토위원',
+        en: 'Question Writer/Reviewer',
+    },
+    {
+        ko: '외부평가 감독위원',
+        en: 'External Evaluation Supervisor',
+    },
+    {
+        ko: '모니터링/컨설팅위원',
+        en: 'Monitoring/Consulting Committee',
+    },
+    {
+        ko: '과정지정 심사위원',
+        en: 'Course Designation Reviewer',
+    },
+] as const;
+
+export default data;

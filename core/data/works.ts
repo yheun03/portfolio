@@ -1,39 +1,31 @@
 /**
- * 작업 데이터: `core/data/json/works/*.json` (카테고리별) + `personal.json`
- * 보강 스크립트: `scripts/enrich-works-json.mjs`
+ * 작업 데이터: `core/data/content/works/*.ts` (카테고리별) + `personal.ts`
  */
-import awardJson from './json/works/award.json';
-import operationJson from './json/works/operation.json';
-import personalJson from './json/works/personal.json';
-import projectJson from './json/works/project.json';
-import renewalJson from './json/works/renewal.json';
-import solutionJson from './json/works/solution.json';
+import awardData from './content/works/award';
+import operationData from './content/works/operation';
+import personalData from './content/works/personal';
+import projectData from './content/works/project';
+import renewalData from './content/works/renewal';
+import solutionData from './content/works/solution';
 
 export type WorkCategory = 'all' | 'project' | 'operation' | 'solution' | 'renewal' | 'award' | 'personal';
 
-export interface WorkItem {
-    id: string;
-    category: Exclude<WorkCategory, 'all'>;
-    /** 메인 페이지 카드 노출 여부 — `core/data/json/works/*.json` 에서 관리 */
-    pin: boolean;
-    duration: { ko: string; en: string };
-    captures: string[];
-    /** 표시용 언어·스택 (대표 마크업·스크립트 위주) */
-    languages: string[];
-    title: { ko: string; en: string };
-    period: string;
-    type: { ko: string; en: string };
-    role: { ko: string; en: string };
-    tech: string[];
-    introduction: { ko: string; en: string };
-    myWorks: { ko: string; en: string }[];
-    achievements: { ko: string; en: string }[];
-    points: { ko: string; en: string }[];
-    links?: {
-        label: { ko: string; en: string };
-        href: string;
+/** `content/works/*.ts` 의 `as const` 항목과 동기화 (readonly 추론 유지) */
+type WorkEntry =
+    | (typeof projectData)[number]
+    | (typeof operationData)[number]
+    | (typeof solutionData)[number]
+    | (typeof renewalData)[number]
+    | (typeof awardData)[number]
+    | (typeof personalData)[number];
+
+/** 일부 항목만 `links` 보유 → 공통 optional로 두어 UI에서 별도 narrow 없이 접근 */
+export type WorkItem = WorkEntry & {
+    readonly links?: readonly {
+        readonly label: { readonly ko: string; readonly en: string };
+        readonly href: string;
     }[];
-}
+};
 
 export const workCategories = [
     { key: 'all', label: { ko: 'All', en: 'All' } },
@@ -45,19 +37,13 @@ export const workCategories = [
     { key: 'personal', label: { ko: '개인 프로젝트', en: 'Personal' } },
 ] as const;
 
-/** 실무 경력 — 카테고리별 JSON을 한 목록으로 합침 (`core/data/json/works/`) */
-export const careerWorks: WorkItem[] = [
-    ...(projectJson as WorkItem[]),
-    ...(operationJson as WorkItem[]),
-    ...(solutionJson as WorkItem[]),
-    ...(renewalJson as WorkItem[]),
-    ...(awardJson as WorkItem[]),
-];
+/** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`core/data/content/works/`) */
+export const careerWorks = [...projectData, ...operationData, ...solutionData, ...renewalData, ...awardData];
 
-export const personalWorksList = personalJson as WorkItem[];
+export const personalWorksList = personalData;
 
 /** 스토어·필터용 전체 목록 (실무 + 개인) */
-export const works: WorkItem[] = [...careerWorks, ...personalWorksList];
+export const works = [...careerWorks, ...personalWorksList];
 
 export function getCareerWorkById(id: string): WorkItem | null {
     return careerWorks.find((w) => w.id === id) ?? null;
