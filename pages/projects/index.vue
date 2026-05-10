@@ -28,8 +28,10 @@ const careerLead = computed(() =>
         : `${careerWorks.length} client and in-house projects with captures, duration, and language stack.`,
 );
 
-useHead(() => ({
+usePortfolioSeo(() => ({
     title: t("gallery.careerMetaTitle"),
-    meta: [{ name: "description", content: t("gallery.careerMetaDescription") }],
+    description: t("gallery.careerMetaDescription"),
+    path: "/projects",
+    locale: locale.value,
 }));
 </script>

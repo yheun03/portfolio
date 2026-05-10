@@ -28,8 +28,10 @@ const personalLead = computed(() =>
         : `${personalWorksList.length} personal projects in a gallery layout.`,
 );
 
-useHead(() => ({
+usePortfolioSeo(() => ({
     title: t("gallery.personalMetaTitle"),
-    meta: [{ name: "description", content: t("gallery.personalMetaDescription") }],
+    description: t("gallery.personalMetaDescription"),
+    path: "/personal",
+    locale: locale.value,
 }));
 </script>

@@ -20,7 +20,7 @@
                         <dt>{{ t("gallery.languages") }}</dt>
                         <dd>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                                }}</span>
+                            }}</span>
                             <template v-if="!work.languages.length">—</template>
                         </dd>
                     </div>
@@ -107,8 +107,13 @@ function captureAlt(index: number) {
     return locale.value === "ko" ? `${base} 캡처 ${index + 1}` : `${base} screenshot ${index + 1}`;
 }
 
-useHead(() => ({
+usePortfolioSeo(() => ({
     title: `${pick(work.title)} | ${t("gallery.personalMetaTitle")}`,
-    meta: [{ name: "description", content: pick(work.introduction) }],
+    description: pick(work.introduction),
+    path: `/personal/${work.id}`,
+    locale: locale.value,
+    type: "article",
+    image: work.captures[0],
+    imageAlt: captureAlt(0),
 }));
 </script>

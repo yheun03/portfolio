@@ -41,9 +41,6 @@ const pageLayers = HOME_PAGE_LAYERS.map((layer) => ({
 }));
 
 const { t, initLocale, locale } = useLocale();
-const requestURL = useRequestURL();
-const baseUrl = computed(() => requestURL.origin || 'https://eun-portfolio.dev');
-const canonicalUrl = computed(() => `${baseUrl.value}/`);
 
 useIntersectionAnimation();
 usePortfolioGsap();
@@ -63,29 +60,14 @@ const headerNavLinks = computed(() => [
 
 const { activeId } = useScrollSpy([...SCROLL_SECTION_IDS]);
 
-useHead(() => ({
-    htmlAttrs: {
-        lang: locale.value,
-    },
+usePortfolioSeo(() => ({
     title: t('meta.title'),
-    link: [
-        { rel: 'canonical', href: canonicalUrl.value },
-        { rel: 'alternate', hreflang: 'ko', href: canonicalUrl.value },
-        { rel: 'alternate', hreflang: 'en', href: canonicalUrl.value },
-        { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl.value },
-    ],
-    meta: [
-        { name: 'description', content: t('meta.description') },
-        { name: 'robots', content: 'index, follow, max-image-preview:large' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:locale', content: locale.value === 'ko' ? 'ko_KR' : 'en_US' },
-        { property: 'og:url', content: canonicalUrl.value },
-        { property: 'og:title', content: t('meta.ogTitle') },
-        { property: 'og:description', content: t('meta.ogDescription') },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: t('meta.ogTitle') },
-        { name: 'twitter:description', content: t('meta.ogDescription') },
-    ],
+    description: t('meta.description'),
+    ogTitle: t('meta.ogTitle'),
+    ogDescription: t('meta.ogDescription'),
+    path: '/',
+    locale: locale.value,
+    imageAlt: t('meta.ogTitle'),
 }));
 
 onMounted(() => {
