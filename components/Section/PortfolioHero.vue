@@ -1,6 +1,6 @@
 <template>
     <section id="hello" class="section section--hero">
-        <div class="hero__poster" data-animate>
+        <div class="hero__poster">
             <WelcomeCanvas class="hero__canvas" aria-hidden="true" />
 
             <p class="hero__availability">
