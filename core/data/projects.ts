@@ -1,3 +1,7 @@
+/**
+ * 학교 방학 showcase 등 — Vite 에셋 `import`가 필요해 TS 전용.
+ * (경력/개인 포트폴리오 카드는 `json/works` + `works.ts`)
+ */
 import type { ProjectItem } from '~/core/types/site';
 
 import matemateThumb from '~/assets/image/project/matemate/thumbnail-pc.png';
