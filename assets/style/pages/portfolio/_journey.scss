@@ -17,6 +17,14 @@
     &__flow {
         grid-area: flow;
         display: flex;
+        flex-direction: column;
+        gap: clamp(var(--space-7), 4vw, var(--space-9));
+        align-items: stretch;
+        min-width: 0;
+    }
+
+    &__company-block {
+        display: flex;
         gap: var(--space-fluid-lg);
         align-items: flex-start;
         min-width: 0;
@@ -28,6 +36,21 @@
         flex: 0 0 min(410px, 38vw);
         background: var(--color-glass-2);
         backdrop-filter: blur(10px);
+
+        &--temp {
+            border-style: dashed;
+            border-color: color-mix(in srgb, var(--color-primary) 38%, var(--color-border));
+        }
+    }
+
+    &__temp-label {
+        margin: var(--space-2) 0 0;
+        font-family: var(--font-mono);
+        font-size: var(--font-size-2xs);
+        font-weight: var(--font-weight-medium);
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--color-primary) 72%, var(--color-text-muted));
     }
 
     &__summary-company {
