@@ -12,4 +12,5 @@ Nuxt 3 기반 개인 포트폴리오 사이트입니다.
 npm run dev      # 개발 서버
 npm run build    # 프로덕션 빌드
 npm run generate # 정적 생성
+npm run deploy   # build + GitHub Pages(gh-pages 브랜치) 배포
 ```

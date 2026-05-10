@@ -14,7 +14,7 @@
         "dev:clean": "npm run clean && nuxt dev",
         "generate": "nuxt generate",
         "generate:clean": "npm run clean && nuxt generate",
-        "deploy": "gh-pages -d .output/public",
+        "deploy": "npm run build && gh-pages -d .output/public -b gh-pages",
         "preview": "nuxt preview",
         "preview:clean": "npm run build:clean && nuxt preview",
         "postinstall": "nuxt prepare"
