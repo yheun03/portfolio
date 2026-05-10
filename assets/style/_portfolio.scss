@@ -9,10 +9,10 @@
     background: var(--gradient-noise);
     scroll-behavior: smooth;
 
-    /** 맥 독처럼 기본은 숨김 — 펼쳤을 때 라벨이 왼쪽으로 나가므로 약간의 end 여백만 유지 */
+    /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
     &--section-dock {
         @media (min-width: 1024px) {
-            padding-inline-end: clamp(1.25rem, 1.8vw + 0.6rem, 2.25rem);
+            padding-inline-end: 0;
         }
     }
 }
