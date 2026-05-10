@@ -166,10 +166,8 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: max(
-        var(--section-dock-edge),
-        calc(var(--section-margin-x) - var(--section-dock-slot, 3.15rem))
-    );
+    right: max(var(--section-dock-edge),
+            calc(var(--section-margin-x) - var(--section-dock-slot, 3.15rem)));
     z-index: 85;
     display: none;
     width: min(4.5rem, 12vw);
@@ -1182,8 +1180,6 @@
     align-items: start;
 
     .personal__head {
-        grid-column: 1;
-        grid-row: 1 / -1;
         position: sticky;
         top: 5.25rem;
         align-self: start;
@@ -1227,16 +1223,7 @@
         }
     }
 
-    .personal__cta {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: end;
-        align-self: start;
-    }
-
     .personal__grid {
-        grid-column: 2;
-        grid-row: 2;
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: var(--space-6);
@@ -1715,10 +1702,6 @@
         width: auto;
     }
 
-    .personal__cta {
-        width: 100%;
-    }
-
     .contact__mail-art {
         overflow-wrap: anywhere;
         font-size: clamp(1.35rem, 7vw, 2rem);
@@ -1910,8 +1893,8 @@
     }
 
     /* ----- Journey / Toolbox: 타이틀 포함 세로 흐름 ----- */
-    .section--journey > .section-title,
-    .section--toolbox > .section-title {
+    .section--journey>.section-title,
+    .section--toolbox>.section-title {
         position: static;
         width: 100%;
     }
@@ -2002,7 +1985,6 @@
     .section--personal .personal__head,
     .section--highlights .highlights__title-col,
     .section--works .works__filters,
-    .personal__cta,
     .section--highlights .highlights__tabs,
     .section--works .works__grid,
     .section--personal .personal__grid,
@@ -2020,14 +2002,6 @@
 
     .section--personal .personal__head {
         position: static;
-    }
-
-    .personal__cta {
-        justify-self: stretch;
-        order: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
     }
 
     .personal__head {
