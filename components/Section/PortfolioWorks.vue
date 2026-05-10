@@ -7,16 +7,17 @@
             <p class="works__archive-link">
                 <NuxtLink to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
             </p>
-        </div>
-
-        <!-- 탭: 역할만 — 실제 패널은 아래 renderer 한 곳 -->
-        <div class="works__filters" role="tablist" :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
-            <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`" role="tab"
-                :aria-controls="`works-panel-${category.key}`" :aria-selected="selectedCategory === category.key"
-                :tabindex="selectedCategory === category.key ? 0 : -1" class="ui-tab-button"
-                :class="{ 'is-active': selectedCategory === category.key }" @click="selectCategory(category.key)">
-                {{ pick(category.label) }}
-            </button>
+            <!-- 카테고리: 세로 목록(항목 많을 때 pill 다줄 고정보다 읽기 쉬움) -->
+            <div class="works__filters lnb-tablist" role="tablist" aria-orientation="vertical"
+                :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
+                <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`"
+                    role="tab" :aria-controls="`works-panel-${category.key}`"
+                    :aria-selected="selectedCategory === category.key"
+                    :tabindex="selectedCategory === category.key ? 0 : -1" class="ui-tab-button"
+                    :class="{ 'is-active': selectedCategory === category.key }" @click="selectCategory(category.key)">
+                    {{ pick(category.label) }}
+                </button>
+            </div>
         </div>
 
         <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->

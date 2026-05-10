@@ -233,6 +233,7 @@
 .app-header__nav a:focus-visible,
 .mobile-menu a:focus-visible,
 .section-dock__item:focus-visible,
+.lnb-tablist .ui-tab-button:focus-visible,
 .works__filters .ui-tab-button:focus-visible,
 .highlights__tabs .ui-tab-button:focus-visible {
     outline: 2px solid var(--color-primary);

@@ -105,9 +105,16 @@
         justify-self: stretch;
     }
 
-    .journey__flow,
-    .highlights__panel {
+    .journey__flow {
         flex-direction: column;
+    }
+
+    .highlights__panel {
+        grid-template-columns: 1fr;
+    }
+
+    .highlights__description {
+        grid-column: 1;
     }
 
     .journey__summary {
@@ -119,16 +126,13 @@
         margin-left: 0;
     }
 
-    .highlights__description {
-        flex-basis: auto;
-        margin-top: 0;
-    }
 }
 
 @media (max-width: 900px) {
 
     .section--works,
-    .section--personal {
+    .section--personal,
+    .section--highlights {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas: none;
         min-height: auto;
@@ -137,10 +141,13 @@
     .section--works .works__title-col,
     .section--works .section-title__description,
     .section--personal .personal__head,
+    .section--highlights .highlights__title-col,
     .works__filters,
     .personal__cta,
+    .highlights__tabs,
     .works__grid,
     .personal__grid,
+    .highlights__panel,
     .works__list-control {
         position: static;
         grid-area: auto;
@@ -149,7 +156,8 @@
     }
 
     .works__filters,
-    .personal__cta {
+    .personal__cta,
+    .highlights__tabs {
         justify-self: start;
     }
 }
@@ -208,12 +216,16 @@
         margin-top: 0;
     }
 
-    .works__filters,
-    .personal__cta,
-    .highlights__tabs {
+    .personal__cta {
         width: 100%;
         overflow-x: auto;
         flex-wrap: nowrap;
+    }
+
+    .works__filters,
+    .highlights__tabs {
+        width: 100%;
+        overflow: visible;
     }
 
     .works__list-control {
@@ -223,11 +235,6 @@
         .base-button {
             width: 100%;
         }
-    }
-
-    .works__filters button,
-    .highlights__tabs button {
-        white-space: nowrap;
     }
 
     .contact__mail-art {

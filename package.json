@@ -8,11 +8,15 @@
     },
     "scripts": {
         "build": "nuxt build",
-        "clean": "rm -rf .nuxt .output node_modules/.vite",
+        "build:clean": "npm run clean && nuxt build",
+        "clean": "rm -rf .nuxt .output .nitro node_modules/.vite node_modules/.cache",
         "dev": "nuxt dev",
+        "dev:clean": "npm run clean && nuxt dev",
         "generate": "nuxt generate",
+        "generate:clean": "npm run clean && nuxt generate",
         "deploy": "gh-pages -d .output/public",
         "preview": "nuxt preview",
+        "preview:clean": "npm run build:clean && nuxt preview",
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
