@@ -19,7 +19,7 @@ import AppLayout from "~/components/Layout/AppLayout.vue";
 import ProjectGalleryCard from "~/components/Card/ProjectGalleryCard.vue";
 import { careerWorks } from "~/core/data/works";
 
-const { t, locale } = useLocale();
+const { t, pick, locale } = useLocale();
 const layoutLinks = useSubpageNavLinks();
 
 const careerLead = computed(() =>
@@ -33,5 +33,23 @@ usePortfolioSeo(() => ({
     description: t("gallery.careerMetaDescription"),
     path: "/projects",
     locale: locale.value,
+    keywords: careerWorks.flatMap((work) => [pick(work.title), ...work.languages, ...work.tech]),
+    jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: t("gallery.careerMetaTitle"),
+        description: t("gallery.careerMetaDescription"),
+        url: "https://yheun03.github.io/portfolio/projects",
+        inLanguage: locale.value === "ko" ? "ko-KR" : "en-US",
+        mainEntity: {
+            "@type": "ItemList",
+            itemListElement: careerWorks.map((work, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: pick(work.title),
+                url: `https://yheun03.github.io/portfolio/projects/${work.id}`,
+            })),
+        },
+    },
 }));
 </script>

@@ -19,7 +19,7 @@ import AppLayout from "~/components/Layout/AppLayout.vue";
 import ProjectGalleryCard from "~/components/Card/ProjectGalleryCard.vue";
 import { personalWorksList } from "~/core/data/works";
 
-const { t, locale } = useLocale();
+const { t, pick, locale } = useLocale();
 const layoutLinks = useSubpageNavLinks();
 
 const personalLead = computed(() =>
@@ -33,5 +33,23 @@ usePortfolioSeo(() => ({
     description: t("gallery.personalMetaDescription"),
     path: "/personal",
     locale: locale.value,
+    keywords: personalWorksList.flatMap((work) => [pick(work.title), ...work.languages, ...work.tech]),
+    jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: t("gallery.personalMetaTitle"),
+        description: t("gallery.personalMetaDescription"),
+        url: "https://yheun03.github.io/portfolio/personal",
+        inLanguage: locale.value === "ko" ? "ko-KR" : "en-US",
+        mainEntity: {
+            "@type": "ItemList",
+            itemListElement: personalWorksList.map((work, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: pick(work.title),
+                url: `https://yheun03.github.io/portfolio/personal/${work.id}`,
+            })),
+        },
+    },
 }));
 </script>

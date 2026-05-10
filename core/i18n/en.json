@@ -42,12 +42,12 @@
     "gallery": {
         "careerEyebrow": "Works archive",
         "careerTitle": "Client & in-house project gallery",
-        "careerMetaTitle": "Client works gallery | Eunyounghwan",
-        "careerMetaDescription": "Screenshots, duration, languages, and narrative for each project.",
+        "careerMetaTitle": "Web Publishing Case Studies | Eunyounghwan Frontend Portfolio",
+        "careerMetaDescription": "Production case studies by web publisher Eunyounghwan, covering Vue 3, SCSS, JavaScript, CMS, responsive UI, SEO, accessibility, and frontend work.",
         "personalEyebrow": "Personal",
         "personalTitle": "Personal project gallery",
-        "personalMetaTitle": "Personal projects gallery | Eunyounghwan",
-        "personalMetaDescription": "Screenshots, duration, stack, and narrative for personal work.",
+        "personalMetaTitle": "Frontend Personal Projects | Eunyounghwan Web Publisher",
+        "personalMetaDescription": "Frontend personal projects and web publishing experiments by Eunyounghwan, including portfolio improvements, UI patterns, Vue, SCSS, and interaction work.",
         "duration": "Duration",
         "languages": "Languages & core stack",
         "techFull": "Tools & full stack",
@@ -87,9 +87,9 @@
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
     "meta": {
-        "title": "2026 Portfolio | Eunyounghwan",
-        "description": "A 2026-ready portfolio for structural publishing and frontend UI development.",
-        "ogTitle": "Eunyounghwan Portfolio 2026",
-        "ogDescription": "A portfolio showing efficient layout systems, publishing quality, and frontend scalability."
+        "title": "Eunyounghwan | Web Publisher & Frontend Developer Portfolio",
+        "description": "Frontend developer and web publisher portfolio by Eunyounghwan, covering Vue 3, SCSS, web standards, accessibility, SEO, responsive UI publishing, and production projects.",
+        "ogTitle": "Eunyounghwan, Web Publisher & Frontend Developer",
+        "ogDescription": "A portfolio showing Vue 3 component architecture, web standards, accessibility, SEO, responsive UI publishing, and frontend development."
     }
 }

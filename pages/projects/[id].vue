@@ -109,5 +109,20 @@ usePortfolioSeo(() => ({
     type: "article",
     image: work.captures[0],
     imageAlt: captureAlt(0),
+    keywords: [pick(work.title), pick(work.type), pick(work.role), ...work.languages, ...work.tech],
+    jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        name: pick(work.title),
+        description: pick(work.introduction),
+        url: `https://yheun03.github.io/portfolio/projects/${work.id}`,
+        inLanguage: locale.value === "ko" ? "ko-KR" : "en-US",
+        creator: {
+            "@type": "Person",
+            name: "은영환",
+            jobTitle: locale.value === "ko" ? "웹 퍼블리셔 / 프론트엔드 개발자" : "Web Publisher / Frontend Developer",
+        },
+        keywords: [pick(work.type), pick(work.role), ...work.languages, ...work.tech].join(", "),
+    },
 }));
 </script>
