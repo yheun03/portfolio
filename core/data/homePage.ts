@@ -1,6 +1,6 @@
 /**
  * 홈 섹션 키·레이아웃 그룹 — JSON보다 TS에 두는 편이 타입 안전과 라우트 매핑에 유리함.
- * (본문 문구는 i18n / `json/site` / `json/works` 등에서 관리)
+ * (본문 문구는 i18n / `content/site` / `content/works` 등에서 관리)
  */
 export type HomeSectionKey = 'hello' | 'works' | 'personal' | 'about' | 'journey' | 'toolbox' | 'highlights' | 'contact';
 

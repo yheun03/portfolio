@@ -1,45 +1,36 @@
-import aboutJson from './json/site/about.json';
-import activitiesJson from './json/site/highlights/activities.json';
-import awardsJson from './json/site/highlights/awards.json';
-import certificationsJson from './json/site/highlights/certifications.json';
-import descriptionsJson from './json/site/highlights/descriptions.json';
-import rolesJson from './json/site/highlights/roles.json';
-import journeyJson from './json/site/journey.json';
-import profileJson from './json/site/profile.json';
-import skillsJson from './json/site/skills.json';
+import aboutData from './content/site/about';
+import activitiesData from './content/site/highlights/activities';
+import awardsData from './content/site/highlights/awards';
+import certificationsData from './content/site/highlights/certifications';
+import descriptionsData from './content/site/highlights/descriptions';
+import rolesData from './content/site/highlights/roles';
+import journeyData from './content/site/journey';
+import profileData from './content/site/profile';
+import skillsData from './content/site/skills';
 
 import type { HighlightTabKey } from '~/core/types/highlights';
 
-type Localized = { ko: string; en: string };
+/** `content/site/journey.ts` 의 `as const` 데이터와 동기화된 타입 (readonly 추론 유지) */
+export type JourneyCompanyBlock = (typeof journeyData.companies)[number];
+export type JourneyTimelineEntry = JourneyCompanyBlock['timeline'][number];
+export type JourneySummary = JourneyCompanyBlock['summary'];
 
-export interface JourneyTimelineEntry {
-    period: string;
-    title: Localized;
-    description: Localized;
-}
+export const profile = profileData;
+export const aboutContent = aboutData;
+export const skills = skillsData;
+export const journeyCompanies = journeyData.companies;
 
-export interface JourneySummary {
-    company: Localized;
-    team: Localized;
-    period: Localized;
-    intro: Localized;
-    roles: Localized[];
-}
-
-export interface JourneyCompanyBlock {
-    summary: JourneySummary;
-    timeline: JourneyTimelineEntry[];
-    temp?: boolean;
-}
-
-export const profile = profileJson;
-export const aboutContent = aboutJson;
-export const skills = skillsJson;
-export const journeyCompanies = journeyJson.companies as JourneyCompanyBlock[];
+/** 하이라이트 항목·설명 — `as const` JSON과 동일 구조로 두고 불필요한 가변 캐스트 제거 */
 export const highlights = {
-    awards: awardsJson as Localized[],
-    certifications: certificationsJson as Localized[],
-    roles: rolesJson as Localized[],
-    activities: activitiesJson as Localized[],
-    descriptions: descriptionsJson as Record<HighlightTabKey, Localized>,
+    awards: awardsData,
+    certifications: certificationsData,
+    roles: rolesData,
+    activities: activitiesData,
+    descriptions: descriptionsData,
+} satisfies {
+    awards: typeof awardsData;
+    certifications: typeof certificationsData;
+    roles: typeof rolesData;
+    activities: typeof activitiesData;
+    descriptions: Record<HighlightTabKey, (typeof descriptionsData)[keyof typeof descriptionsData]>;
 };
