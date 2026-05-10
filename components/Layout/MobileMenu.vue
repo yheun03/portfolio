@@ -2,15 +2,15 @@
     <Teleport to="body">
         <transition name="mobile-menu-fade">
             <button v-if="open" type="button" class="mobile-menu__backdrop"
-                :aria-label="locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'" @click="$emit('close')" />
+                :aria-label="locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'" @click="emitClose" />
         </transition>
         <transition name="mobile-menu-drawer">
             <nav v-if="open" :id="id" class="mobile-menu"
-                :aria-label="locale === 'ko' ? '모바일 섹션 메뉴' : 'Mobile section menu'">
-                <p class="mobile-menu__eyebrow">{{ locale === "ko" ? "바로 이동" : "Jump to" }}</p>
-                <a v-for="link in links" :key="link.href" :href="link.href"
-                    :class="{ 'is-active': isActive(link.href) }" @click="$emit('close')">
-                    {{ link.label }}
+                :aria-label="locale === 'ko' ? '모바일 주요 메뉴' : 'Mobile primary menu'">
+                <p class="mobile-menu__eyebrow">{{ locale === 'ko' ? '페이지' : 'Pages' }}</p>
+                <a v-for="item in links" :key="item.href" :href="item.href" :class="linkClass(item.href)"
+                    @click="emitClose">
+                    {{ item.label }}
                 </a>
             </nav>
         </transition>
@@ -18,28 +18,53 @@
 </template>
 
 <script setup lang="ts">
+type NavLink = { href: string; label: string };
+
 const { locale } = useLocale();
 const route = useRoute();
-defineEmits<{ (e: "close"): void }>();
+
 const props = withDefaults(
     defineProps<{
         id?: string;
         open: boolean;
-        links: { href: string; label: string }[];
+        links: NavLink[];
         activeId?: string;
         activePath?: string;
     }>(),
-    { activeId: "" }
+    { activeId: '' },
 );
 
-function isActive(href: string) {
-    if (props.activePath) {
-        if (href === "/") return route.path === "/";
-        return props.activePath === href;
+const emit = defineEmits(['close']);
+
+function emitClose(): void {
+    emit('close');
+}
+
+function isActive(href: string): boolean {
+    if (href.startsWith('#')) {
+        if (props.activePath) {
+            return false;
+        }
+        const id = props.activeId;
+        return Boolean(id) && id === href.slice(1);
     }
-    if (href.startsWith("#") && props.activeId) {
-        return props.activeId === href.slice(1);
+    if (href.startsWith('/')) {
+        if (props.activePath) {
+            if (href === '/') {
+                return route.path === '/';
+            }
+            return props.activePath === href;
+        }
+        if (href === '/') {
+            return route.path === '/';
+        }
+        const prefix = href + '/';
+        return route.path === href || route.path.startsWith(prefix);
     }
     return false;
+}
+
+function linkClass(href: string): string {
+    return isActive(href) ? 'is-active' : '';
 }
 </script>

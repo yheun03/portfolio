@@ -8,6 +8,13 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            script: [
+                {
+                    innerHTML: `(function(){try{var k='portfolio-theme',s=localStorage.getItem(k),r=document.documentElement;if(s==='light'||s==='dark')r.setAttribute('data-theme',s);else r.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}})();`,
+                    type: 'text/javascript',
+                    tagPosition: 'head',
+                },
+            ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -69,14 +76,7 @@ export default defineNuxtConfig({
         },
     },
 
-    runtimeConfig: {
-        public: {
-            apiBase: '/api',
-        },
-    },
-
     nitro: {
         preset: 'static',
-        scanDirs: ['core/server'],
     },
 });
