@@ -40,7 +40,7 @@ const pageLayers = HOME_PAGE_LAYERS.map((layer) => ({
     })),
 }));
 
-const { t, initLocale, locale } = useLocale();
+const { t, locale } = useLocale();
 
 useIntersectionAnimation();
 usePortfolioGsap();
@@ -70,7 +70,4 @@ usePortfolioSeo(() => ({
     imageAlt: t('meta.ogTitle'),
 }));
 
-onMounted(() => {
-    initLocale();
-});
 </script>
