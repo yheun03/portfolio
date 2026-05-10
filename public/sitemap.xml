@@ -151,10 +151,22 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://yheun03.github.io/portfolio/personal/portfolio-2025</loc>
+        <lastmod>2026-05-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://yheun03.github.io/portfolio/personal/ui-playground</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yheun03.github.io/portfolio/ver.2025/index.html</loc>
+        <lastmod>2026-05-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://yheun03.github.io/portfolio/resume.html</loc>

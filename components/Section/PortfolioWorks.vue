@@ -74,6 +74,12 @@
                         <ul>
                             <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
+                        <p v-if="activeWork.links?.length" class="works__modal-links">
+                            <a v-for="link in activeWork.links" :key="link.href"
+                                class="base-button base-button--primary" :href="link.href">
+                                {{ pick(link.label) }}
+                            </a>
+                        </p>
                     </BaseCard>
                 </div>
             </div>

@@ -34,6 +34,12 @@
                     </div>
                 </dl>
                 <p class="gallery-detail__intro">{{ pick(work.introduction) }}</p>
+                <p v-if="work.links?.length" class="gallery-detail__links">
+                    <a v-for="link in work.links" :key="link.href" class="base-button base-button--primary"
+                        :href="link.href">
+                        {{ pick(link.label) }}
+                    </a>
+                </p>
             </header>
 
             <section class="gallery-detail__captures-section" :aria-label="t('gallery.captures')">
@@ -41,8 +47,8 @@
                 <div class="gallery-detail__captures">
                     <figure v-for="(src, index) in work.captures" :key="`${src}-${index}`"
                         class="gallery-detail__figure">
-                        <img :src="src" :alt="captureAlt(index)" loading="lazy" decoding="async" fetchpriority="low" width="1200"
-                            height="675" />
+                        <img :src="src" :alt="captureAlt(index)" loading="lazy" decoding="async" fetchpriority="low"
+                            width="1200" height="675" />
                     </figure>
                 </div>
             </section>

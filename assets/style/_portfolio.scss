@@ -815,6 +815,13 @@
         flex-shrink: 0;
     }
 
+    &__modal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-top: var(--space-5);
+    }
+
     &__meta,
     &__role,
     &__intro,
@@ -1099,6 +1106,13 @@
         font-size: clamp(1rem, 1.2vw, 1.12rem);
         line-height: 1.65;
         color: var(--color-text-muted);
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin: var(--space-5) 0 0;
     }
 
     &__captures-section {
@@ -2175,4 +2189,3 @@
     gap: var(--space-3);
     margin-top: var(--space-8);
 }
-
