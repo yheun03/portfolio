@@ -1,8 +1,10 @@
 import { defineNuxtConfig } from 'nuxt/config';
+import { joinURL } from 'ufo';
 
 /** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
@@ -18,7 +20,7 @@ export default defineNuxtConfig({
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            link: [{ rel: 'icon', type: 'image/svg+xml', href: 'favicon.svg' }],
+            link: [{ rel: 'icon', type: 'image/svg+xml', href: faviconHref }],
             script: [
                 {
                     key: 'gtm-base',
