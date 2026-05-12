@@ -76,7 +76,7 @@
                         </ul>
                         <p v-if="activeWork.links?.length" class="works__modal-links">
                             <a v-for="link in activeWork.links" :key="link.href"
-                                class="base-button base-button--primary" :href="link.href">
+                                class="base-button base-button--primary" :href="resolveAppPath(link.href)">
                                 {{ pick(link.label) }}
                             </a>
                         </p>
@@ -91,6 +91,7 @@
 import { useWorksTabRenderer } from '~/core/composables/useWorksTabRenderer';
 
 const { t, pick, locale } = useLocale();
+const resolveAppPath = useAppPathResolver();
 const { isNarrow } = useNarrowLayout();
 
 const {

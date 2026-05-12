@@ -8,10 +8,15 @@
             <nav v-if="open" :id="id" class="mobile-menu"
                 :aria-label="locale === 'ko' ? '모바일 주요 메뉴' : 'Mobile primary menu'">
                 <p class="mobile-menu__eyebrow">{{ locale === 'ko' ? '페이지' : 'Pages' }}</p>
-                <a v-for="item in links" :key="item.href" :href="item.href" :class="linkClass(item.href)"
-                    @click="emitClose">
-                    {{ item.label }}
-                </a>
+                <template v-for="item in links" :key="item.href">
+                    <NuxtLink v-if="isInternalRoute(item.href)" :to="item.href" :class="linkClass(item.href)"
+                        @click="emitClose">
+                        {{ item.label }}
+                    </NuxtLink>
+                    <a v-else :href="item.href" :class="linkClass(item.href)" @click="emitClose">
+                        {{ item.label }}
+                    </a>
+                </template>
             </nav>
         </transition>
     </Teleport>
@@ -38,6 +43,10 @@ const emit = defineEmits(['close']);
 
 function emitClose(): void {
     emit('close');
+}
+
+function isInternalRoute(href: string): boolean {
+    return href.startsWith('/') && !href.startsWith('//');
 }
 
 function isActive(href: string): boolean {
