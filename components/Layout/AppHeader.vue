@@ -51,10 +51,7 @@ const props = withDefaults(
     }
 );
 
-/** `/projects` 같은 앱 내부 경로만 — `//` 외부·`#` 앵커는 제외 */
-function isAppRoute(href: string) {
-    return href.startsWith("/") && !href.startsWith("//");
-}
+const { isAppRoute } = useAppPathResolver();
 
 function isNavActive(href: string) {
     if (href.startsWith("#")) {

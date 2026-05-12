@@ -28,8 +28,9 @@ const props = defineProps<{
 }>();
 
 const { t, pick, locale } = useLocale();
+const { resolveAppPath } = useAppPathResolver();
 
-const coverSrc = computed(() => props.work.captures[0] ?? "/images/projects/placeholder.svg");
+const coverSrc = computed(() => resolveAppPath(props.work.captures[0] ?? "/images/projects/placeholder.svg"));
 const coverAlt = computed(() =>
     locale.value === "ko" ? `${pick(props.work.title)} 캡처` : `Screenshot: ${pick(props.work.title)}`,
 );

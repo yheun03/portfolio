@@ -35,10 +35,15 @@
                 </dl>
                 <p class="gallery-detail__intro">{{ pick(work.introduction) }}</p>
                 <p v-if="work.links?.length" class="gallery-detail__links">
-                    <a v-for="link in work.links" :key="link.href" class="base-button base-button--primary"
-                        :href="link.href">
-                        {{ pick(link.label) }}
-                    </a>
+                    <template v-for="link in work.links" :key="link.href">
+                        <NuxtLink v-if="isAppRoute(link.href)" class="base-button base-button--primary" :to="link.href">
+                            {{ pick(link.label) }}
+                        </NuxtLink>
+                        <a v-else class="base-button base-button--primary" :href="link.href" target="_blank"
+                            rel="noopener noreferrer">
+                            {{ pick(link.label) }}
+                        </a>
+                    </template>
                 </p>
             </header>
 
@@ -47,7 +52,8 @@
                 <div class="gallery-detail__captures">
                     <figure v-for="(src, index) in work.captures" :key="`${src}-${index}`"
                         class="gallery-detail__figure">
-                        <img :src="src" :alt="captureAlt(index)" loading="lazy" decoding="async" fetchpriority="low"
+                        <img :src="resolveAppPath(src)" :alt="captureAlt(index)" loading="lazy" decoding="async"
+                            fetchpriority="low"
                             width="1200" height="675" />
                     </figure>
                 </div>
@@ -88,6 +94,7 @@ import { getPersonalWorkById } from "~/core/data/works";
 
 const route = useRoute();
 const { t, pick, locale } = useLocale();
+const { resolveAppPath, isAppRoute } = useAppPathResolver();
 const layoutLinks = useSubpageNavLinks();
 
 const work = getPersonalWorkById(route.params.id as string);
