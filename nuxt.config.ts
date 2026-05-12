@@ -4,7 +4,8 @@ import { defineNuxtConfig } from 'nuxt/config';
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 
-export default defineNuxtConfig({    compatibilityDate: '2026-05-02',
+export default defineNuxtConfig({
+    compatibilityDate: '2026-05-02',
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
     experimental: { appManifest: false },
     features: { inlineStyles: false },
@@ -20,6 +21,15 @@ export default defineNuxtConfig({    compatibilityDate: '2026-05-02',
             link: [{ rel: 'icon', type: 'image/svg+xml', href: 'favicon.svg' }],
             script: [
                 {
+                    key: 'gtm-base',
+                    type: 'text/javascript',
+                    tagPosition: 'head',
+                    /** 헤드 안에서 가능한 한 앞쪽 (Unhead: 숫자가 클수록 먼저 삽입) */
+                    tagPriority: 100,
+                    innerHTML:
+                        "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJZM3PWS');",
+                },
+                {
                     type: 'text/javascript',
                     src: '//wcs.pstatic.net/wcslog.js',
                     tagPosition: 'bodyClose',
@@ -28,6 +38,15 @@ export default defineNuxtConfig({    compatibilityDate: '2026-05-02',
                     type: 'text/javascript',
                     tagPosition: 'bodyClose',
                     innerHTML: 'if(!wcs_add) var wcs_add = {};\nwcs_add["wa"] = "1c95700c9231150";\nif(window.wcs) {\nwcs_do();\n}',
+                },
+            ],
+            noscript: [
+                {
+                    key: 'gtm-noscript',
+                    tagPosition: 'bodyOpen',
+                    tagPriority: 100,
+                    innerHTML:
+                        '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJZM3PWS" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
                 },
             ],
         },
