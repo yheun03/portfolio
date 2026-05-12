@@ -45,9 +45,7 @@ function emitClose(): void {
     emit('close');
 }
 
-function isAppRoute(href: string): boolean {
-    return href.startsWith('/') && !href.startsWith('//');
-}
+const { isAppRoute } = useAppPathResolver();
 
 function isActive(href: string): boolean {
     if (href.startsWith('#')) {

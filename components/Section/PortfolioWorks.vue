@@ -75,10 +75,16 @@
                             <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
                         <p v-if="activeWork.links?.length" class="works__modal-links">
-                            <a v-for="link in activeWork.links" :key="link.href"
-                                class="base-button base-button--primary" :href="link.href">
-                                {{ pick(link.label) }}
-                            </a>
+                            <template v-for="link in activeWork.links" :key="link.href">
+                                <NuxtLink v-if="isAppRoute(link.href)" class="base-button base-button--primary"
+                                    :to="link.href">
+                                    {{ pick(link.label) }}
+                                </NuxtLink>
+                                <a v-else class="base-button base-button--primary" :href="link.href"
+                                    target="_blank" rel="noopener noreferrer">
+                                    {{ pick(link.label) }}
+                                </a>
+                            </template>
                         </p>
                     </BaseCard>
                 </div>
@@ -91,6 +97,7 @@
 import { useWorksTabRenderer } from '~/core/composables/useWorksTabRenderer';
 
 const { t, pick, locale } = useLocale();
+const { isAppRoute } = useAppPathResolver();
 const { isNarrow } = useNarrowLayout();
 
 const {
