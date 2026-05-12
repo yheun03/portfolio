@@ -1,11 +1,10 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = process.env.GH_PAGES_REPO || 'portfolio';
-const resolvedBaseURL = process.env.NUXT_APP_BASE_URL || (isProd ? `/${repoName}/` : '/');
+/** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
+const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
+const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 
-export default defineNuxtConfig({
-    compatibilityDate: '2026-05-02',
+export default defineNuxtConfig({    compatibilityDate: '2026-05-02',
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
     experimental: { appManifest: false },
     features: { inlineStyles: false },

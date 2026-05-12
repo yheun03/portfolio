@@ -12,7 +12,7 @@
             <BaseCard class="contact__summary">
                 <BaseLabel tone="contact" label="Collaboration" />
                 <div class="contact__profile" aria-hidden="true">
-                    <img :src="profilePhotoSrc" alt="" loading="lazy" decoding="async"
+                    <img src="/assets/image/photo-1440.webp" alt="" loading="lazy" decoding="async"
                         fetchpriority="low" />
                     <span>{{ locale === "ko" ? "열린 협업 가능" : "Open to collaborate" }}</span>
                 </div>
@@ -27,7 +27,7 @@
                 <BaseButton :label="t('contact.email')" :href="`mailto:${profile.contacts.email}`"
                     :aria-label="locale === 'ko' ? '메일 보내기' : 'Send email'" />
                 <BaseButton :label="t('contact.github')" :href="profile.contacts.github" variant="ghost" />
-                <BaseButton :label="t('contact.resume')" :href="resumeHref" variant="ghost" />
+                <BaseButton :label="t('contact.resume')" :href="profile.contacts.resume" variant="ghost" />
             </div>
         </div>
     </section>
@@ -37,7 +37,4 @@
 import { profile } from "~/core/data/site";
 const { t, locale } = useLocale();
 const emailLetters = computed(() => profile.contacts.email.split(""));
-const resolveAppPath = useAppPathResolver();
-const profilePhotoSrc = computed(() => resolveAppPath("/assets/image/photo-1440.webp"));
-const resumeHref = computed(() => resolveAppPath(profile.contacts.resume));
 </script>
