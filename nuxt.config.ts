@@ -18,8 +18,18 @@ export default defineNuxtConfig({
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            link: [
-                { rel: 'icon', type: 'image/svg+xml', href: 'favicon.svg' },
+            link: [{ rel: 'icon', type: 'image/svg+xml', href: 'favicon.svg' }],
+            script: [
+                {
+                    type: 'text/javascript',
+                    src: '//wcs.pstatic.net/wcslog.js',
+                    tagPosition: 'bodyClose',
+                },
+                {
+                    type: 'text/javascript',
+                    tagPosition: 'bodyClose',
+                    innerHTML: 'if(!wcs_add) var wcs_add = {};\nwcs_add["wa"] = "1c95700c9231150";\nif(window.wcs) {\nwcs_do();\n}',
+                },
             ],
         },
     },
