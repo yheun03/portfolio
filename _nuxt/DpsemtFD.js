@@ -1,1 +1,0 @@
-import{d as n,b as s,c as o,n as t,f as l}from"./CBwO6YTP.js";const b=n({__name:"BaseBadge",props:{size:{},tone:{},plain:{type:Boolean}},setup(e){return(a,i)=>(s(),o("span",{class:t(["base-badge",[e.size?`base-badge--${e.size}`:void 0,e.tone?`base-badge--${e.tone}`:void 0,{"base-badge--plain":e.plain}]])},[l(a.$slots,"default")],2))}});export{b as _};
