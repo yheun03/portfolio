@@ -1,23 +1,13 @@
 <template>
     <header class="app-header">
-        <NuxtLink v-if="isInternalRoute(brandHref)" class="app-header__brand" :to="brandHref">
-            Eun
-        </NuxtLink>
-        <a v-else class="app-header__brand" :href="brandHref">
+        <a class="app-header__brand" :href="brandHref">
             Eun
         </a>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
-            <template v-for="link in links" :key="link.href">
-                <NuxtLink v-if="isInternalRoute(link.href)" :to="link.href"
-                    :class="{ 'is-active': isNavActive(link.href) }"
-                    :aria-current="isNavActive(link.href) ? 'true' : undefined">
-                    {{ link.label }}
-                </NuxtLink>
-                <a v-else :href="link.href" :class="{ 'is-active': isNavActive(link.href) }"
-                    :aria-current="isNavActive(link.href) ? 'true' : undefined">
-                    {{ link.label }}
-                </a>
-            </template>
+            <a v-for="link in links" :key="link.href" :href="link.href" :class="{ 'is-active': isNavActive(link.href) }"
+                :aria-current="isNavActive(link.href) ? 'true' : undefined">
+                {{ link.label }}
+            </a>
         </nav>
         <div class="app-header__actions">
             <LanguageToggle />
@@ -50,10 +40,6 @@ const props = withDefaults(
         brandHref: "#hello",
     }
 );
-
-function isInternalRoute(href: string) {
-    return href.startsWith("/") && !href.startsWith("//");
-}
 
 function isNavActive(href: string) {
     if (href.startsWith("#")) {
