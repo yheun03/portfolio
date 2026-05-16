@@ -6,9 +6,21 @@
                 <p class="technical-label">{{ t("gallery.personalEyebrow") }}</p>
                 <h1 class="gallery-page__title">{{ t("gallery.personalTitle") }}</h1>
                 <p class="gallery-page__lead">{{ personalLead }}</p>
+                <div class="gallery-page__tools" role="radiogroup"
+                    :aria-label="locale === 'ko' ? '개인 프로젝트 정렬 기준' : 'Personal project sort order'">
+                    <p>{{ locale === 'ko' ? '정렬' : 'Sort' }}</p>
+                    <button v-for="option in sortOptions" :key="option.value" type="button"
+                        :class="{ 'is-active': sortMode === option.value }"
+                        :aria-checked="sortMode === option.value" role="radio" @click="sortMode = option.value">
+                        {{ option.label }}
+                    </button>
+                </div>
             </header>
             <div class="gallery-page__grid">
-                <ProjectGalleryCard v-for="w in personalWorksList" :key="w.id" :work="w" :to="`/personal/${w.id}`" />
+                <template v-for="entry in personalGalleryEntries" :key="entry.key">
+                    <h2 v-if="entry.type === 'year'" class="gallery-page__year">{{ entry.year }}</h2>
+                    <ProjectGalleryCard v-else :work="entry.work" :to="`/personal/${entry.work.id}`" />
+                </template>
             </div>
         </article>
     </AppLayout>
@@ -18,9 +30,35 @@
 import AppLayout from "~/components/Layout/AppLayout.vue";
 import ProjectGalleryCard from "~/components/Card/ProjectGalleryCard.vue";
 import { personalWorksList } from "~/core/data/works";
+import {
+    createWorkYearEntries,
+    sortWorksByStartDesc,
+    sortWorksByTitleAsc,
+    type WorkSortMode,
+} from "~/core/utils/workSort";
 
 const { t, pick, locale } = useLocale();
 const layoutLinks = useSubpageNavLinks();
+const sortMode = ref<WorkSortMode>("start");
+
+const sortOptions = computed<{ value: WorkSortMode; label: string }[]>(() => [
+    { value: "start", label: locale.value === "ko" ? "시작시간" : "Start date" },
+    { value: "title", label: locale.value === "ko" ? "가나다 순" : "A-Z" },
+]);
+const sortedPersonalWorks = computed(() =>
+    [...personalWorksList].sort((a, b) =>
+        sortMode.value === "start"
+            ? sortWorksByStartDesc(a, b)
+            : sortWorksByTitleAsc(a, b, pick, locale.value),
+    ),
+);
+const personalGalleryEntries = computed(() =>
+    sortMode.value === "start" ? createWorkYearEntries(sortedPersonalWorks.value) : sortedPersonalWorks.value.map((work) => ({
+        type: "work" as const,
+        key: work.id,
+        work,
+    })),
+);
 
 const personalLead = computed(() =>
     locale.value === "ko"
@@ -43,7 +81,7 @@ usePortfolioSeo(() => ({
         inLanguage: locale.value === "ko" ? "ko-KR" : "en-US",
         mainEntity: {
             "@type": "ItemList",
-            itemListElement: personalWorksList.map((work, index) => ({
+            itemListElement: sortedPersonalWorks.value.map((work, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
                 name: pick(work.title),
