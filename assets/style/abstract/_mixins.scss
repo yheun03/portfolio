@@ -10,7 +10,7 @@
 @mixin font($type, $font-weight: null, $letter-spacing: null, $line-height: null) {
     $preset: map.get($font-presets, $type);
 
-    @if $preset == null {
+    @if $preset ==null {
         @error "Unknown font preset `#{$type}`. Use one of: #{map.keys($font-presets)}.";
     }
 
@@ -18,15 +18,15 @@
     $resolved-line-height: $line-height;
     $resolved-letter-spacing: $letter-spacing;
 
-    @if $resolved-weight == null {
+    @if $resolved-weight ==null {
         $resolved-weight: map.get($preset, weight);
     }
 
-    @if $resolved-line-height == null {
+    @if $resolved-line-height ==null {
         $resolved-line-height: map.get($preset, line-height);
     }
 
-    @if $resolved-letter-spacing == null {
+    @if $resolved-letter-spacing ==null {
         $resolved-letter-spacing: map.get($preset, letter-spacing);
     }
 

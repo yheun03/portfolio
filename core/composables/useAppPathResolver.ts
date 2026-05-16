@@ -20,9 +20,17 @@ export function useAppPathResolver() {
         return joinURL(baseURL, rest);
     }
 
-    /** `NuxtLink`용 — 단일 `/`로 시작하는 앱 내부 경로 */
+    /** public 정적 파일·확장자 경로 등은 Vue 라우터가 처리하지 않음 */
+    const staticAssetExtension =
+        /\.(?:html?|pdf|txt|json|wasm|webp|gif|(?:jpe?g)|png|svg|ico|xml|csv|zip|woff2?)$/i;
+
+    /** `NuxtLink`용 — 단일 `/`로 시작하는 앱 SPA 경로만 */
     function isAppRoute(path: string): boolean {
-        return path.startsWith('/') && !path.startsWith('//');
+        if (!path.startsWith('/') || path.startsWith('//')) {
+            return false;
+        }
+        const pathOnly = path.split(/[#?]/, 1)[0] ?? path;
+        return !staticAssetExtension.test(pathOnly);
     }
 
     return { resolveAppPath, isAppRoute };

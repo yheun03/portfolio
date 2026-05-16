@@ -8,8 +8,7 @@
         </a>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
             <template v-for="link in links" :key="link.href">
-                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href"
-                    :class="{ 'is-active': isNavActive(link.href) }"
+                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" :class="{ 'is-active': isNavActive(link.href) }"
                     :aria-current="isNavActive(link.href) ? 'true' : undefined">
                     {{ link.label }}
                 </NuxtLink>
