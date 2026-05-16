@@ -1,3 +1,5 @@
+@use "abstract/index" as *;
+
 /* layout/_header.scss */
 .scroll-progress {
     position: fixed;
@@ -8,8 +10,8 @@
     width: 100%;
     height: 5px;
 
-    background: var(--gradient-accent);
-    box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 45%, transparent);
+    background: $gradient-accent;
+    box-shadow: 0 0 24px color-mix(in srgb, $primary-600 45%, transparent);
 
     transform-origin: left center;
 }
@@ -28,54 +30,48 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-6);
+    gap: $space-6;
 
-    padding: var(--space-4) var(--space-7);
-    min-height: var(--layout-header-height);
+    padding: $space-4 $space-7;
+    min-height: $layout-header-height;
 
-    border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
-    background: color-mix(in srgb, var(--color-glass-2-strong) 92%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, $primary-600 22%, $grayscale-300);
+    background: color-mix(in srgb, $glass-2-strong 92%, transparent);
     box-shadow:
-        var(--shadow-glow),
-        0 16px 40px color-mix(in srgb, #0f172a 12%, transparent);
+        $shadow-glow,
+        0 16px 40px color-mix(in srgb, $grayscale-800 12%, transparent);
     backdrop-filter: blur(14px) saturate(1.2);
 
     &__brand {
         display: inline-flex;
-        gap: var(--space-2);
+        gap: $space-2;
         align-items: center;
-        min-height: var(--size-touch);
-        font-family: var(--font-display);
-        font-size: var(--font-size-md);
-        font-weight: var(--font-weight-black);
-        letter-spacing: var(--tracking-ui);
+        min-height: $size-touch;
+        @include font(title-2, $font-weight-black);
     }
 
     &__nav {
         display: none;
-        gap: var(--space-2);
+        gap: $space-2;
 
-        padding: var(--space-1);
+        padding: $space-1;
 
-        border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+        border: 1px solid color-mix(in srgb, $grayscale-300 70%, transparent);
         border-radius: 999px;
-        background: color-mix(in srgb, var(--color-surface-strong) 55%, transparent);
+        background: color-mix(in srgb, $grayscale-200 55%, transparent);
 
         a {
             position: relative;
 
             display: inline-flex;
-            min-height: var(--size-touch);
+            min-height: $size-touch;
             align-items: center;
-            padding: var(--space-3) var(--space-4);
+            padding: $space-3 $space-4;
 
             border-radius: 999px;
 
-            color: var(--color-text-muted);
-            font-family: var(--font-display);
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-medium);
-            letter-spacing: var(--tracking-ui);
+            color: $grayscale-600;
+            @include font(caption-1);
 
             transition:
                 color 0.2s ease,
@@ -83,19 +79,19 @@
                 transform 0.2s ease;
 
             &:hover {
-                color: var(--color-text);
-                background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+                color: $grayscale-900;
+                background: color-mix(in srgb, $primary-600 12%, transparent);
             }
 
             &:focus-visible {
-                outline: 2px solid var(--color-primary);
+                outline: 2px solid $primary-600;
                 outline-offset: 2px;
             }
 
             &.is-active {
-                color: var(--color-on-accent);
-                background: var(--gradient-accent);
-                box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 32%, transparent);
+                color: $grayscale-0;
+                background: $gradient-accent;
+                box-shadow: 0 8px 22px color-mix(in srgb, $primary-600 32%, transparent);
                 text-shadow: none;
             }
         }
@@ -103,7 +99,7 @@
 
     &__actions {
         display: flex;
-        gap: var(--space-3);
+        gap: $space-3;
     }
 
     &__menu-btn {
@@ -120,19 +116,16 @@
 .language-toggle,
 .theme-toggle,
 .app-header__menu-btn {
-    min-width: var(--size-touch);
-    min-height: var(--size-touch);
-    padding: var(--space-3) var(--space-5);
+    min-width: $size-touch;
+    min-height: $size-touch;
+    padding: $space-3 $space-5;
 
-    border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-primary));
-    border-radius: var(--radius-card);
-    background: color-mix(in srgb, var(--color-glass-2-strong) 94%, transparent);
+    border: 1px solid color-mix(in srgb, $grayscale-300 85%, $primary-600);
+    border-radius: $radius-card;
+    background: color-mix(in srgb, $glass-2-strong 94%, transparent);
 
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
+    color: $grayscale-900;
+    @include font(caption-1, $font-weight-semibold, $line-height: $line-height-ui);
 
     cursor: pointer;
     transition:
@@ -141,13 +134,13 @@
         border-color 0.2s ease;
 
     &:hover {
-        border-color: color-mix(in srgb, var(--color-primary) 48%, var(--color-border));
-        box-shadow: var(--shadow-soft);
+        border-color: color-mix(in srgb, $primary-600 48%, $grayscale-300);
+        box-shadow: $shadow-soft;
         transform: translateY(-2px);
     }
 
     &:focus-visible {
-        outline: 2px solid var(--color-primary);
+        outline: 2px solid $primary-600;
         outline-offset: 2px;
     }
 }
@@ -158,71 +151,67 @@
 
 .mobile-menu {
     position: fixed;
-    top: calc(var(--layout-header-height) + var(--space-5));
+    top: calc(#{$layout-header-height} + #{$space-5});
     right: max(0.75rem, env(safe-area-inset-right));
     bottom: max(0.75rem, env(safe-area-inset-bottom));
     z-index: 95;
 
     display: grid;
     align-content: start;
-    gap: var(--space-5);
+    gap: $space-5;
 
     width: min(22rem, calc(100vw - 1.5rem));
-    padding: var(--space-6);
+    padding: $space-6;
 
-    border: 1px solid color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
-    border-radius: var(--radius-xl);
-    background: color-mix(in srgb, var(--color-glass-2-strong) 96%, transparent);
-    box-shadow: var(--shadow-lift), var(--shadow-glow);
+    border: 1px solid color-mix(in srgb, $primary-600 28%, $grayscale-300);
+    border-radius: $radius-xl;
+    background: color-mix(in srgb, $glass-2-strong 96%, transparent);
+    box-shadow: $shadow-lift, $shadow-glow;
     backdrop-filter: blur(14px);
     overflow-y: auto;
 
     &__backdrop {
         position: fixed;
-        inset: var(--layout-header-height) 0 0;
+        inset: $layout-header-height 0 0;
         z-index: 90;
         min-width: 0;
         min-height: 0;
         padding: 0;
         border: 0;
-        background: color-mix(in srgb, var(--color-bg) 48%, transparent);
+        background: color-mix(in srgb, $grayscale-100 48%, transparent);
         backdrop-filter: blur(3px);
         cursor: pointer;
     }
 
     &__eyebrow {
-        color: var(--color-primary);
-        font-family: var(--font-mono);
-        font-size: var(--font-size-xs);
-        font-weight: var(--font-weight-bold);
-        letter-spacing: var(--tracking-label);
+        color: $primary-600;
+        @include font(caption-2, $font-weight-bold);
         text-transform: uppercase;
     }
 
     a {
         display: flex;
-        min-height: var(--size-touch);
+        min-height: $size-touch;
         align-items: center;
-        padding-inline: var(--space-5);
-        border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-        border-radius: var(--radius-card);
-        background: color-mix(in srgb, var(--color-surface) 52%, transparent);
-        font-family: var(--font-display);
-        font-weight: var(--font-weight-bold);
+        padding-inline: $space-5;
+        border: 1px solid color-mix(in srgb, $grayscale-300 72%, transparent);
+        border-radius: $radius-card;
+        background: color-mix(in srgb, $grayscale-0 52%, transparent);
+        @include font(title-2, $font-weight-bold);
 
         &:hover {
-            background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+            background: color-mix(in srgb, $primary-600 10%, transparent);
         }
 
         &:focus-visible {
-            outline: 2px solid var(--color-primary);
+            outline: 2px solid $primary-600;
             outline-offset: 2px;
         }
 
         &.is-active {
-            border-color: color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
-            background: var(--gradient-accent);
-            color: #fff;
+            border-color: color-mix(in srgb, $primary-600 42%, $grayscale-300);
+            background: $gradient-accent;
+            color: $grayscale-0;
         }
     }
 }
@@ -267,18 +256,17 @@
 
 /* layout/_footer.scss */
 .app-footer {
-    padding: var(--space-9) var(--space-6) var(--space-11);
+    padding: $space-9 $space-6 $space-11;
     text-align: center;
-    color: var(--color-text-muted);
-    border-top: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    color: $grayscale-600;
+    border-top: 1px solid $grayscale-300;
+    background: color-mix(in srgb, $grayscale-0 92%, $grayscale-100);
 
     &__emoji-line {
         display: inline-flex;
-        gap: var(--space-3);
-        margin-bottom: var(--space-3);
-        color: color-mix(in srgb, var(--color-primary) 72%, var(--color-text));
-        font-size: var(--font-size-sm);
+        gap: $space-3;
+        margin-bottom: $space-3;
+        color: color-mix(in srgb, $primary-600 72%, $grayscale-900);
+        font-size: $font-size-sm;
     }
 }
-

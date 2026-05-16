@@ -1,3 +1,5 @@
+@use "abstract/index" as *;
+
 /* base/_reset.scss */
 *,
 *::before,
@@ -16,11 +18,9 @@ body {
 
 /* base/_typography.scss */
 body {
-    font-family: var(--font-body);
-    font-size: var(--font-size-md);
-    line-height: var(--line-height-body);
-    color: var(--color-text);
-    background: var(--color-bg);
+    @include font(body-1);
+    color: $grayscale-900;
+    background: $grayscale-100;
     transition: background-color 0.35s ease, color 0.35s ease;
     text-wrap: pretty;
     word-break: keep-all;
@@ -36,23 +36,19 @@ p {
 h1,
 h2,
 h3 {
-    font-family: var(--font-display);
-    font-weight: var(--font-weight-black);
-    letter-spacing: var(--tracking-heading);
-    line-height: var(--line-height-title);
+    @include font(heading-2);
 }
 
 h1 {
-    font-size: var(--font-size-section-title);
+    @include font(heading-2);
 }
 
 h2 {
-    font-size: var(--font-size-section-title);
+    @include font(heading-2);
 }
 
 h3 {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
+    @include font(heading-3);
 }
 
 p,
@@ -68,14 +64,13 @@ label {
 
 @media (max-width: 767px) {
     body {
-        font-size: 0.92rem;
-        line-height: var(--line-height-body);
+        @include font(body-1);
     }
 
     h1,
     h2,
     h3 {
-        line-height: 1.18;
+        line-height: var(--line-height-title);
     }
 }
 
@@ -97,8 +92,8 @@ video {
 }
 
 :where(a, button, input, textarea, select, summary):focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: var(--space-1);
+    outline: 2px solid $primary-600;
+    outline-offset: $space-1;
 }
 
 html.is-menu-open {
@@ -120,19 +115,19 @@ html.is-menu-open {
 
 .skip-link {
     position: fixed;
-    left: var(--space-5);
+    left: $space-5;
     top: -100px;
-    padding: var(--space-3) var(--space-5);
+    padding: $space-3 $space-5;
     border-radius: 0.6rem;
-    background: var(--color-surface-strong);
-    border: 1px solid var(--color-border);
+    background: $grayscale-200;
+    border: 1px solid $grayscale-300;
     z-index: 999;
 }
 
 .skip-link:focus-visible {
-    top: var(--space-5);
-    outline: 2px solid var(--color-primary);
-    outline-offset: var(--space-1);
+    top: $space-5;
+    outline: 2px solid $primary-600;
+    outline-offset: $space-1;
 }
 
 [data-animate] {
@@ -153,7 +148,7 @@ html.is-menu-open {
 
     [data-motion="lift"]:hover {
         transform: translateY(-6px);
-        box-shadow: var(--shadow-soft);
+        box-shadow: $shadow-soft;
     }
 }
 
@@ -166,13 +161,13 @@ html.is-menu-open {
 
 @media (prefers-contrast: more) {
     :root {
-        --color-text-muted: #475569;
-        --color-border: #94a3b8;
+        --grayscale-600: #475569;
+        --grayscale-300: #94a3b8;
     }
 
     [data-theme="dark"] {
-        --color-text-muted: #cbd5e1;
-        --color-border: #94a3b8;
+        --grayscale-600: #cbd5e1;
+        --grayscale-300: #94a3b8;
     }
 }
 

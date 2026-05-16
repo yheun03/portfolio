@@ -3,6 +3,122 @@ $bp-tablet: 768px;
 $bp-laptop: 1024px;
 $bp-desktop: 1440px;
 
+$font-display: var(--font-display);
+$font-body: var(--font-body);
+$font-mono: var(--font-mono);
+$font-size-2xs: var(--font-size-2xs);
+$font-size-xs: var(--font-size-xs);
+$font-size-sm: var(--font-size-sm);
+$font-size-md: var(--font-size-md);
+$font-size-lg: var(--font-size-lg);
+$font-size-xl: var(--font-size-xl);
+$font-size-section-title: var(--font-size-section-title);
+$font-size-hero: var(--font-size-hero);
+$font-size-hero-card: var(--font-size-hero-card);
+$font-size-display-soft: var(--font-size-display-soft);
+$font-size-contact: var(--font-size-contact);
+$font-size-counter: var(--font-size-counter);
+$font-weight-regular: var(--font-weight-regular);
+$font-weight-medium: var(--font-weight-medium);
+$font-weight-semibold: var(--font-weight-semibold);
+$font-weight-bold: var(--font-weight-bold);
+$font-weight-black: var(--font-weight-black);
+$line-height-tight: var(--line-height-tight);
+$line-height-heading: var(--line-height-heading);
+$line-height-title: var(--line-height-title);
+$line-height-body: var(--line-height-body);
+$line-height-ui: var(--line-height-ui);
+$tracking-tight: var(--tracking-tight);
+$tracking-heading: var(--tracking-heading);
+$tracking-ui: var(--tracking-ui);
+$tracking-label: var(--tracking-label);
+
+$grayscale-0: var(--grayscale-0);
+$grayscale-50: var(--grayscale-50);
+$grayscale-100: var(--grayscale-100);
+$grayscale-200: var(--grayscale-200);
+$grayscale-300: var(--grayscale-300);
+$grayscale-400: var(--grayscale-400);
+$grayscale-500: var(--grayscale-500);
+$grayscale-600: var(--grayscale-600);
+$grayscale-700: var(--grayscale-700);
+$grayscale-800: var(--grayscale-800);
+$grayscale-900: var(--grayscale-900);
+$grayscale-950: var(--grayscale-950);
+$primary-50: var(--primary-50);
+$primary-100: var(--primary-100);
+$primary-200: var(--primary-200);
+$primary-300: var(--primary-300);
+$primary-400: var(--primary-400);
+$primary-500: var(--primary-500);
+$primary-600: var(--primary-600);
+$primary-700: var(--primary-700);
+$primary-800: var(--primary-800);
+$primary-900: var(--primary-900);
+$accent-hot: var(--accent-hot);
+$accent-mint: var(--accent-mint);
+$state-error: var(--state-error);
+$state-success: var(--state-success);
+$state-warning: var(--state-warning);
+$overlay: var(--overlay);
+$glass-2: var(--glass-2);
+$glass-2-strong: var(--glass-2-strong);
+$shadow-soft: var(--shadow-soft);
+$shadow-lift: var(--shadow-lift);
+$shadow-glow: var(--shadow-glow);
+$shadow-ring: var(--shadow-ring);
+$gradient-accent: var(--gradient-accent);
+$gradient-accent-soft: var(--gradient-accent-soft);
+$gradient-surface: var(--gradient-surface);
+$gradient-noise: var(--gradient-noise);
+$gradient-hero-mesh: var(--gradient-hero-mesh);
+$radius-card: var(--radius-card);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+$radius-xl: var(--radius-xl);
+$space-0: var(--space-0);
+$space-1: var(--space-1);
+$space-2: var(--space-2);
+$space-3: var(--space-3);
+$space-4: var(--space-4);
+$space-5: var(--space-5);
+$space-6: var(--space-6);
+$space-7: var(--space-7);
+$space-8: var(--space-8);
+$space-9: var(--space-9);
+$space-10: var(--space-10);
+$space-11: var(--space-11);
+$space-fluid-xs: var(--space-fluid-xs);
+$space-fluid-sm: var(--space-fluid-sm);
+$space-fluid-md: var(--space-fluid-md);
+$space-fluid-lg: var(--space-fluid-lg);
+$space-fluid-xl: var(--space-fluid-xl);
+$space-fluid-2xl: var(--space-fluid-2xl);
+$inset-page: var(--inset-page);
+$inset-page-hero: var(--inset-page-hero);
+$inset-panel: var(--inset-panel);
+$size-touch: var(--size-touch);
+$layout-header-height: var(--layout-header-height);
+$layout-content-max: var(--layout-content-max);
+$layout-hero-max: var(--layout-hero-max);
+$space-section-y: var(--space-section-y);
+$space-section-gap: var(--space-section-gap);
+$space-block-gap: var(--space-block-gap);
+
+$font-presets: (
+    heading-1: (family: $font-display, size: $font-size-hero, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
+    heading-2: (family: $font-display, size: $font-size-section-title, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-tight),
+    heading-3: (family: $font-display, size: $font-size-xl, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
+    title-1: (family: $font-display, size: $font-size-lg, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
+    title-2: (family: $font-display, size: $font-size-md, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
+    body-1: (family: $font-body, size: $font-size-md, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
+    body-2: (family: $font-body, size: $font-size-sm, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
+    caption-1: (family: $font-body, size: $font-size-xs, weight: $font-weight-medium, line-height: 1.45, letter-spacing: $tracking-ui),
+    caption-2: (family: $font-body, size: $font-size-2xs, weight: $font-weight-semibold, line-height: 1.35, letter-spacing: $tracking-label),
+    label: (family: $font-mono, size: $font-size-2xs, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
+    button: (family: $font-display, size: $font-size-md, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
+);
+
 :root {
     --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -34,34 +150,65 @@ $bp-desktop: 1440px;
     --tracking-ui: 0.02em;
     --tracking-label: 0.1em;
 
-    --color-primary: #2456ff;
-    --color-primary-dark: #183fd1;
-    --color-accent-hot: #ff5c8d;
-    --color-accent-mint: #0ecf9b;
-    --color-bg: #f4f6fb;
-    --color-surface: #ffffff;
-    --color-surface-strong: #e9eef6;
-    --color-text: #0a0f1a;
-    --color-text-muted: #4a5d82;
-    --color-on-accent: #ffffff;
-    --color-border: #c9d5e6;
-    --color-overlay: color-mix(in srgb, #020617 64%, transparent);
-    --color-glass-2: color-mix(in srgb, #ffffff 76%, transparent);
-    --color-glass-2-strong: color-mix(in srgb, #ffffff 88%, transparent);
-    --shadow-soft: 0 18px 44px color-mix(in srgb, #152038 14%, transparent);
-    --shadow-lift: 0 28px 70px color-mix(in srgb, #1e3a8a 18%, transparent);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, #e2eaf5 78%, transparent) inset;
-    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 28%, transparent);
-    --gradient-accent: linear-gradient(118deg, #2456ff 0%, #7038cc 52%, #087ea4 100%);
+    --grayscale-0: #ffffff;
+    --grayscale-50: #f8fafc;
+    --grayscale-100: #f4f6fb;
+    --grayscale-200: #e9eef6;
+    --grayscale-300: #c9d5e6;
+    --grayscale-400: #94a3b8;
+    --grayscale-500: #64748b;
+    --grayscale-600: #4a5d82;
+    --grayscale-700: #334155;
+    --grayscale-800: #1e293b;
+    --grayscale-900: #0a0f1a;
+    --grayscale-950: #020617;
+    --primary-50: #eef3ff;
+    --primary-100: #dbe6ff;
+    --primary-200: #b9ccff;
+    --primary-300: #8ca8ff;
+    --primary-400: #5f7dff;
+    --primary-500: #3f63ff;
+    --primary-600: #2456ff;
+    --primary-700: #183fd1;
+    --primary-800: #1736a4;
+    --primary-900: #172f82;
+    --accent-hot: #ff5c8d;
+    --accent-mint: #0ecf9b;
+    --state-error: #dc2626;
+    --state-success: #0f9f6e;
+    --state-warning: #d97706;
+    --overlay: color-mix(in srgb, var(--grayscale-950) 64%, transparent);
+    --glass-2: color-mix(in srgb, var(--grayscale-0) 76%, transparent);
+    --glass-2-strong: color-mix(in srgb, var(--grayscale-0) 88%, transparent);
+    --color-primary: var(--primary-600);
+    --color-primary-dark: var(--primary-700);
+    --color-accent-hot: var(--accent-hot);
+    --color-accent-mint: var(--accent-mint);
+    --color-bg: var(--grayscale-100);
+    --color-surface: var(--grayscale-0);
+    --color-surface-strong: var(--grayscale-200);
+    --color-text: var(--grayscale-900);
+    --color-text-muted: var(--grayscale-600);
+    --color-on-accent: var(--grayscale-0);
+    --color-border: var(--grayscale-300);
+    --color-overlay: var(--overlay);
+    --color-glass-2: var(--glass-2);
+    --color-glass-2-strong: var(--glass-2-strong);
+    --shadow-soft: 0 18px 44px color-mix(in srgb, var(--primary-900) 14%, transparent);
+    --shadow-lift: 0 28px 70px color-mix(in srgb, var(--primary-800) 18%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-200) 78%, transparent) inset;
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 28%, transparent);
+    --gradient-accent: linear-gradient(118deg, var(--primary-600) 0%, #7038cc 52%, #087ea4 100%);
     --gradient-accent-soft: linear-gradient(135deg,
-            color-mix(in srgb, var(--color-primary) 22%, transparent),
-            color-mix(in srgb, var(--color-accent-hot) 14%, transparent));
-    --gradient-surface: linear-gradient(168deg, #ffffff 0%, #eef3fb 100%);
-    --gradient-noise: linear-gradient(185deg, #f8fafc 0%, #e8eef8 55%, #f4f6fb 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--color-primary) 26%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--color-accent-hot) 16%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--color-accent-mint) 14%, transparent), transparent 45%);
+            color-mix(in srgb, var(--primary-600) 22%, transparent),
+            color-mix(in srgb, var(--accent-hot) 14%, transparent));
+    --gradient-surface: linear-gradient(168deg, var(--grayscale-0) 0%, var(--grayscale-200) 100%);
+    --gradient-noise: linear-gradient(185deg, var(--grayscale-50) 0%, #e8eef8 55%, var(--grayscale-100) 100%);
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 26%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 16%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 14%, transparent), transparent 45%);
     --radius-card: 0.65rem;
+    --radius-md: 0.8rem;
     --radius-lg: 1.05rem;
     --radius-xl: 1.45rem;
     --space-0: 0;
@@ -101,31 +248,44 @@ $bp-desktop: 1440px;
 }
 
 [data-theme="dark"] {
-    --color-primary: #93a8ff;
-    --color-primary-dark: #6b7fff;
-    --color-accent-hot: #ff7eb3;
-    --color-accent-mint: #3ee8c5;
-    --color-bg: #050810;
-    --color-surface: #0d1424;
-    --color-surface-strong: #141d32;
-    --color-text: #f4f7ff;
-    --color-text-muted: #9fb1d6;
-    --color-on-accent: #06111f;
-    --color-border: #2a3f63;
-    --color-overlay: color-mix(in srgb, #020617 74%, transparent);
-    --color-glass-2: color-mix(in srgb, #122345 72%, transparent);
-    --color-glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
+    --grayscale-0: #050810;
+    --grayscale-50: #0a1222;
+    --grayscale-100: #0d1424;
+    --grayscale-200: #141d32;
+    --grayscale-300: #2a3f63;
+    --grayscale-400: #40506c;
+    --grayscale-500: #6b7d9d;
+    --grayscale-600: #9fb1d6;
+    --grayscale-700: #cbd5e1;
+    --grayscale-800: #e2e8f0;
+    --grayscale-900: #f4f7ff;
+    --grayscale-950: #ffffff;
+    --primary-50: #111a39;
+    --primary-100: #1a2856;
+    --primary-200: #273b82;
+    --primary-300: #3d56bb;
+    --primary-400: #6b7fff;
+    --primary-500: #8398ff;
+    --primary-600: #93a8ff;
+    --primary-700: #b3c3ff;
+    --primary-800: #d1dcff;
+    --primary-900: #edf2ff;
+    --accent-hot: #ff7eb3;
+    --accent-mint: #3ee8c5;
+    --overlay: color-mix(in srgb, #020617 74%, transparent);
+    --glass-2: color-mix(in srgb, #122345 72%, transparent);
+    --glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
     --shadow-soft: 0 26px 56px color-mix(in srgb, #020617 62%, transparent);
     --shadow-lift: 0 36px 80px color-mix(in srgb, #1e40af 22%, transparent);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, #40506c 58%, transparent) inset;
-    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 35%, transparent);
-    --gradient-accent: linear-gradient(118deg, #93a8ff 0%, #c084fc 52%, #38bdf8 100%);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-400) 58%, transparent) inset;
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 35%, transparent);
+    --gradient-accent: linear-gradient(118deg, var(--primary-600) 0%, #c084fc 52%, #38bdf8 100%);
     --gradient-accent-soft: linear-gradient(135deg,
-            color-mix(in srgb, var(--color-primary) 26%, transparent),
-            color-mix(in srgb, var(--color-accent-hot) 18%, transparent));
-    --gradient-surface: linear-gradient(168deg, #0d1424 0%, #121d34 100%);
-    --gradient-noise: linear-gradient(185deg, #050810 0%, #0d1424 55%, #0a1222 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--color-primary) 34%, transparent), transparent 46%),
-        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--color-accent-hot) 22%, transparent), transparent 36%),
-        radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--color-accent-mint) 18%, transparent), transparent 48%);
+            color-mix(in srgb, var(--primary-600) 26%, transparent),
+            color-mix(in srgb, var(--accent-hot) 18%, transparent));
+    --gradient-surface: linear-gradient(168deg, var(--grayscale-100) 0%, #121d34 100%);
+    --gradient-noise: linear-gradient(185deg, var(--grayscale-0) 0%, var(--grayscale-100) 55%, var(--grayscale-50) 100%);
+    --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--primary-600) 34%, transparent), transparent 46%),
+        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 22%, transparent), transparent 36%),
+        radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--accent-mint) 18%, transparent), transparent 48%);
 }
