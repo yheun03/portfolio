@@ -34,8 +34,9 @@
 
 <script setup lang="ts">
 import { profile } from "~/core/data/site";
+import profilePhotoUrl from "~/assets/image/photo-1440.webp";
+
 const { t, locale } = useLocale();
 const emailLetters = computed(() => profile.contacts.email.split(""));
-const { resolveAppPath } = useAppPathResolver();
-const profilePhotoSrc = computed(() => resolveAppPath("/assets/image/photo-1440.webp"));
+const profilePhotoSrc = profilePhotoUrl;
 </script>
