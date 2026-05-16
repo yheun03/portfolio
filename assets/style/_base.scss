@@ -132,13 +132,11 @@ html.is-menu-open {
 
 [data-animate] {
     opacity: 0;
-    transform: translateY(18px) scale(0.98);
-    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.32s ease;
 }
 
 [data-animate].is-visible {
     opacity: 1;
-    transform: translateY(0) scale(1);
 }
 
 @media (hover: hover) {
