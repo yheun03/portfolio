@@ -168,8 +168,9 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: max(var(--section-dock-edge),
-            calc(var(--section-margin-x) - var(--section-dock-slot, 3.15rem)));
+    // right: max(var(--section-dock-edge),
+    //         calc(var(--section-margin-x) - var(--section-dock-slot, 3.15rem)));
+    right: var(--section-dock-edge);
     z-index: 85;
     display: none;
     width: min(4.5rem, 12vw);
