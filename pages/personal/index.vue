@@ -10,8 +10,8 @@
                     :aria-label="locale === 'ko' ? '개인 프로젝트 정렬 기준' : 'Personal project sort order'">
                     <p>{{ locale === 'ko' ? '정렬' : 'Sort' }}</p>
                     <button v-for="option in sortOptions" :key="option.value" type="button"
-                        :class="{ 'is-active': sortMode === option.value }"
-                        :aria-checked="sortMode === option.value" role="radio" @click="sortMode = option.value">
+                        :class="{ 'is-active': sortMode === option.value }" :aria-checked="sortMode === option.value"
+                        role="radio" @click="sortMode = option.value">
                         {{ option.label }}
                     </button>
                 </div>

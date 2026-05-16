@@ -2,7 +2,8 @@
     <section id="works" class="section section--works">
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
-            <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : '' }}</span>
+            <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
+                }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -84,7 +85,7 @@
                             <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
                         <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
-                                }}</strong></p>
+                        }}</strong></p>
                         <ul v-if="activeWork.achievements.length">
                             <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
@@ -98,8 +99,8 @@
                                     :to="link.href">
                                     {{ pick(link.label) }}
                                 </NuxtLink>
-                                <a v-else class="base-button base-button--primary" :href="link.href"
-                                    target="_blank" rel="noopener noreferrer">
+                                <a v-else class="base-button base-button--primary" :href="link.href" target="_blank"
+                                    rel="noopener noreferrer">
                                     {{ pick(link.label) }}
                                 </a>
                             </template>

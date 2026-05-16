@@ -6,16 +6,14 @@
         :aria-label="ariaLabel || label">
         <slot>{{ label }}</slot>
     </NuxtLink>
-    <a v-else class="base-button" :class="`base-button--${variant}`" :href="href" :aria-label="ariaLabel || label"
-        target="_blank" rel="noopener noreferrer">
+    <a v-else class="base-button" :class="`base-button--${variant}`" :href="externalLinkHref"
+        :aria-label="ariaLabel || label" target="_blank" rel="noopener noreferrer">
         <slot>{{ label }}</slot>
     </a>
 </template>
 
 <script setup lang="ts">
-const { isAppRoute } = useAppPathResolver();
-
-withDefaults(
+const props = withDefaults(
     defineProps<{
         label: string;
         href?: string;
@@ -24,4 +22,8 @@ withDefaults(
     }>(),
     { variant: "primary" }
 );
+
+const { isAppRoute, resolveAppPath } = useAppPathResolver();
+
+const externalLinkHref = computed(() => (props.href ? resolveAppPath(props.href) : ""));
 </script>

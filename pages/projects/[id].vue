@@ -42,8 +42,7 @@
                     <figure v-for="(src, index) in work.captures" :key="`${src}-${index}`"
                         class="gallery-detail__figure">
                         <img :src="resolveAppPath(src)" :alt="captureAlt(index)" loading="lazy" decoding="async"
-                            fetchpriority="low"
-                            width="1200" height="675" />
+                            fetchpriority="low" width="1200" height="675" />
                     </figure>
                 </div>
             </section>

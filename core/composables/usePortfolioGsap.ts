@@ -5,7 +5,7 @@ export const usePortfolioGsap = () => {
     const afterInitialPaint = (callback: () => void) => {
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-                if ('requestIdleCallback' in window) {
+                if (typeof window.requestIdleCallback === 'function') {
                     window.requestIdleCallback(callback, { timeout: 1200 });
                 } else {
                     window.setTimeout(callback, 450);
