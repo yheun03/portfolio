@@ -12,26 +12,26 @@ const data = [
             en: 'New Build',
         },
         role: {
-            ko: '디자인, 퍼블리싱, UX',
-            en: 'Design, Publishing, UX',
+            ko: '디자인 30%, 퍼블리싱 100%, UX 기획 25%',
+            en: 'Design 30%, Publishing 100%, UX Planning 25%',
         },
         tech: ['HTML', 'CSS', 'jQuery', 'Figma'],
         introduction: {
-            ko: '디자인부터 UX까지 전담하여 수상으로 이어진 초기 핵심 프로젝트입니다.',
-            en: 'An early key project fully owned from design to UX and awarded.',
+            ko: '태림포장 사내 원지·박스 주문 서비스를 리뉴얼하며 필요한 애플리케이션의 디자인 협업, UX 기획, 퍼블리싱을 수행했습니다. 프로젝트 결과물은 스마트앱어워드 2022 업무향상 부문 대상 수상으로 이어졌습니다.',
+            en: 'Renewed an internal order service for Tailim Packaging and handled design collaboration, UX planning, and publishing for the required application. The outcome won the Smart App Awards 2022 Grand Prize in the work improvement category.',
         },
         myWorks: [
             {
-                ko: '디자인',
-                en: 'Design',
+                ko: 'Figma 기반 디자이너 협업 및 고객 요구사항 반영',
+                en: 'Collaborated in Figma and reflected client requirements',
             },
             {
-                ko: '퍼블리싱',
-                en: 'Publishing',
+                ko: 'HTML/CSS/jQuery 기반 애플리케이션 화면 퍼블리싱 100% 수행',
+                en: 'Owned 100% of application screen publishing with HTML/CSS/jQuery',
             },
             {
-                ko: 'UX 기획',
-                en: 'UX planning',
+                ko: '업무 흐름을 고려한 UX 기획 및 화면 사용성 개선',
+                en: 'Planned UX around work flows and improved screen usability',
             },
         ],
         achievements: [
@@ -45,8 +45,12 @@ const data = [
                 ko: '수상 연계 실적',
                 en: 'Award-linked achievement',
             },
+            {
+                ko: '디자인·UX·퍼블리싱을 연결한 실무형 구축 사례',
+                en: 'A practical build connecting design, UX, and publishing',
+            },
         ],
-        pin: false,
+        pin: true,
         duration: {
             ko: '약 3개월',
             en: '~3 months',

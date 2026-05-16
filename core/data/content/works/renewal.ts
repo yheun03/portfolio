@@ -44,12 +44,12 @@ const data = [
         ],
         achievements: [
             {
-                ko: '유지보수성과 개발 효율 개선',
-                en: 'Improved maintainability and development efficiency',
+                ko: '중복 마크업 제거 및 SCSS 컴포넌트화로 유지보수 효율 약 40% 향상',
+                en: 'Improved maintainability by about 40% through duplicate markup removal and SCSS componentization',
             },
             {
-                ko: '글로벌 전시 대응을 위한 다국어 기반 확보',
-                en: 'Established multilingual foundation for global event readiness',
+                ko: '다국어 구조, SEO, SSL, OG 적용으로 검색 유입 25% 증가 추산',
+                en: 'Estimated 25% search inflow increase through i18n structure, SEO, SSL, and OG setup',
             },
         ],
         points: [
@@ -64,8 +64,8 @@ const data = [
         ],
         pin: true,
         duration: {
-            ko: '약 2개월',
-            en: '~2 months',
+            ko: '약 3주',
+            en: '~3 weeks',
         },
         captures: ['/images/projects/placeholder.svg'],
         languages: ['HTML', 'SCSS', 'JavaScript', 'jQuery'],
@@ -105,7 +105,16 @@ const data = [
                 en: 'Adapted quickly to CMS structure',
             },
         ],
-        achievements: [],
+        achievements: [
+            {
+                ko: '코드 가이드 정립으로 개발 협업 충돌 최소화',
+                en: 'Minimized development collaboration conflicts through code guide setup',
+            },
+            {
+                ko: '2주 내 신규·수정 화면 납품 완료',
+                en: 'Delivered new and revised screens within two weeks',
+            },
+        ],
         points: [
             {
                 ko: '단기 투입 대응력',
@@ -118,8 +127,8 @@ const data = [
         ],
         pin: false,
         duration: {
-            ko: '약 3주',
-            en: '~3 weeks',
+            ko: '약 2주',
+            en: '~2 weeks',
         },
         captures: ['/images/projects/placeholder.svg'],
         languages: ['XML', 'CSS3'],
@@ -173,8 +182,8 @@ const data = [
         ],
         pin: false,
         duration: {
-            ko: '약 2주',
-            en: '~2 weeks',
+            ko: '약 1주',
+            en: '~1 week',
         },
         captures: ['/images/projects/placeholder.svg'],
         languages: ['HTML', 'SCSS', 'React'],

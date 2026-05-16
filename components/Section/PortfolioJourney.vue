@@ -13,6 +13,15 @@
                     <p class="journey__summary-meta">{{ pick(block.summary.team) }} · {{ pick(block.summary.period) }}
                     </p>
                     <p class="journey__summary-intro">{{ pick(block.summary.intro) }}</p>
+                    <div v-if="block.summary.clients.length" class="journey__client-rail"
+                        :aria-label="locale === 'ko' ? '참여 고객사' : 'Clients served'">
+                        <div class="journey__client-track" aria-hidden="true">
+                            <span v-for="(client, clientIndex) in [...block.summary.clients, ...block.summary.clients]"
+                                :key="`${companyIndex}-${client}-${clientIndex}`" class="journey__client-mark">
+                                {{ client }}
+                            </span>
+                        </div>
+                    </div>
                     <ul class="journey__summary-roles">
                         <li v-for="role in block.summary.roles" :key="`${companyIndex}-${pick(role)}`">{{ pick(role) }}
                         </li>

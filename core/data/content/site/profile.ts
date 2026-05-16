@@ -108,7 +108,7 @@ const data = {
     contacts: {
         email: 'eyh208@naver.com',
         github: 'https://github.com/yheun03',
-        portfolio: 'https://yheun03.github.io/portfolio/',
+        portfolio: 'https://yheun03.github.io/jonsoft-framework/',
         archive: 'https://yheun03.github.io/jonsoft-project-orchem/',
         resume: '/resume.html',
     },
