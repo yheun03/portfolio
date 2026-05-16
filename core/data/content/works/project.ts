@@ -12,13 +12,13 @@ const data = [
             en: 'Project / Build',
         },
         role: {
-            ko: '퍼블리싱, 구조 설계',
-            en: 'Publishing, Architecture',
+            ko: 'Vue 3 기반 MES 퍼블리싱, 구조 설계',
+            en: 'Vue 3 MES publishing and architecture',
         },
         tech: ['Vue 3', 'SCSS', 'JavaScript'],
         introduction: {
-            ko: '기존 MES를 Vue 3 기반으로 개편하며 UI 퍼블리싱과 공통 컴포넌트 구조를 정리했습니다.',
-            en: 'Renewed legacy MES with Vue 3 and organized UI publishing with shared component architecture.',
+            ko: '납품할 MES를 Vue 3 기반으로 개편하며 UI 퍼블리싱과 공통 컴포넌트 구조를 정리하고 있습니다.',
+            en: 'Renewing a deliverable MES with Vue 3 while organizing UI publishing and shared component architecture.',
         },
         myWorks: [
             {
@@ -38,7 +38,12 @@ const data = [
                 en: 'Delivery-ready page unit composition',
             },
         ],
-        achievements: [],
+        achievements: [
+            {
+                ko: '납품형 MES 화면 품질과 구조 일관성 확보 중',
+                en: 'Establishing delivery-ready MES screen quality and structural consistency',
+            },
+        ],
         points: [
             {
                 ko: '구조 현대화',
@@ -70,13 +75,13 @@ const data = [
             en: 'Corporate / CMS',
         },
         role: {
-            ko: '교육지원 80%, 운영 안정화 80%, 협업 커뮤니케이션 40%',
-            en: 'Education Support 80%, Stability 80%, Collaboration 40%',
+            ko: '문서화·교육 지원 80%, 운영 안정화 80%, 협업 커뮤니케이션 40%',
+            en: 'Documentation/training 80%, stability 80%, collaboration 40%',
         },
         tech: ['IntelliJ', 'ICE 5.0', 'Microsoft Teams', 'Word', 'PowerPoint', 'HTML', 'SCSS', 'Vue.js'],
         introduction: {
-            ko: 'Vue 컴포넌트를 ICE CMS 구조에 맞게 재구성하고, 가이드 문서/교육 체계를 구축해 프로젝트 운영 안정성을 높였습니다.',
-            en: 'Adapted Vue components to ICE CMS and built guides/training materials to improve delivery stability.',
+            ko: 'Vue 컴포넌트를 ICE CMS 구조에 맞게 커스터마이징하고, 공식 가이드 부재 상황에서 개발 가이드와 교육 문서를 직접 제작해 운영 안정성을 높였습니다.',
+            en: 'Customized Vue components for ICE CMS and created development/training guides where official guidance was missing, improving operational stability.',
         },
         myWorks: [
             {
@@ -98,8 +103,8 @@ const data = [
         ],
         achievements: [
             {
-                ko: '커뮤니케이션 혼선 완화 및 대응 속도 개선',
-                en: 'Reduced communication confusion and improved response speed',
+                ko: '커뮤니케이션 비용 약 30% 절감',
+                en: 'Reduced communication cost by around 30%',
             },
             {
                 ko: '운영 안정성 및 협업 효율 향상',
@@ -142,8 +147,8 @@ const data = [
         },
         tech: ['Vue', 'SCSS'],
         introduction: {
-            ko: '일정과 품질을 함께 관리하며 Vue 기반 시스템 UI 전반을 담당했습니다.',
-            en: 'Handled full Vue-based system UI with both schedule and quality ownership.',
+            ko: '깨끗한나라 OMS 리뉴얼에서 Vue 기반 전체 퍼블리싱을 담당하고, 주요 화면을 조기 완료하며 UI/UX 개선안을 일부 반영했습니다.',
+            en: 'Owned full Vue-based publishing for KleanNara OMS renewal, completed key screens early, and applied selected UI/UX improvements.',
         },
         myWorks: [
             {

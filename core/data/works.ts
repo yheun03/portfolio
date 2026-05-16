@@ -34,7 +34,6 @@ export const workCategories = [
     { key: 'solution', label: { ko: '자사 솔루션', en: 'In-house Solution' } },
     { key: 'renewal', label: { ko: '브랜딩/리뉴얼', en: 'Branding/Renewal' } },
     { key: 'award', label: { ko: '수상 연계 프로젝트', en: 'Award-linked' } },
-    { key: 'personal', label: { ko: '개인 프로젝트', en: 'Personal' } },
 ] as const;
 
 /** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`core/data/content/works/`) */

@@ -12,13 +12,13 @@ const data = [
             en: 'Internal Project',
         },
         role: {
-            ko: '구조 재정비',
-            en: 'Structure Refactoring',
+            ko: '솔루션 구조 재구축, 개발 방법론 표준화',
+            en: 'Solution restructuring and development workflow standardization',
         },
         tech: ['Vue 3', 'SCSS', 'Pinia'],
         introduction: {
-            ko: '작업 방식 표준화와 공통 구조 정리를 통해 납품 품질 기준을 정립했습니다.',
-            en: 'Standardized workflow and shared structure to establish quality baselines.',
+            ko: '무분별했던 개발 방법론과 납품 구조를 정리해 동일한 퀄리티로 제공 가능한 자사 솔루션 기반을 재구축하고 있습니다.',
+            en: 'Restructuring in-house solution foundations by organizing scattered development methods and delivery structures so consistent quality can be shipped.',
         },
         myWorks: [
             {
@@ -38,7 +38,12 @@ const data = [
                 en: 'Improved reusable UI system',
             },
         ],
-        achievements: [],
+        achievements: [
+            {
+                ko: '동일한 납품 품질을 위한 구조 기준 정립 중',
+                en: 'Establishing structural standards for consistent delivery quality',
+            },
+        ],
         points: [
             {
                 ko: '표준화',

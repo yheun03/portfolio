@@ -1,18 +1,18 @@
 const data = {
     intro: {
-        ko: '안녕하세요, 은영환입니다. 저는 퍼블리싱을 단순히 화면을 구현하는 일이 아니라, 사용자 경험과 구조, 협업까지 함께 설계하는 일이라고 생각합니다.',
-        en: 'Hi, I am Eunyounghwan. I see publishing not just as visual implementation but as designing user experience, structure, and collaboration together.',
+        ko: '안녕하세요, 은영환입니다. 저는 퍼블리싱을 단순히 화면을 구현하는 일이 아니라, 요구사항을 구조로 번역하고 사용자 경험과 협업 흐름까지 함께 설계하는 일이라고 생각합니다.',
+        en: 'Hi, I am Eunyounghwan. I see publishing not just as visual implementation, but as translating requirements into structure while designing user experience and collaboration flow.',
     },
     paragraphs: {
         ko: [
-            '기업 홈페이지 운영부터 스마트팩토리·물류 시스템, 자사 솔루션 구축까지 다양한 프로젝트를 경험하며 퍼블리싱 100% 수행은 물론, UI/UX 개선, 다국어 대응, SEO, 문서화, 교육 지원까지 폭넓게 맡아왔습니다.',
-            '빠르게 만드는 것보다 잘 유지되는 구조를 중요하게 생각하고, 작은 디테일까지 놓치지 않는 꼼꼼함으로 완성도를 높입니다.',
-            '최근에는 Vue 3 기반 구조 설계와 컴포넌트 중심 개발 방식에 집중하며, 퍼블리셔를 넘어 프론트엔드로 확장할 수 있는 기반을 넓혀가고 있습니다.',
+            '조앤소프트 DX 솔루션 2팀에서 5년 7개월 동안 다양한 웹 시스템 구축과 운영 프로젝트에 참여하며, 요구사항 분석부터 마크업 구조 설계, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 프로젝트 전 주기에 관여해 왔습니다.',
+            'HTML, SCSS, JavaScript를 기반으로 Vue.js·React.js 환경에 적응하며 컴포넌트 기반 구조 설계 경험을 쌓았고, ICE CMS, WebSquare, Nexacro 등 다양한 CMS·솔루션 환경에서도 퍼블리싱 품질을 안정적으로 맞춰왔습니다.',
+            'SCSS 컴포넌트화로 공수를 최대 60% 절감하고, 문서화·교육 체계 구축으로 협업 효율을 약 30% 높인 경험이 있습니다. 앞으로도 Vue 3 등 최신 프론트엔드 환경에서 구조와 품질을 함께 책임지는 UI 개발자로 성장하고 있습니다.',
         ],
         en: [
-            'From corporate websites to smart-factory/logistics systems and in-house solutions, I have owned 100% publishing delivery along with UI/UX improvements, i18n, SEO, documentation, and training support.',
-            'I prioritize maintainable structure over short-term speed and focus on detail-oriented quality.',
-            'Recently, I am focusing on Vue 3 architecture and component-driven development to expand from publishing into frontend leadership.',
+            'For 5 years and 7 months at JO&soft DX Solution Team 2, I have worked across web system builds and operations, covering requirements analysis, markup architecture, CMS customization, responsive implementation, and maintenance.',
+            'Based on HTML, SCSS, and JavaScript, I have adapted to Vue.js and React.js environments while building component-oriented structures, and I have maintained stable publishing quality across ICE CMS, WebSquare, Nexacro, and in-house solutions.',
+            'I reduced publishing effort by up to 60% through SCSS componentization and improved collaboration efficiency by around 30% through documentation and training systems. I continue to grow as a UI developer who owns both structure and quality in modern frontend environments such as Vue 3.',
         ],
     },
     keywords: [

@@ -1,6 +1,14 @@
 <template>
     <section id="works" class="section section--works">
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
+        <div class="works__total-badge" aria-live="polite">
+            <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : '' }}</span>
+            <small>
+                {{ locale === 'ko'
+                    ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
+                    : `${totalCareerWorkCount} client + ${personalWorkCount} personal` }}
+            </small>
+        </div>
         <div class="works__title-col">
             <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
             <!-- 카테고리: PC는 LNB 세로 / 좁은 화면은 가로 칩 레일 -->
@@ -16,9 +24,19 @@
                 </button>
             </div>
             <p class="section-title__description">{{ worksSectionDescription }}</p>
-            <p class="works__archive-link">
-                <NuxtLink to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
-            </p>
+            <div class="works__archive-summary" :style="archiveSummaryStyle" aria-live="polite">
+                <p class="works__archive-meta">
+                    <strong>{{ totalCareerWorkCount }}</strong>
+                    <span>{{ locale === 'ko' ? '개 실무 프로젝트 아카이브' : 'client project archive' }}</span>
+                </p>
+                <div class="works__archive-meter" aria-hidden="true">
+                    <span />
+                </div>
+                <p class="works__archive-caption">
+                    {{ archiveSummaryText }}
+                </p>
+                <NuxtLink class="works__archive-cta" to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
+            </div>
         </div>
 
         <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->
@@ -32,7 +50,7 @@
         <div v-if="hasMoreWorks || canCollapseWorks" class="works__list-control" aria-live="polite">
             <p>
                 {{ locale === 'ko'
-                    ? `${visibleWorks.length} / ${pinnedFilteredWorks.length}개 대표(pin) 프로젝트 표시 중`
+                    ? `${visibleWorks.length} / ${pinnedFilteredWorks.length}개 대표 사례 표시 중`
                     : `Showing ${visibleWorks.length} of ${pinnedFilteredWorks.length} pinned projects` }}
             </p>
             <button v-if="hasMoreWorks" type="button" class="base-button base-button--ghost" @click="showMoreWorks">
@@ -95,6 +113,7 @@
 
 <script setup lang="ts">
 import { useWorksTabRenderer } from '~/core/composables/useWorksTabRenderer';
+import { careerWorks, personalWorksList } from '~/core/data/works';
 
 const { t, pick, locale } = useLocale();
 const { isAppRoute } = useAppPathResolver();
@@ -118,11 +137,28 @@ const visibleStep = 6;
 
 /** 메인 페이지에는 JSON 의 pin === true 인 항목만 노출 */
 const pinnedFilteredWorks = computed(() => filteredWorks.value.filter((w) => w.pin));
+const totalCareerWorkCount = computed(() => careerWorks.length);
+const personalWorkCount = computed(() => personalWorksList.length);
+const totalPortfolioWorkCount = computed(() => totalCareerWorkCount.value + personalWorkCount.value);
+const currentTabTotalCount = computed(() => filteredWorks.value.length);
+const highlightedWorkRatio = computed(() => {
+    if (!currentTabTotalCount.value) return 0;
+
+    return Math.min(100, Math.max(8, Math.round((pinnedFilteredWorks.value.length / currentTabTotalCount.value) * 100)));
+});
+const archiveSummaryStyle = computed(() => ({
+    "--works-highlight-ratio": `${highlightedWorkRatio.value}%`,
+}));
+const archiveSummaryText = computed(() =>
+    locale.value === "ko"
+        ? `메인에는 현재 탭의 대표 ${pinnedFilteredWorks.value.length}건만 보여주고, 전체 ${currentTabTotalCount.value}건은 갤러리에 정리했습니다.`
+        : `This page shows ${pinnedFilteredWorks.value.length} representative highlights in this tab; ${currentTabTotalCount.value} total items are organized in the gallery.`,
+);
 
 const worksSectionDescription = computed(() =>
     locale.value === "ko"
-        ? `메인에는 pin으로 고정된 대표 실무 사례만 보입니다. 전체 목록·캡처·소요 시간은 프로젝트 페이지에서 확인할 수 있습니다. (현재 탭 기준 ${pinnedFilteredWorks.value.length}건)`
-        : `Only pinned highlights appear here. Full gallery with captures and duration is on the Projects page. (${pinnedFilteredWorks.value.length} in this tab.)`,
+        ? `여러 SI·SM·솔루션 프로젝트 중 핵심 사례만 인덱스에 선별했습니다. 전체 목록·캡처·소요 시간은 프로젝트 페이지에서 확인할 수 있습니다.`
+        : `The index curates key SI, SM, and solution cases. The full list, captures, and durations are available on the Projects page.`,
 );
 
 const visibleWorks = computed(() => pinnedFilteredWorks.value.slice(0, visibleCount.value));

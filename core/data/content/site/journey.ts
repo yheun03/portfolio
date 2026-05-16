@@ -16,9 +16,22 @@ const data = {
                     en: '2020.09 ~ Present',
                 },
                 intro: {
-                    ko: '2020년부터 조앤소프트에서 다양한 웹 시스템 구축 및 운영 프로젝트를 수행하며 퍼블리싱 전반의 실질적인 업무를 책임져 왔습니다.',
-                    en: 'Since 2020, I have led practical publishing work across web system build and operation projects at JO&soft.',
+                    ko: '조앤소프트 DX 솔루션 2팀에서 다양한 웹 시스템 구축 및 운영 프로젝트에 참여하며, 요구사항 분석부터 구조 설계, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 퍼블리싱 전반을 책임져 왔습니다.',
+                    en: 'At JO&soft DX Solution Team 2, I have owned practical publishing work across web system builds and operations, from requirements analysis and architecture to CMS customization, responsive implementation, and maintenance.',
                 },
+                clients: [
+                    '태림포장',
+                    '삼화페인트',
+                    '대양제지',
+                    '대양판지',
+                    '깨끗한나라',
+                    '경동원',
+                    '한진칼',
+                    '한온시스템',
+                    '오알켐',
+                    '광장 파트너스',
+                    '인천대학교',
+                ],
                 roles: [
                     {
                         ko: '퍼블리싱 100% 수행',
@@ -127,6 +140,7 @@ const data = {
                     ko: '특성화 과정에서 HTML·CSS·JavaScript 기반 웹 기초를 익히고, MOD 동아리·학생회·교내 TF에서 실제 서비스에 가까운 페이지를 만들며 졸업 후 실무로 이어질 역량을 쌓았습니다.',
                     en: 'Built web fundamentals (HTML, CSS, JavaScript) in a specialized track, then shipped school-adjacent pages through MOD, student council, and TF teams—setting up skills that carried into professional work.',
                 },
+                clients: [],
                 roles: [
                     {
                         ko: '웹디자인 동아리 MOD 회장',
