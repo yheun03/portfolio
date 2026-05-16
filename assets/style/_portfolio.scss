@@ -1120,10 +1120,10 @@
         grid-column: 1 / -1;
         margin: var(--space-8) 0 calc(var(--space-2) * -1);
         color: var(--color-text);
-        font-family: var(--font-display);
-        font-size: clamp(1.75rem, 3vw, 2.6rem);
-        font-weight: var(--font-weight-black);
+        opacity: 0.4;
         line-height: 1;
+        font-family: var(--font-body);
+        letter-spacing: 0;
 
         &:first-child {
             margin-top: 0;
