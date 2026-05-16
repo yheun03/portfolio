@@ -91,3 +91,18 @@ usePortfolioSeo(() => ({
     },
 }));
 </script>
+
+<style scoped lang="scss">
+.gallery-page__year {
+    font-weight: 900;
+    font-size: clamp(2.75rem, 6.5vw + 1.5rem, 3.25rem);
+
+    @media (min-width: 768px) {
+        font-size: clamp(3.75rem, 5vw + 2.5rem, 5rem);
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 104px;
+    }
+}
+</style>
