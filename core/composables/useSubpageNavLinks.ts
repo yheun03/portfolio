@@ -1,6 +1,4 @@
-/**
- * 갤러리/상세 페이지 GNB — 홈, 회사 프로젝트, 개인 프로젝트
- */
+/** 갤러리·상세 페이지 GNB / LNB */
 export function useSubpageNavLinks() {
     const { t } = useLocale();
 

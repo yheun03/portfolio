@@ -5,10 +5,9 @@
         <div class="contact__composition">
             <BaseSectionTitle :eyebrow="t('nav.contact')" :title="t('contact.title')"
                 :description="t('contact.description')" />
-            <a class="contact__mail-art" :href="`mailto:${profile.contacts.email}`"
-                :aria-label="locale === 'ko' ? `${profile.contacts.email} 메일 보내기` : `${profile.contacts.email} send email`">
+            <p class="contact__mail-art" aria-hidden="true">
                 <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`">{{ letter }}</span>
-            </a>
+            </p>
             <BaseCard class="contact__summary">
                 <BaseLabel tone="contact" label="Collaboration" />
                 <div class="contact__profile" aria-hidden="true">

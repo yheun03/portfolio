@@ -389,5 +389,32 @@
         margin-bottom: $space-3;
         color: color-mix(in srgb, $primary-600 72%, $grayscale-900);
         font-size: $font-size-sm;
+
+        .accent-emoji--soft {
+            opacity: 0.55;
+            animation: footer-emoji-glow 4.1s ease-in-out infinite;
+            will-change: transform, opacity;
+        }
+    }
+}
+
+@keyframes footer-emoji-glow {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.48;
+    }
+
+    50% {
+        transform: translateY(-2px) scale(1.05);
+        opacity: 0.62;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-footer__emoji-line .accent-emoji--soft {
+        animation: none;
+        opacity: 0.55;
     }
 }
