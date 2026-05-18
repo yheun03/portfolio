@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
     experimental: { appManifest: false },
-    features: { inlineStyles: false },
+    /** 정적 배포 시 CSS를 HTML에 인라인해 렌더 차단 외부 stylesheet 완화 */
+    features: { inlineStyles: true },
 
     /** 루트 응답이 JSON `Dev server is unavailable` 로 보일 때: 서버 기동 전에 브라우저를 연 경우·캐시 꼬임·포트 중복이 흔한 원인 */
     devServer: {
@@ -21,15 +22,7 @@ export default defineNuxtConfig({
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            link: [
-                { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
-                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-                {
-                    rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap',
-                },
-            ],
+            link: [{ rel: 'icon', type: 'image/svg+xml', href: faviconHref }],
             script: [
                 {
                     key: 'gtm-base',
@@ -39,16 +32,6 @@ export default defineNuxtConfig({
                     tagPriority: 100,
                     innerHTML:
                         "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJZM3PWS');",
-                },
-                {
-                    type: 'text/javascript',
-                    src: '//wcs.pstatic.net/wcslog.js',
-                    tagPosition: 'bodyClose',
-                },
-                {
-                    type: 'text/javascript',
-                    tagPosition: 'bodyClose',
-                    innerHTML: 'if(!wcs_add) var wcs_add = {};\nwcs_add["wa"] = "1c95700c9231150";\nif(window.wcs) {\nwcs_do();\n}',
                 },
             ],
             noscript: [
@@ -64,7 +47,12 @@ export default defineNuxtConfig({
     },
 
     modules: ['@pinia/nuxt'],
-    css: ['~/assets/style/main.scss'],
+    css: [
+        '@fontsource/roboto-slab/400.css',
+        '@fontsource/roboto-slab/700.css',
+        '@fontsource/roboto-slab/900.css',
+        '~/assets/style/main.scss',
+    ],
 
     alias: {
         '@composables': fileURLToPath(new URL('./core/composables', import.meta.url)),
@@ -84,7 +72,12 @@ export default defineNuxtConfig({
         storesDirs: ['~/core/stores'],
     },
 
-    plugins: ['~/core/plugins/theme-init.client', '~/core/plugins/locale-init.client', '~/core/plugins/content-ready.client'],
+    plugins: [
+        '~/core/plugins/theme-init.client',
+        '~/core/plugins/locale-init.client',
+        '~/core/plugins/content-ready.client',
+        '~/core/plugins/naver-analytics.client',
+    ],
 
     components: [
         { path: '~/components/Common', pathPrefix: false },
@@ -97,6 +90,8 @@ export default defineNuxtConfig({
     vite: {
         build: {
             chunkSizeWarningLimit: 900,
+            target: 'es2022',
+            modulePreload: { polyfill: false },
         },
         server: {
             watch: {
@@ -125,5 +120,10 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
+        routeRules: {
+            '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+            '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+            '/images/**': { headers: { 'cache-control': 'public, max-age=604800' } },
+        },
     },
 });

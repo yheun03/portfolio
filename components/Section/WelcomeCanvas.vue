@@ -17,13 +17,20 @@ onMounted(() => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let resizeRaf = 0;
     const resize = () => {
-        canvas.width = container.offsetWidth;
-        canvas.height = container.offsetHeight;
+        cancelAnimationFrame(resizeRaf);
+        resizeRaf = requestAnimationFrame(() => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            if (width < 1 || height < 1) return;
+            canvas.width = width;
+            canvas.height = height;
+        });
     };
 
     resize();
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", resize, { passive: true });
 
     const wrd = "EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ";
     const base = Math.max(canvas.height / 4, 48);
@@ -60,6 +67,7 @@ onMounted(() => {
     cleanup = () => {
         window.removeEventListener("resize", resize);
         cancelAnimationFrame(frameId);
+        cancelAnimationFrame(resizeRaf);
     };
 });
 

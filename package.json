@@ -6,6 +6,11 @@
     "engines": {
         "node": ">=20 <23"
     },
+    "browserslist": [
+        "defaults and supports es6-module",
+        "not dead",
+        "not op_mini all"
+    ],
     "scripts": {
         "build": "nuxt build",
         "build:clean": "npm run clean && nuxt build",
@@ -20,6 +25,7 @@
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
+        "@fontsource/roboto-slab": "^5.2.8",
         "@pinia/nuxt": "^0.5.4",
         "gsap": "^3.15.0",
         "nuxt": "^3.14.1593",
