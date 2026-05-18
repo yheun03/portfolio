@@ -1,6 +1,7 @@
 <template>
     <NuxtLink :to="to" class="gallery-card"
-        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift">
+        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
+        :aria-label="cardAriaLabel" data-motion="lift">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <span v-if="entryYearSuffix" class="gallery-editorial__entry-index" aria-hidden="true">{{
@@ -17,7 +18,7 @@
                 <div class="gallery-editorial__entry-hero">
                     <h2 class="gallery-editorial__entry-title">{{ pick(work.title) }}</h2>
                     <span class="gallery-editorial__entry-rule" aria-hidden="true" />
-                    <p class="gallery-editorial__entry-label">{{ entryLabel }}</p>
+                    <p class="gallery-editorial__entry-label" aria-hidden="true">{{ entryLabel }}</p>
                 </div>
 
                 <p class="gallery-editorial__entry-dek">{{ pick(work.introduction) }}</p>
@@ -86,9 +87,26 @@ const entryYearSuffix = computed(() => {
 });
 
 const coverSrc = computed(() => resolveAppPath(props.work.captures[0] ?? '/images/projects/placeholder.svg'));
-const coverAlt = computed(() =>
-    locale.value === 'ko' ? `${pick(props.work.title)} 캡처` : `Screenshot: ${pick(props.work.title)}`,
-);
+const isPlaceholderCover = computed(() => {
+    const src = props.work.captures[0] ?? '';
+    return !src || /placeholder/i.test(src);
+});
+
+const coverAlt = computed(() => {
+    if (isPlaceholderCover.value) return '';
+    const title = pick(props.work.title);
+    return locale.value === 'ko' ? `${title} 캡처` : `Screenshot: ${title}`;
+});
+
+const cardAriaLabel = computed(() => {
+    const title = pick(props.work.title);
+    const type = pick(props.work.type);
+    const period = props.work.period ? `, ${props.work.period}` : '';
+    const action = entryLabel.value;
+    return locale.value === 'ko'
+        ? `${title}, ${type}${period}. ${action}`
+        : `${title}, ${type}${period}. ${action}`;
+});
 const imageLoading = computed(() => (props.priority ? 'eager' : 'lazy'));
 const imageFetchPriority = computed(() => (props.priority ? 'high' : 'low'));
 </script>

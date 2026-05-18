@@ -56,6 +56,8 @@
         "personalMetaTitle": "프론트엔드 개인 프로젝트 | 은영환 웹 퍼블리셔",
         "personalMetaDescription": "은영환의 프론트엔드 개인 프로젝트와 웹 퍼블리싱 실험입니다. 포트폴리오 개선, UI 패턴, Vue, SCSS, 인터랙션 구현 경험을 정리했습니다.",
         "duration": "소요 시간",
+        "projectList": "프로젝트 목록",
+        "otherProjects": "연도 미분류 프로젝트",
         "languages": "언어·핵심 스택",
         "techFull": "사용 도구·전체 스택",
         "captures": "캡처",

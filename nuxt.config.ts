@@ -23,15 +23,6 @@ export default defineNuxtConfig({
         baseURL: resolvedBaseURL,
         head: {
             link: [{ rel: 'icon', type: 'image/svg+xml', href: faviconHref }],
-            noscript: [
-                {
-                    key: 'gtm-noscript',
-                    tagPosition: 'bodyOpen',
-                    tagPriority: 100,
-                    innerHTML:
-                        '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJZM3PWS" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
-                },
-            ],
         },
     },
 

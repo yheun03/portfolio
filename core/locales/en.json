@@ -56,6 +56,8 @@
         "personalMetaTitle": "Frontend Personal Projects | Eunyounghwan Web Publisher",
         "personalMetaDescription": "Frontend personal projects and web publishing experiments by Eunyounghwan, including portfolio improvements, UI patterns, Vue, SCSS, and interaction work.",
         "duration": "Duration",
+        "projectList": "Project list",
+        "otherProjects": "Projects without a year",
         "languages": "Languages & core stack",
         "techFull": "Tools & full stack",
         "captures": "Screenshots",

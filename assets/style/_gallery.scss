@@ -5,21 +5,39 @@
    Tokens: --gallery-* in abstract/_variables.scss (:root light, [data-theme=dark])
    ============================================================================= */
 
+/** WAVE very small text 기준(≈12px) 이상 */
+$gallery-text-min: 0.75rem;
+$gallery-text-ui: 0.8125rem;
+
 /* ----- Editorial shell (list + detail) ----- */
 
-body:has(.gallery-page--editorial),
-body:has(.gallery-detail.gallery-page--editorial) {
+body:has(.gallery-page--career),
+body:has(.gallery-page--personal),
+body:has(.gallery-detail.gallery-page--career),
+body:has(.gallery-detail.gallery-page--personal) {
     background: var(--gallery-bg);
     color: var(--gallery-body);
 
     .app-background {
-        opacity: 0.12;
+        opacity: 1;
+        mask-image: none;
         background-image:
             radial-gradient(ellipse 82% 56% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 58%),
             radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 24%, transparent), transparent 52%),
             linear-gradient(color-mix(in srgb, var(--gallery-muted) 18%, transparent) 1px, transparent 1px),
             linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 18%, transparent) 1px, transparent 1px);
         background-size: auto, auto, 96px 96px, 96px 96px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.34;
+            background-image: $texture-noise;
+            background-size: 256px 256px;
+            mix-blend-mode: soft-light;
+        }
     }
 
     .app-header {
@@ -53,6 +71,36 @@ body:has(.gallery-detail.gallery-page--editorial) {
         color: var(--gallery-muted);
         border-top-color: color-mix(in srgb, var(--gallery-muted) 28%, transparent);
         background: var(--gallery-bg);
+
+        .app-footer__emoji-line {
+            color: color-mix(in srgb, var(--gallery-accent) 72%, var(--gallery-cream));
+
+            .accent-emoji--soft {
+                opacity: 0.88;
+            }
+        }
+    }
+
+    .section-dock {
+        border-color: color-mix(in srgb, var(--gallery-muted) 40%, transparent);
+        background: color-mix(in srgb, var(--gallery-bg) 88%, transparent);
+        opacity: 0.92;
+
+        &__label {
+            color: var(--gallery-cream);
+            background: color-mix(in srgb, var(--gallery-bg) 92%, transparent);
+            border-color: color-mix(in srgb, var(--gallery-muted) 35%, transparent);
+        }
+
+        &__dot {
+            background: color-mix(in srgb, var(--gallery-muted) 70%, transparent);
+        }
+
+        &__item.is-active .section-dock__dot,
+        &__item:hover .section-dock__dot,
+        &__item:focus-visible .section-dock__dot {
+            background: var(--gallery-accent);
+        }
     }
 
     .scroll-progress {
@@ -60,29 +108,42 @@ body:has(.gallery-detail.gallery-page--editorial) {
     }
 }
 
-html:not([data-theme="dark"]) body:has(.gallery-page--editorial),
-html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) {
+html:not([data-theme="dark"]) body:has(.gallery-page--career),
+html:not([data-theme="dark"]) body:has(.gallery-page--personal),
+html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--career),
+html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     .app-background {
-        opacity: 0.14;
         background-image:
             radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
-            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-400) 10%, transparent), transparent 50%);
+            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-400) 10%, transparent), transparent 50%),
+            linear-gradient(color-mix(in srgb, var(--gallery-muted) 16%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 16%, transparent) 1px, transparent 1px);
+        background-size: auto, auto, 96px 96px, 96px 96px;
+
+        &::after {
+            opacity: 0.28;
+            mix-blend-mode: multiply;
+        }
     }
 }
 
-.portfolio-page:has(.gallery-page--editorial),
-.portfolio-page:has(.gallery-detail.gallery-page--editorial) {
+.portfolio-page:has(.gallery-page--career),
+.portfolio-page:has(.gallery-page--personal),
+.portfolio-page:has(.gallery-detail.gallery-page--career),
+.portfolio-page:has(.gallery-detail.gallery-page--personal) {
     background:
         linear-gradient(180deg, var(--gallery-bg) 0%, var(--gallery-bg-elevated) 42%, var(--gallery-bg) 100%);
 }
 
 .gallery-page--editorial.section,
 .gallery-detail.gallery-page--editorial.section {
-    width: min(100% - var(--gallery-pad) * 2, var(--layout-content-max));
-    max-width: none;
+    width: 100%;
+    max-width: var(--layout-content-max);
     margin-inline: auto;
     padding-block: clamp(2.5rem, 6vw, 5rem);
-    padding-inline: 0;
+    padding-inline: var(--gallery-pad);
+    overflow: visible;
+    box-sizing: border-box;
 }
 
 .gallery-page--grid.section {
@@ -123,7 +184,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     display: block;
     margin: 0;
     color: var(--gallery-muted);
-    font-size: clamp(0.62rem, 1.5vw, 0.72rem);
+    font-size: clamp(#{$gallery-text-min}, 1.5vw, #{$gallery-text-ui});
     font-weight: 800;
     letter-spacing: 0.14em;
     line-height: 1.3;
@@ -148,7 +209,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     background: transparent;
     color: var(--gallery-muted);
     font: inherit;
-    font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+    font-size: clamp(#{$gallery-text-min}, 1.8vw, 0.875rem);
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0.04em;
@@ -314,7 +375,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         margin: 0;
         color: var(--color-text-muted);
         font-family: var(--font-mono);
-        font-size: var(--font-size-2xs);
+        font-size: max(var(--font-size-2xs), #{$gallery-text-min});
         font-weight: var(--font-weight-semibold);
         letter-spacing: var(--tracking-label);
         text-transform: uppercase;
@@ -353,9 +414,16 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
             border: 1px solid var(--color-border);
             border-radius: $radius-pill;
             background: color-mix(in srgb, var(--color-surface) 72%, transparent);
-            font-size: var(--font-size-2xs);
+            font-size: max(var(--font-size-2xs), #{$gallery-text-min});
             font-weight: var(--font-weight-semibold);
         }
+    }
+
+    .gallery-page__head .technical-label {
+        font-size: max(var(--font-size-xs), #{$gallery-text-min});
+        font-weight: var(--font-weight-semibold);
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
     }
 }
 
@@ -364,17 +432,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 .gallery-page--editorial {
     position: relative;
     color: var(--gallery-body);
-
-    &::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        opacity: 0.35;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-        mix-blend-mode: soft-light;
-    }
+    overflow: visible;
 
     >* {
         position: relative;
@@ -390,6 +448,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 .gallery-editorial__poster {
     display: grid;
     gap: 0;
+    overflow: visible;
     padding: clamp(1.75rem, 4vw, 3rem) clamp(1.5rem, 3.5vw, 2.75rem) clamp(2rem, 4.5vw, 3.25rem);
     border: 1px solid var(--gallery-frame);
     border-radius: var(--radius-xl);
@@ -401,15 +460,17 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
             color-mix(in srgb, var(--gallery-bg) 88%, #000 12%) 100%);
     box-shadow:
         inset 0 1px 0 color-mix(in srgb, var(--gallery-cream) 8%, transparent),
-        0 28px 80px color-mix(in srgb, #000 45%, transparent);
+        0 24px 64px color-mix(in srgb, var(--gallery-muted) 28%, transparent);
+    margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .gallery-editorial__poster-top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     gap: var(--space-3) var(--space-6);
+    overflow: visible;
     padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
     border-bottom: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
 }
@@ -419,7 +480,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     margin: 0;
     color: var(--gallery-muted);
     font-family: var(--font-body);
-    font-size: clamp(0.58rem, 1.4vw, 0.7rem);
+    font-size: clamp(#{$gallery-text-min}, 1.4vw, #{$gallery-text-ui});
     font-weight: 700;
     letter-spacing: 0.16em;
     line-height: 1.45;
@@ -427,11 +488,16 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 }
 
 .gallery-editorial__stats {
+    flex: 1 1 auto;
+    min-width: min(100%, 14rem);
     text-align: end;
+    text-wrap: balance;
 }
 
 .gallery-editorial__poster-hero {
-    padding-block: clamp(1.5rem, 4vw, 2.75rem) clamp(0.85rem, 2vw, 1.25rem);
+    position: relative;
+    overflow: visible;
+    padding-block: clamp(1.5rem, 4vw, 2.75rem) clamp(1rem, 2.5vw, 1.5rem);
 }
 
 .gallery-editorial__headline {
@@ -462,14 +528,27 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     font-size: clamp(5.5rem, 22vw, 11rem);
     font-weight: 900;
     letter-spacing: -0.05em;
-    line-height: 0.88;
+    line-height: 1;
+    padding-block: 0.04em 0.1em;
+}
+
+.gallery-editorial__hero-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .gallery-editorial__status {
     margin: clamp(0.5rem, 1.5vw, 0.85rem) 0 0;
     color: var(--gallery-accent);
     font-family: var(--font-body);
-    font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+    font-size: clamp(#{$gallery-text-min}, 1.8vw, 0.875rem);
     font-weight: 800;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -524,6 +603,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     display: grid;
     gap: clamp(2rem, 4vw, 3rem);
     min-width: 0;
+    padding-block: 0 clamp(0.75rem, 2vw, 1.25rem);
 }
 
 .gallery-card.gallery-editorial__entry {
@@ -558,7 +638,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     gap: 0;
     min-width: 0;
     min-height: 100%;
-    overflow: hidden;
+    overflow: visible;
     padding: clamp(1.15rem, 2.8vw, 1.65rem) clamp(1.1rem, 2.5vw, 1.5rem) clamp(1rem, 2.2vw, 1.35rem);
     border: 1px solid var(--gallery-frame);
     border-radius: var(--radius-lg);
@@ -602,7 +682,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     padding-bottom: clamp(0.65rem, 1.5vw, 0.9rem);
     border-bottom: 1px solid color-mix(in srgb, var(--gallery-muted) 22%, transparent);
     color: var(--gallery-muted);
-    font-size: clamp(0.55rem, 1.3vw, 0.65rem);
+    font-size: clamp(#{$gallery-text-min}, 1.3vw, #{$gallery-text-ui});
     font-weight: 700;
     letter-spacing: 0.14em;
     line-height: 1.4;
@@ -642,7 +722,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 .gallery-editorial__entry-label {
     margin: 0.45rem 0 0;
     color: var(--gallery-accent);
-    font-size: clamp(0.62rem, 1.4vw, 0.68rem);
+    font-size: clamp(#{$gallery-text-min}, 1.4vw, #{$gallery-text-ui});
     font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -671,7 +751,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 
     li {
         color: var(--gallery-muted);
-        font-size: 0.58rem;
+        font-size: #{$gallery-text-min};
         font-weight: 700;
         letter-spacing: 0.11em;
         text-transform: uppercase;
@@ -716,7 +796,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     .gallery-detail__breadcrumb {
         margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
         color: var(--gallery-muted);
-        font-size: 0.62rem;
+        font-size: #{$gallery-text-min};
         font-weight: 700;
         letter-spacing: 0.13em;
         text-transform: uppercase;
@@ -754,7 +834,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     .gallery-detail__status {
         margin: clamp(0.5rem, 1.5vw, 0.85rem) 0 0;
         color: var(--gallery-accent);
-        font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+        font-size: clamp(#{$gallery-text-min}, 1.8vw, 0.875rem);
         font-weight: 800;
         letter-spacing: 0.2em;
         text-transform: uppercase;
@@ -780,7 +860,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         dt {
             margin-bottom: 0.2rem;
             color: var(--gallery-muted);
-            font-size: 0.6rem;
+            font-size: #{$gallery-text-min};
             font-weight: 800;
             letter-spacing: 0.14em;
             text-transform: uppercase;
@@ -818,7 +898,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         background: var(--gallery-accent);
         color: var(--gallery-active-fg);
         border-radius: var(--radius-card);
-        font-size: 0.68rem;
+        font-size: #{$gallery-text-ui};
         font-weight: 800;
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -833,7 +913,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     .gallery-detail__section-title {
         margin: 0 0 0.85rem;
         color: var(--gallery-accent);
-        font-size: 0.68rem;
+        font-size: #{$gallery-text-ui};
         font-weight: 800;
         letter-spacing: 0.16em;
         text-transform: uppercase;
@@ -875,7 +955,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         h2 {
             margin: 0 0 0.85rem;
             color: var(--gallery-accent);
-            font-size: 0.68rem;
+            font-size: #{$gallery-text-ui};
             font-weight: 800;
             letter-spacing: 0.16em;
             text-transform: uppercase;
@@ -898,7 +978,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         border-radius: var(--radius-card);
         background: transparent;
         color: var(--gallery-cream);
-        font-size: 0.65rem;
+        font-size: #{$gallery-text-min};
         font-weight: 800;
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -1064,6 +1144,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     .gallery-page--editorial.section,
     .gallery-detail.gallery-page--editorial.section {
         width: 100%;
+        max-width: none;
         padding-inline: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-left)) max(var(--touch-pad-x, 0.85rem),
                 env(safe-area-inset-right));
     }

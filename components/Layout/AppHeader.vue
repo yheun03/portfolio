@@ -1,19 +1,21 @@
 <template>
     <header class="app-header">
-        <NuxtLink v-if="isAppRoute(brandHref)" class="app-header__brand" :to="brandHref">
-            Eun
+        <NuxtLink v-if="isAppRoute(brandHref)" class="app-header__brand" :to="brandHref"
+            :aria-label="locale === 'ko' ? '포트폴리오 홈' : 'Portfolio home'">
+            <span aria-hidden="true">Eun</span>
         </NuxtLink>
-        <a v-else class="app-header__brand" :href="brandHref">
-            Eun
+        <a v-else class="app-header__brand" :href="brandHref"
+            :aria-label="locale === 'ko' ? '포트폴리오 홈' : 'Portfolio home'">
+            <span aria-hidden="true">Eun</span>
         </a>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
             <template v-for="link in links" :key="link.href">
                 <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" :class="{ 'is-active': isNavActive(link.href) }"
-                    :aria-current="isNavActive(link.href) ? 'true' : undefined">
+                    :aria-current="isNavActive(link.href) ? 'page' : undefined">
                     {{ link.label }}
                 </NuxtLink>
                 <a v-else :href="link.href" :class="{ 'is-active': isNavActive(link.href) }"
-                    :aria-current="isNavActive(link.href) ? 'true' : undefined">
+                    :aria-current="isNavActive(link.href) ? 'page' : undefined">
                     {{ link.label }}
                 </a>
             </template>

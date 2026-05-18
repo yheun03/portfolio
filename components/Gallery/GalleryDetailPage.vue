@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="config.basePath"
-        :footer-text="t('footer.copyright')" :show-section-dock="false">
+        :footer-text="t('footer.copyright')" :show-section-dock="true">
         <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
             <nav class="gallery-detail__breadcrumb" :aria-label="t('gallery.breadcrumbLabel')">
                 <NuxtLink :to="config.basePath">{{ t(config.listLabelKey) }}</NuxtLink>

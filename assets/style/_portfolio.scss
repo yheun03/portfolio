@@ -7,6 +7,15 @@
     min-height: 100vh;
     padding-top: var(--layout-header-height);
     overflow-x: clip;
+    overflow-y: visible;
+
+    &:has(.gallery-page--career),
+    &:has(.gallery-page--personal),
+    &:has(.gallery-detail.gallery-page--career),
+    &:has(.gallery-detail.gallery-page--personal) {
+        overflow-x: visible;
+    }
+
     counter-reset: section-count;
     background: var(--gradient-noise);
     scroll-behavior: smooth;
@@ -37,6 +46,22 @@
         linear-gradient(90deg, color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px);
     background-size: auto, 88px 88px, 88px 88px;
     mask-image: radial-gradient(ellipse 86% 76% at 50% 8%, #000 18%, transparent 76%);
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.26;
+        background-image: $texture-noise;
+        background-size: 256px 256px;
+        mix-blend-mode: soft-light;
+    }
+}
+
+html:not([data-theme="dark"]) .app-background::after {
+    opacity: 0.22;
+    mix-blend-mode: multiply;
 }
 
 .page-layer {
@@ -103,6 +128,28 @@
     z-index: 0;
     pointer-events: none;
     user-select: none;
+
+    /** accent-emoji--soft 키프레임 opacity(0.88~1)가 섹션 장식 투명도를 덮어쓰지 않도록 분리 */
+    &.accent-emoji--soft {
+        animation: section-emoji-drift 4.1s ease-in-out infinite;
+        will-change: transform;
+    }
+}
+
+@keyframes section-emoji-drift {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    45% {
+        transform: translateY(-3px) rotate(-5deg) scale(1.04);
+    }
+
+    70% {
+        transform: translateY(-1px) rotate(4deg) scale(0.98);
+    }
 }
 
 .section__emoji--about {
@@ -699,6 +746,10 @@
 /* pages/portfolio/_works.scss */
 .section--works {
     position: relative;
+    overflow: visible;
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+    padding-top: calc(var(--space-section-y) + 1.5rem);
     grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
     column-gap: var(--space-6);
     align-items: start;
@@ -733,12 +784,13 @@
 .works {
     &__total-badge {
         position: absolute;
-        top: clamp(-1.4rem, -1.5vw, -0.75rem);
+        top: 0;
         left: clamp(1rem, 3vw, 2rem);
         z-index: 3;
         display: inline-grid;
         gap: var(--space-1);
         min-width: 9.5rem;
+        overflow: visible;
         padding: var(--space-3) var(--space-4);
         border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
         border-radius: var(--radius-lg);
@@ -774,10 +826,10 @@
 
         small {
             color: var(--color-text-muted);
-            font-size: var(--font-size-2xs);
+            font-size: max(var(--font-size-2xs), 0.75rem);
             font-weight: var(--font-weight-bold);
-            line-height: 1.25;
-            white-space: nowrap;
+            line-height: 1.35;
+            white-space: normal;
         }
 
         &:hover {
@@ -957,6 +1009,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .section__emoji.accent-emoji--soft {
+        animation: none;
+    }
+
     .works__total-badge {
         animation: none;
     }
@@ -1580,8 +1636,35 @@
     }
 
     .section__emoji {
-        opacity: 0.08;
         transform: scale(0.72);
+    }
+
+    .section__emoji--about {
+        opacity: 0.08;
+    }
+
+    .section__emoji--works {
+        opacity: 0.09;
+    }
+
+    .section__emoji--personal {
+        opacity: 0.1;
+    }
+
+    .section__emoji--journey {
+        opacity: 0.08;
+    }
+
+    .section__emoji--toolbox {
+        opacity: 0.1;
+    }
+
+    .section__emoji--highlights {
+        opacity: 0.14;
+    }
+
+    .section__emoji--contact {
+        opacity: 0.08;
     }
 
     .hero__availability {
