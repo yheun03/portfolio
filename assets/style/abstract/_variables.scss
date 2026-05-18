@@ -151,20 +151,20 @@ $font-presets: (
     --tracking-ui: 0.02em;
     --tracking-label: 0.1em;
 
-    --grayscale-0: #ffffff;
-    --grayscale-50: #f8fafc;
-    --grayscale-100: #f4f6fb;
-    --grayscale-200: #e9eef6;
-    --grayscale-300: #c9d5e6;
-    --grayscale-400: #94a3b8;
-    --grayscale-500: #64748b;
-    --grayscale-600: #4a5d82;
-    --grayscale-700: #334155;
-    --grayscale-800: #1e293b;
-    --grayscale-900: #0a0f1a;
-    --grayscale-950: #020617;
-    --primary-50: #eef3ff;
-    --primary-100: #dbe6ff;
+    --grayscale-0: #fffef9;
+    --grayscale-50: #faf6ef;
+    --grayscale-100: #f6f1e8;
+    --grayscale-200: #ebe4d6;
+    --grayscale-300: #d4c8b5;
+    --grayscale-400: #a89880;
+    --grayscale-500: #8a7964;
+    --grayscale-600: #6b5e4c;
+    --grayscale-700: #4a4035;
+    --grayscale-800: #2e2820;
+    --grayscale-900: #1a1612;
+    --grayscale-950: #0f0d0a;
+    --primary-50: #f0f3fc;
+    --primary-100: #e4e9fb;
     --primary-200: #b9ccff;
     --primary-300: #8ca8ff;
     --primary-400: #5f7dff;
@@ -195,19 +195,19 @@ $font-presets: (
     --color-overlay: var(--overlay);
     --color-glass-2: var(--glass-2);
     --color-glass-2-strong: var(--glass-2-strong);
-    --shadow-soft: 0 18px 44px color-mix(in srgb, var(--primary-900) 14%, transparent);
-    --shadow-lift: 0 28px 70px color-mix(in srgb, var(--primary-800) 18%, transparent);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-200) 78%, transparent) inset;
+    --shadow-soft: 0 18px 44px color-mix(in srgb, var(--grayscale-800) 12%, transparent);
+    --shadow-lift: 0 28px 70px color-mix(in srgb, var(--grayscale-800) 16%, transparent);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-300) 55%, transparent) inset;
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 28%, transparent);
     --gradient-accent: linear-gradient(118deg, var(--primary-600) 0%, #7038cc 52%, #087ea4 100%);
     --gradient-accent-soft: linear-gradient(135deg,
             color-mix(in srgb, var(--primary-600) 22%, transparent),
             color-mix(in srgb, var(--accent-hot) 14%, transparent));
     --gradient-surface: linear-gradient(168deg, var(--grayscale-0) 0%, var(--grayscale-200) 100%);
-    --gradient-noise: linear-gradient(185deg, var(--grayscale-50) 0%, #e8eef8 55%, var(--grayscale-100) 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 26%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 16%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 14%, transparent), transparent 45%);
+    --gradient-noise: linear-gradient(185deg, var(--grayscale-50) 0%, #ede6d8 55%, var(--grayscale-100) 100%);
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 22%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 12%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 10%, transparent), transparent 45%);
     --radius-card: 0.65rem;
     --radius-pill: 999px;
     --radius-md: 0.8rem;
@@ -248,21 +248,21 @@ $font-presets: (
     --space-section-gap: var(--space-fluid-md);
     --space-block-gap: var(--space-fluid-sm);
 
-    /* Gallery / editorial sports poster (projects, personal) */
+    /* Gallery / editorial (light: paper beige · dark: navy poster in [data-theme=dark]) */
     --gallery-slab: "Roboto Slab", "Rockwell", "Courier New", serif;
     --gallery-copy-max: 42ch;
     --gallery-year-col: clamp(4.5rem, 11vw, 9.5rem);
     --gallery-year-sticky-top: calc(var(--layout-header-height) + var(--space-5));
     --gallery-pad: clamp(1.35rem, 4.5vw, 3.5rem);
-    --gallery-bg: #030a12;
-    --gallery-bg-elevated: #05101c;
-    --gallery-cream: #f5f0e1;
-    --gallery-muted: #5d7b93;
-    --gallery-accent: #ffd700;
-    --gallery-body: #ffffff;
-    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
-    --gallery-active-fg: #030a12;
+    --gallery-bg: #f6f1e8;
+    --gallery-bg-elevated: #efe8dc;
+    --gallery-cream: #0a1520;
+    --gallery-muted: #6b5e4c;
+    --gallery-accent: #c9a000;
+    --gallery-body: #1a2834;
+    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 78%, var(--gallery-muted));
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 30%, transparent);
+    --gallery-active-fg: #fffef9;
     --gallery-active-bg: var(--gallery-accent);
 }
 
@@ -308,5 +308,14 @@ $font-presets: (
         radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 22%, transparent), transparent 36%),
         radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--accent-mint) 18%, transparent), transparent 48%);
 
-    --gallery-bg-elevated: #071828;
+    --gallery-bg: #030a12;
+    --gallery-bg-elevated: #05101c;
+    --gallery-cream: #f5f0e1;
+    --gallery-muted: #5d7b93;
+    --gallery-accent: #ffd700;
+    --gallery-body: #ffffff;
+    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
+    --gallery-active-fg: #030a12;
+    --gallery-active-bg: var(--gallery-accent);
 }
