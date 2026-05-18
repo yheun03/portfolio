@@ -151,31 +151,31 @@ $font-presets: (
     --tracking-ui: 0.02em;
     --tracking-label: 0.1em;
 
-    --grayscale-0: #fffef9;
-    --grayscale-50: #faf6ef;
-    --grayscale-100: #f6f1e8;
-    --grayscale-200: #ebe4d6;
-    --grayscale-300: #d4c8b5;
-    --grayscale-400: #a89880;
-    --grayscale-500: #8a7964;
-    --grayscale-600: #6b5e4c;
-    --grayscale-700: #4a4035;
-    --grayscale-800: #2e2820;
-    --grayscale-900: #1a1612;
+    --grayscale-0: #fffdf7;
+    --grayscale-50: #faf4e9;
+    --grayscale-100: #f3eadb;
+    --grayscale-200: #e7dac5;
+    --grayscale-300: #cfbd9e;
+    --grayscale-400: #aa956d;
+    --grayscale-500: #897557;
+    --grayscale-600: #665946;
+    --grayscale-700: #463c31;
+    --grayscale-800: #2b251e;
+    --grayscale-900: #18140f;
     --grayscale-950: #0f0d0a;
     /* Warm ink + umber gold (harmonized with beige neutrals) */
-    --primary-50: #f7f2ea;
-    --primary-100: #ede4d4;
-    --primary-200: #dccdb5;
-    --primary-300: #c8b38f;
-    --primary-400: #a68954;
-    --primary-500: #8b7044;
-    --primary-600: #6f5a38;
-    --primary-700: #57472d;
-    --primary-800: #423622;
-    --primary-900: #322a1a;
-    --accent-hot: #c45a4a;
-    --accent-mint: #6f6472;
+    --primary-50: #faf1df;
+    --primary-100: #f0dfbf;
+    --primary-200: #dfc48e;
+    --primary-300: #caa35a;
+    --primary-400: #ad7f32;
+    --primary-500: #8e6425;
+    --primary-600: #704e1d;
+    --primary-700: #583d18;
+    --primary-800: #3f2d14;
+    --primary-900: #2c2010;
+    --accent-hot: #b85243;
+    --accent-mint: #4f5d75;
     --state-error: #dc2626;
     --state-success: #0f9f6e;
     --state-warning: #d97706;
@@ -200,20 +200,20 @@ $font-presets: (
     --shadow-lift: 0 28px 70px color-mix(in srgb, var(--grayscale-800) 16%, transparent);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-300) 55%, transparent) inset;
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-500) 26%, transparent);
-    --gradient-accent: linear-gradient(118deg, var(--primary-400) 0%, var(--accent-hot) 48%, var(--primary-800) 100%);
+    --gradient-accent: linear-gradient(118deg, var(--primary-300) 0%, var(--primary-500) 48%, var(--accent-hot) 100%);
     --gradient-accent-soft: linear-gradient(135deg,
             color-mix(in srgb, var(--primary-400) 18%, transparent),
             color-mix(in srgb, var(--accent-hot) 10%, transparent));
-    --gradient-surface: linear-gradient(168deg, var(--grayscale-0) 0%, var(--grayscale-200) 100%);
-    --gradient-noise: linear-gradient(185deg, var(--grayscale-50) 0%, var(--grayscale-200) 55%, var(--grayscale-100) 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-400) 15%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--primary-300) 7%, transparent), transparent 45%);
-    --radius-card: 0.65rem;
+    --gradient-surface: linear-gradient(168deg, var(--grayscale-0) 0%, var(--grayscale-100) 56%, var(--grayscale-200) 100%);
+    --gradient-noise: linear-gradient(185deg, var(--grayscale-0) 0%, var(--grayscale-100) 54%, var(--grayscale-200) 100%);
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 7%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 8%, transparent), transparent 45%);
+    --radius-card: 0.95rem;
     --radius-pill: 999px;
-    --radius-md: 0.8rem;
-    --radius-lg: 1.05rem;
-    --radius-xl: 1.45rem;
+    --radius-md: 0.9rem;
+    --radius-lg: 1.15rem;
+    --radius-xl: 1.65rem;
     --space-0: 0;
     --space-1: 0.25rem;
     --space-2: 0.38rem;
@@ -255,44 +255,44 @@ $font-presets: (
     --gallery-year-col: clamp(4.5rem, 11vw, 9.5rem);
     --gallery-year-sticky-top: calc(var(--layout-header-height) + var(--space-5));
     --gallery-pad: clamp(1.35rem, 4.5vw, 3.5rem);
-    --gallery-bg: var(--grayscale-100);
-    --gallery-bg-elevated: var(--grayscale-200);
+    --gallery-bg: #f1e7d4;
+    --gallery-bg-elevated: #fff8eb;
     --gallery-cream: var(--grayscale-900);
     --gallery-muted: var(--grayscale-600);
     --gallery-accent: var(--primary-500);
     --gallery-body: var(--grayscale-900);
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 78%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 30%, transparent);
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 36%, transparent);
     --gallery-active-fg: #fffef9;
     --gallery-active-bg: var(--gallery-accent);
 }
 
 [data-theme="dark"] {
-    --grayscale-0: #070911;
-    --grayscale-50: #0d1220;
-    --grayscale-100: #111827;
-    --grayscale-200: #1a2233;
-    --grayscale-300: #30384d;
-    --grayscale-400: #4a5368;
-    --grayscale-500: #717b92;
-    --grayscale-600: #a6b0c3;
-    --grayscale-700: #cbd2df;
-    --grayscale-800: #e4e8ef;
-    --grayscale-900: #f7f3e7;
+    --grayscale-0: #050915;
+    --grayscale-50: #0a1020;
+    --grayscale-100: #10182a;
+    --grayscale-200: #17223a;
+    --grayscale-300: #293650;
+    --grayscale-400: #46516c;
+    --grayscale-500: #77819a;
+    --grayscale-600: #aeb6c7;
+    --grayscale-700: #d0d5df;
+    --grayscale-800: #e8e8df;
+    --grayscale-900: #fbf1d8;
     --grayscale-950: #ffffff;
     /* Luminous brass + restrained coral on navy */
-    --primary-50: #17130b;
-    --primary-100: #29210f;
-    --primary-200: #453719;
-    --primary-300: #6b5524;
-    --primary-400: #9c7830;
-    --primary-500: #c99c3d;
-    --primary-600: #e2bd68;
-    --primary-700: #f1d58e;
-    --primary-800: #f6e2b6;
-    --primary-900: #fbf0d4;
-    --accent-hot: #d98272;
-    --accent-mint: #59677f;
+    --primary-50: #181307;
+    --primary-100: #2a210b;
+    --primary-200: #493815;
+    --primary-300: #74551e;
+    --primary-400: #a1742a;
+    --primary-500: #d0a14a;
+    --primary-600: #f0cb76;
+    --primary-700: #f7dc9d;
+    --primary-800: #fae9bd;
+    --primary-900: #fff3d2;
+    --accent-hot: #e07a64;
+    --accent-mint: #6d7895;
     --overlay: color-mix(in srgb, #020617 74%, transparent);
     --glass-2: color-mix(in srgb, #122345 72%, transparent);
     --glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
@@ -300,22 +300,22 @@ $font-presets: (
     --shadow-lift: 0 36px 80px color-mix(in srgb, #000 38%, transparent);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-400) 58%, transparent) inset;
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 36%, transparent);
-    --gradient-accent: linear-gradient(118deg, var(--primary-700) 0%, var(--primary-600) 58%, var(--accent-hot) 100%);
+    --gradient-accent: linear-gradient(118deg, var(--primary-800) 0%, var(--primary-600) 58%, var(--accent-hot) 100%);
     --gradient-accent-soft: linear-gradient(135deg,
             color-mix(in srgb, var(--primary-600) 22%, transparent),
             color-mix(in srgb, var(--accent-hot) 14%, transparent));
-    --gradient-surface: linear-gradient(168deg, var(--grayscale-100) 0%, #121a22 100%);
+    --gradient-surface: linear-gradient(168deg, var(--grayscale-100) 0%, #111a2f 100%);
     --gradient-noise: linear-gradient(185deg, var(--grayscale-0) 0%, var(--grayscale-100) 55%, var(--grayscale-50) 100%);
     --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--primary-600) 24%, transparent), transparent 46%),
         radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 12%, transparent), transparent 36%),
         radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--primary-400) 9%, transparent), transparent 48%);
 
-    --gallery-bg: #070911;
-    --gallery-bg-elevated: #101725;
-    --gallery-cream: #fbf0d4;
-    --gallery-muted: #a18b5f;
-    --gallery-accent: #f1d58e;
-    --gallery-body: #f7f3e7;
+    --gallery-bg: #060b19;
+    --gallery-bg-elevated: #10192d;
+    --gallery-cream: #fff0c9;
+    --gallery-muted: #b79a61;
+    --gallery-accent: #f4c95d;
+    --gallery-body: #f8edd2;
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
     --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
     --gallery-active-fg: #030a12;

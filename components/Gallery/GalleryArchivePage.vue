@@ -1,7 +1,7 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
         :footer-text="t('footer.copyright')" :show-section-dock="false">
-        <article class="gallery-page section" :class="`gallery-page--${viewMode}`">
+        <article class="gallery-page section" :class="[`gallery-page--${viewMode}`, galleryVariantClass]">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
                 :hero-number="heroNumber" :hero-aria-label="heroAriaLabel" :status-label="t('gallery.indexLabel')"
                 :stats="editorialStats" :grid-eyebrow="gridEyebrow" :sort-legend="sortLegend"
@@ -44,6 +44,7 @@ const props = defineProps<{
 }>();
 
 const layoutLinks = useSubpageNavLinks();
+const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 
 const {
     t,
