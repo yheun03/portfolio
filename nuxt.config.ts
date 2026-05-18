@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt/config';
+import { fileURLToPath } from 'node:url';
 import { joinURL } from 'ufo';
 
 /** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
@@ -65,6 +66,16 @@ export default defineNuxtConfig({
     modules: ['@pinia/nuxt'],
     css: ['~/assets/style/main.scss'],
 
+    alias: {
+        '@composables': fileURLToPath(new URL('./core/composables', import.meta.url)),
+        '@config': fileURLToPath(new URL('./core/config', import.meta.url)),
+        '@content': fileURLToPath(new URL('./core/content', import.meta.url)),
+        '@locales': fileURLToPath(new URL('./core/locales', import.meta.url)),
+        '@stores': fileURLToPath(new URL('./core/stores', import.meta.url)),
+        '@app-types': fileURLToPath(new URL('./core/types', import.meta.url)),
+        '@utils': fileURLToPath(new URL('./core/utils', import.meta.url)),
+    },
+
     imports: {
         dirs: ['~/core/composables'],
     },
@@ -72,6 +83,8 @@ export default defineNuxtConfig({
     pinia: {
         storesDirs: ['~/core/stores'],
     },
+
+    plugins: ['~/core/plugins/theme-init.client', '~/core/plugins/locale-init.client', '~/core/plugins/content-ready.client'],
 
     components: [
         { path: '~/components/Common', pathPrefix: false },

@@ -88,7 +88,8 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 }
 
 .gallery-detail.gallery-page--editorial.section {
-    max-width: min(100% - var(--gallery-pad) * 2, 52rem);
+    width: min(100% - var(--gallery-pad) * 2, 72rem);
+    max-width: none;
 }
 
 /* ----- Controls toolbar (view + sort) ----- */
@@ -716,18 +717,19 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     }
 
     .gallery-detail__header {
-        max-width: var(--gallery-copy-max);
+        max-width: none;
     }
 
     .gallery-detail__title {
         margin: 0;
-        max-width: 14ch;
+        max-width: 18ch;
         color: var(--gallery-cream);
         font-family: var(--gallery-slab);
-        font-size: clamp(2.25rem, 7vw, 4.25rem);
+        font-size: clamp(2.15rem, 5.8vw, 5.1rem);
         font-weight: 900;
         letter-spacing: -0.03em;
-        line-height: 0.98;
+        line-height: 1;
+        overflow-wrap: anywhere;
     }
 
     .gallery-detail__status {
@@ -747,6 +749,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 
     .gallery-detail__facts {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.85rem;
         margin-top: clamp(1.25rem, 3vw, 1.75rem);
         padding: 0;
@@ -825,9 +828,16 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 
     .gallery-detail__figure {
         margin: 0;
+        overflow: hidden;
         border: 1px solid color-mix(in srgb, var(--gallery-muted) 35%, transparent);
         border-radius: 0;
         background: color-mix(in srgb, var(--gallery-muted) 6%, transparent);
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
     }
 
     .gallery-detail__body {
@@ -837,6 +847,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     }
 
     .gallery-detail__column {
+        max-width: 72ch;
         padding: 0;
         border: 0;
         border-radius: 0;
@@ -876,6 +887,78 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         &:hover {
             border-color: var(--gallery-accent);
             color: var(--gallery-accent);
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-detail.gallery-page--editorial {
+        .gallery-detail__header.gallery-editorial__poster {
+            grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+            grid-template-areas:
+                "top top"
+                "hero intro"
+                "facts links";
+            column-gap: clamp(1.75rem, 4vw, 3.25rem);
+            row-gap: clamp(1.2rem, 2.6vw, 1.85rem);
+            align-items: start;
+        }
+
+        .gallery-editorial__poster-top {
+            grid-area: top;
+        }
+
+        .gallery-editorial__poster-hero {
+            grid-area: hero;
+            padding-block-end: 0;
+        }
+
+        .gallery-detail__intro.gallery-editorial__dek {
+            grid-area: intro;
+            align-self: end;
+            margin-top: 0;
+            padding-top: clamp(1rem, 2vw, 1.35rem);
+        }
+
+        .gallery-detail__facts {
+            grid-area: facts;
+            margin-top: 0;
+        }
+
+        .gallery-detail__links {
+            grid-area: links;
+            align-self: end;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .gallery-detail.gallery-page--editorial {
+        .gallery-detail__header.gallery-editorial__poster {
+            padding-inline: clamp(1.05rem, 5vw, 1.35rem);
+        }
+
+        .gallery-editorial__poster-top {
+            align-items: start;
+        }
+
+        .gallery-editorial__stats {
+            width: 100%;
+            text-align: start;
+        }
+
+        .gallery-detail__facts {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .gallery-detail__links {
+            display: grid;
+        }
+
+        .gallery-detail__links .base-button {
+            width: 100%;
+            justify-content: center;
         }
     }
 }

@@ -13,7 +13,7 @@ import AppLayout from '~/components/Layout/AppLayout.vue';
 import PortfolioHero from '~/components/Section/PortfolioHero.vue';
 import PortfolioWorks from '~/components/Section/PortfolioWorks.vue';
 import PortfolioPersonal from '~/components/Section/PortfolioPersonal.vue';
-import { HOME_PAGE_LAYERS, type HomeSectionKey, SCROLL_SECTION_IDS } from '~/core/data/homePage';
+import { HOME_PAGE_LAYERS, type HomeSectionKey, SCROLL_SECTION_IDS } from '@config/homePage';
 
 const PortfolioAbout = defineAsyncComponent(() => import('~/components/Section/PortfolioAbout.vue'));
 const PortfolioJourney = defineAsyncComponent(() => import('~/components/Section/PortfolioJourney.vue'));

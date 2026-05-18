@@ -1,4 +1,4 @@
-import { useThemeStore } from '~/core/stores/themeStore';
+import { useThemeStore } from '@stores/themeStore';
 
 /**
  * 모든 라우트에서 테마를 초기화합니다 (시스템 선호 또는 localStorage 저장값).

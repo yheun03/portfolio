@@ -1,7 +1,7 @@
 export type SeoLocale = 'ko' | 'en';
 
 export const seoConfig = {
-    defaultOgImage: '/images/og-image.png',
+    defaultOgImage: '/images/og-image-2026.png',
     siteName: 'Eunyounghwan Portfolio',
     personId: '#person',
     websiteId: '#website',

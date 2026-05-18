@@ -1,16 +1,16 @@
 /**
- * 작업 데이터: `core/data/content/works/*.ts` (카테고리별) + `personal.ts`
+ * 작업 데이터: `core/content/works/*.ts` (카테고리별) + `personal.ts`
  */
-import awardData from './content/works/award';
-import operationData from './content/works/operation';
-import personalData from './content/works/personal';
-import projectData from './content/works/project';
-import renewalData from './content/works/renewal';
-import solutionData from './content/works/solution';
+import awardData from './works/award';
+import operationData from './works/operation';
+import personalData from './works/personal';
+import projectData from './works/project';
+import renewalData from './works/renewal';
+import solutionData from './works/solution';
 
 export type WorkCategory = 'all' | 'project' | 'operation' | 'solution' | 'renewal' | 'award' | 'personal';
 
-/** `content/works/*.ts` 의 `as const` 항목과 동기화 (readonly 추론 유지) */
+/** `works/*.ts` 의 `as const` 항목과 동기화 (readonly 추론 유지) */
 type WorkEntry =
     | (typeof projectData)[number]
     | (typeof operationData)[number]
@@ -36,7 +36,7 @@ export const workCategories = [
     { key: 'award', label: { ko: '수상 연계 프로젝트', en: 'Award-linked' } },
 ] as const;
 
-/** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`core/data/content/works/`) */
+/** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`core/content/works/`) */
 export const careerWorks = [...projectData, ...operationData, ...solutionData, ...renewalData, ...awardData];
 
 export const personalWorksList = personalData;

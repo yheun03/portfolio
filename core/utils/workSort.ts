@@ -1,4 +1,4 @@
-import type { WorkItem } from '~/core/data/works';
+import type { WorkItem } from '@content/works';
 
 export type WorkSortMode = 'start' | 'title';
 
@@ -24,6 +24,7 @@ export type WorkYearEntry =
           type: 'work';
           key: string;
           work: WorkItem;
+          firstWork?: boolean;
       };
 
 export const getWorkStartYear = (work: WorkItem) => {
@@ -66,7 +67,7 @@ export const createWorkYearEntries = (works: readonly WorkItem[]) => {
     const entries: WorkYearEntry[] = [];
     let currentYear = '';
 
-    works.forEach((work) => {
+    works.forEach((work, index) => {
         const year = getWorkStartYear(work);
 
         if (year && year !== currentYear) {
@@ -82,6 +83,7 @@ export const createWorkYearEntries = (works: readonly WorkItem[]) => {
             type: 'work',
             key: work.id,
             work,
+            firstWork: index === 0,
         });
     });
 

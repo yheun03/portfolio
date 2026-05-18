@@ -21,8 +21,7 @@ export function useAppPathResolver() {
     }
 
     /** public 정적 파일·확장자 경로 등은 Vue 라우터가 처리하지 않음 */
-    const staticAssetExtension =
-        /\.(?:html?|pdf|txt|json|wasm|webp|gif|(?:jpe?g)|png|svg|ico|xml|csv|zip|woff2?)$/i;
+    const staticAssetExtension = /\.(?:html?|pdf|txt|json|wasm|webp|gif|(?:jpe?g)|png|svg|ico|xml|csv|zip|woff2?)$/i;
 
     /** `NuxtLink`용 — 단일 `/`로 시작하는 앱 SPA 경로만 */
     function isAppRoute(path: string): boolean {

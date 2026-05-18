@@ -1,6 +1,6 @@
 import { storeToRefs } from 'pinia';
-import { workCategories, type WorkCategory } from '~/core/data/works';
-import { useWorksUiStore } from '~/core/stores/worksUiStore';
+import { workCategories, type WorkCategory } from '@content/works';
+import { useWorksUiStore } from '@stores/worksUiStore';
 
 /**
  * 프로젝트 섹션 탭 → 필터된 목록 렌더링.

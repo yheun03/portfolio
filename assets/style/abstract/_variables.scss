@@ -175,7 +175,7 @@ $font-presets: (
     --primary-800: #423622;
     --primary-900: #322a1a;
     --accent-hot: #c45a4a;
-    --accent-mint: #5a7566;
+    --accent-mint: #6f6472;
     --state-error: #dc2626;
     --state-success: #0f9f6e;
     --state-warning: #d97706;
@@ -206,9 +206,9 @@ $font-presets: (
             color-mix(in srgb, var(--accent-hot) 10%, transparent));
     --gradient-surface: linear-gradient(168deg, var(--grayscale-0) 0%, var(--grayscale-200) 100%);
     --gradient-noise: linear-gradient(185deg, var(--grayscale-50) 0%, var(--grayscale-200) 55%, var(--grayscale-100) 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-400) 16%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 9%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 8%, transparent), transparent 45%);
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-400) 15%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--primary-300) 7%, transparent), transparent 45%);
     --radius-card: 0.65rem;
     --radius-pill: 999px;
     --radius-md: 0.8rem;
@@ -268,54 +268,54 @@ $font-presets: (
 }
 
 [data-theme="dark"] {
-    --grayscale-0: #050810;
-    --grayscale-50: #0a1222;
-    --grayscale-100: #0d1424;
-    --grayscale-200: #141d32;
-    --grayscale-300: #2a3f63;
-    --grayscale-400: #40506c;
-    --grayscale-500: #6b7d9d;
-    --grayscale-600: #9fb1d6;
-    --grayscale-700: #cbd5e1;
-    --grayscale-800: #e2e8f0;
-    --grayscale-900: #f4f7ff;
+    --grayscale-0: #070911;
+    --grayscale-50: #0d1220;
+    --grayscale-100: #111827;
+    --grayscale-200: #1a2233;
+    --grayscale-300: #30384d;
+    --grayscale-400: #4a5368;
+    --grayscale-500: #717b92;
+    --grayscale-600: #a6b0c3;
+    --grayscale-700: #cbd2df;
+    --grayscale-800: #e4e8ef;
+    --grayscale-900: #f7f3e7;
     --grayscale-950: #ffffff;
-    /* Luminous gold + soft terracotta/sage on navy */
-    --primary-50: #14120e;
-    --primary-100: #221e18;
-    --primary-200: #352e24;
-    --primary-300: #4f4536;
-    --primary-400: #7a6644;
-    --primary-500: #a68954;
-    --primary-600: #d4b86a;
-    --primary-700: #e8cc82;
-    --primary-800: #f0ddb0;
-    --primary-900: #f7edd4;
-    --accent-hot: #e8a090;
-    --accent-mint: #8fbc9e;
+    /* Luminous brass + restrained coral on navy */
+    --primary-50: #17130b;
+    --primary-100: #29210f;
+    --primary-200: #453719;
+    --primary-300: #6b5524;
+    --primary-400: #9c7830;
+    --primary-500: #c99c3d;
+    --primary-600: #e2bd68;
+    --primary-700: #f1d58e;
+    --primary-800: #f6e2b6;
+    --primary-900: #fbf0d4;
+    --accent-hot: #d98272;
+    --accent-mint: #59677f;
     --overlay: color-mix(in srgb, #020617 74%, transparent);
     --glass-2: color-mix(in srgb, #122345 72%, transparent);
     --glass-2-strong: color-mix(in srgb, #122345 86%, transparent);
     --shadow-soft: 0 26px 56px color-mix(in srgb, #020617 62%, transparent);
     --shadow-lift: 0 36px 80px color-mix(in srgb, #000 38%, transparent);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-400) 58%, transparent) inset;
-    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 32%, transparent);
-    --gradient-accent: linear-gradient(118deg, var(--primary-600) 0%, var(--accent-hot) 46%, var(--accent-mint) 100%);
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 36%, transparent);
+    --gradient-accent: linear-gradient(118deg, var(--primary-700) 0%, var(--primary-600) 58%, var(--accent-hot) 100%);
     --gradient-accent-soft: linear-gradient(135deg,
             color-mix(in srgb, var(--primary-600) 22%, transparent),
             color-mix(in srgb, var(--accent-hot) 14%, transparent));
     --gradient-surface: linear-gradient(168deg, var(--grayscale-100) 0%, #121a22 100%);
     --gradient-noise: linear-gradient(185deg, var(--grayscale-0) 0%, var(--grayscale-100) 55%, var(--grayscale-50) 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--primary-600) 28%, transparent), transparent 46%),
-        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 16%, transparent), transparent 36%),
-        radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--accent-mint) 14%, transparent), transparent 48%);
+    --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--primary-600) 24%, transparent), transparent 46%),
+        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 12%, transparent), transparent 36%),
+        radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--primary-400) 9%, transparent), transparent 48%);
 
-    --gallery-bg: #030a12;
-    --gallery-bg-elevated: #05101c;
-    --gallery-cream: #f5f0e1;
-    --gallery-muted: #5d7b93;
-    --gallery-accent: #ffd700;
-    --gallery-body: #ffffff;
+    --gallery-bg: #070911;
+    --gallery-bg-elevated: #101725;
+    --gallery-cream: #fbf0d4;
+    --gallery-muted: #a18b5f;
+    --gallery-accent: #f1d58e;
+    --gallery-body: #f7f3e7;
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
     --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
     --gallery-active-fg: #030a12;

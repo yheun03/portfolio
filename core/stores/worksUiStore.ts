@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { works, type WorkCategory, type WorkItem } from '~/core/data/works';
+import { works, type WorkCategory, type WorkItem } from '@content/works';
 
 export const useWorksUiStore = defineStore('worksUi', () => {
     const selectedCategory = ref<WorkCategory>('all');

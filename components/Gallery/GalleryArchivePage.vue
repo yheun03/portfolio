@@ -10,21 +10,21 @@
                 @update:sort-mode="sortMode = $event" @update:view-mode="viewMode = $event" />
 
             <div v-if="viewMode === 'editorial'" class="gallery-editorial__timeline">
-                <section v-for="group in editorialYearGroups" :key="group.key" class="gallery-editorial__era"
-                    :class="{ 'gallery-editorial__era--flat': !group.year }">
+                <section v-for="(group, groupIndex) in editorialYearGroups" :key="group.key"
+                    class="gallery-editorial__era" :class="{ 'gallery-editorial__era--flat': !group.year }">
                     <h2 v-if="group.year" class="gallery-editorial__year">{{ group.year }}</h2>
                     <div class="gallery-editorial__era-body">
-                        <ProjectGalleryCard v-for="work in group.works" :key="work.id" :work="work"
+                        <ProjectGalleryCard v-for="(work, index) in group.works" :key="work.id" :work="work"
                             :to="`${basePath}/${work.id}`" view-mode="editorial"
-                            :entry-label="t('gallery.viewEntry')" />
+                            :priority="groupIndex === 0 && index === 0" :entry-label="t('gallery.viewEntry')" />
                     </div>
                 </section>
             </div>
             <div v-else class="gallery-page__grid">
                 <template v-for="entry in galleryEntries" :key="entry.key">
                     <h2 v-if="entry.type === 'year'" class="gallery-page__year">{{ entry.year }}</h2>
-                    <ProjectGalleryCard v-else :work="entry.work" :to="`${basePath}/${entry.work.id}`"
-                        view-mode="grid" :entry-label="t('gallery.viewEntry')" />
+                    <ProjectGalleryCard v-else :work="entry.work" :to="`${basePath}/${entry.work.id}`" view-mode="grid"
+                        :priority="entry.firstWork" :entry-label="t('gallery.viewEntry')" />
                 </template>
             </div>
         </article>
@@ -32,8 +32,8 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from '~/core/data/works';
-import type { GalleryArchiveVariant } from '~/core/composables/useGalleryArchive';
+import type { WorkItem } from '@content/works';
+import type { GalleryArchiveVariant } from '@composables/useGalleryArchive';
 import AppLayout from '~/components/Layout/AppLayout.vue';
 import GalleryPageHeader from '~/components/Gallery/GalleryPageHeader.vue';
 import ProjectGalleryCard from '~/components/Card/ProjectGalleryCard.vue';

@@ -4,5 +4,5 @@
 
 <script setup lang="ts">
 import GalleryArchivePage from '~/components/Gallery/GalleryArchivePage.vue';
-import { personalWorksList } from '~/core/data/works';
+import { personalWorksList } from '@content/works';
 </script>

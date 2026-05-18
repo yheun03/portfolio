@@ -1,4 +1,4 @@
-import { useLocaleStore } from '~/core/stores/localeStore';
+import { useLocaleStore } from '@stores/localeStore';
 
 /**
  * 모든 라우트에서 언어를 초기화합니다.

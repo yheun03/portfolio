@@ -91,7 +91,7 @@
 
             &.is-active {
                 color: $grayscale-0;
-                background: $gradient-accent;
+                background: var(--nav-active-bg, #{$gradient-accent});
                 box-shadow: 0 8px 22px color-mix(in srgb, $primary-600 32%, transparent);
                 text-shadow: none;
             }
@@ -211,9 +211,21 @@
 
         &.is-active {
             border-color: color-mix(in srgb, $primary-600 42%, $grayscale-300);
-            background: $gradient-accent;
+            background: var(--nav-active-bg, #{$gradient-accent});
             color: $grayscale-0;
         }
+    }
+}
+
+[data-theme="dark"] {
+    --nav-active-bg: linear-gradient(118deg, var(--primary-800) 0%, var(--primary-700) 56%, var(--primary-600) 100%);
+
+    .app-header__nav a.is-active,
+    .mobile-menu a.is-active {
+        color: var(--grayscale-0);
+        box-shadow:
+            0 0 0 1px color-mix(in srgb, var(--primary-900) 38%, transparent) inset,
+            0 10px 26px color-mix(in srgb, var(--primary-700) 28%, transparent);
     }
 }
 

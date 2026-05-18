@@ -1,26 +1,41 @@
-import type { WorkItem } from '~/core/data/works';
-import {
-    createWorkYearEntries,
-    groupWorkYearEntries,
-    sortWorksByStartDesc,
-    sortWorksByTitleAsc,
-    type WorkSortMode,
-} from '~/core/utils/workSort';
+import type { WorkItem } from '@content/works';
+import { createWorkYearEntries, groupWorkYearEntries, sortWorksByStartDesc, sortWorksByTitleAsc, type WorkSortMode } from '@utils/workSort';
 
 export type GalleryArchiveVariant = 'career' | 'personal';
+
+const galleryVariantConfig = {
+    career: {
+        titleKey: 'gallery.careerTitle',
+        metaTitleKey: 'gallery.careerMetaTitle',
+        metaDescriptionKey: 'gallery.careerMetaDescription',
+        basePath: '/projects',
+        listLabelKey: 'gallery.backToCareerList',
+        eyebrowKey: 'gallery.careerEyebrow',
+        koName: '실무 프로젝트',
+        enName: 'WORKS',
+    },
+    personal: {
+        titleKey: 'gallery.personalTitle',
+        metaTitleKey: 'gallery.personalMetaTitle',
+        metaDescriptionKey: 'gallery.personalMetaDescription',
+        basePath: '/personal',
+        listLabelKey: 'gallery.backToPersonalList',
+        eyebrowKey: 'gallery.personalEyebrow',
+        koName: '개인 프로젝트',
+        enName: 'PERSONAL',
+    },
+} as const;
+
+export function getGalleryVariantConfig(variant: GalleryArchiveVariant) {
+    return galleryVariantConfig[variant];
+}
 
 export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkItem[]) {
     const { t, pick, locale } = useLocale();
     const sortMode = ref<WorkSortMode>('start');
     const { viewMode } = useGalleryViewMode();
     const editorialYear = new Date().getFullYear();
-
-    const isCareer = variant === 'career';
-
-    const titleKey = isCareer ? 'gallery.careerTitle' : 'gallery.personalTitle';
-    const metaTitleKey = isCareer ? 'gallery.careerMetaTitle' : 'gallery.personalMetaTitle';
-    const metaDescriptionKey = isCareer ? 'gallery.careerMetaDescription' : 'gallery.personalMetaDescription';
-    const basePath = isCareer ? '/projects' : '/personal';
+    const config = getGalleryVariantConfig(variant);
 
     const sortOptions = computed<{ value: WorkSortMode; label: string }[]>(() => [
         { value: 'start', label: locale.value === 'ko' ? '시작시간' : 'Start date' },
@@ -28,20 +43,17 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
     ]);
 
     const sortedWorks = computed(() =>
-        [...works].sort((a, b) =>
-            sortMode.value === 'start'
-                ? sortWorksByStartDesc(a, b)
-                : sortWorksByTitleAsc(a, b, pick, locale.value),
-        ),
+        [...works].sort((a, b) => (sortMode.value === 'start' ? sortWorksByStartDesc(a, b) : sortWorksByTitleAsc(a, b, pick, locale.value))),
     );
 
     const galleryEntries = computed(() =>
         sortMode.value === 'start'
             ? createWorkYearEntries(sortedWorks.value)
-            : sortedWorks.value.map((work) => ({
+            : sortedWorks.value.map((work, index) => ({
                   type: 'work' as const,
                   key: work.id,
                   work,
+                  firstWork: index === 0,
               })),
     );
 
@@ -53,43 +65,33 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
 
     const lead = computed(() =>
         locale.value === 'ko'
-            ? isCareer
+            ? variant === 'career'
                 ? `실무·내부 프로젝트 ${works.length}건을 캡처·소요 시간·언어 스택과 함께 정리했습니다.`
                 : `개인 프로젝트 ${works.length}건을 아카이브로 정리했습니다.`
-            : isCareer
+            : variant === 'career'
               ? `${works.length} client and in-house projects with captures, duration, and language stack.`
               : `${works.length} personal projects in an archive layout.`,
     );
 
     const editorialKicker = computed(() =>
-        locale.value === 'ko'
-            ? isCareer
-                ? `실무 프로젝트 • ${editorialYear} • 아카이브`
-                : `개인 프로젝트 • ${editorialYear} • 아카이브`
-            : isCareer
-              ? `WORKS • ${editorialYear} • ARCHIVE`
-              : `PERSONAL • ${editorialYear} • ARCHIVE`,
+        locale.value === 'ko' ? `${config.koName} • ${editorialYear} • 아카이브` : `${config.enName} • ${editorialYear} • ARCHIVE`,
     );
 
     const editorialStats = computed(() =>
-        locale.value === 'ko'
-            ? `${works.length}건 • 캡처 • 스택`
-            : `${works.length} PROJECTS • CAPTURES • STACK`,
+        locale.value === 'ko' ? `${works.length}건 • 캡처 • 스택` : `${works.length} PROJECTS • CAPTURES • STACK`,
     );
 
     const heroNumber = computed(() => String(works.length).padStart(2, '0'));
 
-    const heroAriaLabel = computed(() =>
-        locale.value === 'ko' ? `총 ${works.length}개 프로젝트` : `${works.length} projects total`,
-    );
+    const heroAriaLabel = computed(() => (locale.value === 'ko' ? `총 ${works.length}개 프로젝트` : `${works.length} projects total`));
 
     const sortLegend = computed(() => (locale.value === 'ko' ? '정렬' : 'Sort'));
     const sortAriaLabel = computed(() =>
         locale.value === 'ko'
-            ? isCareer
+            ? variant === 'career'
                 ? '프로젝트 정렬 기준'
                 : '개인 프로젝트 정렬 기준'
-            : isCareer
+            : variant === 'career'
               ? 'Project sort order'
               : 'Personal project sort order',
     );
@@ -102,20 +104,20 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
     const viewLegend = computed(() => t('gallery.viewLegend'));
     const viewAriaLabel = computed(() => t('gallery.viewAriaLabel'));
 
-    const gridEyebrow = computed(() => (isCareer ? t('gallery.careerEyebrow') : t('gallery.personalEyebrow')));
+    const gridEyebrow = computed(() => t(config.eyebrowKey));
 
     usePortfolioSeo(() => ({
-        title: t(metaTitleKey),
-        description: t(metaDescriptionKey),
-        path: basePath,
+        title: t(config.metaTitleKey),
+        description: t(config.metaDescriptionKey),
+        path: config.basePath,
         locale: locale.value,
         keywords: works.flatMap((work) => [pick(work.title), ...work.languages, ...work.tech]),
         jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
-            name: t(metaTitleKey),
-            description: t(metaDescriptionKey),
-            url: `https://yheun03.github.io/portfolio${basePath}`,
+            name: t(config.metaTitleKey),
+            description: t(config.metaDescriptionKey),
+            url: `https://yheun03.github.io/portfolio${config.basePath}`,
             inLanguage: locale.value === 'ko' ? 'ko-KR' : 'en-US',
             mainEntity: {
                 '@type': 'ItemList',
@@ -123,7 +125,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
                     '@type': 'ListItem',
                     position: index + 1,
                     name: pick(work.title),
-                    url: `https://yheun03.github.io/portfolio${basePath}/${work.id}`,
+                    url: `https://yheun03.github.io/portfolio${config.basePath}/${work.id}`,
                 })),
             },
         },
@@ -147,8 +149,8 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
         viewLegend,
         viewAriaLabel,
         gridEyebrow,
-        titleKey,
-        basePath,
-        isCareer,
+        titleKey: config.titleKey,
+        basePath: config.basePath,
+        isCareer: variant === 'career',
     };
 }

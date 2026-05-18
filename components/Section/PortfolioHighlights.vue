@@ -26,9 +26,9 @@
 </template>
 
 <script setup lang="ts">
-import { highlights } from '~/core/data/site';
-import { useHighlightsUiStore } from '~/core/stores/highlightsUiStore';
-import type { HighlightTabKey } from '~/core/types/highlights';
+import { highlights } from '@content/site';
+import { useHighlightsUiStore } from '@stores/highlightsUiStore';
+import type { HighlightTabKey } from '@app-types/highlights';
 
 const highlightsUi = useHighlightsUiStore();
 const { t, pick, locale } = useLocale();

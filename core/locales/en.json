@@ -62,6 +62,7 @@
         "details": "Details",
         "overview": "Overview",
         "role": "Role",
+        "breadcrumbLabel": "Breadcrumb",
         "backToCareerList": "Back to client works",
         "backToPersonalList": "Back to personal projects"
     },

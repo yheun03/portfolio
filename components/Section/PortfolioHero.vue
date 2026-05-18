@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { profile } from "~/core/data/site";
+import { profile } from "@content/site";
 
 const { t, pick, locale } = useLocale();
 const featuredKeywords = computed(() => profile.keywords.slice(0, 7));
