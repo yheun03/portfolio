@@ -6,9 +6,9 @@ export const usePortfolioGsap = () => {
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 if (typeof window.requestIdleCallback === 'function') {
-                    window.requestIdleCallback(callback, { timeout: 1200 });
+                    window.requestIdleCallback(callback, { timeout: 2800 });
                 } else {
-                    window.setTimeout(callback, 450);
+                    window.setTimeout(callback, 800);
                 }
             });
         });
@@ -33,23 +33,31 @@ export const usePortfolioGsap = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const context = gsap.context(() => {
-            gsap.to('.hero__canvas', {
-                xPercent: -8,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '.section--hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true,
-                },
-            });
+            const heroCanvas = root.querySelector<HTMLElement>('.hero__canvas');
+            if (heroCanvas) {
+                gsap.to(heroCanvas, {
+                    xPercent: -8,
+                    ease: 'none',
+                    force3D: true,
+                    scrollTrigger: {
+                        trigger: '.section--hero',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true,
+                    },
+                });
+            }
 
+            /** opacity 전용 — CSS 변수(--layer-progress) 스크럽은 매 프레임 리플로우 유발 */
             gsap.utils.toArray<HTMLElement>('.page-layer').forEach((layer) => {
+                const overlay = layer.querySelector<HTMLElement>('.page-layer__scroll-veil');
+                if (!overlay) return;
+
                 gsap.fromTo(
-                    layer,
-                    { '--layer-progress': 0 },
+                    overlay,
+                    { opacity: 0.42 },
                     {
-                        '--layer-progress': 1,
+                        opacity: 0.78,
                         ease: 'none',
                         scrollTrigger: {
                             trigger: layer,
@@ -62,7 +70,9 @@ export const usePortfolioGsap = () => {
             });
         }, root);
 
-        ScrollTrigger.refresh();
+        requestAnimationFrame(() => {
+            if (!cancelled) ScrollTrigger.refresh();
+        });
 
         cleanup = () => {
             context.revert();

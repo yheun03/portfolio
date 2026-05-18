@@ -105,12 +105,14 @@ html.is-menu-open {
     place-items: center;
     line-height: 1;
     transform-origin: 50% 58%;
+    will-change: transform;
     animation: accent-emoji-float 3.2s ease-in-out infinite;
 }
 
 .accent-emoji--soft {
     animation-duration: 4.1s;
     animation-name: accent-emoji-glow;
+    will-change: transform, opacity;
 }
 
 .skip-link {
@@ -192,12 +194,12 @@ html.is-menu-open {
     0%,
     100% {
         transform: translateY(0) scale(1);
-        filter: drop-shadow(0 0 0 color-mix(in srgb, var(--color-primary) 0%, transparent));
+        opacity: 0.88;
     }
 
     50% {
-        transform: translateY(-2px) scale(1.07);
-        filter: drop-shadow(0 0 10px color-mix(in srgb, var(--color-primary) 38%, transparent));
+        transform: translateY(-2px) scale(1.05);
+        opacity: 1;
     }
 }
 

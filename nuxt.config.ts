@@ -23,17 +23,6 @@ export default defineNuxtConfig({
         baseURL: resolvedBaseURL,
         head: {
             link: [{ rel: 'icon', type: 'image/svg+xml', href: faviconHref }],
-            script: [
-                {
-                    key: 'gtm-base',
-                    type: 'text/javascript',
-                    tagPosition: 'head',
-                    /** 헤드 안에서 가능한 한 앞쪽 (Unhead: 숫자가 클수록 먼저 삽입) */
-                    tagPriority: 100,
-                    innerHTML:
-                        "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJZM3PWS');",
-                },
-            ],
             noscript: [
                 {
                     key: 'gtm-noscript',
@@ -47,12 +36,7 @@ export default defineNuxtConfig({
     },
 
     modules: ['@pinia/nuxt'],
-    css: [
-        '@fontsource/roboto-slab/400.css',
-        '@fontsource/roboto-slab/700.css',
-        '@fontsource/roboto-slab/900.css',
-        '~/assets/style/main.scss',
-    ],
+    css: ['~/assets/style/main.scss'],
 
     alias: {
         '@composables': fileURLToPath(new URL('./core/composables', import.meta.url)),
@@ -76,7 +60,9 @@ export default defineNuxtConfig({
         '~/core/plugins/theme-init.client',
         '~/core/plugins/locale-init.client',
         '~/core/plugins/content-ready.client',
+        '~/core/plugins/gtm-deferred.client',
         '~/core/plugins/naver-analytics.client',
+        '~/core/plugins/gallery-fonts.client',
     ],
 
     components: [
@@ -92,6 +78,13 @@ export default defineNuxtConfig({
             chunkSizeWarningLimit: 900,
             target: 'es2022',
             modulePreload: { polyfill: false },
+            rollupOptions: {
+                output: {
+                    manualChunks(id) {
+                        if (id.includes('node_modules/gsap')) return 'gsap';
+                    },
+                },
+            },
         },
         server: {
             watch: {

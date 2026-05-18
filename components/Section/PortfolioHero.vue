@@ -1,7 +1,7 @@
 <template>
     <section id="hello" class="section section--hero">
         <div class="hero__poster">
-            <WelcomeCanvas class="hero__canvas" aria-hidden="true" />
+            <WelcomeCanvas v-if="heroCanvasReady" class="hero__canvas" aria-hidden="true" />
 
             <p class="hero__availability">
                 <span>{{ profile.name }}</span>
@@ -52,9 +52,13 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import { profile } from "@content/site";
 
+const WelcomeCanvas = defineAsyncComponent(() => import("~/components/Section/WelcomeCanvas.vue"));
+
 const { t, pick, locale } = useLocale();
+const heroCanvasReady = ref(false);
 const featuredKeywords = computed(() => profile.keywords.slice(0, 7));
 const convertedStats = computed(() => profile.stats.map((item) => ({ ...item, label: pick(item.label) })));
 const counters = convertedStats.value.map((item) => useCountUp(item.value));
@@ -63,6 +67,15 @@ const statsRef = ref<HTMLElement | null>(null);
 let statsObserver: IntersectionObserver | null = null;
 
 onMounted(() => {
+    const mountCanvas = () => {
+        heroCanvasReady.value = true;
+    };
+    if (typeof window.requestIdleCallback === "function") {
+        window.requestIdleCallback(mountCanvas, { timeout: 1800 });
+    } else {
+        window.setTimeout(mountCanvas, 600);
+    }
+
     if (!statsRef.value) return;
     statsObserver = new IntersectionObserver(
         (entries) => {
