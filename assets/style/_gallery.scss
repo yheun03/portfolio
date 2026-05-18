@@ -70,20 +70,6 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     }
 }
 
-body:has(.gallery-page--career.gallery-page--editorial),
-body:has(.gallery-detail.gallery-page--career.gallery-page--editorial) {
-    --gallery-bg: #060b19;
-    --gallery-bg-elevated: #10192d;
-    --gallery-cream: #fff0c9;
-    --gallery-muted: #b79a61;
-    --gallery-accent: #f4c95d;
-    --gallery-body: #f8edd2;
-    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
-    --gallery-active-fg: #07101f;
-    --gallery-active-bg: var(--gallery-accent);
-}
-
 .portfolio-page:has(.gallery-page--editorial),
 .portfolio-page:has(.gallery-detail.gallery-page--editorial) {
     background:
