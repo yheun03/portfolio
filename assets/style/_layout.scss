@@ -159,17 +159,37 @@
 
     display: grid;
     align-content: start;
-    gap: $space-5;
+    gap: $space-4;
 
     width: min(22rem, calc(100vw - 1.5rem));
-    padding: $space-6;
+    padding: $space-5;
 
-    border: 1px solid color-mix(in srgb, $primary-600 28%, $grayscale-300);
+    border: 1px solid color-mix(in srgb, $primary-600 32%, $grayscale-300);
     border-radius: $radius-xl;
-    background: color-mix(in srgb, $glass-2-strong 96%, transparent);
-    box-shadow: $shadow-lift, $shadow-glow;
-    backdrop-filter: blur(14px);
+    background:
+        linear-gradient(155deg,
+            color-mix(in srgb, var(--color-surface) 94%, transparent) 0%,
+            color-mix(in srgb, var(--color-surface) 82%, var(--color-primary) 8%) 58%,
+            color-mix(in srgb, var(--color-bg) 92%, transparent) 100%);
+    box-shadow:
+        $shadow-lift,
+        $shadow-glow,
+        0 0 0 1px color-mix(in srgb, var(--color-surface) 60%, transparent) inset;
+    backdrop-filter: blur(20px) saturate(1.18);
     overflow-y: auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -0.42rem;
+        right: 1.55rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-top: 1px solid color-mix(in srgb, $primary-600 32%, $grayscale-300);
+        border-left: 1px solid color-mix(in srgb, $primary-600 32%, $grayscale-300);
+        background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+        transform: rotate(45deg);
+    }
 
     &__backdrop {
         position: fixed;
@@ -179,29 +199,67 @@
         min-height: 0;
         padding: 0;
         border: 0;
-        background: color-mix(in srgb, $grayscale-100 48%, transparent);
-        backdrop-filter: blur(3px);
+        background:
+            radial-gradient(ellipse 70% 45% at 88% 0%, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 62%),
+            color-mix(in srgb, $grayscale-100 58%, transparent);
+        backdrop-filter: blur(5px);
         cursor: pointer;
     }
 
     &__eyebrow {
+        width: fit-content;
+        padding: $space-2 $space-3;
+        border: 1px solid color-mix(in srgb, $primary-600 24%, transparent);
+        border-radius: $radius-pill;
+        background: color-mix(in srgb, $primary-600 8%, transparent);
         color: $primary-600;
         @include font(caption-2, $font-weight-bold);
         text-transform: uppercase;
     }
 
     a {
+        position: relative;
         display: flex;
         min-height: $size-touch;
         align-items: center;
-        padding-inline: $space-5;
-        border: 1px solid color-mix(in srgb, $grayscale-300 72%, transparent);
+        justify-content: space-between;
+        gap: $space-4;
+        padding: $space-4 $space-5;
+        border: 1px solid color-mix(in srgb, $grayscale-300 64%, transparent);
         border-radius: $radius-card;
-        background: color-mix(in srgb, $grayscale-0 52%, transparent);
+        background: color-mix(in srgb, $grayscale-0 56%, transparent);
+        box-shadow: 0 1px 0 color-mix(in srgb, $grayscale-0 60%, transparent) inset;
+        color: $grayscale-900;
         @include font(title-2, $font-weight-bold);
+        text-decoration: none;
+        transition:
+            background-color 0.22s ease,
+            border-color 0.22s ease,
+            color 0.22s ease,
+            transform 0.22s ease,
+            box-shadow 0.22s ease;
+
+        &::after {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-top: 2px solid currentColor;
+            border-right: 2px solid currentColor;
+            opacity: 0.45;
+            transform: rotate(45deg);
+            transition: opacity 0.22s ease, transform 0.22s ease;
+        }
 
         &:hover {
-            background: color-mix(in srgb, $primary-600 10%, transparent);
+            border-color: color-mix(in srgb, $primary-600 34%, $grayscale-300);
+            background: color-mix(in srgb, $primary-600 11%, $grayscale-0);
+            box-shadow: $shadow-soft;
+            transform: translateY(-1px);
+
+            &::after {
+                opacity: 0.85;
+                transform: translateX(0.12rem) rotate(45deg);
+            }
         }
 
         &:focus-visible {
@@ -213,16 +271,35 @@
             border-color: color-mix(in srgb, $primary-600 42%, $grayscale-300);
             background: var(--nav-active-bg, #{$gradient-accent});
             color: $grayscale-0;
+            box-shadow: 0 14px 34px color-mix(in srgb, $primary-600 28%, transparent);
         }
     }
 }
 
 [data-theme="dark"] {
-    --nav-active-bg: linear-gradient(118deg, var(--primary-800) 0%, var(--primary-700) 56%, var(--primary-600) 100%);
+    --nav-active-bg: linear-gradient(118deg, var(--primary-800) 0%, var(--primary-700) 52%, var(--primary-600) 100%);
+
+    .mobile-menu {
+        background:
+            linear-gradient(155deg,
+                color-mix(in srgb, var(--grayscale-100) 92%, transparent) 0%,
+                color-mix(in srgb, var(--grayscale-50) 88%, var(--primary-500) 5%) 62%,
+                color-mix(in srgb, var(--grayscale-0) 96%, transparent) 100%);
+
+        &::before {
+            background: color-mix(in srgb, var(--grayscale-100) 92%, transparent);
+        }
+
+        a {
+            background: color-mix(in srgb, var(--grayscale-100) 64%, transparent);
+        }
+    }
 
     .app-header__nav a.is-active,
     .mobile-menu a.is-active {
-        color: var(--grayscale-0);
+        color: #07101f;
+        border-color: color-mix(in srgb, var(--primary-800) 68%, transparent);
+        background: var(--nav-active-bg);
         box-shadow:
             0 0 0 1px color-mix(in srgb, var(--primary-900) 38%, transparent) inset,
             0 10px 26px color-mix(in srgb, var(--primary-700) 28%, transparent);

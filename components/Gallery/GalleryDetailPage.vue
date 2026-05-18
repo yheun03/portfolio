@@ -1,7 +1,7 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="config.basePath"
         :footer-text="t('footer.copyright')" :show-section-dock="false">
-        <article class="gallery-detail gallery-page--editorial section">
+        <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
             <nav class="gallery-detail__breadcrumb" :aria-label="t('gallery.breadcrumbLabel')">
                 <NuxtLink :to="config.basePath">{{ t(config.listLabelKey) }}</NuxtLink>
                 <span aria-hidden="true">•</span>
@@ -112,6 +112,7 @@ const { t, pick, locale } = useLocale();
 const { resolveAppPath, isAppRoute } = useAppPathResolver();
 const layoutLinks = useSubpageNavLinks();
 const config = getGalleryVariantConfig(props.variant);
+const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 const capturesTitleId = `gallery-${props.variant}-captures`;
 const overviewTitleId = `gallery-${props.variant}-overview`;
 

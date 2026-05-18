@@ -13,10 +13,13 @@ body:has(.gallery-detail.gallery-page--editorial) {
     color: var(--gallery-body);
 
     .app-background {
-        opacity: 0.08;
+        opacity: 0.12;
         background-image:
-            radial-gradient(ellipse 80% 55% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 9%, transparent), transparent 58%),
-            radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 22%, transparent), transparent 52%);
+            radial-gradient(ellipse 82% 56% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 58%),
+            radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 24%, transparent), transparent 52%),
+            linear-gradient(color-mix(in srgb, var(--gallery-muted) 18%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 18%, transparent) 1px, transparent 1px);
+        background-size: auto, auto, 96px 96px, 96px 96px;
     }
 
     .app-header {
@@ -65,6 +68,20 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
             radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
             radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-400) 10%, transparent), transparent 50%);
     }
+}
+
+body:has(.gallery-page--career.gallery-page--editorial),
+body:has(.gallery-detail.gallery-page--career.gallery-page--editorial) {
+    --gallery-bg: #060b19;
+    --gallery-bg-elevated: #10192d;
+    --gallery-cream: #fff0c9;
+    --gallery-muted: #b79a61;
+    --gallery-accent: #f4c95d;
+    --gallery-body: #f8edd2;
+    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
+    --gallery-active-fg: #07101f;
+    --gallery-active-bg: var(--gallery-accent);
 }
 
 .portfolio-page:has(.gallery-page--editorial),
@@ -389,7 +406,9 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     gap: 0;
     padding: clamp(1.75rem, 4vw, 3rem) clamp(1.5rem, 3.5vw, 2.75rem) clamp(2rem, 4.5vw, 3.25rem);
     border: 1px solid var(--gallery-frame);
+    border-radius: var(--radius-xl);
     background:
+        radial-gradient(ellipse 70% 44% at 78% 14%, color-mix(in srgb, var(--gallery-accent) 13%, transparent), transparent 56%),
         linear-gradient(165deg,
             color-mix(in srgb, var(--gallery-bg-elevated) 94%, var(--gallery-accent) 6%) 0%,
             var(--gallery-bg) 48%,
@@ -527,7 +546,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     max-width: 100%;
     padding: 0;
     border: 0;
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     background: transparent;
     box-shadow: none;
     color: inherit;
@@ -556,13 +575,26 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     overflow: hidden;
     padding: clamp(1.15rem, 2.8vw, 1.65rem) clamp(1.1rem, 2.5vw, 1.5rem) clamp(1rem, 2.2vw, 1.35rem);
     border: 1px solid var(--gallery-frame);
+    border-radius: var(--radius-lg);
     background:
+        radial-gradient(ellipse 72% 44% at 94% 10%, color-mix(in srgb, var(--gallery-accent) 9%, transparent), transparent 56%),
+        linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 9%, transparent) 1px, transparent 1px),
         linear-gradient(168deg,
             color-mix(in srgb, var(--gallery-bg-elevated) 92%, var(--gallery-muted) 8%) 0%,
             var(--gallery-bg) 55%,
             color-mix(in srgb, var(--gallery-bg) 90%, #000 10%) 100%);
+    background-size: auto, 4.5rem 100%, auto;
     box-shadow: inset 0 1px 0 color-mix(in srgb, var(--gallery-cream) 6%, transparent);
     transition: border-color 0.28s ease, box-shadow 0.28s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: clamp(0.55rem, 1.3vw, 0.8rem);
+        border: 1px solid color-mix(in srgb, var(--gallery-muted) 16%, transparent);
+        border-radius: calc(var(--radius-lg) - 0.35rem);
+        pointer-events: none;
+    }
 }
 
 .gallery-editorial__entry-index {
@@ -673,6 +705,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
     margin: 0;
     border: 0;
     border-top: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
+    border-radius: calc(var(--radius-lg) - 0.45rem);
     background: color-mix(in srgb, var(--gallery-muted) 6%, var(--gallery-bg));
     overflow: hidden;
 
@@ -798,7 +831,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         border-color: var(--gallery-accent);
         background: var(--gallery-accent);
         color: var(--gallery-active-fg);
-        border-radius: 0;
+        border-radius: var(--radius-card);
         font-size: 0.68rem;
         font-weight: 800;
         letter-spacing: 0.12em;
@@ -830,7 +863,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         margin: 0;
         overflow: hidden;
         border: 1px solid color-mix(in srgb, var(--gallery-muted) 35%, transparent);
-        border-radius: 0;
+        border-radius: var(--radius-lg);
         background: color-mix(in srgb, var(--gallery-muted) 6%, transparent);
 
         img {
@@ -850,7 +883,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         max-width: 72ch;
         padding: 0;
         border: 0;
-        border-radius: 0;
+        border-radius: var(--radius-lg);
         background: transparent;
 
         h2 {
@@ -876,7 +909,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
 
     .gallery-detail__footer-nav .base-button--ghost {
         border-color: color-mix(in srgb, var(--gallery-muted) 45%, transparent);
-        border-radius: 0;
+        border-radius: var(--radius-card);
         background: transparent;
         color: var(--gallery-cream);
         font-size: 0.65rem;
