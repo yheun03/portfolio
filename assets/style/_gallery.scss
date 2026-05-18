@@ -13,7 +13,7 @@ body:has(.gallery-detail.gallery-page--editorial) {
     color: var(--gallery-body);
 
     .app-background {
-        opacity: 0.06;
+        opacity: 0.08;
         background-image:
             radial-gradient(ellipse 80% 55% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 9%, transparent), transparent 58%),
             radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 22%, transparent), transparent 52%);
@@ -54,6 +54,16 @@ body:has(.gallery-detail.gallery-page--editorial) {
 
     .scroll-progress {
         opacity: 0.65;
+    }
+}
+
+html:not([data-theme="dark"]) body:has(.gallery-page--editorial),
+html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) {
+    .app-background {
+        opacity: 0.14;
+        background-image:
+            radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
+            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-600) 8%, transparent), transparent 50%);
     }
 }
 
@@ -362,7 +372,7 @@ body:has(.gallery-detail.gallery-page--editorial) {
         mix-blend-mode: soft-light;
     }
 
-    > * {
+    >* {
         position: relative;
         z-index: 1;
     }
@@ -948,6 +958,7 @@ body:has(.gallery-detail.gallery-page--editorial) {
 }
 
 @media (max-width: 1023.98px) {
+
     .gallery-page--editorial.section,
     .gallery-detail.gallery-page--editorial.section {
         width: 100%;
