@@ -1,6 +1,7 @@
 import type { WorkItem } from '~/core/data/works';
 import {
     createWorkYearEntries,
+    groupWorkYearEntries,
     sortWorksByStartDesc,
     sortWorksByTitleAsc,
     type WorkSortMode,
@@ -42,6 +43,12 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
                   key: work.id,
                   work,
               })),
+    );
+
+    const editorialYearGroups = computed(() =>
+        sortMode.value === 'start'
+            ? groupWorkYearEntries(createWorkYearEntries(sortedWorks.value))
+            : [{ year: '', key: 'all', works: sortedWorks.value }],
     );
 
     const lead = computed(() =>
@@ -129,6 +136,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkIte
         sortOptions,
         viewOptions,
         galleryEntries,
+        editorialYearGroups,
         lead,
         editorialKicker,
         editorialStats,

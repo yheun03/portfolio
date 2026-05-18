@@ -9,14 +9,22 @@
                 :sort-options="sortOptions" :view-options="viewOptions" :sort-mode="sortMode"
                 @update:sort-mode="sortMode = $event" @update:view-mode="viewMode = $event" />
 
-            <div :class="viewMode === 'editorial' ? 'gallery-editorial__feed' : 'gallery-page__grid'">
+            <div v-if="viewMode === 'editorial'" class="gallery-editorial__timeline">
+                <section v-for="group in editorialYearGroups" :key="group.key" class="gallery-editorial__era"
+                    :class="{ 'gallery-editorial__era--flat': !group.year }">
+                    <h2 v-if="group.year" class="gallery-editorial__year">{{ group.year }}</h2>
+                    <div class="gallery-editorial__era-body">
+                        <ProjectGalleryCard v-for="work in group.works" :key="work.id" :work="work"
+                            :to="`${basePath}/${work.id}`" view-mode="editorial"
+                            :entry-label="t('gallery.viewEntry')" />
+                    </div>
+                </section>
+            </div>
+            <div v-else class="gallery-page__grid">
                 <template v-for="entry in galleryEntries" :key="entry.key">
-                    <h2 v-if="entry.type === 'year'"
-                        :class="viewMode === 'editorial' ? 'gallery-editorial__year' : 'gallery-page__year'">
-                        {{ entry.year }}
-                    </h2>
+                    <h2 v-if="entry.type === 'year'" class="gallery-page__year">{{ entry.year }}</h2>
                     <ProjectGalleryCard v-else :work="entry.work" :to="`${basePath}/${entry.work.id}`"
-                        :view-mode="viewMode" :entry-label="t('gallery.viewEntry')" />
+                        view-mode="grid" :entry-label="t('gallery.viewEntry')" />
                 </template>
             </div>
         </article>
@@ -44,6 +52,7 @@ const {
     sortOptions,
     viewOptions,
     galleryEntries,
+    editorialYearGroups,
     lead,
     editorialKicker,
     editorialStats,

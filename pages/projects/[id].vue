@@ -8,12 +8,17 @@
                 <span>{{ pick(work.title) }}</span>
             </nav>
 
-            <header class="gallery-detail__header">
-                <p class="gallery-editorial__kicker">{{ detailKicker }}</p>
-                <h1 class="gallery-detail__title">{{ pick(work.title) }}</h1>
-                <span class="gallery-editorial__rule" aria-hidden="true" />
-                <p class="gallery-detail__status">{{ t("gallery.detailLabel") }}</p>
-                <p class="gallery-detail__period">{{ work.period }} · {{ pick(work.type) }} · {{ pick(work.duration) }}</p>
+            <header class="gallery-detail__header gallery-editorial__poster">
+                <div class="gallery-editorial__poster-top">
+                    <p class="gallery-editorial__kicker">{{ detailKicker }}</p>
+                    <p class="gallery-editorial__stats">{{ work.period }} · {{ pick(work.type) }}</p>
+                </div>
+                <div class="gallery-editorial__poster-hero">
+                    <h1 class="gallery-detail__title">{{ pick(work.title) }}</h1>
+                    <span class="gallery-editorial__rule" aria-hidden="true" />
+                    <p class="gallery-detail__status">{{ t("gallery.detailLabel") }}</p>
+                </div>
+                <p class="gallery-detail__intro gallery-editorial__dek">{{ pick(work.introduction) }}</p>
                 <dl class="gallery-detail__facts">
                     <div>
                         <dt>{{ t("gallery.duration") }}</dt>
@@ -36,7 +41,6 @@
                         </dd>
                     </div>
                 </dl>
-                <p class="gallery-detail__intro">{{ pick(work.introduction) }}</p>
             </header>
 
             <section class="gallery-detail__captures-section" :aria-label="t('gallery.captures')">
