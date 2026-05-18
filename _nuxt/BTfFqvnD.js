@@ -1,0 +1,1 @@
+import{_ as e}from"./Btv_TDud.js";import{f as t}from"./Dg9TE8XY.js";import{d as a,C as s,D as n,h as c,j as m,b as u}from"#entry";import"./v1YyMzPQ.js";const w=a({__name:"[id]",setup(f){const o=s(),r=t(o.params.id);if(!r)throw n({statusCode:404,statusMessage:"Project not found"});return(i,p)=>(u(),c(e,{variant:"career",work:m(r)},null,8,["work"]))}});export{w as default};
