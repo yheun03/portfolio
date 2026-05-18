@@ -1,16 +1,19 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal"
         :footer-text="t('footer.copyright')" :show-section-dock="false">
-        <article class="gallery-detail section gallery-detail--personal">
+        <article class="gallery-detail gallery-page--editorial section gallery-detail--personal">
             <nav class="gallery-detail__breadcrumb" aria-label="Breadcrumb">
                 <NuxtLink to="/personal">{{ t("gallery.backToPersonalList") }}</NuxtLink>
-                <span aria-hidden="true">/</span>
+                <span aria-hidden="true">•</span>
                 <span>{{ pick(work.title) }}</span>
             </nav>
 
             <header class="gallery-detail__header">
+                <p class="gallery-editorial__kicker">{{ detailKicker }}</p>
                 <h1 class="gallery-detail__title">{{ pick(work.title) }}</h1>
-                <p class="gallery-detail__period">{{ work.period }} · {{ pick(work.type) }}</p>
+                <span class="gallery-editorial__rule" aria-hidden="true" />
+                <p class="gallery-detail__status">{{ t("gallery.detailLabel") }}</p>
+                <p class="gallery-detail__period">{{ work.period }} · {{ pick(work.type) }} · {{ pick(work.duration) }}</p>
                 <dl class="gallery-detail__facts">
                     <div>
                         <dt>{{ t("gallery.duration") }}</dt>
@@ -107,6 +110,12 @@ const labels = computed(() => ({
     results: locale.value === "ko" ? "성과" : "Results",
     points: locale.value === "ko" ? "포인트" : "Key Points",
 }));
+
+const detailKicker = computed(() =>
+    locale.value === "ko"
+        ? `개인 프로젝트 • ${work.period} • 결과`
+        : `PERSONAL • ${work.period} • RESULT`,
+);
 
 function captureAlt(index: number) {
     const base = pick(work!.title);

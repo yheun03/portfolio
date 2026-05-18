@@ -20,7 +20,15 @@ export default defineNuxtConfig({
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            link: [{ rel: 'icon', type: 'image/svg+xml', href: faviconHref }],
+            link: [
+                { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
+                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+                {
+                    rel: 'stylesheet',
+                    href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap',
+                },
+            ],
             script: [
                 {
                     key: 'gtm-base',
@@ -68,6 +76,7 @@ export default defineNuxtConfig({
     components: [
         { path: '~/components/Common', pathPrefix: false },
         { path: '~/components/Card', pathPrefix: false },
+        { path: '~/components/Gallery', pathPrefix: false },
         { path: '~/components/Section', pathPrefix: false },
         { path: '~/components/Layout', pathPrefix: false },
     ],

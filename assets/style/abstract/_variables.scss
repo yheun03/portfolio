@@ -247,6 +247,18 @@ $font-presets: (
     --space-section-y: var(--space-fluid-2xl);
     --space-section-gap: var(--space-fluid-md);
     --space-block-gap: var(--space-fluid-sm);
+
+    /* Gallery / editorial archive (projects, personal) */
+    --gallery-slab: "Roboto Slab", "Rockwell", "Courier New", serif;
+    --gallery-max: min(42rem, 100%);
+    --gallery-pad: clamp(1.35rem, 4.5vw, 3.5rem);
+    --gallery-bg: #f6f1e8;
+    --gallery-cream: #0a1520;
+    --gallery-muted: #5d7b93;
+    --gallery-accent: #c9a000;
+    --gallery-body: #1a2834;
+    --gallery-active-fg: #0a1520;
+    --gallery-active-bg: var(--gallery-accent);
 }
 
 [data-theme="dark"] {
@@ -290,4 +302,12 @@ $font-presets: (
     --gradient-hero-mesh: radial-gradient(circle at 10% 16%, color-mix(in srgb, var(--primary-600) 34%, transparent), transparent 46%),
         radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 22%, transparent), transparent 36%),
         radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--accent-mint) 18%, transparent), transparent 48%);
+
+    --gallery-bg: #05101c;
+    --gallery-cream: #f5f0e1;
+    --gallery-muted: #5d7b93;
+    --gallery-accent: #ffd700;
+    --gallery-body: #ffffff;
+    --gallery-active-fg: #05101c;
+    --gallery-active-bg: var(--gallery-accent);
 }
