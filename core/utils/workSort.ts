@@ -33,6 +33,35 @@ export const getWorkStartYear = (work: WorkItem) => {
     return match?.[1] ?? '';
 };
 
+export type WorkYearGroup = {
+    year: string;
+    key: string;
+    works: WorkItem[];
+};
+
+/** 연도 헤더 + 해당 연도 작업 목록으로 묶음 (에디토리얼 sticky 연도 레일용) */
+export const groupWorkYearEntries = (entries: readonly WorkYearEntry[]): WorkYearGroup[] => {
+    const groups: WorkYearGroup[] = [];
+    let current: WorkYearGroup | null = null;
+
+    entries.forEach((entry) => {
+        if (entry.type === 'year') {
+            current = { year: entry.year, key: entry.key, works: [] };
+            groups.push(current);
+            return;
+        }
+
+        if (!current) {
+            current = { year: '', key: 'works', works: [] };
+            groups.push(current);
+        }
+
+        current.works.push(entry.work);
+    });
+
+    return groups;
+};
+
 export const createWorkYearEntries = (works: readonly WorkItem[]) => {
     const entries: WorkYearEntry[] = [];
     let currentYear = '';

@@ -248,16 +248,21 @@ $font-presets: (
     --space-section-gap: var(--space-fluid-md);
     --space-block-gap: var(--space-fluid-sm);
 
-    /* Gallery / editorial archive (projects, personal) */
+    /* Gallery / editorial sports poster (projects, personal) */
     --gallery-slab: "Roboto Slab", "Rockwell", "Courier New", serif;
-    --gallery-max: min(42rem, 100%);
+    --gallery-copy-max: 42ch;
+    --gallery-year-col: clamp(4.5rem, 11vw, 9.5rem);
+    --gallery-year-sticky-top: calc(var(--layout-header-height) + var(--space-5));
     --gallery-pad: clamp(1.35rem, 4.5vw, 3.5rem);
-    --gallery-bg: #f6f1e8;
-    --gallery-cream: #0a1520;
+    --gallery-bg: #030a12;
+    --gallery-bg-elevated: #05101c;
+    --gallery-cream: #f5f0e1;
     --gallery-muted: #5d7b93;
-    --gallery-accent: #c9a000;
-    --gallery-body: #1a2834;
-    --gallery-active-fg: #0a1520;
+    --gallery-accent: #ffd700;
+    --gallery-body: #ffffff;
+    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
+    --gallery-active-fg: #030a12;
     --gallery-active-bg: var(--gallery-accent);
 }
 
@@ -303,11 +308,5 @@ $font-presets: (
         radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent-hot) 22%, transparent), transparent 36%),
         radial-gradient(circle at 62% 78%, color-mix(in srgb, var(--accent-mint) 18%, transparent), transparent 48%);
 
-    --gallery-bg: #05101c;
-    --gallery-cream: #f5f0e1;
-    --gallery-muted: #5d7b93;
-    --gallery-accent: #ffd700;
-    --gallery-body: #ffffff;
-    --gallery-active-fg: #05101c;
-    --gallery-active-bg: var(--gallery-accent);
+    --gallery-bg-elevated: #071828;
 }
