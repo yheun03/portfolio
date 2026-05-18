@@ -63,7 +63,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--editorial) 
         opacity: 0.14;
         background-image:
             radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
-            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-600) 8%, transparent), transparent 50%);
+            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-400) 10%, transparent), transparent 50%);
     }
 }
 
