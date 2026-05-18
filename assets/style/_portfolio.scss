@@ -40,36 +40,28 @@
 }
 
 .page-layer {
-    --layer-progress: 0;
     position: relative;
     isolation: isolate;
 
-    &::before {
+    &__scroll-veil {
         position: absolute;
         inset: 0;
         z-index: 0;
         pointer-events: none;
+        opacity: 0.45;
+        will-change: opacity;
     }
 
-    &--works::before,
-    &--capability::before,
-    &--contact::before {
-        content: "";
-    }
-
-    &--works::before {
-        opacity: calc(0.45 + (var(--layer-progress) * 0.35));
+    &--works .page-layer__scroll-veil {
         background: radial-gradient(ellipse 90% 48% at 50% 0%, color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 62%);
     }
 
-    &--capability::before {
-        opacity: calc(0.42 + (var(--layer-progress) * 0.28));
+    &--capability .page-layer__scroll-veil {
         background: radial-gradient(ellipse 68% 42% at 6% 24%, color-mix(in srgb, var(--color-primary) 9%, transparent), transparent 54%),
             radial-gradient(ellipse 60% 44% at 95% 72%, color-mix(in srgb, var(--color-accent-hot) 8%, transparent), transparent 58%);
     }
 
-    &--contact::before {
-        opacity: calc(0.45 + (var(--layer-progress) * 0.3));
+    &--contact .page-layer__scroll-veil {
         background: radial-gradient(ellipse 86% 56% at 58% 110%, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 60%);
     }
 }
@@ -83,6 +75,8 @@
     padding: var(--space-section-y) 0;
 
     &:not(.section--hero) {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 36rem;
         display: grid;
         gap: var(--space-section-gap);
         counter-increment: section-count;

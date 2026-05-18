@@ -83,20 +83,28 @@ export const useScrollSpy = (sectionIds: string[]) => {
     };
 
     onMounted(() => {
-        scheduleCompute();
-
-        mutationObserver = new MutationObserver(() => {
+        const startObservers = () => {
             scheduleCompute();
-        });
 
-        mutationObserver.observe(document.body, {
-            childList: true,
-            subtree: true,
-        });
+            mutationObserver = new MutationObserver(() => {
+                scheduleCompute();
+            });
 
-        window.addEventListener('scroll', scheduleCompute, { passive: true });
-        window.addEventListener('resize', scheduleCompute, { passive: true });
-        window.addEventListener('hashchange', scheduleCompute);
+            const main = document.getElementById('main-content');
+            if (main) {
+                mutationObserver.observe(main, { childList: true, subtree: true });
+            }
+
+            window.addEventListener('scroll', scheduleCompute, { passive: true });
+            window.addEventListener('resize', scheduleCompute, { passive: true });
+            window.addEventListener('hashchange', scheduleCompute);
+        };
+
+        if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(startObservers, { timeout: 1500 });
+        } else {
+            window.setTimeout(startObservers, 400);
+        }
     });
 
     onBeforeUnmount(() => {

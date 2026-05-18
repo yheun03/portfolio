@@ -2,6 +2,11 @@
     <AppLayout :links="sectionDockLinks" :header-links="headerNavLinks" :active-id="activeId"
         :footer-text="t('footer.copyright')">
         <div v-for="layer in pageLayers" :key="layer.name" class="page-layer" :class="`page-layer--${layer.name}`">
+            <div
+                v-if="['works', 'capability', 'contact'].includes(layer.name)"
+                class="page-layer__scroll-veil"
+                aria-hidden="true"
+            />
             <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
         </div>
     </AppLayout>
