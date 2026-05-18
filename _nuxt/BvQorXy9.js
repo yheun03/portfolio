@@ -1,1 +1,0 @@
-import{u as a,l as r}from"./bf5CBSk2.js";function s(){const{t:e}=a();return r(()=>[{href:"/",label:e("nav.home")},{href:"/projects",label:e("nav.worksArchive")},{href:"/personal",label:e("nav.personalArchive")}])}export{s as u};
