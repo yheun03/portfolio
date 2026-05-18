@@ -57,7 +57,7 @@
         padding: $space-1;
 
         border: 1px solid color-mix(in srgb, $grayscale-300 70%, transparent);
-        border-radius: 999px;
+        border-radius: $radius-pill;
         background: color-mix(in srgb, $grayscale-200 55%, transparent);
 
         a {
@@ -66,9 +66,10 @@
             display: inline-flex;
             min-height: $size-touch;
             align-items: center;
-            padding: $space-3 $space-4;
+            padding: $space-3 $space-5;
+            white-space: nowrap;
 
-            border-radius: 999px;
+            border-radius: $radius-pill;
 
             color: $grayscale-600;
             @include font(caption-1);
@@ -237,6 +238,37 @@
 /* =========================================
    Responsive
 ========================================= */
+
+@media (max-width: 1023.98px) {
+    .app-header {
+        gap: $space-3;
+        padding-block: $space-3;
+        padding-inline: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-left)) max(var(--touch-pad-x, 0.85rem),
+                env(safe-area-inset-right));
+        min-height: auto;
+    }
+
+    .language-toggle,
+    .theme-toggle,
+    .app-header__menu-btn {
+        min-width: auto;
+        padding: $space-3 $space-4;
+    }
+
+    .mobile-menu {
+        top: calc(#{$layout-header-height} + #{$space-3});
+        right: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-right));
+        left: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-left));
+        width: auto;
+        bottom: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-bottom));
+        padding: $space-5;
+
+        a {
+            border-radius: $radius-pill;
+            padding-inline: $space-6;
+        }
+    }
+}
 
 @media (min-width: 1024px) {
     .app-header {
