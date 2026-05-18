@@ -73,6 +73,7 @@ $gradient-surface: var(--gradient-surface);
 $gradient-noise: var(--gradient-noise);
 $gradient-hero-mesh: var(--gradient-hero-mesh);
 $radius-card: var(--radius-card);
+$radius-pill: var(--radius-pill);
 $radius-md: var(--radius-md);
 $radius-lg: var(--radius-lg);
 $radius-xl: var(--radius-xl);
@@ -208,6 +209,7 @@ $font-presets: (
         radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 16%, transparent), transparent 38%),
         radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 14%, transparent), transparent 45%);
     --radius-card: 0.65rem;
+    --radius-pill: 999px;
     --radius-md: 0.8rem;
     --radius-lg: 1.05rem;
     --radius-xl: 1.45rem;
