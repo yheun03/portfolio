@@ -1,5 +1,5 @@
-import { profile } from '~/core/data/site';
-import { seoConfig, seoKeywords, seoStructuredData, type SeoLocale } from '~/core/data/seo';
+import { profile } from '@content/site';
+import { seoConfig, seoKeywords, seoStructuredData, type SeoLocale } from '@config/seo';
 
 interface PortfolioSeoOptions {
     title: string;

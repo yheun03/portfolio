@@ -345,10 +345,7 @@ const data = [
             ko: '약 2개월',
             en: '~2 months',
         },
-        captures: [
-            '/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png',
-            '/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png',
-        ],
+        captures: ['/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png', '/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png'],
         languages: ['HTML', 'CSS', 'jQuery', 'Figma'],
         links: [
             {

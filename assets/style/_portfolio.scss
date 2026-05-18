@@ -64,8 +64,8 @@
 
     &--capability::before {
         opacity: calc(0.42 + (var(--layer-progress) * 0.28));
-        background: radial-gradient(ellipse 68% 42% at 6% 24%, color-mix(in srgb, var(--color-accent-mint) 10%, transparent), transparent 54%),
-            radial-gradient(ellipse 60% 44% at 95% 72%, color-mix(in srgb, var(--color-accent-hot) 9%, transparent), transparent 58%);
+        background: radial-gradient(ellipse 68% 42% at 6% 24%, color-mix(in srgb, var(--color-primary) 9%, transparent), transparent 54%),
+            radial-gradient(ellipse 60% 44% at 95% 72%, color-mix(in srgb, var(--color-accent-hot) 8%, transparent), transparent 58%);
     }
 
     &--contact::before {

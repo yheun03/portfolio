@@ -1,6 +1,6 @@
 <template>
-    <NuxtLink :to="to" class="gallery-card" :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
-        data-motion="lift">
+    <NuxtLink :to="to" class="gallery-card"
+        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <span v-if="entryYearSuffix" class="gallery-editorial__entry-index" aria-hidden="true">{{
@@ -22,20 +22,21 @@
 
                 <p class="gallery-editorial__entry-dek">{{ pick(work.introduction) }}</p>
 
-                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags" :aria-label="t('gallery.languages')">
+                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags"
+                    :aria-label="t('gallery.languages')">
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
 
                 <div class="gallery-card__media">
-                    <img :src="coverSrc" :alt="coverAlt" loading="lazy" decoding="async" fetchpriority="low" width="1200"
-                        height="675" />
+                    <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
+                        :fetchpriority="imageFetchPriority" width="1200" height="675" />
                 </div>
             </div>
         </template>
         <template v-else>
             <div class="gallery-card__media">
-                <img :src="coverSrc" :alt="coverAlt" loading="lazy" decoding="async" fetchpriority="low" width="1200"
-                    height="675" />
+                <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
+                    :fetchpriority="imageFetchPriority" width="1200" height="675" />
             </div>
             <div class="gallery-card__body">
                 <p class="gallery-card__meta">
@@ -54,9 +55,9 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from '~/core/data/works';
-import type { GalleryViewMode } from '~/core/composables/useGalleryViewMode';
-import { getWorkStartYear } from '~/core/utils/workSort';
+import type { WorkItem } from '@content/works';
+import type { GalleryViewMode } from '@composables/useGalleryViewMode';
+import { getWorkStartYear } from '@utils/workSort';
 
 const props = withDefaults(
     defineProps<{
@@ -64,9 +65,11 @@ const props = withDefaults(
         to: string;
         viewMode?: GalleryViewMode;
         entryLabel?: string;
+        priority?: boolean;
     }>(),
     {
         viewMode: 'editorial',
+        priority: false,
     },
 );
 
@@ -86,4 +89,6 @@ const coverSrc = computed(() => resolveAppPath(props.work.captures[0] ?? '/image
 const coverAlt = computed(() =>
     locale.value === 'ko' ? `${pick(props.work.title)} 캡처` : `Screenshot: ${pick(props.work.title)}`,
 );
+const imageLoading = computed(() => (props.priority ? 'eager' : 'lazy'));
+const imageFetchPriority = computed(() => (props.priority ? 'high' : 'low'));
 </script>

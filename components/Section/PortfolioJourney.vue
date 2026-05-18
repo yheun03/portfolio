@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { journeyCompanies, type JourneyCompanyBlock } from "~/core/data/site";
+import { journeyCompanies, type JourneyCompanyBlock } from "@content/site";
 
 const { t, pick, locale } = useLocale();
 

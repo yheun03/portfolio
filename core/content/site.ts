@@ -1,16 +1,16 @@
-import aboutData from './content/site/about';
-import activitiesData from './content/site/highlights/activities';
-import awardsData from './content/site/highlights/awards';
-import certificationsData from './content/site/highlights/certifications';
-import descriptionsData from './content/site/highlights/descriptions';
-import rolesData from './content/site/highlights/roles';
-import journeyData from './content/site/journey';
-import profileData from './content/site/profile';
-import skillsData from './content/site/skills';
+import aboutData from './site/about';
+import activitiesData from './site/highlights/activities';
+import awardsData from './site/highlights/awards';
+import certificationsData from './site/highlights/certifications';
+import descriptionsData from './site/highlights/descriptions';
+import rolesData from './site/highlights/roles';
+import journeyData from './site/journey';
+import profileData from './site/profile';
+import skillsData from './site/skills';
 
-import type { HighlightTabKey } from '~/core/types/highlights';
+import type { HighlightTabKey } from '@app-types/highlights';
 
-/** `content/site/journey.ts` 의 `as const` 데이터와 동기화된 타입 (readonly 추론 유지) */
+/** `site/journey.ts` 의 `as const` 데이터와 동기화된 타입 (readonly 추론 유지) */
 export type JourneyCompanyBlock = (typeof journeyData.companies)[number];
 export type JourneyTimelineEntry = JourneyCompanyBlock['timeline'][number];
 export type JourneySummary = JourneyCompanyBlock['summary'];

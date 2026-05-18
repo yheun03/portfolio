@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
-import { personalWorksList } from "~/core/data/works";
-import { useWorksUiStore } from "~/core/stores/worksUiStore";
+import { personalWorksList } from "@content/works";
+import { useWorksUiStore } from "@stores/worksUiStore";
 
 const { t, pick, locale } = useLocale();
 const worksUi = useWorksUiStore();

@@ -6,21 +6,21 @@
 
 ## 1. 디렉터리 한눈에 보기
 
-| 경로                                 | 역할                                                |
-| ------------------------------------ | --------------------------------------------------- |
-| `core/data/content/works/`           | 경력·개인 **프로젝트** (카테고리별 TS 데이터)       |
-| `core/data/content/site/`            | **프로필·소개·여정·스킬** 등 사이트 본문            |
-| `core/data/content/site/highlights/` | **수상·자격·역할·활동** 목록 + 탭 설명              |
-| `core/data/site.ts`, `works.ts`      | 사이트 JSON export + 작업 JSON 타입·조합            |
-| `core/i18n/ko.json`, `en.json`       | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등) |
+| 경로                               | 역할                                                |
+| ---------------------------------- | --------------------------------------------------- |
+| `core/content/works/`              | 경력·개인 **프로젝트** (카테고리별 TS 데이터)       |
+| `core/content/site/`               | **프로필·소개·여정·스킬** 등 사이트 본문            |
+| `core/content/site/highlights/`    | **수상·자격·역할·활동** 목록 + 탭 설명              |
+| `core/content/site.ts`, `works.ts` | 사이트 JSON export + 작업 JSON 타입·조합            |
+| `core/locales/ko.json`, `en.json`  | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등) |
 
 ---
 
-## 2. `core/data/content/works/` (프로젝트)
+## 2. `core/content/works/` (프로젝트)
 
 - **파일명 = 작업 분류**  
   `project.ts`, `operation.ts`, `solution.ts`, `renewal.ts`, `award.ts`, `personal.ts`
-- 각 파일은 **객체 배열**이며, 항목 스키마는 `core/data/works.ts`의 `WorkItem`과 맞춥니다.
+- 각 파일은 **객체 배열**이며, 항목 스키마는 `core/content/works.ts`의 `WorkItem`과 맞춥니다.
 - 공통으로 자주 쓰는 필드:
     - `id`, `category`, `title` / `type` / `role` / `introduction` 등: `{ "ko": "...", "en": "..." }`
     - `pin`: 메인 홈의 Works / Personal 섹션에 **대표 카드로만** 노출할지 (`true`만 표시)
@@ -36,7 +36,7 @@
 
 ---
 
-## 3. `core/data/content/site/` (본문 TS)
+## 3. `core/content/site/` (본문 TS)
 
 | 파일         | 용도                                   | TS export                      |
 | ------------ | -------------------------------------- | ------------------------------ |
@@ -47,12 +47,12 @@
 
 ---
 
-## 4. `core/data/content/site/highlights/`
+## 4. `core/content/site/highlights/`
 
 - `awards.ts`, `certifications.ts`, `roles.ts`, `activities.ts`: `{ "ko", "en" }` 항목 배열
 - `descriptions.ts`: 탭별 설명 객체 (`awards`, `certifications`, …)
 
-로더: `core/data/site.ts` → `highlights` 객체.
+로더: `core/content/site.ts` → `highlights` 객체.
 
 ---
 
@@ -65,7 +65,7 @@
 
 ---
 
-## 6. i18n (`core/i18n/`) vs 데이터 TS
+## 6. i18n (`core/locales/`) vs 데이터 TS
 
 - **i18n**: 화면 곳곳에 붙는 **짧은 UI 문자열** (`t('nav.works')`, `gallery.duration` 등). 로케일 파일끼리 **키 구조 동일**.
 - **데이터 TS**: **구조화된 콘텐츠** (프로젝트 한 건, 소개 문단). 필드가 많고 `{ ko, en }`을 레코드 안에 두는 패턴. 컴포넌트에서는 `pick()`으로 현재 언어 선택.
@@ -77,7 +77,7 @@
 ## 7. 보조 스크립트
 
 - 현재 프로젝트 데이터는 TS 모듈에서 직접 관리합니다.
-- `pin`, `duration`, `captures`, `languages` 등 기본 필드는 `core/data/content/works/*.ts`에 명시합니다.
+- `pin`, `duration`, `captures`, `languages` 등 기본 필드는 `core/content/works/*.ts`에 명시합니다.
 
 ---
 
@@ -86,7 +86,7 @@
 1. **프로젝트 추가/수정** → 해당 카테고리 JSON (`works/`) + 필요 시 `public/sitemap.xml` URL 추가
 2. **프로필·소개·여정·스킬** → `site/*.ts`
 3. **수상·자격증** → `site/highlights/*.ts`
-4. **헤더 문구·버튼** → `core/i18n/*.json`
+4. **헤더 문구·버튼** → `core/locales/*.json`
 5. **홈 섹션 순서/그룹** → `homePage.ts`
 
 ---
@@ -99,4 +99,4 @@
 
 ---
 
-_마지막 정리 기준: 저장소 내 `core/data` · `core/i18n` 구조와 동일하게 유지할 것._
+_마지막 정리 기준: 저장소 내 `core/content` · `core/locales` 구조와 동일하게 유지할 것._

@@ -62,6 +62,7 @@
         "details": "상세 내용",
         "overview": "개요",
         "role": "역할",
+        "breadcrumbLabel": "현재 위치",
         "backToCareerList": "실무 목록으로",
         "backToPersonalList": "개인 목록으로"
     },
