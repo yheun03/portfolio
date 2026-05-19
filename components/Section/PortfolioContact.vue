@@ -11,8 +11,7 @@
 
             <section class="contact__spotlight promo-spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
                 <h3 class="promo-spotlight__kicker">{{ t("contact.kicker") }}</h3>
-                <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`"
-                    :aria-label="locale === 'ko' ? `이메일 ${profile.contacts.email}` : `Email ${profile.contacts.email}`">
+                <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`">
                     <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`">{{ letter }}</span>
                 </a>
             </section>

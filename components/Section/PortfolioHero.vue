@@ -12,16 +12,15 @@
             <div class="hero__stage" data-animate>
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
-                <h1 class="hero__display" :aria-label="heroAriaLabel">
+                <h1 class="hero__display">
                     <span v-for="(line, lineIndex) in heroLines" :key="`line-${lineIndex}`" class="hero__display-line"
                         :class="{ 'hero__display-line--accent': line.accent }">
                         <span v-for="(word, wordIndex) in line.words" :key="wordKey(`hero-${lineIndex}`, wordIndex)"
                             class="typo-word"
                             :class="{ 'typo-word--active': isActive(wordKey(`hero-${lineIndex}`, wordIndex)) }"
-                            :style="{ '--word-index': wordIndex }" tabindex="0"
+                            :style="{ '--word-index': wordIndex }"
                             @mouseenter="setActive(wordKey(`hero-${lineIndex}`, wordIndex))"
-                            @mouseleave="setActive(null)" @focus="setActive(wordKey(`hero-${lineIndex}`, wordIndex))"
-                            @blur="setActive(null)">{{ word }}</span>
+                            @mouseleave="setActive(null)">{{ word }}</span>
                     </span>
                 </h1>
 
@@ -38,7 +37,7 @@
                     <li v-for="(area, index) in heroFocusCards" :key="pick(area.label)" class="hero__focus-item">
                         <span class="hero__focus-index">{{ String(index + 1).padStart(2, "0") }}</span>
                         <div class="hero__focus-copy">
-                            <strong>{{ pick(area.label) }}</strong>
+                            <h3 class="hero__focus-title">{{ pick(area.label) }}</h3>
                             <span>{{ pick(area.value) }}</span>
                         </div>
                     </li>
@@ -88,8 +87,6 @@ const heroLines = computed(() => {
         { words: splitTypoWords("and structure"), accent: false },
     ];
 });
-
-const heroAriaLabel = computed(() => heroLines.value.map((line) => line.words.join(" ")).join(" "));
 
 const heroLead = computed(() =>
     locale.value === "ko"

@@ -12,10 +12,9 @@
                         <span v-for="(word, wordIndex) in line.words" :key="wordKey(`about-${lineIndex}`, wordIndex)"
                             class="typo-word"
                             :class="{ 'typo-word--active': isActive(wordKey(`about-${lineIndex}`, wordIndex)) }"
-                            :style="{ '--word-index': wordIndex }" tabindex="0"
+                            :style="{ '--word-index': wordIndex }"
                             @mouseenter="setActive(wordKey(`about-${lineIndex}`, wordIndex))"
-                            @mouseleave="setActive(null)" @focus="setActive(wordKey(`about-${lineIndex}`, wordIndex))"
-                            @blur="setActive(null)">{{ word }}</span>
+                            @mouseleave="setActive(null)">{{ word }}</span>
                     </span>
                 </h2>
 

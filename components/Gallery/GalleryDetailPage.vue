@@ -72,27 +72,23 @@
                 <div class="gallery-detail__column">
                     <h2 :id="overviewTitleId">{{ t('gallery.overview') }}</h2>
                     <p><strong>{{ t('gallery.role') }}:</strong> {{ pick(work.role) }}</p>
-                    <p class="gallery-detail__section-title"><strong>{{ labels.contributions }}</strong></p>
+                    <h3 class="gallery-detail__section-title">{{ labels.contributions }}</h3>
                     <ul>
                         <li v-for="item in work.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>
                     <template v-if="work.achievements.length">
-                        <p class="gallery-detail__section-title"><strong>{{ labels.results }}</strong></p>
+                        <h3 class="gallery-detail__section-title">{{ labels.results }}</h3>
                         <ul>
                             <li v-for="item in work.achievements" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
                     </template>
-                    <p class="gallery-detail__section-title"><strong>{{ labels.points }}</strong></p>
+                    <h3 class="gallery-detail__section-title">{{ labels.points }}</h3>
                     <ul>
                         <li v-for="item in work.points" :key="pick(item)">{{ pick(item) }}</li>
                     </ul>
                 </div>
             </section>
 
-            <p class="gallery-detail__footer-nav">
-                <NuxtLink class="base-button base-button--ghost" :to="config.basePath">{{ t(config.listLabelKey) }}
-                </NuxtLink>
-            </p>
         </article>
     </AppLayout>
 </template>
