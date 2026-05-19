@@ -40,7 +40,7 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.48;
+    opacity: 0.58;
     background-image: var(--gradient-hero-mesh),
         linear-gradient(color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px),
         linear-gradient(90deg, color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px);
@@ -54,14 +54,19 @@
         pointer-events: none;
         opacity: 0.26;
         background-image: $texture-noise;
-        background-size: 256px 256px;
-        mix-blend-mode: soft-light;
+        background-size: 160px 160px;
+        mix-blend-mode: multiply;
     }
 }
 
 html:not([data-theme="dark"]) .app-background::after {
-    opacity: 0.22;
+    opacity: 0.24;
     mix-blend-mode: multiply;
+}
+
+[data-theme="dark"] .app-background::after {
+    opacity: 0.2;
+    mix-blend-mode: soft-light;
 }
 
 .page-layer {
@@ -749,7 +754,7 @@ html:not([data-theme="dark"]) .app-background::after {
     overflow: visible;
     content-visibility: visible;
     contain-intrinsic-size: none;
-    padding-top: calc(var(--space-section-y) + 1.5rem);
+    padding-top: calc(var(--space-section-y) + 5rem);
     grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
     column-gap: var(--space-6);
     align-items: start;
@@ -784,21 +789,25 @@ html:not([data-theme="dark"]) .app-background::after {
 .works {
     &__total-badge {
         position: absolute;
-        top: 0;
+        top: clamp(2rem, 4vw, 3.75rem);
         left: clamp(1rem, 3vw, 2rem);
-        z-index: 3;
+        z-index: 12;
         display: inline-grid;
         gap: var(--space-1);
-        min-width: 9.5rem;
+        min-width: 10.75rem;
         overflow: visible;
-        padding: var(--space-3) var(--space-4);
+        isolation: isolate;
+        padding: calc(var(--space-3) + 0.1rem) var(--space-4);
         border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
         border-radius: var(--radius-lg);
         background:
             linear-gradient(135deg,
-                color-mix(in srgb, var(--color-primary) 18%, var(--color-surface)),
-                color-mix(in srgb, var(--color-surface) 88%, transparent));
-        box-shadow: var(--shadow-lift), var(--shadow-ring);
+                color-mix(in srgb, var(--color-primary) 16%, var(--color-surface)),
+                color-mix(in srgb, var(--color-surface) 98%, var(--color-primary)));
+        box-shadow:
+            0 18px 42px color-mix(in srgb, var(--color-primary) 18%, transparent),
+            0 0 0 1px color-mix(in srgb, var(--color-surface) 70%, transparent),
+            var(--shadow-ring);
         transform-origin: 18% 50%;
         animation: works-total-sway 3.2s ease-in-out infinite;
         backdrop-filter: blur(14px);
@@ -807,13 +816,21 @@ html:not([data-theme="dark"]) .app-background::after {
             content: "";
             position: absolute;
             right: 0.9rem;
-            bottom: -0.38rem;
+            bottom: -0.48rem;
+            z-index: 0;
             width: 0.7rem;
             height: 0.7rem;
             border-right: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
             border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
-            background: color-mix(in srgb, var(--color-surface) 92%, var(--color-primary));
+            background: color-mix(in srgb, var(--color-surface) 96%, var(--color-primary));
+            box-shadow: 8px 8px 18px color-mix(in srgb, var(--color-primary) 14%, transparent);
             transform: rotate(45deg);
+        }
+
+        span,
+        small {
+            position: relative;
+            z-index: 1;
         }
 
         span {
@@ -829,12 +846,12 @@ html:not([data-theme="dark"]) .app-background::after {
             font-size: max(var(--font-size-2xs), 0.75rem);
             font-weight: var(--font-weight-bold);
             line-height: 1.35;
-            white-space: normal;
+            white-space: nowrap;
         }
 
         &:hover {
             animation-play-state: paused;
-            transform: translateX(0) rotate(0deg) scale(1.02);
+            transform: translateY(-1px) rotate(0deg) scale(1.02);
         }
     }
 
@@ -1478,12 +1495,18 @@ html:not([data-theme="dark"]) .app-background::after {
 }
 
 /* pages/portfolio/_contact.scss */
-.section--contact {
+.section.section--contact {
     min-height: 55dvh;
     display: grid;
     align-items: center;
+    overflow: visible;
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+    padding-bottom: calc(var(--space-section-y) + var(--space-10));
 
     .contact__composition {
+        position: relative;
+        z-index: 1;
         display: grid;
         grid-template-columns: minmax(280px, 0.75fr) minmax(360px, 1fr);
         grid-template-areas:
@@ -1493,6 +1516,7 @@ html:not([data-theme="dark"]) .app-background::after {
         gap: var(--space-fluid-lg);
         align-items: start;
         width: 100%;
+        overflow: visible;
     }
 }
 
