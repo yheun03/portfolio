@@ -1,0 +1,1 @@
+import{_ as r}from"./XJan8TU7.js";import{c as e}from"./CSoE6Eek.js";import{d as o,b as a,j as s,o as n}from"#entry";import"./BMdAY3V_.js";const u=o({__name:"index",setup(t){return(c,m)=>(n(),a(r,{variant:"career",works:s(e)},null,8,["works"]))}});export{u as default};
