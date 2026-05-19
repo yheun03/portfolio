@@ -234,7 +234,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     border: 0;
     border-radius: calc(var(--radius-md) - 2px);
     background: transparent;
-    color: var(--gallery-muted);
+    color: var(--gallery-cream);
     font: inherit;
     font-size: clamp(#{$gallery-text-min}, 1.8vw, 0.875rem);
     font-weight: 700;
@@ -288,8 +288,8 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
         background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
     }
 
-    .gallery-page__segment {
-        color: var(--color-text-muted);
+    .gallery-page__segment:not(.is-active) {
+        color: var(--color-text);
 
         &:hover:not(.is-active) {
             color: var(--color-text);
@@ -928,8 +928,9 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
         text-transform: uppercase;
 
         a {
-            color: var(--gallery-muted);
-            text-decoration: none;
+            color: var(--gallery-cream);
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
 
             &:hover {
                 color: var(--gallery-accent);

@@ -267,7 +267,7 @@ $font-presets: (
     --gallery-bg: #efe3cd;
     --gallery-bg-elevated: #fff7e8;
     --gallery-cream: #1f1810;
-    --gallery-muted: #6f604d;
+    --gallery-muted: #4a4034;
     --gallery-accent: #9d6a25;
     --gallery-body: #1f1810;
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 78%, var(--gallery-muted));
@@ -311,7 +311,7 @@ $font-presets: (
     --color-surface: var(--grayscale-100);
     --color-surface-strong: var(--grayscale-200);
     --color-text: var(--grayscale-900);
-    --color-text-muted: var(--grayscale-500);
+    --color-text-muted: var(--grayscale-600);
     --color-on-accent: var(--grayscale-950);
     --color-border: var(--grayscale-300);
     --overlay: color-mix(in srgb, var(--grayscale-0) 78%, transparent);
@@ -334,7 +334,7 @@ $font-presets: (
     --gallery-bg: #15110d;
     --gallery-bg-elevated: #211a13;
     --gallery-cream: #fff0c9;
-    --gallery-muted: #b59662;
+    --gallery-muted: #d4b87a;
     --gallery-accent: #f4c95d;
     --gallery-body: #f8ecd0;
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));

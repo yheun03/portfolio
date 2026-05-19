@@ -1,7 +1,6 @@
 <template>
     <NuxtLink :to="to" class="gallery-card"
-        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
-        :aria-label="cardAriaLabel" data-motion="lift">
+        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <span v-if="entryYearSuffix" class="gallery-editorial__entry-index" aria-hidden="true">{{
@@ -30,8 +29,9 @@
 
                 <div class="gallery-card__media" :class="{ 'gallery-card__media--long': isLongCapture }">
                     <span class="gallery-card__screen">
-                        <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
-                            :fetchpriority="imageFetchPriority" width="1200" height="675" />
+                        <img :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
+                            :loading="imageLoading" decoding="async" :fetchpriority="imageFetchPriority" width="1200"
+                            height="675" />
                     </span>
                 </div>
             </div>
@@ -39,8 +39,9 @@
         <template v-else>
             <div class="gallery-card__media" :class="{ 'gallery-card__media--long': isLongCapture }">
                 <span class="gallery-card__screen">
-                    <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
-                        :fetchpriority="imageFetchPriority" width="1200" height="675" />
+                    <img :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
+                        :loading="imageLoading" decoding="async" :fetchpriority="imageFetchPriority" width="1200"
+                        height="675" />
                 </span>
             </div>
             <div class="gallery-card__body">
@@ -103,15 +104,6 @@ const coverAlt = computed(() => {
     return locale.value === 'ko' ? `${title} 캡처` : `Screenshot: ${title}`;
 });
 
-const cardAriaLabel = computed(() => {
-    const title = pick(props.work.title);
-    const type = pick(props.work.type);
-    const period = props.work.period ? `, ${props.work.period}` : '';
-    const action = entryLabel.value;
-    return locale.value === 'ko'
-        ? `${title}, ${type}${period}. ${action}`
-        : `${title}, ${type}${period}. ${action}`;
-});
 const imageLoading = computed(() => (props.priority ? 'eager' : 'lazy'));
 const imageFetchPriority = computed(() => (props.priority ? 'high' : 'low'));
 </script>

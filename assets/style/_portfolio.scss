@@ -1926,7 +1926,8 @@ html:not([data-theme="dark"]) .app-background::after {
     gap: 0.3rem;
     min-width: 0;
 
-    strong {
+    .hero__focus-title {
+        margin: 0;
         font-family: var(--font-display);
         font-size: clamp(1.05rem, 2vw, 1.35rem);
         font-weight: 800;
@@ -2072,8 +2073,13 @@ html:not([data-theme="dark"]) .app-background::after {
         font-size: var(--font-size-xs);
     }
 
-    .hero__focus-copy strong {
+    .hero__focus-title {
+        margin: 0;
+        font-family: var(--font-display);
         font-size: clamp(1.1rem, 1.35vw, 1.3rem);
+        font-weight: 800;
+        line-height: var(--line-height-heading);
+        letter-spacing: -0.02em;
     }
 
     .hero__focus-copy span {
