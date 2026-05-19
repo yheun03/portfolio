@@ -1,6 +1,7 @@
 <template>
     <section id="contact" class="section section--contact">
-        <span class="section__emoji section__emoji--contact accent-emoji accent-emoji--soft" aria-hidden="true">💬</span>
+        <span class="section__emoji section__emoji--contact accent-emoji accent-emoji--soft"
+            aria-hidden="true">💬</span>
 
         <div class="contact__poster" data-animate>
             <header class="contact__head">
@@ -10,11 +11,8 @@
 
             <section class="contact__spotlight promo-spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
                 <h3 class="promo-spotlight__kicker">{{ locale === "ko" ? "연락은 여기로." : "Get in touch." }}</h3>
-                <a
-                    class="contact__mail-display"
-                    :href="`mailto:${profile.contacts.email}`"
-                    :aria-label="locale === 'ko' ? `이메일 ${profile.contacts.email}` : `Email ${profile.contacts.email}`"
-                >
+                <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`"
+                    :aria-label="locale === 'ko' ? `이메일 ${profile.contacts.email}` : `Email ${profile.contacts.email}`">
                     <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`">{{ letter }}</span>
                 </a>
             </section>
@@ -25,10 +23,12 @@
                 <a class="base-button base-button--primary" :href="`mailto:${profile.contacts.email}`">
                     {{ t("contact.email") }}
                 </a>
-                <a class="base-button base-button--ghost" :href="profile.contacts.github" target="_blank" rel="noopener noreferrer">
+                <a class="base-button base-button--ghost" :href="profile.contacts.github" target="_blank"
+                    rel="noopener noreferrer">
                     {{ t("contact.github") }}
                 </a>
-                <a class="base-button base-button--ghost" :href="profile.contacts.resume" target="_blank" rel="noopener noreferrer">
+                <a class="base-button base-button--ghost" :href="profile.contacts.resume" target="_blank"
+                    rel="noopener noreferrer">
                     {{ t("contact.resume") }}
                 </a>
             </nav>

@@ -78,7 +78,7 @@
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
-        "summary": "Choose a category below—awards, certifications, roles, or activities—and read the full list with context.",
+        "summary": "Pick a category—context on the left, the full list on the right.",
         "awards": "Awards",
         "certifications": "Certifications",
         "roles": "Professional Roles",
@@ -87,6 +87,7 @@
     "contact": {
         "title": "Let's talk about your next project",
         "description": "If you need publishing, UI development, or structural improvement, feel free to reach out. I tidy up messy screens and help good ideas land on the page.",
+        "kicker": "Please reach out by email.",
         "email": "Send Email",
         "github": "View GitHub",
         "resume": "View Resume"
