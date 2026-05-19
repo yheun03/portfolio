@@ -47,7 +47,6 @@ export const usePortfolioGsap = () => {
                     },
                 });
             }
-
         }, root);
 
         requestAnimationFrame(() => {

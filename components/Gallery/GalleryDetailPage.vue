@@ -28,7 +28,7 @@
                         <dt>{{ t('gallery.languages') }}</dt>
                         <dd>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                                }}</span>
+                            }}</span>
                             <template v-if="!work.languages.length">-</template>
                         </dd>
                     </div>

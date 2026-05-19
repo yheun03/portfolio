@@ -1,6 +1,7 @@
 <template>
     <section id="toolbox" class="section section--toolbox">
-        <span class="section__emoji section__emoji--toolbox accent-emoji accent-emoji--soft" aria-hidden="true">🛠️</span>
+        <span class="section__emoji section__emoji--toolbox accent-emoji accent-emoji--soft"
+            aria-hidden="true">🛠️</span>
 
         <header class="toolbox__head">
             <BaseSectionTitle :eyebrow="t('nav.toolbox')" :title="t('toolbox.title')" />
@@ -11,12 +12,8 @@
             <h2 class="promo-spotlight__kicker">{{ t("toolbox.kicker") }}</h2>
             <ul class="toolbox__grid promo-feature-grid promo-feature-grid--toolbox">
                 <li v-for="(skill, index) in skills" :key="skill.key">
-                    <SkillCard
-                        :eyebrow="String(index + 1).padStart(2, '0')"
-                        :title="skill.title"
-                        :items="pick(skill.items)"
-                        :description="pick(skill.description)"
-                    />
+                    <SkillCard :eyebrow="String(index + 1).padStart(2, '0')" :title="skill.title"
+                        :items="pick(skill.items)" :description="pick(skill.description)" />
                 </li>
             </ul>
         </div>
