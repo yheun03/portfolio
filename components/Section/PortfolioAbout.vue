@@ -31,31 +31,28 @@
                 <p class="about__lead">{{ profileTagline }}</p>
             </header>
 
-            <ul class="about__word-grid" data-animate :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
-                <li v-for="(principle, index) in principleWords" :key="principle">
-                    <button
-                        type="button"
-                        class="typo-word typo-word--panel"
-                        :class="{ 'typo-word--active': activePrinciple === index }"
-                        :style="{ '--word-index': index }"
-                        :aria-pressed="activePrinciple === index"
-                        @mouseenter="activePrinciple = index"
-                        @mouseleave="activePrinciple = null"
-                        @focus="activePrinciple = index"
-                        @blur="activePrinciple = null"
-                        @click="activePrinciple = activePrinciple === index ? null : index"
-                    >
-                        {{ principle }}
-                    </button>
-                </li>
-            </ul>
+            <section class="about__spotlight promo-spotlight" data-animate :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
+                <h3 class="promo-spotlight__kicker">{{ locale === "ko" ? "보다 자세히." : "A closer look." }}</h3>
+                <ul class="promo-feature-grid">
+                    <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)">
+                        <PromoFeatureCard
+                            :eyebrow="String(index + 1).padStart(2, '0')"
+                            :title="pick(principle.title)"
+                            :description="pick(principle.description)"
+                        />
+                    </li>
+                </ul>
+            </section>
 
-            <ol class="about__flow" data-animate :aria-label="locale === 'ko' ? '작업 흐름' : 'Workflow'">
-                <li v-for="(step, index) in workflowSteps" :key="step">
-                    <span class="about__flow-index">{{ String(index + 1).padStart(2, "0") }}</span>
-                    <span class="about__flow-label">{{ step }}</span>
-                </li>
-            </ol>
+            <div class="about__workflow promo-card promo-card--flow" data-animate>
+                <h3 class="promo-card__title">{{ locale === "ko" ? "작업 흐름" : "Workflow" }}</h3>
+                <ol class="promo-flow" :aria-label="locale === 'ko' ? '단계' : 'Steps'">
+                    <li v-for="(step, index) in workflowSteps" :key="step">
+                        <span class="promo-flow__index">{{ String(index + 1).padStart(2, "0") }}</span>
+                        <span class="promo-flow__label">{{ step }}</span>
+                    </li>
+                </ol>
+            </div>
         </div>
     </section>
 </template>
@@ -63,11 +60,10 @@
 <script setup lang="ts">
 import { aboutContent } from "@content/site";
 import { splitTypoWords, useTypoInteraction } from "~/core/composables/useTypoInteraction";
+import PromoFeatureCard from "~/components/Card/PromoFeatureCard.vue";
 
 const { t, pick, locale } = useLocale();
 const { wordKey, setActive, isActive } = useTypoInteraction();
-
-const activePrinciple = ref<number | null>(null);
 
 const displayLines = computed(() => {
     if (locale.value === "ko") {
@@ -87,10 +83,6 @@ const displayLines = computed(() => {
 
 const profileTagline = computed(() =>
     locale.value === "ko" ? "구조는 단순하게. 사용감은 가볍게." : "Simple structure. Light feel."
-);
-
-const principleWords = computed(() =>
-    aboutContent.principles.map((principle) => pick(principle.title))
 );
 
 const workflowSteps = computed(() =>

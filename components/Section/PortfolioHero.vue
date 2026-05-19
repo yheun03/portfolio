@@ -1,6 +1,6 @@
 <template>
     <section id="hello" class="section section--hero">
-        <div ref="posterRef" class="hero__poster" @pointermove="handlePosterPointerMove" @pointerleave="resetPosterPointer">
+        <div class="hero__poster">
             <WelcomeCanvas v-if="heroCanvasReady" class="hero__canvas" aria-hidden="true" />
 
             <p class="hero__meta">
@@ -37,56 +37,30 @@
                 <p class="hero__lead">{{ heroLead }}</p>
             </div>
 
-            <ul class="hero__lexicon" :aria-label="locale === 'ko' ? '핵심 키워드' : 'Core keywords'">
-                <li v-for="(word, index) in lexiconWords" :key="word">
-                    <span
-                        class="typo-word typo-word--lexicon"
-                        :class="{ 'typo-word--active': isActive(wordKey('lexicon', index)) }"
-                        :style="{ '--word-index': index }"
-                        tabindex="0"
-                        @mouseenter="setActive(wordKey('lexicon', index))"
-                        @mouseleave="setActive(null)"
-                        @focus="setActive(wordKey('lexicon', index))"
-                        @blur="setActive(null)"
-                    >{{ word }}</span>
-                </li>
-            </ul>
-
-            <aside class="hero__aside" :aria-label="locale === 'ko' ? '작업 방식' : 'Approach'">
-                <p
-                    v-for="(phrase, phraseIndex) in asidePhrases"
-                    :key="`aside-${phraseIndex}`"
-                    class="hero__aside-line"
-                >
-                    <span
-                        v-for="(word, wordIndex) in phrase"
-                        :key="wordKey(`aside-${phraseIndex}`, wordIndex)"
-                        class="typo-word typo-word--ghost"
-                        :class="{ 'typo-word--active': isActive(wordKey(`aside-${phraseIndex}`, wordIndex)) }"
-                        tabindex="0"
-                        @mouseenter="setActive(wordKey(`aside-${phraseIndex}`, wordIndex))"
-                        @mouseleave="setActive(null)"
-                        @focus="setActive(wordKey(`aside-${phraseIndex}`, wordIndex))"
-                        @blur="setActive(null)"
-                    >{{ word }}</span>
-                </p>
-            </aside>
+            <section class="hero__spotlight promo-spotlight" data-animate :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'">
+                <h2 class="promo-spotlight__kicker">{{ locale === "ko" ? "핵심부터." : "The essentials." }}</h2>
+                <ul class="promo-feature-grid promo-feature-grid--hero">
+                    <li v-for="(area, index) in heroFocusCards" :key="pick(area.label)">
+                        <PromoFeatureCard
+                            :eyebrow="String(index + 1).padStart(2, '0')"
+                            :title="pick(area.label)"
+                            :description="pick(area.value)"
+                        />
+                    </li>
+                </ul>
+            </section>
 
             <nav class="hero__actions" :aria-label="locale === 'ko' ? '바로가기' : 'Quick links'">
                 <a class="base-button base-button--primary" href="#works">{{ t("hero.ctaWorks") }}</a>
                 <a class="base-button base-button--ghost" href="#toolbox">{{ t("hero.ctaToolbox") }}</a>
             </nav>
 
-            <dl ref="statsRef" class="hero__metrics" :aria-label="locale === 'ko' ? '핵심 지표' : 'Key metrics'">
+            <dl ref="statsRef" class="hero__metrics promo-card promo-card--metrics" :aria-label="locale === 'ko' ? '핵심 지표' : 'Key metrics'">
                 <div v-for="(stat, idx) in convertedStats" :key="stat.label" class="hero__metric">
                     <dt>{{ stat.label }}</dt>
                     <dd>{{ statValues[idx] }}{{ stat.suffix }}</dd>
                 </div>
             </dl>
-
-            <p class="hero__scroll-hint" aria-hidden="true">
-                {{ locale === "ko" ? "Scroll" : "Scroll" }}
-            </p>
         </div>
     </section>
 </template>
@@ -95,6 +69,7 @@
 import { defineAsyncComponent } from "vue";
 import { profile } from "@content/site";
 import { splitTypoWords, useTypoInteraction } from "~/core/composables/useTypoInteraction";
+import PromoFeatureCard from "~/components/Card/PromoFeatureCard.vue";
 
 const WelcomeCanvas = defineAsyncComponent(() => import("~/components/Section/WelcomeCanvas.vue"));
 
@@ -102,7 +77,7 @@ const { t, pick, locale } = useLocale();
 const { wordKey, setActive, isActive } = useTypoInteraction();
 
 const heroCanvasReady = ref(false);
-const posterRef = ref<HTMLElement | null>(null);
+const heroFocusCards = computed(() => profile.focusAreas);
 
 const heroLines = computed(() => {
     if (locale.value === "ko") {
@@ -128,46 +103,11 @@ const heroLead = computed(() =>
         : "Complex asks, clear flows."
 );
 
-const lexiconWords = computed(() =>
-    locale.value === "ko"
-        ? ["구조", "접근성", "반응형", "모션", "유지보수"]
-        : ["Structure", "A11y", "Responsive", "Motion", "Maintain"]
-);
-
-const asidePhrases = computed(() => {
-    if (locale.value === "ko") {
-        return [splitTypoWords("구조 먼저"), splitTypoWords("의도 있는 모션")];
-    }
-
-    return [splitTypoWords("Structure first"), splitTypoWords("Motion with purpose")];
-});
-
 const convertedStats = computed(() => profile.stats.map((item) => ({ ...item, label: pick(item.label) })));
 const counters = convertedStats.value.map((item) => useCountUp(item.value));
 const statValues = computed(() => counters.map((counter) => counter.value.value));
 const statsRef = ref<HTMLElement | null>(null);
 let statsObserver: IntersectionObserver | null = null;
-
-const updatePosterLight = (clientX: number, clientY: number) => {
-    const element = posterRef.value;
-    if (!element) return;
-    const rect = element.getBoundingClientRect();
-    const x = ((clientX - rect.left) / rect.width) * 100;
-    const y = ((clientY - rect.top) / rect.height) * 100;
-    element.style.setProperty("--hero-x", `${Math.round(x)}%`);
-    element.style.setProperty("--hero-y", `${Math.round(y)}%`);
-};
-
-const handlePosterPointerMove = (event: PointerEvent) => {
-    updatePosterLight(event.clientX, event.clientY);
-};
-
-const resetPosterPointer = () => {
-    const element = posterRef.value;
-    if (!element) return;
-    element.style.setProperty("--hero-x", "72%");
-    element.style.setProperty("--hero-y", "28%");
-};
 
 onMounted(() => {
     const mountCanvas = () => {

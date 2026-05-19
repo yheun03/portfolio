@@ -473,23 +473,23 @@
         "fontSize": {
             "2xs": {
                 "$type": "fontSizes",
-                "$value": "0.72rem",
-                "$description": "--font-size-2xs"
+                "$value": "0.875rem",
+                "$description": "--font-size-2xs (alias of xs)"
             },
             "xs": {
                 "$type": "fontSizes",
-                "$value": "0.78rem",
-                "$description": "--font-size-xs"
+                "$value": "0.875rem",
+                "$description": "--font-size-xs (14px UI minimum)"
             },
             "sm": {
                 "$type": "fontSizes",
-                "$value": "0.86rem",
+                "$value": "0.9375rem",
                 "$description": "--font-size-sm"
             },
             "md": {
                 "$type": "fontSizes",
-                "$value": "clamp(0.92rem, 0.88rem + 0.18vw, 1.03rem)",
-                "$description": "--font-size-md"
+                "$value": "clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)",
+                "$description": "--font-size-md (16px+ body)"
             },
             "lg": {
                 "$type": "fontSizes",
@@ -508,7 +508,7 @@
             },
             "hero": {
                 "$type": "fontSizes",
-                "$value": "clamp(3.8rem, 6vw, 7.25rem)",
+                "$value": "clamp(4rem, 7.5vw, 8.5rem)",
                 "$description": "--font-size-hero"
             },
             "heroCard": {
@@ -535,27 +535,32 @@
         "lineHeight": {
             "tight": {
                 "$type": "lineHeights",
-                "$value": "0.96",
+                "$value": "1.05",
                 "$description": "--line-height-tight"
+            },
+            "display": {
+                "$type": "lineHeights",
+                "$value": "1.12",
+                "$description": "--line-height-display"
             },
             "heading": {
                 "$type": "lineHeights",
-                "$value": "1.08",
+                "$value": "1.14",
                 "$description": "--line-height-heading"
             },
             "title": {
                 "$type": "lineHeights",
-                "$value": "1.14",
+                "$value": "1.22",
                 "$description": "--line-height-title"
             },
             "body": {
                 "$type": "lineHeights",
-                "$value": "1.66",
+                "$value": "1.72",
                 "$description": "--line-height-body"
             },
             "ui": {
                 "$type": "lineHeights",
-                "$value": "1",
+                "$value": "1.2",
                 "$description": "--line-height-ui"
             }
         },
