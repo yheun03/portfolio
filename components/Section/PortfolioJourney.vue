@@ -28,8 +28,8 @@
                     </ul>
                     <ul v-if="block.summary.clients.length" class="journey__clients"
                         :aria-label="locale === 'ko' ? '참여 고객사' : 'Clients served'">
-                        <li v-for="client in block.summary.clients" :key="`${companyIndex}-${client}`">
-                            {{ client }}
+                        <li v-for="client in block.summary.clients" :key="`${companyIndex}-${pick(client)}`">
+                            {{ pick(client) }}
                         </li>
                     </ul>
                 </div>
