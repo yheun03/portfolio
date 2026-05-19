@@ -414,6 +414,7 @@
 }
 
 [data-theme="dark"] {
+
     .promo-card,
     .promo-feature-card {
         background: color-mix(in srgb, var(--color-surface-strong) 88%, transparent);
@@ -482,6 +483,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .promo-card,
     .promo-feature-card {
         transition: none;

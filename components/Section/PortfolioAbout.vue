@@ -7,39 +7,28 @@
                 <p class="section-title__eyebrow">{{ t("nav.about") }}</p>
 
                 <h2 class="about__display">
-                    <span
-                        v-for="(line, lineIndex) in displayLines"
-                        :key="`about-line-${lineIndex}`"
-                        class="about__display-line"
-                        :class="{ 'about__display-line--accent': line.accent }"
-                    >
-                        <span
-                            v-for="(word, wordIndex) in line.words"
-                            :key="wordKey(`about-${lineIndex}`, wordIndex)"
+                    <span v-for="(line, lineIndex) in displayLines" :key="`about-line-${lineIndex}`"
+                        class="about__display-line" :class="{ 'about__display-line--accent': line.accent }">
+                        <span v-for="(word, wordIndex) in line.words" :key="wordKey(`about-${lineIndex}`, wordIndex)"
                             class="typo-word"
                             :class="{ 'typo-word--active': isActive(wordKey(`about-${lineIndex}`, wordIndex)) }"
-                            :style="{ '--word-index': wordIndex }"
-                            tabindex="0"
+                            :style="{ '--word-index': wordIndex }" tabindex="0"
                             @mouseenter="setActive(wordKey(`about-${lineIndex}`, wordIndex))"
-                            @mouseleave="setActive(null)"
-                            @focus="setActive(wordKey(`about-${lineIndex}`, wordIndex))"
-                            @blur="setActive(null)"
-                        >{{ word }}</span>
+                            @mouseleave="setActive(null)" @focus="setActive(wordKey(`about-${lineIndex}`, wordIndex))"
+                            @blur="setActive(null)">{{ word }}</span>
                     </span>
                 </h2>
 
                 <p class="about__lead">{{ t("about.tagline") }}</p>
             </header>
 
-            <section class="about__spotlight promo-spotlight" data-animate :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
+            <section class="about__spotlight promo-spotlight" data-animate
+                :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
                 <h3 class="promo-spotlight__kicker">{{ t("about.kicker") }}</h3>
                 <ul class="promo-feature-grid">
                     <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)">
-                        <PromoFeatureCard
-                            :eyebrow="String(index + 1).padStart(2, '0')"
-                            :title="pick(principle.title)"
-                            :description="pick(principle.description)"
-                        />
+                        <PromoFeatureCard :eyebrow="String(index + 1).padStart(2, '0')" :title="pick(principle.title)"
+                            :description="pick(principle.description)" />
                     </li>
                 </ul>
             </section>

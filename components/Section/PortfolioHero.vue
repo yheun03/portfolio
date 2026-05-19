@@ -13,35 +13,22 @@
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
                 <h1 class="hero__display" :aria-label="heroAriaLabel">
-                    <span
-                        v-for="(line, lineIndex) in heroLines"
-                        :key="`line-${lineIndex}`"
-                        class="hero__display-line"
-                        :class="{ 'hero__display-line--accent': line.accent }"
-                    >
-                        <span
-                            v-for="(word, wordIndex) in line.words"
-                            :key="wordKey(`hero-${lineIndex}`, wordIndex)"
+                    <span v-for="(line, lineIndex) in heroLines" :key="`line-${lineIndex}`" class="hero__display-line"
+                        :class="{ 'hero__display-line--accent': line.accent }">
+                        <span v-for="(word, wordIndex) in line.words" :key="wordKey(`hero-${lineIndex}`, wordIndex)"
                             class="typo-word"
                             :class="{ 'typo-word--active': isActive(wordKey(`hero-${lineIndex}`, wordIndex)) }"
-                            :style="{ '--word-index': wordIndex }"
-                            tabindex="0"
+                            :style="{ '--word-index': wordIndex }" tabindex="0"
                             @mouseenter="setActive(wordKey(`hero-${lineIndex}`, wordIndex))"
-                            @mouseleave="setActive(null)"
-                            @focus="setActive(wordKey(`hero-${lineIndex}`, wordIndex))"
-                            @blur="setActive(null)"
-                        >{{ word }}</span>
+                            @mouseleave="setActive(null)" @focus="setActive(wordKey(`hero-${lineIndex}`, wordIndex))"
+                            @blur="setActive(null)">{{ word }}</span>
                     </span>
                 </h1>
 
                 <p class="hero__lead">{{ heroLead }}</p>
             </div>
 
-            <section
-                class="hero__essentials"
-                data-animate
-                :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'"
-            >
+            <section class="hero__essentials" data-animate :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'">
                 <header class="hero__essentials-head">
                     <h2 class="hero__essentials-title">{{ t("hero.kicker") }}</h2>
                     <p class="hero__essentials-lead">{{ t("hero.essentialsLead") }}</p>
