@@ -22,21 +22,19 @@ body:has(.gallery-detail.gallery-page--personal) {
         opacity: 1;
         mask-image: none;
         background-image:
-            radial-gradient(ellipse 82% 56% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 58%),
-            radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 24%, transparent), transparent 52%),
-            linear-gradient(color-mix(in srgb, var(--gallery-muted) 18%, transparent) 1px, transparent 1px),
-            linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 18%, transparent) 1px, transparent 1px);
-        background-size: auto, auto, 96px 96px, 96px 96px;
+            radial-gradient(ellipse 82% 56% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 13%, transparent), transparent 58%),
+            radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 22%, transparent), transparent 52%);
+        background-size: auto, auto;
 
         &::after {
             content: "";
             position: absolute;
             inset: 0;
             pointer-events: none;
-            opacity: 0.34;
+            opacity: 0.42;
             background-image: $texture-noise;
-            background-size: 256px 256px;
-            mix-blend-mode: soft-light;
+            background-size: 160px 160px;
+            mix-blend-mode: multiply;
         }
     }
 
@@ -115,15 +113,23 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     .app-background {
         background-image:
             radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
-            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--primary-400) 10%, transparent), transparent 50%),
-            linear-gradient(color-mix(in srgb, var(--gallery-muted) 16%, transparent) 1px, transparent 1px),
-            linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 16%, transparent) 1px, transparent 1px);
-        background-size: auto, auto, 96px 96px, 96px 96px;
+            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--gallery-muted) 10%, transparent), transparent 50%);
+        background-size: auto, auto;
 
         &::after {
-            opacity: 0.28;
+            opacity: 0.38;
             mix-blend-mode: multiply;
         }
+    }
+}
+
+[data-theme="dark"] body:has(.gallery-page--career),
+[data-theme="dark"] body:has(.gallery-page--personal),
+[data-theme="dark"] body:has(.gallery-detail.gallery-page--career),
+[data-theme="dark"] body:has(.gallery-detail.gallery-page--personal) {
+    .app-background::after {
+        opacity: 0.16;
+        mix-blend-mode: normal;
     }
 }
 
