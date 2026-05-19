@@ -13,7 +13,7 @@
         <div class="works__title-col">
             <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
             <!-- 카테고리: PC는 LNB 세로 / 좁은 화면은 가로 칩 레일 -->
-            <div class="works__filters lnb-tablist" role="tablist"
+            <div class="works__filters lnb-tablist promo-tab-rail" role="tablist"
                 :aria-orientation="isNarrow ? 'horizontal' : 'vertical'"
                 :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
                 <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`"
@@ -25,7 +25,7 @@
                 </button>
             </div>
             <p class="section-title__description">{{ worksSectionDescription }}</p>
-            <div class="works__archive-summary" :style="archiveSummaryStyle" aria-live="polite">
+            <div class="works__archive-summary promo-card" :style="archiveSummaryStyle" aria-live="polite">
                 <p class="works__archive-meta">
                     <strong>{{ totalCareerWorkCount }}</strong>
                     <span>{{ locale === 'ko' ? '개 실무 프로젝트 아카이브' : 'client project archive' }}</span>

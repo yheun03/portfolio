@@ -24,6 +24,7 @@ $font-weight-semibold: var(--font-weight-semibold);
 $font-weight-bold: var(--font-weight-bold);
 $font-weight-black: var(--font-weight-black);
 $line-height-tight: var(--line-height-tight);
+$line-height-display: var(--line-height-display);
 $line-height-heading: var(--line-height-heading);
 $line-height-title: var(--line-height-title);
 $line-height-body: var(--line-height-body);
@@ -108,16 +109,16 @@ $space-section-gap: var(--space-section-gap);
 $space-block-gap: var(--space-block-gap);
 
 $font-presets: (
-    heading-1: (family: $font-display, size: $font-size-hero, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
+    heading-1: (family: $font-display, size: $font-size-hero, weight: $font-weight-black, line-height: $line-height-display, letter-spacing: $tracking-tight),
     heading-2: (family: $font-display, size: $font-size-section-title, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-tight),
     heading-3: (family: $font-display, size: $font-size-xl, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
     title-1: (family: $font-display, size: $font-size-lg, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
     title-2: (family: $font-display, size: $font-size-md, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
     body-1: (family: $font-body, size: $font-size-md, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
     body-2: (family: $font-body, size: $font-size-sm, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
-    caption-1: (family: $font-body, size: $font-size-xs, weight: $font-weight-medium, line-height: 1.45, letter-spacing: $tracking-ui),
-    caption-2: (family: $font-body, size: $font-size-2xs, weight: $font-weight-semibold, line-height: 1.35, letter-spacing: $tracking-label),
-    label: (family: $font-mono, size: $font-size-2xs, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
+    caption-1: (family: $font-body, size: $font-size-sm, weight: $font-weight-medium, line-height: $line-height-ui, letter-spacing: $tracking-ui),
+    caption-2: (family: $font-body, size: $font-size-xs, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
+    label: (family: $font-mono, size: $font-size-xs, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
     button: (family: $font-display, size: $font-size-md, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
 );
 
@@ -125,14 +126,16 @@ $font-presets: (
     --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
-    --font-size-2xs: 0.72rem;
-    --font-size-xs: 0.78rem;
-    --font-size-sm: 0.86rem;
-    --font-size-md: clamp(0.92rem, 0.88rem + 0.18vw, 1.03rem);
+    /* WCAG·PSI: 본문 16px+, UI 14px+ (design-tokens typography.fontSize) */
+    --font-size-floor: 0.75rem;
+    --font-size-2xs: var(--font-size-xs);
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 0.9375rem;
+    --font-size-md: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
     --font-size-lg: clamp(1rem, 0.96rem + 0.32vw, 1.16rem);
     --font-size-xl: clamp(1.12rem, 1rem + 0.8vw, 1.42rem);
     --font-size-section-title: clamp(1.9rem, 3.2vw, 3.05rem);
-    --font-size-hero: clamp(3.8rem, 6vw, 7.25rem);
+    --font-size-hero: clamp(4rem, 7.5vw, 8.5rem);
     --font-size-hero-card: clamp(2.15rem, 4vw, 4.45rem);
     --font-size-display-soft: clamp(2.2rem, 5vw, 5.25rem);
     --font-size-contact: clamp(2.35rem, 8vw, 8.75rem);
@@ -142,11 +145,12 @@ $font-presets: (
     --font-weight-semibold: 720;
     --font-weight-bold: 760;
     --font-weight-black: 900;
-    --line-height-tight: 0.96;
-    --line-height-heading: 1.08;
-    --line-height-title: 1.14;
-    --line-height-body: 1.66;
-    --line-height-ui: 1;
+    --line-height-tight: 1.05;
+    --line-height-display: 1.12;
+    --line-height-heading: 1.14;
+    --line-height-title: 1.22;
+    --line-height-body: 1.72;
+    --line-height-ui: 1.2;
     --tracking-tight: -0.04em;
     --tracking-heading: -0.035em;
     --tracking-ui: 0.02em;
@@ -191,7 +195,7 @@ $font-presets: (
     --color-surface: var(--grayscale-0);
     --color-surface-strong: var(--grayscale-200);
     --color-text: var(--grayscale-900);
-    --color-text-muted: var(--grayscale-600);
+    --color-text-muted: var(--grayscale-700);
     --color-on-accent: var(--grayscale-0);
     --color-border: var(--grayscale-300);
     --color-overlay: var(--overlay);
@@ -215,6 +219,7 @@ $font-presets: (
     --radius-md: 0.9rem;
     --radius-lg: 1.15rem;
     --radius-xl: 1.65rem;
+    --radius-2xl: 2.25rem;
     --space-0: 0;
     --space-1: 0.25rem;
     --space-2: 0.38rem;
@@ -232,22 +237,25 @@ $font-presets: (
     --space-fluid-md: clamp(1rem, 2.4vw, 1.85rem);
     --space-fluid-lg: clamp(1.4rem, 4vw, 3rem);
     --space-fluid-xl: clamp(2.4rem, 6vw, 5rem);
-    --space-fluid-2xl: clamp(3.8rem, 8vw, 6.5rem);
+    --space-fluid-2xl: clamp(4.5rem, 10vw, 8.5rem);
+    --space-fluid-3xl: clamp(6rem, 14vw, 12rem);
     --inset-page: clamp(2rem, 5vw, 6rem);
     --inset-page-hero: clamp(1.5rem, 4vw, 5rem);
     --inset-panel: clamp(1.1rem, 2.6vw, 2rem);
     --cluster-gap: var(--space-3);
-    --card-padding: var(--space-7);
+    --card-padding: clamp(1.35rem, 3vw, 2.35rem);
+    --card-padding-lg: clamp(1.75rem, 4vw, 3rem);
     --card-flow-label: var(--space-4);
     --card-flow-title: var(--space-5);
     --card-flow-content: var(--space-5);
     --card-list-gap: var(--space-2);
     --size-touch: 2.75rem;
+    --size-touch-compact: 2.5rem;
     --layout-header-height: 4.1rem;
     --layout-content-max: 1680px;
     --layout-hero-max: 1840px;
-    --space-section-y: var(--space-fluid-2xl);
-    --space-section-gap: var(--space-fluid-md);
+    --space-section-y: var(--space-fluid-3xl);
+    --space-section-gap: var(--space-fluid-lg);
     --space-block-gap: var(--space-fluid-sm);
 
     /* Gallery / editorial (light: paper beige · dark: navy poster in [data-theme=dark]) */

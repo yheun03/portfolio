@@ -71,7 +71,7 @@
 
             border-radius: $radius-pill;
 
-            color: $grayscale-600;
+            color: var(--color-text-muted);
             @include font(caption-1);
 
             transition:

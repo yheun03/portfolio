@@ -6,7 +6,7 @@
    ============================================================================= */
 
 /** WAVE very small text 기준(≈12px) 이상 */
-$gallery-text-min: 0.75rem;
+$gallery-text-min: 0.875rem;
 $gallery-text-ui: 0.8125rem;
 
 /* ----- Editorial shell (list + detail) ----- */
@@ -409,7 +409,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
         margin: 0;
         color: var(--color-text-muted);
         font-family: var(--font-mono);
-        font-size: max(var(--font-size-2xs), #{$gallery-text-min});
+        font-size: var(--font-size-xs);
         font-weight: var(--font-weight-semibold);
         letter-spacing: var(--tracking-label);
         text-transform: uppercase;
@@ -444,7 +444,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
             border: 1px solid var(--color-border);
             border-radius: $radius-pill;
             background: color-mix(in srgb, var(--color-surface) 72%, transparent);
-            font-size: max(var(--font-size-2xs), #{$gallery-text-min});
+            font-size: var(--font-size-xs);
             font-weight: var(--font-weight-semibold);
         }
     }
@@ -813,8 +813,8 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     padding-block: clamp(0.75rem, 1.8vw, 1rem) clamp(0.65rem, 1.5vw, 0.85rem);
     max-width: var(--gallery-copy-max);
     color: var(--gallery-body-soft);
-    font-size: clamp(0.88rem, 1.9vw, 0.98rem);
-    line-height: 1.65;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body);
 }
 
 .gallery-editorial__entry-tags {
@@ -827,9 +827,9 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
 
     li {
         color: var(--gallery-muted);
-        font-size: #{$gallery-text-min};
+        font-size: var(--font-size-xs);
         font-weight: 700;
-        letter-spacing: 0.11em;
+        letter-spacing: var(--tracking-label);
         text-transform: uppercase;
 
         &:not(:last-child)::after {
@@ -998,8 +998,8 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
             gap: 0.35rem 0.55rem;
             margin: 0;
             color: var(--gallery-cream);
-            font-size: 0.92rem;
-            line-height: 1.55;
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-body);
         }
     }
 
@@ -1010,7 +1010,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
         border-radius: 0;
         background: transparent;
         color: var(--gallery-body);
-        font-size: 0.85rem;
+        font-size: var(--font-size-sm);
         font-weight: 600;
         text-transform: none;
 

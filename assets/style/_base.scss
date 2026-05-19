@@ -7,6 +7,12 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 html,
 body {
     width: 100%;
@@ -19,11 +25,25 @@ body {
 /* base/_typography.scss */
 body {
     @include font(body-1);
-    color: $grayscale-900;
-    background: $grayscale-100;
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+    background: var(--color-bg);
     transition: background-color 0.35s ease, color 0.35s ease;
     text-wrap: pretty;
     word-break: keep-all;
+}
+
+/* 라벨·캡션: UI 최소 14px (design-tokens --font-size-xs) */
+:where(.base-label, .technical-label, small) {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-ui);
+}
+
+#main-content {
+    :where(p, li, dd) {
+        font-size: max(1em, var(--font-size-sm));
+        line-height: var(--line-height-body);
+    }
 }
 
 h1,
@@ -298,7 +318,6 @@ html.skeleton-active {
         .hero__floating-list li,
         .hero__keyword-cloud li,
         .hero__actions .base-button,
-        .hero__scroll-cue,
         .personal__archive-link a,
         .personal__works-link a {
             @include skeleton-rect;
