@@ -1,9 +1,8 @@
 <template>
-    <li class="timeline-item" data-animate>
-        <BaseLabel tone="journey" label="Milestone" />
-        <p class="timeline-item__period">{{ period }}</p>
-        <h3>{{ title }}</h3>
-        <p>{{ description }}</p>
+    <li class="journey-milestone" data-animate>
+        <p class="journey-milestone__period">{{ period }}</p>
+        <h4 class="journey-milestone__title">{{ title }}</h4>
+        <p class="journey-milestone__description">{{ description }}</p>
     </li>
 </template>
 
