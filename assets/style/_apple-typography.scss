@@ -1,0 +1,521 @@
+/* pages/portfolio/_apple-typography.scss — Hero / About 타이포 중심 레이아웃 */
+
+.page-layer--hero {
+    position: relative;
+    padding-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+.page-layer--profile {
+    position: relative;
+    overflow: visible;
+    background:
+        radial-gradient(ellipse 72% 48% at 14% 6%, color-mix(in srgb, var(--color-primary) 6%, transparent), transparent 58%),
+        linear-gradient(180deg, transparent, color-mix(in srgb, var(--color-primary) 3%, transparent) 50%, transparent);
+}
+
+/* —— 공통 인터랙티브 단어 —— */
+.typo-word {
+    display: inline-block;
+    margin-inline: 0.06em;
+    padding-inline: 0.02em;
+    cursor: default;
+    outline: none;
+    transform-origin: left bottom;
+    transition:
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease,
+        opacity 0.35s ease,
+        letter-spacing 0.42s ease;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+}
+
+[data-animate] .typo-word {
+    opacity: 0;
+    transform: translate3d(0, 0.45em, 0);
+}
+
+[data-animate].is-visible .typo-word {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition:
+        opacity 0.55s ease,
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease,
+        letter-spacing 0.42s ease;
+    transition-delay: calc(0.08s + (var(--word-index, 0) * 0.045s));
+}
+
+.typo-word--active,
+.typo-word:hover,
+.typo-word:focus-visible {
+    color: var(--color-primary);
+    letter-spacing: 0.02em;
+    transform: translate3d(0, -0.06em, 0) scale(1.03);
+}
+
+.typo-word--ghost {
+    color: color-mix(in srgb, var(--color-text) 42%, var(--color-text-muted));
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.8vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.typo-word--lexicon {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.2vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.typo-word--panel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: color-mix(in srgb, var(--color-text) 72%, var(--color-text-muted));
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-align: left;
+    cursor: pointer;
+
+    &.typo-word--active,
+    &:hover,
+    &:focus-visible {
+        color: var(--color-primary);
+        transform: translate3d(0.35rem, 0, 0) scale(1.02);
+    }
+}
+
+/* —— Hero —— */
+.section--hero {
+    padding-block: clamp(2rem, 5vw, 5rem) clamp(3rem, 8vw, 7rem);
+}
+
+.hero__poster {
+    --hero-x: 72%;
+    --hero-y: 28%;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.34fr);
+    grid-template-areas:
+        "stage stage"
+        "lexicon aside"
+        "actions metrics";
+    gap: clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3rem);
+    align-items: end;
+    min-height: min(86svh, 900px);
+    padding: clamp(2.5rem, 7vw, 6.5rem) clamp(1.5rem, 5vw, 4rem);
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background:
+        radial-gradient(circle at var(--hero-x) var(--hero-y), color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 36rem),
+        transparent;
+    isolation: isolate;
+
+    &::before,
+    &::after {
+        display: none;
+    }
+}
+
+.hero__canvas {
+    opacity: 0.08;
+}
+
+.hero__meta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.65rem;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+
+    span:nth-child(2) {
+        opacity: 0.45;
+    }
+}
+
+.hero__stage {
+    grid-area: stage;
+    max-width: min(72rem, 100%);
+    padding-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.hero__eyebrow {
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero__display {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -0.03em;
+}
+
+.hero__display-line {
+    display: block;
+    margin-bottom: 0.04em;
+    font-size: clamp(3.6rem, 11vw, 11.5rem);
+    transform-origin: left center;
+
+    &--accent .typo-word {
+        background: var(--gradient-accent);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        &.typo-word--active,
+        &:hover,
+        &:focus-visible {
+            filter: brightness(1.08);
+        }
+    }
+}
+
+.hero__lead {
+    max-width: 22ch;
+    margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+    color: var(--color-text-muted);
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.hero__lexicon {
+    grid-area: lexicon;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem);
+    align-items: baseline;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.hero__aside {
+    grid-area: aside;
+    display: grid;
+    gap: clamp(0.35rem, 1vw, 0.65rem);
+    align-self: center;
+    justify-self: end;
+    max-width: 16ch;
+    text-align: right;
+}
+
+.hero__aside-line {
+    margin: 0;
+}
+
+.hero__actions {
+    grid-area: actions;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-self: end;
+}
+
+.hero__metrics {
+    grid-area: metrics;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    justify-self: end;
+    margin: 0;
+    padding: 0;
+}
+
+.hero__metric {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 5.5rem;
+
+    dt {
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    dd {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(1.75rem, 3vw, 2.75rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.02em;
+    }
+}
+
+.hero__scroll-hint {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: color-mix(in srgb, var(--color-text-muted) 70%, transparent);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+}
+
+/* —— About —— */
+.section.section--about {
+    display: block;
+    min-height: auto;
+    padding-block: clamp(4rem, 12vw, 9rem) clamp(5rem, 14vw, 11rem);
+}
+
+.section.section--about::before {
+    content: "";
+    position: absolute;
+    inset: 10% 0 auto;
+    height: min(50rem, 70%);
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 62%);
+    opacity: 0.65;
+}
+
+.section.section--about::after {
+    content: "Read · Build · Ship";
+    right: 50%;
+    bottom: clamp(1.5rem, 5vw, 4rem);
+    left: auto;
+    transform: translateX(50%);
+    max-width: 96vw;
+    color: color-mix(in srgb, var(--color-primary) 7%, transparent);
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 11vw, 12rem);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -0.04em;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.about__stage {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "intro"
+        "words"
+        "flow";
+    gap: clamp(3.5rem, 10vw, 7rem);
+}
+
+.about__intro {
+    grid-area: intro;
+    max-width: min(68rem, 100%);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &::after {
+        display: none;
+    }
+}
+
+.about__display {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.03em;
+}
+
+.about__display-line {
+    display: block;
+    margin-bottom: 0.05em;
+    font-size: clamp(3.2rem, 10vw, 10rem);
+
+    &--accent .typo-word {
+        background: var(--gradient-accent);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+.about__lead {
+    max-width: 24ch;
+    margin: clamp(2rem, 5vw, 3.25rem) 0 0;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.about__word-grid {
+    grid-area: words;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 3rem);
+    align-items: baseline;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        flex: 0 1 auto;
+        min-width: min(100%, 8rem);
+    }
+}
+
+.about__flow {
+    grid-area: flow;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1.5rem, 3vw, 2rem) 0 0;
+    margin: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+    list-style: none;
+}
+
+.about__flow li {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.about__flow-index {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.about__flow-label {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.5vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 1023.98px) {
+    .hero__poster {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "stage"
+            "lexicon"
+            "aside"
+            "actions"
+            "metrics";
+        min-height: auto;
+        padding-inline: clamp(1rem, 5vw, 2rem);
+    }
+
+    .hero__meta {
+        position: relative;
+        margin-bottom: clamp(1rem, 4vw, 2rem);
+    }
+
+    .hero__stage {
+        padding-top: 0;
+    }
+
+    .hero__aside {
+        justify-self: start;
+        max-width: none;
+        text-align: left;
+    }
+
+    .hero__metrics {
+        justify-self: start;
+    }
+
+    .hero__scroll-hint {
+        display: none;
+    }
+
+    .about__flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .hero__display-line {
+        font-size: clamp(2.8rem, 14vw, 5.5rem);
+    }
+
+    .typo-word--lexicon {
+        font-size: clamp(1.25rem, 6vw, 1.75rem);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero__metrics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .about__display-line {
+        font-size: clamp(2.6rem, 13vw, 5rem);
+    }
+
+    .typo-word--panel {
+        font-size: clamp(1.65rem, 8vw, 2.5rem);
+    }
+
+    .about__flow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] .typo-word {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .typo-word--active,
+    .typo-word:hover,
+    .typo-word:focus-visible {
+        transform: none;
+        letter-spacing: 0;
+    }
+}
