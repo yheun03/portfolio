@@ -24,11 +24,11 @@
                     {{ pick(category.label) }}
                 </button>
             </div>
-            <p class="section-title__description">{{ worksSectionDescription }}</p>
+            <p class="section-title__description">{{ t("works.sectionDescription") }}</p>
             <div class="works__archive-summary promo-card" :style="archiveSummaryStyle" aria-live="polite">
                 <p class="works__archive-meta">
                     <strong>{{ totalCareerWorkCount }}</strong>
-                    <span>{{ locale === 'ko' ? '개 실무 프로젝트 아카이브' : 'client project archive' }}</span>
+                    <span>{{ t("works.archiveCountLabel") }}</span>
                 </p>
                 <div class="works__archive-meter" aria-hidden="true">
                     <span />
@@ -50,16 +50,14 @@
         </div>
         <div v-if="hasMoreWorks || canCollapseWorks" class="works__list-control" aria-live="polite">
             <p>
-                {{ locale === 'ko'
-                    ? `${visibleWorks.length} / ${pinnedFilteredWorks.length}개 대표 사례 표시 중`
-                    : `Showing ${visibleWorks.length} of ${pinnedFilteredWorks.length} pinned projects` }}
+                {{ visibleCountLabel }}
             </p>
             <button v-if="hasMoreWorks" type="button" class="base-button base-button--ghost" @click="showMoreWorks">
-                {{ locale === 'ko' ? '프로젝트 더 보기' : 'Show more projects' }}
+                {{ t("works.showMore") }}
             </button>
             <button v-else-if="canCollapseWorks" type="button" class="base-button base-button--ghost"
                 @click="collapseWorks">
-                {{ locale === 'ko' ? '프로젝트 접기' : 'Collapse projects' }}
+                {{ t("works.collapse") }}
             </button>
         </div>
 
@@ -151,18 +149,18 @@ const archiveSummaryStyle = computed(() => ({
     "--works-highlight-ratio": `${highlightedWorkRatio.value}%`,
 }));
 const archiveSummaryText = computed(() =>
-    locale.value === "ko"
-        ? `메인에는 현재 탭의 대표 ${pinnedFilteredWorks.value.length}건만 보여주고, 전체 ${currentTabTotalCount.value}건은 갤러리에 정리했습니다.`
-        : `This page shows ${pinnedFilteredWorks.value.length} representative highlights in this tab; ${currentTabTotalCount.value} total items are organized in the gallery.`,
-);
-
-const worksSectionDescription = computed(() =>
-    locale.value === "ko"
-        ? `여러 SI·SM·솔루션 프로젝트 중 핵심 사례만 인덱스에 선별했습니다. 전체 목록·캡처·소요 시간은 프로젝트 페이지에서 확인할 수 있습니다.`
-        : `The index curates key SI, SM, and solution cases. The full list, captures, and durations are available on the Projects page.`,
+    t("works.archiveSummary")
+        .replace("{pinned}", String(pinnedFilteredWorks.value.length))
+        .replace("{total}", String(currentTabTotalCount.value)),
 );
 
 const visibleWorks = computed(() => pinnedFilteredWorks.value.slice(0, visibleCount.value));
+
+const visibleCountLabel = computed(() =>
+    t("works.visibleCount")
+        .replace("{visible}", String(visibleWorks.value.length))
+        .replace("{total}", String(pinnedFilteredWorks.value.length)),
+);
 const hasMoreWorks = computed(() => visibleCount.value < pinnedFilteredWorks.value.length);
 const canCollapseWorks = computed(() => pinnedFilteredWorks.value.length > initialVisibleCount);
 

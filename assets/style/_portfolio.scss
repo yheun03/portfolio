@@ -1508,7 +1508,7 @@ html:not([data-theme="dark"]) .app-background::after {
         gap: var(--space-6);
     }
 
-    .journey__chapter-aside {
+    .journey__chapter-card {
         position: static;
     }
 
@@ -1618,54 +1618,8 @@ html:not([data-theme="dark"]) .app-background::after {
     }
 
     /**
-     * 좁은 화면: LNB 세로 레일 → 가로 스크롤 칩 (PC 그리드·왼쪽 액센트 제거)
+     * 좁은 화면: LNB 세로 레일 → 가로 스크롤 칩 (see _mobile-works-journey at file end)
      */
-    .section--works .works__filters.lnb-tablist {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: var(--space-2);
-        width: 100%;
-        max-width: none;
-        margin-inline: calc(-1 * var(--touch-pad-x));
-        padding: var(--space-3) var(--touch-pad-x);
-        border-left: none;
-        border-bottom: 1px solid color-mix(in srgb, var(--color-border) 88%, var(--color-primary) 5%);
-        border-radius: 0;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-
-        .ui-tab-button {
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-            width: auto;
-            max-width: none;
-            min-width: 0;
-            min-height: var(--size-touch);
-            margin-left: 0;
-            padding: var(--space-2) var(--space-4);
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-            border: 1px solid color-mix(in srgb, var(--color-border) 90%, var(--color-primary) 4%);
-            border-radius: 999px;
-            background: color-mix(in srgb, var(--color-surface) 82%, transparent);
-            font-size: var(--font-size-sm);
-
-            &:hover {
-                background: color-mix(in srgb, var(--color-primary) 9%, transparent);
-            }
-
-            &.is-active {
-                border-color: color-mix(in srgb, var(--color-primary) 52%, var(--color-border));
-                background: color-mix(in srgb, var(--color-primary) 16%, var(--color-surface));
-                color: var(--color-text);
-                box-shadow: none;
-            }
-        }
-    }
 
     .works__list-control {
         flex-direction: column;
@@ -1995,7 +1949,7 @@ html:not([data-theme="dark"]) .app-background::after {
     left: auto;
     transform: translateX(50%);
     max-width: 96vw;
-    color: color-mix(in srgb, var(--color-primary) 6%, transparent);
+    color: color-mix(in srgb, var(--color-text) 5%, transparent);
     font-family: var(--font-display);
     font-size: clamp(3rem, 11vw, 12rem);
     font-weight: 900;
@@ -2116,8 +2070,7 @@ html:not([data-theme="dark"]) .app-background::after {
         justify-content: flex-start;
     }
 
-    .promo-tab-rail,
-    .works__filters.lnb-tablist {
+    .promo-tab-rail:not(.works__filters) {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.35rem;
@@ -2488,23 +2441,23 @@ html:not([data-theme="dark"]) .app-background::after {
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
     padding-top: clamp(2rem, 4vw, 3rem);
-    border-top: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
 
-    &--temp {
-        .journey__chapter-aside {
-            padding: clamp(1rem, 2vw, 1.5rem);
-            border: 1px dashed color-mix(in srgb, var(--color-primary) 38%, var(--color-border));
-            border-radius: var(--radius-xl);
-        }
+    &:not(:first-of-type) {
+        margin-top: clamp(0.5rem, 2vw, 1rem);
+    }
+
+    &--temp .journey__chapter-card {
+        background: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface));
     }
 }
 
-.journey__chapter-aside {
+.journey__chapter-card {
     position: sticky;
     top: calc(var(--layout-header-height) + 1.25rem);
     display: grid;
     gap: clamp(0.65rem, 1.5vw, 1rem);
     align-content: start;
+    min-width: 0;
 }
 
 .journey__chapter-index {
@@ -2567,60 +2520,49 @@ html:not([data-theme="dark"]) .app-background::after {
     }
 }
 
-.journey__client-rail {
-    overflow: hidden;
-    margin-top: var(--space-4);
-    padding: var(--space-2) 0;
-    border-block: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-}
-
-.journey__client-track {
+.journey__clients {
     display: flex;
-    width: max-content;
-    gap: var(--space-3);
-    animation: journey-client-flow 24s linear infinite;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding: 0;
+    margin: var(--space-4) 0 0;
+    list-style: none;
+
+    li {
+        display: inline-flex;
+        align-items: center;
+        padding: var(--space-2) var(--space-3);
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+        color: color-mix(in srgb, var(--color-text) 85%, var(--color-text-muted));
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.2;
+        white-space: nowrap;
+    }
 }
 
-.journey__client-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: max-content;
-    padding: var(--space-2) var(--space-4);
-    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, var(--color-border));
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--color-surface) 70%, transparent);
-    color: color-mix(in srgb, var(--color-text) 82%, var(--color-text-muted));
-    font-family: var(--font-display);
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: var(--tracking-ui);
-    white-space: nowrap;
-}
-
-.journey__milestones {
+.journey__steps {
     display: grid;
-    gap: 0;
+    gap: clamp(1.25rem, 2.5vw, 1.75rem);
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
 .journey-milestone {
-    padding: clamp(1rem, 2.2vw, 1.35rem) 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+    display: grid;
+    gap: 0.4rem;
+    padding: 0;
+    padding-inline-start: clamp(0.85rem, 2vw, 1.1rem);
+    border-inline-start: 2px solid color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
     list-style: none;
 
-    &:first-child {
-        border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
-    }
-
     &__period {
-        margin: 0 0 0.35rem;
+        margin: 0;
         color: var(--color-primary);
         font-family: var(--font-mono);
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
         font-weight: 700;
         letter-spacing: var(--tracking-label);
         line-height: var(--line-height-ui);
@@ -2629,16 +2571,16 @@ html:not([data-theme="dark"]) .app-background::after {
     &__title {
         margin: 0;
         font-family: var(--font-display);
-        font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+        font-size: clamp(1.15rem, 2.2vw, 1.55rem);
         font-weight: 800;
         line-height: var(--line-height-heading);
         letter-spacing: -0.02em;
     }
 
     &__description {
-        margin: 0.45rem 0 0;
+        margin: 0;
         color: var(--color-text-muted);
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-sm);
         font-weight: 500;
         line-height: var(--line-height-body);
         text-wrap: pretty;
@@ -2648,12 +2590,6 @@ html:not([data-theme="dark"]) .app-background::after {
 .journey__next-link {
     justify-self: start;
     width: fit-content;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .journey__client-track {
-        animation: none;
-    }
 }
 
 /* pages/portfolio/_contact-refresh.scss */
@@ -2666,7 +2602,7 @@ html:not([data-theme="dark"]) .app-background::after {
     overflow: visible;
     content-visibility: visible;
     contain-intrinsic-size: none;
-    padding-block: clamp(4rem, 10vw, 7rem) calc(var(--space-section-y) + var(--space-12));
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(5rem, 12vw, 9rem);
     grid-template-columns: unset;
 }
 
@@ -2812,7 +2748,7 @@ html:not([data-theme="dark"]) .app-background::after {
     flex-direction: column;
     align-items: center;
     gap: var(--space-4);
-    margin-top: clamp(0.5rem, 2vw, 1.5rem);
+    margin-block: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
 
     img {
         width: clamp(3.5rem, 8vw, 5rem);
@@ -2833,4 +2769,228 @@ html:not([data-theme="dark"]) .app-background::after {
     font-weight: 800;
     line-height: var(--line-height-title);
     letter-spacing: -0.02em;
+}
+
+/* pages/portfolio/_mobile-works-journey.scss */
+@media (max-width: 1023.98px) {
+    .section--works .works__title-col {
+        gap: var(--space-5);
+    }
+
+    .section--works .works__filters.lnb-tablist.promo-tab-rail {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        align-self: stretch;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0.15rem 0 0.65rem;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .ui-tab-button {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: auto;
+            min-width: max-content;
+            max-width: none;
+            min-height: 2.75rem;
+            margin: 0;
+            padding: 0.55rem 1.1rem;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid color-mix(in srgb, var(--color-border) 88%, transparent);
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            line-height: 1.25;
+            text-align: center;
+            white-space: nowrap;
+            transform: none;
+
+            &:hover {
+                transform: none;
+                background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+            }
+
+            &.is-active {
+                color: var(--color-on-primary, #fff);
+                border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+                background: var(--gradient-accent);
+                box-shadow: none;
+            }
+        }
+    }
+
+    .section--works .works__archive-summary {
+        order: 1;
+    }
+
+    .section.section--journey {
+        gap: var(--touch-stack-gap);
+    }
+
+    .journey__flow {
+        gap: var(--space-8);
+    }
+
+    .journey__kicker {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .journey__chapter {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+        gap: var(--space-5);
+        padding-top: 0;
+
+        &:not(:first-of-type) {
+            margin-top: var(--space-7);
+            padding-top: var(--space-7);
+        }
+    }
+
+    .journey__chapter-card {
+        position: static;
+        gap: var(--space-3);
+        padding: var(--space-5);
+        border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+        border-radius: var(--radius-xl);
+        background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    }
+
+    .journey__chapter--temp .journey__chapter-card {
+        border-style: dashed;
+        border-color: color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+    }
+
+    .journey__chapter-title {
+        font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    }
+
+    .journey__chapter-intro {
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+    }
+
+    .journey__chapter-roles {
+        padding-left: 1rem;
+        margin-top: 0;
+
+        li {
+            font-size: var(--font-size-xs);
+        }
+    }
+
+    .journey__clients {
+        margin-top: var(--space-3);
+
+        li {
+            white-space: normal;
+            font-size: 0.75rem;
+        }
+    }
+
+    .journey__steps {
+        position: relative;
+        display: grid;
+        gap: 0;
+        padding: 0 0 0 var(--space-6);
+        margin: 0;
+        list-style: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0.4rem;
+            top: 0.75rem;
+            bottom: 0.75rem;
+            width: 2px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+        }
+    }
+
+    .journey-milestone {
+        position: relative;
+        gap: 0.35rem;
+        padding: var(--space-5) 0;
+        padding-inline-start: var(--space-4);
+        border: none;
+        border-inline-start: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: calc(-1 * var(--space-6) + 0.15rem);
+            top: 1.35rem;
+            z-index: 1;
+            width: 0.55rem;
+            height: 0.55rem;
+            border: 2px solid var(--color-surface);
+            border-radius: 999px;
+            background: var(--color-primary);
+            box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
+        }
+
+        &:not(:last-child)::after {
+            content: none;
+        }
+
+        &__period {
+            display: inline-block;
+            width: fit-content;
+            padding: 0.2rem 0.55rem;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+            font-size: 0.75rem;
+        }
+
+        &__title {
+            font-size: clamp(1.05rem, 4.5vw, 1.2rem);
+        }
+
+        &__description {
+            font-size: var(--font-size-sm);
+            line-height: 1.55;
+        }
+    }
+
+    .journey__next-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .section--works {
+        padding-top: calc(var(--touch-stack-gap) + 3.5rem);
+    }
+
+    .section--works .works__total-badge {
+        width: 100%;
+        max-width: 18rem;
+    }
+
+    .section--works .works__filters.lnb-tablist.promo-tab-rail .ui-tab-button {
+        min-height: var(--size-touch);
+        padding-inline: 1rem;
+    }
 }
