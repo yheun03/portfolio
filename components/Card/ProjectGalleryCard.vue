@@ -28,16 +28,20 @@
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
 
-                <div class="gallery-card__media">
-                    <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
-                        :fetchpriority="imageFetchPriority" width="1200" height="675" />
+                <div class="gallery-card__media" :class="{ 'gallery-card__media--long': isLongCapture }">
+                    <span class="gallery-card__screen">
+                        <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
+                            :fetchpriority="imageFetchPriority" width="1200" height="675" />
+                    </span>
                 </div>
             </div>
         </template>
         <template v-else>
-            <div class="gallery-card__media">
-                <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
-                    :fetchpriority="imageFetchPriority" width="1200" height="675" />
+            <div class="gallery-card__media" :class="{ 'gallery-card__media--long': isLongCapture }">
+                <span class="gallery-card__screen">
+                    <img :src="coverSrc" :alt="coverAlt" :loading="imageLoading" decoding="async"
+                        :fetchpriority="imageFetchPriority" width="1200" height="675" />
+                </span>
             </div>
             <div class="gallery-card__body">
                 <p class="gallery-card__meta">
@@ -87,6 +91,7 @@ const entryYearSuffix = computed(() => {
 });
 
 const coverSrc = computed(() => resolveAppPath(props.work.captures[0] ?? '/images/projects/placeholder.svg'));
+const isLongCapture = computed(() => /\/(thumbnail-(?:pc|mb)|modal-\d+)\.png$/i.test(props.work.captures[0] ?? ''));
 const isPlaceholderCover = computed(() => {
     const src = props.work.captures[0] ?? '';
     return !src || /placeholder/i.test(src);

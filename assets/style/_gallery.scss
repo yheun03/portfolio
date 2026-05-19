@@ -384,6 +384,13 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
         aspect-ratio: 1200 / 675;
         background: color-mix(in srgb, var(--color-surface) 80%, var(--color-bg));
 
+        .gallery-card__screen {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         img {
             display: block;
             width: 100%;
@@ -419,10 +426,6 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
 
     .gallery-card__excerpt {
         margin: 0;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
         color: var(--color-text-muted);
         font-size: var(--font-size-sm);
         line-height: 1.55;
@@ -812,10 +815,6 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     color: var(--gallery-body-soft);
     font-size: clamp(0.88rem, 1.9vw, 0.98rem);
     line-height: 1.65;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
 }
 
 .gallery-editorial__entry-tags {
@@ -851,6 +850,14 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     border-radius: calc(var(--radius-lg) - 0.45rem);
     background: color-mix(in srgb, var(--gallery-muted) 6%, var(--gallery-bg));
     overflow: hidden;
+    position: relative;
+
+    .gallery-card__screen {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
     img {
         display: block;
@@ -860,6 +867,48 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
         object-fit: cover;
         opacity: 0.9;
         filter: saturate(0.85) contrast(1.06);
+    }
+
+    &--long {
+        aspect-ratio: 4 / 5;
+        max-height: clamp(20rem, 48vw, 34rem);
+        border: 1px solid color-mix(in srgb, var(--gallery-muted) 24%, transparent);
+        background:
+            linear-gradient(180deg, color-mix(in srgb, var(--gallery-bg-elevated) 82%, transparent), color-mix(in srgb, var(--gallery-bg) 92%, transparent)),
+            color-mix(in srgb, var(--gallery-muted) 7%, var(--gallery-bg));
+        overflow: hidden;
+
+        .gallery-card__screen {
+            position: relative;
+            inset: auto;
+            background: color-mix(in srgb, var(--gallery-bg-elevated) 92%, #fff 8%);
+            overflow-x: hidden;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: color-mix(in srgb, var(--gallery-muted) 55%, transparent) transparent;
+
+            &::-webkit-scrollbar {
+                width: 0.35rem;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 999px;
+                background: color-mix(in srgb, var(--gallery-muted) 55%, transparent);
+            }
+        }
+
+        img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
     }
 }
 
@@ -1196,13 +1245,13 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
 
     .gallery-card.gallery-editorial__entry .gallery-card__media {
         grid-area: media;
-        align-self: stretch;
+        align-self: center;
         justify-self: stretch;
         width: 100%;
         min-width: 0;
         max-width: 100%;
         min-height: 0;
-        height: 100%;
+        height: min(100%, clamp(20rem, 34vw, 31rem));
         aspect-ratio: auto;
         border-top: 0;
         border-inline-start: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
@@ -1212,6 +1261,21 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
             height: 100%;
             min-height: 0;
             object-fit: cover;
+        }
+
+        &--long {
+            height: clamp(22rem, 42vw, 38rem);
+            max-height: min(44rem, 78vh);
+            aspect-ratio: 9 / 14;
+            border: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
+
+            img {
+                width: 100%;
+                height: auto;
+                min-height: 100%;
+                object-fit: cover;
+                object-position: top center;
+            }
         }
     }
 }
