@@ -37,30 +37,38 @@
                 <p class="hero__lead">{{ heroLead }}</p>
             </div>
 
-            <section class="hero__spotlight promo-spotlight" data-animate :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'">
-                <h2 class="promo-spotlight__kicker">{{ t("hero.kicker") }}</h2>
-                <ul class="promo-feature-grid promo-feature-grid--hero">
-                    <li v-for="(area, index) in heroFocusCards" :key="pick(area.label)">
-                        <PromoFeatureCard
-                            :eyebrow="String(index + 1).padStart(2, '0')"
-                            :title="pick(area.label)"
-                            :description="pick(area.value)"
-                        />
+            <section
+                class="hero__essentials"
+                data-animate
+                :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'"
+            >
+                <header class="hero__essentials-head">
+                    <h2 class="hero__essentials-title">{{ t("hero.kicker") }}</h2>
+                    <p class="hero__essentials-lead">{{ t("hero.essentialsLead") }}</p>
+                </header>
+
+                <ul class="hero__focus-list">
+                    <li v-for="(area, index) in heroFocusCards" :key="pick(area.label)" class="hero__focus-item">
+                        <span class="hero__focus-index">{{ String(index + 1).padStart(2, "0") }}</span>
+                        <div class="hero__focus-copy">
+                            <strong>{{ pick(area.label) }}</strong>
+                            <span>{{ pick(area.value) }}</span>
+                        </div>
                     </li>
                 </ul>
+
+                <dl ref="statsRef" class="hero__metrics-bar" :aria-label="locale === 'ko' ? '핵심 지표' : 'Key metrics'">
+                    <div v-for="(stat, idx) in convertedStats" :key="stat.label" class="hero__metric">
+                        <dt>{{ stat.label }}</dt>
+                        <dd>{{ statValues[idx] }}{{ stat.suffix }}</dd>
+                    </div>
+                </dl>
             </section>
 
             <nav class="hero__actions" :aria-label="locale === 'ko' ? '바로가기' : 'Quick links'">
                 <a class="base-button base-button--primary" href="#works">{{ t("hero.ctaWorks") }}</a>
                 <a class="base-button base-button--ghost" href="#toolbox">{{ t("hero.ctaToolbox") }}</a>
             </nav>
-
-            <dl ref="statsRef" class="hero__metrics promo-card promo-card--metrics" :aria-label="locale === 'ko' ? '핵심 지표' : 'Key metrics'">
-                <div v-for="(stat, idx) in convertedStats" :key="stat.label" class="hero__metric">
-                    <dt>{{ stat.label }}</dt>
-                    <dd>{{ statValues[idx] }}{{ stat.suffix }}</dd>
-                </div>
-            </dl>
         </div>
     </section>
 </template>
@@ -69,7 +77,6 @@
 import { defineAsyncComponent } from "vue";
 import { profile } from "@content/site";
 import { splitTypoWords, useTypoInteraction } from "~/core/composables/useTypoInteraction";
-import PromoFeatureCard from "~/components/Card/PromoFeatureCard.vue";
 
 const WelcomeCanvas = defineAsyncComponent(() => import("~/components/Section/WelcomeCanvas.vue"));
 

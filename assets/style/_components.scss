@@ -19,7 +19,7 @@
         border-color 0.26s ease,
         color 0.26s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     isolation: isolate;
     @include font(button);
     font-size: var(--font-size-md);
@@ -36,6 +36,7 @@
     }
 
     &--primary {
+        overflow: hidden;
         background: $gradient-accent;
         color: $grayscale-0;
         border-color: color-mix(in srgb, $primary-600 55%, $grayscale-0);
@@ -79,7 +80,7 @@
     min-height: $size-touch;
     padding: $space-3 $space-6;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     cursor: pointer;
     transition:
         transform 0.22s ease,
@@ -295,6 +296,7 @@
 .promo-card,
 .promo-feature-card {
     position: relative;
+    overflow: visible;
     padding: var(--card-padding-lg);
     border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
     border-radius: var(--radius-2xl);
@@ -377,6 +379,7 @@
     gap: clamp(1rem, 2.5vw, 1.5rem);
     padding: 0;
     margin: 0;
+    overflow: visible;
     list-style: none;
 
     &--highlights {

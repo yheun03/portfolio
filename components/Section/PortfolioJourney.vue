@@ -50,9 +50,6 @@
                 </ol>
             </article>
 
-            <a class="journey__next-link base-button base-button--ghost" href="#toolbox">
-                {{ t("journey.nextCta") }}
-            </a>
         </div>
     </section>
 </template>
