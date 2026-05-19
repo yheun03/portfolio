@@ -15,7 +15,8 @@
     "hero": {
         "title": "A web publisher who creates delightful interaction with solid structure",
         "subtitle": "I have worked on corporate websites, smart-factory and logistics systems, and in-house solutions across operation, new build, and renewal.",
-        "branding": "A UI-focused practitioner expanding from publishing to frontend",
+        "branding": "From publishing to frontend, with UI at the center",
+        "kicker": "The essentials.",
         "ctaWorks": "View Works",
         "ctaToolbox": "View Toolbox",
         "ctaContact": "Contact"
@@ -23,14 +24,23 @@
     "about": {
         "title": "How I design with taste and structure",
         "intro": "I treat publishing as more than visuals: it connects UX, architecture, and collaboration.",
-        "direction": "I am deepening Vue 3 component architecture and frontend structure leadership."
+        "direction": "I keep growing in Vue 3 component structure and frontend design.",
+        "kicker": "A closer look.",
+        "workflowTitle": "Workflow",
+        "tagline": "Simple structure. Light feel."
     },
     "works": {
         "title": "SI/SM delivery projects across clients",
         "cardLabel": "Case Study",
         "all": "All",
         "detail": "Details",
-        "fullArchiveLink": "View full client project gallery"
+        "fullArchiveLink": "View full client project gallery",
+        "sectionDescription": "A curated set of client work on the main page. The full list and captures live in the gallery.",
+        "archiveCountLabel": "client projects in the archive",
+        "archiveSummary": "{pinned} highlights on this page; {total} total in the gallery.",
+        "showMore": "Show more projects",
+        "collapse": "Collapse projects",
+        "visibleCount": "Showing {visible} of {total} highlights"
     },
     "personal": {
         "title": "Side projects & experiments",
@@ -70,11 +80,15 @@
     },
     "journey": {
         "title": "A growth path built through delivery",
-        "summary": "Since 2020, I have owned full publishing cycles across build and operation projects."
+        "summary": "Since 2020, I have handled full publishing cycles across build and operation projects at JO&SOFT.",
+        "kicker": "In order.",
+        "nextCta": "View toolbox",
+        "tempLabel": "Sample data"
     },
     "toolbox": {
         "title": "Tools and practices proven in production",
-        "copy": "Not just implementation, but maintainable UI and collaboration-ready structure"
+        "copy": "I build the screen—and the structure that keeps it easy to maintain.",
+        "kicker": "By discipline."
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
@@ -85,9 +99,11 @@
         "activities": "Leadership / Activities"
     },
     "contact": {
-        "title": "Let's talk about your next project",
-        "description": "If you need publishing, UI development, or structural improvement, feel free to reach out. I tidy up messy screens and help good ideas land on the page.",
-        "kicker": "Please reach out by email.",
+        "title": "Project inquiries",
+        "description": "For publishing, UI, or structural cleanup—email works. We can start with the screens that need attention.",
+        "kicker": "Email.",
+        "note": "We align on scope and timeline first, then build for clarity and upkeep.",
+        "profileLabel": "New projects welcome",
         "email": "Send Email",
         "github": "View GitHub",
         "resume": "View Resume"

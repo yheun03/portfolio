@@ -38,7 +38,7 @@
             </div>
 
             <section class="hero__spotlight promo-spotlight" data-animate :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'">
-                <h2 class="promo-spotlight__kicker">{{ locale === "ko" ? "핵심부터." : "The essentials." }}</h2>
+                <h2 class="promo-spotlight__kicker">{{ t("hero.kicker") }}</h2>
                 <ul class="promo-feature-grid promo-feature-grid--hero">
                     <li v-for="(area, index) in heroFocusCards" :key="pick(area.label)">
                         <PromoFeatureCard

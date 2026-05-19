@@ -8,7 +8,7 @@
         </header>
 
         <div class="toolbox__spotlight promo-spotlight" data-animate>
-            <h2 class="promo-spotlight__kicker">{{ locale === "ko" ? "영역별로." : "By discipline." }}</h2>
+            <h2 class="promo-spotlight__kicker">{{ t("toolbox.kicker") }}</h2>
             <ul class="toolbox__grid promo-feature-grid promo-feature-grid--toolbox">
                 <li v-for="(skill, index) in skills" :key="skill.key">
                     <SkillCard
@@ -26,5 +26,5 @@
 <script setup lang="ts">
 import { skills } from "@content/site";
 
-const { t, pick, locale } = useLocale();
+const { t, pick } = useLocale();
 </script>
