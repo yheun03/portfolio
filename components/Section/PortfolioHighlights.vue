@@ -59,7 +59,7 @@ const tabs = computed(() => {
         countLabel:
             locale.value === "ko"
                 ? `${highlights[tab.key].length}개`
-                : `${highlights[tab.key].length}`,
+                : `${highlights[tab.key].length} items`,
     }));
 });
 
