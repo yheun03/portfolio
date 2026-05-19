@@ -17,6 +17,7 @@
         "subtitle": "I have worked on corporate websites, smart-factory and logistics systems, and in-house solutions across operation, new build, and renewal.",
         "branding": "From publishing to frontend, with UI at the center",
         "kicker": "The essentials.",
+        "essentialsLead": "Structure, publishing, and collaboration in one flow.",
         "ctaWorks": "View Works",
         "ctaToolbox": "View Toolbox",
         "ctaContact": "Contact"
@@ -82,7 +83,6 @@
         "title": "A growth path built through delivery",
         "summary": "Since 2020, I have handled full publishing cycles across build and operation projects at JO&SOFT.",
         "kicker": "In order.",
-        "nextCta": "View toolbox",
         "tempLabel": "Sample data"
     },
     "toolbox": {
