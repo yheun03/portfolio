@@ -761,7 +761,7 @@ html:not([data-theme="dark"]) .app-background::after {
         padding-inline-end: var(--space-2);
     }
 
-    .works__grid {
+    .works__rail-wrap {
         grid-column: 2;
         grid-row: 1;
     }
@@ -925,6 +925,10 @@ html:not([data-theme="dark"]) .app-background::after {
     &__filters {
         align-self: stretch;
         justify-self: start;
+    }
+
+    &__rail-wrap {
+        min-width: 0;
     }
 
     &__grid {
@@ -1157,6 +1161,72 @@ html:not([data-theme="dark"]) .app-background::after {
 
         .work-card {
             grid-column: span 12;
+        }
+    }
+
+    .personal__rail-wrap {
+        min-width: 0;
+    }
+}
+
+.portfolio-swipe {
+    min-width: 0;
+
+    &__head {
+        display: none;
+    }
+
+    &__hint {
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-ui);
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--size-touch);
+        height: var(--size-touch);
+        border: 1px solid color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+        color: var(--color-text);
+        box-shadow: var(--shadow-glow);
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+        transition:
+            border-color 0.2s ease,
+            background-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+
+        span {
+            display: block;
+            transform: translateY(-0.08em);
+            font-size: 1.55rem;
+            font-weight: var(--font-weight-black);
+            line-height: 1;
+        }
+
+        &:hover {
+            border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+            background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-1px);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
         }
     }
 }
@@ -1551,7 +1621,9 @@ html:not([data-theme="dark"]) .app-background::after {
     .section--highlights .highlights__head,
     .section--highlights .highlights__workspace,
     .section--works .works__filters,
+    .section--works .works__rail-wrap,
     .section--works .works__grid,
+    .section--personal .personal__rail-wrap,
     .section--personal .personal__grid {
         position: static;
         grid-area: auto;
@@ -1585,19 +1657,54 @@ html:not([data-theme="dark"]) .app-background::after {
     /** PC용 `.section--* .__grid { display:grid }` 특이도(0,2,0)를 그대로 덮음 */
     .section--works .works__grid,
     .section--personal .personal__grid {
+        --swipe-card-width: min(86vw, 26rem);
+        --swipe-edge-space: max(var(--touch-pad-x), calc((100vw - var(--swipe-card-width)) * 0.5));
+
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--space-5);
         min-width: 0;
+        width: calc(100% + (var(--touch-pad-x) * 2));
+        max-width: none;
+        margin-inline: calc(-1 * var(--touch-pad-x));
+        padding-block: 20px 60px;
+        padding-inline: var(--swipe-edge-space);
         grid-template-columns: none;
+        overflow-x: auto;
+        overflow-y: visible;
+        overscroll-behavior-x: contain;
+        scroll-padding-inline: var(--swipe-edge-space);
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     .section--works .works__grid .work-card,
     .section--personal .personal__grid .work-card {
+        flex: 0 0 var(--swipe-card-width);
         grid-column: unset !important;
-        width: 100%;
+        width: var(--swipe-card-width);
         min-width: 0;
-        max-width: none;
+        max-width: var(--swipe-card-width);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .section--works .works__rail-wrap,
+    .section--personal .personal__rail-wrap {
+        display: grid;
+        gap: var(--space-1);
+    }
+
+    .portfolio-swipe__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-3);
     }
 
     /**
@@ -1608,7 +1715,7 @@ html:not([data-theme="dark"]) .app-background::after {
         flex-direction: column;
         align-items: stretch;
         gap: var(--space-4);
-        margin-block-start: var(--space-2);
+        margin-block-start: -66px;
 
         p {
             line-height: var(--line-height-body);
@@ -3005,16 +3112,18 @@ html:not([data-theme="dark"]) .app-background::after {
     }
 
     .section--works .works__filters.lnb-tablist.promo-tab-rail {
+        --filter-edge-space: var(--touch-pad-x);
+
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: stretch;
         align-self: stretch;
         gap: 0.5rem;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0.15rem 0 0.65rem;
+        width: calc(100% + (var(--touch-pad-x) * 2));
+        max-width: none;
+        margin-inline: calc(-1 * var(--touch-pad-x));
+        padding: var(--space-2) var(--filter-edge-space) var(--space-3);
         border: none;
         border-radius: 0;
         background: transparent;
@@ -3022,6 +3131,7 @@ html:not([data-theme="dark"]) .app-background::after {
         backdrop-filter: none;
         overflow-x: auto;
         overscroll-behavior-x: contain;
+        scroll-padding-inline: var(--filter-edge-space);
         scroll-snap-type: x proximity;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
