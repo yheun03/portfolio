@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-            }}</span>
+                }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -41,12 +41,28 @@
         </div>
 
         <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->
-        <div :id="`works-panel-${selectedCategory}`" :key="panelRenderKey" class="works__grid" role="tabpanel"
-            :aria-labelledby="`works-tab-${selectedCategory}`">
-            <WorkCard v-for="work in visibleWorks" :key="`${panelRenderKey}-${work.id}`" :work="work"
-                :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
-                :detail-label="t('works.detail')" :detail-aria-label="`${pick(work.title)} ${t('works.detail')}`"
-                @select="openWork(work)" />
+        <div class="works__rail-wrap portfolio-swipe">
+            <div class="portfolio-swipe__head">
+                <p id="works-swipe-help" class="portfolio-swipe__hint">{{ swipeHint }}</p>
+                <div class="portfolio-swipe__controls" :aria-label="swipeControlsLabel">
+                    <button type="button" class="portfolio-swipe__button" :aria-label="swipePrevLabel"
+                        @click="scrollWorksRail(-1)">
+                        <span aria-hidden="true">‹</span>
+                    </button>
+                    <button type="button" class="portfolio-swipe__button" :aria-label="swipeNextLabel"
+                        @click="scrollWorksRail(1)">
+                        <span aria-hidden="true">›</span>
+                    </button>
+                </div>
+            </div>
+            <div :id="`works-panel-${selectedCategory}`" :key="panelRenderKey" ref="worksRailRef" class="works__grid"
+                role="tabpanel" :aria-labelledby="`works-tab-${selectedCategory}`"
+                :aria-describedby="isNarrow ? 'works-swipe-help' : undefined" :tabindex="isNarrow ? 0 : -1">
+                <WorkCard v-for="work in visibleWorks" :key="`${panelRenderKey}-${work.id}`" :work="work"
+                    :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
+                    :detail-label="t('works.detail')" :detail-aria-label="`${pick(work.title)} ${t('works.detail')}`"
+                    @select="openWork(work)" />
+            </div>
         </div>
         <div v-if="hasMoreWorks || canCollapseWorks" class="works__list-control" aria-live="polite">
             <p>
@@ -83,7 +99,7 @@
                             <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
                         <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
-                                }}</strong></p>
+                        }}</strong></p>
                         <ul v-if="activeWork.achievements.length">
                             <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
@@ -130,6 +146,7 @@ const {
 } = useWorksTabRenderer();
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
 const modalCardRef = ref<HTMLElement | null>(null);
+const worksRailRef = ref<HTMLElement | null>(null);
 const visibleCount = ref(6);
 const initialVisibleCount = 6;
 const visibleStep = 6;
@@ -174,6 +191,22 @@ const labels = computed(() => ({
 }));
 
 const modalOpen = computed(() => !!activeWork.value);
+const swipeHint = computed(() => locale.value === "ko" ? "좌우로 스와이프해 대표 작업을 넘겨보세요." : "Swipe horizontally to browse featured work.");
+const swipeControlsLabel = computed(() => locale.value === "ko" ? "대표 작업 슬라이드 이동" : "Featured work carousel controls");
+const swipePrevLabel = computed(() => locale.value === "ko" ? "이전 작업 보기" : "Show previous work");
+const swipeNextLabel = computed(() => locale.value === "ko" ? "다음 작업 보기" : "Show next work");
+
+const scrollRail = (rail: HTMLElement | null, direction: -1 | 1) => {
+    if (!rail) return;
+
+    const firstCard = rail.querySelector<HTMLElement>(".work-card");
+    const gap = Number.parseFloat(getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || "0");
+    const distance = firstCard ? firstCard.offsetWidth + gap : rail.clientWidth * 0.86;
+
+    rail.scrollBy({ left: direction * distance, behavior: "smooth" });
+};
+
+const scrollWorksRail = (direction: -1 | 1) => scrollRail(worksRailRef.value, direction);
 
 const showMoreWorks = () => {
     visibleCount.value = Math.min(visibleCount.value + visibleStep, pinnedFilteredWorks.value.length);
@@ -186,6 +219,9 @@ const collapseWorks = () => {
 
 watch(selectedCategory, () => {
     visibleCount.value = initialVisibleCount;
+    nextTick(() => {
+        if (worksRailRef.value) worksRailRef.value.scrollLeft = 0;
+    });
 });
 
 useModal({
