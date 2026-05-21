@@ -3,17 +3,14 @@
     <SectionDock v-if="showSectionDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
     <a class="skip-link" href="#main-content">{{ locale === "ko" ? "본문으로 건너뛰기" : "Skip to main content" }}</a>
     <div class="app-background" aria-hidden="true" />
-    <LayoutAppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
+    <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
     <main id="main-content" class="portfolio-page" :class="{ 'portfolio-page--section-dock': showSectionDock }">
         <slot />
     </main>
-    <LayoutAppFooter :text="footerText" />
+    <AppFooter :text="footerText" />
 </template>
 
 <script setup lang="ts">
-import LayoutAppHeader from "~/components/Layout/AppHeader.vue";
-import LayoutAppFooter from "~/components/Layout/AppFooter.vue";
-import SectionDock from "~/components/Common/SectionDock.vue";
 const { locale } = useLocale();
 
 const props = withDefaults(

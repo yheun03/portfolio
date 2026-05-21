@@ -10,7 +10,7 @@
 
         <div class="toolbox__spotlight promo-spotlight" data-animate>
             <h2 class="promo-spotlight__kicker">{{ t("toolbox.kicker") }}</h2>
-            <ul class="toolbox__grid promo-feature-grid promo-feature-grid--toolbox">
+            <ul class="toolbox__grid feature-grid feature-grid--toolbox">
                 <li v-for="(skill, index) in skills" :key="skill.key">
                     <FeatureCard variant="skill" :eyebrow="String(index + 1).padStart(2, '0')" :title="skill.title"
                         :items="pick(skill.items)" :description="pick(skill.description)" />
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { skills } from "@data/site";
+import { skills } from '@data/site';
 
 const { t, pick } = useLocale();
 </script>

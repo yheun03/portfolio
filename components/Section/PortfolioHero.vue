@@ -12,17 +12,8 @@
             <div class="hero__stage" data-animate>
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
-                <h1 class="hero__display">
-                    <span v-for="(line, lineIndex) in heroLines" :key="`line-${lineIndex}`" class="hero__display-line"
-                        :class="{ 'hero__display-line--accent': line.accent }">
-                        <span v-for="(word, wordIndex) in line.words" :key="wordKey(`hero-${lineIndex}`, wordIndex)"
-                            class="typo-word"
-                            :class="{ 'typo-word--active': isActive(wordKey(`hero-${lineIndex}`, wordIndex)) }"
-                            :style="{ '--word-index': wordIndex }"
-                            @mouseenter="setActive(wordKey(`hero-${lineIndex}`, wordIndex))"
-                            @mouseleave="setActive(null)">{{ word }}</span>
-                    </span>
-                </h1>
+                <TypoDisplayHeading tag="h1" group-id="hero" :lines="heroLines" heading-class="hero__display"
+                    line-class="hero__display-line" line-accent-class="hero__display-line--accent" />
 
                 <p class="hero__lead">{{ heroLead }}</p>
             </div>
@@ -62,12 +53,11 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import { profile } from "@data/site";
-import { splitTypoWords, useTypoInteraction } from "@composables/useTypoInteraction";
+import { splitTypoWords } from '@composables/useTypoInteraction';
 
-const WelcomeCanvas = defineAsyncComponent(() => import("~/components/Section/WelcomeCanvas.vue"));
+const WelcomeCanvas = defineAsyncComponent(() => import('~/components/Section/WelcomeCanvas.vue'));
 
 const { t, pick, locale } = useLocale();
-const { wordKey, setActive, isActive } = useTypoInteraction();
 
 const heroCanvasReady = ref(false);
 const heroFocusCards = computed(() => profile.focusAreas);

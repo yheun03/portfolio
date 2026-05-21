@@ -9,8 +9,7 @@
             <li v-for="tech in work.tech" :key="tech">{{ tech }}</li>
         </ul>
         <div class="work-card__footer">
-            <button type="button" class="base-button base-button--primary work-card__button"
-                :aria-label="detailAriaLabel || `${item.title} ${detailLabel}`" @click="$emit('select')">
+            <button type="button" class="base-button base-button--primary work-card__button" @click="$emit('select')">
                 {{ detailLabel }}
             </button>
         </div>
@@ -27,7 +26,6 @@ withDefaults(
         work: WorkItem;
         item: { title: string; type: string; summary: string };
         detailLabel: string;
-        detailAriaLabel?: string;
         variant?: "career" | "personal";
     }>(),
     { variant: "career" }

@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-                }}</span>
+            }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -60,8 +60,7 @@
                 :aria-describedby="isNarrow ? 'works-swipe-help' : undefined" :tabindex="isNarrow ? 0 : -1">
                 <WorkCard v-for="work in visibleWorks" :key="`${panelRenderKey}-${work.id}`" :work="work"
                     :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"
-                    :detail-label="t('works.detail')" :detail-aria-label="`${pick(work.title)} ${t('works.detail')}`"
-                    @select="openWork(work)" />
+                    :detail-label="t('works.detail')" @select="openWork(work)" />
             </div>
         </div>
         <div v-if="hasMoreWorks || canCollapseWorks" class="works__list-control" aria-live="polite">
@@ -102,7 +101,7 @@
                             </ul>
                             <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{
                                 labels.results
-                            }}</strong></p>
+                                    }}</strong></p>
                             <ul v-if="activeWork.achievements.length">
                                 <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
                             </ul>

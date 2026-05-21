@@ -653,7 +653,7 @@ html.skeleton-active {
 
 /* Feature Card */
 .promo-card,
-.promo-feature-card {
+.feature-card {
     position: relative;
     overflow: visible;
     padding: var(--card-padding-lg);
@@ -680,7 +680,7 @@ html.skeleton-active {
     }
 }
 
-.promo-feature-card {
+.feature-card {
     display: grid;
     gap: clamp(0.65rem, 1.5vw, 1rem);
     min-height: clamp(11rem, 22vw, 15rem);
@@ -732,7 +732,7 @@ html.skeleton-active {
     }
 }
 
-.promo-feature-grid {
+.feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(1rem, 2.5vw, 1.5rem);
@@ -775,7 +775,7 @@ html.skeleton-active {
 [data-theme="dark"] {
 
     .promo-card,
-    .promo-feature-card {
+    .feature-card {
         background: color-mix(in srgb, var(--color-surface-strong) 88%, transparent);
         border-color: color-mix(in srgb, var(--color-border) 70%, transparent);
         box-shadow:
@@ -822,7 +822,7 @@ html.skeleton-active {
 }
 
 @media (max-width: 1023.98px) {
-    .promo-feature-grid {
+    .feature-grid {
         grid-template-columns: minmax(0, 1fr);
 
         &--highlights {
@@ -844,7 +844,7 @@ html.skeleton-active {
 @media (prefers-reduced-motion: reduce) {
 
     .promo-card,
-    .promo-feature-card {
+    .feature-card {
         transition: none;
     }
 }
@@ -3927,7 +3927,7 @@ html:not([data-theme="dark"]) .app-background::after {
             }
         }
 
-        .promo-feature-card__description {
+        .feature-card__description {
             margin-top: auto;
         }
     }
@@ -4094,7 +4094,7 @@ html:not([data-theme="dark"]) .app-background::after {
 }
 
 @media (min-width: 1100px) {
-    .promo-feature-grid--toolbox {
+    .feature-grid--toolbox {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
