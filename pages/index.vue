@@ -9,7 +9,6 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent, type Component } from 'vue';
-import AppLayout from '~/components/Layout/AppLayout.vue';
 import PortfolioHero from '~/components/Section/PortfolioHero.vue';
 import PortfolioWorks from '~/components/Section/PortfolioWorks.vue';
 import PortfolioPersonal from '~/components/Section/PortfolioPersonal.vue';

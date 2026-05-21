@@ -28,7 +28,7 @@
                         <dt>{{ t('gallery.languages') }}</dt>
                         <dd>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                            }}</span>
+                                }}</span>
                             <template v-if="!work.languages.length">-</template>
                         </dd>
                     </div>
@@ -96,7 +96,6 @@
 <script setup lang="ts">
 import type { GalleryArchiveVariant } from '@composables/useGallery';
 import type { WorkItem } from '@data/works';
-import AppLayout from '~/components/Layout/AppLayout.vue';
 import { getGalleryVariantConfig } from '@composables/useGallery';
 
 const props = defineProps<{

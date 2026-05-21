@@ -29,8 +29,7 @@
                     <button v-for="option in viewOptions" :key="option.value" type="button"
                         class="gallery-page__segment" :class="{ 'is-active': viewMode === option.value }"
                         :aria-checked="viewMode === option.value" role="radio"
-                        :tabindex="viewMode === option.value ? 0 : -1"
-                        @click="emit('update:viewMode', option.value)"
+                        :tabindex="viewMode === option.value ? 0 : -1" @click="emit('update:viewMode', option.value)"
                         @keydown="handleSegmentKeydown($event, viewOptions, viewMode, 'update:viewMode')">
                         {{ option.label }}
                     </button>
@@ -42,8 +41,7 @@
                     <button v-for="option in sortOptions" :key="option.value" type="button"
                         class="gallery-page__segment" :class="{ 'is-active': sortMode === option.value }"
                         :aria-checked="sortMode === option.value" role="radio"
-                        :tabindex="sortMode === option.value ? 0 : -1"
-                        @click="emit('update:sortMode', option.value)"
+                        :tabindex="sortMode === option.value ? 0 : -1" @click="emit('update:sortMode', option.value)"
                         @keydown="handleSegmentKeydown($event, sortOptions, sortMode, 'update:sortMode')">
                         {{ option.label }}
                     </button>
