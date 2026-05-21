@@ -1,5 +1,5 @@
 /**
- * `_touch.scss` 의 (max-width: 1023.98px) 와 동일 기준 — 탭 리스트 aria-orientation 등에 사용
+ * `main.scss` 의 narrow layout 기준과 동일 — 탭 리스트 aria-orientation 등에 사용
  */
 export function useNarrowLayout() {
     const isNarrow = ref(false);

@@ -1,3 +1,17 @@
+@use "sass:map";
+
+/* =========================================
+   Sass Helpers
+========================================= */
+
+@function rem($px) {
+    @return calc($px / 16) * 1rem;
+}
+
+/* =========================================
+   Design Tokens
+========================================= */
+
 $bp-mobile: 360px;
 $bp-tablet: 768px;
 $bp-laptop: 1024px;
@@ -341,4 +355,44 @@ $font-presets: (
     --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
     --gallery-active-fg: #030a12;
     --gallery-active-bg: var(--gallery-accent);
+}
+
+/* =========================================
+   Mixins
+========================================= */
+
+@mixin respond-up($bp) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
+
+@mixin font($type, $font-weight: null, $letter-spacing: null, $line-height: null) {
+    $preset: map.get($font-presets, $type);
+
+    @if $preset ==null {
+        @error "Unknown font preset `#{$type}`. Use one of: #{map.keys($font-presets)}.";
+    }
+
+    $resolved-weight: $font-weight;
+    $resolved-line-height: $line-height;
+    $resolved-letter-spacing: $letter-spacing;
+
+    @if $resolved-weight ==null {
+        $resolved-weight: map.get($preset, weight);
+    }
+
+    @if $resolved-line-height ==null {
+        $resolved-line-height: map.get($preset, line-height);
+    }
+
+    @if $resolved-letter-spacing ==null {
+        $resolved-letter-spacing: map.get($preset, letter-spacing);
+    }
+
+    font-family: map.get($preset, family);
+    font-size: map.get($preset, size);
+    font-weight: $resolved-weight;
+    line-height: $resolved-line-height;
+    letter-spacing: $resolved-letter-spacing;
 }

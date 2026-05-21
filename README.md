@@ -8,10 +8,10 @@ Nuxt 3 기반 개인 포트폴리오 사이트입니다.
 
 ## 디자인 토큰 사용법
 
-스타일 토큰은 `assets/style/abstract/_variables.scss`와 `assets/style/abstract/_mixins.scss`에서 관리합니다. Nuxt 설정에서 `@use "abstract/index" as *;`가 전역 주입되지만, SCSS partial 안에서는 Sass 모듈 스코프 때문에 필요한 경우 파일 상단에 직접 선언합니다.
+스타일 토큰은 `assets/style/_tokens.scss`에서 관리합니다. Nuxt 설정에서 `@use "tokens" as *;`가 전역 주입되며, 화면 스타일은 `assets/style/main.scss` 한 파일에 모아 관리합니다.
 
 ```scss
-@use 'abstract/index' as *;
+@use 'tokens' as *;
 ```
 
 ### 색상

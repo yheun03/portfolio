@@ -88,7 +88,7 @@ export default defineNuxtConfig({
             preprocessorOptions: {
                 scss: {
                     loadPaths: ['assets/style'],
-                    additionalData: '@use "abstract/index" as *;',
+                    additionalData: '@use "tokens" as *;',
                 },
             },
         },
