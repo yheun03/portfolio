@@ -1,6 +1,6 @@
 <template>
     <section id="personal" class="section section--personal">
-        <span class="section__emoji section__emoji--personal accent-emoji accent-emoji--soft"
+        <span class="section__emoji section__emoji--personal emoji emoji--soft"
             aria-hidden="true">✦</span>
         <div class="personal__head">
             <BaseSectionTitle :eyebrow="t('nav.personal')" :title="t('personal.title')"
@@ -11,15 +11,15 @@
             </p>
         </div>
 
-        <div class="personal__rail-wrap portfolio-swipe">
-            <div class="portfolio-swipe__head">
-                <p id="personal-swipe-help" class="portfolio-swipe__hint">{{ swipeHint }}</p>
-                <div class="portfolio-swipe__controls" :aria-label="swipeControlsLabel">
-                    <button type="button" class="portfolio-swipe__button" :aria-label="swipePrevLabel"
+        <div class="personal__rail-wrap swipe-rail">
+            <div class="swipe-rail__head">
+                <p id="personal-swipe-help" class="swipe-rail__hint">{{ swipeHint }}</p>
+                <div class="swipe-rail__controls" :aria-label="swipeControlsLabel">
+                    <button type="button" class="swipe-rail__button" :aria-label="swipePrevLabel"
                         @click="scrollPersonalRail(-1)">
                         <span aria-hidden="true">‹</span>
                     </button>
-                    <button type="button" class="portfolio-swipe__button" :aria-label="swipeNextLabel"
+                    <button type="button" class="swipe-rail__button" :aria-label="swipeNextLabel"
                         @click="scrollPersonalRail(1)">
                         <span aria-hidden="true">›</span>
                     </button>

@@ -1,5 +1,5 @@
 /**
- * 뷰포트 진입 시 `[data-animate]`에 `is-visible` 부여.
+ * 뷰포트 진입 시 `[data-animate]`에 `animate--visible` 부여.
  * 탭 전환·동적 마운트로 나중에 추가된 노드도 `#main-content` 변화를 관찰해 다시 observe 한다.
  */
 export const useIntersectionAnimation = () => {
@@ -9,7 +9,7 @@ export const useIntersectionAnimation = () => {
 
     const observePendingTargets = () => {
         if (!observer) return;
-        mainEl?.querySelectorAll<HTMLElement>('[data-animate]:not(.is-visible)').forEach((el) => observer!.observe(el));
+        mainEl?.querySelectorAll<HTMLElement>('[data-animate]:not(.animate--visible)').forEach((el) => observer!.observe(el));
     };
 
     let rafScheduled = false;
@@ -23,7 +23,7 @@ export const useIntersectionAnimation = () => {
     };
 
     const revealAllAnimated = () => {
-        mainEl?.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => el.classList.add('is-visible'));
+        mainEl?.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => el.classList.add('animate--visible'));
     };
 
     onMounted(() => {
@@ -44,7 +44,7 @@ export const useIntersectionAnimation = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
+                        entry.target.classList.add('animate--visible');
                         observer!.unobserve(entry.target);
                     }
                 });

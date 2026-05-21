@@ -745,7 +745,7 @@
         "pill": {
             "$type": "borderRadius",
             "$value": "999px",
-            "$description": "Used by .base-badge, .base-label, .ui-tab-button and header nav pills"
+            "$description": "Used by .base-badge, .base-label, .tab-list__tab and header nav pills"
         }
     },
     "shadow/light": {

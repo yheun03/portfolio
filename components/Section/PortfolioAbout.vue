@@ -1,6 +1,6 @@
 <template>
     <section id="about" class="section section--about">
-        <span class="section__emoji section__emoji--about accent-emoji accent-emoji--soft" aria-hidden="true">🧭</span>
+        <span class="section__emoji section__emoji--about emoji emoji--soft" aria-hidden="true">🧭</span>
 
         <div class="about__stage">
             <header class="about__intro" data-animate>
@@ -12,9 +12,9 @@
                 <p class="about__lead">{{ t("about.tagline") }}</p>
             </header>
 
-            <section class="about__spotlight promo-spotlight" data-animate
+            <section class="about__spotlight spotlight" data-animate
                 :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
-                <h3 class="promo-spotlight__kicker">{{ t("about.kicker") }}</h3>
+                <h3 class="spotlight__kicker">{{ t("about.kicker") }}</h3>
                 <ul class="feature-grid">
                     <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)">
                         <FeatureCard :eyebrow="String(index + 1).padStart(2, '0')" :title="pick(principle.title)"
@@ -23,12 +23,12 @@
                 </ul>
             </section>
 
-            <div class="about__workflow promo-card promo-card--flow" data-animate>
-                <h3 class="promo-card__title">{{ t("about.workflowTitle") }}</h3>
-                <ol class="promo-flow" :aria-label="locale === 'ko' ? '단계' : 'Steps'">
+            <div class="about__workflow surface-card surface-card--flow" data-animate>
+                <h3 class="surface-card__title">{{ t("about.workflowTitle") }}</h3>
+                <ol class="flow-steps" :aria-label="locale === 'ko' ? '단계' : 'Steps'">
                     <li v-for="(step, index) in workflowSteps" :key="step">
-                        <span class="promo-flow__index">{{ String(index + 1).padStart(2, "0") }}</span>
-                        <span class="promo-flow__label">{{ step }}</span>
+                        <span class="flow-steps__index">{{ String(index + 1).padStart(2, "0") }}</span>
+                        <span class="flow-steps__label">{{ step }}</span>
                     </li>
                 </ol>
             </div>

@@ -9,11 +9,12 @@
                 :aria-label="locale === 'ko' ? '모바일 주요 메뉴' : 'Mobile primary menu'">
                 <p class="mobile-menu__eyebrow">{{ locale === 'ko' ? '페이지' : 'Pages' }}</p>
                 <template v-for="item in links" :key="item.href">
-                    <NuxtLink v-if="isAppRoute(item.href)" :to="item.href" :class="linkClass(item.href)"
-                        @click="emitClose">
+                    <NuxtLink v-if="isAppRoute(item.href)" :to="item.href" class="mobile-menu__link"
+                        :class="{ 'mobile-menu__link--active': isActive(item.href) }" @click="emitClose">
                         {{ item.label }}
                     </NuxtLink>
-                    <a v-else :href="item.href" :class="linkClass(item.href)" @click="emitClose">
+                    <a v-else :href="item.href" class="mobile-menu__link"
+                        :class="{ 'mobile-menu__link--active': isActive(item.href) }" @click="emitClose">
                         {{ item.label }}
                     </a>
                 </template>
@@ -71,7 +72,4 @@ function isActive(href: string): boolean {
     return false;
 }
 
-function linkClass(href: string): string {
-    return isActive(href) ? 'is-active' : '';
-}
 </script>

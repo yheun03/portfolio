@@ -1,6 +1,6 @@
 <template>
     <section id="works" class="section section--works">
-        <span class="section__emoji section__emoji--works accent-emoji accent-emoji--soft" aria-hidden="true">🗂️</span>
+        <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
             }}</span>
@@ -13,19 +13,20 @@
         <div class="works__title-col">
             <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
             <!-- 카테고리: PC는 LNB 세로 / 좁은 화면은 가로 칩 레일 -->
-            <div class="works__filters lnb-tablist promo-tab-rail" role="tablist"
+            <div class="works__filters tab-list tab-rail" role="tablist"
                 :aria-orientation="isNarrow ? 'horizontal' : 'vertical'"
                 :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
                 <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`"
                     role="tab" :aria-controls="`works-panel-${category.key}`"
                     :aria-selected="selectedCategory === category.key"
-                    :tabindex="selectedCategory === category.key ? 0 : -1" class="ui-tab-button"
-                    :class="{ 'is-active': selectedCategory === category.key }" @click="selectCategory(category.key)">
+                    :tabindex="selectedCategory === category.key ? 0 : -1" class="tab-list__tab"
+                    :class="{ 'tab-list__tab--active': selectedCategory === category.key }"
+                    @click="selectCategory(category.key)">
                     {{ pick(category.label) }}
                 </button>
             </div>
             <p class="section-title__description">{{ t("works.sectionDescription") }}</p>
-            <div class="works__archive-summary promo-card" :style="archiveSummaryStyle" aria-live="polite">
+            <div class="works__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite">
                 <p class="works__archive-meta">
                     <strong>{{ totalCareerWorkCount }}</strong>
                     <span>{{ t("works.archiveCountLabel") }}</span>
@@ -41,15 +42,15 @@
         </div>
 
         <!-- 단일 패널 renderer: 탭마다 id·내용이 바뀌며 `:key`로 카드 트리 재생성 -->
-        <div class="works__rail-wrap portfolio-swipe">
-            <div class="portfolio-swipe__head">
-                <p id="works-swipe-help" class="portfolio-swipe__hint">{{ swipeHint }}</p>
-                <div class="portfolio-swipe__controls" :aria-label="swipeControlsLabel">
-                    <button type="button" class="portfolio-swipe__button" :aria-label="swipePrevLabel"
+        <div class="works__rail-wrap swipe-rail">
+            <div class="swipe-rail__head">
+                <p id="works-swipe-help" class="swipe-rail__hint">{{ swipeHint }}</p>
+                <div class="swipe-rail__controls" :aria-label="swipeControlsLabel">
+                    <button type="button" class="swipe-rail__button" :aria-label="swipePrevLabel"
                         @click="scrollWorksRail(-1)">
                         <span aria-hidden="true">‹</span>
                     </button>
-                    <button type="button" class="portfolio-swipe__button" :aria-label="swipeNextLabel"
+                    <button type="button" class="swipe-rail__button" :aria-label="swipeNextLabel"
                         @click="scrollWorksRail(1)">
                         <span aria-hidden="true">›</span>
                     </button>

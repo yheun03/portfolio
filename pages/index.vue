@@ -1,7 +1,7 @@
 <template>
     <AppLayout :links="sectionDockLinks" :header-links="headerNavLinks" :active-id="activeId"
         :footer-text="t('footer.copyright')">
-        <div v-for="layer in pageLayers" :key="layer.name" class="page-layer" :class="`page-layer--${layer.name}`">
+        <div v-for="layer in pageLayers" :key="layer.name" class="page__layer" :class="`page__layer--${layer.name}`">
             <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
         </div>
     </AppLayout>

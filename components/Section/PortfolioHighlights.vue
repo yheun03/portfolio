@@ -1,7 +1,6 @@
 <template>
     <section id="highlights" class="section section--highlights">
-        <span class="section__emoji section__emoji--highlights accent-emoji accent-emoji--soft"
-            aria-hidden="true">✨</span>
+        <span class="section__emoji section__emoji--highlights emoji emoji--soft" aria-hidden="true">✨</span>
 
         <header class="highlights__head">
             <BaseSectionTitle :eyebrow="t('nav.highlights')" :title="t('highlights.title')" />
@@ -15,7 +14,8 @@
                     role="tab" :aria-controls="`highlights-panel-${tab.key}`"
                     :aria-selected="highlightsUi.activeTab === tab.key"
                     :tabindex="highlightsUi.activeTab === tab.key ? 0 : -1" class="highlights__nav-item"
-                    :class="{ 'is-active': highlightsUi.activeTab === tab.key }" @click="highlightsUi.setTab(tab.key)">
+                    :class="{ 'highlights__nav-item--active': highlightsUi.activeTab === tab.key }"
+                    @click="highlightsUi.setTab(tab.key)">
                     <span class="highlights__nav-index">{{ String(index + 1).padStart(2, "0") }}</span>
                     <span class="highlights__nav-label">{{ tab.label }}</span>
                     <span class="highlights__nav-count">{{ tab.countLabel }}</span>

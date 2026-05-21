@@ -27,7 +27,8 @@
                 <span :id="viewLabelId" class="gallery-page__control-label">{{ viewLegend }}</span>
                 <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="viewLabelId">
                     <button v-for="option in viewOptions" :key="option.value" type="button"
-                        class="gallery-page__segment" :class="{ 'is-active': viewMode === option.value }"
+                        class="gallery-page__segment"
+                        :class="{ 'gallery-page__segment--active': viewMode === option.value }"
                         :aria-checked="viewMode === option.value" role="radio"
                         :tabindex="viewMode === option.value ? 0 : -1" @click="emit('update:viewMode', option.value)"
                         @keydown="handleSegmentKeydown($event, viewOptions, viewMode, 'update:viewMode')">
@@ -39,7 +40,8 @@
                 <span :id="sortLabelId" class="gallery-page__control-label">{{ sortLegend }}</span>
                 <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="sortLabelId">
                     <button v-for="option in sortOptions" :key="option.value" type="button"
-                        class="gallery-page__segment" :class="{ 'is-active': sortMode === option.value }"
+                        class="gallery-page__segment"
+                        :class="{ 'gallery-page__segment--active': sortMode === option.value }"
                         :aria-checked="sortMode === option.value" role="radio"
                         :tabindex="sortMode === option.value ? 0 : -1" @click="emit('update:sortMode', option.value)"
                         @keydown="handleSegmentKeydown($event, sortOptions, sortMode, 'update:sortMode')">
