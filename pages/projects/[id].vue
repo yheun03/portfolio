@@ -1,15 +1,3 @@
 <template>
-    <GalleryDetailPage variant="career" :work="work" />
+    <GalleryDetailRoute variant="career" />
 </template>
-
-<script setup lang="ts">
-import GalleryDetailPage from '~/components/Gallery/GalleryDetailPage.vue';
-import { getCareerWorkById } from '@data/works';
-
-const route = useRoute();
-const work = getCareerWorkById(route.params.id as string);
-
-if (!work) {
-    throw createError({ statusCode: 404, statusMessage: 'Project not found' });
-}
-</script>

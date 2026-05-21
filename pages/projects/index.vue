@@ -1,8 +1,3 @@
 <template>
-    <GalleryArchivePage variant="career" :works="careerWorks" />
+    <GalleryArchiveRoute variant="career" />
 </template>
-
-<script setup lang="ts">
-import GalleryArchivePage from '~/components/Gallery/GalleryArchivePage.vue';
-import { careerWorks } from '@data/works';
-</script>
