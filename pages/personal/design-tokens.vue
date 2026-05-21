@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal"
-        :footer-text="t('footer.copyright')" :show-section-dock="true">
+        :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero">
                 <p class="technical-label">2026 Portfolio Design Tokens</p>

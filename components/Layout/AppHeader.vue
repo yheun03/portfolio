@@ -30,11 +30,11 @@
             <button type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
-                aria-controls="mobile-menu-panel" @click="onMobileMenuToggle">
+                aria-controls="app-lnb-panel" @click="onAppLnbToggle">
                 {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
             </button>
         </div>
-        <MobileMenu id="mobile-menu-panel" :open="menuOpen" :links="links" :active-path="activePath"
+        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath"
             :active-id="activeId" @close="menuOpen = false" />
     </header>
 </template>
@@ -101,7 +101,7 @@ function isNavActive(href: string) {
     return false;
 }
 
-const onMobileMenuToggle = () => {
+const onAppLnbToggle = () => {
     menuOpen.value = !menuOpen.value;
 };
 

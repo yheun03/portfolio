@@ -1,20 +1,20 @@
 <template>
     <Teleport to="body">
-        <transition name="mobile-menu-fade">
-            <button v-if="open" type="button" class="mobile-menu__backdrop"
+        <transition name="app-lnb-fade">
+            <button v-if="open" type="button" class="app-lnb__backdrop"
                 :aria-label="locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'" @click="emitClose" />
         </transition>
-        <transition name="mobile-menu-drawer">
-            <nav v-if="open" :id="id" class="mobile-menu"
+        <transition name="app-lnb-drawer">
+            <nav v-if="open" :id="id" class="app-lnb"
                 :aria-label="locale === 'ko' ? '모바일 주요 메뉴' : 'Mobile primary menu'">
-                <p class="mobile-menu__eyebrow">{{ locale === 'ko' ? '페이지' : 'Pages' }}</p>
+                <p class="app-lnb__eyebrow">{{ locale === 'ko' ? '페이지' : 'Pages' }}</p>
                 <template v-for="item in links" :key="item.href">
-                    <NuxtLink v-if="isAppRoute(item.href)" :to="item.href" class="mobile-menu__link"
-                        :class="{ 'mobile-menu__link--active': isActive(item.href) }" @click="emitClose">
+                    <NuxtLink v-if="isAppRoute(item.href)" :to="item.href" class="app-lnb__link"
+                        :class="{ 'app-lnb__link--active': isActive(item.href) }" @click="emitClose">
                         {{ item.label }}
                     </NuxtLink>
-                    <a v-else :href="item.href" class="mobile-menu__link"
-                        :class="{ 'mobile-menu__link--active': isActive(item.href) }" @click="emitClose">
+                    <a v-else :href="item.href" class="app-lnb__link"
+                        :class="{ 'app-lnb__link--active': isActive(item.href) }" @click="emitClose">
                         {{ item.label }}
                     </a>
                 </template>
