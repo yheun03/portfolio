@@ -38,8 +38,8 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from '@content/works';
-import type { GalleryArchiveVariant } from '@composables/useGalleryArchive';
+import type { WorkItem } from '@data/works';
+import type { GalleryArchiveVariant } from '@composables/useGallery';
 import AppLayout from '~/components/Layout/AppLayout.vue';
 import GalleryPageHeader from '~/components/Gallery/GalleryPageHeader.vue';
 import ProjectGalleryCard from '~/components/Card/ProjectGalleryCard.vue';

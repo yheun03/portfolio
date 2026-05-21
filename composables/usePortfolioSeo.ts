@@ -1,4 +1,4 @@
-import { profile } from '@content/site';
+import { profile } from '@data/site';
 import { seoConfig, seoKeywords, seoStructuredData, type SeoLocale } from '@config/seo';
 
 interface PortfolioSeoOptions {

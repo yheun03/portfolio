@@ -1,5 +1,5 @@
 /**
- * 작업 데이터: `core/content/works/*.ts` (카테고리별) + `personal.ts`
+ * 작업 데이터: `data/works/*.ts` (카테고리별) + `personal.ts`
  */
 import awardData from './works/award';
 import operationData from './works/operation';
@@ -36,7 +36,7 @@ export const workCategories = [
     { key: 'award', label: { ko: '수상 연계 프로젝트', en: 'Award-linked' } },
 ] as const;
 
-/** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`core/content/works/`) */
+/** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`data/works/`) */
 export const careerWorks = [...projectData, ...operationData, ...solutionData, ...renewalData, ...awardData];
 
 export const personalWorksList = personalData;

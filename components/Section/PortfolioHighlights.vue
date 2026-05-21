@@ -39,8 +39,8 @@
 </template>
 
 <script setup lang="ts">
-import { highlights } from "@content/site";
-import { useHighlightsUiStore } from "@stores/highlightsUiStore";
+import { highlights } from "@data/site";
+import { useHighlightsUiStore } from "@stores/portfolioUiStore";
 import type { HighlightTabKey } from "@app-types/highlights";
 
 const highlightsUi = useHighlightsUiStore();

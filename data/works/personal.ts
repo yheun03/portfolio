@@ -34,6 +34,14 @@ const data = [
                 en: 'Organized color, spacing, typography, radius, and shadow into role-based design tokens and built a dedicated overview page',
             },
             {
+                ko: '흩어져 있던 SCSS partial을 화면 스타일 main.scss와 토큰 _tokens.scss로 통합해 현재 규모에 맞는 스타일 관리 구조로 리팩터링',
+                en: 'Refactored scattered SCSS partials into main.scss for screen styles and _tokens.scss for tokens, matching the project scale',
+            },
+            {
+                ko: 'core 폴더에 모여 있던 앱 계층을 composables·stores·plugins·i18n·api·data·config 루트 구조로 재배치',
+                en: 'Reorganized the former core folder into root-level composables, stores, plugins, i18n, api, data, and config layers',
+            },
+            {
                 ko: 'GitHub Pages 정적 배포 경로와 public asset 경로를 고려한 빌드 구조 정리',
                 en: 'Organized static build output and asset paths for GitHub Pages deployment',
             },
@@ -46,6 +54,14 @@ const data = [
             {
                 ko: '실무 프로젝트·개인 프로젝트·하이라이트 콘텐츠를 데이터 기반으로 확장 가능하게 구성',
                 en: 'Built a data-driven structure that can scale across career work, personal projects, and highlights',
+            },
+            {
+                ko: 'SCSS 파일 수를 11개에서 2개로 줄이되 선택자와 선언 순서를 유지해 화면 회귀 없이 구조만 단순화',
+                en: 'Reduced the SCSS file count from 11 to 2 while preserving selectors and declaration order, simplifying structure without visual regression',
+            },
+            {
+                ko: 'Pinia 상태는 앱 환경 설정과 포트폴리오 UI 상태로 묶고, Nuxt 플러그인은 초기화와 분석 스크립트 계열로 통폐합',
+                en: 'Grouped Pinia state into app preferences and portfolio UI state, and consolidated Nuxt plugins by app boot and analytics concerns',
             },
         ],
         points: [
@@ -60,6 +76,10 @@ const data = [
             {
                 ko: '운영 중인 실제 배포 URL을 기준으로 개선과 리팩터링을 계속 반영',
                 en: 'Continuously improved and refactored against the live deployed portfolio URL',
+            },
+            {
+                ko: '스타일 본문과 디자인 토큰을 분리해, UI 수정은 main.scss에서 보고 토큰 변경은 _tokens.scss에서 확인할 수 있는 구조',
+                en: 'Separated screen styles from design tokens so UI edits live in main.scss and token changes are reviewed in _tokens.scss',
             },
         ],
         pin: true,

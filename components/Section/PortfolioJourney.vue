@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { journeyCompanies, type JourneyCompanyBlock } from "@content/site";
+import { journeyCompanies, type JourneyCompanyBlock } from "@data/site";
 
 const { t, pick, locale } = useLocale();
 

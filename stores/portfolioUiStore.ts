@@ -1,5 +1,16 @@
 import { defineStore } from 'pinia';
-import { works, type WorkCategory, type WorkItem } from '@content/works';
+import type { HighlightTabKey } from '@app-types/highlights';
+import { works, type WorkCategory, type WorkItem } from '@data/works';
+
+export const useHighlightsUiStore = defineStore('highlightsUi', () => {
+    const activeTab = ref<HighlightTabKey>('awards');
+
+    function setTab(key: HighlightTabKey) {
+        activeTab.value = key;
+    }
+
+    return { activeTab, setTab };
+});
 
 export const useWorksUiStore = defineStore('worksUi', () => {
     const selectedCategory = ref<WorkCategory>('all');

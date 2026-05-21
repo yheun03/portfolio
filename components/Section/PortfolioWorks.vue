@@ -133,7 +133,7 @@
 
 <script setup lang="ts">
 import { useWorksTabRenderer } from '@composables/useWorksTabRenderer';
-import { careerWorks, personalWorksList } from '@content/works';
+import { careerWorks, personalWorksList } from '@data/works';
 
 const { t, pick, locale } = useLocale();
 const { isAppRoute } = useAppPathResolver();

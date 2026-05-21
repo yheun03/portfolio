@@ -1,4 +1,4 @@
-import type { WorkItem } from '@content/works';
+import type { WorkItem } from '@data/works';
 
 export type WorkSortMode = 'start' | 'title';
 

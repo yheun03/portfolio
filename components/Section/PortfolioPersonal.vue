@@ -37,8 +37,8 @@
 </template>
 
 <script setup lang="ts">
-import { personalWorksList } from "@content/works";
-import { useWorksUiStore } from "@stores/worksUiStore";
+import { personalWorksList } from "@data/works";
+import { useWorksUiStore } from "@stores/portfolioUiStore";
 
 const { t, pick, locale } = useLocale();
 const { isNarrow } = useNarrowLayout();

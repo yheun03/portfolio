@@ -1,6 +1,6 @@
-import ko from '@locales/ko.json';
-import en from '@locales/en.json';
-import { useLocaleStore } from '@stores/localeStore';
+import ko from '@i18n/ko.json';
+import en from '@i18n/en.json';
+import { useLocaleStore } from '@stores/appPreferenceStore';
 
 const messages: Record<'ko' | 'en', Record<string, any>> = { ko, en };
 

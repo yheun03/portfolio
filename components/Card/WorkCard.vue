@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from "@content/works";
+import type { WorkItem } from "@data/works";
 
 defineEmits<{ (e: "select"): void }>();
 const { t } = useLocale();

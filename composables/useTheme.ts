@@ -1,4 +1,4 @@
-import { useThemeStore } from '@stores/themeStore';
+import { useThemeStore } from '@stores/appPreferenceStore';
 
 export const useTheme = () => {
     const store = useThemeStore();

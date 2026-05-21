@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { profile } from "@content/site";
+import { profile } from "@data/site";
 import profilePhotoUrl from "~/assets/image/photo-1440.webp";
 
 const { t, locale } = useLocale();
