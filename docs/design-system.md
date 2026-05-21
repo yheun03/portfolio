@@ -1,6 +1,6 @@
 # Design System
 
-이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 요청 경로인 `assets/scss/abstract`, `components/base`, `components/patterns`, `components/modules`는 현재 프로젝트에 존재하지 않아 실제 구조인 `assets/style/abstract`, `components/common`, `components/Card`, `components/Layout`, `components/Section`를 기준으로 분석했습니다.
+이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 요청 경로인 `assets/scss/abstract`, `components/base`, `components/patterns`, `components/modules`는 현재 프로젝트에 존재하지 않아 실제 구조인 `assets/style/_tokens.scss`, `assets/style/main.scss`, `components/common`, `components/Card`, `components/Layout`, `components/Section`를 기준으로 분석했습니다.
 
 ## Design Principles
 
@@ -12,7 +12,7 @@
 
 ## Color Tokens
 
-Source: `assets/style/abstract/_variables.scss`
+Source: `assets/style/_tokens.scss`
 
 | Token                    | Light            | Dark             | Usage                            |
 | ------------------------ | ---------------- | ---------------- | -------------------------------- |
@@ -128,7 +128,7 @@ Suggested Figma text styles:
 | `--radius-xl`   | `1.45rem`  | mobile menu, large panels             |
 | `999px`         | hard-coded | badges, labels, tabs, nav pills       |
 
-Note: `_components.scss` references `--radius-md` in `.lnb-tablist .ui-tab-button`, but `--radius-md` is not defined in `_variables.scss`. Add it manually in Figma or define it in code later if needed.
+Note: `main.scss` references `--radius-md` in `.lnb-tablist .ui-tab-button`, and the token is defined in `_tokens.scss`.
 
 ## Component Inventory
 
