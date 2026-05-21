@@ -26,7 +26,7 @@
                 <h3 class="promo-spotlight__kicker">{{ t("about.kicker") }}</h3>
                 <ul class="promo-feature-grid">
                     <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)">
-                        <PromoFeatureCard :eyebrow="String(index + 1).padStart(2, '0')" :title="pick(principle.title)"
+                        <FeatureCard :eyebrow="String(index + 1).padStart(2, '0')" :title="pick(principle.title)"
                             :description="pick(principle.description)" />
                     </li>
                 </ul>
@@ -48,7 +48,6 @@
 <script setup lang="ts">
 import { aboutContent } from "@data/site";
 import { splitTypoWords, useTypoInteraction } from "@composables/useTypoInteraction";
-import PromoFeatureCard from "~/components/Card/PromoFeatureCard.vue";
 
 const { t, pick, locale } = useLocale();
 const { wordKey, setActive, isActive } = useTypoInteraction();
