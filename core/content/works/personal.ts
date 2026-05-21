@@ -3,8 +3,8 @@ const data = [
         id: 'jonsoft-framework-portfolio',
         category: 'personal',
         title: {
-            ko: 'Jonsoft Framework 포트폴리오',
-            en: 'Jonsoft Framework Portfolio',
+            ko: '포트폴리오 웹사이트 2026',
+            en: 'Portfolio Website 2026',
         },
         period: '2026',
         type: {
@@ -17,8 +17,8 @@ const data = [
         },
         tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'GSAP'],
         introduction: {
-            ko: '현재 운영 중인 개인 포트폴리오입니다. 프로젝트 데이터 구조, 다국어 콘텐츠, 테마 토큰, 인터랙션, 정적 배포 흐름까지 직접 설계하고 구현했습니다. 단순 소개 페이지가 아니라 실무 프로젝트와 개인 작업을 지속적으로 확장할 수 있는 포트폴리오 프레임워크로 구성했습니다.',
-            en: 'My current personal portfolio. I designed and built the full experience, including project data architecture, bilingual content, theme tokens, interactions, and static deployment. It is structured as an extensible portfolio framework rather than a one-off showcase page.',
+            ko: '현재 운영 중인 2026 개인 포트폴리오입니다. 실무 프로젝트와 개인 작업을 분리해 보여주는 갤러리 구조, 다국어 콘텐츠, 라이트/다크 테마, 디자인 토큰 정리 페이지까지 하나의 Nuxt 기반 포트폴리오 시스템으로 설계했습니다. 화면을 예쁘게 보여주는 것에서 끝나지 않고, 이후 작업을 계속 추가하고 관리할 수 있는 구조를 목표로 만들었습니다.',
+            en: 'My current 2026 personal portfolio. I designed it as a Nuxt-based portfolio system that separates client work and personal projects, supports bilingual content, light/dark themes, and includes a design-token overview. The goal was not only to present the work well, but also to keep the site maintainable as the archive grows.',
         },
         myWorks: [
             {
@@ -30,8 +30,8 @@ const data = [
                 en: 'Built Nuxt 3/Vue 3 routing, detail pages, separated data modules, and SEO metadata',
             },
             {
-                ko: '라이트/다크 테마 대응 디자인 토큰, SCSS 믹스인, 반응형 레이아웃 구현',
-                en: 'Implemented design tokens, SCSS mixins, responsive layout, and light/dark theme support',
+                ko: '색상·여백·폰트·라운드·그림자를 역할 기반 디자인 토큰으로 정리하고 별도 설명 페이지 구현',
+                en: 'Organized color, spacing, typography, radius, and shadow into role-based design tokens and built a dedicated overview page',
             },
             {
                 ko: 'GitHub Pages 정적 배포 경로와 public asset 경로를 고려한 빌드 구조 정리',
@@ -54,8 +54,8 @@ const data = [
                 en: 'A component- and data-driven portfolio structure, not just a static page',
             },
             {
-                ko: '디자인 토큰 기반으로 색상, 폰트, 여백, 테마를 일관되게 관리',
-                en: 'Consistent color, typography, spacing, and theme management through design tokens',
+                ko: '디자인 토큰 페이지에서 네이밍과 사용 이유를 함께 확인할 수 있어 유지보수 기준이 분명함',
+                en: 'The design-token page documents naming and rationale, making maintenance decisions clearer',
             },
             {
                 ko: '운영 중인 실제 배포 URL을 기준으로 개선과 리팩터링을 계속 반영',
@@ -67,15 +67,25 @@ const data = [
             ko: '약 2개월 (지속 개선)',
             en: '~2 months (ongoing improvements)',
         },
-        captures: ['/images/og-image.png'],
+        captures: [
+            '/images/portfolio-2026/home-light-desktop.png',
+            '/images/portfolio-2026/home-dark-desktop.png',
+            '/images/portfolio-2026/design-tokens-light-desktop.png',
+            '/images/portfolio-2026/design-tokens-dark-desktop.png',
+            '/images/portfolio-2026/home-light-tablet.png',
+            '/images/portfolio-2026/home-dark-tablet.png',
+            '/images/portfolio-2026/home-light-mobile.png',
+            '/images/portfolio-2026/home-dark-mobile.png',
+            '/images/og-image-2026.png',
+        ],
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS'],
         links: [
             {
                 label: {
-                    ko: '포트폴리오 보기',
-                    en: 'Open portfolio',
+                    ko: '디자인 토큰 보기',
+                    en: 'View design tokens',
                 },
-                href: 'https://yheun03.github.io/jonsoft-framework/',
+                href: '/personal/design-tokens',
             },
         ],
     },

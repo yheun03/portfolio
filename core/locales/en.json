@@ -48,7 +48,8 @@
         "cardLabel": "Personal",
         "backToWorks": "Go to Client works (#works)",
         "ctaTab": "Open personal projects gallery",
-        "fullArchiveLink": "View full personal project gallery"
+        "fullArchiveLink": "View full personal project gallery",
+        "designTokensLink": "View 2026 portfolio design tokens"
     },
     "gallery": {
         "careerEyebrow": "Works archive",
