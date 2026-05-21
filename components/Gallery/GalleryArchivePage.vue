@@ -1,7 +1,7 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
         :footer-text="t('footer.copyright')" :show-app-dock="true">
-        <article class="gallery-page section" :class="[`gallery-page--${viewMode}`, galleryVariantClass]"
+        <article ref="galleryPageRef" class="gallery-page section" :class="[`gallery-page--${viewMode}`, galleryVariantClass]"
             :aria-label="t(titleKey)">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
                 :hero-number="heroNumber" :hero-aria-label="heroAriaLabel" :status-label="t('gallery.indexLabel')"
@@ -72,4 +72,7 @@ const {
     titleKey,
     basePath,
 } = useGalleryArchive(props.variant, props.works);
+
+const galleryPageRef = ref<HTMLElement | null>(null);
+useGalleryEntryFocusScope(galleryPageRef);
 </script>

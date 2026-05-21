@@ -78,7 +78,12 @@
         "role": "Role",
         "breadcrumbLabel": "Breadcrumb",
         "backToCareerList": "Back to client works",
-        "backToPersonalList": "Back to personal projects"
+        "backToPersonalList": "Back to personal projects",
+        "backPrevious": "Back to previous view",
+        "backHint": "Press Esc to return to your previous scroll position",
+        "detailEndLine": "If you made it this far, your scroll discipline checks out.",
+        "detailEndBackCareer": "Read it all? Back to client works",
+        "detailEndBackPersonal": "Read it all? Back to personal projects"
     },
     "journey": {
         "title": "A growth path built through delivery",

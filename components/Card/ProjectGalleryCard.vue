@@ -1,6 +1,7 @@
 <template>
-    <NuxtLink :to="to" class="gallery-card"
-        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift">
+    <NuxtLink :id="galleryEntryId(work.id)" :to="to" class="gallery-card"
+        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift"
+        :aria-label="cardAriaLabel">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <span v-if="entryYearSuffix" class="gallery-editorial__entry-index" aria-hidden="true">{{
@@ -63,6 +64,7 @@
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
 import type { GalleryViewMode } from '@composables/useGallery';
+import { galleryEntryId } from '@composables/useNavigationRestore';
 import { getWorkStartYear } from '@utils/workSort';
 
 const props = withDefaults(
@@ -85,6 +87,11 @@ const { resolveAppPath } = useAppPathResolver();
 const entryLabel = computed(
     () => props.entryLabel ?? (locale.value === 'ko' ? '상세 보기' : 'View detail'),
 );
+
+const cardAriaLabel = computed(() => {
+    const title = pick(props.work.title);
+    return locale.value === 'ko' ? `${title}, ${entryLabel.value}` : `${title}, ${entryLabel.value}`;
+});
 
 const entryYearSuffix = computed(() => {
     const year = getWorkStartYear(props.work);

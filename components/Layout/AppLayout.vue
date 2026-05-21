@@ -1,6 +1,6 @@
 <template>
-    <AppDock v-if="showAppDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
     <a class="skip-link" href="#main-content">{{ locale === "ko" ? "본문으로 건너뛰기" : "Skip to main content" }}</a>
+    <AppDock v-if="showAppDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
     <div class="app-background" aria-hidden="true" />
     <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
     <main id="main-content" class="portfolio-page" :class="{ 'portfolio-page--app-dock': showAppDock }">
