@@ -1,8 +1,8 @@
 <template>
-    <li class="journey-milestone" data-animate>
-        <p class="journey-milestone__period">{{ period }}</p>
-        <h4 class="journey-milestone__title">{{ title }}</h4>
-        <p class="journey-milestone__description">{{ description }}</p>
+    <li class="timeline-item" data-animate>
+        <p class="timeline-item__period">{{ period }}</p>
+        <h4 class="timeline-item__title">{{ title }}</h4>
+        <p class="timeline-item__description">{{ description }}</p>
     </li>
 </template>
 

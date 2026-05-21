@@ -20,7 +20,7 @@ export const usePortfolioGsap = () => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const root = document.getElementById('main-content');
         if (!root || reduceMotion) {
-            root?.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => el.classList.add('is-visible'));
+            root?.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => el.classList.add('animate--visible'));
             return;
         }
 

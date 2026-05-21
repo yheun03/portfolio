@@ -1,5 +1,6 @@
 <template>
-    <button v-if="!href" class="base-button" :class="`base-button--${variant}`" :aria-label="ariaLabel || label">
+    <button v-if="!href" type="button" class="base-button" :class="`base-button--${variant}`"
+        :aria-label="ariaLabel || label">
         <slot>{{ label }}</slot>
     </button>
     <NuxtLink v-else-if="isAppRoute(href)" class="base-button" :class="`base-button--${variant}`" :to="href"

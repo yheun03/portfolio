@@ -1,5 +1,8 @@
+/** `assets/style/_tokens.scss` — $bp-max-narrow (1023px) 와 동일 */
+const NARROW_LAYOUT_MAX = '1023px';
+
 /**
- * `main.scss` 의 narrow layout 기준과 동일 — 탭 리스트 aria-orientation 등에 사용
+ * narrow layout 기준 — 탭 리스트 aria-orientation 등에 사용
  */
 export function useNarrowLayout() {
     const isNarrow = ref(false);
@@ -10,7 +13,7 @@ export function useNarrowLayout() {
     };
 
     onMounted(() => {
-        mq = window.matchMedia('(max-width: 1023.98px)');
+        mq = window.matchMedia(`(max-width: ${NARROW_LAYOUT_MAX})`);
         update();
         mq.addEventListener('change', update);
     });

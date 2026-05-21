@@ -1,7 +1,6 @@
 <template>
     <section id="contact" class="section section--contact">
-        <span class="section__emoji section__emoji--contact accent-emoji accent-emoji--soft"
-            aria-hidden="true">💬</span>
+        <span class="section__emoji section__emoji--contact emoji emoji--soft" aria-hidden="true">💬</span>
 
         <div class="contact__poster" data-animate>
             <header class="contact__head">
@@ -9,8 +8,8 @@
                 <p class="contact__lead">{{ t("contact.description") }}</p>
             </header>
 
-            <section class="contact__spotlight promo-spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
-                <h3 class="promo-spotlight__kicker">{{ t("contact.kicker") }}</h3>
+            <section class="contact__spotlight spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
+                <h3 class="spotlight__kicker">{{ t("contact.kicker") }}</h3>
                 <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`">
                     <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`">{{ letter }}</span>
                 </a>

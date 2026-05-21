@@ -17,6 +17,10 @@ $bp-tablet: 768px;
 $bp-laptop: 1024px;
 $bp-desktop: 1440px;
 
+/** max-width — laptop/tablet 미만 (정수 px만 사용, .98 등 소수 금지) */
+$bp-max-mobile: $bp-tablet - 1px;
+$bp-max-narrow: $bp-laptop - 1px;
+
 $font-display: var(--font-display);
 $font-body: var(--font-body);
 $font-mono: var(--font-mono);
@@ -363,6 +367,12 @@ $font-presets: (
 
 @mixin respond-up($bp) {
     @media (min-width: $bp) {
+        @content;
+    }
+}
+
+@mixin respond-down($bp) {
+    @media (max-width: $bp) {
         @content;
     }
 }

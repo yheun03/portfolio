@@ -10,19 +10,23 @@
         </a>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
             <template v-for="link in links" :key="link.href">
-                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" :class="{ 'is-active': isNavActive(link.href) }"
+                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" class="app-header__link"
+                    :class="{ 'app-header__link--active': isNavActive(link.href) }"
                     :aria-current="isNavActive(link.href) ? 'page' : undefined">
                     {{ link.label }}
                 </NuxtLink>
-                <a v-else :href="link.href" :class="{ 'is-active': isNavActive(link.href) }"
+                <a v-else :href="link.href" class="app-header__link"
+                    :class="{ 'app-header__link--active': isNavActive(link.href) }"
                     :aria-current="isNavActive(link.href) ? 'page' : undefined">
                     {{ link.label }}
                 </a>
             </template>
         </nav>
         <div class="app-header__actions">
-            <LanguageToggle />
-            <ThemeToggle />
+            <BaseButton class="language-toggle" variant="ghost" :label="locale.toUpperCase()"
+                :aria-label="languageToggleAriaLabel" @click="toggleLocale" />
+            <BaseButton class="theme-toggle" variant="ghost" label="Theme" :aria-label="themeToggleAriaLabel"
+                :title="themeToggleTitle" @click="toggleTheme" />
             <button type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
@@ -37,8 +41,35 @@
 
 <script setup lang="ts">
 const menuOpen = ref(false);
-const { locale } = useLocale();
+const { locale, toggleLocale } = useLocale();
+const { theme, toggleTheme } = useTheme();
 const route = useRoute();
+
+const languageToggleAriaLabel = computed(() =>
+    locale.value === "ko"
+        ? `${locale.value.toUpperCase()} 언어 전환`
+        : `${locale.value.toUpperCase()} switch language`
+);
+
+const themeToggleAriaLabel = computed(() =>
+    theme.value === "dark"
+        ? locale.value === "ko"
+            ? "라이트 모드로 전환"
+            : "Switch to light mode"
+        : locale.value === "ko"
+          ? "다크 모드로 전환"
+          : "Switch to dark mode"
+);
+
+const themeToggleTitle = computed(() =>
+    theme.value === "dark"
+        ? locale.value === "ko"
+            ? "라이트 모드 전환"
+            : "Switch to light mode"
+        : locale.value === "ko"
+          ? "다크 모드 전환"
+          : "Switch to dark mode"
+);
 
 const props = withDefaults(
     defineProps<{
@@ -82,7 +113,7 @@ watch(
     () => menuOpen.value,
     (open) => {
         if (!import.meta.client) return;
-        document.documentElement.classList.toggle("is-menu-open", open);
+        document.documentElement.classList.toggle("app--menu-open", open);
     }
 );
 
@@ -91,7 +122,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-    document.documentElement.classList.remove("is-menu-open");
+    document.documentElement.classList.remove("app--menu-open");
     window.removeEventListener("keydown", closeOnEscape);
 });
 </script>

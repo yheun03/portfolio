@@ -2,7 +2,7 @@
     <main class="error-page">
         <section class="error-page__panel">
             <p class="base-label">Route Check</p>
-            <span class="error-page__emoji accent-emoji accent-emoji--soft" aria-hidden="true">🧭</span>
+            <span class="error-page__emoji emoji emoji--soft" aria-hidden="true">🧭</span>
             <p class="error-page__code">{{ statusCode }}</p>
             <h1>{{ title }}</h1>
             <p class="error-page__message">{{ message }}</p>

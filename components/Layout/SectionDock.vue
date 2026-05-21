@@ -3,13 +3,13 @@
         <nav class="section-dock" :aria-label="locale === 'ko' ? '빠른 페이지 이동' : 'Quick page navigation'">
             <template v-for="link in links" :key="link.href">
                 <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" class="section-dock__item"
-                    :class="{ 'is-active': isLinkActive(link.href) }"
+                    :class="{ 'section-dock__item--active': isLinkActive(link.href) }"
                     :aria-current="isLinkActive(link.href) ? 'page' : undefined">
                     <span class="section-dock__dot" aria-hidden="true" />
                     <span class="section-dock__label">{{ link.label }}</span>
                 </NuxtLink>
-                <a v-else class="section-dock__item" :class="{ 'is-active': isLinkActive(link.href) }" :href="link.href"
-                    :aria-current="isLinkActive(link.href) ? 'page' : undefined">
+                <a v-else class="section-dock__item" :class="{ 'section-dock__item--active': isLinkActive(link.href) }"
+                    :href="link.href" :aria-current="isLinkActive(link.href) ? 'page' : undefined">
                     <span class="section-dock__dot" aria-hidden="true" />
                     <span class="section-dock__label">{{ link.label }}</span>
                 </a>
