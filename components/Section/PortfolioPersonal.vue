@@ -1,7 +1,6 @@
 <template>
     <section id="personal" class="section section--personal">
-        <span class="section__emoji section__emoji--personal emoji emoji--soft"
-            aria-hidden="true">✦</span>
+        <span class="section__emoji section__emoji--personal emoji emoji--soft" aria-hidden="true">✦</span>
         <div class="personal__head">
             <BaseSectionTitle :eyebrow="t('nav.personal')" :title="t('personal.title')"
                 :description="sectionDescription" />

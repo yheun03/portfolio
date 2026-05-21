@@ -9,7 +9,7 @@
                 :class="{ 'typo-word--active': isActive(wordKey(`${groupId}-${lineIndex}`, wordIndex)) }"
                 :style="{ '--word-index': wordIndex }"
                 @mouseenter="setActive(wordKey(`${groupId}-${lineIndex}`, wordIndex))" @mouseleave="setActive(null)">{{
-                word }}</span>
+                    word }}</span>
         </span>
     </component>
 </template>

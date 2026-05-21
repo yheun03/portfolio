@@ -48,16 +48,13 @@ export default defineNuxtConfig({
         storesDirs: ['~/stores'],
     },
 
-    plugins: [
-        '~/plugins/app-init.client',
-        '~/plugins/analytics.client',
-        '~/plugins/gallery-fonts.client',
-    ],
+    plugins: ['~/plugins/app-init.client', '~/plugins/analytics.client', '~/plugins/gallery-fonts.client'],
 
     components: [
         { path: '~/components/Common', pathPrefix: false },
         { path: '~/components/Card', pathPrefix: false },
         { path: '~/components/Gallery', pathPrefix: false },
+        { path: '~/components/Motion', pathPrefix: false },
         { path: '~/components/Section', pathPrefix: false },
         { path: '~/components/Layout', pathPrefix: false },
     ],
