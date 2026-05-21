@@ -42,6 +42,10 @@ const data = [
                 en: 'Reorganized the former core folder into root-level composables, stores, plugins, i18n, api, data, and config layers',
             },
             {
+                ko: '사용되지 않는 카드 컴포넌트를 제거하고 소개·툴박스 카드 계열을 FeatureCard로 통합해 컴포넌트 수와 역할 중복을 정리',
+                en: 'Removed unused card components and merged intro/toolbox card patterns into FeatureCard to reduce component count and duplicated roles',
+            },
+            {
                 ko: 'GitHub Pages 정적 배포 경로와 public asset 경로를 고려한 빌드 구조 정리',
                 en: 'Organized static build output and asset paths for GitHub Pages deployment',
             },
@@ -62,6 +66,10 @@ const data = [
             {
                 ko: 'Pinia 상태는 앱 환경 설정과 포트폴리오 UI 상태로 묶고, Nuxt 플러그인은 초기화와 분석 스크립트 계열로 통폐합',
                 en: 'Grouped Pinia state into app preferences and portfolio UI state, and consolidated Nuxt plugins by app boot and analytics concerns',
+            },
+            {
+                ko: '컴포넌트는 화면에서 실제 호출되는 단위 중심으로 남겨, 디자인 시스템 문서와 코드 목록이 어긋나지 않도록 정리',
+                en: 'Kept components centered on units that are actually rendered, aligning the design-system inventory with the codebase',
             },
         ],
         points: [
