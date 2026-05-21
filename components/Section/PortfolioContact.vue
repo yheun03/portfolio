@@ -12,7 +12,8 @@
                 <h3 class="spotlight__kicker">{{ t("contact.kicker") }}</h3>
                 <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`">
                     <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`"
-                        :class="{ 'contact__mail-slot--suffix': atSignIndex >= 0 && index >= atSignIndex }">
+                        :class="{ 'contact__mail-slot--suffix': atSignIndex >= 0 && index >= atSignIndex }"
+                        :style="{ '--mail-index': index }">
                         <span>{{ letter }}</span>
                     </span>
                 </a>
