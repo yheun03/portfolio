@@ -90,24 +90,29 @@
                                 {{ labels.close }}
                             </button>
                         </div>
-                        <p id="works-modal-description" class="works__meta">{{ activeWork.period }} · {{
-                            pick(activeWork.type) }}</p>
-                        <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(activeWork.role) }}</p>
-                        <p class="works__intro">{{ pick(activeWork.introduction) }}</p>
-                        <p class="works__section-title"><strong>{{ labels.contributions }}</strong></p>
-                        <ul>
-                            <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
-                        </ul>
-                        <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{ labels.results
-                        }}</strong></p>
-                        <ul v-if="activeWork.achievements.length">
-                            <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
-                        </ul>
-                        <p class="works__section-title"><strong>{{ labels.points }}</strong></p>
-                        <ul>
-                            <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
-                        </ul>
-                        <p v-if="activeWork.links?.length" class="works__modal-links">
+
+                        <div class="works__modal-body">
+                            <p id="works-modal-description" class="works__meta">{{ activeWork.period }} · {{
+                                pick(activeWork.type) }}</p>
+                            <p class="works__role"><strong>{{ labels.role }}:</strong> {{ pick(activeWork.role) }}</p>
+                            <p class="works__intro">{{ pick(activeWork.introduction) }}</p>
+                            <p class="works__section-title"><strong>{{ labels.contributions }}</strong></p>
+                            <ul>
+                                <li v-for="item in activeWork.myWorks" :key="pick(item)">{{ pick(item) }}</li>
+                            </ul>
+                            <p v-if="activeWork.achievements.length" class="works__section-title"><strong>{{
+                                labels.results
+                            }}</strong></p>
+                            <ul v-if="activeWork.achievements.length">
+                                <li v-for="item in activeWork.achievements" :key="pick(item)">{{ pick(item) }}</li>
+                            </ul>
+                            <p class="works__section-title"><strong>{{ labels.points }}</strong></p>
+                            <ul>
+                                <li v-for="item in activeWork.points" :key="pick(item)">{{ pick(item) }}</li>
+                            </ul>
+                        </div>
+
+                        <div v-if="activeWork.links?.length" class="works__modal-links">
                             <template v-for="link in activeWork.links" :key="link.href">
                                 <NuxtLink v-if="isAppRoute(link.href)" class="base-button base-button--primary"
                                     :to="link.href">
@@ -118,7 +123,7 @@
                                     {{ pick(link.label) }}
                                 </a>
                             </template>
-                        </p>
+                        </div>
                     </BaseCard>
                 </div>
             </div>

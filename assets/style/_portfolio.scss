@@ -970,13 +970,20 @@ html:not([data-theme="dark"]) .app-background::after {
 
         .base-card {
             width: min(760px, 100%);
-            max-height: 82vh;
-            overflow: auto;
         }
     }
 
     &__modal-content {
         width: min(760px, 100%);
+        max-height: min(82vh, 52rem);
+    }
+
+    &__modal-card {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        max-height: min(82vh, 52rem);
+        padding: 0;
+        overflow: hidden;
     }
 
     &__modal-head {
@@ -984,17 +991,28 @@ html:not([data-theme="dark"]) .app-background::after {
         gap: var(--space-5);
         align-items: center;
         justify-content: space-between;
+        padding: var(--card-padding-lg) var(--card-padding-lg) var(--space-5);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
     }
 
     &__modal-close {
         flex-shrink: 0;
     }
 
+    &__modal-body {
+        min-height: 0;
+        padding: var(--space-5) var(--card-padding-lg);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-gutter: stable;
+    }
+
     &__modal-links {
         display: flex;
         flex-wrap: wrap;
         gap: var(--space-3);
-        margin-top: var(--space-5);
+        padding: var(--space-5) var(--card-padding-lg) var(--card-padding-lg);
+        border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
     }
 
     &__meta,
@@ -1124,9 +1142,12 @@ html:not([data-theme="dark"]) .app-background::after {
     }
 
     .personal__archive-link {
+        display: grid;
+        gap: var(--space-2);
         margin: 0;
 
         a {
+            width: fit-content;
             font-family: var(--font-display);
             font-weight: var(--font-weight-bold);
             color: var(--color-primary);

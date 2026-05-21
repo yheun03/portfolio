@@ -48,7 +48,8 @@
         "cardLabel": "개인 프로젝트",
         "backToWorks": "실무 프로젝트(Works) 섹션으로 이동",
         "ctaTab": "개인 프로젝트 전체 보기",
-        "fullArchiveLink": "개인 프로젝트 전체 보기 (갤러리)"
+        "fullArchiveLink": "개인 프로젝트 전체 보기 (갤러리)",
+        "designTokensLink": "2026 포트폴리오 디자인 토큰 보기"
     },
     "gallery": {
         "careerEyebrow": "Works archive",

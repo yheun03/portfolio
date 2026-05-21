@@ -7,6 +7,7 @@
                 :description="sectionDescription" />
             <p class="personal__archive-link">
                 <NuxtLink to="/personal">{{ t('personal.fullArchiveLink') }}</NuxtLink>
+                <NuxtLink to="/personal/design-tokens">{{ t('personal.designTokensLink') }}</NuxtLink>
             </p>
         </div>
 
