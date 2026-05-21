@@ -3,9 +3,14 @@
         :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
             <nav class="gallery-detail__breadcrumb" :aria-label="t('gallery.breadcrumbLabel')">
-                <NuxtLink :to="config.basePath">{{ t(config.listLabelKey) }}</NuxtLink>
-                <span aria-hidden="true">•</span>
-                <span aria-current="page">{{ pick(work.title) }}</span>
+                <button type="button" class="gallery-detail__breadcrumb-link" aria-keyshortcuts="Escape"
+                    aria-describedby="gallery-detail-back-hint" @click="goBack">
+                    {{ t(config.listLabelKey) }}
+                </button>
+                <span id="gallery-detail-back-hint" class="gallery-detail__breadcrumb-sr">{{ t('gallery.backHint')
+                    }}</span>
+                <span class="gallery-detail__breadcrumb-sep" aria-hidden="true">•</span>
+                <span class="gallery-detail__breadcrumb-current" aria-current="page">{{ pick(work.title) }}</span>
             </nav>
 
             <header class="gallery-detail__header gallery-editorial__poster">
@@ -28,7 +33,7 @@
                         <dt>{{ t('gallery.languages') }}</dt>
                         <dd>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                            }}</span>
+                                }}</span>
                             <template v-if="!work.languages.length">-</template>
                         </dd>
                     </div>
@@ -89,6 +94,15 @@
                 </div>
             </section>
 
+            <footer class="gallery-detail__end">
+                <p class="gallery-detail__end-line">{{ t('gallery.detailEndLine') }}</p>
+                <p class="gallery-detail__footer-nav">
+                    <button type="button" class="base-button base-button--ghost" @click="goBack">
+                        {{ t(detailEndCtaKey) }}
+                    </button>
+                </p>
+            </footer>
+
         </article>
     </AppLayout>
 </template>
@@ -107,6 +121,7 @@ const { t, pick, locale } = useLocale();
 const { resolveAppPath, isAppRoute } = useAppPathResolver();
 const layoutLinks = useSubpageNavLinks();
 const config = getGalleryVariantConfig(props.variant);
+const { goBack } = useNavigationRestore(config.basePath);
 const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 const capturesTitleId = `gallery-${props.variant}-captures`;
 const overviewTitleId = `gallery-${props.variant}-overview`;
@@ -121,6 +136,10 @@ const detailKicker = computed(() =>
     locale.value === 'ko'
         ? `${config.koName} • ${props.work.period} • 결과`
         : `${config.enName} • ${props.work.period} • RESULT`,
+);
+
+const detailEndCtaKey = computed(() =>
+    props.variant === 'career' ? 'gallery.detailEndBackCareer' : 'gallery.detailEndBackPersonal',
 );
 
 function captureAlt(index: number) {

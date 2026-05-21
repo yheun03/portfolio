@@ -8,14 +8,14 @@
         </header>
 
         <div class="highlights__workspace" data-animate>
-            <nav class="highlights__nav" role="tablist"
+            <nav class="highlights__nav" role="tablist" aria-orientation="horizontal"
                 :aria-label="locale === 'ko' ? '하이라이트 카테고리' : 'Highlight categories'">
                 <button v-for="(tab, index) in tabs" :key="tab.key" :id="`highlights-tab-${tab.key}`" type="button"
                     role="tab" :aria-controls="`highlights-panel-${tab.key}`"
                     :aria-selected="highlightsUi.activeTab === tab.key"
                     :tabindex="highlightsUi.activeTab === tab.key ? 0 : -1" class="highlights__nav-item"
                     :class="{ 'highlights__nav-item--active': highlightsUi.activeTab === tab.key }"
-                    @click="highlightsUi.setTab(tab.key)">
+                    @click="highlightsUi.setTab(tab.key)" @keydown="handleHighlightsTabKeydown($event, tab.key)">
                     <span class="highlights__nav-index">{{ String(index + 1).padStart(2, "0") }}</span>
                     <span class="highlights__nav-label">{{ tab.label }}</span>
                     <span class="highlights__nav-count">{{ tab.countLabel }}</span>
@@ -73,4 +73,15 @@ const activeTabLabel = computed(
     () => tabs.value.find((tab) => tab.key === highlightsUi.activeTab)?.label ?? ""
 );
 const activeDescription = computed(() => pick(highlights.descriptions[highlightsUi.activeTab]));
+
+const highlightTabKeys = computed(() => tabs.value.map((tab) => tab.key));
+
+const { handleTabKeydown: handleHighlightsTabKeydown } = useTablistKeyboard(
+    highlightTabKeys,
+    (key) => highlightsUi.setTab(key),
+    {
+        tabIdPrefix: 'highlights-tab-',
+        orientation: 'horizontal',
+    },
+);
 </script>

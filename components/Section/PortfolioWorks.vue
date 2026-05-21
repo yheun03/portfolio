@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-            }}</span>
+                }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -21,7 +21,7 @@
                     :aria-selected="selectedCategory === category.key"
                     :tabindex="selectedCategory === category.key ? 0 : -1" class="tab-list__tab"
                     :class="{ 'tab-list__tab--active': selectedCategory === category.key }"
-                    @click="selectCategory(category.key)">
+                    @click="selectCategory(category.key)" @keydown="handleWorksTabKeydown($event, category.key)">
                     {{ pick(category.label) }}
                 </button>
             </div>
@@ -149,6 +149,19 @@ const {
     openWork,
     closeModal,
 } = useWorksTabRenderer();
+
+const worksTabKeys = computed(() => workCategories.map((category) => category.key));
+
+const { handleTabKeydown: handleWorksTabKeydown } = useTablistKeyboard(
+    worksTabKeys,
+    selectCategory,
+    {
+        tabIdPrefix: 'works-tab-',
+        orientation: computed(() => (isNarrow.value ? 'horizontal' : 'vertical')),
+        scrollAnchorSelector: '#works',
+    },
+);
+
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
 const modalCardRef = ref<HTMLElement | null>(null);
 const worksRailRef = ref<HTMLElement | null>(null);
