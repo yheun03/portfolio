@@ -61,8 +61,8 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
-import { profile } from "@content/site";
-import { splitTypoWords, useTypoInteraction } from "~/core/composables/useTypoInteraction";
+import { profile } from "@data/site";
+import { splitTypoWords, useTypoInteraction } from "@composables/useTypoInteraction";
 
 const WelcomeCanvas = defineAsyncComponent(() => import("~/components/Section/WelcomeCanvas.vue"));
 

@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryViewMode } from '@composables/useGalleryViewMode';
+import type { GalleryViewMode } from '@composables/useGallery';
 import type { WorkSortMode } from '@utils/workSort';
 
 defineProps<{

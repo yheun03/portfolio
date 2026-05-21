@@ -4,7 +4,11 @@ Nuxt 3 기반 개인 포트폴리오 사이트입니다.
 
 ## 문서
 
-- **[데이터 · 다국어 · 폴더 구조](docs/project-data-notes.md)** — `core/content`, `core/locales`, 작업 JSON, 갤러리 라우트 정리
+- **[데이터 · 다국어 · 폴더 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 JSON, 갤러리 라우트 정리
+
+## 앱 구조
+
+Nuxt 기본 관례에 맞춰 앱 계층은 루트 폴더에서 관리합니다. `composables`, `stores`, `plugins`, `i18n`, `api`를 기준 축으로 두고, 정적 포트폴리오 본문은 `data`, 설정값은 `config`, 순수 유틸은 `utils`, 공유 타입은 `types`에 둡니다.
 
 ## 디자인 토큰 사용법
 

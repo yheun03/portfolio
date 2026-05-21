@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import GalleryDetailPage from '~/components/Gallery/GalleryDetailPage.vue';
-import { getPersonalWorkById } from '@content/works';
+import { getPersonalWorkById } from '@data/works';
 
 const route = useRoute();
 const work = getPersonalWorkById(route.params.id as string);

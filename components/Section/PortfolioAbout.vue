@@ -46,8 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { aboutContent } from "@content/site";
-import { splitTypoWords, useTypoInteraction } from "~/core/composables/useTypoInteraction";
+import { aboutContent } from "@data/site";
+import { splitTypoWords, useTypoInteraction } from "@composables/useTypoInteraction";
 import PromoFeatureCard from "~/components/Card/PromoFeatureCard.vue";
 
 const { t, pick, locale } = useLocale();

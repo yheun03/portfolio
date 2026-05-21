@@ -4,5 +4,5 @@
 
 <script setup lang="ts">
 import GalleryArchivePage from '~/components/Gallery/GalleryArchivePage.vue';
-import { careerWorks } from '@content/works';
+import { careerWorks } from '@data/works';
 </script>

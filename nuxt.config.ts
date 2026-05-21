@@ -30,30 +30,28 @@ export default defineNuxtConfig({
     css: ['~/assets/style/main.scss'],
 
     alias: {
-        '@composables': fileURLToPath(new URL('./core/composables', import.meta.url)),
-        '@config': fileURLToPath(new URL('./core/config', import.meta.url)),
-        '@content': fileURLToPath(new URL('./core/content', import.meta.url)),
-        '@locales': fileURLToPath(new URL('./core/locales', import.meta.url)),
-        '@stores': fileURLToPath(new URL('./core/stores', import.meta.url)),
-        '@app-types': fileURLToPath(new URL('./core/types', import.meta.url)),
-        '@utils': fileURLToPath(new URL('./core/utils', import.meta.url)),
+        '@api': fileURLToPath(new URL('./api', import.meta.url)),
+        '@composables': fileURLToPath(new URL('./composables', import.meta.url)),
+        '@config': fileURLToPath(new URL('./config', import.meta.url)),
+        '@data': fileURLToPath(new URL('./data', import.meta.url)),
+        '@i18n': fileURLToPath(new URL('./i18n', import.meta.url)),
+        '@stores': fileURLToPath(new URL('./stores', import.meta.url)),
+        '@app-types': fileURLToPath(new URL('./types', import.meta.url)),
+        '@utils': fileURLToPath(new URL('./utils', import.meta.url)),
     },
 
     imports: {
-        dirs: ['~/core/composables'],
+        dirs: ['~/composables'],
     },
 
     pinia: {
-        storesDirs: ['~/core/stores'],
+        storesDirs: ['~/stores'],
     },
 
     plugins: [
-        '~/core/plugins/theme-init.client',
-        '~/core/plugins/locale-init.client',
-        '~/core/plugins/content-ready.client',
-        '~/core/plugins/gtm-deferred.client',
-        '~/core/plugins/naver-analytics.client',
-        '~/core/plugins/gallery-fonts.client',
+        '~/plugins/app-init.client',
+        '~/plugins/analytics.client',
+        '~/plugins/gallery-fonts.client',
     ],
 
     components: [

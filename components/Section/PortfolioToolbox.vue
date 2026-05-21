@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { skills } from "@content/site";
+import { skills } from "@data/site";
 
 const { t, pick } = useLocale();
 </script>

@@ -94,10 +94,10 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryArchiveVariant } from '@composables/useGalleryArchive';
-import type { WorkItem } from '@content/works';
+import type { GalleryArchiveVariant } from '@composables/useGallery';
+import type { WorkItem } from '@data/works';
 import AppLayout from '~/components/Layout/AppLayout.vue';
-import { getGalleryVariantConfig } from '@composables/useGalleryArchive';
+import { getGalleryVariantConfig } from '@composables/useGallery';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
