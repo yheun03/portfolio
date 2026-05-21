@@ -1,17 +1,17 @@
 <template>
-    <div class="section-dock-ribbon">
-        <nav class="section-dock" :aria-label="locale === 'ko' ? '빠른 페이지 이동' : 'Quick page navigation'">
+    <div class="app-dock-ribbon">
+        <nav class="app-dock" :aria-label="locale === 'ko' ? '빠른 페이지 이동' : 'Quick page navigation'">
             <template v-for="link in links" :key="link.href">
-                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" class="section-dock__item"
-                    :class="{ 'section-dock__item--active': isLinkActive(link.href) }"
+                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" class="app-dock__item"
+                    :class="{ 'app-dock__item--active': isLinkActive(link.href) }"
                     :aria-current="isLinkActive(link.href) ? 'page' : undefined">
-                    <span class="section-dock__dot" aria-hidden="true" />
-                    <span class="section-dock__label">{{ link.label }}</span>
+                    <span class="app-dock__dot" aria-hidden="true" />
+                    <span class="app-dock__label">{{ link.label }}</span>
                 </NuxtLink>
-                <a v-else class="section-dock__item" :class="{ 'section-dock__item--active': isLinkActive(link.href) }"
+                <a v-else class="app-dock__item" :class="{ 'app-dock__item--active': isLinkActive(link.href) }"
                     :href="link.href" :aria-current="isLinkActive(link.href) ? 'page' : undefined">
-                    <span class="section-dock__dot" aria-hidden="true" />
-                    <span class="section-dock__label">{{ link.label }}</span>
+                    <span class="app-dock__dot" aria-hidden="true" />
+                    <span class="app-dock__label">{{ link.label }}</span>
                 </a>
             </template>
         </nav>

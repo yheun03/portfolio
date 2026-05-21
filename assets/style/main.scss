@@ -264,9 +264,9 @@ html.skeleton-active {
     .app-header__menu-btn,
     .language-toggle,
     .theme-toggle,
-    .mobile-menu__eyebrow,
-    .mobile-menu__link,
-    .section-dock__label,
+    .app-lnb__eyebrow,
+    .app-lnb__link,
+    .app-dock__label,
     .app-footer>p:last-child {
         @include skeleton-rect;
     }
@@ -348,7 +348,7 @@ html.skeleton-active {
         .app-header__brand,
         .app-header__link,
         #main-content :where(h1, h2, h3, h4, h5, h6, p, .base-button),
-        .section-dock__label {
+        .app-dock__label {
             animation: none;
             background: color-mix(in srgb, var(--color-surface-strong) 82%, var(--color-border));
         }
@@ -1115,7 +1115,7 @@ html.skeleton-active {
    Mobile Menu
 ========================================= */
 
-.mobile-menu {
+.app-lnb {
     position: fixed;
     top: calc(#{$layout-header-height} + #{$space-5});
     right: max(0.75rem, env(safe-area-inset-right));
@@ -1244,7 +1244,7 @@ html.skeleton-active {
 [data-theme="dark"] {
     --nav-active-bg: linear-gradient(118deg, var(--primary-400) 0%, var(--primary-500) 52%, var(--primary-600) 100%);
 
-    .mobile-menu {
+    .app-lnb {
         background:
             linear-gradient(155deg,
                 color-mix(in srgb, var(--grayscale-100) 92%, transparent) 0%,
@@ -1255,13 +1255,13 @@ html.skeleton-active {
             background: color-mix(in srgb, var(--grayscale-100) 92%, transparent);
         }
 
-        .mobile-menu__link {
+        .app-lnb__link {
             background: color-mix(in srgb, var(--grayscale-100) 64%, transparent);
         }
     }
 
     .app-header__nav .app-header__link--active,
-    .mobile-menu__link--active {
+    .app-lnb__link--active {
         color: var(--color-on-accent);
         border-color: color-mix(in srgb, var(--primary-400) 55%, transparent);
         background: var(--nav-active-bg);
@@ -1269,20 +1269,20 @@ html.skeleton-active {
     }
 }
 
-.mobile-menu-fade-enter-active,
-.mobile-menu-fade-leave-active,
-.mobile-menu-drawer-enter-active,
-.mobile-menu-drawer-leave-active {
+.app-lnb-fade-enter-active,
+.app-lnb-fade-leave-active,
+.app-lnb-drawer-enter-active,
+.app-lnb-drawer-leave-active {
     transition: opacity 0.24s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.mobile-menu-fade-enter-from,
-.mobile-menu-fade-leave-to {
+.app-lnb-fade-enter-from,
+.app-lnb-fade-leave-to {
     opacity: 0;
 }
 
-.mobile-menu-drawer-enter-from,
-.mobile-menu-drawer-leave-to {
+.app-lnb-drawer-enter-from,
+.app-lnb-drawer-leave-to {
     opacity: 0;
     transform: translateX(1.25rem);
 }
@@ -1307,7 +1307,7 @@ html.skeleton-active {
         padding: $space-3 $space-4;
     }
 
-    .mobile-menu {
+    .app-lnb {
         top: calc(#{$layout-header-height} + #{$space-3});
         right: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-right));
         left: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-left));
@@ -1333,7 +1333,7 @@ html.skeleton-active {
         }
     }
 
-    .mobile-menu {
+    .app-lnb {
         display: none;
     }
 }
@@ -1407,7 +1407,7 @@ html.skeleton-active {
     scroll-behavior: smooth;
 
     /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
-    &--section-dock {
+    &--app-dock {
         @media (min-width: 1024px) {
             padding-inline-end: 0;
         }
@@ -1583,16 +1583,16 @@ html:not([data-theme="dark"]) .app-background::after {
 }
 
 /** 오른쪽 끝 호버·포커스 시 맥 독처럼 네비가 미끄러져 나타남 */
-.section-dock-ribbon {
-    --section-dock-edge: var(--space-fluid-sm);
+.app-dock-ribbon {
+    --app-dock-edge: var(--space-fluid-sm);
     --section-content-w: min(100vw - var(--inset-page), var(--layout-content-max));
     --section-margin-x: max(0px, calc((100vw - var(--section-content-w)) * 0.5));
     position: fixed;
     top: 0;
     bottom: 0;
-    // right: max(var(--section-dock-edge),
-    //         calc(var(--section-margin-x) - var(--section-dock-slot, 3.15rem)));
-    right: var(--section-dock-edge);
+    // right: max(var(--app-dock-edge),
+    //         calc(var(--section-margin-x) - var(--app-dock-slot, 3.15rem)));
+    right: var(--app-dock-edge);
     z-index: 85;
     display: none;
     width: min(4.5rem, 12vw);
@@ -1606,8 +1606,8 @@ html:not([data-theme="dark"]) .app-background::after {
         display: flex;
     }
 
-    &:hover .section-dock,
-    &:focus-within .section-dock {
+    &:hover .app-dock,
+    &:focus-within .app-dock {
         transform: translateX(0);
         opacity: 1;
         pointer-events: auto;
@@ -1616,14 +1616,14 @@ html:not([data-theme="dark"]) .app-background::after {
         box-shadow: var(--shadow-lift), var(--shadow-glow);
     }
 
-    &:hover .section-dock .section-dock__dot,
-    &:focus-within .section-dock .section-dock__dot {
+    &:hover .app-dock .app-dock__dot,
+    &:focus-within .app-dock .app-dock__dot {
         width: 0.55rem;
         height: 0.55rem;
     }
 }
 
-.section-dock {
+.app-dock {
     display: grid;
     gap: calc(var(--space-1) * 0.4);
     padding: var(--space-1);
@@ -1642,8 +1642,8 @@ html:not([data-theme="dark"]) .app-background::after {
         padding 0.24s ease,
         box-shadow 0.24s ease;
 
-    .section-dock-ribbon:hover &,
-    .section-dock-ribbon:focus-within & {
+    .app-dock-ribbon:hover &,
+    .app-dock-ribbon:focus-within & {
         pointer-events: auto;
     }
 
@@ -1655,19 +1655,19 @@ html:not([data-theme="dark"]) .app-background::after {
         border-radius: 999px;
         place-items: center;
 
-        &:hover .section-dock__dot,
-        &:focus-visible .section-dock__dot {
+        &:hover .app-dock__dot,
+        &:focus-visible .app-dock__dot {
             background: var(--color-primary);
             transform: scale(1.18);
         }
 
-        &:hover .section-dock__label,
-        &:focus-visible .section-dock__label {
+        &:hover .app-dock__label,
+        &:focus-visible .app-dock__label {
             opacity: 1;
             transform: translateY(-50%) translateX(-0.12rem);
         }
 
-        &--active .section-dock__dot {
+        &--active .app-dock__dot {
             background: var(--color-primary);
         }
     }
@@ -1709,14 +1709,14 @@ html:not([data-theme="dark"]) .app-background::after {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .section-dock {
+    .app-dock {
         transition-duration: 0.01ms;
     }
 }
 
 .app-header__link:focus-visible,
-.mobile-menu__link:focus-visible,
-.section-dock__item:focus-visible,
+.app-lnb__link:focus-visible,
+.app-dock__item:focus-visible,
 .tab-list .tab-list__tab:focus-visible,
 .works__filters .tab-list__tab:focus-visible,
 .highlights__tabs .tab-list__tab:focus-visible {
@@ -2791,7 +2791,7 @@ html:not([data-theme="dark"]) .app-background::after {
         --touch-stack-gap: clamp(1.5rem, 4.2vw, 2.5rem);
     }
 
-    .portfolio-page--section-dock {
+    .portfolio-page--app-dock {
         padding-inline-end: 0;
     }
 
@@ -4797,7 +4797,7 @@ body:has(.gallery-detail.gallery-page--personal) {
         }
     }
 
-    .section-dock {
+    .app-dock {
         border-color: color-mix(in srgb, var(--gallery-muted) 40%, transparent);
         background: color-mix(in srgb, var(--gallery-bg) 88%, transparent);
         opacity: 0.92;
@@ -4812,9 +4812,9 @@ body:has(.gallery-detail.gallery-page--personal) {
             background: color-mix(in srgb, var(--gallery-muted) 70%, transparent);
         }
 
-        &__item--active .section-dock__dot,
-        &__item:hover .section-dock__dot,
-        &__item:focus-visible .section-dock__dot {
+        &__item--active .app-dock__dot,
+        &__item:hover .app-dock__dot,
+        &__item:focus-visible .app-dock__dot {
             background: var(--gallery-accent);
         }
     }
