@@ -1,10 +1,16 @@
 export type SeoLocale = 'ko' | 'en';
 
 export const seoConfig = {
+    siteUrl: 'https://yheun03.github.io/portfolio/',
     defaultOgImage: '/images/og-image-2026.png',
+    defaultOgImageSize: {
+        width: 1402,
+        height: 1122,
+    },
     siteName: 'Eunyounghwan Portfolio',
     personId: '#person',
     websiteId: '#website',
+    sameAs: ['https://github.com/yheun03'],
 } as const;
 
 export const seoKeywords = {

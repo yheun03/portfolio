@@ -16,7 +16,7 @@ interface PortfolioSeoOptions {
 }
 
 function buildAbsoluteUrl(path = '/') {
-    const baseUrl = profile.contacts.portfolio.endsWith('/') ? profile.contacts.portfolio : `${profile.contacts.portfolio}/`;
+    const baseUrl = seoConfig.siteUrl.endsWith('/') ? seoConfig.siteUrl : `${seoConfig.siteUrl}/`;
     const normalizedPath = path.startsWith('/') ? path.slice(1) : path;
 
     return new URL(normalizedPath, baseUrl).toString();
@@ -37,7 +37,7 @@ function createPersonJsonLd(locale: SeoLocale, canonicalUrl: string, imageUrl: s
         description: seoStructuredData.person.description[locale],
         url: canonicalUrl,
         image: imageUrl,
-        sameAs: [profile.contacts.github, profile.contacts.portfolio],
+        sameAs: [...seoConfig.sameAs, buildAbsoluteUrl('/')],
         knowsAbout: seoKeywords[locale],
     };
 }
@@ -102,8 +102,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image', content: imageUrl },
                 { property: 'og:image:secure_url', content: imageUrl },
                 { property: 'og:image:type', content: imageUrl.endsWith('.png') ? 'image/png' : 'image/jpeg' },
-                { property: 'og:image:width', content: '1200' },
-                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:width', content: String(seoConfig.defaultOgImageSize.width) },
+                { property: 'og:image:height', content: String(seoConfig.defaultOgImageSize.height) },
                 { property: 'og:image:alt', content: resolved.imageAlt ?? socialTitle },
                 { name: 'twitter:card', content: 'summary_large_image' },
                 { name: 'twitter:title', content: socialTitle },
