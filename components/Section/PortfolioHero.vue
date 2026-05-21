@@ -1,7 +1,9 @@
 <template>
     <section id="hello" class="section section--hero">
         <div class="hero__poster">
-            <WelcomeCanvas v-if="heroCanvasReady" class="hero__canvas" aria-hidden="true" />
+            <div v-if="heroCanvasReady" class="hero__canvas" aria-hidden="true">
+                <canvas ref="canvasRef" id="animatedCanvas" />
+            </div>
 
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
@@ -51,16 +53,115 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
 import { profile } from "@data/site";
 import { splitTypoWords } from '@composables/useTypoInteraction';
-
-const WelcomeCanvas = defineAsyncComponent(() => import('~/components/Section/WelcomeCanvas.vue'));
 
 const { t, pick, locale } = useLocale();
 
 const heroCanvasReady = ref(false);
+const canvasRef = ref<HTMLCanvasElement | null>(null);
 const heroFocusCards = computed(() => profile.focusAreas);
+
+let canvasFrameId = 0;
+let canvasResizeRaf = 0;
+let canvasCleanup: (() => void) | null = null;
+
+function setupHeroCanvas() {
+    const canvas = canvasRef.value;
+    const container = canvas?.parentElement;
+    if (!canvas || !container) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+
+    let running = false;
+    let textWidth = 0;
+
+    const resize = () => {
+        cancelAnimationFrame(canvasResizeRaf);
+        canvasResizeRaf = requestAnimationFrame(() => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            if (width < 1 || height < 1) return;
+            canvas.width = width;
+            canvas.height = height;
+        });
+    };
+
+    resize();
+    window.addEventListener("resize", resize, { passive: true });
+
+    const wrd = "EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ";
+    const texts = [
+        { text: wrd, y: 0, speed: 1, offset: 0 },
+        { text: wrd, y: 0, speed: 1, offset: -800 },
+        { text: wrd, y: 0, speed: 1, offset: -1600 },
+        { text: wrd, y: 0, speed: 1, offset: -2400 },
+    ];
+
+    const draw = () => {
+        if (!running) return;
+
+        const base = Math.max(canvas.height / 4, 48);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.font = `900 ${base}px Pretendard`;
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#000";
+
+        if (!textWidth) {
+            textWidth = ctx.measureText(wrd).width;
+        }
+
+        texts.forEach((item, index) => {
+            item.y = base * (0.8 + index * 1);
+            let x = item.offset;
+            while (x < canvas.width) {
+                ctx.strokeText(item.text, x, item.y);
+                x += textWidth;
+            }
+            item.offset -= item.speed;
+            if (item.offset < -textWidth) {
+                item.offset += textWidth;
+            }
+        });
+
+        canvasFrameId = requestAnimationFrame(draw);
+    };
+
+    const start = () => {
+        if (running) return;
+        running = true;
+        draw();
+    };
+
+    const stop = () => {
+        running = false;
+        cancelAnimationFrame(canvasFrameId);
+    };
+
+    const visibilityObserver = new IntersectionObserver(
+        (entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                start();
+            } else {
+                stop();
+            }
+        },
+        { threshold: 0.05 },
+    );
+
+    visibilityObserver.observe(container);
+
+    canvasCleanup = () => {
+        visibilityObserver.disconnect();
+        window.removeEventListener("resize", resize);
+        stop();
+        cancelAnimationFrame(canvasResizeRaf);
+    };
+}
 
 const heroLines = computed(() => {
     if (locale.value === "ko") {
@@ -90,6 +191,12 @@ const statValues = computed(() => counters.map((counter) => counter.value.value)
 const statsRef = ref<HTMLElement | null>(null);
 let statsObserver: IntersectionObserver | null = null;
 
+watch(heroCanvasReady, async (ready) => {
+    if (!ready) return;
+    await nextTick();
+    setupHeroCanvas();
+});
+
 onMounted(() => {
     const mountCanvas = () => {
         heroCanvasReady.value = true;
@@ -115,6 +222,8 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
+    canvasCleanup?.();
+    canvasCleanup = null;
     statsObserver?.disconnect();
     statsObserver = null;
 });
