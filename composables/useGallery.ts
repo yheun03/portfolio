@@ -52,7 +52,7 @@ export function useGalleryViewMode() {
     return { viewMode };
 }
 
-export function useGalleryArchive(variant: GalleryArchiveVariant, works: WorkItem[]) {
+export function useGalleryArchive(variant: GalleryArchiveVariant, works: readonly WorkItem[]) {
     const { t, pick, locale } = useLocale();
     const sortMode = ref<WorkSortMode>('start');
     const { viewMode } = useGalleryViewMode();

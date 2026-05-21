@@ -45,7 +45,7 @@ import ProjectGalleryCard from '~/components/Card/ProjectGalleryCard.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
-    works: WorkItem[];
+    works: readonly WorkItem[];
 }>();
 
 const layoutLinks = useSubpageNavLinks();
