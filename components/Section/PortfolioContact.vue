@@ -11,7 +11,8 @@
             <section class="contact__spotlight spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
                 <h3 class="spotlight__kicker">{{ t("contact.kicker") }}</h3>
                 <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`">
-                    <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`">
+                    <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`"
+                        :class="{ 'contact__mail-slot--suffix': atSignIndex >= 0 && index >= atSignIndex }">
                         <span>{{ letter }}</span>
                     </span>
                 </a>
@@ -47,5 +48,6 @@ import profilePhotoUrl from "~/assets/image/photo-1440.webp";
 
 const { t, locale } = useLocale();
 const emailLetters = computed(() => profile.contacts.email.split(""));
+const atSignIndex = computed(() => profile.contacts.email.indexOf("@"));
 const profilePhotoSrc = profilePhotoUrl;
 </script>

@@ -143,6 +143,7 @@ $font-presets: (
 :root {
     --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-pretendard: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
     /* WCAG·PSI: 본문 16px+, UI 14px+ (design-tokens typography.fontSize) */
     --font-size-floor: 0.75rem;
