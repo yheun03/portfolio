@@ -1,0 +1,171 @@
+@use "../abstracts/tokens" as *;
+
+/* =========================================
+   Components
+========================================= */
+
+/* Button */
+.base-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-3;
+    min-width: $size-touch;
+    min-height: $size-touch;
+    padding: $space-4 $space-7;
+    border-radius: $radius-card;
+    border: 1px solid $grayscale-300;
+    cursor: pointer;
+    transition:
+        transform 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.26s ease,
+        background-color 0.26s ease,
+        border-color 0.26s ease,
+        color 0.26s ease;
+    position: relative;
+    overflow: visible;
+    isolation: isolate;
+    @include font(button);
+    font-size: var(--font-size-md);
+    text-align: center;
+
+    &:focus-visible {
+        outline: 2px solid $primary-600;
+        outline-offset: 3px;
+    }
+
+    &:hover {
+        transform: translateY(-3px) scale(1.012);
+        box-shadow: $shadow-lift, $shadow-glow;
+    }
+
+    &--primary {
+        overflow: hidden;
+        background: $gradient-accent;
+        color: $grayscale-0;
+        border-color: color-mix(in srgb, $primary-600 55%, $grayscale-0);
+        box-shadow: 0 14px 36px color-mix(in srgb, $primary-600 35%, transparent);
+    }
+
+    &--primary::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg,
+                transparent 28%,
+                color-mix(in srgb, #fff 35%, transparent) 48%,
+                transparent 68%);
+        transform: translateX(-130%);
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    &--primary:hover::before {
+        transform: translateX(130%);
+    }
+
+    &--ghost {
+        background: $glass-2-strong;
+        color: $grayscale-900;
+        box-shadow: $shadow-glow;
+        backdrop-filter: blur(12px);
+    }
+}
+
+.tab-list__tab {
+    border: 1px solid color-mix(in srgb, $grayscale-300 92%, $primary-600);
+    border-radius: 999px;
+    background: color-mix(in srgb, $grayscale-200 94%, transparent);
+    color: $grayscale-900;
+    @include font(caption-1);
+    font-size: var(--font-size-sm);
+    min-width: $size-touch;
+    min-height: $size-touch;
+    padding: $space-3 $space-6;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background-color 0.22s ease,
+        box-shadow 0.22s ease,
+        color 0.22s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-soft;
+        border-color: color-mix(in srgb, $primary-600 42%, $grayscale-300);
+    }
+
+    &--active {
+        color: $grayscale-0;
+        background: $gradient-accent;
+        border-color: color-mix(in srgb, $grayscale-0 35%, $primary-600);
+        box-shadow: 0 12px 32px color-mix(in srgb, $primary-600 38%, transparent);
+    }
+}
+
+/* Tab list — pill(default) · LNB(vertical) · rail(horizontal scroll) */
+.tab-list {
+    --lnb-accent-w: 3px;
+    --lnb-pad-inline: #{$space-4};
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: var(--space-1) 0 var(--space-1) var(--lnb-pad-inline);
+    border: none;
+    border-left: 1px solid color-mix(in srgb, $grayscale-300 88%, $primary-600 6%);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    .tab-list__tab {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        white-space: normal;
+        line-height: 1.45;
+        min-width: 0;
+        min-height: auto;
+        padding: var(--space-2) var(--space-3) var(--space-2) calc(var(--space-3) + var(--lnb-accent-w));
+        margin-left: calc(-1 * var(--lnb-pad-inline) - 1px);
+        border: none;
+        border-radius: 0 $radius-md $radius-md 0;
+        background: transparent;
+        box-shadow: none;
+        @include font(caption-1);
+        color: color-mix(in srgb, $grayscale-900 78%, $grayscale-600);
+        transition:
+            color 0.18s ease,
+            background-color 0.18s ease,
+            box-shadow 0.18s ease;
+
+        &:hover {
+            transform: none;
+            color: $grayscale-900;
+            background: color-mix(in srgb, $primary-600 7%, transparent);
+        }
+
+        &:focus-visible {
+            outline-offset: 2px;
+        }
+
+        &--active {
+            color: $grayscale-900;
+            background: color-mix(in srgb, $primary-600 12%, $grayscale-0);
+            box-shadow: inset var(--lnb-accent-w) 0 0 0 color-mix(in srgb, $primary-600 72%, $grayscale-300);
+        }
+    }
+}

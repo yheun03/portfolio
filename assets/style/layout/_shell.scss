@@ -1,0 +1,340 @@
+@use "../abstracts/tokens" as *;
+
+/* =========================================
+   Portfolio Pages
+========================================= */
+
+/* Portfolio shell */
+html[data-shell-theme="gallery"] .portfolio-page {
+    overflow-x: visible;
+}
+
+.portfolio-page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding-top: var(--layout-header-height);
+    overflow-x: clip;
+    overflow-y: visible;
+
+    counter-reset: section-count;
+    background: var(--gradient-noise);
+    scroll-behavior: smooth;
+
+    /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
+    &--app-dock {
+        @media (min-width: 1024px) {
+            padding-inline-end: 0;
+        }
+    }
+}
+
+.section,
+.section *,
+.page__layer,
+.page__layer * {
+    min-width: 0;
+}
+
+.app-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.58;
+    background-image: var(--gradient-hero-mesh),
+        linear-gradient(color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px);
+    background-size: auto, 88px 88px, 88px 88px;
+    mask-image: radial-gradient(ellipse 86% 76% at 50% 8%, #000 18%, transparent 76%);
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.26;
+        background-image: $texture-noise;
+        background-size: 160px 160px;
+        mix-blend-mode: multiply;
+    }
+}
+
+html:not([data-theme="dark"]) .app-background::after {
+    opacity: 0.24;
+    mix-blend-mode: multiply;
+}
+
+[data-theme="dark"] .app-background::after {
+    opacity: 0.2;
+    mix-blend-mode: soft-light;
+}
+
+.page__layer {
+    position: relative;
+    overflow: visible;
+
+    &--hero {
+        position: relative;
+
+        @media (min-width: 1024px) {
+            padding-bottom: clamp(2rem, 6vw, 4rem);
+        }
+    }
+
+    &--profile {
+        position: relative;
+        overflow: visible;
+    }
+}
+
+.section {
+    position: relative;
+    z-index: 1;
+    scroll-margin-top: var(--layout-header-height);
+    overflow: visible;
+    width: min(100% - var(--inset-page), var(--layout-content-max));
+    max-width: none;
+    margin-inline: auto;
+    padding: var(--space-section-y) 0;
+
+    &:not(.section--hero) {
+        display: grid;
+        gap: var(--space-section-gap);
+        counter-increment: section-count;
+
+        .section-title::before {
+            content: counter(section-count, decimal-leading-zero);
+            display: block;
+            margin-bottom: var(--space-2);
+            font-family: var(--font-display);
+            font-size: var(--font-size-counter);
+            font-weight: var(--font-weight-black);
+            line-height: 0.9;
+            letter-spacing: var(--tracking-tight);
+            color: transparent;
+            background: var(--gradient-accent);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+}
+
+.section__emoji {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+
+    /** emoji--soft 키프레임 opacity(0.88~1)가 섹션 장식 투명도를 덮어쓰지 않도록 분리 */
+    &.emoji--soft {
+        animation: section-emoji-drift 4.1s ease-in-out infinite;
+        will-change: transform;
+    }
+}
+
+@keyframes section-emoji-drift {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    45% {
+        transform: translateY(-3px) rotate(-5deg) scale(1.04);
+    }
+
+    70% {
+        transform: translateY(-1px) rotate(4deg) scale(0.98);
+    }
+}
+
+.section__emoji--about {
+    top: clamp(2rem, 5vw, 4rem);
+    right: clamp(0rem, 3vw, 2.4rem);
+    font-size: clamp(5rem, 11vw, 12rem);
+    opacity: 0.1;
+}
+
+.section__emoji--works {
+    top: clamp(1.5rem, 4vw, 3rem);
+    left: clamp(0rem, 3vw, 2rem);
+    font-size: clamp(4rem, 8vw, 8.5rem);
+    opacity: 0.11;
+}
+
+.section__emoji--personal {
+    top: clamp(1rem, 3vw, 2.5rem);
+    right: clamp(0rem, 4vw, 2.5rem);
+    font-size: clamp(3.6rem, 7vw, 7rem);
+    opacity: 0.12;
+}
+
+.section__emoji--journey {
+    top: clamp(2rem, 5vw, 4rem);
+    right: clamp(0rem, 4vw, 3rem);
+    font-size: clamp(4rem, 8vw, 8.5rem);
+    opacity: 0.1;
+}
+
+.section__emoji--toolbox {
+    right: clamp(0rem, 3vw, 2rem);
+    bottom: clamp(1rem, 4vw, 3rem);
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    opacity: 0.12;
+}
+
+.section__emoji--highlights {
+    top: clamp(1rem, 4vw, 3rem);
+    right: clamp(0rem, 3vw, 2rem);
+    font-size: clamp(3.2rem, 6vw, 6rem);
+    opacity: 0.18;
+}
+
+.section__emoji--contact {
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(0rem, 3vw, 2rem);
+    font-size: clamp(4rem, 9vw, 9rem);
+    opacity: 0.1;
+}
+
+/** 오른쪽 끝 호버·포커스 시 맥 독처럼 네비가 미끄러져 나타남 */
+.app-dock-ribbon {
+    --app-dock-edge: var(--space-fluid-sm);
+    --section-content-w: min(100vw - var(--inset-page), var(--layout-content-max));
+    --section-margin-x: max(0px, calc((100vw - var(--section-content-w)) * 0.5));
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    // right: max(var(--app-dock-edge),
+    //         calc(var(--section-margin-x) - var(--app-dock-slot, 3.15rem)));
+    right: var(--app-dock-edge);
+    z-index: 85;
+    display: none;
+    width: min(4.5rem, 12vw);
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: auto;
+    background: transparent;
+
+    @media (min-width: 1024px) {
+        display: flex;
+    }
+
+    &:hover .app-dock,
+    &:focus-within .app-dock {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        gap: var(--space-3);
+        padding: var(--space-3);
+        box-shadow: var(--shadow-lift), var(--shadow-glow);
+    }
+
+    &:hover .app-dock .app-dock__dot,
+    &:focus-within .app-dock .app-dock__dot {
+        width: 0.55rem;
+        height: 0.55rem;
+    }
+}
+
+.app-dock {
+    display: grid;
+    gap: calc(var(--space-1) * 0.4);
+    padding: var(--space-1);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+    border-radius: 999px;
+    background: var(--color-glass-2-strong);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(12px);
+    pointer-events: none;
+    opacity: 0.88;
+    transform: translateX(calc(100% - 0.5rem));
+    transition:
+        transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1),
+        opacity 0.22s ease,
+        gap 0.24s ease,
+        padding 0.24s ease,
+        box-shadow 0.24s ease;
+
+    .app-dock-ribbon:hover &,
+    .app-dock-ribbon:focus-within & {
+        pointer-events: auto;
+    }
+
+    &__item {
+        position: relative;
+        display: grid;
+        width: var(--size-touch);
+        height: var(--size-touch);
+        border-radius: 999px;
+        place-items: center;
+
+        &:hover .app-dock__dot,
+        &:focus-visible .app-dock__dot {
+            background: var(--color-primary);
+            transform: scale(1.18);
+        }
+
+        &:hover .app-dock__label,
+        &:focus-visible .app-dock__label {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-0.12rem);
+        }
+
+        &--active .app-dock__dot {
+            background: var(--color-primary);
+        }
+    }
+
+    &__dot {
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--color-text-muted) 80%, transparent);
+        transition: width 0.24s ease, height 0.24s ease, transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    &:hover &__dot,
+    &:focus-within &__dot {
+        width: 0.55rem;
+        height: 0.55rem;
+    }
+
+    /** 독(점) 기준 왼쪽 = 본문 쪽으로 섹션 타이틀 노출 */
+    &__label {
+        position: absolute;
+        top: 50%;
+        right: calc(100% + 0.7rem);
+        left: auto;
+        padding: var(--space-3) var(--space-5);
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        background: var(--color-glass-2-strong);
+        color: var(--color-text);
+        font-size: var(--font-size-lg);
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-50%) translateX(0.2rem);
+        transition: opacity 0.18s ease, transform 0.18s ease;
+        z-index: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .app-dock {
+        transition-duration: 0.01ms;
+    }
+}
+
+.app-header__link:focus-visible,
+.app-lnb__link:focus-visible,
+.app-dock__item:focus-visible,
+.tab-list .tab-list__tab:focus-visible,
+.works__filters .tab-list__tab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
