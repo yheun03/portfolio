@@ -48,7 +48,13 @@ export default defineNuxtConfig({
         storesDirs: ['~/stores'],
     },
 
-    plugins: ['~/plugins/app-init.client', '~/plugins/analytics.client', '~/plugins/gallery-fonts.client', '~/plugins/navigation-restore.client'],
+    plugins: [
+        '~/plugins/shell-theme',
+        '~/plugins/app-init.client',
+        '~/plugins/analytics.client',
+        '~/plugins/gallery-fonts.client',
+        '~/plugins/navigation-restore.client',
+    ],
 
     components: [
         { path: '~/components/Common', pathPrefix: false },

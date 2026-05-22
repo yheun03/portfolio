@@ -15,11 +15,7 @@ $gallery-text-ui: 0.8125rem;
 
 /* ----- Editorial shell (list + detail) ----- */
 
-html[data-shell-theme="gallery"] body,
-body:has(.gallery-page--career),
-body:has(.gallery-page--personal),
-body:has(.gallery-detail.gallery-page--career),
-body:has(.gallery-detail.gallery-page--personal) {
+html[data-shell-theme="gallery"] body {
     background: var(--gallery-bg);
     color: var(--gallery-body);
 
@@ -107,11 +103,7 @@ body:has(.gallery-detail.gallery-page--personal) {
     }
 }
 
-html:not([data-theme="dark"])[data-shell-theme="gallery"] body,
-html:not([data-theme="dark"]) body:has(.gallery-page--career),
-html:not([data-theme="dark"]) body:has(.gallery-page--personal),
-html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--career),
-html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
+html:not([data-theme="dark"])[data-shell-theme="gallery"] body {
     .app-background {
         background-image:
             radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
@@ -125,22 +117,14 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     }
 }
 
-[data-theme="dark"][data-shell-theme="gallery"] body,
-[data-theme="dark"] body:has(.gallery-page--career),
-[data-theme="dark"] body:has(.gallery-page--personal),
-[data-theme="dark"] body:has(.gallery-detail.gallery-page--career),
-[data-theme="dark"] body:has(.gallery-detail.gallery-page--personal) {
+[data-theme="dark"][data-shell-theme="gallery"] body {
     .app-background::after {
         opacity: 0.16;
         mix-blend-mode: normal;
     }
 }
 
-html[data-shell-theme="gallery"] .portfolio-page,
-.portfolio-page:has(.gallery-page--career),
-.portfolio-page:has(.gallery-page--personal),
-.portfolio-page:has(.gallery-detail.gallery-page--career),
-.portfolio-page:has(.gallery-detail.gallery-page--personal) {
+html[data-shell-theme="gallery"] .portfolio-page {
     isolation: isolate;
     background:
         linear-gradient(180deg, var(--gallery-bg) 0%, var(--gallery-bg-elevated) 42%, var(--gallery-bg) 100%);
@@ -158,11 +142,7 @@ html[data-shell-theme="gallery"] .portfolio-page,
     }
 }
 
-[data-theme="dark"][data-shell-theme="gallery"] .portfolio-page::before,
-[data-theme="dark"] .portfolio-page:has(.gallery-page--career)::before,
-[data-theme="dark"] .portfolio-page:has(.gallery-page--personal)::before,
-[data-theme="dark"] .portfolio-page:has(.gallery-detail.gallery-page--career)::before,
-[data-theme="dark"] .portfolio-page:has(.gallery-detail.gallery-page--personal)::before {
+[data-theme="dark"][data-shell-theme="gallery"] .portfolio-page::before {
     opacity: 0.2;
     mix-blend-mode: screen;
 }
@@ -176,11 +156,6 @@ html[data-shell-theme="gallery"] .portfolio-page,
     padding-inline: var(--gallery-pad);
     overflow: visible;
     box-sizing: border-box;
-}
-
-.gallery-page--grid.section {
-    margin-inline: auto;
-    padding-block: var(--space-section-y);
 }
 
 .gallery-detail.gallery-page--editorial.section {
@@ -281,87 +256,20 @@ html[data-shell-theme="gallery"] .portfolio-page,
     }
 }
 
-.gallery-page {
-    &--grid &__toolbar {
-        border-top-color: color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
-    }
+/* ----- Grid list (보기 탭 — 포스터·셸과 분리) ----- */
 
-    &--grid &__control-label {
-        color: var(--color-text-muted);
-    }
-
-    &--grid &__segments {
-        border-color: color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
-        background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
-    }
-
-    &--grid &__segment {
-        &:not(.gallery-page__segment--active) {
-            color: var(--color-text);
-
-            &:hover {
-                color: var(--color-text);
-                background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
-            }
-
-            &:focus-visible {
-                outline-color: var(--color-primary);
-            }
-        }
-
-        &--active {
-            color: var(--color-on-accent, var(--grayscale-0));
-            background: var(--color-primary);
-            box-shadow: var(--shadow-ring);
-        }
-    }
-}
-
-/* ----- Grid layout (classic gallery) ----- */
-
-.gallery-page {
-    &--grid {
-        width: min(100% - var(--inset-page), var(--layout-content-max));
-        color: var(--color-text);
-    }
-
-    &--grid &__head {
-        margin-bottom: var(--space-section-gap);
-    }
-
-    &--grid &__title {
-        font-family: var(--font-display);
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        font-weight: var(--font-weight-black);
-        letter-spacing: var(--tracking-tight);
-        line-height: 1.08;
-    }
-
-    &--grid &__lead {
-        max-width: 64ch;
-        margin-top: var(--space-4);
-        color: var(--color-text-muted);
-        line-height: var(--line-height-body);
-    }
-
-    &--grid &__toolbar {
-        padding: var(--space-4);
-        border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
-        border-radius: var(--radius-lg);
-        background: color-mix(in srgb, var(--color-surface) 78%, transparent);
-        box-shadow: var(--shadow-soft);
-    }
-
-    &--grid &__grid {
+.gallery-page--editorial {
+    .gallery-page__grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
         gap: var(--space-6);
+        margin-top: var(--gallery-section-gap);
     }
 
-    &--grid &__year {
+    .gallery-page__year {
         grid-column: 1 / -1;
         margin: var(--space-8) 0 calc(var(--space-2) * -1);
-        color: var(--color-text);
+        color: var(--gallery-body);
         opacity: 0.4;
         line-height: 1;
         font-family: var(--font-body);
@@ -1369,9 +1277,4 @@ html[data-shell-theme="gallery"] .portfolio-page,
                 env(safe-area-inset-right));
     }
 
-    .gallery-page--grid {
-        width: 100%;
-        padding-inline: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-left)) max(var(--touch-pad-x, 0.85rem),
-                env(safe-area-inset-right));
-    }
 }

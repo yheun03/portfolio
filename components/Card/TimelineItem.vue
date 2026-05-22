@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 defineProps<{
-    period: string;
+    period?: string;
     title: string;
     description: string;
     /** 시간순 보기에서 소속 표시 */

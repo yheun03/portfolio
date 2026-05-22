@@ -60,19 +60,14 @@ function sortAffiliationBlocksByTime(companies: readonly JourneyCompanyBlock[]):
     return [...companies]
         .map((block) => ({
             ...block,
-            timeline: [...block.timeline].sort(
-                (a, b) => parseJourneyPeriodSortKey(b.period) - parseJourneyPeriodSortKey(a.period),
-            ),
+            timeline: [...block.timeline].sort((a, b) => parseJourneyPeriodSortKey(b.period) - parseJourneyPeriodSortKey(a.period)),
         }))
         .sort(
-            (a, b) =>
-                parseAffiliationPeriodEnd(b.summary.period.ko) - parseAffiliationPeriodEnd(a.summary.period.ko),
-        );
+            (a, b) => parseAffiliationPeriodEnd(b.summary.period.ko) - parseAffiliationPeriodEnd(a.summary.period.ko),
+        ) as unknown as JourneyCompanyBlock[];
 }
 
-export function buildJourneyChronologicalEntries(
-    companies: readonly JourneyCompanyBlock[] = journeyCompanies,
-): JourneyChronologicalEntry[] {
+export function buildJourneyChronologicalEntries(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyChronologicalEntry[] {
     const entries: JourneyChronologicalEntry[] = [];
 
     companies.forEach((block, companyIndex) => {
@@ -95,9 +90,7 @@ export function buildJourneyChronologicalEntries(
 }
 
 /** 프로젝트 갤러리처럼 연도별 그룹 (동일 연도·기간 라벨은 한 섹션에 묶음) */
-export function buildJourneyYearGroups(
-    companies: readonly JourneyCompanyBlock[] = journeyCompanies,
-): JourneyYearGroup[] {
+export function buildJourneyYearGroups(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyYearGroup[] {
     const groups = new Map<string, JourneyYearGroup>();
 
     for (const entry of buildJourneyChronologicalEntries(companies)) {

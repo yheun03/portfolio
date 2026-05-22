@@ -1,6 +1,6 @@
 <template>
-    <header :class="viewMode === 'editorial' ? 'gallery-editorial__masthead' : 'gallery-page__head'">
-        <div v-if="viewMode === 'editorial'" class="gallery-editorial__poster" aria-labelledby="gallery-poster-title">
+    <header class="gallery-editorial__masthead">
+        <div class="gallery-editorial__poster" aria-labelledby="gallery-poster-title">
             <div class="gallery-editorial__poster-top">
                 <p class="gallery-editorial__kicker">{{ kicker }}</p>
                 <p class="gallery-editorial__stats">{{ stats }}</p>
@@ -16,11 +16,6 @@
 
             <p class="gallery-editorial__dek">{{ dek }}</p>
         </div>
-        <template v-else>
-            <p class="base-label base-label--technical">{{ gridEyebrow }}</p>
-            <h1 class="gallery-page__title">{{ title }}</h1>
-            <p class="gallery-page__lead">{{ dek }}</p>
-        </template>
 
         <nav class="gallery-page__toolbar" :aria-label="sortAriaLabel">
             <div v-if="viewOptions.length" class="gallery-page__control">
@@ -66,7 +61,6 @@ defineProps<{
     heroAriaLabel?: string;
     statusLabel?: string;
     stats?: string;
-    gridEyebrow?: string;
     sortLegend: string;
     sortAriaLabel: string;
     viewLegend: string;

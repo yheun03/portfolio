@@ -57,12 +57,12 @@
             </div>
 
             <!-- 시간순: 연도 sticky + 항목 -->
-            <EditorialYearTimeline v-else variant="home" :aria-label="t('journey.viewChronological')"
+            <!-- @vue-generic {import('@composables/useJourneyView').JourneyYearGroup} -->
+            <EditorialYearTimeline v-else variant="home" :ariaLabel="t('journey.viewChronological')"
                 :eras="chronologicalYearGroups" id-prefix="journey-year" entries-tag="ol">
                 <template #era="{ era: group }">
-                    <TimelineItem v-for="entry in group.entries" :key="entry.key" hide-period
-                        :title="pick(entry.title)" :description="pick(entry.description)"
-                        :affiliation="pick(entry.company)" />
+                    <TimelineItem v-for="entry in group.entries" :key="entry.key" hide-period :title="pick(entry.title)"
+                        :description="pick(entry.description)" :affiliation="pick(entry.company)" />
                 </template>
             </EditorialYearTimeline>
         </div>

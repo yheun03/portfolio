@@ -14,12 +14,12 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" generic="TEra extends EditorialYearEraItem = EditorialYearEraItem">
 import type { EditorialYearEntriesTag, EditorialYearEraItem, EditorialYearVariant } from '@config/editorialYear';
 
 const props = withDefaults(
     defineProps<{
-        eras: readonly EditorialYearEraItem[];
+        eras: readonly TEra[];
         ariaLabel: string;
         variant?: EditorialYearVariant;
         idPrefix?: string;
@@ -34,7 +34,7 @@ const props = withDefaults(
 );
 
 defineSlots<{
-    era(props: { era: EditorialYearEraItem; index: number }): unknown;
+    era(props: { era: TEra; index: number }): unknown;
 }>();
 
 function yearHeadingId(era: EditorialYearEraItem) {
