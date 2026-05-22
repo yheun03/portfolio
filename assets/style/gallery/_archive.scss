@@ -1319,4 +1319,68 @@ html[data-shell-theme="gallery"] .portfolio-page {
                 env(safe-area-inset-right));
     }
 
+    .gallery-editorial {
+        &__poster,
+        &__entry-poster {
+            overflow: hidden;
+        }
+
+        &__poster-top {
+            display: grid;
+            gap: var(--space-3);
+        }
+
+        &__stats {
+            min-width: 0;
+            text-align: start;
+        }
+
+        &__headline,
+        &__entry-title {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+        }
+
+        &__hero-num,
+        &__entry-index {
+            letter-spacing: -0.035em;
+        }
+    }
+
+    .gallery-editorial__entry {
+        &-poster {
+            grid-template-rows: auto auto auto auto auto;
+        }
+
+        &-index {
+            opacity: 0.72;
+            font-size: clamp(2.5rem, 16vw, 4rem);
+        }
+
+        &-kicker,
+        &-label,
+        &-tags li {
+            letter-spacing: 0.08em;
+        }
+
+        &-media {
+            aspect-ratio: 4 / 3;
+
+            &--long {
+                max-height: min(28rem, 72vh);
+                aspect-ratio: 3 / 4;
+            }
+        }
+    }
+
+    .gallery-card--grid {
+        .gallery-card__body {
+            padding: clamp(1rem, 4.5vw, 1.35rem);
+        }
+
+        .gallery-card__title {
+            overflow-wrap: anywhere;
+        }
+    }
+
 }
