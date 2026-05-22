@@ -9,7 +9,7 @@
     width: 100%;
     min-width: 0;
     max-width: 100%;
-    overflow-x: clip;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     gap: var(--editorial-year-era-gap);
@@ -58,6 +58,11 @@
 
 .editorial-year-era--gallery .editorial-year-era__entries {
     border-inline-start-width: 1px;
+}
+
+.editorial-year-era--flat .editorial-year-era__entries {
+    padding-inline-start: 0;
+    border-inline-start: 0;
 }
 
 @media (min-width: 768px) {

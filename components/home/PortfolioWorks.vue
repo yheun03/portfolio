@@ -199,14 +199,7 @@ const visibleCountLabel = computed(() =>
 const hasMoreWorks = computed(() => visibleCount.value < pinnedFilteredWorks.value.length);
 const canCollapseWorks = computed(() => pinnedFilteredWorks.value.length > initialVisibleCount);
 
-const labels = computed(() => ({
-    close: locale.value === 'ko' ? '닫기' : 'Close',
-    closeModalAria: locale.value === 'ko' ? '상세 모달 닫기' : 'Close detail modal',
-    role: locale.value === 'ko' ? '역할' : 'Role',
-    contributions: locale.value === 'ko' ? '내가 한 일' : 'My Contributions',
-    results: locale.value === 'ko' ? '성과' : 'Results',
-    points: locale.value === 'ko' ? '포인트' : 'Key Points',
-}));
+const labels = useWorkDetailLabels();
 
 const modalOpen = computed(() => !!activeWork.value);
 const swipeHint = computed(() => locale.value === "ko" ? "좌우로 스와이프해 대표 작업을 넘겨보세요." : "Swipe horizontally to browse featured work.");

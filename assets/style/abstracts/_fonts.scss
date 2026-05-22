@@ -1,4 +1,4 @@
-/* Pretendard — assets/font (SIL OFL, orioncactus/pretendard) */
+/* Pretendard — woff2 only for modern browsers (SIL OFL, orioncactus/pretendard) */
 
 @font-face {
     font-family: "Pretendard";
@@ -7,8 +7,7 @@
     font-display: swap;
     src:
         local("Pretendard ExtraBold"),
-        url("../../font/Pretendard/woff2/Pretendard-ExtraBold.woff2") format("woff2"),
-        url("../../font/Pretendard/woff/Pretendard-ExtraBold.woff") format("woff");
+        url("../../font/Pretendard/woff2/Pretendard-ExtraBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -18,6 +17,5 @@
     font-display: swap;
     src:
         local("Pretendard Bold"),
-        url("../../font/Pretendard/woff2/Pretendard-Bold.woff2") format("woff2"),
-        url("../../font/Pretendard/woff/Pretendard-Bold.woff") format("woff");
+        url("../../font/Pretendard/woff2/Pretendard-Bold.woff2") format("woff2");
 }

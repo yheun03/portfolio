@@ -5,6 +5,7 @@ export const GALLERY_ENTRY_ACTIVE_CLASS = 'is-gallery-entry-active';
 const GALLERY_ENTRY_SELECTOR = 'a.gallery-card[id^="gallery-entry-"]';
 const VIEWPORT_CENTER_RATIO = 0.5;
 const SCROLL_LISTENER_OPTIONS = { passive: true } as const;
+const ROW_TOP_TOLERANCE = 24;
 
 export function findGalleryEntryElement(node: EventTarget | null | undefined): HTMLElement | null {
     if (!(node instanceof Element)) return null;
@@ -21,20 +22,21 @@ function getGalleryEntries(scope: HTMLElement | Document = document) {
 
 function findEntryAtViewportTarget(scope: HTMLElement, ratio = VIEWPORT_CENTER_RATIO): HTMLElement | null {
     const targetY = window.innerHeight * ratio;
-    const entries = getGalleryEntries(scope);
+    const candidates = getGalleryEntries(scope)
+        .map((entry) => ({ entry, rect: entry.getBoundingClientRect() }))
+        .filter(({ rect }) => rect.top <= targetY && rect.bottom >= targetY);
 
-    return entries.reduce<{ entry: HTMLElement | null; distance: number }>(
-        (closest, entry) => {
-            const rect = entry.getBoundingClientRect();
-            const crossesTarget = rect.top <= targetY && rect.bottom >= targetY;
-            if (!crossesTarget) return closest;
+    if (!candidates.length) return null;
 
-            const entryCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(entryCenter - targetY);
-            return distance < closest.distance ? { entry, distance } : closest;
-        },
-        { entry: null, distance: Number.POSITIVE_INFINITY },
-    ).entry;
+    const closest = candidates.reduce((current, next) => {
+        const currentDistance = Math.abs(current.rect.top + current.rect.height / 2 - targetY);
+        const nextDistance = Math.abs(next.rect.top + next.rect.height / 2 - targetY);
+        return nextDistance < currentDistance ? next : current;
+    });
+
+    return candidates
+        .filter(({ rect }) => Math.abs(rect.top - closest.rect.top) <= ROW_TOP_TOLERANCE)
+        .sort((a, b) => a.rect.left - b.rect.left)[0]?.entry ?? closest.entry;
 }
 
 /** 카드 세로 중앙이 뷰포트 높이의 50%에 오도록 스크롤 */
@@ -94,6 +96,15 @@ function resolveScopeElement(scope: MaybeRef<HTMLElement | null | undefined> | s
     return unref(scope) ?? null;
 }
 
+function getEntryRow(entry: HTMLElement, scope: HTMLElement) {
+    const entryRect = entry.getBoundingClientRect();
+    return getGalleryEntries(scope)
+        .map((rowEntry) => ({ entry: rowEntry, rect: rowEntry.getBoundingClientRect() }))
+        .filter(({ rect }) => Math.abs(rect.top - entryRect.top) <= ROW_TOP_TOLERANCE)
+        .sort((a, b) => a.rect.left - b.rect.left)
+        .map(({ entry: rowEntry }) => rowEntry);
+}
+
 /**
  * 갤러리 목록에서 스크롤 또는 Tab 이동으로 카드가 뷰포트 50% 기준선에 닿으면
  * 포커스와 활성(그림자) 스타일을 같은 기준으로 맞춘다.
@@ -151,6 +162,25 @@ export function useGalleryEntryFocusScope(scope: MaybeRef<HTMLElement | null | u
         clearActiveGalleryEntry();
     };
 
+    const onKeydown = (event: KeyboardEvent) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        if (!scopeEl) return;
+
+        const entry = findGalleryEntryElement(event.target);
+        if (!entry) return;
+
+        const row = getEntryRow(entry, scopeEl);
+        if (row.length <= 1) return;
+
+        const currentIndex = row.indexOf(entry);
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        const nextEntry = row[currentIndex + direction];
+        if (!nextEntry) return;
+
+        event.preventDefault();
+        handleGalleryEntryFocus(nextEntry, scopeEl);
+    };
+
     onMounted(() => {
         if (!import.meta.client) return;
 
@@ -159,6 +189,7 @@ export function useGalleryEntryFocusScope(scope: MaybeRef<HTMLElement | null | u
 
         scopeEl.addEventListener('focusin', onFocusIn, true);
         scopeEl.addEventListener('focusout', onFocusOut, true);
+        scopeEl.addEventListener('keydown', onKeydown, true);
         window.addEventListener('scroll', scheduleEntryActivation, SCROLL_LISTENER_OPTIONS);
         window.addEventListener('resize', scheduleEntryActivation, SCROLL_LISTENER_OPTIONS);
     });
@@ -169,6 +200,7 @@ export function useGalleryEntryFocusScope(scope: MaybeRef<HTMLElement | null | u
         cancelScheduledActivation();
         scopeEl.removeEventListener('focusin', onFocusIn, true);
         scopeEl.removeEventListener('focusout', onFocusOut, true);
+        scopeEl.removeEventListener('keydown', onKeydown, true);
         window.removeEventListener('scroll', scheduleEntryActivation);
         window.removeEventListener('resize', scheduleEntryActivation);
         clearActiveGalleryEntry(scopeEl);

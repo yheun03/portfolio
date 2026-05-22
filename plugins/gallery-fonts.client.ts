@@ -1,15 +1,15 @@
 /** 갤러리(에디토리얼) 전용 폰트 — 홈 등에서는 로드하지 않음 */
 export default defineNuxtPlugin(() => {
     const route = useRoute();
-    const needsGalleryFont = () => /(?:^|\/)(?:projects|personal)(?:\/|$)/.test(route.path);
+    const isGalleryRoute = (path: string) => /(?:^|\/)(?:projects|personal)(?:\/|$)/.test(path);
 
     const loadFonts = () => {
-        void import('@fontsource/roboto-slab/400.css');
-        void import('@fontsource/roboto-slab/700.css');
-        void import('@fontsource/roboto-slab/900.css');
+        void import('@fontsource/roboto-slab/latin-400.css');
+        void import('@fontsource/roboto-slab/latin-700.css');
+        void import('@fontsource/roboto-slab/latin-900.css');
     };
 
-    if (needsGalleryFont()) {
+    if (isGalleryRoute(route.path)) {
         loadFonts();
         return;
     }
@@ -17,7 +17,7 @@ export default defineNuxtPlugin(() => {
     const stop = watch(
         () => route.path,
         (path) => {
-            if (/(?:^|\/)(?:projects|personal)(?:\/|$)/.test(path)) {
+            if (isGalleryRoute(path)) {
                 loadFonts();
                 stop();
             }

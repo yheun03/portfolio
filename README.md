@@ -12,10 +12,12 @@ Nuxt 기본 관례에 맞춰 앱 계층은 루트 폴더에서 관리합니다. 
 
 ## 디자인 토큰 사용법
 
-스타일 토큰은 `assets/style/_tokens.scss`에서 관리합니다. Nuxt 설정에서 `@use "tokens" as *;`가 전역 주입되며, 화면 스타일은 `assets/style/main.scss` 한 파일에 모아 관리합니다.
+스타일 토큰은 `assets/style/abstracts/_tokens.scss`에서 관리합니다. Nuxt 설정에서 `@use "abstracts/tokens" as *;`가 전역 주입되며, 화면 스타일 진입점은 `assets/style/main.scss`입니다.
+
+SCSS는 Vue 컴포넌트 구조와 비슷하게 역할별 폴더로 나눕니다: `base`는 버튼·라벨·섹션 같은 primitive, `layout`은 앱 셸, `home`은 홈 섹션, `work`는 카드/작업 패턴, `gallery`는 아카이브 화면, `motion`은 인터랙션 타이포그래피를 담당합니다.
 
 ```scss
-@use 'tokens' as *;
+@use 'abstracts/tokens' as *;
 ```
 
 ### 색상

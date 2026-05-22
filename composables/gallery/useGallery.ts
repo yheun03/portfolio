@@ -13,7 +13,6 @@ const galleryVariantConfig = {
         metaDescriptionKey: 'gallery.careerMetaDescription',
         basePath: '/projects',
         listLabelKey: 'gallery.backToCareerList',
-        eyebrowKey: 'gallery.careerEyebrow',
         koName: '실무 프로젝트',
         enName: 'WORKS',
     },
@@ -23,7 +22,6 @@ const galleryVariantConfig = {
         metaDescriptionKey: 'gallery.personalMetaDescription',
         basePath: '/personal',
         listLabelKey: 'gallery.backToPersonalList',
-        eyebrowKey: 'gallery.personalEyebrow',
         koName: '개인 프로젝트',
         enName: 'PERSONAL',
     },
@@ -126,8 +124,6 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: readonl
     const viewLegend = computed(() => t('gallery.viewLegend'));
     const viewAriaLabel = computed(() => t('gallery.viewAriaLabel'));
 
-    const gridEyebrow = computed(() => t(config.eyebrowKey));
-
     usePortfolioSeo(() => ({
         title: t(config.metaTitleKey),
         description: t(config.metaDescriptionKey),
@@ -170,9 +166,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: readonl
         sortAriaLabel,
         viewLegend,
         viewAriaLabel,
-        gridEyebrow,
         titleKey: config.titleKey,
         basePath: config.basePath,
-        isCareer: variant === 'career',
     };
 }

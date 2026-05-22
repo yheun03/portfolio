@@ -1,0 +1,90 @@
+@use "../abstracts/tokens" as *;
+/* Portfolio about refresh */
+.section.section--about {
+    display: block;
+    min-height: auto;
+}
+
+@media (min-width: 1024px) {
+    .section.section--about {
+        padding-block: clamp(5rem, 14vw, 11rem) clamp(6rem, 16vw, 13rem);
+    }
+}
+
+.section.section--about::after {
+    content: "Read · Build · Ship";
+    right: 50%;
+    bottom: clamp(2rem, 6vw, 5rem);
+    left: auto;
+    transform: translateX(50%);
+    max-width: 96vw;
+    color: color-mix(in srgb, var(--color-text) 5%, transparent);
+    @include font(display-1);
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.about__stage {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "intro"
+        "spotlight"
+        "workflow";
+    gap: clamp(1.5rem, 4.2vw, 2.5rem);
+
+    @media (min-width: 1024px) {
+        gap: clamp(4rem, 11vw, 8rem);
+    }
+}
+
+.about__intro {
+    grid-area: intro;
+    max-width: min(72rem, 100%);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &::after {
+        display: none;
+    }
+}
+
+.about__display {
+    margin: 0;
+    @include font(display-1);
+}
+
+.about__display-line {
+    display: block;
+    margin-bottom: 0.12em;
+    font-size: var(--font-size-display-1);
+    line-height: var(--line-height-display);
+
+    &--accent .typo-word {
+        background: var(--gradient-accent);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+.about__lead {
+    max-width: 28ch;
+    margin: clamp(2.25rem, 5.5vw, 4rem) 0 0;
+    color: var(--color-text-muted);
+    @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
+}
+
+.about__spotlight {
+    grid-area: spotlight;
+}
+
+.about__workflow {
+    grid-area: workflow;
+}
+
