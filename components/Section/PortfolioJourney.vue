@@ -9,7 +9,6 @@
 
         <div class="journey__flow" data-animate>
             <div class="journey__flow-header">
-                <p class="journey__kicker">{{ t("journey.kicker") }}</p>
                 <div class="journey__toolbar">
                     <span :id="journeyViewLabelId" class="journey__control-label">{{ t('journey.viewLegend') }}</span>
                     <div class="journey__segments" role="radiogroup" :aria-labelledby="journeyViewLabelId"
@@ -24,6 +23,7 @@
                         </button>
                     </div>
                 </div>
+                <p class="journey__kicker">{{ t("journey.kicker") }}</p>
             </div>
 
             <!-- 소속순: 챕터 + 타임라인 -->

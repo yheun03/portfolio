@@ -871,7 +871,7 @@
     align-items: end;
 
     @media (min-width: 720px) {
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: auto minmax(0, 1fr);
         gap: clamp(1.25rem, 3vw, 2rem);
     }
 }
@@ -879,24 +879,17 @@
 .journey__kicker {
     margin: 0;
     @include font(display-4);
+
+    @media (min-width: 720px) {
+        text-align: end;
+    }
 }
 
 .journey__toolbar {
-    position: relative;
-    z-index: 2;
     display: grid;
     gap: var(--space-2);
     min-width: min(100%, 18rem);
     justify-self: start;
-
-    @media (min-width: 720px) {
-        justify-self: end;
-    }
-
-    /** 데스크톱 섹션 독과 겹치지 않도록 여백 */
-    @media (min-width: 1024px) {
-        margin-inline-end: calc(var(--app-dock-edge, var(--space-fluid-sm)) + var(--app-dock-slot, 4.5rem));
-    }
 }
 
 .journey__control-label {
