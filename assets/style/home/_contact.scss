@@ -151,7 +151,7 @@
     >span {
         position: relative;
         flex: 1 1 0;
-        min-width: 0;
+        min-width: 0.42em;
         height: 100%;
 
         >span {
@@ -271,6 +271,40 @@
     }
 }
 
+@media (max-width: #{$bp-max-narrow}) {
+    .contact__mail-display {
+        display: inline-flex;
+        width: 100%;
+        height: auto;
+        min-height: 1.15em;
+        padding-inline: 0;
+        overflow-wrap: anywhere;
+        line-height: 1.05;
+
+        >span {
+            flex: 0 1 auto;
+            width: auto;
+            height: 1em;
+            min-width: 0.5em;
+
+            >span {
+                position: static;
+                inset: auto;
+                transform: none;
+            }
+
+            &.contact__mail-slot--suffix {
+                flex: 0 1 auto;
+
+                >span {
+                    font-size: 0.72em;
+                    letter-spacing: -0.08em;
+                }
+            }
+        }
+    }
+}
+
 .contact__note {
     margin: 0;
     max-width: min(42ch, 100%);
@@ -324,4 +358,3 @@
     line-height: var(--line-height-title);
     letter-spacing: -0.02em;
 }
-

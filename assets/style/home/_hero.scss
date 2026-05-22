@@ -85,12 +85,16 @@
 .hero__display {
     margin: 0;
     @include font(display-1);
+    font-family: var(--font-pretendard);
+    font-weight: 900;
+    font-synthesis-weight: auto;
 }
 
 .hero__display-line {
     display: block;
     margin-bottom: 0.12em;
     font-size: var(--font-size-display-1);
+    font-weight: inherit;
     line-height: var(--line-height-display);
     transform-origin: left center;
 
@@ -376,4 +380,3 @@
         }
     }
 }
-

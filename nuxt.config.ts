@@ -14,11 +14,6 @@ export default defineNuxtConfig({
     /** 정적 배포 시 CSS를 HTML에 인라인해 렌더 차단 외부 stylesheet 완화 */
     features: { inlineStyles: true },
 
-    /** 루트 응답이 JSON `Dev server is unavailable` 로 보일 때: 서버 기동 전에 브라우저를 연 경우·캐시 꼬임·포트 중복이 흔한 원인 */
-    devServer: {
-        host: 'localhost',
-    },
-
     app: {
         baseURL: resolvedBaseURL,
         head: {

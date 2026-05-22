@@ -65,8 +65,10 @@
                 <h2 :id="capturesTitleId" class="gallery-detail__section-title">{{ t('gallery.captures') }}</h2>
                 <div class="gallery-detail__captures">
                     <figure v-for="(src, index) in work.captures" :key="`${src}-${index}`"
-                        class="gallery-detail__figure">
-                        <img :src="resolveAppPath(src)" :alt="captureAlt(index)"
+                        class="gallery-detail__figure"
+                        :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(src) }">
+                        <GalleryEmptyCapture v-if="isPlaceholderCapture(src)" />
+                        <img v-else :src="resolveAppPath(src)" :alt="captureAlt(index)"
                             :loading="index === 0 ? 'eager' : 'lazy'" decoding="async"
                             :fetchpriority="index === 0 ? 'high' : 'low'" width="1200" height="675" />
                     </figure>
@@ -111,6 +113,8 @@
 import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
 import { getGalleryVariantConfig } from '@composables/gallery/useGallery';
+import { getRealCaptures, isPlaceholderCapture } from '@utils/capturePlaceholder';
+import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
@@ -148,8 +152,8 @@ usePortfolioSeo(() => ({
     path: `${config.basePath}/${props.work.id}`,
     locale: locale.value,
     type: 'article',
-    image: props.work.captures[0],
-    imageAlt: captureAlt(0),
+    image: getRealCaptures(props.work.captures)[0],
+    imageAlt: getRealCaptures(props.work.captures).length ? captureAlt(0) : undefined,
     keywords: [pick(props.work.title), pick(props.work.type), pick(props.work.role), ...props.work.languages, ...props.work.tech],
     jsonLd: {
         '@context': 'https://schema.org',
