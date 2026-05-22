@@ -1,0 +1,129 @@
+{
+    "nav": {
+        "hello": "Hello",
+        "home": "Portfolio",
+        "about": "About Me",
+        "works": "Works",
+        "personal": "Personal",
+        "worksArchive": "All client works",
+        "personalArchive": "All personal projects",
+        "journey": "Journey",
+        "toolbox": "Toolbox",
+        "highlights": "Highlights",
+        "contact": "Say Hi"
+    },
+    "hero": {
+        "title": "A web publisher who creates delightful interaction with solid structure",
+        "subtitle": "I have worked on corporate websites, smart-factory and logistics systems, and in-house solutions across operation, new build, and renewal.",
+        "branding": "From publishing to frontend, with UI at the center",
+        "kicker": "The essentials.",
+        "essentialsLead": "Structure, publishing, and collaboration in one flow.",
+        "ctaWorks": "View Works",
+        "ctaToolbox": "View Toolbox",
+        "ctaContact": "Contact"
+    },
+    "about": {
+        "title": "How I design with taste and structure",
+        "intro": "I treat publishing as more than visuals: it connects UX, architecture, and collaboration.",
+        "direction": "I keep growing in Vue 3 component structure and frontend design.",
+        "kicker": "A closer look.",
+        "workflowTitle": "Workflow",
+        "tagline": "Simple structure. Light feel."
+    },
+    "works": {
+        "title": "SI/SM delivery projects across clients",
+        "cardLabel": "Case Study",
+        "all": "All",
+        "detail": "Details",
+        "fullArchiveLink": "View full client project gallery",
+        "sectionDescription": "A curated set of client work on the main page. The full list and captures live in the gallery.",
+        "archiveCountLabel": "client projects in the archive",
+        "archiveSummary": "{pinned} highlights on this page; {total} total in the gallery.",
+        "showMore": "Show more projects",
+        "collapse": "Collapse projects",
+        "visibleCount": "Showing {visible} of {total} highlights"
+    },
+    "personal": {
+        "title": "Side projects & experiments",
+        "cardLabel": "Personal",
+        "backToWorks": "Go to Client works (#works)",
+        "ctaTab": "Open personal projects gallery",
+        "fullArchiveLink": "View full personal project gallery",
+        "designTokensLink": "View 2026 portfolio design tokens"
+    },
+    "gallery": {
+        "careerEyebrow": "Works archive",
+        "careerTitle": "Client Works",
+        "indexLabel": "INDEX",
+        "detailLabel": "DETAIL",
+        "viewEntry": "View detail",
+        "viewLegend": "View",
+        "viewAriaLabel": "List layout",
+        "viewEditorial": "Editorial",
+        "viewGrid": "Gallery",
+        "careerMetaTitle": "Web Publishing Case Studies | Eunyounghwan Frontend Portfolio",
+        "careerMetaDescription": "Production case studies by web publisher Eunyounghwan, covering Vue 3, SCSS, JavaScript, CMS, responsive UI, SEO, accessibility, and frontend work.",
+        "personalEyebrow": "Personal",
+        "personalTitle": "Personal",
+        "personalMetaTitle": "Frontend Personal Projects | Eunyounghwan Web Publisher",
+        "personalMetaDescription": "Frontend personal projects and web publishing experiments by Eunyounghwan, including portfolio improvements, UI patterns, Vue, SCSS, and interaction work.",
+        "duration": "Duration",
+        "projectList": "Project list",
+        "otherProjects": "Projects without a year",
+        "languages": "Languages & core stack",
+        "techFull": "Tools & full stack",
+        "captures": "Screenshots",
+        "details": "Details",
+        "overview": "Overview",
+        "role": "Role",
+        "breadcrumbLabel": "Breadcrumb",
+        "backToCareerList": "Back to client works",
+        "backToPersonalList": "Back to personal projects",
+        "backPrevious": "Back to previous view",
+        "backHint": "Press Esc to return to your previous scroll position",
+        "detailEndLine": "That's the last line—thanks for reading all the way through.",
+        "detailEndBackCareer": "Read it all? Back to client works",
+        "detailEndBackPersonal": "Read it all? Back to personal projects"
+    },
+    "journey": {
+        "title": "A growth path built through delivery",
+        "summary": "From a middle-school council site through high school and university to parallel publishing work at a company.",
+        "kicker": "Choose how to read the timeline.",
+        "viewLegend": "View",
+        "viewAffiliation": "By affiliation",
+        "viewChronological": "By year",
+        "tempLabel": "Sample data"
+    },
+    "toolbox": {
+        "title": "Tools and practices proven in production",
+        "copy": "I build the screen—and the structure that keeps it easy to maintain.",
+        "kicker": "By discipline."
+    },
+    "highlights": {
+        "title": "Achievements and expertise at a glance",
+        "summary": "Pick a category—context on the left, the full list on the right.",
+        "awards": "Awards",
+        "certifications": "Certifications",
+        "roles": "Professional Roles",
+        "activities": "Leadership / Activities"
+    },
+    "contact": {
+        "title": "Project inquiries",
+        "description": "For publishing, UI, or structural cleanup—email works. We can start with the screens that need attention.",
+        "kicker": "Email.",
+        "note": "We align on scope and timeline first, then build for clarity and upkeep.",
+        "profileLabel": "New projects welcome",
+        "email": "Send Email",
+        "github": "View GitHub",
+        "resume": "View Resume"
+    },
+    "footer": {
+        "copyright": "© 2026 Eunyounghwan Portfolio"
+    },
+    "meta": {
+        "title": "Eunyounghwan | Web Publisher & Frontend Developer Portfolio",
+        "description": "Frontend developer and web publisher portfolio by Eunyounghwan, covering Vue 3, SCSS, web standards, accessibility, SEO, responsive UI publishing, and production projects.",
+        "ogTitle": "Eunyounghwan, Web Publisher & Frontend Developer",
+        "ogDescription": "A portfolio showing Vue 3 component architecture, web standards, accessibility, SEO, responsive UI publishing, and frontend development."
+    }
+}

@@ -1,0 +1,64 @@
+@use "../abstracts/tokens" as *;
+
+/* Section */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $space-section-y $space-6;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+
+    &::before {
+        line-height: var(--line-height-display);
+    }
+
+    &__eyebrow {
+        display: inline-flex;
+        gap: $space-3;
+        align-items: center;
+        margin-bottom: $space-2;
+        color: $primary-600;
+        @include font(label, $font-weight-medium);
+        text-transform: uppercase;
+
+        &::after {
+            content: "";
+            flex: 1;
+            min-width: 2.5rem;
+            height: 2px;
+            border-radius: 999px;
+            background: $gradient-accent;
+            opacity: 0.85;
+        }
+    }
+
+    &__title {
+        color: $grayscale-900;
+        @include font(heading-2);
+        line-height: var(--line-height-heading);
+        text-wrap: balance;
+    }
+
+    &__spark {
+        margin-left: $space-2;
+        color: color-mix(in srgb, $primary-600 64%, $grayscale-0);
+        font-size: 0.75em;
+        vertical-align: super;
+    }
+
+    &__description {
+        max-width: 48ch;
+        margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        color: $grayscale-600;
+        @include font(body-1, $line-height: $line-height-body);
+        font-size: $font-size-lg;
+        line-height: var(--line-height-body);
+    }
+
+    &--minimal &__eyebrow::after {
+        display: none;
+    }
+}

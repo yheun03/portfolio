@@ -1,0 +1,33 @@
+<template>
+    <BaseCard class="work-card" data-motion="lift">
+        <BaseLabel :tone="variant === 'personal' ? 'personal' : 'work'"
+            :label="variant === 'personal' ? t('personal.cardLabel') : t('works.cardLabel')" />
+        <h3>{{ item.title }}</h3>
+        <p class="work-card__meta">{{ work.period }} · {{ item.type }}</p>
+        <p>{{ item.summary }}</p>
+        <ul class="work-card__tech">
+            <li v-for="tech in work.tech" :key="tech">{{ tech }}</li>
+        </ul>
+        <div class="work-card__footer">
+            <button type="button" class="base-button base-button--primary work-card__button" @click="$emit('select')">
+                {{ detailLabel }}
+            </button>
+        </div>
+    </BaseCard>
+</template>
+
+<script setup lang="ts">
+import type { WorkItem } from "@data/works";
+
+defineEmits<{ (e: "select"): void }>();
+const { t } = useLocale();
+withDefaults(
+    defineProps<{
+        work: WorkItem;
+        item: { title: string; type: string; summary: string };
+        detailLabel: string;
+        variant?: "career" | "personal";
+    }>(),
+    { variant: "career" }
+);
+</script>

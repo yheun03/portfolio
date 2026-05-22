@@ -1,0 +1,40 @@
+{
+    "name": "jonsoft-framework",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=20 <23"
+    },
+    "browserslist": [
+        "defaults and supports es6-module",
+        "not dead",
+        "not op_mini all"
+    ],
+    "scripts": {
+        "build": "nuxt build",
+        "build:clean": "npm run clean && nuxt build",
+        "clean": "rm -rf .nuxt .output .nitro node_modules/.vite node_modules/.cache",
+        "dev": "nuxt dev",
+        "dev:clean": "npm run clean && nuxt dev",
+        "generate": "nuxt generate",
+        "generate:clean": "npm run clean && nuxt generate",
+        "deploy": "npm run build && gh-pages -d .output/public -b gh-pages --nojekyll",
+        "preview": "nuxt preview",
+        "preview:clean": "npm run build:clean && nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@fontsource/roboto-slab": "^5.2.8",
+        "@pinia/nuxt": "^0.5.4",
+        "gsap": "^3.15.0",
+        "nuxt": "^3.14.1593",
+        "pinia": "^2.2.4",
+        "vue": "^3.5.12",
+        "vue-router": "^4.4.5"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.3.0",
+        "sass": "^1.80.4"
+    }
+}
