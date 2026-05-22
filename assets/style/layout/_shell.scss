@@ -5,6 +5,10 @@
 ========================================= */
 
 /* Portfolio shell */
+html[data-shell-theme="gallery"] .portfolio-page {
+    overflow-x: visible;
+}
+
 .portfolio-page {
     position: relative;
     z-index: 1;
@@ -12,13 +16,6 @@
     padding-top: var(--layout-header-height);
     overflow-x: clip;
     overflow-y: visible;
-
-    &:has(.gallery-page--career),
-    &:has(.gallery-page--personal),
-    &:has(.gallery-detail.gallery-page--career),
-    &:has(.gallery-detail.gallery-page--personal) {
-        overflow-x: visible;
-    }
 
     counter-reset: section-count;
     background: var(--gradient-noise);

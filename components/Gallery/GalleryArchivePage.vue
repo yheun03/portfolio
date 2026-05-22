@@ -1,22 +1,23 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
-        :footer-text="t('footer.copyright')" :show-app-dock="true" shell-theme="gallery">
-        <article ref="galleryPageRef" class="gallery-page section"
-            :class="[`gallery-page--${viewMode}`, galleryVariantClass]" :aria-label="t(titleKey)">
+        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        <article ref="galleryPageRef" class="gallery-page section gallery-page--editorial"
+            :class="galleryVariantClass" :aria-label="t(titleKey)">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
                 :hero-number="heroNumber" :hero-aria-label="heroAriaLabel" :status-label="t('gallery.indexLabel')"
-                :stats="editorialStats" :grid-eyebrow="gridEyebrow" :sort-legend="sortLegend"
+                :stats="editorialStats" :sort-legend="sortLegend"
                 :sort-aria-label="sortAriaLabel" :view-legend="viewLegend" :view-aria-label="viewAriaLabel"
                 :sort-options="sortOptions" :view-options="viewOptions" :sort-mode="sortMode"
                 @update:sort-mode="sortMode = $event" @update:view-mode="viewMode = $event" />
 
+            <!-- @vue-generic {import('@utils/workSort').WorkYearGroup} -->
             <EditorialYearTimeline v-if="viewMode === 'editorial'" variant="gallery"
-                :aria-label="t('gallery.projectList')" :eras="editorialYearGroups" id-prefix="gallery-era"
+                :ariaLabel="t('gallery.projectList')" :eras="editorialYearGroups" id-prefix="gallery-era"
                 :flat-aria-label="t('gallery.otherProjects')">
                 <template #era="{ era: group, index: groupIndex }">
                     <ProjectGalleryCard v-for="(work, index) in group.works" :key="work.id" :work="work"
-                        :to="`${basePath}/${work.id}`" view-mode="editorial"
-                        :priority="groupIndex === 0 && index === 0" :entry-label="t('gallery.viewEntry')" />
+                        :to="`${basePath}/${work.id}`" view-mode="editorial" :priority="groupIndex === 0 && index === 0"
+                        :entry-label="t('gallery.viewEntry')" />
                 </template>
             </EditorialYearTimeline>
             <div v-else class="gallery-page__grid" :aria-label="t('gallery.projectList')">
@@ -61,7 +62,6 @@ const {
     sortAriaLabel,
     viewLegend,
     viewAriaLabel,
-    gridEyebrow,
     titleKey,
     basePath,
 } = useGalleryArchive(props.variant, props.works);
