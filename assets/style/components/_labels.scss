@@ -1,0 +1,52 @@
+@use "../abstracts/tokens" as *;
+
+/* Label */
+.base-label {
+    --label-accent: #{$primary-600};
+    --label-bg: color-mix(in srgb, var(--label-accent) 10%, #{$grayscale-0});
+    --label-border: color-mix(in srgb, var(--label-accent) 38%, #{$grayscale-300});
+
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    padding: $space-1 $space-3;
+    border: 1px solid var(--label-border);
+    border-radius: 999px;
+    background: var(--label-bg);
+    color: var(--label-accent);
+    @include font(label);
+    text-transform: uppercase;
+
+    &--work {
+        --label-accent: #{$primary-700};
+    }
+
+    &--personal {
+        --label-accent: color-mix(in srgb, #{$accent-mint} 62%, #{$primary-600});
+    }
+
+    &--toolbox {
+        --label-accent: color-mix(in srgb, #{$primary-600} 55%, #{$grayscale-700});
+    }
+
+    &--highlight {
+        --label-accent: #{$primary-600};
+    }
+
+    &--journey {
+        --label-accent: color-mix(in srgb, #{$accent-hot} 76%, #{$primary-600});
+    }
+
+    &--contact {
+        --label-accent: color-mix(in srgb, #{$accent-mint} 74%, #{$primary-600});
+    }
+
+    &--profile {
+        --label-accent: color-mix(in srgb, #{$primary-600} 84%, #{$grayscale-900});
+    }
+
+    &--technical {
+        --label-accent: color-mix(in srgb, #{$primary-600} 72%, #{$grayscale-700});
+    }
+}

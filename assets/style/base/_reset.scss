@@ -1,0 +1,230 @@
+@use "../abstracts/tokens" as *;
+
+/* =========================================
+   Base
+========================================= */
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+}
+
+/* Typography */
+body {
+    @include font(body-1);
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: background-color 0.35s ease, color 0.35s ease;
+    text-wrap: pretty;
+    word-break: keep-all;
+}
+
+/* 라벨·캡션: UI 최소 14px (design-tokens --font-size-xs) */
+:where(.base-label, .base-label--technical, small) {
+    @include font(label);
+}
+
+:where(#main-content) {
+    :where(p, li, dd) {
+        font-size: max(1em, var(--font-size-sm));
+        line-height: var(--line-height-body);
+    }
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    @include font(display-4);
+}
+
+h1 {
+    @include font(display-4);
+}
+
+h2 {
+    @include font(display-4);
+}
+
+h3 {
+    @include font(display-6);
+}
+
+p,
+li,
+a,
+button,
+input,
+textarea,
+label {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+@media (max-width: 767px) {
+    body {
+        @include font(body-1);
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: var(--line-height-title);
+    }
+}
+
+/* Global */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img,
+svg,
+canvas,
+video {
+    max-width: 100%;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+    outline: 2px solid $primary-600;
+    outline-offset: $space-1;
+}
+
+html.app--menu-open {
+    overflow: hidden;
+}
+
+.emoji {
+    display: inline-grid;
+    place-items: center;
+    line-height: 1;
+    transform-origin: 50% 58%;
+    will-change: transform;
+    animation: emoji-float 3.2s ease-in-out infinite;
+}
+
+.emoji--soft {
+    animation-duration: 4.1s;
+    animation-name: emoji-glow;
+    will-change: transform, opacity;
+}
+
+.skip-link {
+    position: fixed;
+    left: $space-5;
+    top: -100px;
+    padding: $space-3 $space-5;
+    border-radius: 0.6rem;
+    background: $grayscale-200;
+    border: 1px solid $grayscale-300;
+    z-index: 999;
+}
+
+.skip-link:focus-visible {
+    top: $space-5;
+    outline: 2px solid $primary-600;
+    outline-offset: $space-1;
+}
+
+[data-animate] {
+    opacity: 0;
+    transition: opacity 0.32s ease;
+}
+
+[data-animate].animate--visible {
+    opacity: 1;
+}
+
+@media (hover: hover) {
+    [data-motion="lift"] {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    [data-motion="lift"]:hover {
+        transform: translateY(-6px);
+        box-shadow: $shadow-soft;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --grayscale-600: #5c5040;
+        --grayscale-300: #b8a992;
+        --color-text-muted: #3d3429;
+        --gallery-muted: #3d3429;
+    }
+
+    [data-theme="dark"] {
+        --grayscale-600: #cbd5e1;
+        --grayscale-300: #94a3b8;
+        --color-text-muted: #d4d4dc;
+        --gallery-muted: #e8d4a8;
+    }
+}
+
+@keyframes emoji-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.95;
+    }
+
+    45% {
+        transform: translateY(-3px) rotate(-5deg) scale(1.05);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(-1px) rotate(4deg) scale(0.98);
+    }
+}
+
+@keyframes emoji-glow {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.88;
+    }
+
+    50% {
+        transform: translateY(-2px) scale(1.05);
+        opacity: 1;
+    }
+}

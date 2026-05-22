@@ -1,5 +1,72 @@
 const data = [
     {
+        id: 'samhwa-eco-dashboard',
+        category: 'project',
+        title: {
+            ko: '삼화페인트 생태공장 대시보드',
+            en: 'Samhwa Paint Eco-factory Dashboard',
+        },
+        period: '2026.05',
+        type: {
+            ko: 'SI / 대시보드',
+            en: 'SI / Dashboard',
+        },
+        role: {
+            ko: '퍼블리싱 100%, UI 개선 50%',
+            en: 'Publishing 100%, UI Improvement 50%',
+        },
+        tech: ['Visual Studio Code', 'Git', 'Vue', 'JavaScript', 'SCSS', 'HTML'],
+        introduction: {
+            ko: '삼화페인트 생태공장 대시보드의 Client 화면 퍼블리싱과 UI 개선을 수행하며 카드, 데이터 영역, 상태 표시, 차트, 정보성 UI의 구조와 시각적 위계를 정리했습니다.',
+            en: 'Handled client-side publishing and UI improvements for Samhwa Paint eco-factory dashboard, organizing cards, data areas, status indicators, charts, and informational UI.',
+        },
+        myWorks: [
+            {
+                ko: '대시보드 Client 화면 퍼블리싱',
+                en: 'Published client dashboard screens',
+            },
+            {
+                ko: '카드형 데이터 영역과 상태 표시 UI 정리',
+                en: 'Organized card-based data areas and status UI',
+            },
+            {
+                ko: '차트 및 정보성 UI의 간격·정렬·위계 개선',
+                en: 'Improved spacing, alignment, and hierarchy for chart/information UI',
+            },
+            {
+                ko: '데이터 확인 중심의 반응형 레이아웃 개선',
+                en: 'Improved responsive layout for data-checking workflows',
+            },
+        ],
+        achievements: [
+            {
+                ko: '대시보드 정보 가독성과 UI 일관성 개선',
+                en: 'Improved dashboard readability and UI consistency',
+            },
+            {
+                ko: '운영자가 데이터를 빠르게 확인할 수 있는 카드형 레이아웃 정리',
+                en: 'Structured card layouts so operators can scan data faster',
+            },
+        ],
+        points: [
+            {
+                ko: '데이터 중심 UI',
+                en: 'Data-focused UI',
+            },
+            {
+                ko: '대시보드 가독성 개선',
+                en: 'Dashboard readability',
+            },
+        ],
+        pin: true,
+        duration: {
+            ko: '약 1개월',
+            en: '~1 month',
+        },
+        captures: ['/images/projects/placeholder.svg'],
+        languages: ['Vue', 'JavaScript', 'SCSS', 'HTML'],
+    },
+    {
         id: 'orchem-mes',
         category: 'project',
         title: {
@@ -12,13 +79,13 @@ const data = [
             en: 'Project / Build',
         },
         role: {
-            ko: 'Vue 3 기반 MES 퍼블리싱, 구조 설계',
-            en: 'Vue 3 MES publishing and architecture',
+            ko: '퍼블리싱 100%, UI 컴포넌트 구조 개선 70%, 화면 구조 설계 50%',
+            en: 'Publishing 100%, UI component structure 70%, screen architecture 50%',
         },
-        tech: ['Vue 3', 'SCSS', 'JavaScript'],
+        tech: ['Vue 3', 'Vite', 'JavaScript', 'SCSS', 'HTML', 'Vue Router', 'Vue I18n', 'AG Grid', 'Chart.js', 'flatpickr', 'marked'],
         introduction: {
-            ko: '납품할 MES를 Vue 3 기반으로 개편하며 UI 퍼블리싱과 공통 컴포넌트 구조를 정리하고 있습니다.',
-            en: 'Renewing a deliverable MES with Vue 3 while organizing UI publishing and shared component architecture.',
+            ko: 'Vue 3 기반 MES 리뉴얼에서 화면 퍼블리싱과 공통 UI 컴포넌트 개선을 수행하고, AG Grid 중심의 검색·선택·렌더링·다운로드 구조를 정리했습니다.',
+            en: 'Handled Vue 3 MES renewal publishing and shared UI component improvements, while organizing AG Grid search, selection, rendering, and download patterns.',
         },
         myWorks: [
             {
@@ -26,32 +93,40 @@ const data = [
                 en: 'Vue 3 screen publishing',
             },
             {
-                ko: '구조 통일 및 공통 컴포넌트 설계',
-                en: 'Unified structure and shared components',
+                ko: 'AppGrid, AppInput, AppSelect, AppButton, AppAccordion, AppModalHost 등 공통 컴포넌트 활용/개선',
+                en: 'Used and improved shared components such as AppGrid, AppInput, AppSelect, AppButton, AppAccordion, and AppModalHost',
             },
             {
-                ko: '유지보수 가능한 스타일 구조 정리',
-                en: 'Maintainable style architecture',
+                ko: '원재료 준비, 중간 검사, 검사 결과, 태블릿 화면 레이아웃 개선',
+                en: 'Improved layouts for material preparation, intermediate inspection, inspection results, and tablet screens',
             },
             {
-                ko: '납품형 화면 단위 구성',
-                en: 'Delivery-ready page unit composition',
+                ko: 'AG Grid 검색, 선택, 삭제, 칩 렌더링, 조건부 스타일, 엑셀 다운로드 구조 정리',
+                en: 'Organized AG Grid search, selection, deletion, chip rendering, conditional styling, and Excel download patterns',
+            },
+            {
+                ko: '태블릿 환경의 버튼, 카드, 아코디언, 그리드 터치 UI 개선',
+                en: 'Improved tablet touch UI for buttons, cards, accordions, and grids',
             },
         ],
         achievements: [
             {
-                ko: '납품형 MES 화면 품질과 구조 일관성 확보 중',
-                en: 'Establishing delivery-ready MES screen quality and structural consistency',
+                ko: '반복 화면 구조를 공통 컴포넌트 중심으로 정리해 유지보수성 향상',
+                en: 'Improved maintainability by organizing repeated screens around shared components',
+            },
+            {
+                ko: 'MES 테이블 UI의 확장성과 재사용성 향상',
+                en: 'Improved scalability and reuse of MES table UI patterns',
             },
         ],
         points: [
             {
-                ko: '구조 현대화',
-                en: 'Modernized architecture',
+                ko: 'AG Grid 구조화',
+                en: 'AG Grid structure',
             },
             {
-                ko: '납품형 UI 설계',
-                en: 'Delivery-ready UI design',
+                ko: '태블릿 업무 UI',
+                en: 'Tablet workflow UI',
             },
         ],
         pin: true,
@@ -60,7 +135,7 @@ const data = [
             en: 'Ongoing · ~3+ months',
         },
         captures: ['/images/projects/placeholder.svg'],
-        languages: ['Vue 3', 'SCSS', 'JavaScript'],
+        languages: ['Vue 3', 'Vite', 'JavaScript', 'SCSS', 'AG Grid'],
     },
     {
         id: 'hanjinkal',
