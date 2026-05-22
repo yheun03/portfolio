@@ -4,20 +4,20 @@ const data = {
             temp: false,
             summary: {
                 company: {
-                    ko: '조앤소프트(주)',
-                    en: 'JO&SOFT Co., Ltd.',
+                    ko: '회사',
+                    en: 'Company',
                 },
                 team: {
-                    ko: 'DX 솔루션 2팀 · UI 퍼블리셔 / 프론트엔드',
-                    en: 'DX Solution Team 2 · UI Publisher / Frontend',
+                    ko: '조앤소프트 · DX 솔루션 2팀 · UI 퍼블리셔 / 프론트엔드',
+                    en: 'JO&SOFT · DX Solution Team 2 · UI Publisher / Frontend',
                 },
                 period: {
                     ko: '2019.11 ~ 현재',
                     en: 'Nov 2019 ~ Present',
                 },
                 intro: {
-                    ko: '조앤소프트에서 구축·운영·리뉴얼 프로젝트를 수행하며, 요구사항 파악, 화면 구조 설계, 반응형 퍼블리싱, Vue 화면 구현, CMS 커스터마이징, 운영 유지보수까지 납품형 웹 UI 전 과정을 경험했습니다. 2022년부터 배화여자대학교·한국공학대학교 재학과 실무를 병행했습니다.',
-                    en: 'At JO&SOFT I deliver build, operation, and renewal projects end to end—from requirements and UI structure to responsive publishing, Vue, CMS, and maintenance. Since 2022 I have balanced this work with studies at Paehwa Women’s University and Tech University of Korea.',
+                    ko: '조앤소프트에서 구축·운영·리뉴얼 프로젝트를 수행하며, 요구사항 파악, 화면 구조 설계, 반응형 퍼블리싱, Vue 화면 구현, CMS 커스터마이징, 운영 유지보수까지 납품형 웹 UI 전 과정을 경험했습니다.',
+                    en: 'At JO&SOFT I deliver build, operation, and renewal projects end to end—from requirements and UI structure to responsive publishing, Vue, CMS, and maintenance.',
                 },
                 clients: [
                     { ko: '태림포장', en: 'TaeLim Packaging' },
@@ -36,9 +36,8 @@ const data = {
                     { ko: '퍼블리싱 100% 수행', en: '100% publishing ownership' },
                     { ko: 'Vue 기반 화면 구현', en: 'Vue-based UI implementation' },
                     { ko: 'CMS 커스터마이징', en: 'CMS customization' },
-                    { ko: '배화여자대학교 재학 병행 (2022~2023)', en: 'Paehwa Women’s Univ. while working (2022–2023)' },
-                    { ko: '한국공학대학교 재학 병행 (2024~2025)', en: 'Tech Univ. of Korea while working (2024–2025)' },
-                    { ko: '컴퓨터공학과 과대 · 학회장', en: 'CS class rep · Society president' },
+                    { ko: '구조 설계 및 공통화', en: 'UI architecture and standardization' },
+                    { ko: '운영 유지보수', en: 'Operation and maintenance' },
                 ],
             },
             timeline: [
@@ -60,41 +59,41 @@ const data = {
                         en: 'Operation, renewal, and CMS expansion',
                     },
                     description: {
-                        ko: '운영·리뉴얼·CMS 커스터마이징을 병행했습니다. 한국공학대학교(2024~2025)에서 과대·학회장을 맡아 학과 행사·소통을 정리하는 동시에, 낮 시간대 납품 일정과 인수인계·퍼블리싱 가이드 정리를 이어갔습니다.',
-                        en: 'Continued operations, renewals, and CMS work while serving as class representative and society president at Tech University of Korea (2024–2025)—keeping client delivery and publishing guides on track during the day.',
+                        ko: '운영·리뉴얼·CMS 커스터마이징을 병행하며 반응형·웹 표준·접근성 기준을 프로젝트별로 맞췄습니다. 인수인계 문서와 퍼블리싱 가이드를 정리해 이후 수정이 쉬운 화면 구조로 넘기는 비중을 키웠고, 대학 재학과 병행하며 낮 시간대 납품 일정을 유지했습니다.',
+                        en: 'Balanced operations, renewals, and CMS work with project-level responsive, standards, and accessibility baselines—plus handoff docs and publishing guides, keeping daytime delivery while studying in parallel.',
                     },
                 },
                 {
                     period: '2024',
                     title: {
-                        ko: 'Vue 강화 · 한국공학대 입학',
-                        en: 'Vue delivery and Tech Univ. of Korea',
+                        ko: 'Vue 기반 프로젝트 강화',
+                        en: 'Strengthening Vue-based delivery',
                     },
                     description: {
-                        ko: 'Vue 3 기반 관리·업무 시스템에서 컴포넌트·상태·SCSS 구조를 정리하며 기획·퍼블리싱을 연결했습니다. 한국공학대학교 컴퓨터공학과에 입학해 전공 수업과 조앤소프트 실무를 병행하기 시작했고, 이후 과대·학회장 역할로 이어졌습니다.',
-                        en: 'Structured Vue 3 admin UIs with clearer components, state, and SCSS while linking planning and publishing—started Computer Engineering at Tech University of Korea alongside JO&SOFT delivery, later taking class rep and society president roles.',
+                        ko: 'Vue 3 기반 관리·업무 시스템에서 컴포넌트 분리, 상태·라우팅 구조, SCSS 레이어를 함께 잡으며 기획·디자인·퍼블리싱이 끊기지 않게 연결했습니다. 화면 단위 QA와 협업사·고객 피드백 반영 루틴도 정착시켰습니다.',
+                        en: 'On Vue 3 admin and operations systems, aligned component boundaries, state/routing, and SCSS layers so planning, design, and publishing stayed connected—with stable QA and feedback loops.',
                     },
                 },
                 {
                     period: '2023',
                     title: {
-                        ko: 'WebSquare · 배화여대 병행',
-                        en: 'WebSquare credentials and Paehwa Women’s Univ.',
+                        ko: 'WebSquare · SW 개발 역량 보강',
+                        en: 'WebSquare and software development credentials',
                     },
                     description: {
-                        ko: 'WebSquare Certified Publisher와 SW개발 L5를 취득했습니다. 배화여자대학교(2022~2023) 편입 수업·과제와 실무를 병행하며 납품 일정을 맞췄고, 화면 스펙·마크업 규칙을 문서로 남기는 방식을 강화했습니다.',
-                        en: 'Earned WebSquare Certified Publisher and SW Development L5 while balancing Paehwa Women’s University coursework (2022–2023) with client schedules—documenting screen specs and markup rules more consistently.',
+                        ko: 'WebSquare Certified Publisher와 SW개발 L5를 취득하며 엔터프라이즈 UI·개발 용어와 산출물 기준을 실무에 맞춰 보강했습니다. 화면 스펙·마크업 규칙을 문서로 남기는 습관을 강화했고, 학업과 납품 일정을 함께 맞추는 리듬을 이어갔습니다.',
+                        en: 'Earned WebSquare Certified Publisher and SW Development L5 to align enterprise UI deliverables with day-to-day work—documenting screen specs and markup rules while balancing study and client schedules.',
                     },
                 },
                 {
                     period: '2022',
                     title: {
-                        ko: '솔루션 UI · 배화여대 편입',
-                        en: 'Solution UI and Paehwa Women’s Univ. transfer',
+                        ko: '자사 솔루션 UI 구조화',
+                        en: 'Structuring in-house solution UI',
                     },
                     description: {
-                        ko: '자사 솔루션·납품형 화면의 공통 레이아웃·컴포넌트를 묶어 반복 마크업을 줄였고 NCA를 취득했습니다. 배화여자대학교에 편입해 프로그래밍·소프트웨어 관련 수업과 조앤소프트 실무를 병행하며, 학업과 납품 일정을 함께 맞추는 리듬을 키웠습니다.',
-                        en: 'Grouped in-house UI patterns and earned NCA—transferred to Paehwa Women’s University and balanced programming coursework with JO&SOFT delivery, learning to align academic and project timelines.',
+                        ko: '자사 솔루션·납품형 화면의 공통 레이아웃·컴포넌트·SCSS 변수를 묶어 반복 마크업을 줄였습니다. Naver Cloud Platform Certified Associate를 취득하며 배포·환경을 염두에 둔 퍼블리싱 관점을 넓혔습니다.',
+                        en: 'Grouped shared layouts, components, and SCSS variables across in-house and client UIs, and earned NCA to broaden a publishing view that includes deployment and environments.',
                     },
                 },
                 {
@@ -115,8 +114,8 @@ const data = {
                         en: 'Adapting to production publishing',
                     },
                     description: {
-                        ko: '조앤소프트 입사 후 반응형·크로스브라우징·웹 표준을 프로젝트 단위로 적용하는 방식을 익혔습니다. 요구사항 변경에 맞춰 화면 구조를 다시 잡고, 운영·유지보수 티켓도 함께 처리하며 납품 일정에 맞추는 리듬을 키웠습니다.',
-                        en: 'After joining JO&SOFT, learned to apply responsive layouts, cross-browser checks, and web standards per project—restructuring UI when requirements shifted and handling maintenance tickets within delivery timelines.',
+                        ko: '입사 후 반응형·크로스브라우징·웹 표준을 프로젝트 단위로 적용하는 방식을 익혔습니다. 요구사항 변경에 맞춰 화면 구조를 다시 잡고, 운영·유지보수 티켓도 함께 처리하며 납품 일정에 맞추는 리듬을 키웠습니다.',
+                        en: 'After joining, learned to apply responsive layouts, cross-browser checks, and web standards per project—restructuring UI when requirements shifted and handling maintenance tickets within delivery timelines.',
                     },
                 },
                 {
@@ -136,12 +135,86 @@ const data = {
             temp: false,
             summary: {
                 company: {
-                    ko: '서울디지텍고등학교',
-                    en: 'Seoul Digitech High School',
+                    ko: '대학교',
+                    en: 'University',
                 },
                 team: {
-                    ko: '웹디자인 동아리 MOD',
-                    en: 'Web design club MOD',
+                    ko: '컴퓨터공학 · 편입·재학',
+                    en: 'Computer Engineering · Transfer & enrollment',
+                },
+                period: {
+                    ko: '2022.03 ~ 2025.03',
+                    en: 'Mar 2022 ~ Mar 2025',
+                },
+                intro: {
+                    ko: '컴퓨터공학을 편입·재학하며 프로그래밍·소프트웨어 공학 수업을 들었습니다. 회사 실무와 병행해 과제·시험 일정과 납품 마감을 맞추고, 과대·학회장으로 학과 행사·소통을 맡으며 협업·문서화 경험을 이어갔습니다.',
+                    en: 'Studied computer engineering through transfer and enrollment while continuing client work—balancing coursework with delivery and leading class and society activities.',
+                },
+                clients: [],
+                roles: [
+                    { ko: '컴퓨터공학 편입·재학', en: 'Computer Engineering transfer & enrollment' },
+                    { ko: '회사 실무 병행', en: 'Parallel professional work' },
+                    { ko: '과대·학회장', en: 'Class representative & society president' },
+                    { ko: '프로그래밍·소프트웨어 공학 수업', en: 'Programming and software engineering courses' },
+                ],
+            },
+            timeline: [
+                {
+                    period: '2025',
+                    title: {
+                        ko: '과대·학회장 운영',
+                        en: 'Class rep and society president',
+                    },
+                    description: {
+                        ko: '과대와 학회장을 맡아 학과 행사·학술·소통 채널을 정리했습니다. 회원·교수·학과 사무실과 일정을 맞추는 경험이 이후 프로젝트 스테이크홀더 조율과 비슷한 패턴으로 이어졌고, 납품 일정도 병행했습니다.',
+                        en: 'As class representative and society president, organized department events and communication channels—stakeholder coordination that mirrored project work, alongside continued client delivery.',
+                    },
+                },
+                {
+                    period: '2024',
+                    title: {
+                        ko: '전공 수업·재학',
+                        en: 'Major coursework',
+                    },
+                    description: {
+                        ko: '컴퓨터공학과에 재학하며 프로그래밍·소프트웨어 공학 과목을 수강하기 시작했습니다. 전공 수업과 회사 실무를 병행하며 웹 퍼블·개발 역량을 이론과 연결해 보는 시간을 가졌습니다.',
+                        en: 'Continued computer engineering coursework while balancing client delivery—connecting publishing practice with formal CS study.',
+                    },
+                },
+                {
+                    period: '2023',
+                    title: {
+                        ko: '편입 2학년 수업·과제',
+                        en: 'Second-year coursework',
+                    },
+                    description: {
+                        ko: '편입 2학년 과정에서 프로그래밍·자료구조·소프트웨어 공학 과목을 수강하며 과제와 프로젝트 마감을 실무 일정과 맞춰 진행했습니다. 수업에서 다룬 구조·문서화 방식이 화면 스펙 정리 습관으로 이어졌습니다.',
+                        en: 'Took programming, data structures, and software engineering courses—aligning assignment deadlines with client delivery and carrying documentation habits into screen specs.',
+                    },
+                },
+                {
+                    period: '2022',
+                    title: {
+                        ko: '컴퓨터공학 편입',
+                        en: 'Transfer into computer engineering',
+                    },
+                    description: {
+                        ko: '컴퓨터공학과에 편입했습니다. 낮에는 회사 프로젝트, 저녁·주말에는 수업·과제를 병행하며 학업과 납품 일정을 함께 조율하는 방식을 익혔습니다.',
+                        en: 'Transferred into computer engineering—balancing daytime client projects with evening and weekend coursework.',
+                    },
+                },
+            ],
+        },
+        {
+            temp: false,
+            summary: {
+                company: {
+                    ko: '고등학교',
+                    en: 'High School',
+                },
+                team: {
+                    ko: '웹디자인 · 동아리 MOD',
+                    en: 'Web design · MOD club',
                 },
                 period: {
                     ko: '2018.03 ~ 2021.01',
@@ -168,8 +241,8 @@ const data = {
                         en: 'Graduation and handoff to work',
                     },
                     description: {
-                        ko: '졸업을 앞두고 MOD·TF에서 만든 화면을 포트폴리오로 정리하고, 마크업·폴더·네이밍 규칙을 팀과 맞추는 방식을 실무 톤으로 다듬었습니다. 졸업 후에도 조앤소프트에서 퍼블리싱 실무를 이어갔습니다.',
-                        en: 'Before graduation, turned MOD and TF screens into a portfolio and aligned markup, folder, and naming habits with team delivery—then continued publishing work at JO&SOFT.',
+                        ko: '졸업을 앞두고 MOD·TF에서 만든 화면을 포트폴리오로 정리하고, 마크업·폴더·네이밍 규칙을 팀과 맞추는 방식을 실무 톤으로 다듬었습니다. 졸업 후에도 회사에서 퍼블리싱 실무를 이어갔습니다.',
+                        en: 'Before graduation, turned MOD and TF screens into a portfolio and aligned markup, folder, and naming habits with team delivery—then continued publishing work professionally.',
                     },
                 },
                 {
@@ -190,8 +263,8 @@ const data = {
                         en: 'Web projects and first professional role',
                     },
                     description: {
-                        ko: 'MOD 회장으로 동아리 커리큘럼·튜터링·과제를 운영했고, 웹디자인·정보처리 기능사를 취득했습니다. 전교 투표·학습 정보 통합 웹 TF 팀장으로 실사용자·마감·역할 분담을 경험한 뒤 제이콥시스템·조앤소프트에서 퍼블리싱 실무를 시작했습니다.',
-                        en: 'As MOD president, ran club curriculum, tutoring, and assignments; earned craftsman certifications; led the school election and learning-info web TF under real users and deadlines—then started professional publishing at Jacob System and JO&SOFT.',
+                        ko: 'MOD 회장으로 동아리 커리큘럼·튜터링·과제를 운영했고, 웹디자인·정보처리 기능사를 취득했습니다. 전교 투표·학습 정보 통합 웹 TF 팀장으로 실사용자·마감·역할 분담을 경험한 뒤 퍼블리싱 실무를 시작했습니다.',
+                        en: 'As MOD president, ran club curriculum, tutoring, and assignments; earned craftsman certifications; led the school election and learning-info web TF under real users and deadlines—then started professional publishing.',
                     },
                 },
                 {
@@ -211,8 +284,8 @@ const data = {
             temp: false,
             summary: {
                 company: {
-                    ko: '장안중학교',
-                    en: 'Jangan Middle School',
+                    ko: '중학교',
+                    en: 'Middle School',
                 },
                 team: {
                     ko: '학생회 홍보부',
@@ -263,8 +336,8 @@ const data = {
                         en: 'Class and council leadership',
                     },
                     description: {
-                        ko: '장안중학교에 입학해 학급회장을 맡으며 반 일정·소통을 조율했습니다. 학생회 홍보부에 들어가 공지·행사 홍보를 돕기 시작했고, 글과 visual 자료로 학교 소식을 전하는 역할에 익숙해졌습니다.',
-                        en: 'Entered Jangan Middle School as class president coordinating schedules and communication, then joined the student council PR team helping with notices and events—getting used to delivering school news in writing and visuals.',
+                        ko: '중학교 입학 후 학급회장을 맡으며 반 일정·소통을 조율했습니다. 학생회 홍보부에 들어가 공지·행사 홍보를 돕기 시작했고, 글과 visual 자료로 학교 소식을 전하는 역할에 익숙해졌습니다.',
+                        en: 'Entered middle school as class president coordinating schedules and communication, then joined the student council PR team helping with notices and events—getting used to delivering school news in writing and visuals.',
                     },
                 },
             ],

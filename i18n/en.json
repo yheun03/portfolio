@@ -87,8 +87,11 @@
     },
     "journey": {
         "title": "A growth path built through delivery",
-        "summary": "From a middle-school council site through web club work to publishing at JO&SOFT, alongside Paehwa Women’s Univ. and Tech Univ. of Korea.",
-        "kicker": "In order.",
+        "summary": "From a middle-school council site through high school and university to parallel publishing work at a company.",
+        "kicker": "Choose how to read the timeline.",
+        "viewLegend": "View",
+        "viewAffiliation": "By affiliation",
+        "viewChronological": "By year",
         "tempLabel": "Sample data"
     },
     "toolbox": {

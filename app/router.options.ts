@@ -1,5 +1,6 @@
 import type { RouterConfig } from '@nuxt/schema';
 import { isGalleryDetailPath, readNavigationRestoreSnapshot } from '@composables/useNavigationRestore';
+import { scrollToSectionHashWhenReady } from '@utils/sectionAnchorScroll';
 
 export default {
     scrollBehavior(to, _from, savedPosition) {
@@ -8,7 +9,11 @@ export default {
         }
 
         if (!import.meta.client) {
-            return { top: 0, left: 0 };
+            return to.hash ? false : { top: 0, left: 0 };
+        }
+
+        if (to.hash) {
+            return scrollToSectionHashWhenReady(to.hash, 'smooth').then(() => false);
         }
 
         const snapshot = readNavigationRestoreSnapshot();
