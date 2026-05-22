@@ -1,5 +1,5 @@
 import type { RouterConfig } from '@nuxt/schema';
-import { isGalleryDetailPath, readNavigationRestoreSnapshot } from '@composables/useNavigationRestore';
+import { isGalleryDetailPath, readNavigationRestoreSnapshot } from '@composables/gallery/useNavigationRestore';
 import { scrollToSectionHashWhenReady } from '@utils/sectionAnchorScroll';
 
 export default {

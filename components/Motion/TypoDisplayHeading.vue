@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { useTypoInteraction } from '@composables/useTypoInteraction';
+import { useTypoInteraction } from '@composables/ui/useTypoInteraction';
 
 export type TypoDisplayLine = {
     words: string[];

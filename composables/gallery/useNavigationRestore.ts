@@ -1,4 +1,4 @@
-import { activateGalleryEntry } from '@composables/useGalleryEntryFocus';
+import { activateGalleryEntry } from '@composables/gallery/useGalleryEntryFocus';
 
 const RESTORE_SNAPSHOT_KEY = 'portfolio-nav-restore';
 

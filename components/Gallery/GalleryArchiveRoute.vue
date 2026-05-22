@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryArchiveVariant } from '@composables/useGallery';
+import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
 import { careerWorks, personalWorksList } from '@data/works';
 

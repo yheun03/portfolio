@@ -64,8 +64,8 @@
 
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
-import type { GalleryViewMode } from '@composables/useGallery';
-import { galleryEntryId } from '@composables/useNavigationRestore';
+import type { GalleryViewMode } from '@composables/gallery/useGallery';
+import { galleryEntryId } from '@composables/gallery/useNavigationRestore';
 import { getWorkStartYear } from '@utils/workSort';
 
 const props = withDefaults(

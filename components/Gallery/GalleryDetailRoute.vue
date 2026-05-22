@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryArchiveVariant } from '@composables/useGallery';
+import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import { getCareerWorkById, getPersonalWorkById } from '@data/works';
 
 const props = defineProps<{

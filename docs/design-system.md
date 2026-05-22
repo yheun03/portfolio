@@ -1,12 +1,12 @@
 # Design System
 
-이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 요청 경로인 `assets/scss/abstract`, `components/base`, `components/patterns`, `components/modules`는 현재 프로젝트에 존재하지 않아 실제 구조인 `assets/style/_tokens.scss`, `assets/style/main.scss`, `components/common`, `components/Card`, `components/Layout`, `components/Section`를 기준으로 분석했습니다.
+이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 실제 코드 구조인 `assets/style/abstracts`, `assets/style/main.scss`, `components/base`, `components/work`, `components/layout`, `components/home`, `components/gallery`, `components/motion`를 기준으로 분석했습니다.
 
 ## Design Principles
 
 - Code-first naming: SCSS 변수명과 Vue 클래스명을 Figma 토큰/컴포넌트 설명에 그대로 남긴다.
 - Dual theme ready: `:root`와 `[data-theme="dark"]`의 light/dark 값을 Figma Variables mode로 분리한다.
-- System over pages: `common`은 base, `Card`와 `Layout`은 patterns/modules, `Section`은 page composition으로 다룬다.
+- System over pages: `base`는 primitive, `work`와 `gallery`는 pattern, `layout`은 shell, `home`은 page composition으로 다룬다.
 - Density and motion: 기본 UI는 compact한 spacing과 hover lift, focus ring, active 상태를 가진다.
 - Manual fidelity: `color-mix()`, `clamp()`, gradient, inset shadow는 Figma에서 자동 변환이 제한되므로 수동 확인 대상으로 둔다.
 
@@ -132,13 +132,13 @@ Note: `main.scss` references `--radius-md` in `.tab-list .tab-list__tab`, and th
 
 ## Component Inventory
 
-| Code folder          | Figma group      | Components                                                                                                                                                  |
-| -------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `components/Common`  | Base             | `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`                                                                                      |
-| `components/Card`    | Pattern / Card   | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`                                                                                             |
-| `components/Layout`  | Module / Layout  | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock`                                                                                                  |
-| `components/Motion`  | Motion           | `TypoDisplayHeading`                                                                                                                                        |
-| `components/Section` | Module / Section | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
+| Code folder         | Figma group      | Components                                                                                                                                                  |
+| ------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `components/base`   | Base             | `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`                                                                                      |
+| `components/work`   | Pattern / Card   | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`                                                                                             |
+| `components/layout` | Module / Layout  | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock`                                                                                                  |
+| `components/motion` | Motion           | `TypoDisplayHeading`                                                                                                                                        |
+| `components/home`   | Module / Section | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
 
 ## Component Variants
 

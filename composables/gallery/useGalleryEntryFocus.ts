@@ -1,5 +1,5 @@
 import type { MaybeRef } from 'vue';
-import { galleryEntryId } from '@composables/useNavigationRestore';
+import { galleryEntryId } from '@composables/gallery/useNavigationRestore';
 
 export const GALLERY_ENTRY_ACTIVE_CLASS = 'is-gallery-entry-active';
 const GALLERY_ENTRY_SELECTOR = 'a.gallery-card[id^="gallery-entry-"]';

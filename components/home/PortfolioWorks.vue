@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-            }}</span>
+                }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -132,7 +132,7 @@
 </template>
 
 <script setup lang="ts">
-import { useWorksTabRenderer } from '@composables/useWorksTabRenderer';
+import { useWorksTabRenderer } from '@composables/portfolio/useWorksTabRenderer';
 import { careerWorks, personalWorksList } from '@data/works';
 
 const { t, pick, locale } = useLocale();
