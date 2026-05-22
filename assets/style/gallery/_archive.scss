@@ -662,46 +662,6 @@ html[data-shell-theme="gallery"] .portfolio-page,
         line-height: 1.75;
     }
 
-    /* 연도 sticky 레일 + 우측 전폭 콘텐츠 (한진칼 history 패턴) */
-    &__timeline {
-        display: flex;
-        flex-direction: column;
-        gap: clamp(3rem, 7vw, 5.5rem);
-    }
-
-    &__era {
-        display: grid;
-        grid-template-columns: var(--gallery-year-col) minmax(0, 1fr);
-        gap: clamp(1.25rem, 3.5vw, 3rem);
-        align-items: start;
-
-        &--flat {
-            grid-template-columns: minmax(0, 1fr);
-        }
-    }
-
-    &__year {
-        position: sticky;
-        top: var(--gallery-year-sticky-top);
-        z-index: 2;
-        margin: 0;
-        padding-top: 0.15em;
-        color: var(--gallery-cream);
-        font-family: var(--gallery-slab);
-        font-size: clamp(2.75rem, 5.5vw, 4.5rem);
-        font-weight: 900;
-        letter-spacing: -0.05em;
-        line-height: 0.9;
-        opacity: 0.95;
-        text-shadow: 0 0 40px color-mix(in srgb, var(--gallery-cream) 12%, transparent);
-    }
-
-    &__era-body {
-        display: grid;
-        gap: clamp(2rem, 4vw, 3rem);
-        min-width: 0;
-        padding-block: 0 clamp(0.75rem, 2vw, 1.25rem);
-    }
 }
 
 [data-theme="dark"] .gallery-editorial__poster::before {
@@ -1330,33 +1290,6 @@ html[data-shell-theme="gallery"] .portfolio-page,
                 justify-content: center;
             }
         }
-    }
-}
-
-@media (max-width: #{$bp-max-mobile}) {
-    .gallery-editorial {
-        &__era {
-            grid-template-columns: minmax(0, 1fr);
-            gap: var(--space-4);
-        }
-
-        &__year {
-            position: static;
-            font-size: clamp(2.5rem, 12vw, 4rem);
-            margin-bottom: var(--space-2);
-        }
-
-        &__era-body {
-            padding-inline-start: 0;
-            border-inline-start: 0;
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .gallery-editorial__era:not(.gallery-editorial__era--flat) .gallery-editorial__era-body {
-        padding-inline-start: clamp(0.85rem, 2.5vw, 1.75rem);
-        border-inline-start: 1px solid color-mix(in srgb, var(--gallery-muted) 32%, transparent);
     }
 }
 

@@ -13,12 +13,10 @@
                     <span :id="journeyViewLabelId" class="journey__control-label">{{ t('journey.viewLegend') }}</span>
                     <div class="journey__segments" role="radiogroup" :aria-labelledby="journeyViewLabelId"
                         :style="{ '--segment-count': viewOptions.length }">
-                        <button v-for="option in viewOptions" :key="option.value" type="button"
-                            class="journey__segment" :class="{ 'journey__segment--active': viewMode === option.value }"
-                            role="radio" :aria-checked="viewMode === option.value"
-                            :tabindex="viewMode === option.value ? 0 : -1"
-                            @click="setViewMode(option.value)"
-                            @keydown="handleViewKeydown($event, viewMode)">
+                        <button v-for="option in viewOptions" :key="option.value" type="button" class="journey__segment"
+                            :class="{ 'journey__segment--active': viewMode === option.value }" role="radio"
+                            :aria-checked="viewMode === option.value" :tabindex="viewMode === option.value ? 0 : -1"
+                            @click="setViewMode(option.value)" @keydown="handleViewKeydown($event, viewMode)">
                             {{ t(option.labelKey) }}
                         </button>
                     </div>
@@ -27,8 +25,7 @@
             </div>
 
             <!-- 소속순: 챕터 + 타임라인 -->
-            <div v-if="viewMode === 'affiliation'" class="journey__chapters"
-                :aria-label="t('journey.viewAffiliation')">
+            <div v-if="viewMode === 'affiliation'" class="journey__chapters" :aria-label="t('journey.viewAffiliation')">
                 <article v-for="(block, companyIndex) in affiliationBlocks" :key="companyKey(block, companyIndex)"
                     class="journey__chapter" :class="{ 'journey__chapter--temp': block.temp }">
                     <div class="journey__chapter-card">
@@ -53,25 +50,21 @@
                     </div>
 
                     <ol class="journey__steps">
-                        <TimelineItem v-for="(item, ti) in block.timeline"
-                            :key="`${companyIndex}-${ti}-${item.period}`" :period="item.period"
-                            :title="pick(item.title)" :description="pick(item.description)" />
+                        <TimelineItem v-for="(item, ti) in block.timeline" :key="`${companyIndex}-${ti}-${item.period}`"
+                            :period="item.period" :title="pick(item.title)" :description="pick(item.description)" />
                     </ol>
                 </article>
             </div>
 
-            <!-- 시간순: 연도 sticky + 항목 (갤러리 editorial 패턴) -->
-            <div v-else class="journey-editorial__timeline" :aria-label="t('journey.viewChronological')">
-                <section v-for="group in chronologicalYearGroups" :key="group.key" class="journey-editorial__era"
-                    :aria-labelledby="`journey-year-${group.key}`">
-                    <h2 :id="`journey-year-${group.key}`" class="journey-editorial__year">{{ group.year }}</h2>
-                    <ol class="journey-editorial__era-body journey__steps">
-                        <TimelineItem v-for="entry in group.entries" :key="entry.key" hide-period
-                            :title="pick(entry.title)" :description="pick(entry.description)"
-                            :affiliation="pick(entry.company)" />
-                    </ol>
-                </section>
-            </div>
+            <!-- 시간순: 연도 sticky + 항목 -->
+            <EditorialYearTimeline v-else variant="home" :aria-label="t('journey.viewChronological')"
+                :eras="chronologicalYearGroups" id-prefix="journey-year" entries-tag="ol">
+                <template #era="{ era: group }">
+                    <TimelineItem v-for="entry in group.entries" :key="entry.key" hide-period
+                        :title="pick(entry.title)" :description="pick(entry.description)"
+                        :affiliation="pick(entry.company)" />
+                </template>
+            </EditorialYearTimeline>
         </div>
     </section>
 </template>
