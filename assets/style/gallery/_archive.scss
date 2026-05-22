@@ -15,6 +15,7 @@ $gallery-text-ui: 0.8125rem;
 
 /* ----- Editorial shell (list + detail) ----- */
 
+html[data-shell-theme="gallery"] body,
 body:has(.gallery-page--career),
 body:has(.gallery-page--personal),
 body:has(.gallery-detail.gallery-page--career),
@@ -106,6 +107,7 @@ body:has(.gallery-detail.gallery-page--personal) {
     }
 }
 
+html:not([data-theme="dark"])[data-shell-theme="gallery"] body,
 html:not([data-theme="dark"]) body:has(.gallery-page--career),
 html:not([data-theme="dark"]) body:has(.gallery-page--personal),
 html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--career),
@@ -123,6 +125,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     }
 }
 
+[data-theme="dark"][data-shell-theme="gallery"] body,
 [data-theme="dark"] body:has(.gallery-page--career),
 [data-theme="dark"] body:has(.gallery-page--personal),
 [data-theme="dark"] body:has(.gallery-detail.gallery-page--career),
@@ -133,6 +136,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     }
 }
 
+html[data-shell-theme="gallery"] .portfolio-page,
 .portfolio-page:has(.gallery-page--career),
 .portfolio-page:has(.gallery-page--personal),
 .portfolio-page:has(.gallery-detail.gallery-page--career),
@@ -154,6 +158,7 @@ html:not([data-theme="dark"]) body:has(.gallery-detail.gallery-page--personal) {
     }
 }
 
+[data-theme="dark"][data-shell-theme="gallery"] .portfolio-page::before,
 [data-theme="dark"] .portfolio-page:has(.gallery-page--career)::before,
 [data-theme="dark"] .portfolio-page:has(.gallery-page--personal)::before,
 [data-theme="dark"] .portfolio-page:has(.gallery-detail.gallery-page--career)::before,

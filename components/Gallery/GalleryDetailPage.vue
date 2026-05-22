@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="config.basePath"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        :footer-text="t('footer.copyright')" :show-app-dock="true" shell-theme="gallery">
         <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
             <nav class="gallery-detail__breadcrumb" :aria-label="t('gallery.breadcrumbLabel')">
                 <button type="button" class="gallery-detail__breadcrumb-link" aria-keyshortcuts="Escape"

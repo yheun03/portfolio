@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        :footer-text="t('footer.copyright')" :show-app-dock="true" shell-theme="gallery">
         <article ref="galleryPageRef" class="gallery-page section" :class="[`gallery-page--${viewMode}`, galleryVariantClass]"
             :aria-label="t(titleKey)">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"

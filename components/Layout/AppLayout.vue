@@ -10,6 +10,8 @@
 </template>
 
 <script setup lang="ts">
+import type { ShellTheme } from '@config/shellTheme';
+
 const { locale } = useLocale();
 
 const props = withDefaults(
@@ -25,12 +27,17 @@ const props = withDefaults(
         /** 서브페이지 네비 활성 경로 (예: `/projects`) */
         activePath?: string;
         showAppDock?: boolean;
+        /** 레이아웃 셸 색상 — home(메인) / gallery(프로젝트·개인 아카이브) */
+        shellTheme?: ShellTheme;
     }>(),
     {
         brandHref: "#hello",
         showAppDock: true,
+        shellTheme: 'home',
     }
 );
+
+useShellTheme(() => props.shellTheme);
 
 const dockLinks = computed(() => props.links);
 const headerNavLinks = computed(() => props.headerLinks ?? props.links);
