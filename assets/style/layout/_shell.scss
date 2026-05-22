@@ -204,21 +204,21 @@ html:not([data-theme="dark"]) .app-background::after {
 /** 오른쪽 끝 호버·포커스 시 맥 독처럼 네비가 미끄러져 나타남 */
 .app-dock-ribbon {
     --app-dock-edge: var(--space-fluid-sm);
-    --app-dock-slot: min(4.5rem, 12vw);
     --section-content-w: min(100vw - var(--inset-page), var(--layout-content-max));
     --section-margin-x: max(0px, calc((100vw - var(--section-content-w)) * 0.5));
     position: fixed;
     top: 0;
     bottom: 0;
+    // right: max(var(--app-dock-edge),
+    //         calc(var(--section-margin-x) - var(--app-dock-slot, 3.15rem)));
     right: var(--app-dock-edge);
-    z-index: 40;
+    z-index: 85;
     display: none;
-    width: var(--app-dock-slot);
+    width: min(4.5rem, 12vw);
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    /** 오른쪽 전체 스트립이 본문·토글을 가리지 않도록 — 독만 포인터 수신 */
-    pointer-events: none;
+    pointer-events: auto;
     background: transparent;
 
     @media (min-width: 1024px) {
@@ -226,20 +226,17 @@ html:not([data-theme="dark"]) .app-background::after {
     }
 
     &:hover .app-dock,
-    &:focus-within .app-dock,
-    &:has(.app-dock:hover),
-    &:has(.app-dock:focus-within) {
+    &:focus-within .app-dock {
         transform: translateX(0);
         opacity: 1;
+        pointer-events: auto;
         gap: var(--space-3);
         padding: var(--space-3);
         box-shadow: var(--shadow-lift), var(--shadow-glow);
     }
 
     &:hover .app-dock .app-dock__dot,
-    &:focus-within .app-dock .app-dock__dot,
-    &:has(.app-dock:hover) .app-dock .app-dock__dot,
-    &:has(.app-dock:focus-within) .app-dock .app-dock__dot {
+    &:focus-within .app-dock .app-dock__dot {
         width: 0.55rem;
         height: 0.55rem;
     }
@@ -254,7 +251,7 @@ html:not([data-theme="dark"]) .app-background::after {
     background: var(--color-glass-2-strong);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(12px);
-    pointer-events: auto;
+    pointer-events: none;
     opacity: 0.88;
     transform: translateX(calc(100% - 0.5rem));
     transition:
@@ -265,11 +262,8 @@ html:not([data-theme="dark"]) .app-background::after {
         box-shadow 0.24s ease;
 
     .app-dock-ribbon:hover &,
-    .app-dock-ribbon:focus-within &,
-    .app-dock-ribbon:has(&:hover),
-    .app-dock-ribbon:has(&:focus-within) {
-        transform: translateX(0);
-        opacity: 1;
+    .app-dock-ribbon:focus-within & {
+        pointer-events: auto;
     }
 
     &__item {
