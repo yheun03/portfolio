@@ -289,6 +289,22 @@
 }
 
 @media (max-width: #{$bp-max-narrow}) {
+    .surface-card,
+    .feature-card,
+    .base-card {
+        padding: clamp(1rem, 4.8vw, var(--card-padding-lg));
+    }
+
+    .feature-card {
+        min-height: auto;
+
+        &__title,
+        &__description {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+        }
+    }
+
     .feature-grid {
         grid-template-columns: minmax(0, 1fr);
 
@@ -303,6 +319,12 @@
 }
 
 @media (max-width: 767px) {
+    .surface-card--metrics {
+        display: grid;
+        gap: var(--space-5);
+        align-items: start;
+    }
+
     .flow-steps {
         grid-template-columns: minmax(0, 1fr);
     }

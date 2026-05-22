@@ -323,11 +323,24 @@
         min-height: auto;
     }
 
+    .app-header__brand {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .app-header__actions {
+        flex: 0 0 auto;
+        gap: clamp(0.35rem, 1.8vw, #{$space-3});
+    }
+
     .app-header__language-toggle,
     .app-header__theme-toggle,
     .app-header__menu-btn {
         min-width: auto;
-        padding: $space-3 $space-4;
+        padding: $space-3 clamp(0.72rem, 2.7vw, #{$space-4});
     }
 
     .app-lnb {
@@ -342,6 +355,24 @@
             border-radius: $radius-pill;
             padding-inline: $space-6;
         }
+    }
+}
+
+@media (max-width: 420px) {
+    .app-header {
+        gap: $space-2;
+    }
+
+    .app-header__brand {
+        font-size: var(--font-size-body-1);
+    }
+
+    .app-header__language-toggle,
+    .app-header__theme-toggle,
+    .app-header__menu-btn {
+        min-height: calc(var(--size-touch) - 0.25rem);
+        padding-inline: 0.72rem;
+        font-size: var(--font-size-xs);
     }
 }
 

@@ -30,11 +30,7 @@
 
                 <div class="gallery-editorial__entry-media"
                     :class="{ 'gallery-editorial__entry-media--long': hasLongCaptureMedia }">
-                    <span v-if="isPlaceholderCover" class="gallery-card__empty-capture" role="img"
-                        :aria-label="emptyCaptureLabel">
-                        <span class="gallery-card__empty-capture-kicker">{{ emptyCaptureKicker }}</span>
-                        <span class="gallery-card__empty-capture-copy">{{ emptyCaptureCopy }}</span>
-                    </span>
+                    <GalleryEmptyCapture v-if="isPlaceholderCover" />
                     <span v-else class="gallery-editorial__entry-screen">
                         <img :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
                             :loading="imageLoading" decoding="async" :fetchpriority="imageFetchPriority" width="1200"
@@ -45,11 +41,7 @@
         </template>
         <template v-else>
             <div class="gallery-card__media" :class="{ 'gallery-card__media--long': hasLongCaptureMedia }">
-                <span v-if="isPlaceholderCover" class="gallery-card__empty-capture" role="img"
-                    :aria-label="emptyCaptureLabel">
-                    <span class="gallery-card__empty-capture-kicker">{{ emptyCaptureKicker }}</span>
-                    <span class="gallery-card__empty-capture-copy">{{ emptyCaptureCopy }}</span>
-                </span>
+                <GalleryEmptyCapture v-if="isPlaceholderCover" />
                 <span v-else class="gallery-card__screen">
                     <img :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
                         :loading="imageLoading" decoding="async" :fetchpriority="imageFetchPriority" width="1200"
@@ -76,7 +68,9 @@
 import type { WorkItem } from '@data/works';
 import type { GalleryViewMode } from '@composables/gallery/useGallery';
 import { galleryEntryId } from '@composables/gallery/useNavigationRestore';
+import { isPlaceholderCapture } from '@utils/capturePlaceholder';
 import { getWorkStartYear } from '@utils/workSort';
+import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = withDefaults(
     defineProps<{
@@ -109,26 +103,16 @@ const entryYearSuffix = computed(() => {
     return year ? year.slice(-2) : '';
 });
 
-const coverSrc = computed(() => resolveAppPath(props.work.captures[0] ?? '/images/projects/placeholder.svg'));
-const hasLongCaptureMedia = computed(() => /\/(thumbnail-(?:pc|mb)|modal-\d+)\.png$/i.test(props.work.captures[0] ?? ''));
-const isPlaceholderCover = computed(() => {
-    const src = props.work.captures[0] ?? '';
-    return !src || /placeholder/i.test(src);
-});
+const coverCapture = computed(() => props.work.captures[0] ?? '');
+const coverSrc = computed(() => resolveAppPath(coverCapture.value || '/images/projects/placeholder.svg'));
+const hasLongCaptureMedia = computed(() => /\/(thumbnail-(?:pc|mb)|modal-\d+)\.png$/i.test(coverCapture.value));
+const isPlaceholderCover = computed(() => isPlaceholderCapture(coverCapture.value));
 
 const coverAlt = computed(() => {
     if (isPlaceholderCover.value) return '';
     const title = pick(props.work.title);
     return locale.value === 'ko' ? `${title} 캡처` : `Screenshot: ${title}`;
 });
-
-const emptyCaptureKicker = computed(() => (locale.value === 'ko' ? '이미지 준비 중' : 'Image pending'));
-const emptyCaptureCopy = computed(() => (
-    locale.value === 'ko'
-        ? '대신 설명은 먼저 열어뒀어요.'
-        : 'The context is already open.'
-));
-const emptyCaptureLabel = computed(() => `${emptyCaptureKicker.value}. ${emptyCaptureCopy.value}`);
 
 const imageLoading = computed(() => (props.priority ? 'eager' : 'lazy'));
 const imageFetchPriority = computed(() => (props.priority ? 'high' : 'low'));

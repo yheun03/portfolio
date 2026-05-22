@@ -12,6 +12,17 @@
 
 @font-face {
     font-family: "Pretendard";
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    src:
+        local("Pretendard Black"),
+        local("Pretendard ExtraBold"),
+        url("../../font/Pretendard/woff2/Pretendard-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Pretendard";
     font-weight: 700;
     font-style: normal;
     font-display: swap;

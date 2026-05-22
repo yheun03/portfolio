@@ -1097,6 +1097,16 @@ html[data-shell-theme="gallery"] .portfolio-page {
             max-width: none;
             height: auto;
         }
+
+        &--empty {
+            border-style: dashed;
+            background: transparent;
+        }
+
+        .gallery-card__empty-capture {
+            border: 0;
+            border-radius: 0;
+        }
     }
 
     &.gallery-page--editorial &__body {
