@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: var(--editorial-year-col) minmax(0, 1fr);
     gap: clamp(1.25rem, 3.5vw, 3rem);
-    align-items: start;
+    align-items: stretch;
 
     &--flat {
         grid-template-columns: minmax(0, 1fr);
@@ -29,6 +29,7 @@
 }
 
 .editorial-year-era__year {
+    align-self: stretch;
     width: var(--editorial-year-col);
     min-width: var(--editorial-year-col);
     max-width: var(--editorial-year-col);
@@ -45,6 +46,7 @@
 }
 
 .editorial-year-era__entries {
+    align-self: start;
     display: grid;
     gap: var(--editorial-year-entries-gap);
     min-width: 0;
