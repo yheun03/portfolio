@@ -1,0 +1,1 @@
+import{g as e,p as l}from"#entry";function a(){const{locale:o}=e();return l(()=>({close:o.value==="ko"?"닫기":"Close",closeModalAria:o.value==="ko"?"상세 모달 닫기":"Close detail modal",role:o.value==="ko"?"역할":"Role",contributions:o.value==="ko"?"내가 한 일":"My Contributions",results:o.value==="ko"?"성과":"Results",points:o.value==="ko"?"포인트":"Key Points"}))}export{a as u};
