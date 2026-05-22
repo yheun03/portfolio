@@ -327,6 +327,19 @@ $font-presets: (
     --gallery-frame: color-mix(in srgb, var(--gallery-muted) 36%, transparent);
     --gallery-active-fg: #fff8eb;
     --gallery-active-bg: var(--gallery-accent);
+
+    /* Shell chrome (skip-link 등) — `data-shell-theme`로 페이지별 전환 */
+    --shell-skip-bg: var(--color-surface-strong);
+    --shell-skip-border: var(--color-border);
+    --shell-skip-fg: var(--color-text);
+    --shell-skip-outline: var(--color-primary);
+}
+
+html[data-shell-theme="gallery"] {
+    --shell-skip-bg: color-mix(in srgb, var(--gallery-bg-elevated) 72%, var(--gallery-bg));
+    --shell-skip-border: color-mix(in srgb, var(--gallery-muted) 48%, transparent);
+    --shell-skip-fg: var(--gallery-cream);
+    --shell-skip-outline: var(--gallery-accent);
 }
 
 @media (max-width: #{$bp-max-narrow}) {
