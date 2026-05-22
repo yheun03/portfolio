@@ -415,7 +415,21 @@ usePortfolioSeo(() => ({
 
 @media (max-width: 767px) {
     .token-page {
-        padding-inline: var(--space-7);
+        padding-inline: max(var(--space-5), env(safe-area-inset-left)) max(var(--space-5), env(safe-area-inset-right));
+    }
+
+    .token-hero h1,
+    .token-section__head h2 {
+        overflow-wrap: anywhere;
+    }
+
+    .token-hero__actions {
+        display: grid;
+
+        .base-button {
+            width: 100%;
+            justify-content: center;
+        }
     }
 
     .token-table__row,
@@ -425,6 +439,16 @@ usePortfolioSeo(() => ({
 
     .token-table__row {
         gap: var(--space-2);
+        padding: var(--space-4);
+    }
+
+    .type-item__sample {
+        overflow-wrap: anywhere;
+    }
+
+    .shape-demo,
+    .shape-demo--pill {
+        width: min(100%, 12rem);
     }
 }
 </style>
