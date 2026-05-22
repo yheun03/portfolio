@@ -286,16 +286,23 @@ html[data-shell-theme="gallery"] .portfolio-page {
 .gallery-card--grid {
     display: grid;
     overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
+    border: 1px solid var(--gallery-frame);
     border-radius: var(--radius-xl);
-    background: color-mix(in srgb, var(--color-glass-2-strong) 88%, transparent);
-    box-shadow: var(--shadow-soft), var(--shadow-glow);
+    background:
+        radial-gradient(ellipse 78% 44% at 92% 8%, color-mix(in srgb, var(--gallery-accent) 8%, transparent), transparent 58%),
+        color-mix(in srgb, var(--gallery-bg-elevated) 88%, var(--gallery-bg));
+    box-shadow:
+        inset 0 1px 0 color-mix(in srgb, var(--gallery-cream) 7%, transparent),
+        0 18px 42px color-mix(in srgb, var(--gallery-muted) 20%, transparent);
     text-decoration: none;
     color: inherit;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
     &:hover {
-        box-shadow: var(--shadow-lift), var(--shadow-ring);
+        border-color: color-mix(in srgb, var(--gallery-accent) 44%, var(--gallery-frame));
+        box-shadow:
+            inset 0 1px 0 color-mix(in srgb, var(--gallery-cream) 8%, transparent),
+            0 24px 56px color-mix(in srgb, var(--gallery-muted) 28%, transparent);
         transform: translateY(-4px);
     }
 
@@ -309,15 +316,14 @@ html[data-shell-theme="gallery"] .portfolio-page {
         outline-offset: 3px;
         border-color: var(--gallery-accent);
         box-shadow:
-            var(--shadow-lift),
             0 0 0 3px color-mix(in srgb, var(--gallery-accent) 42%, transparent),
-            0 22px 48px color-mix(in srgb, var(--grayscale-800) 22%, transparent);
+            0 24px 58px color-mix(in srgb, var(--gallery-muted) 34%, transparent),
+            inset 0 1px 0 color-mix(in srgb, var(--gallery-cream) 9%, transparent);
         transform: translateY(-4px);
     }
 
     .gallery-card__media {
         aspect-ratio: 1200 / 675;
-        // background: color-mix(in srgb, var(--color-surface) 80%, var(--color-bg));
 
         .gallery-card__screen {
             display: block;
@@ -355,7 +361,7 @@ html[data-shell-theme="gallery"] .portfolio-page {
 
     .gallery-card__meta {
         margin: 0;
-        color: var(--color-text-muted);
+        color: var(--gallery-muted);
         font-family: var(--font-mono);
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight-semibold);
@@ -374,7 +380,7 @@ html[data-shell-theme="gallery"] .portfolio-page {
 
     .gallery-card__excerpt {
         margin: 0;
-        color: var(--color-text-muted);
+        color: var(--gallery-body-soft);
         font-size: var(--font-size-sm);
         line-height: 1.55;
     }
@@ -389,9 +395,10 @@ html[data-shell-theme="gallery"] .portfolio-page {
 
         li {
             padding: var(--space-1) var(--space-3);
-            border: 1px solid var(--color-border);
+            border: 1px solid color-mix(in srgb, var(--gallery-muted) 30%, transparent);
             border-radius: $radius-pill;
-            background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+            background: color-mix(in srgb, var(--gallery-bg-elevated) 68%, transparent);
+            color: var(--gallery-muted);
             font-size: var(--font-size-xs);
             font-weight: var(--font-weight-semibold);
         }
@@ -403,6 +410,41 @@ html[data-shell-theme="gallery"] .portfolio-page {
         letter-spacing: var(--tracking-label);
         text-transform: uppercase;
     }
+}
+
+.gallery-card__empty-capture {
+    display: grid;
+    place-content: center;
+    gap: 0.55rem;
+    width: 100%;
+    min-height: 100%;
+    aspect-ratio: 16 / 9;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border: 1px dashed color-mix(in srgb, var(--gallery-muted) 35%, transparent);
+    border-radius: inherit;
+    color: var(--gallery-body-soft);
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 8%, transparent) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in srgb, var(--gallery-bg-elevated) 86%, transparent), color-mix(in srgb, var(--gallery-bg) 92%, transparent));
+    background-size: 3rem 100%, auto;
+    text-align: center;
+}
+
+.gallery-card__empty-capture-kicker {
+    color: var(--gallery-accent);
+    font-size: clamp(#{$gallery-text-min}, 1.4vw, #{$gallery-text-ui});
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.gallery-card__empty-capture-copy {
+    max-width: 22ch;
+    color: var(--gallery-body-soft);
+    font-size: clamp(#{$gallery-text-min}, 1.7vw, 0.95rem);
+    font-weight: 600;
+    line-height: 1.55;
 }
 
 /* ----- Editorial sports poster layout ----- */
