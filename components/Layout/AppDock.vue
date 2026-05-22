@@ -9,7 +9,8 @@
                     <span class="app-dock__label">{{ link.label }}</span>
                 </NuxtLink>
                 <a v-else class="app-dock__item" :class="{ 'app-dock__item--active': isLinkActive(link.href) }"
-                    :href="link.href" :aria-current="isLinkActive(link.href) ? 'page' : undefined">
+                    :href="link.href" :aria-current="isLinkActive(link.href) ? 'page' : undefined"
+                    @click="onHashLinkClick($event, link.href)">
                     <span class="app-dock__dot" aria-hidden="true" />
                     <span class="app-dock__label">{{ link.label }}</span>
                 </a>
@@ -19,6 +20,8 @@
 </template>
 
 <script setup lang="ts">
+import { scrollToSectionHash } from '@utils/sectionAnchorScroll';
+
 const { locale } = useLocale();
 const route = useRoute();
 const { isAppRoute } = useAppPathResolver();
@@ -28,6 +31,21 @@ const props = defineProps<{
     activeId: string;
     activePath?: string;
 }>();
+
+const router = useRouter();
+
+async function onHashLinkClick(event: MouseEvent, href: string) {
+    if (!href.startsWith('#') || !import.meta.client) return;
+
+    event.preventDefault();
+
+    if (route.hash === href) {
+        scrollToSectionHash(href);
+        return;
+    }
+
+    await router.push({ hash: href });
+}
 
 function isLinkActive(href: string) {
     if (href.startsWith('#')) {
