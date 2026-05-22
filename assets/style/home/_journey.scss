@@ -1,0 +1,257 @@
+@use "../abstracts/tokens" as *;
+/* Portfolio journey refresh */
+.section.section--journey {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 8vw, 6rem);
+    align-items: stretch;
+    grid-template-columns: unset;
+}
+
+.journey__head {
+    display: grid;
+    gap: var(--space-section-gap);
+    max-width: min(40rem, 100%);
+    text-align: start;
+
+    .section-title {
+        align-items: flex-start;
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+    .section-title__description {
+        margin-inline: 0;
+        max-width: 42ch;
+    }
+}
+
+.journey__flow {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 4rem);
+    min-width: 0;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.journey__flow-header {
+    display: grid;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    align-items: end;
+
+    @media (min-width: 720px) {
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: clamp(1.25rem, 3vw, 2rem);
+    }
+}
+
+.journey__kicker {
+    margin: 0;
+    @include font(display-4);
+
+    @media (min-width: 720px) {
+        text-align: end;
+    }
+}
+
+.journey__toolbar {
+    display: grid;
+    gap: var(--space-2);
+    min-width: min(100%, 18rem);
+    justify-self: start;
+}
+
+.journey__control-label {
+    display: block;
+    margin: 0;
+    color: var(--color-text-muted);
+    @include font(label, $font-weight-bold);
+}
+
+.journey__segments {
+    display: grid;
+    grid-template-columns: repeat(var(--segment-count, 2), minmax(0, 1fr));
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
+}
+
+.journey__segment {
+    min-height: 2.65rem;
+    padding: var(--space-2) var(--space-3);
+    border: 0;
+    border-radius: calc(var(--radius-md) - 2px);
+    background: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover:not(.journey__segment--active) {
+        background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 1px;
+    }
+
+    &--active {
+        color: var(--color-on-accent, var(--grayscale-0));
+        background: var(--color-primary);
+        box-shadow: var(--shadow-ring);
+    }
+}
+
+.journey__chapters {
+    display: grid;
+    gap: 0;
+}
+
+.journey__chapter {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.36fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    padding-top: clamp(2rem, 4vw, 3rem);
+
+    &:not(:first-of-type) {
+        margin-top: clamp(0.5rem, 2vw, 1rem);
+    }
+
+    &--temp .journey__chapter-card {
+        background: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface));
+    }
+}
+
+.journey__chapter-card {
+    position: sticky;
+    top: calc(var(--layout-header-height) + 1.25rem);
+    display: grid;
+    gap: clamp(0.65rem, 1.5vw, 1rem);
+    align-content: start;
+    min-width: 0;
+}
+
+.journey__chapter-index {
+    margin: 0;
+    color: var(--color-primary);
+    @include font(label, $font-weight-bold);
+}
+
+.journey__temp-label {
+    margin: 0;
+    @include font(label, $font-weight-medium);
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-primary) 72%, var(--color-text-muted));
+}
+
+.journey__chapter-title {
+    margin: 0;
+    @include font(display-4);
+    text-wrap: balance;
+}
+
+.journey__chapter-meta {
+    margin: 0;
+    color: var(--color-text-muted);
+    @include font(body-2, $font-weight-semibold);
+}
+
+.journey__chapter-intro {
+    margin: clamp(0.35rem, 1vw, 0.75rem) 0 0;
+    color: var(--color-text-muted);
+    @include font(body-1);
+    text-wrap: pretty;
+}
+
+.journey__chapter-roles {
+    display: grid;
+    gap: var(--space-2);
+    padding-left: 1.1rem;
+    margin: clamp(0.5rem, 1.5vw, 1rem) 0 0;
+
+    li {
+        color: var(--color-text);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-body);
+    }
+}
+
+.journey__clients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: var(--space-4) 0 0;
+    list-style: none;
+
+    li {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.35rem 0.75rem;
+        border: 1px solid color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--color-primary) 14%, var(--color-surface));
+        color: var(--color-text);
+        @include font(chip, $font-weight-bold);
+        line-height: 1.25;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        box-shadow: 0 1px 0 color-mix(in srgb, var(--color-surface) 88%, var(--color-primary));
+    }
+}
+
+/* 소속순 — editorial entries와 동일한 목록 레일 */
+.journey__chapter .journey__steps {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 1.75rem);
+    padding: 0;
+    padding-inline-start: clamp(0.85rem, 2vw, 1.1rem);
+    margin: 0;
+    border-inline-start: 2px solid color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
+    list-style: none;
+}
+
+.timeline-item {
+    display: grid;
+    gap: 0.4rem;
+    padding: 0;
+    list-style: none;
+
+    &__period {
+        margin: 0;
+        color: var(--color-primary);
+        @include font(label, $font-weight-bold);
+    }
+
+    &__title {
+        margin: 0;
+        @include font(title-1, $font-weight-black, $line-height: $line-height-heading);
+    }
+
+    &__affiliation {
+        margin: 0;
+        color: var(--color-text-muted);
+        @include font(label, $font-weight-semibold);
+    }
+
+    &__description {
+        margin: 0;
+        color: var(--color-text-muted);
+        @include font(body-2);
+        text-wrap: pretty;
+    }
+}
+

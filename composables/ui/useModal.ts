@@ -15,6 +15,8 @@ export interface UseModalOptions {
  */
 export function useModal(options: UseModalOptions) {
     const { isOpen, onClose, containerRef, initialFocusRef } = options;
+    let scrollY = 0;
+    let scrollLocked = false;
 
     const handleKeydown = (event: KeyboardEvent) => {
         if (!isOpen.value) return;
@@ -44,22 +46,59 @@ export function useModal(options: UseModalOptions) {
         }
     };
 
+    const preventOutsideScroll = (event: WheelEvent | TouchEvent) => {
+        if (!isOpen.value) return;
+        const target = event.target;
+        if (target instanceof Node && containerRef.value?.contains(target)) return;
+        event.preventDefault();
+    };
+
+    const lockScroll = () => {
+        if (scrollLocked) return;
+        scrollLocked = true;
+        scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+    };
+
+    const unlockScroll = () => {
+        if (!scrollLocked) return;
+        scrollLocked = false;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo({ top: scrollY, behavior: 'instant' });
+    };
+
     watch(isOpen, (open) => {
         if (!import.meta.client) return;
-        document.body.style.overflow = open ? 'hidden' : '';
         if (open) {
+            lockScroll();
             nextTick(() => initialFocusRef?.value?.focus());
+        } else {
+            unlockScroll();
         }
     });
 
     onMounted(() => {
         if (!import.meta.client) return;
         window.addEventListener('keydown', handleKeydown);
+        window.addEventListener('wheel', preventOutsideScroll, { passive: false });
+        window.addEventListener('touchmove', preventOutsideScroll, { passive: false });
     });
 
     onBeforeUnmount(() => {
         if (!import.meta.client) return;
-        document.body.style.overflow = '';
+        unlockScroll();
         window.removeEventListener('keydown', handleKeydown);
+        window.removeEventListener('wheel', preventOutsideScroll);
+        window.removeEventListener('touchmove', preventOutsideScroll);
     });
 }

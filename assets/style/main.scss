@@ -3,20 +3,28 @@
 
 @use "base/reset";
 @use "base/skeleton";
-
-@use "components/buttons";
-@use "components/cards";
-@use "components/labels";
-@use "components/sections";
-@use "components/editorial-year";
+@use "base/buttons";
+@use "base/labels";
+@use "base/sections";
+@use "base/editorial-year";
 
 @use "layout/header";
 @use "layout/footer";
 @use "layout/shell";
 
-@use "pages/home";
-@use "pages/error";
-@use "components/typography";
-@use "pages/home-refresh";
+@use "work/cards";
+@use "work/home-cards";
+
+@use "motion/typography";
+
+@use "home/foundation";
+@use "home/hero";
+@use "home/about";
+@use "home/toolbox-highlights";
+@use "home/journey";
+@use "home/contact";
+@use "home/responsive";
 
 @use "gallery/archive";
+
+@use "pages/error";

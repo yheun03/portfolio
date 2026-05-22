@@ -26,6 +26,11 @@ body {
     overflow-x: clip;
 }
 
+html[data-shell-theme="gallery"],
+html[data-shell-theme="gallery"] body {
+    overflow-x: visible;
+}
+
 /* Typography */
 body {
     @include font(body-1);

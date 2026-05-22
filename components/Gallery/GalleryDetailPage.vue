@@ -125,12 +125,7 @@ const { goBack } = useNavigationRestore(config.basePath);
 const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 const capturesTitleId = `gallery-${props.variant}-captures`;
 const overviewTitleId = `gallery-${props.variant}-overview`;
-
-const labels = computed(() => ({
-    contributions: locale.value === 'ko' ? '내가 한 일' : 'My Contributions',
-    results: locale.value === 'ko' ? '성과' : 'Results',
-    points: locale.value === 'ko' ? '포인트' : 'Key Points',
-}));
+const labels = useWorkDetailLabels();
 
 const detailKicker = computed(() =>
     locale.value === 'ko'

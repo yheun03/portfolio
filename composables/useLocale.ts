@@ -1,11 +1,20 @@
 import ko from '@i18n/ko.json';
 import en from '@i18n/en.json';
-import { useLocaleStore } from '@stores/appPreferenceStore';
+import { useLocaleStore, type Locale } from '@stores/appPreferenceStore';
 
-const messages: Record<'ko' | 'en', Record<string, any>> = { ko, en };
+type LocaleMessageValue = string | { readonly [key: string]: LocaleMessageValue };
+type LocaleMessages = Record<string, LocaleMessageValue>;
+type LocalizedValue<T> = Readonly<Record<Locale, T>>;
 
-const getByPath = (obj: Record<string, any>, path: string): string => {
-    return path.split('.').reduce((acc: any, key: string) => acc?.[key], obj) ?? path;
+const messages = { ko, en } satisfies Record<Locale, LocaleMessages>;
+
+const getByPath = (obj: LocaleMessages, path: string): string => {
+    const value = path.split('.').reduce<LocaleMessageValue | undefined>((acc, key) => {
+        if (!acc || typeof acc === 'string') return undefined;
+        return acc[key];
+    }, obj);
+
+    return typeof value === 'string' ? value : path;
 };
 
 export const useLocale = () => {
@@ -13,7 +22,7 @@ export const useLocale = () => {
     const locale = computed(() => store.current);
 
     const t = (key: string) => getByPath(messages[locale.value], key);
-    const pick = <T extends Record<string, any>>(record: T) => record[locale.value];
+    const pick = <T>(record: LocalizedValue<T>) => record[locale.value];
 
     return {
         locale,
