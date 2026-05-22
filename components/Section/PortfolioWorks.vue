@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-                }}</span>
+            }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -13,7 +13,7 @@
         <div class="works__title-col">
             <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
             <!-- 카테고리: PC는 LNB 세로 / 좁은 화면은 가로 칩 레일 -->
-            <div class="works__filters tab-list tab-rail" role="tablist"
+            <div class="works__filters tab-list tab-list--rail" role="tablist"
                 :aria-orientation="isNarrow ? 'horizontal' : 'vertical'"
                 :aria-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'">
                 <button v-for="category in workCategories" :key="category.key" :id="`works-tab-${category.key}`"

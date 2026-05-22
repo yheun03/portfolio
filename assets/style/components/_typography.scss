@@ -1,0 +1,46 @@
+@use "../abstracts/tokens" as *;
+
+/* Portfolio typography */
+.typo-word {
+    display: inline-block;
+    margin-inline: 0.06em;
+    padding-inline: 0.02em;
+    cursor: default;
+    outline: none;
+    transform-origin: left bottom;
+    transition:
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease,
+        opacity 0.35s ease,
+        letter-spacing 0.42s ease;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+}
+
+[data-animate] .typo-word {
+    opacity: 0;
+    transform: translate3d(0, 0.45em, 0);
+}
+
+[data-animate].animate--visible .typo-word {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition:
+        opacity 0.55s ease,
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease,
+        letter-spacing 0.42s ease;
+    transition-delay: calc(0.08s + (var(--word-index, 0) * 0.045s));
+}
+
+.typo-word--active,
+.typo-word:hover,
+.typo-word:focus-visible {
+    color: var(--color-primary);
+    letter-spacing: 0.015em;
+    transform: translate3d(0, -0.04em, 0) scale(1.02);
+}

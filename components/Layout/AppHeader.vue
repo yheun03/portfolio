@@ -23,10 +23,10 @@
             </template>
         </nav>
         <div class="app-header__actions">
-            <BaseButton class="language-toggle" variant="ghost" :label="locale.toUpperCase()"
+            <BaseButton class="app-header__language-toggle" variant="ghost" :label="locale.toUpperCase()"
                 :aria-label="languageToggleAriaLabel" @click="toggleLocale" />
-            <BaseButton class="theme-toggle" variant="ghost" label="Theme" :aria-label="themeToggleAriaLabel"
-                :title="themeToggleTitle" @click="toggleTheme" />
+            <BaseButton class="app-header__theme-toggle" variant="ghost" label="Theme"
+                :aria-label="themeToggleAriaLabel" :title="themeToggleTitle" @click="toggleTheme" />
             <button type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
@@ -34,8 +34,8 @@
                 {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
             </button>
         </div>
-        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath"
-            :active-id="activeId" @close="menuOpen = false" />
+        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId"
+            @close="menuOpen = false" />
     </header>
 </template>
 
@@ -57,8 +57,8 @@ const themeToggleAriaLabel = computed(() =>
             ? "라이트 모드로 전환"
             : "Switch to light mode"
         : locale.value === "ko"
-          ? "다크 모드로 전환"
-          : "Switch to dark mode"
+            ? "다크 모드로 전환"
+            : "Switch to dark mode"
 );
 
 const themeToggleTitle = computed(() =>
@@ -67,8 +67,8 @@ const themeToggleTitle = computed(() =>
             ? "라이트 모드 전환"
             : "Switch to light mode"
         : locale.value === "ko"
-          ? "다크 모드 전환"
-          : "Switch to dark mode"
+            ? "다크 모드 전환"
+            : "Switch to dark mode"
 );
 
 const props = withDefaults(

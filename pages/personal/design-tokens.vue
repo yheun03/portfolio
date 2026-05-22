@@ -3,7 +3,7 @@
         :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero">
-                <p class="technical-label">2026 Portfolio Design Tokens</p>
+                <p class="base-label base-label--technical">2026 Portfolio Design Tokens</p>
                 <h1 id="token-page-title">디자인 토큰 정리</h1>
                 <p>
                     2026 포트폴리오에서 반복해서 쓰는 색, 여백, 타이포그래피, 형태 값을 목적별 토큰으로
@@ -17,7 +17,7 @@
 
             <section class="token-section" aria-labelledby="color-token-title">
                 <div class="token-section__head">
-                    <p class="technical-label">Color</p>
+                    <p class="base-label base-label--technical">Color</p>
                     <h2 id="color-token-title">색상 토큰</h2>
                     <p>Primitive는 색상 원재료, Semantic은 실제 UI 역할을 나타냅니다.</p>
                 </div>
@@ -35,7 +35,7 @@
 
             <section class="token-section" aria-labelledby="space-token-title">
                 <div class="token-section__head">
-                    <p class="technical-label">Spacing</p>
+                    <p class="base-label base-label--technical">Spacing</p>
                     <h2 id="space-token-title">여백 토큰</h2>
                     <p>칩과 라벨은 12px~14px 최소 단위를 지키고, 화면·섹션·카드 여백은 PC/TB/MB 순으로 밀도를 낮춥니다.</p>
                 </div>
@@ -55,7 +55,7 @@
 
             <section class="token-section" aria-labelledby="type-token-title">
                 <div class="token-section__head">
-                    <p class="technical-label">Typography</p>
+                    <p class="base-label base-label--technical">Typography</p>
                     <h2 id="type-token-title">폰트 토큰</h2>
                     <p>폰트는 Display가 화면의 리듬을 잡고, Title과 Body가 정보 밀도를 조절하며, Label/Chip은 UI 최소 단위를 지킵니다.</p>
                 </div>
@@ -73,7 +73,7 @@
 
             <section class="token-section" aria-labelledby="shape-token-title">
                 <div class="token-section__head">
-                    <p class="technical-label">Shape & Effect</p>
+                    <p class="base-label base-label--technical">Shape & Effect</p>
                     <h2 id="shape-token-title">형태와 효과 토큰</h2>
                     <p>라운드와 그림자는 컴포넌트의 위계, 터치 영역, 포커스 상태를 일관되게 맞춥니다.</p>
                 </div>
@@ -197,8 +197,8 @@ usePortfolioSeo(() => ({
     letter-spacing: var(--tracking-tight);
 }
 
-.token-hero p:not(.technical-label),
-.token-section__head p:not(.technical-label) {
+.token-hero p:not(.base-label--technical),
+.token-section__head p:not(.base-label--technical) {
     max-width: 64ch;
     color: var(--color-text-muted);
 }

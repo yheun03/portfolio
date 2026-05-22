@@ -1,10 +1,77 @@
 const data = [
     {
+        id: 'jonsoft-framework',
+        category: 'solution',
+        title: {
+            ko: '조앤소프트 프레임워크 구축',
+            en: 'JO&SOFT Frontend Framework',
+        },
+        period: '2026.02~',
+        type: {
+            ko: '내부 프로젝트 / 프레임워크',
+            en: 'Internal / Framework',
+        },
+        role: {
+            ko: '퍼블리싱 100%, 프론트엔드 구조 설계 70%, 디자인 시스템 구축 70%',
+            en: 'Publishing 100%, frontend architecture 70%, design system 70%',
+        },
+        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'JavaScript', 'SCSS', 'Pinia', 'Axios', 'Vite', 'Chart.js', 'vue-chartjs', 'AG Grid', 'flatpickr', 'noUiSlider'],
+        introduction: {
+            ko: '사내 프로젝트의 개발 생산성과 UI 품질을 높이기 위해 Nuxt 3 기반 프론트엔드 프레임워크와 재사용 가능한 UI 컴포넌트, SCSS 토큰 구조를 구축했습니다.',
+            en: 'Built a Nuxt 3 frontend framework, reusable UI components, and SCSS token architecture to improve internal project productivity and UI quality.',
+        },
+        myWorks: [
+            {
+                ko: '자동 라우팅, 컴포넌트 자동 import, Pinia 상태 관리, Axios API 플러그인 구조 정리',
+                en: 'Organized auto routing, auto component imports, Pinia state management, and Axios API plugin structure',
+            },
+            {
+                ko: 'AppButton, AppInput, AppSelect, AppDatePicker, AppProgress, Chart, AG Grid 컴포넌트 제작',
+                en: 'Built AppButton, AppInput, AppSelect, AppDatePicker, AppProgress, Chart, and AG Grid components',
+            },
+            {
+                ko: '상태, 사이즈, disabled, readonly, focus, error 등 실무 케이스 반영',
+                en: 'Covered production states such as size, disabled, readonly, focus, and error',
+            },
+            {
+                ko: 'BEM과 디자인 토큰 기반 SCSS 구조 설계',
+                en: 'Designed SCSS architecture based on BEM and design tokens',
+            },
+        ],
+        achievements: [
+            {
+                ko: '프로젝트마다 반복 구축하던 기본 UI와 구조를 프레임워크화',
+                en: 'Frameworkized the basic UI and structure that had been rebuilt per project',
+            },
+            {
+                ko: '컴포넌트, API 구조, 페이지 예제를 함께 정리해 협업 가능한 표준 구조 구축',
+                en: 'Built a collaborative standard with components, API structure, and example pages',
+            },
+        ],
+        points: [
+            {
+                ko: 'Nuxt 3 프레임워크',
+                en: 'Nuxt 3 framework',
+            },
+            {
+                ko: '디자인 시스템',
+                en: 'Design system',
+            },
+        ],
+        pin: true,
+        duration: {
+            ko: '진행 중',
+            en: 'Ongoing',
+        },
+        captures: ['/images/projects/placeholder.svg'],
+        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS'],
+    },
+    {
         id: 'infra',
         category: 'solution',
         title: {
-            ko: '자사 인프라 구축',
-            en: 'In-house Infrastructure',
+            ko: '자사 개발 인프라 및 퍼블리싱 표준화',
+            en: 'In-house Development Infra & Publishing Standardization',
         },
         period: '2026.02~',
         type: {
@@ -12,36 +79,40 @@ const data = [
             en: 'Internal Project',
         },
         role: {
-            ko: '솔루션 구조 재구축, 개발 방법론 표준화',
-            en: 'Solution restructuring and development workflow standardization',
+            ko: '퍼블리싱 표준화 80%, UI 구조 개선 70%, 문서화 50%',
+            en: 'Publishing standardization 80%, UI structure 70%, documentation 50%',
         },
-        tech: ['Vue 3', 'SCSS', 'Pinia'],
+        tech: ['GitHub', 'Visual Studio Code', 'Cursor', 'Figma', 'Vue 3', 'Nuxt 3', 'SCSS', 'JavaScript', 'TypeScript'],
         introduction: {
-            ko: '무분별했던 개발 방법론과 납품 구조를 정리해 동일한 퀄리티로 제공 가능한 자사 솔루션 기반을 재구축하고 있습니다.',
-            en: 'Restructuring in-house solution foundations by organizing scattered development methods and delivery structures so consistent quality can be shipped.',
+            ko: '사내 프로젝트의 퍼블리싱 품질과 개발 효율을 높이기 위해 공통 UI, SCSS 구조, 컴포넌트 네이밍, 폴더 구조, API 연동 방식을 표준화했습니다.',
+            en: 'Standardized shared UI, SCSS architecture, component naming, folder structure, and API integration patterns to improve internal publishing quality and development efficiency.',
         },
         myWorks: [
             {
-                ko: '개발/퍼블리싱 방식 표준화 참여',
-                en: 'Standardized dev/publishing workflow',
+                ko: '버튼, 입력폼, 셀렉트, 달력, 프로그레스, 차트, 그리드, LNB, 레이아웃 구조 공통화',
+                en: 'Standardized buttons, forms, selects, date pickers, progress UI, charts, grids, LNB, and layout structures',
             },
             {
-                ko: '공통 구조 정리',
-                en: 'Organized shared architecture',
+                ko: '실무 적용 가능한 예제 페이지 제작',
+                en: 'Built production-ready example pages',
             },
             {
-                ko: '납품 품질 기준 정리',
-                en: 'Defined delivery quality baseline',
+                ko: 'SCSS 토큰, BEM 네이밍, 컴포넌트 단위 스타일 관리 방식 정리',
+                en: 'Organized SCSS tokens, BEM naming, and component-level style management',
             },
             {
-                ko: '재사용 가능한 UI 체계 개선',
-                en: 'Improved reusable UI system',
+                ko: '프로젝트별 반복 UI를 재사용 가능한 형태로 구성',
+                en: 'Turned repeated project UI into reusable structures',
             },
         ],
         achievements: [
             {
-                ko: '동일한 납품 품질을 위한 구조 기준 정립 중',
-                en: 'Establishing structural standards for consistent delivery quality',
+                ko: '신규 프로젝트 착수 시 기본 레이아웃, 컴포넌트, 스타일 가이드를 빠르게 적용할 수 있는 기반 마련',
+                en: 'Created a foundation for quickly applying base layouts, components, and style guides to new projects',
+            },
+            {
+                ko: '산발적으로 구현되던 UI 구조를 공통화해 개발 생산성 향상 기반 구축',
+                en: 'Built a productivity foundation by unifying previously scattered UI structures',
             },
         ],
         points: [
@@ -56,11 +127,11 @@ const data = [
         ],
         pin: true,
         duration: {
-            ko: '약 2개월',
-            en: '~2 months',
+            ko: '진행 중',
+            en: 'Ongoing',
         },
         captures: ['/images/projects/placeholder.svg'],
-        languages: ['Vue 3', 'SCSS'],
+        languages: ['Vue 3', 'Nuxt 3', 'SCSS', 'TypeScript'],
     },
     {
         id: 'robo-tms',

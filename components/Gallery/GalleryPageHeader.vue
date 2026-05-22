@@ -17,7 +17,7 @@
             <p class="gallery-editorial__dek">{{ dek }}</p>
         </div>
         <template v-else>
-            <p class="technical-label">{{ gridEyebrow }}</p>
+            <p class="base-label base-label--technical">{{ gridEyebrow }}</p>
             <h1 class="gallery-page__title">{{ title }}</h1>
             <p class="gallery-page__lead">{{ dek }}</p>
         </template>
