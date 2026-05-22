@@ -57,7 +57,7 @@
             </div>
 
             <!-- 시간순: 연도 sticky + 항목 -->
-            <!-- @vue-generic {import('@composables/useJourneyView').JourneyYearGroup} -->
+            <!-- @vue-generic {import('@composables/portfolio/useJourneyView').JourneyYearGroup} -->
             <EditorialYearTimeline v-else variant="home" :ariaLabel="t('journey.viewChronological')"
                 :eras="chronologicalYearGroups" id-prefix="journey-year" entries-tag="ol">
                 <template #era="{ era: group }">

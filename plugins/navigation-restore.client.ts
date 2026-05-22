@@ -7,7 +7,7 @@ import {
     restoreFocusForSnapshot,
     restoreScrollForSnapshot,
     saveNavigationRestoreSnapshot,
-} from '@composables/useNavigationRestore';
+} from '@composables/gallery/useNavigationRestore';
 
 export default defineNuxtPlugin(() => {
     if (!import.meta.client) return;

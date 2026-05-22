@@ -1,14 +1,14 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
         :footer-text="t('footer.copyright')" :show-app-dock="true">
-        <article ref="galleryPageRef" class="gallery-page section gallery-page--editorial"
-            :class="galleryVariantClass" :aria-label="t(titleKey)">
+        <article ref="galleryPageRef" class="gallery-page section gallery-page--editorial" :class="galleryVariantClass"
+            :aria-label="t(titleKey)">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
                 :hero-number="heroNumber" :hero-aria-label="heroAriaLabel" :status-label="t('gallery.indexLabel')"
-                :stats="editorialStats" :sort-legend="sortLegend"
-                :sort-aria-label="sortAriaLabel" :view-legend="viewLegend" :view-aria-label="viewAriaLabel"
-                :sort-options="sortOptions" :view-options="viewOptions" :sort-mode="sortMode"
-                @update:sort-mode="sortMode = $event" @update:view-mode="viewMode = $event" />
+                :stats="editorialStats" :sort-legend="sortLegend" :sort-aria-label="sortAriaLabel"
+                :view-legend="viewLegend" :view-aria-label="viewAriaLabel" :sort-options="sortOptions"
+                :view-options="viewOptions" :sort-mode="sortMode" @update:sort-mode="sortMode = $event"
+                @update:view-mode="viewMode = $event" />
 
             <!-- @vue-generic {import('@utils/workSort').WorkYearGroup} -->
             <EditorialYearTimeline v-if="viewMode === 'editorial'" variant="gallery"
@@ -33,9 +33,9 @@
 
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
-import type { GalleryArchiveVariant } from '@composables/useGallery';
-import GalleryPageHeader from '~/components/Gallery/GalleryPageHeader.vue';
-import ProjectGalleryCard from '~/components/Card/ProjectGalleryCard.vue';
+import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
+import GalleryPageHeader from '~/components/gallery/GalleryPageHeader.vue';
+import ProjectGalleryCard from '~/components/work/ProjectGalleryCard.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;

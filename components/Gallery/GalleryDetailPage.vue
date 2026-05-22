@@ -8,7 +8,7 @@
                     {{ t(config.listLabelKey) }}
                 </button>
                 <span id="gallery-detail-back-hint" class="gallery-detail__breadcrumb-sr">{{ t('gallery.backHint')
-                    }}</span>
+                }}</span>
                 <span class="gallery-detail__breadcrumb-sep" aria-hidden="true">•</span>
                 <span class="gallery-detail__breadcrumb-current" aria-current="page">{{ pick(work.title) }}</span>
             </nav>
@@ -33,7 +33,7 @@
                         <dt>{{ t('gallery.languages') }}</dt>
                         <dd>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                                }}</span>
+                            }}</span>
                             <template v-if="!work.languages.length">-</template>
                         </dd>
                     </div>
@@ -108,9 +108,9 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryArchiveVariant } from '@composables/useGallery';
+import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
-import { getGalleryVariantConfig } from '@composables/useGallery';
+import { getGalleryVariantConfig } from '@composables/gallery/useGallery';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;

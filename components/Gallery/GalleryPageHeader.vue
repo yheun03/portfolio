@@ -49,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryViewMode } from '@composables/useGallery';
+import type { GalleryViewMode } from '@composables/gallery/useGallery';
 import type { WorkSortMode } from '@utils/workSort';
 
 defineProps<{

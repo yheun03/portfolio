@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { aboutContent } from '@data/site';
-import { splitTypoWords } from '@composables/useTypoInteraction';
+import { splitTypoWords } from '@composables/ui/useTypoInteraction';
 
 const { t, pick, locale } = useLocale();
 

@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     },
 
     imports: {
-        dirs: ['~/composables'],
+        dirs: ['~/composables', '~/composables/**'],
     },
 
     pinia: {
@@ -57,12 +57,12 @@ export default defineNuxtConfig({
     ],
 
     components: [
-        { path: '~/components/Common', pathPrefix: false },
-        { path: '~/components/Card', pathPrefix: false },
-        { path: '~/components/Gallery', pathPrefix: false },
-        { path: '~/components/Motion', pathPrefix: false },
-        { path: '~/components/Section', pathPrefix: false },
-        { path: '~/components/Layout', pathPrefix: false },
+        { path: '~/components/base', pathPrefix: false },
+        { path: '~/components/work', pathPrefix: false },
+        { path: '~/components/gallery', pathPrefix: false },
+        { path: '~/components/motion', pathPrefix: false },
+        { path: '~/components/home', pathPrefix: false },
+        { path: '~/components/layout', pathPrefix: false },
     ],
 
     vite: {
