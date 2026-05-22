@@ -33,16 +33,6 @@
     "primitive": {
         "color": {
             "blue": {
-                "500": {
-                    "$type": "color",
-                    "$value": "#2456ff",
-                    "$description": "Light --color-primary"
-                },
-                "600": {
-                    "$type": "color",
-                    "$value": "#183fd1",
-                    "$description": "Light --color-primary-dark"
-                },
                 "300": {
                     "$type": "color",
                     "$value": "#93a8ff",
@@ -52,30 +42,40 @@
                     "$type": "color",
                     "$value": "#6b7fff",
                     "$description": "Dark --color-primary-dark"
+                },
+                "500": {
+                    "$type": "color",
+                    "$value": "#2456ff",
+                    "$description": "Light --color-primary"
+                },
+                "600": {
+                    "$type": "color",
+                    "$value": "#183fd1",
+                    "$description": "Light --color-primary-dark"
                 }
             },
             "pink": {
-                "500": {
-                    "$type": "color",
-                    "$value": "#ff5c8d",
-                    "$description": "Light --color-accent-hot"
-                },
                 "300": {
                     "$type": "color",
                     "$value": "#ff7eb3",
                     "$description": "Dark --color-accent-hot"
+                },
+                "500": {
+                    "$type": "color",
+                    "$value": "#ff5c8d",
+                    "$description": "Light --color-accent-hot"
                 }
             },
             "mint": {
-                "500": {
-                    "$type": "color",
-                    "$value": "#0ecf9b",
-                    "$description": "Light --color-accent-mint"
-                },
                 "300": {
                     "$type": "color",
                     "$value": "#3ee8c5",
                     "$description": "Dark --color-accent-mint"
+                },
+                "500": {
+                    "$type": "color",
+                    "$value": "#0ecf9b",
+                    "$description": "Light --color-accent-mint"
                 }
             },
             "neutral": {
@@ -146,6 +146,11 @@
                 }
             },
             "slate": {
+                "50": {
+                    "$type": "color",
+                    "$value": "#f4f7ff",
+                    "$description": "Dark --color-text"
+                },
                 "300": {
                     "$type": "color",
                     "$value": "#9fb1d6",
@@ -185,35 +190,30 @@
                     "$type": "color",
                     "$value": "#0a1222",
                     "$description": "Dark --gradient-noise end"
-                },
-                "50": {
-                    "$type": "color",
-                    "$value": "#f4f7ff",
-                    "$description": "Dark --color-text"
                 }
             },
             "purple": {
-                "500": {
-                    "$type": "color",
-                    "$value": "#7038cc",
-                    "$description": "Light --gradient-accent midpoint"
-                },
                 "300": {
                     "$type": "color",
                     "$value": "#c084fc",
                     "$description": "Dark --gradient-accent midpoint"
+                },
+                "500": {
+                    "$type": "color",
+                    "$value": "#7038cc",
+                    "$description": "Light --gradient-accent midpoint"
                 }
             },
             "cyan": {
-                "600": {
-                    "$type": "color",
-                    "$value": "#087ea4",
-                    "$description": "Light --gradient-accent end"
-                },
                 "300": {
                     "$type": "color",
                     "$value": "#38bdf8",
                     "$description": "Dark --gradient-accent end"
+                },
+                "600": {
+                    "$type": "color",
+                    "$value": "#087ea4",
+                    "$description": "Light --gradient-accent end"
                 }
             },
             "alpha": {
@@ -503,33 +503,98 @@
             },
             "sectionTitle": {
                 "$type": "fontSizes",
-                "$value": "clamp(1.9rem, 3.2vw, 3.05rem)",
-                "$description": "--font-size-section-title"
+                "$value": "{typography.fontSize.display4}",
+                "$description": "--font-size-section-title (alias of Display-4)"
             },
             "hero": {
                 "$type": "fontSizes",
-                "$value": "clamp(4rem, 7.5vw, 8.5rem)",
-                "$description": "--font-size-hero"
+                "$value": "{typography.fontSize.display1}",
+                "$description": "--font-size-hero (alias of Display-1)"
             },
             "heroCard": {
                 "$type": "fontSizes",
-                "$value": "clamp(2.15rem, 4vw, 4.45rem)",
-                "$description": "--font-size-hero-card"
+                "$value": "{typography.fontSize.display3}",
+                "$description": "--font-size-hero-card (alias of Display-3)"
             },
             "displaySoft": {
                 "$type": "fontSizes",
-                "$value": "clamp(2.2rem, 5vw, 5.25rem)",
-                "$description": "--font-size-display-soft"
+                "$value": "{typography.fontSize.display3}",
+                "$description": "--font-size-display-soft (alias of Display-3)"
             },
             "contact": {
                 "$type": "fontSizes",
-                "$value": "clamp(2.35rem, 8vw, 8.75rem)",
+                "$value": "clamp(2.5rem, 9vw, 9.5rem)",
                 "$description": "--font-size-contact"
             },
             "counter": {
                 "$type": "fontSizes",
-                "$value": "clamp(2.1rem, 4.6vw, 3.7rem)",
-                "$description": "--font-size-counter"
+                "$value": "{typography.fontSize.display5}",
+                "$description": "--font-size-counter (alias of Display-5)"
+            },
+            "display1": {
+                "$type": "fontSizes",
+                "$value": "clamp(4rem, 7.5vw, 8.5rem)",
+                "$description": "--font-size-display-1 / PC Display-1"
+            },
+            "display2": {
+                "$type": "fontSizes",
+                "$value": "clamp(3.4rem, 6.2vw, 6.75rem)",
+                "$description": "--font-size-display-2 / large editorial display"
+            },
+            "display3": {
+                "$type": "fontSizes",
+                "$value": "clamp(2.5rem, 5vw, 5.25rem)",
+                "$description": "--font-size-display-3 / strong section display"
+            },
+            "display4": {
+                "$type": "fontSizes",
+                "$value": "clamp(1.9rem, 3.2vw, 3.05rem)",
+                "$description": "--font-size-display-4 / section title"
+            },
+            "display5": {
+                "$type": "fontSizes",
+                "$value": "clamp(1.55rem, 2.8vw, 2.35rem)",
+                "$description": "--font-size-display-5 / feature title"
+            },
+            "display6": {
+                "$type": "fontSizes",
+                "$value": "clamp(1.35rem, 2.4vw, 2rem)",
+                "$description": "--font-size-display-6 / compact display title"
+            },
+            "title1": {
+                "$type": "fontSizes",
+                "$value": "clamp(1.12rem, 1rem + 0.8vw, 1.42rem)",
+                "$description": "--font-size-title-1"
+            },
+            "title2": {
+                "$type": "fontSizes",
+                "$value": "clamp(1rem, 0.96rem + 0.32vw, 1.16rem)",
+                "$description": "--font-size-title-2"
+            },
+            "title3": {
+                "$type": "fontSizes",
+                "$value": "clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)",
+                "$description": "--font-size-title-3"
+            },
+            "body1": {
+                "$type": "fontSizes",
+                "$value": "clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)",
+                "$description": "--font-size-body-1"
+            },
+            "body2": {
+                "$type": "fontSizes",
+                "$value": "0.9375rem",
+                "$description": "--font-size-body-2"
+            },
+            "label": {
+                "$type": "fontSizes",
+                "$value": "0.875rem",
+                "$description": "--font-size-label (14px UI label)"
+            },
+            "chip": {
+                "$type": "fontSizes",
+                "$value": "0.75rem",
+                "$description": "--font-size-chip (12px minimum chip)"
             }
         },
         "lineHeight": {
@@ -611,6 +676,151 @@
                 "$type": "letterSpacing",
                 "$value": "0.1em",
                 "$description": "--tracking-label"
+            }
+        },
+        "typeScale": {
+            "display1": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.display1}",
+                    "fontWeight": "{typography.fontWeight.black}",
+                    "lineHeight": "{typography.lineHeight.tight}",
+                    "letterSpacing": "{typography.letterSpacing.tight}"
+                },
+                "$description": "Display-1: hero and strongest activity title. PC first, overridden down for TB/MB in CSS variables."
+            },
+            "display2": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.display2}",
+                    "fontWeight": "{typography.fontWeight.black}",
+                    "lineHeight": "{typography.lineHeight.display}",
+                    "letterSpacing": "{typography.letterSpacing.tight}"
+                },
+                "$description": "Display-2: page-level editorial display."
+            },
+            "display3": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.display3}",
+                    "fontWeight": "{typography.fontWeight.black}",
+                    "lineHeight": "{typography.lineHeight.display}",
+                    "letterSpacing": "{typography.letterSpacing.tight}"
+                },
+                "$description": "Display-3: strong section/card display."
+            },
+            "display4": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.display4}",
+                    "fontWeight": "{typography.fontWeight.black}",
+                    "lineHeight": "{typography.lineHeight.heading}",
+                    "letterSpacing": "{typography.letterSpacing.tight}"
+                },
+                "$description": "Display-4: section title."
+            },
+            "display5": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.display5}",
+                    "fontWeight": "{typography.fontWeight.black}",
+                    "lineHeight": "{typography.lineHeight.heading}",
+                    "letterSpacing": "{typography.letterSpacing.heading}"
+                },
+                "$description": "Display-5: feature title."
+            },
+            "display6": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.display6}",
+                    "fontWeight": "{typography.fontWeight.bold}",
+                    "lineHeight": "{typography.lineHeight.title}",
+                    "letterSpacing": "{typography.letterSpacing.heading}"
+                },
+                "$description": "Display-6: compact display title."
+            },
+            "title1": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.title1}",
+                    "fontWeight": "{typography.fontWeight.bold}",
+                    "lineHeight": "{typography.lineHeight.title}",
+                    "letterSpacing": "{typography.letterSpacing.heading}"
+                },
+                "$description": "Title-1: card/list title below display."
+            },
+            "title2": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.title2}",
+                    "fontWeight": "{typography.fontWeight.semibold}",
+                    "lineHeight": "{typography.lineHeight.title}",
+                    "letterSpacing": "{typography.letterSpacing.ui}"
+                },
+                "$description": "Title-2: compact title."
+            },
+            "title3": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.display}",
+                    "fontSize": "{typography.fontSize.title3}",
+                    "fontWeight": "{typography.fontWeight.semibold}",
+                    "lineHeight": "{typography.lineHeight.title}",
+                    "letterSpacing": "{typography.letterSpacing.ui}"
+                },
+                "$description": "Title-3: smallest title used inside dense panels."
+            },
+            "body1": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.body}",
+                    "fontSize": "{typography.fontSize.body1}",
+                    "fontWeight": "{typography.fontWeight.regular}",
+                    "lineHeight": "{typography.lineHeight.body}",
+                    "letterSpacing": "0"
+                },
+                "$description": "Body-1: primary body, 16px+."
+            },
+            "body2": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.body}",
+                    "fontSize": "{typography.fontSize.body2}",
+                    "fontWeight": "{typography.fontWeight.regular}",
+                    "lineHeight": "{typography.lineHeight.body}",
+                    "letterSpacing": "0"
+                },
+                "$description": "Body-2: secondary copy."
+            },
+            "label": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.mono}",
+                    "fontSize": "{typography.fontSize.label}",
+                    "fontWeight": "{typography.fontWeight.semibold}",
+                    "lineHeight": "{typography.lineHeight.ui}",
+                    "letterSpacing": "{typography.letterSpacing.label}"
+                },
+                "$description": "Label: metadata and eyebrow, 14px minimum."
+            },
+            "chip": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{typography.fontFamily.body}",
+                    "fontSize": "{typography.fontSize.chip}",
+                    "fontWeight": "{typography.fontWeight.semibold}",
+                    "lineHeight": "{typography.lineHeight.ui}",
+                    "letterSpacing": "{typography.letterSpacing.ui}"
+                },
+                "$description": "Chip: smallest UI tag, 12px minimum."
             }
         }
     },
@@ -702,18 +912,18 @@
         },
         "fluid2xl": {
             "$type": "spacing",
-            "$value": "clamp(3.8rem, 8vw, 6.5rem)",
+            "$value": "clamp(4.5rem, 10vw, 8.5rem)",
             "$description": "--space-fluid-2xl"
         },
         "cardPadding": {
             "$type": "spacing",
-            "$value": "{spacing.7}",
+            "$value": "clamp(1.35rem, 3vw, 2.35rem)",
             "$description": "--card-padding"
         },
         "sectionY": {
             "$type": "spacing",
-            "$value": "{spacing.fluid2xl}",
-            "$description": "--space-section-y"
+            "$value": "{spacing.fluid3xl}",
+            "$description": "--space-section-y / PC default, TB/MB CSS override"
         },
         "sectionGap": {
             "$type": "spacing",
@@ -724,6 +934,26 @@
             "$type": "spacing",
             "$value": "{spacing.fluidSm}",
             "$description": "--space-block-gap"
+        },
+        "fluid3xl": {
+            "$type": "spacing",
+            "$value": "clamp(6rem, 14vw, 12rem)",
+            "$description": "--space-fluid-3xl"
+        },
+        "insetPage": {
+            "$type": "spacing",
+            "$value": "clamp(2rem, 5vw, 6rem)",
+            "$description": "--inset-page / responsive page inset"
+        },
+        "insetPanel": {
+            "$type": "spacing",
+            "$value": "clamp(1.1rem, 2.6vw, 2rem)",
+            "$description": "--inset-panel / responsive panel inset"
+        },
+        "cardPaddingLg": {
+            "$type": "spacing",
+            "$value": "clamp(1.75rem, 4vw, 3rem)",
+            "$description": "--card-padding-lg"
         }
     },
     "radius": {

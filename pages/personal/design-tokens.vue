@@ -37,7 +37,7 @@
                 <div class="token-section__head">
                     <p class="technical-label">Spacing</p>
                     <h2 id="space-token-title">여백 토큰</h2>
-                    <p>작은 UI 간격은 숫자 단계로, 화면 단위 간격은 fluid 이름으로 분리했습니다.</p>
+                    <p>칩과 라벨은 12px~14px 최소 단위를 지키고, 화면·섹션·카드 여백은 PC/TB/MB 순으로 밀도를 낮춥니다.</p>
                 </div>
                 <div class="token-table" role="table" aria-label="여백 토큰 목록">
                     <div class="token-table__row token-table__row--head" role="row">
@@ -57,12 +57,13 @@
                 <div class="token-section__head">
                     <p class="technical-label">Typography</p>
                     <h2 id="type-token-title">폰트 토큰</h2>
-                    <p>크기, 굵기, 행간을 분리하고 자주 쓰는 조합은 preset으로 부릅니다.</p>
+                    <p>폰트는 Display가 화면의 리듬을 잡고, Title과 Body가 정보 밀도를 조절하며, Label/Chip은 UI 최소 단위를 지킵니다.</p>
                 </div>
                 <div class="type-list">
                     <article v-for="token in typographyTokens" :key="token.name" class="type-item">
                         <div>
                             <h3>{{ token.name }}</h3>
+                            <p class="type-item__meta">{{ token.value }}</p>
                             <p>{{ token.reason }}</p>
                         </div>
                         <p class="type-item__sample" :class="token.sampleClass">The structure feels light.</p>
@@ -132,18 +133,21 @@ const colorTokens = [
 ];
 
 const spacingTokens = [
-    { name: '--space-1 ~ --space-11', value: '0.25rem ~ 3.4rem', reason: '컴포넌트 내부 간격은 작은 증감이 많아 숫자 단계가 가장 빠르게 읽힙니다.' },
-    { name: '--space-fluid-xs ~ 3xl', value: 'clamp(...)', reason: '화면 폭에 따라 자연스럽게 커져야 하는 섹션 간격은 fluid 접두어로 구분했습니다.' },
-    { name: '--inset-page', value: 'clamp(2rem, 5vw, 6rem)', reason: '페이지 좌우 여백처럼 레이아웃의 안쪽 들여쓰기를 inset으로 명명했습니다.' },
-    { name: '--card-padding', value: 'clamp(1.35rem, 3vw, 2.35rem)', reason: '카드 내부 여백은 반복 사용되는 컴포넌트 맥락이라 card namespace를 붙였습니다.' },
-    { name: '--size-touch', value: '2.75rem', reason: '버튼과 토글의 최소 터치 영역을 값이 아닌 접근성 목적 중심으로 부릅니다.' },
+    { name: '--space-1 ~ --space-11', value: '4px ~ 54px', reason: '칩, 버튼, 카드 내부처럼 촘촘한 UI 간격은 4px 계열의 숫자 단계로 맞춥니다.' },
+    { name: '--space-fluid-xs ~ 3xl', value: 'clamp(...)', reason: 'PC에서는 호흡을 크게, TB/MB에서는 정보 밀도를 유지하도록 화면 단위 여백을 유동값으로 둡니다.' },
+    { name: '--space-section-y / gap', value: 'PC > TB > MB override', reason: '섹션 상하 여백과 섹션 내부 간격은 breakpoint별 CSS 변수 override로 우선순위를 둡니다.' },
+    { name: '--inset-page / --inset-panel', value: 'responsive inset', reason: '페이지와 패널의 좌우 여백을 분리해 모바일에서 카드가 과하게 좁아지지 않게 했습니다.' },
+    { name: '--card-padding / lg', value: 'responsive padding', reason: '반복 카드의 내부 여백은 카드 namespace로 묶고 모바일에서는 16px대까지 낮춥니다.' },
+    { name: '--size-touch / compact', value: '44px / 40px', reason: '버튼과 토글은 접근성 터치 영역을 기준으로 크기 토큰을 분리했습니다.' },
 ];
 
 const typographyTokens = [
-    { name: 'heading-1 / heading-2', reason: '페이지의 시각적 시작점과 섹션 제목을 구분하기 위해 heading 단계로 묶었습니다.', sampleClass: 'type-item__sample--heading' },
-    { name: 'title-1 / title-2', reason: '카드나 패널 안에서 쓰는 제목은 hero급 제목보다 작아 title preset으로 분리했습니다.', sampleClass: 'type-item__sample--title' },
-    { name: 'body-1 / body-2', reason: '본문 밀도에 따라 읽기용과 보조 설명용을 나누되, 최소 14px 이상을 유지합니다.', sampleClass: 'type-item__sample--body' },
-    { name: 'caption-1 / caption-2 / label', reason: '메타 정보, 작은 라벨, 기술 태그는 UI 목적이 달라 caption과 label로 나눴습니다.', sampleClass: 'type-item__sample--label' },
+    { name: 'Display-1', value: 'PC 64~136 / TB 51~96 / MB 44~76px · 900', reason: '홈 히어로와 가장 강한 액티비티 타이틀에만 쓰는 최상위 토큰입니다.', sampleClass: 'type-item__sample--display1' },
+    { name: 'Display-2 / Display-3', value: '강조 섹션·대형 카드 · 900', reason: '큰 시각 신호는 유지하되 Display-1보다 먼저 튀지 않도록 2~3단계로 낮춥니다.', sampleClass: 'type-item__sample--display3' },
+    { name: 'Display-4 / Display-5 / Display-6', value: '섹션·카드 제목 · 760~900', reason: '섹션 제목, 주요 카드 제목, 작은 모듈 제목의 우선순위를 분리합니다.', sampleClass: 'type-item__sample--display5' },
+    { name: 'Title-1 / Title-2 / Title-3', value: '18~23 / 16~19 / 16~17px · 720~760', reason: '카드·리스트 안에서 Display보다 낮은 정보 제목으로 사용합니다.', sampleClass: 'type-item__sample--title' },
+    { name: 'Body-1 / Body-2', value: '16px+ / 15px · 500', reason: '본문은 16px 이상을 기준으로 두고, 보조 설명만 15px 밀도로 낮춥니다.', sampleClass: 'type-item__sample--body' },
+    { name: 'Label / Chip', value: '14px / 12px · 720', reason: '메타 라벨은 14px, 칩은 최소 단위인 12px로 고정해 작은 UI의 밀도를 통일합니다.', sampleClass: 'type-item__sample--label' },
 ];
 
 const shapeTokens = [
@@ -186,7 +190,9 @@ usePortfolioSeo(() => ({
 
 .token-hero h1 {
     max-width: 11ch;
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-2);
+    font-weight: var(--font-weight-black);
     line-height: var(--line-height-display);
     letter-spacing: var(--tracking-tight);
 }
@@ -209,7 +215,11 @@ usePortfolioSeo(() => ({
 }
 
 .token-section__head h2 {
-    font-size: var(--font-size-section-title);
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-4);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--tracking-tight);
 }
 
 .token-grid {
@@ -236,7 +246,9 @@ usePortfolioSeo(() => ({
 
 .token-card h3,
 .type-item h3 {
-    font-size: var(--font-size-lg);
+    font-family: var(--font-display);
+    font-size: var(--font-size-title-1);
+    font-weight: var(--font-weight-bold);
     line-height: var(--line-height-title);
     letter-spacing: var(--tracking-heading);
 }
@@ -249,7 +261,10 @@ usePortfolioSeo(() => ({
 .token-card__value {
     margin: var(--space-2) 0 var(--space-4);
     font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--tracking-label);
     color: var(--color-primary);
 }
 
@@ -279,13 +294,20 @@ usePortfolioSeo(() => ({
 .token-table__row--head {
     background: color-mix(in srgb, var(--color-primary) 10%, transparent);
     color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
     font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--tracking-label);
 }
 
 .token-table__row span:nth-child(1),
 .token-table__row span:nth-child(2) {
     font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--tracking-label);
 }
 
 .type-list {
@@ -305,29 +327,62 @@ usePortfolioSeo(() => ({
     color: var(--color-text);
 }
 
-.type-item__sample--heading {
-    font-size: var(--font-size-section-title);
+.type-item__meta {
+    margin: var(--space-2) 0 var(--space-3);
+    color: var(--color-primary) !important;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--tracking-label);
+}
+
+.type-item__sample--display1 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-1);
     font-weight: var(--font-weight-black);
-    line-height: var(--line-height-heading);
+    line-height: var(--line-height-tight);
     letter-spacing: var(--tracking-tight);
 }
 
+.type-item__sample--display3 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-3);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-display);
+    letter-spacing: var(--tracking-tight);
+}
+
+.type-item__sample--display5 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-5);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--tracking-heading);
+}
+
 .type-item__sample--title {
-    font-size: var(--font-size-xl);
+    font-family: var(--font-display);
+    font-size: var(--font-size-title-1);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-title);
+    letter-spacing: var(--tracking-heading);
 }
 
 .type-item__sample--body {
-    font-size: var(--font-size-md);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-1);
+    font-weight: var(--font-weight-regular);
     line-height: var(--line-height-body);
+    letter-spacing: 0;
 }
 
 .type-item__sample--label {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
+    font-family: var(--font-body);
+    font-size: var(--font-size-chip);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: var(--tracking-label);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--tracking-ui);
     text-transform: uppercase;
 }
 

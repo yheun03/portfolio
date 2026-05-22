@@ -30,6 +30,19 @@ $font-size-sm: var(--font-size-sm);
 $font-size-md: var(--font-size-md);
 $font-size-lg: var(--font-size-lg);
 $font-size-xl: var(--font-size-xl);
+$font-size-display-1: var(--font-size-display-1);
+$font-size-display-2: var(--font-size-display-2);
+$font-size-display-3: var(--font-size-display-3);
+$font-size-display-4: var(--font-size-display-4);
+$font-size-display-5: var(--font-size-display-5);
+$font-size-display-6: var(--font-size-display-6);
+$font-size-title-1: var(--font-size-title-1);
+$font-size-title-2: var(--font-size-title-2);
+$font-size-title-3: var(--font-size-title-3);
+$font-size-body-1: var(--font-size-body-1);
+$font-size-body-2: var(--font-size-body-2);
+$font-size-label: var(--font-size-label);
+$font-size-chip: var(--font-size-chip);
 $font-size-section-title: var(--font-size-section-title);
 $font-size-hero: var(--font-size-hero);
 $font-size-hero-card: var(--font-size-hero-card);
@@ -127,17 +140,25 @@ $space-section-gap: var(--space-section-gap);
 $space-block-gap: var(--space-block-gap);
 
 $font-presets: (
-    heading-1: (family: $font-display, size: $font-size-hero, weight: $font-weight-black, line-height: $line-height-display, letter-spacing: $tracking-tight),
-    heading-2: (family: $font-display, size: $font-size-section-title, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-tight),
-    heading-3: (family: $font-display, size: $font-size-xl, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
-    title-1: (family: $font-display, size: $font-size-lg, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
-    title-2: (family: $font-display, size: $font-size-md, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
-    body-1: (family: $font-body, size: $font-size-md, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
-    body-2: (family: $font-body, size: $font-size-sm, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
-    caption-1: (family: $font-body, size: $font-size-sm, weight: $font-weight-medium, line-height: $line-height-ui, letter-spacing: $tracking-ui),
-    caption-2: (family: $font-body, size: $font-size-xs, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
-    label: (family: $font-mono, size: $font-size-xs, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
-    button: (family: $font-display, size: $font-size-md, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
+    display-1: (family: $font-display, size: $font-size-display-1, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
+    display-2: (family: $font-display, size: $font-size-display-2, weight: $font-weight-black, line-height: $line-height-display, letter-spacing: $tracking-tight),
+    display-3: (family: $font-display, size: $font-size-display-3, weight: $font-weight-black, line-height: $line-height-display, letter-spacing: $tracking-tight),
+    display-4: (family: $font-display, size: $font-size-display-4, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-tight),
+    display-5: (family: $font-display, size: $font-size-display-5, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-heading),
+    display-6: (family: $font-display, size: $font-size-display-6, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
+    title-1: (family: $font-display, size: $font-size-title-1, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
+    title-2: (family: $font-display, size: $font-size-title-2, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
+    title-3: (family: $font-display, size: $font-size-title-3, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
+    body-1: (family: $font-body, size: $font-size-body-1, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
+    body-2: (family: $font-body, size: $font-size-body-2, weight: $font-weight-regular, line-height: $line-height-body, letter-spacing: 0),
+    caption-1: (family: $font-body, size: $font-size-body-2, weight: $font-weight-medium, line-height: $line-height-ui, letter-spacing: $tracking-ui),
+    caption-2: (family: $font-body, size: $font-size-label, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
+    label: (family: $font-mono, size: $font-size-label, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
+    chip: (family: $font-body, size: $font-size-chip, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-ui),
+    button: (family: $font-display, size: $font-size-body-1, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
+    heading-1: (family: $font-display, size: $font-size-display-1, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
+    heading-2: (family: $font-display, size: $font-size-display-4, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-tight),
+    heading-3: (family: $font-display, size: $font-size-display-6, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
 );
 
 :root {
@@ -153,12 +174,25 @@ $font-presets: (
     --font-size-md: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
     --font-size-lg: clamp(1rem, 0.96rem + 0.32vw, 1.16rem);
     --font-size-xl: clamp(1.12rem, 1rem + 0.8vw, 1.42rem);
-    --font-size-section-title: clamp(1.9rem, 3.2vw, 3.05rem);
-    --font-size-hero: clamp(4rem, 7.5vw, 8.5rem);
-    --font-size-hero-card: clamp(2.15rem, 4vw, 4.45rem);
-    --font-size-display-soft: clamp(2.2rem, 5vw, 5.25rem);
+    --font-size-display-1: clamp(4rem, 7.5vw, 8.5rem);
+    --font-size-display-2: clamp(3.4rem, 6.2vw, 6.75rem);
+    --font-size-display-3: clamp(2.5rem, 5vw, 5.25rem);
+    --font-size-display-4: clamp(1.9rem, 3.2vw, 3.05rem);
+    --font-size-display-5: clamp(1.55rem, 2.8vw, 2.35rem);
+    --font-size-display-6: clamp(1.35rem, 2.4vw, 2rem);
+    --font-size-title-1: clamp(1.12rem, 1rem + 0.8vw, 1.42rem);
+    --font-size-title-2: clamp(1rem, 0.96rem + 0.32vw, 1.16rem);
+    --font-size-title-3: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+    --font-size-body-1: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+    --font-size-body-2: 0.9375rem;
+    --font-size-label: 0.875rem;
+    --font-size-chip: 0.75rem;
+    --font-size-section-title: var(--font-size-display-4);
+    --font-size-hero: var(--font-size-display-1);
+    --font-size-hero-card: var(--font-size-display-3);
+    --font-size-display-soft: var(--font-size-display-3);
     --font-size-contact: clamp(2.5rem, 9vw, 9.5rem);
-    --font-size-counter: clamp(2.1rem, 4.6vw, 3.7rem);
+    --font-size-counter: var(--font-size-display-5);
     --font-weight-regular: 500;
     --font-weight-medium: 650;
     --font-weight-semibold: 720;
@@ -293,6 +327,43 @@ $font-presets: (
     --gallery-frame: color-mix(in srgb, var(--gallery-muted) 36%, transparent);
     --gallery-active-fg: #fff8eb;
     --gallery-active-bg: var(--gallery-accent);
+}
+
+@media (max-width: #{$bp-max-narrow}) {
+    :root {
+        --font-size-display-1: clamp(3.2rem, 10vw, 6rem);
+        --font-size-display-2: clamp(2.75rem, 8vw, 4.75rem);
+        --font-size-display-3: clamp(2.2rem, 6vw, 3.75rem);
+        --font-size-display-4: clamp(1.75rem, 4vw, 2.65rem);
+        --font-size-display-5: clamp(1.4rem, 3.2vw, 2rem);
+        --font-size-display-6: clamp(1.2rem, 2.4vw, 1.62rem);
+        --space-section-y: var(--space-fluid-2xl);
+        --space-section-gap: var(--space-fluid-md);
+        --space-block-gap: var(--space-fluid-sm);
+        --inset-page: clamp(1.4rem, 4.5vw, 3.5rem);
+    }
+}
+
+@media (max-width: #{$bp-max-mobile}) {
+    :root {
+        --font-size-display-1: clamp(2.75rem, 13vw, 4.75rem);
+        --font-size-display-2: clamp(2.35rem, 11vw, 4rem);
+        --font-size-display-3: clamp(2rem, 9vw, 3.25rem);
+        --font-size-display-4: clamp(1.65rem, 7.5vw, 2.5rem);
+        --font-size-display-5: clamp(1.35rem, 6vw, 1.9rem);
+        --font-size-display-6: clamp(1.15rem, 4.5vw, 1.45rem);
+        --font-size-title-1: clamp(1.1rem, 4vw, 1.3rem);
+        --font-size-title-2: clamp(1rem, 3.5vw, 1.125rem);
+        --font-size-body-1: 1rem;
+        --font-size-body-2: 0.9375rem;
+        --space-section-y: clamp(3.5rem, 16vw, 5.5rem);
+        --space-section-gap: clamp(1.5rem, 7vw, 2.5rem);
+        --space-block-gap: clamp(0.875rem, 4vw, 1.25rem);
+        --inset-page: clamp(1rem, 5vw, 1.5rem);
+        --inset-panel: clamp(1rem, 5vw, 1.35rem);
+        --card-padding: clamp(1rem, 5vw, 1.4rem);
+        --card-padding-lg: clamp(1.15rem, 6vw, 1.7rem);
+    }
 }
 
 [data-theme="dark"] {
