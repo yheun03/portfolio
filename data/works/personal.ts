@@ -281,57 +281,65 @@ const data = [
         id: 'matemate-capstone',
         category: 'personal',
         title: {
-            ko: '메이트메이트 룸메이트 매칭 서비스',
-            en: 'MateMate Roommate Matching Service',
+            ko: '메이트메이트(MATEMATE) 룸메이트 매칭',
+            en: 'MateMate Roommate Matching',
         },
-        period: '2024.03.09~2024.06.22',
+        period: '2025.01.04~2025.01.30',
         type: {
-            ko: '개인 / 캡스톤·서비스 기획',
-            en: 'Personal / Capstone Service Planning',
+            ko: '팀 / 방학·캡스톤 (모바일 웹)',
+            en: 'Team / Capstone & vacation (mobile web)',
         },
         role: {
-            ko: '아이디어 기획·UX 설계·UI 디자인 일부 담당',
-            en: 'Idea planning, UX design, and partial UI design',
+            ko: '기획 90%·UI 디자인 30%·퍼블리싱 100% (team-matemate)',
+            en: '90% planning, 30% UI design, 100% publishing (team-matemate)',
         },
-        tech: ['Figma', 'HTML', 'SCSS', 'JavaScript'],
+        tech: ['HTML', 'SCSS', 'JavaScript', 'Firebase Hosting', 'Firestore', 'Cloud Functions', 'Figma'],
         introduction: {
-            ko: '기숙사 룸메이트를 생활 습관과 성향 기준으로 매칭하기 위해 기획한 캡스톤 프로젝트입니다. 랜덤 배정이나 지인 추천에 의존하던 불편을 줄이고, 사용자가 원하는 조건을 기반으로 더 편안한 기숙사 생활을 선택할 수 있도록 서비스 흐름을 설계했습니다.',
-            en: 'A capstone project planned to match dorm roommates by lifestyle and preferences. I designed the service flow so users could move beyond random assignment or referrals and find a more comfortable dorm-life match.',
+            ko: '한국공학대학교 방학·캡스톤 팀 프로젝트로, 기숙사 룸메이트를 생활 습관·성향 조건으로 매칭하는 모바일 웹 서비스입니다. 랜덤 배정·지인 추천 대신 본인·희망 룸메이트 정보를 입력하면 조건에 맞는 상대를 찾을 수 있도록 설계했습니다. 소스·배포는 team-matemate/matemate 저장소와 Firebase(matemate-2025)에서 관리합니다.',
+            en: 'A Korea Polytechnic University capstone/vacation team project: a mobile web service that matches dorm roommates by lifestyle and preferences instead of random assignment or referrals. Source and deployment live in the team-matemate/matemate repo and Firebase project matemate-2025.',
         },
         myWorks: [
             {
-                ko: '문제 정의, 아이디어 기획, 사용자 흐름 추상화 및 주요 UX 구조 설계',
-                en: 'Defined the problem, planned the idea, abstracted user flows, and shaped the core UX structure',
+                ko: '문제 정의·서비스 기획·매칭·인증·채팅·게시판 등 사용자 흐름과 IA 설계',
+                en: 'Defined the problem and IA for matching, auth, chat, board, and related user flows',
             },
             {
-                ko: '룸메이트 조건 입력, 매칭 결과 확인 등 핵심 화면의 UI 방향성 정리',
-                en: 'Organized UI direction for core screens such as roommate preference input and match results',
+                ko: '`public/html/`에 auth·match·chat·board·cutline·user·main 화면 퍼블리싱 및 SCSS 컴포넌트 구조 정리',
+                en: 'Published auth, match, chat, board, cutline, user, and main screens under `public/html/` with an SCSS component structure',
             },
             {
-                ko: '2025 포트폴리오 내 프로젝트 카드와 상세 모달용 캡처 자료 정리',
-                en: 'Organized screenshots for the 2025 portfolio project card and detail modal',
+                ko: 'Firebase Hosting(루트 → main), Firestore·Storage rules, Cloud Functions 백엔드 연동 구성',
+                en: 'Configured Firebase Hosting (root → main), Firestore/Storage rules, and Cloud Functions',
+            },
+            {
+                ko: 'Swiper·공통 JS로 매칭·목록 인터랙션 구현, C2C 반복 수정에 맞춘 UX 정리',
+                en: 'Implemented matching and list interactions with Swiper and shared JS, tuned UX for repeated C2C edits',
             },
         ],
         achievements: [
             {
-                ko: '캡스톤 팀 프로젝트에서 기획과 사용자 경험 설계 역할 수행',
-                en: 'Handled planning and user experience design in a capstone team project',
+                ko: 'team-matemate 조직 저장소에서 약 74커밋·4주간 집중 개발로 MVP 화면·배포 파이프라인 완성',
+                en: 'Shipped an MVP and deployment pipeline with ~74 commits over four weeks in the team-matemate org repo',
+            },
+            {
+                ko: '체크리스트·개인 게시글 방식 대비 자동 조건 매칭이라는 서비스 차별점을 UI 흐름으로 구현',
+                en: 'Implemented automatic condition-based matching in the UI, differentiated from paper checklists and ad-hoc posts',
             },
         ],
         points: [
             {
-                ko: '사용자 조건 기반 매칭이라는 서비스 목적을 화면 흐름으로 구체화',
-                en: 'Translated the condition-based matching concept into a concrete screen flow',
+                ko: '팀 캡스톤에서 기획·퍼블리싱을 맡으며 협업 저장소 기준으로 화면 단위를 쪼개 작업',
+                en: 'Led planning and publishing in a team capstone, splitting work by screen in a shared repo',
             },
             {
-                ko: '기획·디자인의 중요성과 협업 기반 개발 과정을 체득한 프로젝트',
-                en: 'A project that strengthened my understanding of planning, design, and collaborative development',
+                ko: 'Firebase로 호스팅·DB·함수를 묶어 모바일 웹 프로토타입을 실제 URL로 공유 가능',
+                en: 'Bundled hosting, database, and functions on Firebase so the mobile web prototype is shareable via a live URL',
             },
         ],
         pin: false,
         duration: {
-            ko: '약 3개월',
-            en: '~3 months',
+            ko: '약 4주 (GitHub 집중 개발)',
+            en: '~4 weeks (focused GitHub development)',
         },
         captures: [
             '/images/portfolio/ver-2025/project/matemate/thumbnail-pc.png',
@@ -339,14 +347,21 @@ const data = [
             '/images/portfolio/ver-2025/project/matemate/modal/modal-02.png',
             '/images/portfolio/ver-2025/project/matemate/modal/modal-03.png',
         ],
-        languages: ['Figma', 'HTML', 'SCSS', 'JavaScript'],
+        languages: ['HTML', 'SCSS', 'JavaScript', 'Firebase', 'Figma'],
         links: [
             {
                 label: {
-                    ko: '아카이브 보기',
-                    en: 'Open archive',
+                    ko: '데모 보기',
+                    en: 'View demo',
                 },
-                href: 'https://yheun03.github.io/portfolio/portfolio/newmeet/',
+                href: 'https://yheun03.github.io/matemate/',
+            },
+            {
+                label: {
+                    ko: 'GitHub',
+                    en: 'GitHub',
+                },
+                href: 'https://github.com/team-matemate/matemate',
             },
         ],
     },
