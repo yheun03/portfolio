@@ -1330,6 +1330,7 @@ html[data-shell-theme="gallery"] .portfolio-page {
     }
 
     .gallery-editorial {
+
         &__poster,
         &__entry-poster {
             overflow: hidden;
@@ -1360,6 +1361,7 @@ html[data-shell-theme="gallery"] .portfolio-page {
     .gallery-editorial__entry {
         &-poster {
             grid-template-rows: auto auto auto auto auto;
+            padding: clamp(1rem, 5vw, 1.35rem);
         }
 
         &-index {
@@ -1374,13 +1376,22 @@ html[data-shell-theme="gallery"] .portfolio-page {
         }
 
         &-media {
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 16 / 10;
+            margin-top: 0.15rem;
 
             &--long {
-                max-height: min(28rem, 72vh);
-                aspect-ratio: 3 / 4;
+                max-height: min(22rem, 56vh);
+                aspect-ratio: 4 / 3;
             }
         }
+    }
+
+    .gallery-editorial__entry-dek {
+        padding-block: clamp(0.85rem, 4vw, 1.1rem);
+    }
+
+    .gallery-card__empty-capture {
+        min-height: 11rem;
     }
 
     .gallery-card--grid {

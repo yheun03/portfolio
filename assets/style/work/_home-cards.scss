@@ -85,8 +85,8 @@
 
 @media (max-width: 767px) {
     .hero__display-line {
-        font-size: clamp(2.75rem, 14vw, 5.25rem);
-        letter-spacing: -0.025em;
+        font-size: clamp(2.55rem, 12.5vw, 4.75rem);
+        letter-spacing: 0;
         text-shadow: 0 0 0 currentColor;
     }
 

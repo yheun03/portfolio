@@ -236,7 +236,7 @@
 
 @media (max-width: 767px) {
     .section--works {
-        padding-top: calc(var(--touch-stack-gap) + 2.75rem);
+        padding-top: calc(var(--touch-stack-gap) + 1.25rem);
     }
 
     .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab {
@@ -244,7 +244,4 @@
         padding-inline: 1rem;
     }
 
-    .hero__metrics-bar {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }
