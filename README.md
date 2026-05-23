@@ -24,13 +24,14 @@
 
 ## 문서
 
-- **[데이터 · 다국어 · 폴더 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 JSON, 갤러리 라우트
+- **[프로젝트 폴더 구조](docs/project-structure.md)** — 전체 폴더별 책임과 통합된 `core` 구조
+- **[데이터 · 다국어 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 데이터, 갤러리 라우트
 - **[디자인 시스템](docs/design-system.md)** — 컴포넌트·토큰·Figma 매핑
 - **[Lighthouse 로드맵](docs/lighthouse-roadmap.md)** — 성능·접근성 개선 계획
 
 ## 프로젝트 구조
 
-Nuxt 관례에 맞춰 앱 계층은 루트에서 관리합니다. 본문은 `data/`, 설정은 `core/config/`, UI 상태는 `stores/`·`composables/`에 둡니다.
+Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정성 코드와 순수 유틸은 `core/`로 통합했습니다. 전체 폴더 설명은 [project-structure.md](docs/project-structure.md)를 기준으로 합니다.
 
 ```
 ├── components/          # Vue 컴포넌트 (폴더명 PascalCase)
@@ -44,6 +45,13 @@ Nuxt 관례에 맞춰 앱 계층은 루트에서 관리합니다. 본문은 `dat
 ├── data/
 │   ├── works/           # 경력·개인 프로젝트 (카테고리별 TS)
 │   └── site/            # 프로필, 소개, 여정, 스킬, 하이라이트
+├── core/                # config, router options, shared types, utils
+│   ├── config/
+│   ├── types/
+│   └── utils/
+├── composables/         # 재사용 런타임 로직
+├── plugins/             # Nuxt 클라이언트/앱 플러그인
+├── stores/              # Pinia 상태
 ├── i18n/                # UI 문구 (ko.json, en.json)
 ├── public/
 │   ├── resume.html      # 이력서 · 자기소개서 · 경력기술서
