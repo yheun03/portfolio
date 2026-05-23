@@ -11,8 +11,6 @@ export function resolveShellTheme(path: string): ShellTheme {
     const normalized = path.replace(/\/$/, '') || '/';
     if (normalized === '/') return 'home';
 
-    const isGallery = GALLERY_PATH_PREFIXES.some(
-        (prefix) => normalized === prefix || normalized.startsWith(`${prefix}/`),
-    );
+    const isGallery = GALLERY_PATH_PREFIXES.some((prefix) => normalized === prefix || normalized.startsWith(`${prefix}/`));
     return isGallery ? 'gallery' : 'home';
 }
