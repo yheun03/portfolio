@@ -324,7 +324,7 @@ $font-presets: (
     --gallery-accent: #9d6a25;
     --gallery-body: #1f1810;
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 78%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 36%, transparent);
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 42%, var(--gallery-bg-elevated));
     --gallery-active-fg: #fff8eb;
     --gallery-active-bg: var(--gallery-accent);
 
@@ -441,7 +441,7 @@ html[data-shell-theme="gallery"] {
     --gallery-accent: #f4c95d;
     --gallery-body: #f8ecd0;
     --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 38%, transparent);
+    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 48%, var(--gallery-bg-elevated));
     --gallery-active-fg: #030a12;
     --gallery-active-bg: var(--gallery-accent);
 }

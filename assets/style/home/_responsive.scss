@@ -176,8 +176,7 @@
         }
     }
 
-    .journey__chapter .journey__steps,
-    .editorial-year-era__entries {
+    .journey__chapter .journey__steps {
         position: relative;
         display: grid;
         gap: 0;
@@ -185,6 +184,17 @@
         padding-inline-start: var(--space-6);
         margin: 0;
         border-inline-start: 2px solid color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
+        list-style: none;
+    }
+
+    .editorial-year-era__entries {
+        position: relative;
+        display: grid;
+        gap: 0;
+        padding-block: 0;
+        padding-inline-start: var(--space-6);
+        margin: 0;
+        border-inline-start: 2px solid var(--editorial-year-rail, color-mix(in srgb, var(--color-primary) 42%, var(--color-border)));
         list-style: none;
     }
 
@@ -199,10 +209,12 @@
             content: "";
             position: absolute;
             left: calc(-1 * var(--space-6) + 0.15rem);
+            transform: translateX(-85%);
             top: 1.35rem;
             z-index: 1;
             width: 0.55rem;
             height: 0.55rem;
+            aspect-ratio: 1;
             border: 2px solid var(--color-surface);
             border-radius: 999px;
             background: var(--color-primary);
