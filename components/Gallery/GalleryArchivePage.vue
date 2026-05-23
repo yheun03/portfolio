@@ -35,7 +35,7 @@
 import type { WorkItem } from '@data/works';
 import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import GalleryPageHeader from '~/components/Gallery/GalleryPageHeader.vue';
-import ProjectGalleryCard from '~/components/work/ProjectGalleryCard.vue';
+import ProjectGalleryCard from '~/components/Work/ProjectGalleryCard.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;

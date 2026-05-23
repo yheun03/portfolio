@@ -25,14 +25,22 @@ export default defineNuxtConfig({
     css: ['~/assets/style/main.scss'],
 
     alias: {
-        '@api': fileURLToPath(new URL('./api', import.meta.url)),
         '@composables': fileURLToPath(new URL('./composables', import.meta.url)),
-        '@config': fileURLToPath(new URL('./config', import.meta.url)),
+        '@config': fileURLToPath(new URL('./core/config', import.meta.url)),
+        '@core': fileURLToPath(new URL('./core', import.meta.url)),
         '@data': fileURLToPath(new URL('./data', import.meta.url)),
         '@i18n': fileURLToPath(new URL('./i18n', import.meta.url)),
         '@stores': fileURLToPath(new URL('./stores', import.meta.url)),
         '@app-types': fileURLToPath(new URL('./types', import.meta.url)),
         '@utils': fileURLToPath(new URL('./utils', import.meta.url)),
+    },
+
+    hooks: {
+        'pages:routerOptions'({ files }) {
+            files.push({
+                path: fileURLToPath(new URL('./core/router.options.ts', import.meta.url)),
+            });
+        },
     },
 
     imports: {
@@ -52,11 +60,11 @@ export default defineNuxtConfig({
     ],
 
     components: [
-        { path: '~/components/base', pathPrefix: false },
-        { path: '~/components/work', pathPrefix: false },
+        { path: '~/components/Base', pathPrefix: false },
+        { path: '~/components/Work', pathPrefix: false },
         { path: '~/components/Gallery', pathPrefix: false },
         { path: '~/components/Motion', pathPrefix: false },
-        { path: '~/components/home', pathPrefix: false },
+        { path: '~/components/Home', pathPrefix: false },
         { path: '~/components/Layout', pathPrefix: false },
     ],
 

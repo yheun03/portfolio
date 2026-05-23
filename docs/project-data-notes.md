@@ -15,7 +15,8 @@
 | `i18n/ko.json`, `i18n/en.json`     | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등) |
 | `stores/appPreferenceStore.ts`     | 언어·테마 등 앱 환경 설정 상태                      |
 | `stores/portfolioUiStore.ts`       | Works·Highlights 등 포트폴리오 UI 상태              |
-| `composables/`, `plugins/`, `api/` | 화면 로직, Nuxt 플러그인, API 계층 진입점           |
+| `composables/`, `plugins/`         | 화면 로직, Nuxt 플러그인                           |
+| `core/`                            | 라우터 옵션과 앱 설정성 TS 모듈                    |
 
 ---
 
@@ -63,7 +64,7 @@
 
 | 파일                 | 이유                                                                                          |
 | -------------------- | --------------------------------------------------------------------------------------------- |
-| `config/homePage.ts` | 홈 **섹션 키**·**레이어 그룹** — `HomeSectionKey` 타입과 `pages/index.vue` 매핑과 맞추기 쉬움 |
+| `core/config/homePage.ts` | 홈 **섹션 키**·**레이어 그룹** — `HomeSectionKey` 타입과 `pages/index.vue` 매핑과 맞추기 쉬움 |
 | `data/works.ts`      | 여러 데이터 **병합**, `WorkItem` 타입, `getCareerWorkById` 등                                 |
 
 ---
@@ -90,15 +91,15 @@
 2. **프로필·소개·여정·스킬** → `data/site/*.ts`
 3. **수상·자격증** → `data/site/highlights/*.ts`
 4. **헤더 문구·버튼** → `i18n/*.json`
-5. **홈 섹션 순서/그룹** → `config/homePage.ts`
+5. **홈 섹션 순서/그룹** → `core/config/homePage.ts`
 
 ---
 
 ## 9. 관련 코드 진입점
 
-- 작업 목록·필터·모달: `stores/portfolioUiStore.ts`, `components/home/PortfolioWorks.vue`
-- 갤러리: `components/gallery/GalleryArchiveRoute.vue`, `GalleryDetailRoute.vue` (공통) · `pages/projects/*`, `pages/personal/*` (URL 엔트리)
-- 하이라이트 탭: `components/home/PortfolioHighlights.vue`
+- 작업 목록·필터·모달: `stores/portfolioUiStore.ts`, `components/Home/PortfolioWorks.vue`
+- 갤러리: `components/Gallery/GalleryArchiveRoute.vue`, `GalleryDetailRoute.vue` (공통) · `pages/projects/*`, `pages/personal/*` (URL 엔트리)
+- 하이라이트 탭: `components/Home/PortfolioHighlights.vue`
 
 ---
 

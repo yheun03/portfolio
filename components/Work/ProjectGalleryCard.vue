@@ -70,7 +70,7 @@ import type { GalleryViewMode } from '@composables/gallery/useGallery';
 import { galleryEntryId } from '@composables/gallery/useNavigationRestore';
 import { isPlaceholderCapture } from '@utils/capturePlaceholder';
 import { getWorkStartYear } from '@utils/workSort';
-import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
+import GalleryEmptyCapture from '~/components/Work/GalleryEmptyCapture.vue';
 
 const props = withDefaults(
     defineProps<{
