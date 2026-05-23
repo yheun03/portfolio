@@ -60,12 +60,12 @@ export default defineNuxtConfig({
     ],
 
     components: [
-        { path: '~/components/Base', pathPrefix: false },
-        { path: '~/components/Work', pathPrefix: false },
-        { path: '~/components/Gallery', pathPrefix: false },
-        { path: '~/components/Motion', pathPrefix: false },
-        { path: '~/components/Home', pathPrefix: false },
-        { path: '~/components/Layout', pathPrefix: false },
+        { path: '~/components/base', pathPrefix: false },
+        { path: '~/components/work', pathPrefix: false },
+        { path: '~/components/gallery', pathPrefix: false },
+        { path: '~/components/motion', pathPrefix: false },
+        { path: '~/components/home', pathPrefix: false },
+        { path: '~/components/layout', pathPrefix: false },
     ],
 
     vite: {

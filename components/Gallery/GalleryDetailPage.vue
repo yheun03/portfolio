@@ -48,15 +48,7 @@
                     </div>
                 </dl>
                 <p v-if="work.links?.length" class="gallery-detail__links">
-                    <template v-for="link in work.links" :key="link.href">
-                        <NuxtLink v-if="isAppRoute(link.href)" class="base-button base-button--primary" :to="link.href">
-                            {{ pick(link.label) }}
-                        </NuxtLink>
-                        <a v-else class="base-button base-button--primary" :href="link.href" target="_blank"
-                            rel="noopener noreferrer">
-                            {{ pick(link.label) }}
-                        </a>
-                    </template>
+                    <BaseButton v-for="link in work.links" :key="link.href" :label="pick(link.label)" :href="link.href" />
                 </p>
             </header>
 
@@ -114,7 +106,7 @@ import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
 import { getGalleryVariantConfig } from '@composables/gallery/useGallery';
 import { getRealCaptures, isPlaceholderCapture } from '@utils/capturePlaceholder';
-import GalleryEmptyCapture from '~/components/Work/GalleryEmptyCapture.vue';
+import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
@@ -122,7 +114,7 @@ const props = defineProps<{
 }>();
 
 const { t, pick, locale } = useLocale();
-const { resolveAppPath, isAppRoute } = useAppPathResolver();
+const { resolveAppPath } = useAppPathResolver();
 const layoutLinks = useSubpageNavLinks();
 const config = getGalleryVariantConfig(props.variant);
 const { goBack } = useNavigationRestore(config.basePath);

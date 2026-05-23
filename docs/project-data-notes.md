@@ -97,9 +97,9 @@
 
 ## 9. 관련 코드 진입점
 
-- 작업 목록·필터·모달: `stores/portfolioUiStore.ts`, `components/Home/PortfolioWorks.vue`
-- 갤러리: `components/Gallery/GalleryArchiveRoute.vue`, `GalleryDetailRoute.vue` (공통) · `pages/projects/*`, `pages/personal/*` (URL 엔트리)
-- 하이라이트 탭: `components/Home/PortfolioHighlights.vue`
+- 작업 목록·필터·모달: `stores/portfolioUiStore.ts`, `components/home/PortfolioWorks.vue`
+- 갤러리: `components/gallery/GalleryArchivePage.vue`, `GalleryDetailPage.vue` (공통 화면) · `composables/gallery/useGalleryRouteData.ts` (라우트 데이터) · `pages/projects/*`, `pages/personal/*` (URL 엔트리)
+- 하이라이트 탭: `components/home/PortfolioHighlights.vue`
 
 ---
 

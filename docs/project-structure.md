@@ -39,12 +39,12 @@
 
 | 폴더                  | 담당                                                                                             |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
-| `components/Base/`    | BaseButton, BaseCard, BaseLabel, BaseSectionTitle, EditorialYearTimeline 같은 primitive/공통 UI. |
-| `components/Layout/`  | AppLayout, AppHeader, AppFooter, AppLnb, AppDock 등 앱 shell 컴포넌트.                           |
-| `components/Home/`    | 홈 화면 섹션 컴포넌트. Hero, Works, Personal, About, Journey, Toolbox, Highlights, Contact.      |
-| `components/Work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.      |
-| `components/Gallery/` | 프로젝트/개인 아카이브 라우트 컴포넌트와 상세 페이지 컴포넌트.                                   |
-| `components/Motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                |
+| `components/base/`    | BaseLink, BaseButton, BaseCard, BaseLabel, BaseSectionTitle, EditorialYearTimeline 같은 primitive/공통 UI. |
+| `components/layout/`  | AppLayout, AppHeader, AppFooter, AppLnb, AppDock 등 앱 shell 컴포넌트.                           |
+| `components/home/`    | 홈 화면 섹션 컴포넌트. Hero, Works, Personal, About, Journey, Toolbox, Highlights, Contact.      |
+| `components/work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.      |
+| `components/gallery/` | 프로젝트/개인 아카이브 목록·상세 화면 컴포넌트. 라우트 데이터는 `composables/gallery/`에서 공급합니다. |
+| `components/motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                |
 
 ## Core
 
