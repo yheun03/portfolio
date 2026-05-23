@@ -1,6 +1,6 @@
 # Design System
 
-이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 실제 코드 구조인 `assets/style/abstracts`, `assets/style/base`, `assets/style/work`, `assets/style/layout`, `assets/style/home`, `assets/style/gallery`, `assets/style/motion`, `components/base`, `components/work`, `components/layout`, `components/home`, `components/gallery`, `components/motion`를 기준으로 분석했습니다.
+이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 실제 코드 구조인 `assets/style/abstracts`, `assets/style/base`, `assets/style/work`, `assets/style/layout`, `assets/style/home`, `assets/style/gallery`, `assets/style/motion`, `components/Base`, `components/Work`, `components/Layout`, `components/Home`, `components/Gallery`, `components/Motion`를 기준으로 분석했습니다.
 
 ## Design Principles
 
@@ -134,11 +134,11 @@ Note: `main.scss` references `--radius-md` in `.tab-list .tab-list__tab`, and th
 
 | Code folder         | Figma group      | Components                                                                                                                                                  |
 | ------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `components/base`   | Base             | `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`                                                                                      |
-| `components/work`   | Pattern / Card   | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`                                                                                             |
-| `components/layout` | Module / Layout  | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock`                                                                                                  |
-| `components/motion` | Motion           | `TypoDisplayHeading`                                                                                                                                        |
-| `components/home`   | Module / Section | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
+| `components/Base`   | Base             | `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`                                                                                      |
+| `components/Work`   | Pattern / Card   | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`                                                                                             |
+| `components/Layout` | Module / Layout  | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock`                                                                                                  |
+| `components/Motion` | Motion           | `TypoDisplayHeading`                                                                                                                                        |
+| `components/Home`   | Module / Section | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
 
 ## Component Variants
 

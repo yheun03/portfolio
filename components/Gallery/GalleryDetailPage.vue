@@ -114,7 +114,7 @@ import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
 import { getGalleryVariantConfig } from '@composables/gallery/useGallery';
 import { getRealCaptures, isPlaceholderCapture } from '@utils/capturePlaceholder';
-import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
+import GalleryEmptyCapture from '~/components/Work/GalleryEmptyCapture.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;

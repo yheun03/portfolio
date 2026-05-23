@@ -1,131 +1,105 @@
 # Portfolio
 
-Nuxt 3 기반 개인 포트폴리오 사이트입니다.
+웹 퍼블리셔 **은영환**의 개인 포트폴리오 사이트입니다. Nuxt 3로 구성된 인터랙티브 홈과, 채용·지원용으로 쓰는 **정적 이력서 문서**를 한 저장소에서 함께 관리합니다.
+
+## 무엇이 들어 있나
+
+| 구분                  | 설명                                                                | 접근                                 |
+| --------------------- | ------------------------------------------------------------------- | ------------------------------------ |
+| **포트폴리오 (Nuxt)** | 프로필, 경력·개인 프로젝트, 갤러리, 다국어(ko/en), 라이트/다크 테마 | `/` · `/projects` · `/personal`      |
+| **이력서**            | 사람인 양식 기반 정적 HTML (프로필·학력·경력 요약)                  | [`/resume.html`](public/resume.html) |
+| **자기소개서**        | 동일 HTML 내 `resume_letter` 섹션                                   | 위 이력서 페이지                     |
+| **경력기술서**        | 동일 HTML 내 프로젝트별 상세 경력                                   | 위 이력서 페이지                     |
+
+홈 **연락처** 섹션의 「이력서 보기」 링크가 `public/resume.html`로 연결됩니다. 스타일·인쇄용 자산은 `public/resume/`에 있습니다.
+
+이전 버전(2025 정적 사이트)은 `public/ver.2025/`에 보관되어 있습니다.
+
+## 기술 스택
+
+- **Nuxt 3** · Vue 3 · Pinia
+- **SCSS** 디자인 토큰 (`assets/style/abstracts/_tokens.scss`)
+- **GSAP** (히어로·모션)
+- **GitHub Pages** 배포 (`baseURL`: `/portfolio/`)
 
 ## 문서
 
-- **[데이터 · 다국어 · 폴더 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 JSON, 갤러리 라우트 정리
+- **[데이터 · 다국어 · 폴더 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 JSON, 갤러리 라우트
+- **[디자인 시스템](docs/design-system.md)** — 컴포넌트·토큰·Figma 매핑
+- **[Lighthouse 로드맵](docs/lighthouse-roadmap.md)** — 성능·접근성 개선 계획
 
-## 앱 구조
+## 프로젝트 구조
 
-Nuxt 기본 관례에 맞춰 앱 계층은 루트 폴더에서 관리합니다. `composables`, `stores`, `plugins`, `i18n`, `api`를 기준 축으로 두고, 정적 포트폴리오 본문은 `data`, 설정값은 `config`, 순수 유틸은 `utils`, 공유 타입은 `types`에 둡니다.
+Nuxt 관례에 맞춰 앱 계층은 루트에서 관리합니다. 본문은 `data/`, 설정은 `core/config/`, UI 상태는 `stores/`·`composables/`에 둡니다.
 
-## 디자인 토큰 사용법
+```
+├── components/          # Vue 컴포넌트 (폴더명 PascalCase)
+│   ├── Base/            # 버튼, 카드, 라벨 등 primitive
+│   ├── Work/            # 작업 카드, 타임라인, 갤러리 카드
+│   ├── Home/            # 홈 섹션 (Hero, Works, About, …)
+│   ├── Layout/          # AppLayout, Header, Footer, Lnb, Dock
+│   ├── Gallery/         # 프로젝트 아카이브·상세
+│   └── Motion/          # 모션 타이포그래피
+├── pages/               # 라우트 (index, projects, personal)
+├── data/
+│   ├── works/           # 경력·개인 프로젝트 (카테고리별 TS)
+│   └── site/            # 프로필, 소개, 여정, 스킬, 하이라이트
+├── i18n/                # UI 문구 (ko.json, en.json)
+├── public/
+│   ├── resume.html      # 이력서 · 자기소개서 · 경력기술서
+│   └── resume/          # 이력서 전용 CSS·이미지
+└── assets/style/        # SCSS (base, layout, home, work, gallery, motion)
+```
 
-스타일 토큰은 `assets/style/abstracts/_tokens.scss`에서 관리합니다. Nuxt 설정에서 `@use "abstracts/tokens" as *;`가 전역 주입되며, 화면 스타일 진입점은 `assets/style/main.scss`입니다.
+## 로컬 실행
 
-SCSS는 Vue 컴포넌트 구조와 비슷하게 역할별 폴더로 나눕니다: `base`는 버튼·라벨·섹션 같은 primitive, `layout`은 앱 셸, `home`은 홈 섹션, `work`는 카드/작업 패턴, `gallery`는 아카이브 화면, `motion`은 인터랙션 타이포그래피를 담당합니다.
+```bash
+npm install
+npm run dev          # http://localhost:3000 (baseURL=/ 로 루트 서빙)
+npm run dev:host     # 0.0.0.0:3005
+```
+
+GitHub Pages와 동일한 `/portfolio/` 경로로 보려면 `NUXT_APP_BASE_URL` 없이 `npm run build` 후 `npm run preview`를 사용합니다.
+
+## 배포
+
+```bash
+npm run build    # 프로덕션 빌드
+npm run deploy   # build + gh-pages 브랜치 배포
+```
+
+## 디자인 토큰 (요약)
+
+토큰은 `assets/style/abstracts/_tokens.scss`에 정의되며, `nuxt.config.ts`에서 전역 `@use`됩니다. 화면 진입점은 `assets/style/main.scss`입니다.
+
+- **색상**: `$grayscale-*`, `$primary-*`, `$state-*` (다크 모드는 CSS 변수만 교체)
+- **타이포**: `@include font(heading-1)` 등 프리셋 (`heading-*`, `title-*`, `body-*`, `caption-*`, `label`, `button`)
+- **간격·형태**: `$space-*`, `$radius-*`, `$shadow-*`
+
+자세한 사용 예와 컴포넌트 매핑은 [design-system.md](docs/design-system.md)를 참고하세요.
 
 ```scss
 @use 'abstracts/tokens' as *;
-```
 
-### 색상
-
-색상은 `text-primary`, `surface-bg`처럼 의미별 alias를 새로 만들지 않고 기본 스케일 토큰을 직접 사용합니다. 다크 테마에서는 CSS 변수 값만 바뀌므로 SCSS 사용 코드는 그대로 유지됩니다.
-
-```scss
 .card {
     color: $grayscale-900;
     background: $grayscale-0;
-    border: 1px solid $grayscale-300;
+    padding: $space-7;
+    border-radius: $radius-card;
 }
 
-.button {
-    color: $grayscale-0;
-    background: $primary-600;
-}
-
-.error {
-    color: $state-error;
-}
-```
-
-사용 기준:
-
-- `$grayscale-0` ~ `$grayscale-200`: 배경, 카드, 강조 면
-- `$grayscale-300` ~ `$grayscale-500`: 보더, 디바이더, 비활성 요소
-- `$grayscale-600` ~ `$grayscale-700`: 보조 텍스트
-- `$grayscale-800` ~ `$grayscale-950`: 주요 텍스트
-- `$primary-50` ~ `$primary-900`: 브랜드/액션 컬러
-- `$state-error`, `$state-success`, `$state-warning`: 상태 컬러
-
-기존 코드 호환을 위해 `--color-bg`, `--color-text`, `--color-primary` 같은 CSS 변수 alias는 남겨두지만, 새 SCSS 작성 시에는 `$grayscale-*`, `$primary-*`, `$state-*`를 우선 사용합니다.
-
-### 폰트
-
-폰트는 `@include font(...)` 믹스인을 사용합니다. 각 프리셋은 기본 `font-family`, `font-size`, `font-weight`, `line-height`, `letter-spacing`을 가지고 있어 프리셋 이름만 넘겨도 됩니다.
-
-```scss
 .hero-title {
     @include font(heading-1);
 }
-
-.section-title {
-    @include font(heading-2);
-}
-
-.card-title {
-    @include font(title-1);
-}
-
-.description {
-    @include font(body-1);
-}
-
-.caption {
-    @include font(caption-1);
-}
 ```
-
-필요한 값만 덮어쓸 수도 있습니다.
-
-```scss
-.strong-title {
-    @include font(title-1, $font-weight-black);
-}
-
-.label {
-    @include font(caption-2, $letter-spacing: 0.08em);
-}
-
-.compact-text {
-    @include font(body-2, $line-height: 1.45);
-}
-```
-
-현재 프리셋:
-
-- `heading-1`, `heading-2`, `heading-3`
-- `title-1`, `title-2`
-- `body-1`, `body-2`
-- `caption-1`, `caption-2`
-- `label`, `button`
-
-### 여백과 형태
-
-여백과 크기도 토큰을 우선 사용합니다.
-
-```scss
-.panel {
-    padding: $space-7;
-    gap: $space-4;
-    border-radius: $radius-card;
-}
-```
-
-주요 토큰:
-
-- `$space-0` ~ `$space-11`: 고정 간격
-- `$space-fluid-xs` ~ `$space-fluid-2xl`: 반응형 간격
-- `$radius-card`, `$radius-md`, `$radius-lg`, `$radius-xl`: radius
-- `$shadow-soft`, `$shadow-lift`, `$shadow-glow`: shadow
 
 ## 스크립트
 
-```bash
-npm run dev      # 개발 서버
-npm run build    # 프로덕션 빌드
-npm run generate # 정적 생성
-npm run deploy   # build + GitHub Pages(gh-pages 브랜치) 배포
-```
+| 명령               | 설명                              |
+| ------------------ | --------------------------------- |
+| `npm run dev`      | 개발 서버 (`NUXT_APP_BASE_URL=/`) |
+| `npm run build`    | 프로덕션 빌드                     |
+| `npm run generate` | 정적 생성                         |
+| `npm run preview`  | 빌드 결과 미리보기                |
+| `npm run deploy`   | build + GitHub Pages 배포         |
+| `npm run clean`    | `.nuxt`, `.output` 등 캐시 삭제   |
