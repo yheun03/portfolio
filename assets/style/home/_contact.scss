@@ -1,4 +1,5 @@
 @use "../abstracts/tokens" as *;
+
 /* Portfolio contact refresh */
 .section.section--contact {
     display: flex;
@@ -151,8 +152,8 @@
     >span {
         position: relative;
         flex: 1 1 0;
-        min-width: 0.42em;
-        height: 100%;
+        // min-width: 0.42em;
+        // height: 100%;
 
         >span {
             position: absolute;
@@ -282,23 +283,15 @@
         line-height: 1.05;
 
         >span {
-            flex: 0 1 auto;
-            width: auto;
-            height: 1em;
-            min-width: 0.5em;
-
-            >span {
-                position: static;
-                inset: auto;
-                transform: none;
-            }
+            // flex: 1;
+            // width: auto;
+            // height: 1em;
+            // min-width: 0.5em;
 
             &.contact__mail-slot--suffix {
-                flex: 0 1 auto;
 
                 >span {
                     font-size: 0.72em;
-                    letter-spacing: -0.08em;
                 }
             }
         }

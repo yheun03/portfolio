@@ -63,11 +63,12 @@ Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정성 코�
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000 (baseURL=/ 로 루트 서빙)
+npm run dev          # http://localhost:3000/portfolio/
+npm run dev:root     # http://localhost:3000/ (로컬 루트 서빙이 필요할 때)
 npm run dev:host     # 0.0.0.0:3005
 ```
 
-GitHub Pages와 동일한 `/portfolio/` 경로로 보려면 `NUXT_APP_BASE_URL` 없이 `npm run build` 후 `npm run preview`를 사용합니다.
+기본 개발 서버도 GitHub Pages와 동일한 `/portfolio/` 경로로 실행됩니다. 로컬 루트(`/`)로 확인해야 할 때만 `npm run dev:root`를 사용합니다.
 
 ## 배포
 
@@ -105,7 +106,8 @@ npm run deploy   # build + gh-pages 브랜치 배포
 
 | 명령               | 설명                              |
 | ------------------ | --------------------------------- |
-| `npm run dev`      | 개발 서버 (`NUXT_APP_BASE_URL=/`) |
+| `npm run dev`      | 개발 서버 (`/portfolio/` baseURL) |
+| `npm run dev:root` | 개발 서버 (`/` baseURL)           |
 | `npm run build`    | 프로덕션 빌드                     |
 | `npm run generate` | 정적 생성                         |
 | `npm run preview`  | 빌드 결과 미리보기                |

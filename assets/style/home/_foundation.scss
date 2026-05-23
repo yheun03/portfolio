@@ -893,17 +893,17 @@
     /** PC용 `.section--* .__grid { display:grid }` 특이도(0,2,0)를 그대로 덮음 */
     .section--works .works__grid,
     .section--personal .personal__grid {
-        --swipe-card-width: min(86vw, 26rem);
+        --swipe-card-width: min(82vw, 25rem);
         --swipe-edge-space: max(var(--touch-pad-x), calc((100vw - var(--swipe-card-width)) * 0.5));
 
         display: flex;
         flex-direction: row;
-        gap: var(--space-5);
+        gap: clamp(0.75rem, 4vw, var(--space-5));
         min-width: 0;
         width: calc(100% + (var(--touch-pad-x) * 2));
         max-width: none;
         margin-inline: calc(-1 * var(--touch-pad-x));
-        padding-block: 20px 60px;
+        padding-block: 12px 48px;
         padding-inline: var(--swipe-edge-space);
         grid-template-columns: none;
         overflow-x: auto;
@@ -930,6 +930,11 @@
         scroll-snap-stop: always;
     }
 
+    .section--works .works__grid .work-card:first-child,
+    .section--personal .personal__grid .work-card:first-child {
+        scroll-snap-align: start;
+    }
+
     .section--works .works__rail-wrap,
     .section--personal .personal__rail-wrap {
         display: grid;
@@ -947,7 +952,7 @@
         flex-direction: column;
         align-items: stretch;
         gap: var(--space-4);
-        margin-block-start: -66px;
+        margin-block-start: -54px;
 
         p {
             line-height: var(--line-height-body);
@@ -955,6 +960,24 @@
 
         .base-button {
             width: 100%;
+        }
+    }
+
+    .work-card {
+        --card-flow-label: var(--space-3);
+        --card-flow-title: var(--space-3);
+        --card-flow-content: var(--space-4);
+
+        h3 {
+            font-size: clamp(1.1rem, 5.5vw, 1.35rem);
+        }
+
+        &__tech {
+            gap: var(--space-2);
+        }
+
+        &__button {
+            margin-top: var(--space-4);
         }
     }
 

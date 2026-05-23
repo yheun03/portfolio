@@ -1,4 +1,5 @@
 @use "../abstracts/tokens" as *;
+
 /* Portfolio hero refresh */
 .hero__poster {
     position: relative;
@@ -377,6 +378,80 @@
 
         dd {
             font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .section--hero {
+        padding-top: clamp(0.75rem, 4vw, 1.4rem);
+        padding-bottom: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .hero__poster {
+        gap: clamp(0.85rem, 4.2vw, 1.35rem);
+    }
+
+    .hero__stage {
+        padding-top: clamp(1.15rem, 7vw, 2.2rem);
+    }
+
+    .hero__eyebrow {
+        margin-bottom: clamp(1rem, 5vw, 1.6rem);
+    }
+
+    .hero__lead {
+        max-width: 24ch;
+        margin-top: clamp(1rem, 5vw, 1.65rem);
+    }
+
+    .hero__essentials {
+        gap: clamp(0.9rem, 4vw, 1.25rem);
+        padding: clamp(0.95rem, 4.6vw, 1.25rem);
+    }
+
+    .hero__focus-item {
+        padding-block: clamp(0.65rem, 3.8vw, 0.95rem);
+    }
+
+    .hero__metrics-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        border-top: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+    }
+
+    .hero__metric {
+        padding: clamp(0.8rem, 4vw, 1rem) 0 0;
+        border: 0;
+
+        &:nth-child(odd) {
+            padding-inline-end: clamp(0.75rem, 4vw, 1rem);
+            border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+        }
+
+        &:nth-child(even) {
+            padding-inline-start: clamp(0.75rem, 4vw, 1rem);
+        }
+
+        &:nth-child(n + 3) {
+            margin-top: clamp(0.7rem, 3vw, 0.9rem);
+            border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+        }
+    }
+}
+
+@media (max-width: 359px) {
+    .hero__metrics-bar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero__metric {
+        padding-inline: 0;
+        border-inline-end: 0;
+
+        &:not(:first-child) {
+            margin-top: 0.65rem;
+            border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
         }
     }
 }
