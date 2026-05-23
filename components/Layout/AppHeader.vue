@@ -1,26 +1,15 @@
 <template>
     <header class="app-header">
-        <NuxtLink v-if="isAppRoute(brandHref)" class="app-header__brand" :to="brandHref"
+        <BaseLink class="app-header__brand" :href="brandHref"
             :aria-label="locale === 'ko' ? '포트폴리오 홈' : 'Portfolio home'">
             <span aria-hidden="true">Eun</span>
-        </NuxtLink>
-        <a v-else class="app-header__brand" :href="brandHref"
-            :aria-label="locale === 'ko' ? '포트폴리오 홈' : 'Portfolio home'">
-            <span aria-hidden="true">Eun</span>
-        </a>
+        </BaseLink>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
-            <template v-for="link in links" :key="link.href">
-                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" class="app-header__link"
-                    :class="{ 'app-header__link--active': isNavActive(link.href) }"
-                    :aria-current="isNavActive(link.href) ? 'page' : undefined">
-                    {{ link.label }}
-                </NuxtLink>
-                <a v-else :href="link.href" class="app-header__link"
-                    :class="{ 'app-header__link--active': isNavActive(link.href) }"
-                    :aria-current="isNavActive(link.href) ? 'page' : undefined">
-                    {{ link.label }}
-                </a>
-            </template>
+            <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-header__link"
+                :class="{ 'app-header__link--active': isActive(link.href) }"
+                :aria-current="isActive(link.href) ? 'page' : undefined">
+                {{ link.label }}
+            </BaseLink>
         </nav>
         <div class="app-header__actions">
             <BaseButton class="app-header__language-toggle" variant="ghost" :label="locale.toUpperCase()"
@@ -43,7 +32,6 @@
 const menuOpen = ref(false);
 const { locale, toggleLocale } = useLocale();
 const { theme, toggleTheme } = useTheme();
-const route = useRoute();
 
 const languageToggleAriaLabel = computed(() =>
     locale.value === "ko"
@@ -83,23 +71,10 @@ const props = withDefaults(
     }
 );
 
-const { isAppRoute } = useAppPathResolver();
-
-function isNavActive(href: string) {
-    if (href.startsWith("#")) {
-        if (props.activePath) return false;
-        return props.activeId === href.slice(1);
-    }
-    if (href.startsWith("/")) {
-        if (props.activePath) {
-            if (href === "/") return route.path === "/";
-            return props.activePath === href;
-        }
-        if (href === "/") return route.path === "/";
-        return route.path === href || route.path.startsWith(`${href}/`);
-    }
-    return false;
-}
+const { isActive } = useNavLinkState({
+    activeId: () => props.activeId,
+    activePath: () => props.activePath,
+});
 
 const onAppLnbToggle = () => {
     menuOpen.value = !menuOpen.value;

@@ -1,19 +1,17 @@
 <template>
-    <button v-if="!href" type="button" class="base-button" :class="`base-button--${variant}`"
+    <button v-if="!href" v-bind="$attrs" type="button" class="base-button" :class="`base-button--${variant}`"
         :aria-label="ariaLabel || label">
         <slot>{{ label }}</slot>
     </button>
-    <NuxtLink v-else-if="isAppRoute(href)" class="base-button" :class="`base-button--${variant}`" :to="href"
-        :aria-label="ariaLabel || label">
+    <BaseLink v-else v-bind="$attrs" class="base-button" :class="`base-button--${variant}`" :href="href"
+        :aria-label="ariaLabel || label" external>
         <slot>{{ label }}</slot>
-    </NuxtLink>
-    <a v-else class="base-button" :class="`base-button--${variant}`" :href="externalLinkHref"
-        :aria-label="ariaLabel || label" target="_blank" rel="noopener noreferrer">
-        <slot>{{ label }}</slot>
-    </a>
+    </BaseLink>
 </template>
 
 <script setup lang="ts">
+defineOptions({ inheritAttrs: false });
+
 const props = withDefaults(
     defineProps<{
         label: string;
@@ -23,8 +21,4 @@ const props = withDefaults(
     }>(),
     { variant: "primary" }
 );
-
-const { isAppRoute, resolveAppPath } = useAppPathResolver();
-
-const externalLinkHref = computed(() => (props.href ? resolveAppPath(props.href) : ""));
 </script>

@@ -34,8 +34,8 @@
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
 import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
-import GalleryPageHeader from '~/components/Gallery/GalleryPageHeader.vue';
-import ProjectGalleryCard from '~/components/Work/ProjectGalleryCard.vue';
+import GalleryPageHeader from '~/components/gallery/GalleryPageHeader.vue';
+import ProjectGalleryCard from '~/components/work/ProjectGalleryCard.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;

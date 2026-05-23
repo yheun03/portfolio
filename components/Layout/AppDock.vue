@@ -1,21 +1,14 @@
 <template>
     <div class="app-dock-ribbon">
         <nav class="app-dock" :aria-label="locale === 'ko' ? '빠른 페이지 이동' : 'Quick page navigation'">
-            <template v-for="link in links" :key="link.href">
-                <NuxtLink v-if="isAppRoute(link.href)" :to="link.href" class="app-dock__item"
-                    :class="{ 'app-dock__item--active': isLinkActive(link.href) }"
-                    :aria-current="isLinkActive(link.href) ? 'page' : undefined">
-                    <span class="app-dock__dot" aria-hidden="true" />
-                    <span class="app-dock__label">{{ link.label }}</span>
-                </NuxtLink>
-                <a v-else class="app-dock__item" :class="{ 'app-dock__item--active': isLinkActive(link.href) }"
-                    :href="link.href" :aria-current="isLinkActive(link.href) ? 'page' : undefined"
-                    :aria-disabled="isHashNavigationLocked ? 'true' : undefined"
-                    @click="onHashLinkClick($event, link.href)">
-                    <span class="app-dock__dot" aria-hidden="true" />
-                    <span class="app-dock__label">{{ link.label }}</span>
-                </a>
-            </template>
+            <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-dock__item"
+                :class="{ 'app-dock__item--active': isActive(link.href) }"
+                :aria-current="isActive(link.href) ? 'page' : undefined"
+                :aria-disabled="isHashNavigationLocked && link.href.startsWith('#') ? 'true' : undefined"
+                @click="onHashLinkClick($event, link.href)">
+                <span class="app-dock__dot" aria-hidden="true" />
+                <span class="app-dock__label">{{ link.label }}</span>
+            </BaseLink>
         </nav>
     </div>
 </template>
@@ -25,7 +18,6 @@ import { scrollToSectionHash, scrollToSectionHashWhenReady } from '@utils/sectio
 
 const { locale } = useLocale();
 const route = useRoute();
-const { isAppRoute } = useAppPathResolver();
 
 const props = defineProps<{
     links: { href: string; label: string }[];
@@ -36,6 +28,10 @@ const props = defineProps<{
 const router = useRouter();
 const isHashNavigationLocked = ref(false);
 let hashNavigationTimer: ReturnType<typeof setTimeout> | null = null;
+const { isActive } = useNavLinkState({
+    activeId: () => props.activeId,
+    activePath: () => props.activePath,
+});
 
 function unlockHashNavigation() {
     isHashNavigationLocked.value = false;
@@ -72,17 +68,4 @@ async function onHashLinkClick(event: MouseEvent, href: string) {
 
 onBeforeUnmount(unlockHashNavigation);
 
-function isLinkActive(href: string) {
-    if (href.startsWith('#')) {
-        if (props.activePath) return false;
-        return props.activeId === href.slice(1);
-    }
-    if (href === '/') {
-        return route.path === '/';
-    }
-    if (props.activePath) {
-        return props.activePath === href;
-    }
-    return route.path === href || route.path.startsWith(`${href}/`);
-}
 </script>
