@@ -37,14 +37,14 @@
 
 ## Components
 
-| 폴더                  | 담당                                                                                             |
-| --------------------- | ------------------------------------------------------------------------------------------------ |
+| 폴더                  | 담당                                                                                                       |
+| --------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `components/base/`    | BaseLink, BaseButton, BaseCard, BaseLabel, BaseSectionTitle, EditorialYearTimeline 같은 primitive/공통 UI. |
-| `components/layout/`  | AppLayout, AppHeader, AppFooter, AppLnb, AppDock 등 앱 shell 컴포넌트.                           |
-| `components/home/`    | 홈 화면 섹션 컴포넌트. Hero, Works, Personal, About, Journey, Toolbox, Highlights, Contact.      |
-| `components/work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.      |
-| `components/gallery/` | 프로젝트/개인 아카이브 목록·상세 화면 컴포넌트. 라우트 데이터는 `composables/gallery/`에서 공급합니다. |
-| `components/motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                |
+| `components/layout/`  | AppLayout, AppHeader, AppFooter, AppLnb, AppDock 등 앱 shell 컴포넌트.                                     |
+| `components/home/`    | 홈 화면 섹션 컴포넌트. Hero, Works, Personal, About, Journey, Toolbox, Highlights, Contact.                |
+| `components/work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.                |
+| `components/gallery/` | 프로젝트/개인 아카이브 목록·상세 화면 컴포넌트. 라우트 데이터는 `composables/gallery/`에서 공급합니다.     |
+| `components/motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                          |
 
 ## Core
 
@@ -101,8 +101,7 @@
 | `public/favicon.svg`                                         | 사이트 favicon.                                                |
 | `public/robots.txt`, `public/sitemap.xml`, `public/_headers` | 배포용 검색/헤더 메타 파일.                                    |
 | `public/images/`                                             | 배포 경로가 고정된 이미지. OG 이미지와 프로젝트 캡처를 둡니다. |
-| `public/resume.html`                                         | 채용·지원용 정적 이력서/자기소개서/경력기술서.                 |
-| `public/resume/`                                             | 이력서 전용 CSS와 이미지 자산.                                 |
+| `public/files/Resume.pdf`                                    | 채용·지원용 PDF 이력서.                                        |
 | `public/ver.2025/`                                           | 2025년 이전 정적 포트폴리오 아카이브.                          |
 
 ## Removed Or Consolidated
