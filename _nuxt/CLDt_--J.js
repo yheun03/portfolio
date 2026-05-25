@@ -1,1 +1,0 @@
-import{_ as e}from"./BelH6x65.js";import{b as s}from"./Cw69ihFR.js";import{d as t,c as a,u as n,o as p}from"#entry";import"./uba399_o.js";import"./CVWbR1kr.js";import"./CdeuhD9X.js";import"./CApWudbu.js";const x=t({__name:"index",setup(m){const o=s("personal");return(c,i)=>{const r=e;return p(),a(r,{variant:"personal",works:n(o)},null,8,["works"])}}});export{x as default};
