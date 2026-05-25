@@ -108,7 +108,7 @@ const data = {
     contacts: {
         email: 'eyh208@naver.com',
         github: 'https://github.com/yheun03',
-        resume: '/files/Resume.pdf',
+        resume: 'files/Resume.pdf',
     },
 } as const;
 
