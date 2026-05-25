@@ -5,6 +5,7 @@
             <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
         </div>
     </AppLayout>
+    <TempMainProgressModalRenderer />
 </template>
 
 <script setup lang="ts">
@@ -12,6 +13,7 @@ import { defineAsyncComponent, type Component } from 'vue';
 import PortfolioHero from '~/components/Section/PortfolioHero.vue';
 import PortfolioWorks from '~/components/Section/PortfolioWorks.vue';
 import PortfolioPersonal from '~/components/Section/PortfolioPersonal.vue';
+import TempMainProgressModalRenderer from '~/components/Page/TempMainProgressModalRenderer.vue';
 import { HOME_PAGE_LAYERS, type HomeSectionKey, SCROLL_SECTION_IDS } from '@config/homePage';
 
 const PortfolioAbout = defineAsyncComponent(() => import('~/components/Section/PortfolioAbout.vue'));
