@@ -1,6 +1,6 @@
 const data = [
     {
-        id: 'jonsoft-framework',
+        id: 'framework',
         category: 'solution',
         title: {
             ko: '조앤소프트 프레임워크 구축',
@@ -65,6 +65,22 @@ const data = [
         },
         captures: ['/images/projects/placeholder.svg'],
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS'],
+        links: [
+            {
+                label: {
+                    ko: '데모 보기',
+                    en: 'Open demo',
+                },
+                href: 'https://yheun03.github.io/framework/',
+            },
+            {
+                label: {
+                    ko: 'GitHub',
+                    en: 'GitHub',
+                },
+                href: 'https://github.com/yheun03/framework',
+            },
+        ],
     },
     {
         id: 'infra',
