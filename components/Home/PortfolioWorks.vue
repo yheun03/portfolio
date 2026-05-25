@@ -118,8 +118,8 @@
                                     :to="link.href">
                                     {{ pick(link.label) }}
                                 </NuxtLink>
-                                <a v-else class="base-button base-button--primary" :href="link.href" target="_blank"
-                                    rel="noopener noreferrer">
+                                <a v-else class="base-button base-button--primary" :href="resolveAppPath(link.href)"
+                                    target="_blank" rel="noopener noreferrer">
                                     {{ pick(link.label) }}
                                 </a>
                             </template>
@@ -136,7 +136,7 @@ import { useWorksTabRenderer } from '@composables/portfolio/useWorksTabRenderer'
 import { careerWorks, personalWorksList } from '@data/works';
 
 const { t, pick, locale } = useLocale();
-const { isAppRoute } = useAppPathResolver();
+const { isAppRoute, resolveAppPath } = useAppPathResolver();
 const { isNarrow } = useNarrowLayout();
 
 const {
