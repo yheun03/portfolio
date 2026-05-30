@@ -10,10 +10,10 @@
                     나눠 정리했습니다. 색상은 <code>assets/style/abstracts/_theme.scss</code>, 나머지 foundation은
                     <code>_tokens.scss</code>에서 관리합니다.
                 </p>
-                <div class="token-hero__actions" aria-label="토큰 페이지 이동">
+                <nav class="token-hero__actions" aria-label="토큰 페이지 이동">
                     <BaseButton label="개인 프로젝트 목록으로" href="/personal" variant="ghost" />
                     <BaseButton label="홈에서 포트폴리오 보기" href="/" />
-                </div>
+                </nav>
             </header>
 
             <section class="token-section" aria-labelledby="color-token-title">

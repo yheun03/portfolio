@@ -8,7 +8,7 @@
         </header>
 
         <div class="toolbox__spotlight spotlight" data-animate>
-            <h2 class="spotlight__kicker">{{ t("toolbox.kicker") }}</h2>
+            <h3 class="spotlight__kicker">{{ t("toolbox.kicker") }}</h3>
             <ul class="toolbox__grid feature-grid feature-grid--toolbox">
                 <li v-for="(skill, index) in skills" :key="skill.key">
                     <FeatureCard variant="skill" :eyebrow="String(index + 1).padStart(2, '0')" :title="skill.title"

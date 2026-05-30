@@ -1,10 +1,8 @@
 @use "abstracts/tokens" as *;
-@use "abstracts/fonts";
 @use "abstracts/theme";
 
 /* Foundations */
 @use "base/reset";
-@use "base/skeleton";
 @use "base/buttons";
 @use "base/labels";
 @use "base/badges";

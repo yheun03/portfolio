@@ -1,6 +1,6 @@
 <template>
     <header class="gallery-editorial__masthead">
-        <div class="gallery-editorial__poster" aria-labelledby="gallery-poster-title">
+        <div class="gallery-editorial__poster">
             <div class="gallery-editorial__poster-top">
                 <p class="gallery-editorial__kicker">{{ kicker }}</p>
                 <p class="gallery-editorial__stats">{{ stats }}</p>
@@ -17,11 +17,10 @@
             <p class="gallery-editorial__dek">{{ dek }}</p>
         </div>
 
-        <nav class="gallery-page__toolbar" :aria-label="sortAriaLabel">
+        <nav class="gallery-page__toolbar" :aria-label="toolbarAriaLabel">
             <div v-if="viewOptions.length" class="gallery-page__control">
                 <span :id="viewLabelId" class="gallery-page__control-label">{{ viewLegend }}</span>
-                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="viewLabelId"
-                    :aria-label="viewAriaLabel">
+                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="viewLabelId">
                     <button v-for="option in viewOptions" :key="option.value" type="button"
                         class="gallery-page__segment"
                         :class="{ 'gallery-page__segment--active': viewMode === option.value }"
@@ -34,8 +33,7 @@
             </div>
             <div v-if="sortOptions.length" class="gallery-page__control">
                 <span :id="sortLabelId" class="gallery-page__control-label">{{ sortLegend }}</span>
-                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="sortLabelId"
-                    :aria-label="sortAriaLabel">
+                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="sortLabelId">
                     <button v-for="option in sortOptions" :key="option.value" type="button"
                         class="gallery-page__segment"
                         :class="{ 'gallery-page__segment--active': sortMode === option.value }"
@@ -67,6 +65,7 @@ defineProps<{
     sortAriaLabel: string;
     viewLegend: string;
     viewAriaLabel: string;
+    toolbarAriaLabel: string;
     sortOptions: { value: WorkSortMode; label: string }[];
     viewOptions: { value: GalleryViewMode; label: string }[];
     sortMode: WorkSortMode;

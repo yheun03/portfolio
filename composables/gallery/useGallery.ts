@@ -129,6 +129,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: readonl
 
     const viewLegend = computed(() => t('gallery.viewLegend'));
     const viewAriaLabel = computed(() => t('gallery.viewAriaLabel'));
+    const toolbarAriaLabel = computed(() => t('gallery.toolbarAriaLabel'));
 
     usePortfolioSeo(() => {
         const homeUrl = buildAbsoluteSeoUrl('/');
@@ -197,6 +198,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: readonl
         sortAriaLabel,
         viewLegend,
         viewAriaLabel,
+        toolbarAriaLabel,
         titleKey: config.titleKey,
         basePath: config.basePath,
     };

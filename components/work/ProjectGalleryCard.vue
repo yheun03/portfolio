@@ -16,7 +16,7 @@
                 </p>
 
                 <div class="gallery-editorial__entry-hero">
-                    <h2 class="gallery-editorial__entry-title">{{ pick(work.title) }}</h2>
+                    <component :is="headingTag" class="gallery-editorial__entry-title">{{ pick(work.title) }}</component>
                     <span class="gallery-editorial__entry-rule" aria-hidden="true" />
                     <p class="gallery-editorial__entry-label" aria-hidden="true">{{ entryLabel }}</p>
                 </div>
@@ -53,7 +53,7 @@
                     <span aria-hidden="true">·</span>
                     <span>{{ pick(work.type) }}</span>
                 </p>
-                <h2 class="gallery-card__title">{{ pick(work.title) }}</h2>
+                <component :is="headingTag" class="gallery-card__title">{{ pick(work.title) }}</component>
                 <p class="gallery-card__excerpt">{{ pick(work.introduction) }}</p>
                 <ul v-if="work.languages.length" class="gallery-card__langs" :aria-label="t('gallery.languages')">
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
@@ -78,10 +78,12 @@ const props = withDefaults(
         viewMode?: GalleryViewMode;
         entryLabel?: string;
         priority?: boolean;
+        headingTag?: 'h2' | 'h3';
     }>(),
     {
         viewMode: 'editorial',
         priority: false,
+        headingTag: 'h2',
     },
 );
 

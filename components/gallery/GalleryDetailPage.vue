@@ -49,7 +49,7 @@
                 </dl>
                 <p v-if="work.links?.length" class="gallery-detail__links">
                     <BaseButton v-for="link in work.links" :key="link.href" :label="pick(link.label)"
-                        :href="link.href" />
+                        :href="link.href" :aria-label="projectLinkAriaLabel(link)" />
                 </p>
             </header>
 
@@ -139,6 +139,13 @@ const detailEndCtaKey = computed(() =>
 function captureAlt(index: number) {
     const base = pick(props.work.title);
     return locale.value === 'ko' ? `${base} 캡처 ${index + 1}` : `${base} screenshot ${index + 1}`;
+}
+
+function projectLinkAriaLabel(link: NonNullable<WorkItem['links']>[number]) {
+    const title = pick(props.work.title);
+    const label = pick(link.label);
+
+    return locale.value === 'ko' ? `${title} ${label}` : `${label} for ${title}`;
 }
 
 usePortfolioSeo(() => {

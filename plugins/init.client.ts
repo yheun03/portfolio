@@ -5,24 +5,9 @@
 import { useLocaleStore } from '@stores/locale';
 import { useThemeStore } from '@stores/theme';
 
-export default defineNuxtPlugin(() => {
-    useLocaleStore().initLocale();
-    useThemeStore().initTheme();
-
-    const html = document.documentElement;
-    const clearSkeleton = () => html.classList.remove('skeleton-active');
-    const fonts = document.fonts;
-
-    window.setTimeout(clearSkeleton, 1800);
-
-    if (fonts?.ready) {
-        fonts.ready.then(clearSkeleton).catch(clearSkeleton);
-        return;
-    }
-
-    if (document.readyState === 'complete') {
-        clearSkeleton();
-    } else {
-        window.addEventListener('load', clearSkeleton, { once: true });
-    }
+export default defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.hook('app:mounted', () => {
+        useLocaleStore().initLocale();
+        useThemeStore().initTheme();
+    });
 });

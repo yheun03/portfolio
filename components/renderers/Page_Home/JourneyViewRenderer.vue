@@ -1,5 +1,5 @@
 <template>
-    <div v-if="viewMode === 'affiliation'" class="journey__chapters" :aria-label="affiliationAriaLabel">
+    <section v-if="viewMode === 'affiliation'" class="journey__chapters" :aria-label="affiliationAriaLabel">
         <article v-for="(block, companyIndex) in affiliationBlocks" :key="companyKey(block, companyIndex)"
             class="journey__chapter" :class="{ 'journey__chapter--temp': block.temp }">
             <div class="journey__chapter-card">
@@ -27,14 +27,14 @@
                     :period="item.period" :title="pick(item.title)" :description="pick(item.description)" />
             </ol>
         </article>
-    </div>
+    </section>
 
     <!-- @vue-generic {import('@composables/portfolio/useJourneyView').JourneyYearGroup} -->
     <BaseYearTimeline v-else variant="home" :ariaLabel="chronologicalAriaLabel" :eras="chronologicalYearGroups"
         id-prefix="journey-year" entries-tag="ol">
         <template #era="{ era: group }">
             <TimelineItem v-for="entry in group.entries" :key="entry.key" hide-period :title="pick(entry.title)"
-                :description="pick(entry.description)" :affiliation="pick(entry.company)" />
+                :description="pick(entry.description)" :affiliation="pick(entry.company)" heading-tag="h3" />
         </template>
     </BaseYearTimeline>
 </template>

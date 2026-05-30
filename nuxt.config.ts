@@ -17,8 +17,6 @@ function writePublicSitemap() {
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
-// 빌드 시 해시 없는 public 경로 — LCP용 Pretendard Bold preload
-const pretendardBoldHref = joinURL(resolvedBaseURL, 'fonts/Pretendard-Bold.woff2');
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
@@ -31,13 +29,10 @@ export default defineNuxtConfig({
             },
         },
     },
-    /** 정적 배포 시 CSS를 HTML에 인라인해 렌더 차단 외부 stylesheet 완화 */
-    features: { inlineStyles: true },
-
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            htmlAttrs: { lang: 'ko', class: 'skeleton-active' },
+            htmlAttrs: { lang: 'ko' },
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
             meta: [
@@ -49,13 +44,6 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
                 { rel: 'apple-touch-icon', href: faviconHref },
-                {
-                    rel: 'preload',
-                    href: pretendardBoldHref,
-                    as: 'font',
-                    type: 'font/woff2',
-                    crossorigin: 'anonymous',
-                },
             ],
         },
     },
