@@ -7,7 +7,7 @@
 
     .section--works .works__filters.tab-list.tab-list--rail,
     .section--highlights .highlights__filters.tab-list.tab-list--rail {
-        --filter-edge-space: var(--touch-pad-x);
+        --filter-edge-space: var(--page-pad-x);
 
         display: flex;
         flex-direction: row;
@@ -15,9 +15,9 @@
         align-items: stretch;
         align-self: stretch;
         gap: 0.5rem;
-        width: calc(100% + (var(--touch-pad-x) * 2));
-        max-width: none;
-        margin-inline: calc(-1 * var(--touch-pad-x));
+        width: 100%;
+        max-width: 100%;
+        margin-inline: 0;
         padding: var(--space-2) var(--filter-edge-space) var(--space-3);
         border: none;
         border-radius: 0;
@@ -82,7 +82,7 @@
     }
 
     .section.section--journey {
-        gap: var(--touch-stack-gap);
+        gap: var(--section-gap);
     }
 
     .journey__flow {
@@ -229,35 +229,9 @@
 
 }
 
-@media (max-width: 767px) {
-    .section--works {
-        padding-top: calc(var(--touch-stack-gap) + 1.25rem);
-    }
+/* 좁은 폰 (≤767px): 타이포·터치 여유 */
 
-    .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab,
-    .section--highlights .highlights__filters.tab-list.tab-list--rail .tab-list__tab {
-        min-height: var(--size-touch);
-        padding-inline: 1rem;
-    }
-
-}
-
-/* ----- Home narrow viewport ----- */
-@media (min-width: 1920px) {
-    .section {
-        width: min(100% - 8rem, 2040px);
-    }
-}
-
-/* 좁은 폰 (767px 이하): 타이포·터치 여유만 보강 */
-
-@media (max-width: 767px) {
-
-    .section {
-        width: 100%;
-        max-width: none;
-    }
-
+@media (max-width: #{$bp-max-mobile}) {
     .section:not(.section--hero) .section-title::before {
         font-size: clamp(2rem, 12vw, 2.8rem);
     }
@@ -292,11 +266,6 @@
 
     .section__emoji--contact {
         opacity: 0.08;
-    }
-
-    .contact__mail-display {
-        overflow-wrap: anywhere;
-        font-size: clamp(1.75rem, 8vw, 2.75rem);
     }
 
     .journey__flow {

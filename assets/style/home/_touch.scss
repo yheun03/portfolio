@@ -1,70 +1,24 @@
 @use "../abstracts/tokens" as *;
 
-/* Portfolio touch */
 /* =============================================================================
-   터치·태블릿 (1023px 이하)
-   PC용 12컬럼·2열 그리드를 그대로 줄이지 않고, 단일 열·블록 스택으로 재구성
-   ============================================================================= */
+   Home — handheld layout (≤1023px)
+   Spacing tokens: --page-pad-x, --section-pad-y, --section-gap, --block-gap
+============================================================================= */
 
-@media (max-width: #{$bp-max-narrow}) {
-    :root {
-        --touch-pad-x: clamp(0.85rem, 3.2vw + 0.35rem, 1.65rem);
-        --touch-stack-gap: clamp(1.5rem, 4.2vw, 2.5rem);
-    }
-
-    .portfolio-page--app-dock {
-        padding-inline-end: 0;
-    }
-
-    .section {
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
-        padding-inline: var(--touch-pad-x);
-        padding-block: var(--touch-stack-gap);
-        box-sizing: border-box;
-    }
-
-    .section.section--about {
-        padding-block: var(--touch-stack-gap);
-    }
-
+@media (max-width: #{$bp-max-tablet}) {
+    .section.section--about,
     .section.section--contact {
-        min-height: auto;
-        padding-block: var(--touch-stack-gap);
-    }
-
-    .section--works {
-        padding-top: calc(var(--touch-stack-gap) + 2.75rem);
-    }
-
-    .page__layer--hero {
-        padding-bottom: var(--space-5);
+        padding-block: var(--section-pad-y);
     }
 
     .about__stage {
-        gap: var(--touch-stack-gap);
+        gap: var(--section-gap);
     }
 
     .contact__poster {
-        gap: var(--touch-stack-gap);
-    }
-
-    /**
-     * `_shell.scss` 의 `.section:not(.section--hero) { display: grid }` 가 (0,2,0) 특이도라
-     * `.section--works` 등 단일 수정자 규칙으로는 덮어쓸 수 없음. 동일 선택자로 터치 스택 레이아웃 적용.
-     */
-    .section:not(.section--hero) {
-        display: flex;
-        flex-direction: column;
-        gap: var(--touch-stack-gap);
-        grid-template-columns: none;
-        grid-template-areas: none;
         align-items: stretch;
-    }
-
-    .section--contact {
-        min-height: auto;
+        gap: var(--section-gap);
+        text-align: start;
     }
 
     .about__workflow {
@@ -73,26 +27,47 @@
         max-width: none;
     }
 
-    /* ----- Contact ----- */
+    /* ----- Contact (handheld: left-aligned titles) ----- */
     .contact__head {
+        justify-items: start;
         text-align: start;
 
         .section-title {
+            display: flex;
+            flex-direction: column;
             align-items: flex-start;
+            width: 100%;
+            text-align: start;
+        }
+
+        .section-title__eyebrow {
+            align-self: flex-start;
+        }
+
+        .section-title__title {
             text-align: start;
         }
     }
 
-    .contact__spotlight .spotlight__kicker {
+    .contact__lead {
+        justify-content: flex-start;
         margin-inline: 0;
         text-align: start;
+    }
+
+    .contact__spotlight {
+        justify-items: start;
+
+        .spotlight__kicker {
+            margin-inline: 0;
+            text-align: start;
+        }
     }
 
     .contact__mail-display {
         justify-content: flex-start;
         white-space: normal;
         flex-wrap: wrap;
-        font-size: clamp(1.65rem, 7.5vw, 2.5rem);
         text-align: start;
     }
 
@@ -101,18 +76,8 @@
         margin-inline: 0;
     }
 
-    .contact__actions {
-        flex-direction: column;
-        align-items: stretch;
-
-        .base-button {
-            width: 100%;
-            justify-content: center;
-        }
-    }
-
-    /* ----- Journey / Toolbox: 타이틀 포함 세로 흐름 ----- */
-    .section--toolbox>.section-title {
+    /* ----- Journey / Toolbox ----- */
+    .section--toolbox > .section-title {
         position: static;
         width: 100%;
     }
@@ -128,10 +93,10 @@
 
     .toolbox__grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: var(--space-5);
+        gap: var(--block-gap);
     }
 
-    /* ----- Works / Personal / Highlights (그리드 해제 + 터치 전용 플로우) ----- */
+    /* ----- Works / Personal / Highlights ----- */
     .section--works .works__total-badge,
     .section--highlights .highlights__total-badge {
         position: relative;
@@ -147,7 +112,7 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: var(--space-4);
+        gap: var(--block-gap);
         padding-inline-end: 0;
         text-align: start;
     }
@@ -182,12 +147,10 @@
     .works__list-control {
         position: static;
         grid-area: auto;
-        grid-row: auto;
-        grid-column: auto;
         width: 100%;
         max-width: none;
         justify-self: stretch;
-        padding: clamp(1rem, 3.2vw, 1.35rem) clamp(1rem, 4vw, 1.5rem);
+        padding: var(--card-padding);
     }
 
     .section--personal .personal__head {
@@ -198,20 +161,18 @@
         order: -1;
     }
 
-    /** PC용 `.section--* .__grid { display:grid }` 특이도(0,2,0)를 그대로 덮음 */
     .section--works .works__grid,
     .section--personal .personal__grid {
-        --swipe-card-width: min(82vw, 25rem);
-        --swipe-edge-space: max(var(--touch-pad-x), calc((100vw - var(--swipe-card-width)) * 0.5));
+        --swipe-edge-space: var(--page-pad-x);
 
         display: flex;
         flex-direction: row;
-        gap: clamp(0.75rem, 4vw, var(--space-5));
+        gap: var(--block-gap);
         min-width: 0;
-        width: calc(100% + (var(--touch-pad-x) * 2));
-        max-width: none;
-        margin-inline: calc(-1 * var(--touch-pad-x));
-        padding-block: 12px 48px;
+        width: 100%;
+        max-width: 100%;
+        margin-inline: 0;
+        padding-block: var(--space-3) var(--space-8);
         padding-inline: var(--swipe-edge-space);
         grid-template-columns: none;
         overflow-x: auto;
@@ -251,7 +212,7 @@
 
     .highlights__panel {
         grid-template-columns: minmax(0, 1fr);
-        padding: clamp(1rem, 4.8vw, 1.75rem);
+        padding: var(--card-padding-lg);
     }
 
     .highlights__panel-aside {
@@ -261,8 +222,8 @@
     .works__list-control {
         flex-direction: column;
         align-items: stretch;
-        gap: var(--space-4);
-        margin-block-start: -54px;
+        gap: var(--block-gap);
+        margin-block-start: calc(-1 * var(--space-8));
 
         p {
             line-height: var(--line-height-body);
@@ -279,5 +240,40 @@
         justify-content: space-between;
         gap: var(--space-3);
     }
+}
 
+/* ----- Tablet: 2-column grids where it fits ----- */
+@media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
+    .toolbox__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--section-gap);
+    }
+
+    .contact__mail-display {
+        font-size: clamp(2rem, 5.5vw, 3rem);
+    }
+
+    .works__list-control {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-block-start: calc(-1 * var(--space-6));
+
+        .base-button {
+            width: auto;
+        }
+    }
+}
+
+/* ----- Mobile: compact type & rails ----- */
+@media (max-width: #{$bp-max-mobile}) {
+    .contact__mail-display {
+        font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+    }
+
+    .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab,
+    .section--highlights .highlights__filters.tab-list.tab-list--rail .tab-list__tab {
+        min-height: var(--size-touch);
+        padding-inline: 1rem;
+    }
 }

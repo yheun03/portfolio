@@ -96,11 +96,11 @@
     width: min(100% - var(--inset-page), var(--layout-content-max));
     max-width: none;
     margin-inline: auto;
-    padding: var(--space-section-y) 0;
+    padding: var(--section-pad-y) 0;
 
     &:not(.section--hero) {
         display: grid;
-        gap: var(--space-section-gap);
+        gap: var(--section-gap);
         counter-increment: section-count;
 
         .section-title::before {
