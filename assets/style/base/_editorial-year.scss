@@ -120,9 +120,9 @@
 }
 
 .editorial-year--gallery {
-    color: var(--gallery-cream);
+    color: var(--gallery-ink);
     font-family: var(--gallery-slab);
-    text-shadow: 0 0 40px color-mix(in srgb, var(--gallery-cream) 12%, transparent);
+    text-shadow: 0 0 40px color-mix(in srgb, var(--gallery-ink) 12%, transparent);
 }
 
 @media (max-width: #{$bp-max-mobile}) {
