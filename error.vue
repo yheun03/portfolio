@@ -1,18 +1,22 @@
 <template>
     <main id="main-content" class="error-page" tabindex="-1">
         <section class="error-page__panel" role="alert" aria-live="assertive">
-            <p class="base-label">Route Check</p>
             <span class="error-page__emoji emoji emoji--soft" aria-hidden="true">🧭</span>
-            <p class="error-page__code" aria-hidden="true">{{ statusCode }}</p>
-            <h1>{{ title }}</h1>
-            <p class="error-page__message">{{ message }}</p>
-            <div class="error-page__actions">
-                <button type="button" class="base-button base-button--primary" @click="handleError">
-                    {{ locale === 'ko' ? '홈으로 재정렬' : 'Back to home' }}
-                </button>
-                <a class="base-button base-button--ghost" href="mailto:eyh208@naver.com">
-                    {{ locale === 'ko' ? '길 잃은 링크 제보' : 'Report the lost link' }}
-                </a>
+            <div class="error-page__aside">
+                <p class="base-label">Route Check</p>
+                <p class="error-page__code" aria-hidden="true">{{ statusCode }}</p>
+            </div>
+            <div class="error-page__body">
+                <h1>{{ title }}</h1>
+                <p class="error-page__message">{{ message }}</p>
+                <div class="error-page__actions">
+                    <button type="button" class="base-button base-button--primary" @click="handleError">
+                        {{ locale === 'ko' ? '홈으로 재정렬' : 'Back to home' }}
+                    </button>
+                    <a class="base-button base-button--ghost" href="mailto:eyh208@naver.com">
+                        {{ locale === 'ko' ? '길 잃은 링크 제보' : 'Report the lost link' }}
+                    </a>
+                </div>
             </div>
         </section>
     </main>
