@@ -59,6 +59,27 @@ Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정·타입
 └── assets/style/        # SCSS (base, layout, home, work, gallery, motion)
 ```
 
+## 환경 변수 (`.env`)
+
+분석 스크립트 ID는 하드코딩하지 않고 `.env`로 관리합니다. 저장소에는 `.env.example`만 포함됩니다.
+
+```bash
+cp .env.example .env
+```
+
+| 변수                            | 설명                                                              |
+| ------------------------------- | ----------------------------------------------------------------- |
+| `NUXT_PUBLIC_GTM_ID`               | Google Tag Manager (`GTM-…`)                                      |
+| `NUXT_PUBLIC_GA_MEASUREMENT_ID`    | Google Analytics 4 gtag (`G-…`, 구버전 사이트와 동일 시)          |
+| `NUXT_PUBLIC_NAVER_WCS_WA`         | 네이버 `wcs_add["wa"]`                                            |
+| `NUXT_PUBLIC_NAVER_WCS_SCRIPT_URL` | 네이버 `wcslog.js` URL                                            |
+| `NUXT_PUBLIC_ANALYTICS_ENABLED`    | `false`면 분석 스크립트 전부 미로드                               |
+| `NUXT_APP_BASE_URL`             | 앱 base path (기본 `/portfolio/`)                                 |
+
+`NUXT_PUBLIC_*` 값은 **클라이언트 번들에 포함**됩니다. `plugins/analytics.client.ts`가 빌드·런타임에 이 값을 읽습니다.
+
+GitHub Pages 배포(`npm run deploy`) 전에 로컬 `.env`를 채우거나, CI에서는 Repository secrets에 동일한 `NUXT_PUBLIC_*`를 설정하세요.
+
 ## 로컬 실행
 
 ```bash
@@ -81,10 +102,10 @@ npm run deploy   # build + gh-pages 브랜치 배포
 
 진입점: `assets/style/main.scss` (`nuxt.config.ts` → `css`).
 
-| 파일 | 담당 |
-|------|------|
-| `assets/style/abstracts/_theme.scss` | 색상·그라데이션·shadow (`#0050FF` 브랜드 등) |
-| `assets/style/abstracts/_tokens.scss` | typography, spacing, radius, Sass mixin |
+| 파일                                  | 담당                                         |
+| ------------------------------------- | -------------------------------------------- |
+| `assets/style/abstracts/_theme.scss`  | 색상·그라데이션·shadow (`#0050FF` 브랜드 등) |
+| `assets/style/abstracts/_tokens.scss` | typography, spacing, radius, Sass mixin      |
 
 - **색상**: `_theme.scss`만 편집. Sass에서는 `$primary-600`, `var(--color-primary)` 등 사용.
 - **타이포**: `@include font(heading-1)` 등 (`_tokens.scss`의 `$font-presets`)
