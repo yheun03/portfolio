@@ -1,5 +1,5 @@
 /** 고정 헤더·scroll-margin을 반영한 섹션 앵커 스크롤 */
-export function scrollToSectionById(id: string, behavior: ScrollBehavior = 'smooth'): boolean {
+function scrollToSectionById(id: string, behavior: ScrollBehavior = 'smooth'): boolean {
     if (!import.meta.client) return false;
 
     const el = document.getElementById(id);

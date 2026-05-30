@@ -73,7 +73,7 @@
 | `composables/useLocale.ts` | i18n 문자열 선택과 `{ ko, en }` 데이터 선택 helper.                                             |
 | `composables/gallery/`     | 갤러리 목록/상세 UX. 정렬, 뷰 모드, 목록 복귀 스냅샷, 포커스 복원을 담당합니다.                 |
 | `composables/portfolio/`   | 홈 포트폴리오 UX. 카운트업, GSAP, 여정 보기, Works/Highlights 탭 렌더링, SEO, 상세 라벨 등을 담당합니다.   |
-| `composables/ui/`          | UI 공통 동작. 모달 포커스 트랩, 좁은 화면 감지, scroll spy, 탭 키보드, 테마, 타이포 hover 상태. |
+| `composables/ui/`          | UI 공통 동작. 모달 포커스 트랩, 좁은 화면 감지, scroll spy, 탭 키보드, 타이포 hover 상태. |
 
 ## Pages
 

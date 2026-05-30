@@ -1,6 +1,6 @@
 import type { MaybeRef } from 'vue';
 
-export const GALLERY_ENTRY_ACTIVE_CLASS = 'is-gallery-entry-active';
+const GALLERY_ENTRY_ACTIVE_CLASS = 'is-gallery-entry-active';
 const GALLERY_ENTRY_SELECTOR = 'a.gallery-card[id^="gallery-entry-"]';
 const VIEWPORT_CENTER_RATIO = 0.5;
 const SCROLL_LISTENER_OPTIONS = { passive: true } as const;
@@ -23,10 +23,6 @@ export function galleryEntryId(workId: string) {
 export function findGalleryEntryElement(node: EventTarget | null | undefined): HTMLElement | null {
     if (!(node instanceof Element)) return null;
     return node.closest<HTMLElement>(GALLERY_ENTRY_SELECTOR);
-}
-
-export function isGalleryEntryElement(el: Element | null): el is HTMLElement {
-    return findGalleryEntryElement(el) === el;
 }
 
 function getGalleryEntries(scope: HTMLElement | Document = document) {
@@ -96,10 +92,6 @@ export function activateGalleryEntry(workId: string) {
 
     handleGalleryEntryFocus(el);
     return true;
-}
-
-export function activateGalleryEntryElement(el: HTMLElement) {
-    handleGalleryEntryFocus(el);
 }
 
 function resolveScopeElement(scope: MaybeRef<HTMLElement | null | undefined> | string): HTMLElement | null {
@@ -315,10 +307,6 @@ export function useNavigationRestore(fallbackPath: string) {
     const route = useRoute();
 
     const snapshot = computed(() => readNavigationRestoreSnapshot());
-    const canRestore = computed(() => {
-        const data = snapshot.value;
-        return Boolean(data && data.path && data.path !== route.fullPath);
-    });
 
     async function goBack() {
         const data = snapshot.value;
@@ -353,10 +341,7 @@ export function useNavigationRestore(fallbackPath: string) {
         document.removeEventListener('keydown', onDocumentKeydown);
     });
 
-    return {
-        canRestore,
-        goBack,
-    };
+    return { goBack };
 }
 
-export { isGalleryDetailPath, isRestorableOrigin, RESTORE_SNAPSHOT_KEY };
+export { isGalleryDetailPath, isRestorableOrigin };

@@ -5,7 +5,7 @@ import { createWorkYearEntries, groupWorkYearEntries, sortWorksByStartDesc, sort
 export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
 
-export const GALLERY_VIEW_STORAGE_KEY = 'portfolio-gallery-view';
+const GALLERY_VIEW_STORAGE_KEY = 'portfolio-gallery-view';
 
 const galleryVariantConfig = {
     career: {

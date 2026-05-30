@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export type Locale = 'ko' | 'en';
 
-export const LOCALE_STORAGE_KEY = 'portfolio-locale';
+const LOCALE_STORAGE_KEY = 'portfolio-locale';
 
 const isLocale = (value: string | null): value is Locale => value === 'ko' || value === 'en';
 

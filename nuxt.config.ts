@@ -27,7 +27,6 @@ export default defineNuxtConfig({
     alias: {
         '@composables': fileURLToPath(new URL('./composables', import.meta.url)),
         '@config': fileURLToPath(new URL('./core/config', import.meta.url)),
-        '@core': fileURLToPath(new URL('./core', import.meta.url)),
         '@data': fileURLToPath(new URL('./data', import.meta.url)),
         '@i18n': fileURLToPath(new URL('./i18n', import.meta.url)),
         '@stores': fileURLToPath(new URL('./stores', import.meta.url)),
