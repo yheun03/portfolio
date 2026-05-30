@@ -8,7 +8,7 @@ import { useWorksUiStore } from '@stores/portfolioUiStore';
  */
 export function useWorksTabRenderer() {
     const worksUi = useWorksUiStore();
-    const { selectedCategory, filteredWorks, activeWork } = storeToRefs(worksUi);
+    const { selectedCategory, filteredWorks } = storeToRefs(worksUi);
 
     /** 탭·그리드 리마운트용 — 카테고리가 바뀔 때마다 갱신 */
     const panelRenderKey = computed(() => selectedCategory.value);
@@ -21,10 +21,8 @@ export function useWorksTabRenderer() {
         workCategories,
         selectedCategory,
         filteredWorks,
-        activeWork,
         panelRenderKey,
         selectCategory,
         openWork: worksUi.openWork,
-        closeModal: worksUi.closeModal,
     };
 }

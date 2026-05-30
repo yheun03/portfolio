@@ -1,13 +1,14 @@
 <template>
-    <div class="editorial-year-timeline" :class="`editorial-year-timeline--${variant}`" :aria-label="ariaLabel">
-        <section v-for="(era, index) in eras" :key="era.key" class="editorial-year-era" :class="eraClasses(era)"
+    <div class="year-timeline" :class="`year-timeline--${variant}`" :aria-label="ariaLabel">
+        <section v-for="(era, index) in eras" :key="era.key" class="year-timeline__era" :class="eraClasses(era)"
             :aria-labelledby="era.year ? yearHeadingId(era) : undefined"
             :aria-label="!era.year ? flatAriaLabel : undefined">
-            <div v-if="era.year" class="editorial-year-era__year">
-                <h2 :id="yearHeadingId(era)" class="editorial-year" :class="`editorial-year--${variant}`">{{ era.year }}
+            <div v-if="era.year" class="year-timeline__year">
+                <h2 :id="yearHeadingId(era)" class="year-timeline__year-title"
+                    :class="`year-timeline__year-title--${variant}`">{{ era.year }}
                 </h2>
             </div>
-            <component :is="entriesTag" class="editorial-year-era__entries">
+            <component :is="entriesTag" class="year-timeline__entries">
                 <slot name="era" :era="era" :index="index" />
             </component>
         </section>
@@ -28,7 +29,7 @@ const props = withDefaults(
     }>(),
     {
         variant: 'home',
-        idPrefix: 'editorial-year',
+        idPrefix: 'year-timeline',
         entriesTag: 'div',
     },
 );
@@ -43,8 +44,8 @@ function yearHeadingId(era: EditorialYearEraItem) {
 
 function eraClasses(era: EditorialYearEraItem) {
     return [
-        { 'editorial-year-era--flat': !era.year },
-        `editorial-year-era--${props.variant}`,
+        { 'year-timeline__era--flat': !era.year },
+        `year-timeline__era--${props.variant}`,
     ];
 }
 </script>

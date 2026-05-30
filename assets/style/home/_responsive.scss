@@ -5,7 +5,8 @@
         gap: var(--space-5);
     }
 
-    .section--works .works__filters.tab-list.tab-list--rail {
+    .section--works .works__filters.tab-list.tab-list--rail,
+    .section--highlights .highlights__filters.tab-list.tab-list--rail {
         --filter-edge-space: var(--touch-pad-x);
 
         display: flex;
@@ -162,19 +163,19 @@
         list-style: none;
     }
 
-    .editorial-year-era__entries {
+    .year-timeline__entries {
         position: relative;
         display: grid;
         gap: 0;
         padding-block: 0;
         padding-inline-start: var(--space-6);
         margin: 0;
-        border-inline-start: 2px solid var(--editorial-year-rail, color-mix(in srgb, var(--color-primary) 42%, var(--color-border)));
+        border-inline-start: 2px solid var(--year-timeline-rail, color-mix(in srgb, var(--color-primary) 42%, var(--color-border)));
         list-style: none;
     }
 
     .journey__chapter .journey__steps .timeline-item,
-    .editorial-year-era__entries .timeline-item {
+    .year-timeline__entries .timeline-item {
         position: relative;
         gap: 0.35rem;
         padding: var(--space-5) 0;
@@ -226,7 +227,8 @@
         padding-top: calc(var(--touch-stack-gap) + 1.25rem);
     }
 
-    .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab {
+    .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab,
+    .section--highlights .highlights__filters.tab-list.tab-list--rail .tab-list__tab {
         min-height: var(--size-touch);
         padding-inline: 1rem;
     }

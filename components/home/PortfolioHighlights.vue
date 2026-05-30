@@ -8,80 +8,33 @@
         </header>
 
         <div class="highlights__workspace" data-animate>
-            <nav class="highlights__nav" role="tablist" aria-orientation="horizontal"
-                :aria-label="locale === 'ko' ? '하이라이트 카테고리' : 'Highlight categories'">
-                <button v-for="(tab, index) in tabs" :key="tab.key" :id="`highlights-tab-${tab.key}`" type="button"
-                    role="tab" :aria-controls="`highlights-panel-${tab.key}`"
-                    :aria-selected="highlightsUi.activeTab === tab.key"
-                    :tabindex="highlightsUi.activeTab === tab.key ? 0 : -1" class="highlights__nav-item"
-                    :class="{ 'highlights__nav-item--active': highlightsUi.activeTab === tab.key }"
-                    @click="highlightsUi.setTab(tab.key)" @keydown="handleHighlightsTabKeydown($event, tab.key)">
-                    <span class="highlights__nav-index">{{ String(index + 1).padStart(2, "0") }}</span>
-                    <span class="highlights__nav-label">{{ tab.label }}</span>
-                    <span class="highlights__nav-count">{{ tab.countLabel }}</span>
-                </button>
-            </nav>
+            <BaseTabList :model-value="activeTab" :items="tabs" tab-id-prefix="highlights-tab-"
+                panel-id-prefix="highlights-panel" :list-label="locale === 'ko' ? '하이라이트 카테고리' : 'Highlight categories'"
+                scroll-anchor="#highlights" class="highlights__filters"
+                @update:model-value="(key) => selectTab(key as HighlightTabKey)" />
 
-            <article :id="`highlights-panel-${highlightsUi.activeTab}`" :key="highlightsUi.activeTab"
-                class="highlights__panel" role="tabpanel" :aria-labelledby="`highlights-tab-${highlightsUi.activeTab}`">
-                <div class="highlights__panel-aside">
-                    <p class="highlights__panel-index">{{ activeTabIndex }}</p>
-                    <h3 class="highlights__panel-title">{{ activeTabLabel }}</h3>
-                    <p class="highlights__panel-lead">{{ activeDescription }}</p>
-                </div>
-
-                <ul class="highlights__entries" :aria-label="activeTabLabel">
-                    <li v-for="item in activeItems" :key="item">{{ item }}</li>
-                </ul>
-            </article>
+            <HighlightsTabPanelRenderer :active-tab="activeTab" :panel-render-key="panelRenderKey"
+                :active-tab-index="activeTabIndex" :active-tab-label="activeTabLabel"
+                :active-description="activeDescription" :active-items="activeItems" />
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
-import { highlights } from "@data/site";
-import { useHighlightsUiStore } from "@stores/portfolioUiStore";
-import type { HighlightTabKey } from "@app-types/highlights";
+import type { HighlightTabKey } from '@app-types/highlights';
+import { useHighlightsTabRenderer } from '@composables/portfolio/useHighlightsTabRenderer';
+import HighlightsTabPanelRenderer from '~/components/home/HighlightsTabPanelRenderer.vue';
 
-const highlightsUi = useHighlightsUiStore();
-const { t, pick, locale } = useLocale();
+const { t, locale } = useLocale();
 
-const tabs = computed(() => {
-    const entries: { key: HighlightTabKey; label: string }[] = [
-        { key: "awards", label: t("highlights.awards") },
-        { key: "certifications", label: t("highlights.certifications") },
-        { key: "roles", label: t("highlights.roles") },
-        { key: "activities", label: t("highlights.activities") },
-    ];
-
-    return entries.map((tab) => ({
-        ...tab,
-        countLabel:
-            locale.value === "ko"
-                ? `${highlights[tab.key].length}개`
-                : `${highlights[tab.key].length} items`,
-    }));
-});
-
-const activeTabIndex = computed(() => {
-    const index = tabs.value.findIndex((tab) => tab.key === highlightsUi.activeTab);
-    return String(index + 1).padStart(2, "0");
-});
-
-const activeItems = computed(() => highlights[highlightsUi.activeTab].map((item) => pick(item)));
-const activeTabLabel = computed(
-    () => tabs.value.find((tab) => tab.key === highlightsUi.activeTab)?.label ?? ""
-);
-const activeDescription = computed(() => pick(highlights.descriptions[highlightsUi.activeTab]));
-
-const highlightTabKeys = computed(() => tabs.value.map((tab) => tab.key));
-
-const { handleTabKeydown: handleHighlightsTabKeydown } = useTablistKeyboard(
-    highlightTabKeys,
-    (key) => highlightsUi.setTab(key),
-    {
-        tabIdPrefix: 'highlights-tab-',
-        orientation: 'horizontal',
-    },
-);
+const {
+    activeTab,
+    tabs,
+    panelRenderKey,
+    activeTabIndex,
+    activeItems,
+    activeTabLabel,
+    activeDescription,
+    selectTab,
+} = useHighlightsTabRenderer();
 </script>
