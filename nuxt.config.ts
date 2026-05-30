@@ -4,6 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 import { createJiti } from 'jiti';
 import { fileURLToPath } from 'node:url';
 import { joinURL } from 'ufo';
+import { analyticsPublicEnv } from './core/config/analytics-env';
 
 const rootDir = fileURLToPath(new URL('.', import.meta.url));
 const jiti = createJiti(rootDir);
@@ -21,6 +22,16 @@ const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
+
+    runtimeConfig: {
+        public: {
+            gtmId: analyticsPublicEnv.gtmId,
+            gaMeasurementId: analyticsPublicEnv.gaMeasurementId,
+            naverWcsWa: analyticsPublicEnv.naverWcsWa,
+            naverWcsScriptUrl: analyticsPublicEnv.naverWcsScriptUrl,
+            analyticsEnabled: analyticsPublicEnv.analyticsEnabled,
+        },
+    },
     experimental: {
         appManifest: false,
         defaults: {
