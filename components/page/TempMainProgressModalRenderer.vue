@@ -6,8 +6,8 @@
                 aria-labelledby="temp-main-modal-title" aria-describedby="temp-main-modal-description"
                 @click.self="close">
                 <section ref="modalRef" class="temp-main-modal__panel" tabindex="-1">
-                    <button ref="initialFocusRef" type="button" class="temp-main-modal__close" :aria-label="modalText.closeAria"
-                        @click="close">
+                    <button ref="initialFocusRef" type="button" class="temp-main-modal__close"
+                        :aria-label="modalText.closeAria" @click="close">
                         {{ modalText.close }}
                     </button>
 
@@ -24,8 +24,8 @@
                             <span>{{ modalText.progressLabel }}</span>
                             <strong>{{ TEMP_MAIN_MODAL_PROGRESS }}%</strong>
                         </div>
-                        <div class="temp-main-modal__progress-track" role="progressbar" :aria-valuenow="TEMP_MAIN_MODAL_PROGRESS"
-                            aria-valuemin="0" aria-valuemax="100">
+                        <div class="temp-main-modal__progress-track" role="progressbar"
+                            :aria-valuenow="TEMP_MAIN_MODAL_PROGRESS" aria-valuemin="0" aria-valuemax="100">
                             <span :style="{ width: `${TEMP_MAIN_MODAL_PROGRESS}%` }" />
                         </div>
                     </div>
@@ -33,10 +33,12 @@
                     <p class="temp-main-modal__note">{{ modalText.note }}</p>
 
                     <div class="temp-main-modal__actions">
-                        <button type="button" class="temp-main-modal__button temp-main-modal__button--ghost" @click="close">
+                        <button type="button" class="temp-main-modal__button temp-main-modal__button--ghost"
+                            @click="close">
                             {{ modalText.dismiss }}
                         </button>
-                        <button type="button" class="temp-main-modal__button temp-main-modal__button--primary" @click="closeForToday">
+                        <button type="button" class="temp-main-modal__button temp-main-modal__button--primary"
+                            @click="closeForToday">
                             {{ modalText.dismissToday }}
                         </button>
                     </div>
@@ -47,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-const TEMP_MAIN_MODAL_PROGRESS = 89;
+const TEMP_MAIN_MODAL_PROGRESS = 92;
 const TEMP_MAIN_MODAL_STORAGE_KEY = 'portfolio-temp-main-modal-dismissed-date';
 
 const TEMP_MAIN_MODAL_MESSAGES = {
@@ -55,7 +57,7 @@ const TEMP_MAIN_MODAL_MESSAGES = {
         eyebrow: '아직 다듬는 중이에요',
         title: '거의 다 왔습니다.',
         description:
-            '완성 전 포트폴리오까지 관심을 가지고 들어와 주셔서 감사합니다. 지금은 마지막 11%를 정리하는 중이라, 몇몇 화면은 조금 더 좋아질 예정입니다.',
+            '완성 전 포트폴리오까지 관심을 가지고 들어와 주셔서 감사합니다. 지금은 마지막 8%를 정리하는 중이라, 몇몇 화면은 조금 더 좋아질 예정입니다.',
         progressLabel: '현재 완성도',
         progressAria: '포트폴리오 제작 진행률 {progress}%',
         note: '조금 덜 익은 부분은 있어도, 보여드리고 싶은 방향은 또렷하게 담아두었습니다.',
@@ -68,7 +70,7 @@ const TEMP_MAIN_MODAL_MESSAGES = {
         eyebrow: 'Still getting polished',
         title: 'Almost there.',
         description:
-            'Thanks for taking a look before the portfolio is fully finished. I am cleaning up the last 11%, so a few screens may still get a little sharper.',
+            'Thanks for taking a look before the portfolio is fully finished. I am cleaning up the last 8%, so a few screens may still get a little sharper.',
         progressLabel: 'Current progress',
         progressAria: 'Portfolio production progress {progress}%',
         note: 'A few corners are still warm from the oven, but the direction is already here.',
@@ -268,8 +270,8 @@ onMounted(() => {
         height: 100%;
         border-radius: inherit;
         background: linear-gradient(90deg,
-            color-mix(in srgb, var(--color-primary) 72%, var(--color-surface)),
-            var(--color-primary));
+                color-mix(in srgb, var(--color-primary) 72%, var(--color-surface)),
+                var(--color-primary));
         box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 30%, transparent);
     }
 }
@@ -374,6 +376,7 @@ onMounted(() => {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .temp-main-modal-enter-active,
     .temp-main-modal-leave-active,
     .temp-main-modal-enter-active .temp-main-modal__panel,
