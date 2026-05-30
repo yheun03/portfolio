@@ -126,31 +126,6 @@
         position: static;
     }
 
-    .highlights__nav {
-        width: calc(100% + (var(--touch-pad-x) * 2));
-        max-width: none;
-        margin-inline: calc(-1 * var(--touch-pad-x));
-        padding-inline: var(--touch-pad-x);
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.25rem;
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        .highlights__nav-item {
-            flex: 0 0 auto;
-            min-width: min(78vw, 18rem);
-            scroll-snap-align: start;
-            white-space: normal;
-        }
-    }
-
     .highlights__panel {
         grid-template-columns: minmax(0, 1fr);
         padding: clamp(1rem, 4.8vw, 1.75rem);
@@ -196,6 +171,7 @@
     .section--personal .personal__head,
     .section--highlights .highlights__head,
     .section--highlights .highlights__workspace,
+    .section--highlights .highlights__filters,
     .section--works .works__filters,
     .section--works .works__rail-wrap,
     .section--works .works__grid,
