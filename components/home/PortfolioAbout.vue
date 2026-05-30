@@ -1,12 +1,13 @@
 <template>
-    <section id="about" class="section section--about">
+    <section id="about" class="section section--about" aria-labelledby="section-about-title">
         <span class="section__emoji section__emoji--about emoji emoji--soft" aria-hidden="true">🧭</span>
 
         <div class="about__stage">
             <header class="about__intro" data-animate>
                 <p class="section-title__eyebrow">{{ t("nav.about") }}</p>
 
-                <TypoDisplayHeading tag="h2" group-id="about" :lines="displayLines" heading-class="about__display"
+                <TypoDisplayHeading id="section-about-title" tag="h2" group-id="about" :lines="displayLines"
+                    heading-class="about__display"
                     line-class="about__display-line" line-accent-class="about__display-line--accent" />
 
                 <p class="about__lead">{{ t("about.tagline") }}</p>

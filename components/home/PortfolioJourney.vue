@@ -1,9 +1,9 @@
 <template>
-    <section id="journey" class="section section--journey">
+    <section id="journey" class="section section--journey" aria-labelledby="section-journey-title">
         <span class="section__emoji section__emoji--journey emoji emoji--soft" aria-hidden="true">🧩</span>
 
         <header class="journey__head">
-            <BaseSectionTitle :eyebrow="t('nav.journey')" :title="t('journey.title')"
+            <BaseSectionTitle title-id="section-journey-title" :eyebrow="t('nav.journey')" :title="t('journey.title')"
                 :description="t('journey.summary')" />
         </header>
 

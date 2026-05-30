@@ -1,5 +1,5 @@
 <template>
-    <section id="works" class="section section--works works">
+    <section id="works" class="section section--works works" aria-labelledby="section-works-title">
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
@@ -11,7 +11,7 @@
             </small>
         </div>
         <div class="works__title-col">
-            <BaseSectionTitle :eyebrow="t('nav.works')" :title="t('works.title')" />
+            <BaseSectionTitle title-id="section-works-title" :eyebrow="t('nav.works')" :title="t('works.title')" />
             <BaseTabList v-model="selectedCategory" :items="workTabItems" tab-id-prefix="works-tab-"
                 panel-id-prefix="works-panel" :list-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'"
                 scroll-anchor="#works" class="works__filters" />

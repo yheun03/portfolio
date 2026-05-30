@@ -1,5 +1,5 @@
 <template>
-    <section id="hello" ref="heroSectionRef" class="section section--hero hero">
+    <section id="hello" ref="heroSectionRef" class="section section--hero hero" aria-labelledby="hero-display-title">
         <div class="hero__poster">
             <div v-if="heroCanvasVisible" class="hero__canvas" aria-hidden="true">
                 <canvas ref="canvasRef" id="animatedCanvas" />
@@ -8,16 +8,18 @@
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
                 <span aria-hidden="true">·</span>
-                <span>UI Publishing / Frontend</span>
+                <span>{{ pick(profile.role) }}</span>
             </p>
 
             <div class="hero__stage">
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
-                <TypoDisplayHeading tag="h1" group-id="hero" :lines="heroLines" heading-class="hero__display"
-                    line-class="hero__display-line" line-accent-class="hero__display-line--accent" />
+                <TypoDisplayHeading id="hero-display-title" tag="h1" group-id="hero" :lines="heroLines"
+                    heading-class="hero__display" line-class="hero__display-line"
+                    line-accent-class="hero__display-line--accent" />
 
                 <p class="hero__lead">{{ heroLead }}</p>
+                <p class="hero__intro">{{ t("hero.subtitle") }}</p>
             </div>
 
             <section class="hero__essentials" data-animate :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'">

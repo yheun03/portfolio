@@ -9,8 +9,8 @@ export const seoConfig = {
     defaultOgImage: '/images/og-image-2026.png',
     personImage: '/images/portfolio/ver-2025/photo-1440.webp',
     defaultOgImageSize: {
-        width: 1402,
-        height: 1122,
+        width: 280,
+        height: 360,
     },
     siteName: '은영환 웹 퍼블리셔 포트폴리오',
     themeColor: '#f7f2ea',

@@ -74,6 +74,8 @@ cp .env.example .env
 | `NUXT_PUBLIC_NAVER_WCS_WA`         | 네이버 `wcs_add["wa"]`                                            |
 | `NUXT_PUBLIC_NAVER_WCS_SCRIPT_URL` | 네이버 `wcslog.js` URL                                            |
 | `NUXT_PUBLIC_ANALYTICS_ENABLED`    | `false`면 분석 스크립트 전부 미로드                               |
+| `NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML 태그 값 (선택)                      |
+| `NUXT_PUBLIC_NAVER_SITE_VERIFICATION`  | 네이버 서치어드바이저 사이트 소유 확인 값 (선택)               |
 | `NUXT_APP_BASE_URL`             | 앱 base path (기본 `/portfolio/`)                                 |
 
 `NUXT_PUBLIC_*` 값은 **클라이언트 번들에 포함**됩니다. `plugins/analytics.client.ts`가 빌드·런타임에 이 값을 읽습니다.

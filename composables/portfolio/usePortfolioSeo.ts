@@ -4,6 +4,7 @@
  */
 import { profile } from '@data/site';
 import { seoConfig, seoKeywords, seoStructuredData, type SeoLocale } from '@config/seo';
+import { seoPublicEnv } from '@config/seo-env';
 import { buildAbsoluteSeoUrl } from '@utils/seo-url';
 
 interface PortfolioSeoOptions {
@@ -152,20 +153,35 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             ...(Array.isArray(resolved.jsonLd) ? resolved.jsonLd : resolved.jsonLd ? [resolved.jsonLd] : []),
         ];
 
+        const hreflangLinks = [
+            { rel: 'canonical', href: canonicalUrl },
+            { rel: 'image_src', href: imageUrl },
+            { rel: 'alternate', hreflang: 'ko-KR', href: canonicalUrl },
+            { rel: 'alternate', hreflang: 'en', href: canonicalUrl },
+            { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl },
+        ];
+
+        const verificationMeta = [
+            ...(seoPublicEnv.googleSiteVerification
+                ? [{ name: 'google-site-verification', content: seoPublicEnv.googleSiteVerification }]
+                : []),
+            ...(seoPublicEnv.naverSiteVerification
+                ? [{ name: 'naver-site-verification', content: seoPublicEnv.naverSiteVerification }]
+                : []),
+        ];
+
         return {
             htmlAttrs: {
                 lang: resolved.locale,
             },
             title: resolved.title,
-            link: [
-                { rel: 'canonical', href: canonicalUrl },
-                { rel: 'image_src', href: imageUrl },
-            ],
+            link: hreflangLinks,
             meta: [
                 { name: 'description', content: resolved.description },
                 { name: 'author', content: profile.name },
                 { name: 'creator', content: profile.name },
                 { name: 'publisher', content: seoConfig.siteName },
+                { name: 'subject', content: seoStructuredData.person.jobTitle[resolved.locale] },
                 { name: 'keywords', content: [...new Set(keywords)].join(', ') },
                 { name: 'robots', content: robotsContent },
                 { name: 'googlebot', content: googlebotContent },
@@ -173,6 +189,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'theme-color', content: seoConfig.themeColor },
                 { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
                 { 'http-equiv': 'content-language', content: languageTag },
+                ...verificationMeta,
                 { property: 'og:type', content: resolved.type ?? 'website' },
                 { property: 'og:locale', content: ogLocale },
                 { property: 'og:locale:alternate', content: alternateLocale },
@@ -202,6 +219,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'twitter:image', content: imageUrl },
                 { name: 'twitter:image:alt', content: resolved.imageAlt ?? socialTitle },
                 { name: 'twitter:url', content: canonicalUrl },
+                { name: 'twitter:creator', content: '@yheun03' },
             ],
             script: [
                 {
