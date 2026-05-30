@@ -3,9 +3,11 @@
  * 기능: locale store 초기화를 실행해 html lang과 localStorage 값을 동기화한다.
  */
 import { useLocaleStore } from '@stores/locale';
+import { useThemeStore } from '@stores/theme';
 
 export default defineNuxtPlugin(() => {
     useLocaleStore().initLocale();
+    useThemeStore().initTheme();
 
     const html = document.documentElement;
     const clearSkeleton = () => html.classList.remove('skeleton-active');

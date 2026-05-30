@@ -5,16 +5,56 @@
 ========================================= */
 
 :root {
+    color-scheme: light;
+
     /* Raw anchors */
     --theme-white: #fff;
     --theme-black: #000;
 
+    /* Palette overrides */
+    --grayscale-0: #fbfcfa;
+    --grayscale-50: #f3f7f5;
+    --grayscale-100: #e8f0ee;
+    --grayscale-200: #d7e2df;
+    --grayscale-300: #bccbc8;
+    --grayscale-400: #8b9e9c;
+    --grayscale-500: #637675;
+    --grayscale-600: #47595c;
+    --grayscale-700: #314044;
+    --grayscale-800: #202b31;
+    --grayscale-900: #141d23;
+    --grayscale-950: #091116;
+    --primary-50: #edf7f7;
+    --primary-100: #d4e9e9;
+    --primary-200: #a9d2d4;
+    --primary-300: #7eb9bd;
+    --primary-400: #5d9da5;
+    --primary-500: #4d838e;
+    --primary-600: #3f6f78;
+    --primary-700: #345b65;
+    --primary-800: #2a4851;
+    --primary-900: #1f343d;
+    --accent-hot: #76648d;
+    --accent-mint: #6c9b88;
+
     /* Text */
-    --color-text: #333;
-    --color-text-strong: #111;
-    --color-text-heading: #1a1a1a;
-    --color-text-muted: #444;
-    --color-text-subtle: #777;
+    --color-text: #263439;
+    --color-text-strong: #121b20;
+    --color-text-heading: #162329;
+    --color-text-muted: #4d5f62;
+    --color-text-subtle: #728281;
+
+    /* Semantic surfaces */
+    --color-bg: #e8f0ee;
+    --color-border: #bccbc8;
+    --color-primary: #3f6f78;
+    --color-primary-dark: #345b65;
+    --color-surface: #fbfcfa;
+    --color-surface-strong: #d7e2df;
+    --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, var(--color-surface) 90%, transparent);
+    --color-accent-hot: var(--accent-hot);
+    --color-accent-mint: var(--accent-mint);
 
     /* Foreground on filled/accent surfaces */
     --color-on-primary: var(--theme-white);
@@ -24,6 +64,18 @@
     --color-scrim: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
     --color-light-sheen: color-mix(in srgb, var(--theme-white) 22%, transparent);
     --color-shadow-strong: var(--theme-black);
+    --color-overlay: color-mix(in srgb, var(--grayscale-950) 64%, transparent);
+
+    /* Gradients and shadows */
+    --gradient-accent: linear-gradient(118deg, #7eb9bd 0%, #4d838e 52%, #2a4851 100%);
+    --gradient-accent-soft: linear-gradient(135deg, color-mix(in srgb, var(--primary-400) 14%, transparent), color-mix(in srgb, var(--accent-mint) 10%, transparent));
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%), radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%), radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 11%, transparent), transparent 45%);
+    --gradient-noise: linear-gradient(185deg, #fbfcfa 0%, #eef4f1 48%, #dde8e5 100%);
+    --gradient-surface: linear-gradient(168deg, var(--color-surface) 0%, var(--grayscale-50) 58%, var(--grayscale-100) 100%);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 50%, transparent) inset;
+    --shadow-lift: 0 28px 70px color-mix(in srgb, var(--grayscale-800) 13%, transparent);
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-500) 22%, transparent);
+    --shadow-soft: 0 18px 44px color-mix(in srgb, var(--grayscale-800) 10%, transparent);
 
     /* Gallery aliases */
     --gallery-accent: var(--color-primary);
@@ -44,10 +96,142 @@
     --shell-skip-outline: var(--color-primary);
 }
 
+@mixin dark-theme {
+    color-scheme: dark;
+
+    --theme-white: #f7fbfa;
+    --theme-black: #030608;
+    --grayscale-0: #0d131c;
+    --grayscale-50: #111923;
+    --grayscale-100: #151f2b;
+    --grayscale-200: #1b2735;
+    --grayscale-300: #283748;
+    --grayscale-400: #405266;
+    --grayscale-500: #627486;
+    --grayscale-600: #8898a5;
+    --grayscale-700: #aebbc3;
+    --grayscale-800: #d4dcdf;
+    --grayscale-900: #edf3f2;
+    --grayscale-950: #f8fbfa;
+    --primary-50: #10242b;
+    --primary-100: #17303a;
+    --primary-200: #214652;
+    --primary-300: #2d6270;
+    --primary-400: #438091;
+    --primary-500: #5e9bad;
+    --primary-600: #74a6b8;
+    --primary-700: #9ccad8;
+    --primary-800: #bfdee6;
+    --primary-900: #dff0f3;
+    --accent-hot: #b49bd1;
+    --accent-mint: #83bea5;
+    --color-bg: #060a10;
+    --color-border: #263244;
+    --color-primary: #74a6b8;
+    --color-primary-dark: #9ccad8;
+    --color-surface: #0d131c;
+    --color-surface-strong: #151f2b;
+    --color-text: #e8eeee;
+    --color-text-strong: #f7fbfa;
+    --color-text-heading: #f4faf8;
+    --color-text-muted: #b5c1c6;
+    --color-text-subtle: #85949d;
+    --color-on-primary: #061016;
+    --color-on-accent: #061016;
+    --color-overlay: color-mix(in srgb, #020407 82%, transparent);
+    --color-scrim: color-mix(in srgb, #020407 78%, transparent);
+    --color-light-sheen: color-mix(in srgb, var(--theme-white) 10%, transparent);
+    --color-shadow-strong: #020407;
+    --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, var(--color-surface-strong) 86%, transparent);
+    --color-accent-hot: var(--accent-hot);
+    --color-accent-mint: var(--accent-mint);
+    --gradient-accent: linear-gradient(118deg, #9ccad8 0%, #74a6b8 48%, #438091 100%);
+    --gradient-accent-soft: linear-gradient(135deg, color-mix(in srgb, var(--primary-600) 20%, transparent), color-mix(in srgb, var(--accent-mint) 11%, transparent));
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 14%, transparent), transparent 42%), radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 9%, transparent), transparent 38%), radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 9%, transparent), transparent 45%);
+    --gradient-noise: linear-gradient(185deg, #060a10 0%, #0a1119 50%, #111923 100%);
+    --gradient-surface: linear-gradient(168deg, #0d131c 0%, #111923 58%, #151f2b 100%);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 58%, transparent) inset;
+    --shadow-lift: 0 30px 80px color-mix(in srgb, #020407 48%, transparent);
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 28%, transparent);
+    --shadow-soft: 0 20px 54px color-mix(in srgb, #020407 42%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include dark-theme;
+    }
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --theme-white: #fff;
+    --theme-black: #000;
+    --grayscale-0: #fbfcfa;
+    --grayscale-50: #f3f7f5;
+    --grayscale-100: #e8f0ee;
+    --grayscale-200: #d7e2df;
+    --grayscale-300: #bccbc8;
+    --grayscale-400: #8b9e9c;
+    --grayscale-500: #637675;
+    --grayscale-600: #47595c;
+    --grayscale-700: #314044;
+    --grayscale-800: #202b31;
+    --grayscale-900: #141d23;
+    --grayscale-950: #091116;
+    --primary-50: #edf7f7;
+    --primary-100: #d4e9e9;
+    --primary-200: #a9d2d4;
+    --primary-300: #7eb9bd;
+    --primary-400: #5d9da5;
+    --primary-500: #4d838e;
+    --primary-600: #3f6f78;
+    --primary-700: #345b65;
+    --primary-800: #2a4851;
+    --primary-900: #1f343d;
+    --accent-hot: #76648d;
+    --accent-mint: #6c9b88;
+    --color-text: #263439;
+    --color-text-strong: #121b20;
+    --color-text-heading: #162329;
+    --color-text-muted: #4d5f62;
+    --color-text-subtle: #728281;
+    --color-bg: #e8f0ee;
+    --color-border: #bccbc8;
+    --color-primary: #3f6f78;
+    --color-primary-dark: #345b65;
+    --color-surface: #fbfcfa;
+    --color-surface-strong: #d7e2df;
+    --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
+    --color-glass-2-strong: color-mix(in srgb, var(--color-surface) 90%, transparent);
+    --color-accent-hot: var(--accent-hot);
+    --color-accent-mint: var(--accent-mint);
+    --color-on-primary: var(--theme-white);
+    --color-on-accent: var(--theme-white);
+    --color-scrim: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
+    --color-light-sheen: color-mix(in srgb, var(--theme-white) 22%, transparent);
+    --color-shadow-strong: var(--theme-black);
+    --color-overlay: color-mix(in srgb, var(--grayscale-950) 64%, transparent);
+    --gradient-accent: linear-gradient(118deg, #7eb9bd 0%, #4d838e 52%, #2a4851 100%);
+    --gradient-accent-soft: linear-gradient(135deg, color-mix(in srgb, var(--primary-400) 14%, transparent), color-mix(in srgb, var(--accent-mint) 10%, transparent));
+    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%), radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%), radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 11%, transparent), transparent 45%);
+    --gradient-noise: linear-gradient(185deg, #fbfcfa 0%, #eef4f1 48%, #dde8e5 100%);
+    --gradient-surface: linear-gradient(168deg, var(--color-surface) 0%, var(--grayscale-50) 58%, var(--grayscale-100) 100%);
+    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 50%, transparent) inset;
+    --shadow-lift: 0 28px 70px color-mix(in srgb, var(--grayscale-800) 13%, transparent);
+    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-500) 22%, transparent);
+    --shadow-soft: 0 18px 44px color-mix(in srgb, var(--grayscale-800) 10%, transparent);
+}
+
+:root[data-theme="dark"] {
+    @include dark-theme;
+}
+
 @media (prefers-contrast: more) {
     :root {
-        --grayscale-600: #5c5040;
-        --grayscale-300: #b8a992;
-        --color-text-muted: #3d3429;
+        --grayscale-600: #3b5155;
+        --grayscale-300: #9fb4b1;
+        --color-text-muted: #2f4347;
     }
 }

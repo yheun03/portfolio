@@ -75,7 +75,11 @@
         border-radius: 999px;
         place-items: center;
 
-        &:hover .app-dock__dot,
+        &:hover:not(&--active) .app-dock__dot {
+            background: var(--color-primary);
+            transform: scale(1.18);
+        }
+
         &:focus-visible .app-dock__dot {
             background: var(--color-primary);
             transform: scale(1.18);
@@ -89,6 +93,14 @@
 
         &--active .app-dock__dot {
             background: var(--color-primary);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 28%, transparent);
+        }
+
+        &--active:hover .app-dock__dot,
+        &--active:focus-visible .app-dock__dot {
+            background: var(--color-primary-dark, var(--color-primary));
+            transform: scale(1.22);
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 36%, transparent);
         }
     }
 

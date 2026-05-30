@@ -124,11 +124,19 @@
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
+    "lnb": {
+        "eyebrow": "Explore",
+        "title": "Menu"
+    },
     "a11y": {
         "switchToEn": "Switch to English",
         "switchToKo": "Switch to Korean",
+        "switchToDarkTheme": "Switch to dark theme",
+        "switchToLightTheme": "Switch to light theme",
         "localeChangedEn": "Display language switched to English.",
-        "localeChangedKo": "Display language switched to Korean."
+        "localeChangedKo": "Display language switched to Korean.",
+        "themeChangedDark": "Dark theme enabled.",
+        "themeChangedLight": "Light theme enabled."
     },
     "meta": {
         "title": "Eunyounghwan | Web Publisher & Frontend Developer Portfolio",

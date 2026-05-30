@@ -124,11 +124,19 @@
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
+    "lnb": {
+        "eyebrow": "탐색",
+        "title": "메뉴"
+    },
     "a11y": {
         "switchToEn": "영어로 전환",
         "switchToKo": "한국어로 전환",
+        "switchToDarkTheme": "다크 테마로 전환",
+        "switchToLightTheme": "라이트 테마로 전환",
         "localeChangedKo": "표시 언어가 한국어로 변경되었습니다.",
-        "localeChangedEn": "표시 언어가 영어로 변경되었습니다."
+        "localeChangedEn": "표시 언어가 영어로 변경되었습니다.",
+        "themeChangedDark": "다크 테마로 변경되었습니다.",
+        "themeChangedLight": "라이트 테마로 변경되었습니다."
     },
     "meta": {
         "title": "웹 퍼블리셔 은영환 | 웹 프론트엔드 개발자 포트폴리오",
