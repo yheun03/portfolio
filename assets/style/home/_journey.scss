@@ -126,8 +126,8 @@
 
 .journey__chapter {
     display: grid;
-    grid-template-columns: minmax(240px, 0.36fr) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: minmax(var(--home-chapter-sidebar-min), 0.36fr) minmax(0, 1fr);
+    gap: var(--home-section-column-gap);
     align-items: start;
     padding-top: clamp(2rem, 4vw, 3rem);
 
@@ -142,7 +142,7 @@
 
 .journey__chapter-card {
     position: sticky;
-    top: calc(var(--layout-header-height) + 1.25rem);
+    top: var(--home-sticky-top);
     display: grid;
     gap: clamp(0.65rem, 1.5vw, 1rem);
     align-content: start;
@@ -260,4 +260,3 @@
         text-wrap: pretty;
     }
 }
-

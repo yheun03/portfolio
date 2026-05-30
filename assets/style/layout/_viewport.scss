@@ -34,8 +34,13 @@
         align-items: stretch;
     }
 
-    .section--hero {
+    .section--hero,
+    .hero.section--hero {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
         padding: var(--section-pad-y) var(--page-pad-x);
+        box-sizing: border-box;
     }
 }
 
@@ -76,6 +81,11 @@
         padding-top: calc(var(--section-pad-y) + 1.25rem);
     }
 
+    .section--hero,
+    .hero.section--hero {
+        padding-bottom: calc(var(--section-pad-y) + clamp(0.75rem, 3vw, 1.25rem));
+    }
+
     .hero__actions {
         display: flex;
         flex-direction: column;
@@ -111,6 +121,6 @@
 
 @media (min-width: 1920px) {
     .section {
-        width: min(100% - 8rem, 2040px);
+        width: min(100% - var(--page-pad-x), var(--layout-content-max));
     }
 }

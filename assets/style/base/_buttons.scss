@@ -40,7 +40,7 @@
     }
 
     &--primary {
-        overflow: hidden;
+        overflow: visible;
         background: $gradient-accent;
         color: $grayscale-0;
         border-color: color-mix(in srgb, $primary-600 55%, $grayscale-0);
@@ -51,6 +51,7 @@
         content: "";
         position: absolute;
         inset: 0;
+        border-radius: inherit;
         background: linear-gradient(110deg,
                 transparent 28%,
                 color-mix(in srgb, var(--theme-white) 35%, transparent) 48%,
@@ -59,6 +60,7 @@
         transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
         pointer-events: none;
         z-index: -1;
+        clip-path: inset(0 round #{$radius-card});
     }
 
     &--primary:hover::before {
