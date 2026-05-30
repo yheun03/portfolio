@@ -130,14 +130,13 @@ Narrow/mobile breakpoint에서 display scale은 `_tokens.scss` media query가 ov
 ## Component Inventory
 
 | Code folder           | Components                                                                                                                                                  |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | `components/base/`    | `BaseLink`, `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`, `BaseYearTimeline`                                                      |
 | `components/work/`    | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`, `GalleryEmptyCapture`                                                                      |
 | `components/layout/`  | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock`                                                                                                  |
 | `components/motion/`  | `TypoDisplayHeading`                                                                                                                                        |
 | `components/home/`    | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
-| `components/gallery/` | `GalleryArchivePage`, `GalleryDetailPage`, `GalleryPageHeader`                                                                                              |
-| `components/page/`    | `TempMainProgressModalRenderer` (scoped, 임시)                                                                                                              |
+| `components/gallery/` | `GalleryArchivePage`, `GalleryDetailPage`, `GalleryPageHeader`                                                                                              |     |
 
 ## Component Variants
 
@@ -156,14 +155,14 @@ Narrow/mobile breakpoint에서 display scale은 `_tokens.scss` media query가 ov
 
 모달·탭 패널·뷰 전환(아코디언/세그먼트) UI는 섹션 본문과 분리해 `*Renderer.vue`로 호출한다. 상태는 Pinia 또는 `use*TabRenderer` composable이 담당한다.
 
-| Component | Role | Notes |
-| --------- | ---- | ----- |
-| `WorksDetailModalRenderer` | Works 상세 모달 | `worksUi.activeWork`, `useModal` |
-| `WorksTabPanelRenderer` | Works `role="tabpanel"` | `:key`로 탭 전환 시 리마운트 |
-| `HighlightsTabPanelRenderer` | Highlights `role="tabpanel"` | `useHighlightsTabRenderer` |
-| `JourneyViewRenderer` | Journey 소속순 / 시간순 | 세그먼트 컨트롤은 섹션에 유지 |
-| `GalleryArchiveListRenderer` | Gallery editorial / grid | 헤더 컨트롤은 `GalleryPageHeader` |
-| `TempMainProgressModalRenderer` | 임시 공지 모달 | scoped, 삭제 예정 |
+| Component                       | Role                         | Notes                             |
+| ------------------------------- | ---------------------------- | --------------------------------- |
+| `WorksDetailModalRenderer`      | Works 상세 모달              | `worksUi.activeWork`, `useModal`  |
+| `WorksTabPanelRenderer`         | Works `role="tabpanel"`      | `:key`로 탭 전환 시 리마운트      |
+| `HighlightsTabPanelRenderer`    | Highlights `role="tabpanel"` | `useHighlightsTabRenderer`        |
+| `JourneyViewRenderer`           | Journey 소속순 / 시간순      | 세그먼트 컨트롤은 섹션에 유지     |
+| `GalleryArchiveListRenderer`    | Gallery editorial / grid     | 헤더 컨트롤은 `GalleryPageHeader` |
+| `TempMainProgressModalRenderer` | 임시 공지 모달               | scoped, 삭제 예정                 |
 
 ### Card Patterns
 

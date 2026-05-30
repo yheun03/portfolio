@@ -94,7 +94,6 @@ export default defineNuxtConfig({
         { path: '~/components/motion', pathPrefix: false },
         { path: '~/components/home', pathPrefix: false },
         { path: '~/components/layout', pathPrefix: false },
-        { path: '~/components/page', pathPrefix: false },
     ],
 
     vite: {

@@ -1,0 +1,53 @@
+/* =========================================
+   Theme
+   사람이 직접 조정하는 색상 레이어입니다.
+   자동 생성 토큰 위에서 의미 기반 컬러를 덮어씁니다.
+========================================= */
+
+:root {
+    /* Raw anchors */
+    --theme-white: #fff;
+    --theme-black: #000;
+
+    /* Text */
+    --color-text: #333;
+    --color-text-strong: #111;
+    --color-text-heading: #1a1a1a;
+    --color-text-muted: #444;
+    --color-text-subtle: #777;
+
+    /* Foreground on filled/accent surfaces */
+    --color-on-primary: var(--theme-white);
+    --color-on-accent: var(--theme-white);
+
+    /* Shared overlays */
+    --color-scrim: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
+    --color-light-sheen: color-mix(in srgb, var(--theme-white) 22%, transparent);
+    --color-shadow-strong: var(--theme-black);
+
+    /* Gallery aliases */
+    --gallery-accent: var(--color-primary);
+    --gallery-active-bg: var(--gradient-accent);
+    --gallery-active-fg: var(--color-on-accent);
+    --gallery-bg: var(--color-bg);
+    --gallery-bg-elevated: var(--color-surface);
+    --gallery-body: var(--color-text);
+    --gallery-body-soft: color-mix(in srgb, var(--color-text) 78%, var(--color-text-muted));
+    --gallery-frame: color-mix(in srgb, var(--color-border) 82%, transparent);
+    --gallery-ink: var(--color-text);
+    --gallery-muted: var(--color-text-muted);
+
+    /* Layout aliases */
+    --shell-skip-bg: var(--color-surface-strong);
+    --shell-skip-border: var(--color-border);
+    --shell-skip-fg: var(--color-text);
+    --shell-skip-outline: var(--color-primary);
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --grayscale-600: #5c5040;
+        --grayscale-300: #b8a992;
+        --color-text-muted: #3d3429;
+    }
+}

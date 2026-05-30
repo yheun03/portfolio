@@ -28,8 +28,7 @@
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
 
-                <div class="gallery-editorial__entry-media"
-                    :class="{ 'gallery-editorial__entry-media--long': hasLongCaptureMedia }">
+                <div class="gallery-editorial__entry-media">
                     <GalleryEmptyCapture v-if="isPlaceholderCover" />
                     <span v-else class="gallery-editorial__entry-screen">
                         <img :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
@@ -40,7 +39,7 @@
             </div>
         </template>
         <template v-else>
-            <div class="gallery-card__media" :class="{ 'gallery-card__media--long': hasLongCaptureMedia }">
+            <div class="gallery-card__media">
                 <GalleryEmptyCapture v-if="isPlaceholderCover" />
                 <span v-else class="gallery-card__screen">
                     <img :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
@@ -105,7 +104,6 @@ const entryYearSuffix = computed(() => {
 
 const coverCapture = computed(() => props.work.captures[0] ?? '');
 const coverSrc = computed(() => resolveAppPath(coverCapture.value || '/images/projects/placeholder.svg'));
-const hasLongCaptureMedia = computed(() => /\/(thumbnail-(?:pc|mb)|modal-\d+)\.png$/i.test(coverCapture.value));
 const isPlaceholderCover = computed(() => isPlaceholderCapture(coverCapture.value));
 
 const coverAlt = computed(() => {

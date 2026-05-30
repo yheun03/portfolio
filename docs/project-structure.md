@@ -46,7 +46,6 @@
 | `components/work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.              |
 | `components/gallery/` | 프로젝트/개인 아카이브 목록·상세 화면 컴포넌트. 라우트 데이터는 `composables/gallery/`에서 공급합니다.   |
 | `components/motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                        |
-| `components/page/`    | 페이지 전용 오버레이·임시 UI (예: TempMainProgressModalRenderer).                                        |
 
 ## Core And App
 

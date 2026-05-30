@@ -131,7 +131,7 @@ onMounted(() => {
     display: grid;
     place-items: center;
     padding: clamp(1rem, 4vw, 2rem);
-    background: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
+    background: var(--color-scrim);
     backdrop-filter: blur(18px) saturate(1.2);
 }
 
@@ -161,7 +161,7 @@ onMounted(() => {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(135deg, color-mix(in srgb, #fff 22%, transparent), transparent 34%);
+    background: linear-gradient(135deg, var(--color-light-sheen), transparent 34%);
     opacity: 0.55;
 }
 
