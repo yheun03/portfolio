@@ -1,0 +1,1 @@
+import{u as r}from"#entry";import{f as o}from"./jE11sQx_.js";function n(){const{t:e}=r();return o(()=>[{href:"/",label:e("nav.home")},{href:"/projects",label:e("nav.worksArchive")},{href:"/personal",label:e("nav.personalArchive")}])}export{n as u};

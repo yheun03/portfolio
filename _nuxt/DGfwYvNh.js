@@ -1,0 +1,1 @@
+import{F as t,J as n,M as s,a3 as o}from"./jE11sQx_.js";const r=["data-animate"],m=t({__name:"BaseCard",props:{animate:{type:Boolean,default:!0}},setup(a){return(e,l)=>(n(),s("article",{class:"base-card","data-animate":a.animate?"":null},[o(e.$slots,"default")],8,r))}});export{m as _};
