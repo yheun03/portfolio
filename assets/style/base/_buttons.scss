@@ -93,7 +93,7 @@
         box-shadow 0.22s ease,
         color 0.22s ease;
 
-    &:hover {
+    &:hover:not(&--active) {
         transform: translateY(-2px);
         box-shadow: $shadow-soft;
         border-color: color-mix(in srgb, $primary-600 42%, $grayscale-300);
@@ -109,8 +109,9 @@
     &--active:hover {
         color: $grayscale-0;
         background: $gradient-accent;
-        border-color: color-mix(in srgb, $grayscale-0 40%, $primary-600);
-        box-shadow: 0 12px 32px color-mix(in srgb, $primary-600 38%, transparent);
+        border-color: color-mix(in srgb, $grayscale-0 42%, $primary-600);
+        box-shadow: 0 14px 36px color-mix(in srgb, $primary-600 42%, transparent);
+        transform: translateY(-1px);
     }
 }
 
@@ -159,7 +160,7 @@
             background-color 0.18s ease,
             box-shadow 0.18s ease;
 
-        &:hover {
+        &:hover:not(&--active) {
             transform: none;
             color: $grayscale-900;
             background: color-mix(in srgb, $primary-600 7%, transparent);
@@ -177,8 +178,8 @@
 
         &--active:hover {
             color: $grayscale-900;
-            background: color-mix(in srgb, $primary-600 12%, $grayscale-0);
-            box-shadow: inset var(--lnb-accent-w) 0 0 0 color-mix(in srgb, $primary-600 72%, $grayscale-300);
+            background: color-mix(in srgb, $primary-600 16%, $grayscale-0);
+            box-shadow: inset var(--lnb-accent-w) 0 0 0 color-mix(in srgb, $primary-600 82%, $grayscale-300);
         }
     }
 }

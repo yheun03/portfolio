@@ -107,6 +107,12 @@
             background: var(--gallery-active-bg);
             box-shadow: 0 4px 14px color-mix(in srgb, var(--gallery-accent) 35%, transparent);
         }
+
+        &--active:hover {
+            color: var(--gallery-active-fg);
+            background: var(--gallery-active-bg);
+            box-shadow: 0 6px 18px color-mix(in srgb, var(--gallery-accent) 42%, transparent);
+        }
     }
 }
 
