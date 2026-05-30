@@ -1,17 +1,19 @@
 @use "../abstracts/tokens" as *;
 
 /* Portfolio highlights — 왼쪽 title-col은 works와 동일, 오른쪽은 간단한 패널 리스트 */
-.section--highlights {
-    position: relative;
-    overflow: visible;
-    content-visibility: visible;
-    contain-intrinsic-size: none;
-    padding-top: calc(var(--space-section-y) + 5rem);
-    grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
-    column-gap: var(--space-6);
-    align-items: start;
+.highlights {
+    &.section--highlights {
+        position: relative;
+        overflow: visible;
+        content-visibility: visible;
+        contain-intrinsic-size: none;
+        padding-top: calc(var(--space-section-y) + 5rem);
+        grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
+        column-gap: var(--space-6);
+        align-items: start;
+    }
 
-    .highlights__title-col {
+    &__title-col {
         grid-column: 1;
         grid-row: 1 / -1;
         position: sticky;
@@ -22,7 +24,7 @@
         padding-inline-end: var(--space-2);
     }
 
-    .highlights__workspace {
+    &__workspace {
         grid-column: 2;
         grid-row: 1;
         min-width: 0;

@@ -4,7 +4,7 @@
         <button v-for="item in items" :key="item.key" :id="`${tabIdPrefix}${item.key}`" type="button" role="tab"
             :aria-controls="`${panelIdPrefix}-${item.key}`" :aria-selected="modelValue === item.key"
             :tabindex="modelValue === item.key ? 0 : -1" class="tab-list__tab"
-            :class="{ 'tab-list__tab--active': modelValue === item.key }" @click="select(item.key)"
+            :class="{ 'tab-list__tab--active': modelValue === item.key }" @click="handleTabSelect(item.key)"
             @focus="handleTabFocus" @keydown="handleTabKeydown($event, item.key)">
             <slot name="tab" :item="item" :active="modelValue === item.key">
                 {{ item.label }}
@@ -49,7 +49,7 @@ const { handleTabKeydown } = useTablistKeyboard(
     },
 );
 
-function select(key: string) {
+function handleTabSelect(key: string) {
     emit('update:modelValue', key);
 }
 

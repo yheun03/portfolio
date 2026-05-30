@@ -1,5 +1,5 @@
 <template>
-    <section id="works" class="section section--works">
+    <section id="works" class="section section--works works">
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
@@ -37,11 +37,11 @@
                 <p id="works-swipe-help" class="swipe-rail__hint">{{ swipeHint }}</p>
                 <div class="swipe-rail__controls" role="group" :aria-label="swipeControlsLabel">
                     <button type="button" class="swipe-rail__button" :aria-label="swipePrevLabel"
-                        @click="scrollWorksRail(-1)">
+                        @click="handleWorksRailScroll(-1)">
                         <span aria-hidden="true">‹</span>
                     </button>
                     <button type="button" class="swipe-rail__button" :aria-label="swipeNextLabel"
-                        @click="scrollWorksRail(1)">
+                        @click="handleWorksRailScroll(1)">
                         <span aria-hidden="true">›</span>
                     </button>
                 </div>
@@ -140,7 +140,7 @@ const collapseAriaLabel = computed(() =>
     locale.value === "ko" ? "대표 작업 목록 처음 개수로 접기" : "Collapse featured work list to the initial count",
 );
 
-const scrollRail = (rail: HTMLElement | null, direction: -1 | 1) => {
+const scrollRailByCard = (rail: HTMLElement | null, direction: -1 | 1) => {
     if (!rail) return;
 
     const firstCard = rail.querySelector<HTMLElement>(".work-card");
@@ -150,7 +150,7 @@ const scrollRail = (rail: HTMLElement | null, direction: -1 | 1) => {
     rail.scrollBy({ left: direction * distance, behavior: "smooth" });
 };
 
-const scrollWorksRail = (direction: -1 | 1) => scrollRail(worksPanelRef.value?.panelRef ?? null, direction);
+const handleWorksRailScroll = (direction: -1 | 1) => scrollRailByCard(worksPanelRef.value?.panelRef ?? null, direction);
 
 const showMoreWorks = () => {
     visibleCount.value = Math.min(visibleCount.value + visibleStep, pinnedFilteredWorks.value.length);

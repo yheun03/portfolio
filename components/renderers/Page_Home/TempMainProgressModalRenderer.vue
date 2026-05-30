@@ -4,10 +4,10 @@
         <Transition name="temp-main-modal">
             <div v-if="isOpen" class="temp-main-modal" role="dialog" aria-modal="true"
                 aria-labelledby="temp-main-modal-title" aria-describedby="temp-main-modal-description"
-                @click.self="close">
+                @click.self="handleModalClose">
                 <section ref="modalRef" class="temp-main-modal__panel" tabindex="-1">
                     <button ref="initialFocusRef" type="button" class="temp-main-modal__close"
-                        :aria-label="modalText.closeAria" @click="close">
+                        :aria-label="modalText.closeAria" @click="handleModalClose">
                         {{ modalText.close }}
                     </button>
 
@@ -34,11 +34,11 @@
 
                     <div class="temp-main-modal__actions">
                         <button type="button" class="temp-main-modal__button temp-main-modal__button--ghost"
-                            @click="close">
+                            @click="handleModalClose">
                             {{ modalText.dismiss }}
                         </button>
                         <button type="button" class="temp-main-modal__button temp-main-modal__button--primary"
-                            @click="closeForToday">
+                            @click="handleModalDismissToday">
                             {{ modalText.dismissToday }}
                         </button>
                     </div>
@@ -92,7 +92,7 @@ const progressAriaLabel = computed(() =>
     modalText.value.progressAria.replace('{progress}', String(TEMP_MAIN_MODAL_PROGRESS))
 );
 
-const getTodayKey = () => {
+const createTodayStorageKey = () => {
     const today = new Date();
     return [
         today.getFullYear(),
@@ -101,25 +101,25 @@ const getTodayKey = () => {
     ].join('-');
 };
 
-const close = () => {
+const handleModalClose = () => {
     isOpen.value = false;
 };
 
-const closeForToday = () => {
-    localStorage.setItem(TEMP_MAIN_MODAL_STORAGE_KEY, getTodayKey());
-    close();
+const handleModalDismissToday = () => {
+    localStorage.setItem(TEMP_MAIN_MODAL_STORAGE_KEY, createTodayStorageKey());
+    handleModalClose();
 };
 
 useModal({
     isOpen: computed(() => isOpen.value),
-    onClose: close,
+    onClose: handleModalClose,
     containerRef: modalRef,
     initialFocusRef,
 });
 
 onMounted(() => {
     const dismissedDate = localStorage.getItem(TEMP_MAIN_MODAL_STORAGE_KEY);
-    isOpen.value = dismissedDate !== getTodayKey();
+    isOpen.value = dismissedDate !== createTodayStorageKey();
 });
 </script>
 

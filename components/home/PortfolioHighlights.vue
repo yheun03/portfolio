@@ -1,5 +1,5 @@
 <template>
-    <section id="highlights" class="section section--highlights">
+    <section id="highlights" class="section section--highlights highlights">
         <span class="section__emoji section__emoji--highlights emoji emoji--soft" aria-hidden="true">✨</span>
         <div class="highlights__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalHighlightCount }}{{ locale === 'ko' ? '건' : '' }}</span>
@@ -16,7 +16,7 @@
             <BaseTabList :model-value="activeTab" :items="tabs" tab-id-prefix="highlights-tab-"
                 panel-id-prefix="highlights-panel" :list-label="locale === 'ko' ? '하이라이트 카테고리' : 'Highlight categories'"
                 scroll-anchor="#highlights" class="highlights__filters"
-                @update:model-value="(key) => selectTab(key as HighlightTabKey)" />
+                @update:model-value="handleHighlightTabChange" />
             <p class="section-title__description">{{ t('highlights.summary') }}</p>
             <aside class="highlights__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite"
                 :aria-label="locale === 'ko' ? '하이라이트 요약' : 'Highlights summary'">
@@ -79,4 +79,8 @@ const archiveSummaryText = computed(() =>
         .replace('{visible}', String(activeItems.value.length))
         .replace('{total}', String(totalHighlightCount)),
 );
+
+function handleHighlightTabChange(key: string) {
+    selectTab(key as HighlightTabKey);
+}
 </script>
