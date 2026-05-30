@@ -37,11 +37,11 @@
                     <div v-if="activeWork.links?.length" class="works__modal-links">
                         <template v-for="link in activeWork.links" :key="link.href">
                             <NuxtLink v-if="isAppRoute(link.href)" class="base-button base-button--primary"
-                                :to="link.href">
+                                :to="link.href" :aria-label="workLinkAriaLabel(link)">
                                 {{ pick(link.label) }}
                             </NuxtLink>
                             <a v-else class="base-button base-button--primary" :href="resolveAppPath(link.href)"
-                                target="_blank" rel="noopener noreferrer">
+                                target="_blank" rel="noopener noreferrer" :aria-label="workLinkAriaLabel(link)">
                                 {{ pick(link.label) }}
                             </a>
                         </template>
@@ -55,6 +55,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useWorksUiStore } from '@stores/works-ui';
+import type { WorkItem } from '@data/works';
 
 const { pick } = useLocale();
 const { isAppRoute, resolveAppPath } = useAppPath();
@@ -74,4 +75,10 @@ useModal({
     containerRef: modalCardRef,
     initialFocusRef: closeButtonRef,
 });
+
+function workLinkAriaLabel(link: NonNullable<WorkItem['links']>[number]) {
+    if (!activeWork.value) return pick(link.label);
+
+    return `${pick(activeWork.value.title)} ${pick(link.label)}`;
+}
 </script>

@@ -2,13 +2,13 @@
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
         :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article ref="galleryPageRef" class="gallery-page section gallery-page--editorial" :class="galleryVariantClass"
-            :aria-label="t(titleKey)">
+            aria-labelledby="gallery-poster-title">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
                 :hero-number="heroNumber" :hero-aria-label="heroAriaLabel" :status-label="t('gallery.indexLabel')"
                 :stats="editorialStats" :sort-legend="sortLegend" :sort-aria-label="sortAriaLabel"
-                :view-legend="viewLegend" :view-aria-label="viewAriaLabel" :sort-options="sortOptions"
-                :view-options="viewOptions" :sort-mode="sortMode" @update:sort-mode="sortMode = $event"
-                @update:view-mode="viewMode = $event" />
+                :view-legend="viewLegend" :view-aria-label="viewAriaLabel" :toolbar-aria-label="toolbarAriaLabel"
+                :sort-options="sortOptions" :view-options="viewOptions" :sort-mode="sortMode"
+                @update:sort-mode="sortMode = $event" @update:view-mode="viewMode = $event" />
 
             <GalleryArchiveListRenderer :view-mode="viewMode" :editorial-year-groups="editorialYearGroups"
                 :gallery-entries="galleryEntries" :base-path="basePath" :list-aria-label="t('gallery.projectList')"
@@ -48,6 +48,7 @@ const {
     sortAriaLabel,
     viewLegend,
     viewAriaLabel,
+    toolbarAriaLabel,
     titleKey,
     basePath,
 } = useGalleryArchive(props.variant, props.works);

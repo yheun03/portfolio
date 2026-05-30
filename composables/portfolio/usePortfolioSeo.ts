@@ -17,6 +17,8 @@ interface PortfolioSeoOptions {
     type?: 'website' | 'article';
     image?: string;
     imageAlt?: string;
+    imageWidth?: number;
+    imageHeight?: number;
     /** 검색 색인 제외(에러·내부 문서 등) */
     noindex?: boolean;
     jsonLd?: Record<string, unknown> | Record<string, unknown>[];
@@ -37,7 +39,7 @@ function sanitizeJsonLd(data: Record<string, unknown> | Record<string, unknown>[
     return JSON.stringify(data).replace(/</g, '\\u003c');
 }
 
-function createPersonJsonLd(locale: SeoLocale, homeUrl: string, imageUrl: string) {
+function createPersonJsonLd(locale: SeoLocale, homeUrl: string, personImageUrl: string) {
     return {
         '@context': 'https://schema.org',
         '@type': 'Person',
@@ -47,7 +49,7 @@ function createPersonJsonLd(locale: SeoLocale, homeUrl: string, imageUrl: string
         jobTitle: seoStructuredData.person.jobTitle[locale],
         description: seoStructuredData.person.description[locale],
         url: homeUrl,
-        image: imageUrl,
+        image: personImageUrl,
         sameAs: [...seoConfig.sameAs],
         knowsAbout: seoKeywords[locale],
     };
@@ -69,14 +71,52 @@ function createWebSiteJsonLd(locale: SeoLocale, homeUrl: string) {
     };
 }
 
-function createProfilePageJsonLd(homeUrl: string) {
+function createWebPageJsonLd(
+    locale: SeoLocale,
+    canonicalUrl: string,
+    title: string,
+    description: string,
+    imageUrl: string,
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: title,
+        description,
+        inLanguage: getLanguageTag(locale),
+        isPartOf: {
+            '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.websiteId}`,
+        },
+        author: {
+            '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}`,
+        },
+        primaryImageOfPage: {
+            '@type': 'ImageObject',
+            url: imageUrl,
+        },
+    };
+}
+
+function createProfilePageJsonLd(locale: SeoLocale, homeUrl: string, title: string, description: string, imageUrl: string) {
     return {
         '@context': 'https://schema.org',
         '@type': 'ProfilePage',
-        '@id': `${homeUrl}#profile`,
+        '@id': `${homeUrl}${seoConfig.profilePageId}`,
         url: homeUrl,
+        name: title,
+        description,
+        inLanguage: getLanguageTag(locale),
+        isPartOf: {
+            '@id': `${homeUrl}${seoConfig.websiteId}`,
+        },
         mainEntity: {
             '@id': `${homeUrl}${seoConfig.personId}`,
+        },
+        primaryImageOfPage: {
+            '@type': 'ImageObject',
+            url: imageUrl,
         },
     };
 }
@@ -88,12 +128,15 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const canonicalUrl = buildAbsoluteSeoUrl(resolved.path);
         const imagePath = resolved.image?.endsWith('.svg') ? seoConfig.defaultOgImage : (resolved.image ?? seoConfig.defaultOgImage);
         const imageUrl = buildAbsoluteSeoUrl(imagePath);
+        const personImageUrl = buildAbsoluteSeoUrl(seoConfig.personImage);
         const ogLocale = resolved.locale === 'ko' ? 'ko_KR' : 'en_US';
         const alternateLocale = resolved.locale === 'ko' ? 'en_US' : 'ko_KR';
         const languageTag = getLanguageTag(resolved.locale);
         const socialTitle = resolved.ogTitle ?? resolved.title;
         const socialDescription = resolved.ogDescription ?? resolved.description;
         const keywords = [...seoKeywords[resolved.locale], ...(resolved.keywords ?? [])];
+        const imageWidth = resolved.imageWidth ?? (!resolved.image ? seoConfig.defaultOgImageSize.width : undefined);
+        const imageHeight = resolved.imageHeight ?? (!resolved.image ? seoConfig.defaultOgImageSize.height : undefined);
         const isHome = !resolved.path || resolved.path === '/';
         const robotsContent = resolved.noindex
             ? 'noindex, nofollow'
@@ -102,9 +145,10 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             ? 'noindex, nofollow'
             : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
         const jsonLd = [
-            createPersonJsonLd(resolved.locale, homeUrl, imageUrl),
+            createPersonJsonLd(resolved.locale, homeUrl, personImageUrl),
             createWebSiteJsonLd(resolved.locale, homeUrl),
-            ...(isHome ? [createProfilePageJsonLd(homeUrl)] : []),
+            createWebPageJsonLd(resolved.locale, canonicalUrl, resolved.title, resolved.description, imageUrl),
+            ...(isHome ? [createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl)] : []),
             ...(Array.isArray(resolved.jsonLd) ? resolved.jsonLd : resolved.jsonLd ? [resolved.jsonLd] : []),
         ];
 
@@ -115,14 +159,13 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             title: resolved.title,
             link: [
                 { rel: 'canonical', href: canonicalUrl },
-                { rel: 'alternate', hreflang: 'ko', href: canonicalUrl },
-                { rel: 'alternate', hreflang: 'en', href: canonicalUrl },
-                { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl },
                 { rel: 'image_src', href: imageUrl },
             ],
             meta: [
                 { name: 'description', content: resolved.description },
                 { name: 'author', content: profile.name },
+                { name: 'creator', content: profile.name },
+                { name: 'publisher', content: seoConfig.siteName },
                 { name: 'keywords', content: [...new Set(keywords)].join(', ') },
                 { name: 'robots', content: robotsContent },
                 { name: 'googlebot', content: googlebotContent },
@@ -140,8 +183,12 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image', content: imageUrl },
                 { property: 'og:image:secure_url', content: imageUrl },
                 { property: 'og:image:type', content: getImageMimeType(imageUrl) },
-                { property: 'og:image:width', content: String(seoConfig.defaultOgImageSize.width) },
-                { property: 'og:image:height', content: String(seoConfig.defaultOgImageSize.height) },
+                ...(imageWidth && imageHeight
+                    ? [
+                          { property: 'og:image:width', content: String(imageWidth) },
+                          { property: 'og:image:height', content: String(imageHeight) },
+                      ]
+                    : []),
                 { property: 'og:image:alt', content: resolved.imageAlt ?? socialTitle },
                 ...(resolved.type === 'article'
                     ? [
@@ -154,6 +201,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'twitter:description', content: socialDescription },
                 { name: 'twitter:image', content: imageUrl },
                 { name: 'twitter:image:alt', content: resolved.imageAlt ?? socialTitle },
+                { name: 'twitter:url', content: canonicalUrl },
             ],
             script: [
                 {

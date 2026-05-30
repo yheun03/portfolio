@@ -1,6 +1,6 @@
 /**
  * 목표: 초기 렌더를 방해하지 않도록 외부 분석 스크립트를 지연 로드한다.
- * 기능: GTM과 Naver WCS를 idle/load/user interaction 이후 한 번만 주입한다.
+ * 기능: GTM과 Naver WCS를 사용자 상호작용 또는 첫 화면 안정화 이후 한 번만 주입한다.
  */
 declare global {
     interface Window {
@@ -55,6 +55,8 @@ function loadNaverWcs() {
 
 export default defineNuxtPlugin(() => {
     let gtmLoaded = false;
+    let naverLoaded = false;
+    let analyticsScheduled = false;
 
     const loadGtmOnce = () => {
         if (gtmLoaded) return;
@@ -62,9 +64,22 @@ export default defineNuxtPlugin(() => {
         loadGtm();
     };
 
+    const loadNaverOnce = () => {
+        if (naverLoaded) return;
+        naverLoaded = true;
+        loadNaverWcs();
+    };
+
+    const loadAnalyticsOnce = () => {
+        loadGtmOnce();
+        loadNaverOnce();
+    };
+
     const scheduleAnalytics = () => {
-        onIdle(loadGtmOnce, 5000);
-        onIdle(loadNaverWcs, 4000);
+        if (analyticsScheduled) return;
+        analyticsScheduled = true;
+
+        window.setTimeout(() => onIdle(loadAnalyticsOnce, 2500), 12000);
     };
 
     if (document.readyState === 'complete') {
@@ -74,6 +89,6 @@ export default defineNuxtPlugin(() => {
     }
 
     for (const event of ['scroll', 'pointerdown', 'keydown'] as const) {
-        window.addEventListener(event, loadGtmOnce, { once: true, passive: true });
+        window.addEventListener(event, loadAnalyticsOnce, { once: true, passive: true });
     }
 });

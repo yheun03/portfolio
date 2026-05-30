@@ -1,8 +1,7 @@
 <template>
     <Teleport to="body">
         <transition name="app-lnb-fade">
-            <button v-if="open" type="button" class="app-lnb__backdrop"
-                :aria-label="locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'" @click="emitClose" />
+            <div v-if="open" class="app-lnb__backdrop" aria-hidden="true" @click="emitClose" />
         </transition>
         <transition name="app-lnb-drawer">
             <div v-if="open" :id="id" ref="drawerRef" class="app-lnb" role="dialog" aria-modal="true"

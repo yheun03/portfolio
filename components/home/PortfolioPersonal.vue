@@ -24,7 +24,7 @@
                     </button>
                 </div>
             </div>
-            <div ref="personalRailRef" class="personal__grid" :aria-label="personalRailLabel"
+            <div ref="personalRailRef" class="personal__grid" role="region" :aria-label="personalRailLabel"
                 :aria-describedby="isNarrow ? 'personal-swipe-help' : undefined" :tabindex="isNarrow ? 0 : -1">
                 <WorkCard v-for="work in personalWorks" :key="work.id" variant="personal" :work="work"
                     :item="{ title: pick(work.title), type: pick(work.type), summary: pick(work.introduction) }"

@@ -18,8 +18,8 @@
         "branding": "Publishing에서 Frontend까지, UI를 중심에 두고 일합니다",
         "kicker": "핵심부터.",
         "essentialsLead": "구조 · 퍼블리싱 · 협업을 한 흐름으로 맞춥니다.",
-        "ctaWorks": "프로젝트 보러가기",
-        "ctaToolbox": "역량 보기",
+        "ctaWorks": "웹 퍼블리셔 실무 프로젝트 보기",
+        "ctaToolbox": "Vue 3·SCSS UI 개발 역량 보기",
         "ctaContact": "연락하기"
     },
     "about": {
@@ -31,12 +31,12 @@
         "tagline": "구조는 단순하게. 사용감은 가볍게."
     },
     "works": {
-        "title": "여러 SI·SM으로 쌓은 실무 프로젝트",
+        "title": "웹 퍼블리셔 실무 프로젝트",
         "cardLabel": "실무 사례",
         "all": "전체",
-        "detail": "상세보기",
-        "fullArchiveLink": "실무 프로젝트 전체 보기 (갤러리)",
-        "sectionDescription": "여러 SI·SM·솔루션 프로젝트 중 메인에 올린 핵심 사례입니다. 전체 목록과 캡처는 갤러리에서 볼 수 있습니다.",
+        "detail": "프로젝트 상세 보기",
+        "fullArchiveLink": "웹 퍼블리셔 실무 프로젝트 전체 갤러리 보기",
+        "sectionDescription": "SI·SM·솔루션 프로젝트 중 웹 접근성, SEO, 반응형 UI, JavaScript·Vue 3 경험을 보여주는 핵심 사례입니다. 전체 목록과 캡처는 갤러리에서 볼 수 있습니다.",
         "archiveCountLabel": "개 실무 프로젝트 아카이브",
         "archiveSummary": "현재 탭의 대표 {pinned}건을 메인에 두었고, 전체 {total}건은 갤러리에 정리해 두었습니다.",
         "showMore": "프로젝트 더 보기",
@@ -44,11 +44,11 @@
         "visibleCount": "{visible} / {total}개 대표 사례 표시 중"
     },
     "personal": {
-        "title": "실무 밖에서 만든 것들",
+        "title": "프론트엔드 개인 프로젝트",
         "cardLabel": "개인 프로젝트",
         "backToWorks": "실무 프로젝트(Works) 섹션으로 이동",
         "ctaTab": "개인 프로젝트 전체 보기",
-        "fullArchiveLink": "개인 프로젝트 전체 보기 (갤러리)",
+        "fullArchiveLink": "프론트엔드 개인 프로젝트 전체 갤러리 보기",
         "designTokensLink": "2026 포트폴리오 디자인 토큰 보기"
     },
     "gallery": {
@@ -56,17 +56,18 @@
         "careerTitle": "실무 프로젝트",
         "indexLabel": "인덱스",
         "detailLabel": "상세",
-        "viewEntry": "상세 보기",
+        "viewEntry": "프로젝트 상세 보기",
         "viewLegend": "보기",
         "viewAriaLabel": "목록 표시 방식",
+        "toolbarAriaLabel": "프로젝트 목록 보기 방식과 정렬 선택",
         "viewEditorial": "뉴스형",
         "viewGrid": "갤러리",
-        "careerMetaTitle": "웹 퍼블리셔 실무 프로젝트 | 은영환 프론트엔드 포트폴리오",
-        "careerMetaDescription": "웹 퍼블리셔 은영환의 실무 프로젝트 사례입니다. Vue 3, SCSS, JavaScript, CMS, 반응형 UI, SEO, 접근성 중심의 프론트엔드 작업을 정리했습니다.",
+        "careerMetaTitle": "웹 퍼블리셔 포트폴리오 2026 실무 프로젝트 | 은영환",
+        "careerMetaDescription": "웹 퍼블리셔 은영환의 2026 실무 프로젝트 포트폴리오입니다. Vue 3, SCSS, JavaScript, CMS, 반응형 UI, SEO, 웹 접근성 중심의 프론트엔드 작업을 정리했습니다.",
         "personalEyebrow": "Personal",
         "personalTitle": "개인 프로젝트",
-        "personalMetaTitle": "프론트엔드 개인 프로젝트 | 은영환 웹 퍼블리셔",
-        "personalMetaDescription": "은영환의 프론트엔드 개인 프로젝트와 웹 퍼블리싱 실험입니다. 포트폴리오 개선, UI 패턴, Vue, SCSS, 인터랙션 구현 경험을 정리했습니다.",
+        "personalMetaTitle": "웹 프론트엔드 개발자 포트폴리오 2026 개인 프로젝트 | 은영환",
+        "personalMetaDescription": "웹 프론트엔드 개발자 은영환의 2026 개인 프로젝트 포트폴리오입니다. 포트폴리오 개선, UI 패턴, Vue 3, SCSS, JavaScript 인터랙션 구현 경험을 정리했습니다.",
         "duration": "소요 시간",
         "projectList": "프로젝트 목록",
         "otherProjects": "연도 미분류 프로젝트",
@@ -118,8 +119,8 @@
         "note": "범위와 일정을 먼저 맞추고, 유지하기 쉬운 화면부로 작업합니다.",
         "profileLabel": "새 프로젝트 문의 환영",
         "email": "메일 보내기",
-        "github": "GitHub 보기",
-        "resume": "이력서 보기"
+        "github": "은영환 GitHub 프로필 보기",
+        "resume": "은영환 이력서 PDF 보기"
     },
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"
@@ -139,9 +140,9 @@
         "themeChangedLight": "라이트 테마로 변경되었습니다."
     },
     "meta": {
-        "title": "웹 퍼블리셔 은영환 | 웹 프론트엔드 개발자 포트폴리오",
-        "description": "웹 퍼블리셔 은영환의 프론트엔드 개발자 포트폴리오입니다. Vue 3, SCSS, 웹 표준, 접근성, SEO, 반응형 UI 퍼블리싱 실무 프로젝트를 정리했습니다.",
-        "ogTitle": "웹 퍼블리셔·프론트엔드 개발자 은영환",
-        "ogDescription": "Vue 3 컴포넌트 구조, 웹 표준, 접근성, SEO, 반응형 UI 퍼블리싱 역량을 보여주는 은영환 포트폴리오"
+        "title": "은영환 포트폴리오 | 웹 퍼블리셔 · 웹 프론트엔드 개발자 포트폴리오 2026",
+        "description": "웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3, SCSS, JavaScript 기반 UI 개발, 웹 접근성, SEO, 반응형 웹 실무 프로젝트와 프론트엔드 경험을 소개합니다.",
+        "ogTitle": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환 2026 포트폴리오",
+        "ogDescription": "Vue 3, SCSS, JavaScript UI 개발과 웹 접근성, SEO, 반응형 웹 실무 경험을 정리한 은영환 포트폴리오"
     }
 }

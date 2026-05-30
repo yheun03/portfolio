@@ -1,7 +1,7 @@
 <template>
-    <div class="year-timeline" :class="`year-timeline--${variant}`" :aria-label="ariaLabel">
+    <div class="year-timeline" :class="`year-timeline--${variant}`" role="list" :aria-label="ariaLabel">
         <section v-for="(era, index) in eras" :key="era.key" class="year-timeline__era" :class="eraClasses(era)"
-            :aria-labelledby="era.year ? yearHeadingId(era) : undefined"
+            role="listitem" :aria-labelledby="era.year ? yearHeadingId(era) : undefined"
             :aria-label="!era.year ? flatAriaLabel : undefined">
             <div v-if="era.year" class="year-timeline__year">
                 <h2 :id="yearHeadingId(era)" class="year-timeline__year-title"

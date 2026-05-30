@@ -11,7 +11,7 @@
                 <span>UI Publishing / Frontend</span>
             </p>
 
-            <div class="hero__stage" data-animate>
+            <div class="hero__stage">
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
                 <TypoDisplayHeading tag="h1" group-id="hero" :lines="heroLines" heading-class="hero__display"
@@ -44,7 +44,7 @@
                 </dl>
             </section>
 
-            <nav class="hero__actions" :aria-label="locale === 'ko' ? '바로가기' : 'Quick links'">
+            <nav class="hero__actions" :aria-label="locale === 'ko' ? '주요 포트폴리오 섹션 바로가기' : 'Primary portfolio sections'">
                 <a class="base-button base-button--primary" href="#works">{{ t("hero.ctaWorks") }}</a>
                 <a class="base-button base-button--ghost" href="#toolbox">{{ t("hero.ctaToolbox") }}</a>
             </nav>

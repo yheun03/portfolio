@@ -18,6 +18,7 @@ export function useModal(options: UseModalOptions) {
     const { isOpen, onClose, containerRef, initialFocusRef } = options;
     let scrollY = 0;
     let scrollLocked = false;
+    let previouslyFocused: HTMLElement | null = null;
 
     const handleKeydown = (event: KeyboardEvent) => {
         if (!isOpen.value) return;
@@ -30,7 +31,7 @@ export function useModal(options: UseModalOptions) {
         if (event.key !== 'Tab' || !containerRef.value) return;
 
         const focusables = containerRef.value.querySelectorAll<HTMLElement>(
-            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
         );
         if (!focusables.length) return;
 
@@ -81,10 +82,15 @@ export function useModal(options: UseModalOptions) {
     watch(isOpen, (open) => {
         if (!import.meta.client) return;
         if (open) {
+            previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
             lockScroll();
-            nextTick(() => initialFocusRef?.value?.focus());
+            nextTick(() => initialFocusRef?.value?.focus({ preventScroll: true }));
         } else {
             unlockScroll();
+            if (previouslyFocused?.isConnected) {
+                previouslyFocused.focus({ preventScroll: true });
+            }
+            previouslyFocused = null;
         }
     });
 

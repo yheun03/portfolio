@@ -10,10 +10,11 @@
 
             <section class="contact__spotlight spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
                 <h3 class="spotlight__kicker">{{ t("contact.kicker") }}</h3>
-                <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`">
+                <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`"
+                    :aria-label="emailDisplayLabel">
                     <span v-for="(letter, index) in emailLetters" :key="`${letter}-${index}`"
                         :class="{ 'contact__mail-slot--suffix': atSignIndex >= 0 && index >= atSignIndex }"
-                        :style="{ '--mail-index': index }">
+                        :style="{ '--mail-index': index }" aria-hidden="true">
                         <span>{{ letter }}</span>
                     </span>
                 </a>
@@ -51,4 +52,7 @@ const { t, locale } = useLocale();
 const emailLetters = computed(() => profile.contacts.email.split(""));
 const atSignIndex = computed(() => profile.contacts.email.indexOf("@"));
 const profilePhotoSrc = profilePhotoUrl;
+const emailDisplayLabel = computed(() =>
+    locale.value === "ko" ? `이메일 주소 ${profile.contacts.email}` : `Email address ${profile.contacts.email}`,
+);
 </script>
