@@ -23,7 +23,7 @@
         border-color 0.26s ease,
         color 0.26s ease;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     isolation: isolate;
     @include font(button);
     font-size: var(--font-size-md);
@@ -40,7 +40,7 @@
     }
 
     &--primary {
-        overflow: visible;
+        // overflow: visible;
         background: $gradient-accent;
         color: $grayscale-0;
         border-color: color-mix(in srgb, $primary-600 55%, $grayscale-0);

@@ -266,6 +266,10 @@
             text-transform: uppercase;
         }
 
+        h3:first-of-type {
+            margin-top: 1.5rem;
+        }
+
         p,
         li {
             color: var(--gallery-body);
