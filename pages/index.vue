@@ -1,45 +1,41 @@
 <template>
     <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId"
         :footer-text="t('footer.copyright')">
-        <div v-for="layer in pageLayers" :key="layer.name" class="page__layer" :class="`page__layer--${layer.name}`">
-            <component :is="section.component" v-for="section in layer.sections" :key="section.key" />
+        <div class="page__layer page__layer--hero">
+            <PortfolioHero />
+        </div>
+        <div class="page__layer page__layer--profile">
+            <PortfolioAbout />
+        </div>
+        <div class="page__layer page__layer--works">
+            <PortfolioWorks />
+            <PortfolioPersonal />
+        </div>
+        <div class="page__layer page__layer--capability">
+            <PortfolioJourney />
+            <PortfolioToolbox />
+            <PortfolioHighlights />
+        </div>
+        <div class="page__layer page__layer--contact">
+            <PortfolioContact />
         </div>
     </AppLayout>
     <TempMainProgressModalRenderer />
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent, type Component } from 'vue';
+import { defineAsyncComponent } from 'vue';
 import PortfolioHero from '~/components/home/PortfolioHero.vue';
 import PortfolioWorks from '~/components/home/PortfolioWorks.vue';
 import PortfolioPersonal from '~/components/home/PortfolioPersonal.vue';
 import TempMainProgressModalRenderer from '~/components/page/TempMainProgressModalRenderer.vue';
-import { HOME_PAGE_LAYERS, type HomeSectionKey, SCROLL_SECTION_IDS } from '@config/homePage';
+import { SCROLL_SECTION_IDS } from '@config/homePage';
 
 const PortfolioAbout = defineAsyncComponent(() => import('~/components/home/PortfolioAbout.vue'));
 const PortfolioJourney = defineAsyncComponent(() => import('~/components/home/PortfolioJourney.vue'));
 const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
 const PortfolioHighlights = defineAsyncComponent(() => import('~/components/home/PortfolioHighlights.vue'));
 const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
-
-const SECTION_COMPONENTS: Record<HomeSectionKey, Component> = {
-    hello: PortfolioHero,
-    works: PortfolioWorks,
-    personal: PortfolioPersonal,
-    about: PortfolioAbout,
-    journey: PortfolioJourney,
-    toolbox: PortfolioToolbox,
-    highlights: PortfolioHighlights,
-    contact: PortfolioContact,
-};
-
-const pageLayers = HOME_PAGE_LAYERS.map((layer) => ({
-    name: layer.name,
-    sections: layer.sectionKeys.map((key) => ({
-        key,
-        component: SECTION_COMPONENTS[key],
-    })),
-}));
 
 const { t, locale } = useLocale();
 

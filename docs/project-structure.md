@@ -8,7 +8,7 @@
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `.vscode/`     | 로컬 에디터 설정. 앱 실행·빌드 로직에는 관여하지 않습니다.                                                        |
 | `assets/`      | Nuxt가 번들링하는 정적 자산과 SCSS 소스. 폰트, 프로필 이미지, 디자인 토큰, 페이지별 스타일을 둡니다.              |
-| `components/`  | Vue 컴포넌트. Base, Layout, Home, Work, Gallery, Motion처럼 화면 역할별로 나눕니다.                               |
+| `components/`  | Vue 컴포넌트. base, layout, home, work, gallery, motion, page처럼 화면 역할별(소문자)로 나눕니다. |
 | `composables/` | Vue/Nuxt 조합 함수. UI 상태 동작, 갤러리 탐색 복원, SEO, 홈 섹션 인터랙션처럼 재사용 가능한 런타임 로직을 둡니다. |
 | `core/`        | 앱 전역 설정성 코드. Nuxt 특수 옵션, 라우터 옵션, 타입, 순수 유틸을 모아 루트 폴더를 줄입니다.                    |
 | `data/`        | 포트폴리오 콘텐츠 데이터. 프로젝트, 프로필, 소개, 여정, 스킬, 하이라이트를 TypeScript 모듈로 관리합니다.          |
@@ -26,12 +26,12 @@
 | `assets/font/`            | Pretendard 웹폰트 파일. `assets/style/abstracts/_fonts.scss`에서 등록합니다.                         |
 | `assets/images/`          | 번들링 대상 이미지. 현재 프로필 이미지처럼 Nuxt 컴포넌트에서 import/resolve될 수 있는 자산을 둡니다. |
 | `assets/style/`           | 전체 SCSS 진입점과 스타일 모듈. `main.scss`가 모든 하위 모듈을 조합합니다.                           |
-| `assets/style/abstracts/` | 디자인 토큰, 폰트 등록, Sass mixin/function.                                                         |
-| `assets/style/base/`      | reset, 버튼, 라벨, 섹션 타이틀, 공통 타임라인 등 primitive 스타일.                                   |
-| `assets/style/layout/`    | 앱 shell, header, footer, dock 같은 레이아웃 스타일.                                                 |
-| `assets/style/home/`      | 홈 섹션별 스타일. Hero, About, Works, Journey, Toolbox, Highlights, Contact, responsive 보정.        |
-| `assets/style/work/`      | 작업 카드, feature card, 홈 카드 패턴 스타일.                                                        |
-| `assets/style/gallery/`   | 프로젝트/개인 아카이브와 상세 갤러리 스타일.                                                         |
+| `assets/style/abstracts/` | 디자인 토큰(`_tokens.scss`, `_tokens.generated.scss`), 폰트 등록, Sass mixin/function. `design-tokens.json` → `npm run tokens:sync`. |
+| `assets/style/base/`      | reset, skeleton, 버튼, 라벨, 배지, 카드, 섹션 타이틀, editorial year 등 primitive 스타일. |
+| `assets/style/layout/`    | 앱 shell, header, footer, dock, page layer, section 레이아웃.                          |
+| `assets/style/home/`      | 홈 섹션별 스타일 — hero, about, works, personal, journey, toolbox, contact, touch/responsive. |
+| `assets/style/work/`      | WorkCard 등 작업 카드 패턴 스타일.                                                     |
+| `assets/style/gallery/`   | 갤러리 공유 변수(`vars`), 아카이브(`archive`), 상세(`detail`) 페이지 스타일.          |
 | `assets/style/motion/`    | 모션 타이포그래피 스타일.                                                                            |
 | `assets/style/pages/`     | 페이지 단위 예외 스타일. 현재 error page 스타일을 둡니다.                                            |
 
@@ -45,6 +45,7 @@
 | `components/work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.                |
 | `components/gallery/` | 프로젝트/개인 아카이브 목록·상세 화면 컴포넌트. 라우트 데이터는 `composables/gallery/`에서 공급합니다.     |
 | `components/motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                          |
+| `components/page/`    | 페이지 전용 오버레이·임시 UI (예: TempMainProgressModalRenderer).                                          |
 
 ## Core
 

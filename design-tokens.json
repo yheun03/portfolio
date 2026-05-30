@@ -250,46 +250,84 @@
             }
         }
     },
+    "palette": {
+        "$description": "Editorial blue theme — synced to assets/style/abstracts/_tokens.scss via npm run tokens:sync",
+        "grayscale": {
+            "0": { "$type": "color", "$value": "#fbfdff", "$cssVar": "--grayscale-0" },
+            "50": { "$type": "color", "$value": "#f2f6fb", "$cssVar": "--grayscale-50" },
+            "100": { "$type": "color", "$value": "#e7eef7", "$cssVar": "--grayscale-100" },
+            "200": { "$type": "color", "$value": "#d4deec", "$cssVar": "--grayscale-200" },
+            "300": { "$type": "color", "$value": "#b7c5d8", "$cssVar": "--grayscale-300" },
+            "400": { "$type": "color", "$value": "#899ab2", "$cssVar": "--grayscale-400" },
+            "500": { "$type": "color", "$value": "#66758d", "$cssVar": "--grayscale-500" },
+            "600": { "$type": "color", "$value": "#48566f", "$cssVar": "--grayscale-600" },
+            "700": { "$type": "color", "$value": "#2f3a50", "$cssVar": "--grayscale-700" },
+            "800": { "$type": "color", "$value": "#1c2536", "$cssVar": "--grayscale-800" },
+            "900": { "$type": "color", "$value": "#101827", "$cssVar": "--grayscale-900" },
+            "950": { "$type": "color", "$value": "#08101d", "$cssVar": "--grayscale-950" }
+        },
+        "primary": {
+            "50": { "$type": "color", "$value": "#edf5ff", "$cssVar": "--primary-50" },
+            "100": { "$type": "color", "$value": "#d6e8fb", "$cssVar": "--primary-100" },
+            "200": { "$type": "color", "$value": "#adcdec", "$cssVar": "--primary-200" },
+            "300": { "$type": "color", "$value": "#7eaedb", "$cssVar": "--primary-300" },
+            "400": { "$type": "color", "$value": "#508cc4", "$cssVar": "--primary-400" },
+            "500": { "$type": "color", "$value": "#2f6fa7", "$cssVar": "--primary-500" },
+            "600": { "$type": "color", "$value": "#255987", "$cssVar": "--primary-600" },
+            "700": { "$type": "color", "$value": "#1d4568", "$cssVar": "--primary-700" },
+            "800": { "$type": "color", "$value": "#17324c", "$cssVar": "--primary-800" },
+            "900": { "$type": "color", "$value": "#102338", "$cssVar": "--primary-900" }
+        },
+        "accent": {
+            "hot": { "$type": "color", "$value": "#476f9f", "$cssVar": "--accent-hot", "$description": "Editorial accent (not pink in production)" },
+            "mint": { "$type": "color", "$value": "#7898b8", "$cssVar": "--accent-mint", "$description": "Editorial accent (not mint green in production)" }
+        },
+        "state": {
+            "error": { "$type": "color", "$value": "#dc2626", "$cssVar": "--state-error" },
+            "success": { "$type": "color", "$value": "#0f9f6e", "$cssVar": "--state-success" },
+            "warning": { "$type": "color", "$value": "#d97706", "$cssVar": "--state-warning" }
+        }
+    },
     "semantic/light": {
         "color": {
             "brand": {
                 "primary": {
                     "$type": "color",
-                    "$value": "{primitive.color.blue.500}",
+                    "$value": "{palette.primary.600}",
                     "$description": "--color-primary"
                 },
                 "primaryDark": {
                     "$type": "color",
-                    "$value": "{primitive.color.blue.600}",
+                    "$value": "{palette.primary.700}",
                     "$description": "--color-primary-dark"
                 }
             },
             "accent": {
                 "hot": {
                     "$type": "color",
-                    "$value": "{primitive.color.pink.500}",
+                    "$value": "{palette.accent.hot}",
                     "$description": "--color-accent-hot"
                 },
                 "mint": {
                     "$type": "color",
-                    "$value": "{primitive.color.mint.500}",
+                    "$value": "{palette.accent.mint}",
                     "$description": "--color-accent-mint"
                 }
             },
             "background": {
                 "default": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.75}",
+                    "$value": "{palette.grayscale.100}",
                     "$description": "--color-bg"
                 },
                 "surface": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.0}",
+                    "$value": "{palette.grayscale.0}",
                     "$description": "--color-surface"
                 },
                 "surfaceStrong": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.150}",
+                    "$value": "{palette.grayscale.200}",
                     "$description": "--color-surface-strong"
                 },
                 "glass": {
@@ -311,24 +349,24 @@
             "text": {
                 "default": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.800}",
+                    "$value": "{palette.grayscale.900}",
                     "$description": "--color-text"
                 },
                 "muted": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.500}",
+                    "$value": "{palette.grayscale.700}",
                     "$description": "--color-text-muted"
                 },
                 "onAccent": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.0}",
+                    "$value": "{palette.grayscale.0}",
                     "$description": "--color-on-accent"
                 }
             },
             "border": {
                 "default": {
                     "$type": "color",
-                    "$value": "{primitive.color.neutral.400}",
+                    "$value": "{palette.grayscale.300}",
                     "$description": "--color-border"
                 }
             }
@@ -336,17 +374,17 @@
         "gradient": {
             "accent": {
                 "$type": "asset",
-                "$value": "linear-gradient(118deg, #2456ff 0%, #7038cc 52%, #087ea4 100%)",
-                "$description": "--gradient-accent"
+                "$value": "linear-gradient(118deg, #7eaedb 0%, #2f6fa7 52%, #17324c 100%)",
+                "$description": "--gradient-accent (Figma sample; runtime uses var() chain)"
             },
             "surface": {
                 "$type": "asset",
-                "$value": "linear-gradient(168deg, #ffffff 0%, #eef3fb 100%)",
+                "$value": "linear-gradient(168deg, #fbfdff 0%, #e7eef7 56%, #d4deec 100%)",
                 "$description": "--gradient-surface"
             },
             "noise": {
                 "$type": "asset",
-                "$value": "linear-gradient(185deg, #f8fafc 0%, #e8eef8 55%, #f4f6fb 100%)",
+                "$value": "linear-gradient(185deg, #fbfdff 0%, #ecf3fb 48%, #dfe8f4 100%)",
                 "$description": "--gradient-noise"
             }
         }
@@ -468,6 +506,11 @@
                 "$type": "fontFamilies",
                 "$value": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
                 "$description": "--font-mono"
+            },
+            "pretendard": {
+                "$type": "fontFamilies",
+                "$value": "Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+                "$description": "--font-pretendard"
             }
         },
         "fontSize": {
@@ -945,6 +988,11 @@
             "$value": "clamp(2rem, 5vw, 6rem)",
             "$description": "--inset-page / responsive page inset"
         },
+        "insetPageHero": {
+            "$type": "spacing",
+            "$value": "clamp(1.5rem, 4vw, 5rem)",
+            "$description": "--inset-page-hero"
+        },
         "insetPanel": {
             "$type": "spacing",
             "$value": "clamp(1.1rem, 2.6vw, 2rem)",
@@ -959,23 +1007,33 @@
     "radius": {
         "card": {
             "$type": "borderRadius",
-            "$value": "0.65rem",
+            "$value": "0.95rem",
             "$description": "--radius-card"
+        },
+        "md": {
+            "$type": "borderRadius",
+            "$value": "0.9rem",
+            "$description": "--radius-md"
         },
         "lg": {
             "$type": "borderRadius",
-            "$value": "1.05rem",
+            "$value": "1.15rem",
             "$description": "--radius-lg"
         },
         "xl": {
             "$type": "borderRadius",
-            "$value": "1.45rem",
+            "$value": "1.65rem",
             "$description": "--radius-xl"
+        },
+        "2xl": {
+            "$type": "borderRadius",
+            "$value": "2.25rem",
+            "$description": "--radius-2xl"
         },
         "pill": {
             "$type": "borderRadius",
             "$value": "999px",
-            "$description": "Used by .base-badge, .base-label, .tab-list__tab and header nav pills"
+            "$description": "--radius-pill"
         }
     },
     "shadow/light": {
@@ -1032,6 +1090,11 @@
                 "$type": "sizing",
                 "$value": "2.75rem",
                 "$description": "--size-touch"
+            },
+            "touchCompact": {
+                "$type": "sizing",
+                "$value": "2.5rem",
+                "$description": "--size-touch-compact"
             }
         },
         "header": {
@@ -1076,6 +1139,33 @@
                 "$value": "1440px",
                 "$description": "$bp-desktop"
             }
+        }
+    },
+    "gallery": {
+        "slab": {
+            "$type": "fontFamilies",
+            "$value": "Roboto Slab, Rockwell, Courier New, serif",
+            "$description": "--gallery-slab"
+        },
+        "copyMax": {
+            "$type": "dimension",
+            "$value": "42ch",
+            "$description": "--gallery-copy-max"
+        },
+        "yearCol": {
+            "$type": "dimension",
+            "$value": "clamp(4.5rem, 11vw, 9.5rem)",
+            "$description": "--gallery-year-col"
+        },
+        "yearStickyTop": {
+            "$type": "dimension",
+            "$value": "calc(var(--layout-header-height) + var(--space-5))",
+            "$description": "--gallery-year-sticky-top"
+        },
+        "pad": {
+            "$type": "spacing",
+            "$value": "clamp(1.35rem, 4.5vw, 3.5rem)",
+            "$description": "--gallery-pad"
         }
     }
 }

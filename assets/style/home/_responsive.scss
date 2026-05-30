@@ -232,3 +232,69 @@
     }
 
 }
+
+/* ----- Home narrow viewport ----- */
+@media (min-width: 1920px) {
+    .section {
+        width: min(100% - 8rem, 2040px);
+    }
+}
+
+/* 좁은 폰 (767px 이하): 타이포·터치 여유만 보강 */
+
+@media (max-width: 767px) {
+
+    .section {
+        width: min(100% - var(--space-6), 100%);
+    }
+
+    .section:not(.section--hero) .section-title::before {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+    }
+
+    .section__emoji {
+        transform: scale(0.72);
+    }
+
+    .section__emoji--about {
+        opacity: 0.08;
+    }
+
+    .section__emoji--works {
+        opacity: 0.09;
+    }
+
+    .section__emoji--personal {
+        opacity: 0.1;
+    }
+
+    .section__emoji--journey {
+        opacity: 0.08;
+    }
+
+    .section__emoji--toolbox {
+        opacity: 0.1;
+    }
+
+    .section__emoji--highlights {
+        opacity: 0.14;
+    }
+
+    .section__emoji--contact {
+        opacity: 0.08;
+    }
+
+    .contact__mail-display {
+        overflow-wrap: anywhere;
+        font-size: clamp(1.75rem, 8vw, 2.75rem);
+    }
+
+    .journey__flow {
+        gap: var(--space-6);
+    }
+
+    :where(.base-label, .base-label--technical) {
+        max-width: 100%;
+        white-space: normal;
+    }
+}

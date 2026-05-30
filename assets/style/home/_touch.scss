@@ -1,0 +1,306 @@
+@use "../abstracts/tokens" as *;
+
+/* Portfolio touch */
+/* =============================================================================
+   터치·태블릿 (1023px 이하)
+   PC용 12컬럼·2열 그리드를 그대로 줄이지 않고, 단일 열·블록 스택으로 재구성
+   ============================================================================= */
+
+@media (max-width: #{$bp-max-narrow}) {
+    :root {
+        --touch-pad-x: clamp(0.85rem, 3.2vw + 0.35rem, 1.65rem);
+        --touch-stack-gap: clamp(1.5rem, 4.2vw, 2.5rem);
+    }
+
+    .portfolio-page--app-dock {
+        padding-inline-end: 0;
+    }
+
+    .section {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding-inline: var(--touch-pad-x);
+        padding-block: var(--touch-stack-gap);
+        box-sizing: border-box;
+    }
+
+    .section.section--about {
+        padding-block: var(--touch-stack-gap);
+    }
+
+    .section.section--contact {
+        min-height: auto;
+        padding-block: var(--touch-stack-gap);
+    }
+
+    .section--works {
+        padding-top: calc(var(--touch-stack-gap) + 2.75rem);
+    }
+
+    .page__layer--hero {
+        padding-bottom: var(--space-5);
+    }
+
+    .about__stage {
+        gap: var(--touch-stack-gap);
+    }
+
+    .contact__poster {
+        gap: var(--touch-stack-gap);
+    }
+
+    /**
+     * `_shell.scss` 의 `.section:not(.section--hero) { display: grid }` 가 (0,2,0) 특이도라
+     * `.section--works` 등 단일 수정자 규칙으로는 덮어쓸 수 없음. 동일 선택자로 터치 스택 레이아웃 적용.
+     */
+    .section:not(.section--hero) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--touch-stack-gap);
+        grid-template-columns: none;
+        grid-template-areas: none;
+        align-items: stretch;
+    }
+
+    .section--contact {
+        min-height: auto;
+    }
+
+    .about__workflow {
+        grid-area: auto;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* ----- Contact ----- */
+    .contact__head {
+        text-align: start;
+
+        .section-title {
+            align-items: flex-start;
+            text-align: start;
+        }
+    }
+
+    .contact__spotlight .spotlight__kicker {
+        margin-inline: 0;
+        text-align: start;
+    }
+
+    .contact__mail-display {
+        justify-content: flex-start;
+        white-space: normal;
+        flex-wrap: wrap;
+        font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+        text-align: start;
+    }
+
+    .contact__note {
+        text-align: start;
+        margin-inline: 0;
+    }
+
+    .contact__actions {
+        flex-direction: column;
+        align-items: stretch;
+
+        .base-button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* ----- Journey / Toolbox: 타이틀 포함 세로 흐름 ----- */
+    .section--toolbox>.section-title {
+        position: static;
+        width: 100%;
+    }
+
+    .journey__chapter {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-6);
+    }
+
+    .journey__chapter-card {
+        position: static;
+    }
+
+    .highlights__nav {
+        width: calc(100% + (var(--touch-pad-x) * 2));
+        max-width: none;
+        margin-inline: calc(-1 * var(--touch-pad-x));
+        padding-inline: var(--touch-pad-x);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .highlights__nav-item {
+            flex: 0 0 auto;
+            min-width: min(78vw, 18rem);
+            scroll-snap-align: start;
+            white-space: normal;
+        }
+    }
+
+    .highlights__panel {
+        grid-template-columns: minmax(0, 1fr);
+        padding: clamp(1rem, 4.8vw, 1.75rem);
+    }
+
+    .highlights__panel-aside {
+        position: static;
+    }
+
+    .toolbox__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-5);
+    }
+
+    /* ----- Works / Personal / Highlights (그리드 해제 + 터치 전용 플로우) ----- */
+    .section--works .works__total-badge {
+        position: relative;
+        top: auto;
+        left: auto;
+        order: -2;
+        align-self: flex-start;
+        width: fit-content;
+    }
+
+    .section--works .works__title-col,
+    .section--highlights .highlights__head {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+        padding-inline-end: 0;
+        text-align: start;
+    }
+
+    .section--works .works__title-col .section-title__description,
+    .section--highlights .highlights__head .section-title__description {
+        max-width: none;
+        margin-top: 0;
+        margin-inline: 0;
+    }
+
+    .section--works .works__title-col,
+    .section--personal .personal__head,
+    .section--highlights .highlights__head,
+    .section--highlights .highlights__workspace,
+    .section--works .works__filters,
+    .section--works .works__rail-wrap,
+    .section--works .works__grid,
+    .section--personal .personal__rail-wrap,
+    .section--personal .personal__grid {
+        position: static;
+        grid-area: auto;
+        grid-row: auto;
+        grid-column: auto;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+        padding-inline: 0;
+    }
+
+    .works__list-control {
+        position: static;
+        grid-area: auto;
+        grid-row: auto;
+        grid-column: auto;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+        padding: clamp(1rem, 3.2vw, 1.35rem) clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .section--personal .personal__head {
+        position: static;
+    }
+
+    .personal__head {
+        order: -1;
+    }
+
+    /** PC용 `.section--* .__grid { display:grid }` 특이도(0,2,0)를 그대로 덮음 */
+    .section--works .works__grid,
+    .section--personal .personal__grid {
+        --swipe-card-width: min(82vw, 25rem);
+        --swipe-edge-space: max(var(--touch-pad-x), calc((100vw - var(--swipe-card-width)) * 0.5));
+
+        display: flex;
+        flex-direction: row;
+        gap: clamp(0.75rem, 4vw, var(--space-5));
+        min-width: 0;
+        width: calc(100% + (var(--touch-pad-x) * 2));
+        max-width: none;
+        margin-inline: calc(-1 * var(--touch-pad-x));
+        padding-block: 12px 48px;
+        padding-inline: var(--swipe-edge-space);
+        grid-template-columns: none;
+        overflow-x: auto;
+        overflow-y: visible;
+        overscroll-behavior-x: contain;
+        scroll-padding-inline: var(--swipe-edge-space);
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .section--works .works__grid .work-card,
+    .section--personal .personal__grid .work-card {
+        flex: 0 0 var(--swipe-card-width);
+        grid-column: unset !important;
+        width: var(--swipe-card-width);
+        min-width: 0;
+        max-width: var(--swipe-card-width);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .section--works .works__grid .work-card:first-child,
+    .section--personal .personal__grid .work-card:first-child {
+        scroll-snap-align: start;
+    }
+
+    .section--works .works__rail-wrap,
+    .section--personal .personal__rail-wrap {
+        display: grid;
+        gap: var(--space-1);
+    }
+
+    .swipe-rail__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-3);
+    }
+
+    .works__list-control {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+        margin-block-start: -54px;
+
+        p {
+            line-height: var(--line-height-body);
+        }
+
+        .base-button {
+            width: 100%;
+        }
+    }
+
+}

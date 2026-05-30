@@ -1,6 +1,7 @@
 @use "abstracts/tokens" as *;
 @use "abstracts/fonts";
 
+/* Foundations */
 @use "base/reset";
 @use "base/skeleton";
 @use "base/buttons";
@@ -10,22 +11,32 @@
 @use "base/sections";
 @use "base/editorial-year";
 
+/* Layout shell */
 @use "layout/header";
 @use "layout/footer";
 @use "layout/shell";
+@use "layout/dock";
 
+/* Card patterns */
 @use "work/cards" as work-cards;
 
+/* Motion */
 @use "motion/typography";
 
-@use "home/foundation";
+/* Home sections */
 @use "home/hero";
 @use "home/about";
-@use "home/toolbox-highlights";
+@use "home/works";
+@use "home/personal";
 @use "home/journey";
+@use "home/toolbox-highlights";
 @use "home/contact";
+@use "home/touch";
 @use "home/responsive";
 
+/* Gallery pages */
 @use "gallery/archive";
+@use "gallery/detail";
 
+/* Route-level pages */
 @use "pages/error";

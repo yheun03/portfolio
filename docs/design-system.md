@@ -1,246 +1,205 @@
 # Design System
 
-이 문서는 현재 Vue/Nuxt 코드와 SCSS 토큰을 Figma 디자인 시스템으로 옮기기 위한 코드 기반 정리 문서입니다. 실제 코드 구조인 `assets/style/abstracts`, `assets/style/base`, `assets/style/work`, `assets/style/layout`, `assets/style/home`, `assets/style/gallery`, `assets/style/motion`, `components/base`, `components/work`, `components/layout`, `components/home`, `components/gallery`, `components/motion`를 기준으로 분석했습니다.
+코드와 Figma(Tokens Studio) 사이의 기준 문서입니다. **런타임 CSS 변수의 단일 소스는 `design-tokens.json`**이며, `npm run tokens:sync`로 `assets/style/abstracts/_tokens.generated.scss`가 생성됩니다. Sass mixin·breakpoint·responsive override는 `assets/style/abstracts/_tokens.scss`에 남깁니다.
+
+## Token Pipeline
+
+| 단계 | 파일 | 역할 |
+| ---- | ---- | ---- |
+| 1. 편집 | `design-tokens.json` | Figma/Tokens Studio import + `palette`·`typography`·`spacing` 등 |
+| 2. 생성 | `npm run tokens:sync` | `:root` 블록 → `_tokens.generated.scss` |
+| 3. 검증 | `npm run tokens:check` | JSON과 generated 파일 drift 확인 |
+| 4. Sass | `_tokens.scss` | `$bp-*`, `@mixin font`, narrow/mobile `:root` override |
+
+`palette` 토큰은 프로덕션 editorial blue 테마(`#2f6fa7` 계열)를 반영합니다. `semantic/dark`는 Figma Dark 모드용이며, **현재 사이트는 Light `:root`만 사용**합니다.
 
 ## Design Principles
 
-- Code-first naming: SCSS 변수명과 Vue 클래스명을 Figma 토큰/컴포넌트 설명에 그대로 남긴다.
-- Single theme first: `:root` 토큰을 기준으로 모든 섹션과 갤러리의 시각 언어를 일관되게 유지한다.
-- System over pages: `base`는 primitive, `work`와 `gallery`는 pattern, `layout`은 shell, `home`은 page composition으로 다룬다.
-- Density and motion: 기본 UI는 compact한 spacing과 hover lift, focus ring, active 상태를 가진다.
-- Manual fidelity: `color-mix()`, `clamp()`, gradient, inset shadow는 Figma에서 자동 변환이 제한되므로 수동 확인 대상으로 둔다.
+- Code-first naming: SCSS 변수명과 Vue BEM 클래스명을 Figma 설명에 그대로 남긴다.
+- Single theme first: Light `:root` 기준. Dark는 Figma 변수 모드로만 유지.
+- System over pages: `base` = primitive, `work`/`gallery` = pattern, `layout` = shell, `home` = section composition.
+- Global BEM: 대부분의 스타일은 `assets/style/` 글로벌 SCSS. co-located `<style>`은 예외(`design-tokens.vue`, 임시 modal).
 
-## Color Tokens
+## Color Tokens (Light / Production)
 
-Source: `assets/style/abstracts/_tokens.scss`
+Source: `design-tokens.json` → `palette`, `scripts/sync-design-tokens.mjs` computed aliases
 
-| Token                    | Light            | Dark             | Usage                            |
-| ------------------------ | ---------------- | ---------------- | -------------------------------- |
-| `--color-primary`        | `#2456ff`        | `#93a8ff`        | CTA, focus, active, label accent |
-| `--color-primary-dark`   | `#183fd1`        | `#6b7fff`        | work tone accent                 |
-| `--color-accent-hot`     | `#ff5c8d`        | `#ff7eb3`        | journey/highlight mix accent     |
-| `--color-accent-mint`    | `#0ecf9b`        | `#3ee8c5`        | personal/contact mix accent      |
-| `--color-bg`             | `#f4f6fb`        | `#050810`        | page background                  |
-| `--color-surface`        | `#ffffff`        | `#0d1424`        | cards, panels                    |
-| `--color-surface-strong` | `#e9eef6`        | `#141d32`        | tabs, header surfaces            |
-| `--color-text`           | `#0a0f1a`        | `#f4f7ff`        | primary text                     |
-| `--color-text-muted`     | `#4a5d82`        | `#9fb1d6`        | secondary text                   |
-| `--color-on-accent`      | `#ffffff`        | `#06111f`        | text on accent gradient          |
-| `--color-border`         | `#c9d5e6`        | `#2a3f63`        | borders and dividers             |
-| `--color-overlay`        | `color-mix(...)` | `color-mix(...)` | modal/backdrop overlay           |
-| `--color-glass-2`        | `color-mix(...)` | `color-mix(...)` | translucent cards                |
-| `--color-glass-2-strong` | `color-mix(...)` | `color-mix(...)` | header/button glass              |
+| Token | Value | Usage |
+| ----- | ----- | ----- |
+| `--color-primary` | `var(--primary-600)` → `#255987` | CTA, focus, active, label accent |
+| `--color-primary-dark` | `var(--primary-700)` → `#1d4568` | work tone accent |
+| `--color-accent-hot` | `#476f9f` | editorial mix accent |
+| `--color-accent-mint` | `#7898b8` | editorial mix accent |
+| `--color-bg` | `var(--grayscale-100)` → `#e7eef7` | page background |
+| `--color-surface` | `var(--grayscale-0)` → `#fbfdff` | cards, panels |
+| `--color-surface-strong` | `var(--grayscale-200)` → `#d4deec` | tabs, header surfaces |
+| `--color-text` | `var(--grayscale-900)` → `#101827` | primary text |
+| `--color-text-muted` | `var(--grayscale-700)` → `#2f3a50` | secondary text |
+| `--color-on-accent` | `var(--grayscale-0)` | text on accent gradient |
+| `--color-border` | `var(--grayscale-300)` → `#b7c5d8` | borders and dividers |
+| `--color-overlay` | `color-mix(...)` | modal/backdrop overlay |
+| `--color-glass-2` | `color-mix(...)` | translucent cards |
+| `--color-glass-2-strong` | `color-mix(...)` | header/button glass |
+
+Primary scale (`--primary-50` … `--primary-900`): editorial blue, anchored at `--primary-500: #2f6fa7`.
 
 Gradient tokens:
 
-| Token                    | Role                              |
-| ------------------------ | --------------------------------- |
-| `--gradient-accent`      | Primary CTA, active tab/nav state |
-| `--gradient-accent-soft` | Decorative subtle accent wash     |
-| `--gradient-surface`     | `BaseCard` background             |
-| `--gradient-noise`       | app/page background               |
-| `--gradient-hero-mesh`   | hero mesh atmosphere              |
+| Token | Role |
+| ----- | ---- |
+| `--gradient-accent` | Primary CTA, active tab/nav state |
+| `--gradient-accent-soft` | Decorative subtle accent wash |
+| `--gradient-surface` | `BaseCard` background |
+| `--gradient-noise` | app/page background |
+| `--gradient-hero-mesh` | hero mesh atmosphere |
 
 ## Typography Tokens
 
-| Token                       | Value                                       | Usage                      |
-| --------------------------- | ------------------------------------------- | -------------------------- |
-| `--font-display`            | system sans                                 | headings, buttons, nav     |
-| `--font-body`               | system sans                                 | body copy                  |
-| `--font-mono`               | ui monospace                                | labels, eyebrows           |
-| `--font-size-2xs`           | `0.72rem`                                   | `BaseLabel`, tiny metadata |
-| `--font-size-xs`            | `0.78rem`                                   | badge, mobile eyebrow      |
-| `--font-size-sm`            | `0.86rem`                                   | nav, header action, tabs   |
-| `--font-size-md`            | `clamp(0.92rem, 0.88rem + 0.18vw, 1.03rem)` | body and button            |
-| `--font-size-lg`            | `clamp(1rem, 0.96rem + 0.32vw, 1.16rem)`    | descriptions               |
-| `--font-size-xl`            | `clamp(1.12rem, 1rem + 0.8vw, 1.42rem)`     | small section headings     |
-| `--font-size-section-title` | `clamp(1.9rem, 3.2vw, 3.05rem)`             | `.section-title__title`    |
-| `--font-size-hero`          | `clamp(3.8rem, 6vw, 7.25rem)`               | hero mega title            |
-| `--font-size-hero-card`     | `clamp(2.15rem, 4vw, 4.45rem)`              | hero card display          |
-| `--font-size-display-soft`  | `clamp(2.2rem, 5vw, 5.25rem)`               | soft display text          |
-| `--font-size-contact`       | `clamp(2.35rem, 8vw, 8.75rem)`              | contact mail art           |
-| `--font-size-counter`       | `clamp(2.1rem, 4.6vw, 3.7rem)`              | stat counters              |
+| Token | Value | Usage |
+| ----- | ----- | ----- |
+| `--font-display` | system sans | headings, buttons, nav |
+| `--font-body` | system sans | body copy |
+| `--font-mono` | ui monospace | labels, eyebrows |
+| `--font-pretendard` | Pretendard stack | optional loaded face |
+| `--font-size-xs` | `0.875rem` | badge, label (14px UI min) |
+| `--font-size-sm` | `0.9375rem` | nav, header action, tabs |
+| `--font-size-md` | `clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)` | body and button |
+| `--font-size-lg` | `clamp(1rem, 0.96rem + 0.32vw, 1.16rem)` | descriptions |
+| `--font-size-xl` | `clamp(1.12rem, 1rem + 0.8vw, 1.42rem)` | small section headings |
+| `--font-size-display-1` | `clamp(4rem, 7.5vw, 8.5rem)` | hero mega title |
+| `--font-size-display-4` | `clamp(1.9rem, 3.2vw, 3.05rem)` | section title |
+| `--font-size-section-title` | alias → display-4 | `.section-title__title` |
+| `--font-size-hero` | alias → display-1 | hero |
+| `--font-size-contact` | `clamp(2.5rem, 9vw, 9.5rem)` | `.contact__mail-display` |
+| `--font-size-counter` | alias → display-5 | section counter |
 
-| Token                    | Value      |
-| ------------------------ | ---------- |
-| `--font-weight-regular`  | `500`      |
-| `--font-weight-medium`   | `650`      |
-| `--font-weight-semibold` | `720`      |
-| `--font-weight-bold`     | `760`      |
-| `--font-weight-black`    | `900`      |
-| `--line-height-tight`    | `0.96`     |
-| `--line-height-heading`  | `1.08`     |
-| `--line-height-title`    | `1.14`     |
-| `--line-height-body`     | `1.66`     |
-| `--line-height-ui`       | `1`        |
-| `--tracking-tight`       | `-0.04em`  |
-| `--tracking-heading`     | `-0.035em` |
-| `--tracking-ui`          | `0.02em`   |
-| `--tracking-label`       | `0.1em`    |
+| Token | Value |
+| ----- | ----- |
+| `--font-weight-regular` | `500` |
+| `--font-weight-medium` | `650` |
+| `--font-weight-semibold` | `720` |
+| `--font-weight-bold` | `760` |
+| `--font-weight-black` | `900` |
+| `--line-height-tight` | `1.05` |
+| `--line-height-display` | `1.12` |
+| `--line-height-heading` | `1.14` |
+| `--line-height-title` | `1.22` |
+| `--line-height-body` | `1.72` |
+| `--line-height-ui` | `1.2` |
 
-Suggested Figma text styles:
-
-| Style               | Code mapping                                                                                           |
-| ------------------- | ------------------------------------------------------------------------------------------------------ |
-| `Display / Hero`    | `--font-display`, `--font-size-hero`, `--font-weight-black`, `--line-height-tight`, `--tracking-tight` |
-| `Heading / Section` | `.section-title__title`                                                                                |
-| `Body / Default`    | `--font-body`, `--font-size-md`, `--line-height-body`                                                  |
-| `UI / Button`       | `.base-button`                                                                                         |
-| `UI / Label`        | `.base-label`                                                                                          |
-| `UI / Tab`          | `.tab-list`, `.tab-list__tab`, `.tab-list__tab--active`, `.tab-rail`                                   |
+Narrow/mobile breakpoint에서 display scale은 `_tokens.scss` media query가 override합니다.
 
 ## Spacing Tokens
 
-| Token                 | Value                           |
-| --------------------- | ------------------------------- |
-| `--space-0`           | `0`                             |
-| `--space-1`           | `0.25rem`                       |
-| `--space-2`           | `0.38rem`                       |
-| `--space-3`           | `0.5rem`                        |
-| `--space-4`           | `0.65rem`                       |
-| `--space-5`           | `0.82rem`                       |
-| `--space-6`           | `1rem`                          |
-| `--space-7`           | `1.2rem`                        |
-| `--space-8`           | `1.5rem`                        |
-| `--space-9`           | `2rem`                          |
-| `--space-10`          | `2.6rem`                        |
-| `--space-11`          | `3.4rem`                        |
-| `--space-fluid-xs`    | `clamp(0.5rem, 1vw, 0.85rem)`   |
-| `--space-fluid-sm`    | `clamp(0.75rem, 1.6vw, 1.2rem)` |
-| `--space-fluid-md`    | `clamp(1rem, 2.4vw, 1.85rem)`   |
-| `--space-fluid-lg`    | `clamp(1.4rem, 4vw, 3rem)`      |
-| `--space-fluid-xl`    | `clamp(2.4rem, 6vw, 5rem)`      |
-| `--space-fluid-2xl`   | `clamp(3.8rem, 8vw, 6.5rem)`    |
-| `--inset-page`        | `clamp(2rem, 5vw, 6rem)`        |
-| `--inset-page-hero`   | `clamp(1.5rem, 4vw, 5rem)`      |
-| `--inset-panel`       | `clamp(1.1rem, 2.6vw, 2rem)`    |
-| `--card-padding`      | `var(--space-7)`                |
-| `--space-section-y`   | `var(--space-fluid-2xl)`        |
-| `--space-section-gap` | `var(--space-fluid-md)`         |
-| `--space-block-gap`   | `var(--space-fluid-sm)`         |
+| Token | Value |
+| ----- | ----- |
+| `--space-1` … `--space-11` | `0.25rem` … `3.4rem` (compact scale) |
+| `--space-fluid-xs` … `--space-fluid-3xl` | responsive clamp scale |
+| `--space-section-y` | `var(--space-fluid-3xl)` |
+| `--space-section-gap` | `var(--space-fluid-lg)` |
+| `--space-block-gap` | `var(--space-fluid-sm)` |
+| `--inset-page` | `clamp(2rem, 5vw, 6rem)` |
+| `--inset-page-hero` | `clamp(1.5rem, 4vw, 5rem)` |
+| `--inset-panel` | `clamp(1.1rem, 2.6vw, 2rem)` |
+| `--card-padding` | `clamp(1.35rem, 3vw, 2.35rem)` |
+| `--card-padding-lg` | `clamp(1.75rem, 4vw, 3rem)` |
 
 ## Radius Tokens
 
-| Token           | Value      | Usage                                 |
-| --------------- | ---------- | ------------------------------------- |
-| `--radius-card` | `0.65rem`  | buttons, header actions, mobile links |
-| `--radius-lg`   | `1.05rem`  | `BaseCard`, section cards             |
-| `--radius-xl`   | `1.45rem`  | mobile menu, large panels             |
-| `999px`         | hard-coded | badges, labels, tabs, nav pills       |
+| Token | Value | Usage |
+| ----- | ----- | ----- |
+| `--radius-card` | `0.95rem` | buttons, compact controls |
+| `--radius-md` | `0.9rem` | tab list |
+| `--radius-lg` | `1.15rem` | cards, section panels |
+| `--radius-xl` | `1.65rem` | mobile menu, large panels |
+| `--radius-2xl` | `2.25rem` | hero/contact panels |
+| `--radius-pill` | `999px` | badges, labels, tabs, nav pills |
 
-Note: `main.scss` references `--radius-md` in `.tab-list .tab-list__tab`, and the token is defined in `_tokens.scss`.
+## SCSS Module Map
+
+| Folder | 담당 |
+| ------ | ---- |
+| `assets/style/abstracts/` | `_tokens.scss`, `_tokens.generated.scss`, `_fonts.scss` |
+| `assets/style/base/` | reset, skeleton, button, label, badge, card, section-title |
+| `assets/style/layout/` | shell, header, footer, dock |
+| `assets/style/home/` | hero, about, works, personal, journey, toolbox, contact, touch, responsive |
+| `assets/style/work/` | work-card |
+| `assets/style/gallery/` | archive, detail, vars |
+| `assets/style/motion/` | typo-word |
 
 ## Component Inventory
 
-| Code folder         | Figma group      | Components                                                                                                                                                  |
-| ------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `components/base`   | Base             | `BaseLink`, `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`                                                                           |
-| `components/work`   | Pattern / Card   | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`                                                                                             |
-| `components/layout` | Module / Layout  | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock`                                                                                                  |
-| `components/motion` | Motion           | `TypoDisplayHeading`                                                                                                                                        |
-| `components/home`   | Module / Section | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
+| Code folder | Components |
+| ----------- | ---------- |
+| `components/base/` | `BaseLink`, `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`, `EditorialYearTimeline` |
+| `components/work/` | `FeatureCard`, `WorkCard`, `TimelineItem`, `ProjectGalleryCard`, `GalleryEmptyCapture` |
+| `components/layout/` | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock` |
+| `components/motion/` | `TypoDisplayHeading` |
+| `components/home/` | `PortfolioHero`, `PortfolioWorks`, `PortfolioPersonal`, `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact` |
+| `components/gallery/` | `GalleryArchivePage`, `GalleryDetailPage`, `GalleryPageHeader` |
+| `components/page/` | `TempMainProgressModalRenderer` (scoped, 임시) |
 
 ## Component Variants
 
 ### Base Components
 
-| Component          | Class                                                                                                                                                                                 | Props                                                                                                                           | Variants / size                                                            | States                                                                            | Slots                         |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ----------------------------- |
-| `BaseButton`       | `.base-button`, `.base-button--primary`, `.base-button--ghost`                                                                                                                        | `label: string`, `href?: string`, `ariaLabel?: string`, `variant?: "primary" \| "ghost"`                                        | `Primary`, `Ghost`; no explicit size prop, default min size `--size-touch` | `Default`, `Hover`, `Focus`, link mode, external link mode                        | default slot fallback `label` |
-| `BaseBadge`        | `.base-badge`, `.base-badge--sm`, `.base-badge--toolbox`, `.base-badge--work`, `.base-badge--plain`                                                                                   | `size?: "sm" \| "md"`, `tone?: "default" \| "toolbox" \| "work"`, `plain?: boolean`                                             | size `Sm`, `Md`; tone `Default`, `Toolbox`, `Work`; dot `On/Off`           | `Default`, `Hover`                                                                | default slot                  |
-| `BaseCard`         | `.base-card`                                                                                                                                                                          | `animate?: boolean` default `true`                                                                                              | no variant prop; content driven                                            | `Default`, `Animated`, `Static`, hover only when parent adds `data-motion="lift"` | default slot                  |
-| `BaseLabel`        | `.base-label`, `.base-label--work`, `.base-label--personal`, `.base-label--toolbox`, `.base-label--highlight`, `.base-label--journey`, `.base-label--contact`, `.base-label--profile` | `label?: string`, `tone?: "default" \| "work" \| "personal" \| "toolbox" \| "highlight" \| "journey" \| "contact" \| "profile"` | tone variants listed in class column                                       | `Default`                                                                         | default slot fallback `label` |
-| `BaseSectionTitle` | `.section-title`, `.section-title__eyebrow`, `.section-title__title`, `.section-title__description`, `.section-title__spark`                                                          | `eyebrow: string`, `title: string`, `description?: string`                                                                      | description `Shown/Hidden`; spark always shown                             | `Animated` via `data-animate`                                                     | none                          |
+| Component | Class | Notes |
+| --------- | ----- | ----- |
+| `BaseButton` | `.base-button`, `.base-button--primary`, `.base-button--ghost` | min touch `--size-touch` |
+| `BaseBadge` | `.base-badge`, `.base-badge--sm`, `.base-badge--toolbox`, `.base-badge--work`, `.base-badge--plain` | |
+| `BaseCard` | `.base-card` | hover lift when parent has `data-motion="lift"` |
+| `BaseLabel` | `.base-label`, `.base-label--work`, `.base-label--personal`, `.base-label--toolbox`, `.base-label--highlight`, `.base-label--journey`, `.base-label--contact`, `.base-label--profile`, `.base-label--technical` | |
+| `BaseSectionTitle` | `.section-title`, `.section-title__eyebrow`, `.section-title__title`, `.section-title__description`, `.section-title__spark` | counter via `.section:not(.section--hero) .section-title::before` |
 
 ### Card Patterns
 
-| Component            | Class                                                                                  | Props                                                                                                 | Variants / size                                                  | States                                                      | Slots        |
-| -------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------- | ------------ |
-| `WorkCard`           | `.work-card`, `.work-card__meta`, `.work-card__tech`, `.work-card__button`             | `work: WorkItem`, `item: { title; type; summary }`, `detailLabel`, `variant?: "career" \| "personal"` | `Career`, `Personal`; label tone changes to `work` or `personal` | `Default`, `Hover` via `data-motion="lift"`; emits `select` | none         |
-| `FeatureCard`        | `.feature-card`, `.skill-card` (skill variant)                                         | `title`, `eyebrow?`, `description?`, `items?`, `variant?: "plain" \| "skill"`                         | `Plain`, `Skill`                                                 | `Animated` via `data-animate`                               | default slot |
-| `TimelineItem`       | `.timeline-item`, `.timeline-item__period`                                             | `period`, `title`, `description`                                                                      | milestone list item                                              | `Animated` via `data-animate`                               | none         |
-| `ProjectGalleryCard` | `.gallery-card`, `.gallery-card__media`, `.gallery-card__body`, `.gallery-card__langs` | `work: WorkItem`, `to: string`                                                                        | gallery/link card                                                | `Default`, `Hover` via `data-motion="lift"`                 | none         |
-
-### Motion
-
-| Component            | Class                                                                   | Props                                                                     | Variants / size    | States                                  | Slots |
-| -------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------ | --------------------------------------- | ----- |
-| `TypoDisplayHeading` | `.typo-word`, section display line classes (e.g. `.hero__display-line`) | `tag`, `lines`, `groupId`, `headingClass`, `lineClass`, `lineAccentClass` | `h1` / `h2` / `h3` | typo word `Default` / `Active` on hover | none  |
+| Component | Class | Notes |
+| --------- | ----- | ----- |
+| `WorkCard` | `.work-card`, `.work-card__meta`, `.work-card__tech`, `.work-card__button` | variant `career` / `personal` |
+| `FeatureCard` | `.feature-card`, `.feature-card--skill`, `.surface-card` (skill variant) | **not** `.skill-card` |
+| `TimelineItem` | `.timeline-item`, `.timeline-item__period`, `.timeline-item__title`, `.timeline-item__description` | |
+| `ProjectGalleryCard` | `.gallery-card`, `.gallery-card__media`, `.gallery-card__body` | |
 
 ### Layout / Section Modules
 
-| Component             | Class                                                                                                                                         | Props                                                                                                | Variants / size                                       | States                                                                       | Slots        |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- | ------------ |
-| `AppLayout`           | `.portfolio-page`, `.portfolio-page--app-dock`                                                                                                | `links`, `activeId`, `footerText`, `headerLinks?`, `brandHref?`, `activePath?`, `showAppDock?`       | app dock `Shown/Hidden`                               | page layout state                                                            | default slot |
-| `AppHeader`           | `.app-header`, `.app-header__brand`, `.app-header__nav`, `.app-header__actions`, `.language-toggle`, `.app-header__menu-btn` | `links`, `activeId`, `brandHref?`, `activePath?`; inline `BaseButton` + `useLocale()` | desktop nav, locale toggle, mobile menu button | nav item `Default/Active`; toggles `Default/Hover/Focus`; menu `Open/Closed` | none         |
-| `AppLnb`              | `.app-lnb`, `.app-lnb__backdrop`, `.app-lnb__eyebrow`                                                                                         | `id?`, `open`, `links`, `activeId?`, `activePath?`                                                   | drawer `Open/Closed`                                  | link `Default/Active`; emits `close`                                         | none         |
-| `AppDock`             | `.app-dock-ribbon`, `.app-dock`, `.app-dock__item`, `.app-dock__item--active`                                                                 | `links: { href; label }[]`, `activeId: string`, `activePath?`                                        | section anchor nav                                    | item `Default/Active`                                                        | none         |
-| `AppFooter`           | `.app-footer`, `.app-footer__emoji-line`                                                                                                      | `text`                                                                                               | default footer                                        | `Default`                                                                    | none         |
-| `PortfolioWorks`      | `.section--works`, `.works__filters`, `.works__grid`, `.works__modal`                                                                         | none, uses stores/data                                                                               | tabbed project section                                | tab `Default/Active`; modal `Open/Closed`; list `More/Collapse`              | none         |
-| `PortfolioHighlights` | `.section--highlights`, `.highlights__tabs`, `.highlights__panel`                                                                             | none, uses store/data                                                                                | tabbed highlight section                              | tab `Default/Active`                                                         | none         |
-| `PortfolioHero`       | `.section--hero`, `.hero__poster`, `.hero__canvas`, `#animatedCanvas`, `.hero__actions`                                                       | none, uses site data                                                                                 | hero composition                                      | canvas marquee + stat count-up on intersection                               | none         |
-| `PortfolioAbout`      | `.section--about`, `.about__summary`, `.about__cards`, `.about__workflow`                                                                     | none, uses site data                                                                                 | about composition                                     | default                                                                      | none         |
-| `PortfolioJourney`    | `.section--journey`, `.journey__summary`, `.journey__summary--temp`, `.journey__timeline`                                                     | none, uses site data                                                                                 | summary `Default/Temp`                                | default                                                                      | none         |
-| `PortfolioToolbox`    | `.section--toolbox`, `.toolbox__orbit`                                                                                                        | none, uses site data                                                                                 | skill grid                                            | default                                                                      | none         |
-| `PortfolioPersonal`   | `.section--personal`, `.personal__grid`                                                                                                       | none, uses works store/data                                                                          | personal work grid                                    | card select opens work detail                                                | none         |
-| `PortfolioContact`    | `.section--contact`, `.contact__mail-art`, `.contact__summary`, `.contact__cta`                                                               | none, uses profile data                                                                              | contact composition                                   | CTA link states                                                              | none         |
+| Component | Class | SCSS |
+| --------- | ----- | ---- |
+| `AppLayout` | `.portfolio-page`, `.portfolio-page--app-dock`, `.page__layer`, `.page__layer--{hero,profile,works,capability,contact}` | `layout/_shell.scss`, `layout/_dock.scss` |
+| `AppHeader` | `.app-header`, `.app-header__brand`, `.app-header__nav`, `.app-header__actions`, `.language-toggle` | `layout/_header.scss` |
+| `AppLnb` | `.app-lnb`, `.app-lnb__backdrop`, `.app-lnb__link` | `layout/_header.scss` |
+| `AppDock` | `.app-dock-ribbon`, `.app-dock`, `.app-dock__item`, `.app-dock__item--active` | `layout/_dock.scss` |
+| `AppFooter` | `.app-footer`, `.app-footer__emoji-line` | `layout/_footer.scss` |
+| `PortfolioHero` | `.section--hero`, `.hero__poster`, `.hero__canvas`, `.hero__actions` | `home/_hero.scss` |
+| `PortfolioAbout` | `.section--about`, `.about__stage`, `.about__intro`, `.about__display`, `.about__spotlight`, `.about__workflow`, `.surface-card--flow`, `.flow-steps` | `home/_about.scss` |
+| `PortfolioWorks` | `.section--works`, `.works__title-col`, `.works__filters`, `.works__grid`, `.works__modal`, `.tab-list--rail` (narrow) | `home/_works.scss` |
+| `PortfolioPersonal` | `.section--personal`, `.personal__head`, `.personal__grid`, `.swipe-rail` | `home/_personal.scss` |
+| `PortfolioJourney` | `.section--journey`, `.journey__head`, `.journey__flow`, `.journey__chapter`, `.journey__chapter--temp`, `.journey__steps` | `home/_journey.scss` |
+| `PortfolioToolbox` | `.section--toolbox`, `.toolbox__head`, `.toolbox__grid`, `.feature-grid--toolbox` | `home/_toolbox-highlights.scss` |
+| `PortfolioHighlights` | `.section--highlights`, `.highlights__head`, `.highlights__nav`, `.highlights__nav-item`, `.highlights__panel` | `home/_toolbox-highlights.scss` |
+| `PortfolioContact` | `.section--contact`, `.contact__poster`, `.contact__head`, `.contact__mail-display`, `.contact__actions`, `.contact__note` | `home/_contact.scss` |
+
+### Tab list variants
+
+| Class | Context |
+| ----- | ------- |
+| `.tab-list` | vertical LNB-style filter (desktop works) |
+| `.tab-list.tab-list--rail` | horizontal scroll rail (narrow viewport) |
 
 ## Figma Mapping Guide
 
 1. Import `design-tokens.json` into Tokens Studio.
-2. Create Figma Variable collections:
-    - `Color` with modes `Light`, `Dark`
-    - `Typography`
-    - `Spacing`
-    - `Radius`
-    - `Shadow`
-    - `Layout`
-3. Preserve CSS variable names in token descriptions or aliases. Example: Figma variable `color/primary` should mention `--color-primary`.
-4. Convert rem values using the project base assumption `1rem = 16px` unless Figma team has a different base.
-5. For `clamp()` typography/spacing, create either:
-    - a representative desktop value and mobile value, or
-    - separate Figma variables such as `fontSize/md/min`, `fontSize/md/max`.
-6. For `color-mix()` colors, sample the computed color in browser for Light/Dark and add manually to Figma.
-7. For gradients, create Figma paint styles manually because Tokens Studio may keep them as assets/string tokens.
-8. For shadows with `color-mix()` and inset, create Figma effect styles manually and preserve token names.
+2. Light theme: `palette` + `semantic/light` + `typography` + `spacing` + `radius` + `layout`.
+3. Dark theme: `semantic/dark` (Figma only until site supports `[data-theme=dark]`).
+4. After JSON edits: run `npm run tokens:sync` and commit `_tokens.generated.scss`.
+5. Preserve CSS variable names in token `$description` or `$cssVar` fields.
+6. For `color-mix()` / multi-stop gradients: sample in browser or use `scripts/sync-design-tokens.mjs` `COMPUTED_ROOT` definitions.
+7. Convert rem with `1rem = 16px`.
 
 ## Naming Convention
 
-Use `/` as the Figma component property hierarchy separator.
-
-| Code component       | Figma component naming                                                                                        |
-| -------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `BaseButton`         | `Button / Primary / Medium / Default`, `Button / Ghost / Medium / Hover`, `Button / Primary / Medium / Focus` |
-| `BaseBadge`          | `Badge / Default / Medium / Dot`, `Badge / Toolbox / Small / Plain`, `Badge / Work / Small / Dot`             |
-| `BaseLabel`          | `Label / Work / Default`, `Label / Personal / Default`, `Label / Journey / Default`                           |
-| `BaseCard`           | `Card / Base / Default`, `Card / Base / Static`, `Card / Base / Lift`                                         |
-| `BaseSectionTitle`   | `Section Title / With Description`, `Section Title / No Description`                                          |
-| `tab-list__tab`      | `Tab / Pill / Default`, `Tab / Pill / Active`, `Tab / LNB / Default`, `Tab / LNB / Active`                    |
-| `WorkCard`           | `Card / Work / Career`, `Card / Work / Personal`                                                              |
-| `FeatureCard`        | `Card / Feature / Plain`, `Card / Feature / Skill`                                                            |
-| `TimelineItem`       | `Timeline Item / Journey / Default`                                                                           |
-| `ProjectGalleryCard` | `Card / Gallery / Default`, `Card / Gallery / Hover`                                                          |
-| `AppHeader`          | `Navigation / Header / Desktop`, `Navigation / Header / Mobile`                                               |
-| `AppLnb`             | `Navigation / App Lnb / Open`, `Navigation / App Lnb / Closed`                                                |
-| `AppDock`            | `Navigation / App Dock / Default`, `Navigation / App Dock / Active`                                           |
-
-Recommended variant properties:
-
-| Property  | Values                                                                                                     |
-| --------- | ---------------------------------------------------------------------------------------------------------- |
-| `Variant` | `Primary`, `Ghost`, `Default`, `Work`, `Personal`, `Toolbox`, `Highlight`, `Journey`, `Contact`, `Profile` |
-| `Size`    | `Small`, `Medium`                                                                                          |
-| `State`   | `Default`, `Hover`, `Focus`, `Active`, `Open`, `Closed`, `Static`, `Animated`                              |
-| `Dot`     | `On`, `Off`                                                                                                |
-
-## TODO for Figma Manual Setup
-
-- Add `design-tokens.json` to Tokens Studio and verify all token groups import cleanly.
-- Create Light/Dark variable modes from `color.light` and `color.dark`.
-- Manually resolve every `color-mix()` token to a sampled Figma color.
-- Manually build gradient paint styles for `--gradient-accent`, `--gradient-surface`, `--gradient-noise`, `--gradient-hero-mesh`.
-- Manually build effect styles for `--shadow-soft`, `--shadow-lift`, `--shadow-glow`, `--shadow-ring`.
-- Decide a Figma value for missing `--radius-md` or add the token to code later.
-- Create component sets in this order: Button, Badge, Label, Card, Section Title, Tab, Navigation, Work/Gallery cards, Section modules.
-- Add component descriptions with original Vue file paths and class names.
-- Capture current browser-rendered examples for hover/active/focus states before final component polishing.
+| Code | Figma example |
+| ---- | ------------- |
+| `BaseButton` | `Button / Primary / Medium / Default` |
+| `FeatureCard` skill | `Card / Feature / Skill` (+ `surface-card` pattern) |
+| `tab-list__tab` | `Tab / Pill / Default`, `Tab / Rail / Active` |
+| `WorkCard` | `Card / Work / Career`, `Card / Work / Personal` |

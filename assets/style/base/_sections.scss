@@ -1,12 +1,6 @@
 @use "../abstracts/tokens" as *;
 
-/* Section */
-.section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: $space-section-y $space-6;
-}
-
+/* Section title (layout for .section lives in layout/_shell.scss) */
 .section-title {
     position: relative;
     margin-bottom: clamp(0.5rem, 2vw, 1rem);
