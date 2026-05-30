@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
 import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
-import GalleryArchiveListRenderer from '~/components/gallery/GalleryArchiveListRenderer.vue';
+import GalleryArchiveListRenderer from '~/components/renderers/Page_GalleryArchive/GalleryArchiveListRenderer.vue';
 import GalleryPageHeader from '~/components/gallery/GalleryPageHeader.vue';
 
 const props = defineProps<{
@@ -28,7 +28,7 @@ const props = defineProps<{
     works: readonly WorkItem[];
 }>();
 
-const layoutLinks = useSubpageNavLinks();
+const layoutLinks = useSubpageLinks();
 const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 
 const {

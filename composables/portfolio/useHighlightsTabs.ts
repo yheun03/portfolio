@@ -4,10 +4,10 @@
  */
 import { storeToRefs } from 'pinia';
 import { highlights } from '@data/site';
-import { useHighlightsUiStore } from '@stores/highlightsUiStore';
+import { useHighlightsUiStore } from '@stores/highlights-ui';
 import type { HighlightTabKey } from '@app-types/highlight-tabs';
 
-export function useHighlightsTabRenderer() {
+export function useHighlightsTabs() {
     const highlightsUi = useHighlightsUiStore();
     const { activeTab } = storeToRefs(highlightsUi);
     const { t, pick } = useLocale();

@@ -117,8 +117,8 @@ const props = defineProps<{
 }>();
 
 const { t, pick, locale } = useLocale();
-const { resolveAppPath } = useAppPathResolver();
-const layoutLinks = useSubpageNavLinks();
+const { resolveAppPath } = useAppPath();
+const layoutLinks = useSubpageLinks();
 const config = getGalleryVariantConfig(props.variant);
 const { goBack } = useNavigationRestore(config.basePath);
 const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);

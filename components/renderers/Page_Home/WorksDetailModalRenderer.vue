@@ -54,10 +54,10 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useWorksUiStore } from '@stores/worksUiStore';
+import { useWorksUiStore } from '@stores/works-ui';
 
 const { pick } = useLocale();
-const { isAppRoute, resolveAppPath } = useAppPathResolver();
+const { isAppRoute, resolveAppPath } = useAppPath();
 const labels = useWorkDetailLabels();
 
 const worksUi = useWorksUiStore();

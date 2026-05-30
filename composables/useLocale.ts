@@ -4,7 +4,7 @@
  */
 import ko from '@i18n/ko.json';
 import en from '@i18n/en.json';
-import { useLocaleStore, type Locale } from '@stores/localeStore';
+import { useLocaleStore, type Locale } from '@stores/locale';
 
 type LocaleMessageValue = string | { readonly [key: string]: LocaleMessageValue };
 type LocaleMessages = Record<string, LocaleMessageValue>;

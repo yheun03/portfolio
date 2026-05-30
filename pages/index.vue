@@ -36,13 +36,13 @@ const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/Po
 const PortfolioHighlights = defineAsyncComponent(() => import('~/components/home/PortfolioHighlights.vue'));
 const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
 const TempMainProgressModalRenderer = defineAsyncComponent(
-    () => import('~/components/page/TempMainProgressModalRenderer.vue'),
+    () => import('~/components/renderers/Page_Home/TempMainProgressModalRenderer.vue'),
 );
 
 const { t, locale } = useLocale();
 
-useIntersectionAnimation({ deferred: true });
-usePortfolioGsap();
+useRevealOnScroll({ deferred: true });
+useHomeMotion();
 
 const appDockLinks = computed(() =>
     HOME_SCROLL_SECTION_IDS.map((id) => ({

@@ -87,7 +87,7 @@ const props = withDefaults(
 );
 
 const { t, pick, locale } = useLocale();
-const { resolveAppPath } = useAppPathResolver();
+const { resolveAppPath } = useAppPath();
 
 const entryLabel = computed(
     () => props.entryLabel ?? (locale.value === 'ko' ? '상세 보기' : 'View detail'),

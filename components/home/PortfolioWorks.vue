@@ -69,10 +69,10 @@
 </template>
 
 <script setup lang="ts">
-import { useWorksTabRenderer } from '@composables/portfolio/useWorksTabRenderer';
+import { useWorksTabs } from '@composables/portfolio/useWorksTabs';
 import { careerWorks, personalWorksList } from '@data/works';
-import WorksDetailModalRenderer from '~/components/home/WorksDetailModalRenderer.vue';
-import WorksTabPanelRenderer from '~/components/home/WorksTabPanelRenderer.vue';
+import WorksDetailModalRenderer from '~/components/renderers/Page_Home/WorksDetailModalRenderer.vue';
+import WorksTabPanelRenderer from '~/components/renderers/Page_Home/WorksTabPanelRenderer.vue';
 
 const { t, pick, locale } = useLocale();
 const { isNarrow } = useNarrowLayout();
@@ -83,7 +83,7 @@ const {
     filteredWorks,
     panelRenderKey,
     openWork,
-} = useWorksTabRenderer();
+} = useWorksTabs();
 
 const workTabItems = computed(() =>
     workCategories.map((category) => ({

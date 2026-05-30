@@ -44,8 +44,8 @@
 <script setup lang="ts">
 import { highlights } from '@data/site';
 import type { HighlightTabKey } from '@app-types/highlight-tabs';
-import { useHighlightsTabRenderer } from '@composables/portfolio/useHighlightsTabRenderer';
-import HighlightsTabPanelRenderer from '~/components/home/HighlightsTabPanelRenderer.vue';
+import { useHighlightsTabs } from '@composables/portfolio/useHighlightsTabs';
+import HighlightsTabPanelRenderer from '~/components/renderers/Page_Home/HighlightsTabPanelRenderer.vue';
 
 const { t, locale } = useLocale();
 
@@ -58,7 +58,7 @@ const {
     activeTabLabel,
     activeDescription,
     selectTab,
-} = useHighlightsTabRenderer();
+} = useHighlightsTabs();
 
 const tabCounts = {
     awards: highlights.awards.length,

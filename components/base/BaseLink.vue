@@ -24,7 +24,7 @@ const props = withDefaults(
     },
 );
 
-const { isAppRoute, resolveAppPath } = useAppPathResolver();
+const { isAppRoute, resolveAppPath } = useAppPath();
 
 const resolvedHref = computed(() => resolveAppPath(props.href));
 const isExternalUrl = computed(() => props.external || /^(https?:)?\/\//i.test(props.href));

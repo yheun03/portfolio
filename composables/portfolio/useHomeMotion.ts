@@ -4,7 +4,7 @@ import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
  * 목표: 홈 화면의 고비용 GSAP 스크롤 애니메이션을 초기 렌더 이후 지연 로드한다.
  * 기능: hero canvas parallax, ScrollTrigger 정리, reduce-motion fallback을 수행한다.
  */
-export const usePortfolioGsap = () => {
+export const useHomeMotion = () => {
     let cleanup: (() => void) | null = null;
     let cancelled = false;
 
