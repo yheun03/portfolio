@@ -62,7 +62,7 @@
             }
 
             &--active {
-                color: var(--color-on-primary, #fff);
+                color: var(--color-on-primary);
                 border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
                 background: var(--gradient-accent);
                 box-shadow: none;
@@ -247,7 +247,8 @@
 @media (max-width: 767px) {
 
     .section {
-        width: min(100% - var(--space-6), 100%);
+        width: 100%;
+        max-width: none;
     }
 
     .section:not(.section--hero) .section-title::before {

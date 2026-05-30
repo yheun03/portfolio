@@ -202,24 +202,13 @@
             object-fit: cover;
         }
 
-        &--long {
-            aspect-ratio: auto;
-
-            .gallery-card__screen {
-                height: auto;
-            }
-
-            img {
-                height: auto;
-                object-fit: contain;
-            }
-        }
     }
 
     .gallery-card__body {
         display: grid;
-        gap: var(--space-3);
+        gap: clamp(0.75rem, 1.8vw, 1rem);
         padding: var(--space-5);
+        align-content: start;
     }
 
     .gallery-card__meta {
@@ -229,6 +218,7 @@
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight-semibold);
         letter-spacing: var(--tracking-label);
+        line-height: 1.45;
         text-transform: uppercase;
     }
 
@@ -238,32 +228,43 @@
         font-size: var(--font-size-xl);
         font-weight: var(--font-weight-black);
         letter-spacing: var(--tracking-heading);
-        line-height: 1.15;
+        line-height: 1.18;
     }
 
     .gallery-card__excerpt {
         margin: 0;
         color: var(--gallery-body-soft);
         font-size: var(--font-size-sm);
-        line-height: 1.6;
+        line-height: 1.68;
     }
 
     .gallery-card__langs {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--space-2);
+        align-items: center;
+        gap: 0.45rem;
         padding: 0;
-        margin: 0;
+        margin: clamp(0.15rem, 0.8vw, 0.35rem) 0 0;
         list-style: none;
 
         li {
-            padding: var(--space-1) var(--space-3);
-            border: 1px solid color-mix(in srgb, var(--gallery-muted) 30%, transparent);
-            border-radius: $radius-pill;
-            background: color-mix(in srgb, var(--gallery-bg-elevated) 68%, transparent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            min-width: 0;
+            min-height: 0;
+            padding: 0.28rem 0.55rem;
+            border: 1px solid color-mix(in srgb, var(--gallery-muted) 36%, transparent);
+            border-radius: var(--radius-pill);
+            background: color-mix(in srgb, var(--gallery-bg-elevated) 72%, transparent);
             color: var(--gallery-muted);
             font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semibold);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
     }
 
@@ -349,7 +350,7 @@
             linear-gradient(165deg,
                 color-mix(in srgb, var(--gallery-bg-elevated) 94%, var(--gallery-accent) 6%) 0%,
                 var(--gallery-bg) 48%,
-                color-mix(in srgb, var(--gallery-bg) 88%, #000 12%) 100%);
+                color-mix(in srgb, var(--gallery-bg) 88%, var(--theme-black) 12%) 100%);
         box-shadow:
             inset 0 1px 0 color-mix(in srgb, var(--gallery-ink) 8%, transparent),
             0 24px 64px color-mix(in srgb, var(--gallery-muted) 28%, transparent);
@@ -496,7 +497,7 @@
 
         .gallery-editorial__entry-poster {
             border-color: color-mix(in srgb, var(--gallery-accent) 42%, var(--gallery-frame));
-            box-shadow: 0 20px 50px color-mix(in srgb, #000 38%, transparent);
+            box-shadow: 0 20px 50px color-mix(in srgb, var(--color-shadow-strong) 38%, transparent);
         }
     }
 
@@ -516,7 +517,7 @@
             border-color: var(--gallery-accent);
             box-shadow:
                 0 0 0 3px color-mix(in srgb, var(--gallery-accent) 38%, transparent),
-                0 26px 60px color-mix(in srgb, #000 44%, transparent),
+                0 26px 60px color-mix(in srgb, var(--color-shadow-strong) 44%, transparent),
                 inset 0 1px 0 color-mix(in srgb, var(--gallery-ink) 8%, transparent);
         }
     }
@@ -528,8 +529,8 @@
         position: relative;
         isolation: isolate;
         display: grid;
-        grid-template-rows: auto auto 1fr auto auto;
-        gap: 0;
+        grid-template-rows: auto auto auto auto;
+        row-gap: clamp(0.75rem, 1.6vw, 1rem);
         min-width: 0;
         min-height: 100%;
         overflow: visible;
@@ -542,7 +543,7 @@
             linear-gradient(168deg,
                 color-mix(in srgb, var(--gallery-bg-elevated) 92%, var(--gallery-muted) 8%) 0%,
                 var(--gallery-bg) 55%,
-                color-mix(in srgb, var(--gallery-bg) 90%, #000 10%) 100%);
+                color-mix(in srgb, var(--gallery-bg) 90%, var(--theme-black) 10%) 100%);
         background-size: auto, 4.5rem 100%, auto;
         box-shadow: inset 0 1px 0 color-mix(in srgb, var(--gallery-ink) 6%, transparent);
         transition: border-color 0.28s ease, box-shadow 0.28s ease;
@@ -592,7 +593,7 @@
 
     &-kicker {
         margin: 0;
-        padding-bottom: clamp(0.65rem, 1.5vw, 0.9rem);
+        padding-bottom: clamp(0.7rem, 1.6vw, 1rem);
         border-bottom: 1px solid color-mix(in srgb, var(--gallery-muted) 22%, transparent);
         color: var(--gallery-muted);
         font-size: clamp(#{$gallery-text-min}, 1.3vw, #{$gallery-text-ui});
@@ -608,7 +609,7 @@
     }
 
     &-hero {
-        padding-block: clamp(0.85rem, 2vw, 1.15rem) clamp(0.35rem, 1vw, 0.55rem);
+        padding-block: clamp(0.25rem, 1vw, 0.6rem) 0;
     }
 
     &-title {
@@ -633,7 +634,7 @@
     }
 
     &-label {
-        margin: 0.45rem 0 0;
+        margin: 0.55rem 0 0;
         color: var(--gallery-accent);
         font-size: clamp(#{$gallery-text-min}, 1.4vw, #{$gallery-text-ui});
         font-weight: 800;
@@ -643,33 +644,38 @@
 
     &-dek {
         margin: 0;
-        padding-block: var(--gallery-card-gap);
+        padding-block: clamp(0.15rem, 0.8vw, 0.35rem) 0;
         max-width: var(--gallery-copy-max);
         color: var(--gallery-body-soft);
         font-size: var(--font-size-sm);
-        line-height: var(--line-height-body);
+        line-height: 1.72;
     }
 
     &-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.35rem 0.55rem;
-        padding: 0 0 var(--gallery-card-gap);
+        align-items: center;
+        gap: 0.45rem;
+        padding: clamp(0.15rem, 0.8vw, 0.35rem) 0 clamp(0.45rem, 1.2vw, 0.75rem);
         margin: 0;
         list-style: none;
 
         li {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 0;
+            padding: 0.28rem 0.55rem;
+            border: 1px solid color-mix(in srgb, var(--gallery-muted) 36%, transparent);
+            border-radius: var(--radius-pill);
+            background: color-mix(in srgb, var(--gallery-bg-elevated) 72%, transparent);
             color: var(--gallery-muted);
             font-size: var(--font-size-xs);
             font-weight: 700;
-            letter-spacing: var(--tracking-label);
+            line-height: 1.2;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-
-            &:not(:last-child)::after {
-                content: "•";
-                margin-left: 0.5rem;
-                opacity: 0.5;
-            }
+            white-space: nowrap;
         }
     }
 }
@@ -698,14 +704,6 @@
             filter: saturate(0.85) contrast(1.06);
         }
 
-        &--long {
-            max-height: clamp(20rem, 48vw, 34rem);
-            aspect-ratio: 4 / 5;
-            border: 1px solid color-mix(in srgb, var(--gallery-muted) 24%, transparent);
-            background:
-                linear-gradient(180deg, color-mix(in srgb, var(--gallery-bg-elevated) 82%, transparent), color-mix(in srgb, var(--gallery-bg) 92%, transparent)),
-                color-mix(in srgb, var(--gallery-muted) 7%, var(--gallery-bg));
-        }
     }
 
     &-screen {
@@ -714,36 +712,5 @@
         height: 100%;
         overflow: hidden;
 
-        .gallery-editorial__entry-media--long & {
-            position: relative;
-            inset: auto;
-            background: color-mix(in srgb, var(--gallery-bg-elevated) 92%, #fff 8%);
-            overflow-x: hidden;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: color-mix(in srgb, var(--gallery-muted) 55%, transparent) transparent;
-
-            &::-webkit-scrollbar {
-                width: 0.35rem;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                border-radius: 999px;
-                background: color-mix(in srgb, var(--gallery-muted) 55%, transparent);
-            }
-
-            img {
-                width: 100%;
-                max-width: none;
-                height: auto;
-                min-height: 100%;
-                object-fit: cover;
-                object-position: top center;
-            }
-        }
     }
 }

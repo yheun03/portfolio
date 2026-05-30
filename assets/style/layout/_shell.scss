@@ -5,13 +5,13 @@
 ========================================= */
 
 .page__layer {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 720px;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
 }
 
 .page__layer--hero {
-  content-visibility: visible;
-  contain-intrinsic-size: none;
+    content-visibility: visible;
+    contain-intrinsic-size: none;
 }
 
 .portfolio-page {
@@ -51,7 +51,7 @@
         linear-gradient(color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px),
         linear-gradient(90deg, color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px);
     background-size: auto, 88px 88px, 88px 88px;
-    mask-image: radial-gradient(ellipse 86% 76% at 50% 8%, #000 18%, transparent 76%);
+    mask-image: radial-gradient(ellipse 86% 76% at 50% 8%, var(--theme-black) 18%, transparent 76%);
 
     &::after {
         content: "";

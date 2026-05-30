@@ -19,7 +19,7 @@
     }
 
     &--gallery {
-        /* transparent 대신 배경색과 mix — 어두운 갤러리 셸에서 회색(#333)으로 떨어지는 것 방지 */
+        /* transparent 대신 배경색과 mix — 어두운 갤러리 셸에서 중립 회색으로 떨어지는 것 방지 */
         --year-timeline-rail: color-mix(in srgb, var(--gallery-muted) 52%, var(--gallery-bg-elevated));
     }
 

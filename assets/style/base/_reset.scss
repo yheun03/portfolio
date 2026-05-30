@@ -4,15 +4,6 @@
    Base
 ========================================= */
 
-:root {
-    --line-height-body: 1.6;
-    --color-text: #333;
-    --color-text-strong: #111;
-    --color-text-heading: #1a1a1a;
-    --color-text-muted: #444;
-    --color-text-subtle: #777;
-}
-
 /* Reset */
 *,
 *::before,
@@ -207,15 +198,6 @@ html.app--menu-open {
         transition: none !important;
         animation: none !important;
     }
-}
-
-@media (prefers-contrast: more) {
-    :root {
-        --grayscale-600: #5c5040;
-        --grayscale-300: #b8a992;
-        --color-text-muted: #3d3429;
-    }
-
 }
 
 @keyframes emoji-float {

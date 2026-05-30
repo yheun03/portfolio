@@ -148,6 +148,12 @@
     }
 
     &.gallery-page--editorial &__links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.65rem;
+        margin: 0;
+
         .base-button--primary {
             border-color: var(--gallery-accent);
             background: var(--gallery-accent);
@@ -185,11 +191,14 @@
         display: grid;
         gap: var(--gallery-card-gap);
         width: 100%;
+        justify-items: center;
     }
 
     &.gallery-page--editorial &__figure {
         margin: 0;
         width: 100%;
+        max-width: min(100%, 64rem);
+        max-height: min(72vh, 48rem);
         overflow: hidden;
         border: 1px solid color-mix(in srgb, var(--gallery-muted) 35%, transparent);
         border-radius: var(--radius-lg);
@@ -202,7 +211,28 @@
             height: auto;
         }
 
+        &:not(&--empty) {
+            overflow-x: hidden;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: color-mix(in srgb, var(--gallery-muted) 55%, transparent) transparent;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0.45rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--gallery-muted) 55%, transparent);
+        }
+
         &--empty {
+            max-height: none;
             border-style: dashed;
             background: transparent;
         }
@@ -221,6 +251,7 @@
 
     &.gallery-page--editorial &__column {
         max-width: 72ch;
+        margin-inline: auto;
         padding: 0;
         border: 0;
         border-radius: var(--radius-lg);
@@ -264,6 +295,8 @@
     }
 
     &.gallery-page--editorial &__footer-nav {
+        display: flex;
+        justify-content: center;
         margin: 0;
 
         .base-button--ghost {
@@ -361,7 +394,7 @@
     .gallery-editorial__entry {
         &-poster {
             grid-template-columns: minmax(0, 1fr) minmax(220px, 36%);
-            grid-template-rows: auto auto 1fr auto;
+            grid-template-rows: auto auto auto auto;
             grid-template-areas:
                 "kicker media"
                 "hero media"
@@ -385,7 +418,7 @@
 
         &-tags {
             grid-area: tags;
-            align-self: end;
+            align-self: start;
         }
     }
 
@@ -409,12 +442,6 @@
             object-fit: cover;
         }
 
-        &--long {
-            height: clamp(22rem, 42vw, 38rem);
-            max-height: min(44rem, 78vh);
-            aspect-ratio: 9 / 14;
-            border: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
-        }
     }
 }
 
@@ -482,11 +509,6 @@
         &-media {
             aspect-ratio: 16 / 10;
             margin-top: 0.15rem;
-
-            &--long {
-                max-height: min(22rem, 56vh);
-                aspect-ratio: 4 / 3;
-            }
         }
     }
 

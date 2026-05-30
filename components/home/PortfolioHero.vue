@@ -111,7 +111,8 @@ function setupHeroCanvas() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = `800 ${base}px Pretendard`;
         ctx.lineWidth = 2;
-        ctx.strokeStyle = "#1a1a1a";
+        ctx.strokeStyle =
+            getComputedStyle(document.documentElement).getPropertyValue("--color-text-heading").trim() || "CanvasText";
 
         if (!textWidth) {
             textWidth = ctx.measureText(wrd).width;
