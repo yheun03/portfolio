@@ -15,9 +15,9 @@
 | `docs/`        | 프로젝트 설명 문서. 구조, 데이터 관리 방식, 디자인 시스템, 성능 개선 계획을 기록합니다.                           |
 | `i18n/`        | 한국어/영어 UI 문자열. 네비게이션, 버튼, 섹션 제목, 메타 문구처럼 짧은 화면 문구를 관리합니다.                    |
 | `pages/`       | Nuxt 파일 기반 라우트. 홈, 프로젝트 아카이브/상세, 개인 작업 아카이브/상세, 디자인 토큰 페이지를 담당합니다.      |
-| `plugins/`     | Nuxt 플러그인. 앱 초기화, 테마 속성, 분석 스크립트, 갤러리 폰트 preload, 내비게이션 복원을 담당합니다.            |
+| `plugins/`     | Nuxt 플러그인. 앱 초기화, 분석 스크립트, 갤러리 폰트 preload, 내비게이션 복원을 담당합니다.            |
 | `public/`      | 빌드 과정 없이 그대로 배포되는 파일. 이력서, 2025 정적 버전, OG 이미지, favicon, sitemap 등을 둡니다.             |
-| `stores/`      | Pinia 전역 상태. 언어/테마 선호와 Works/Highlights UI 선택 상태를 관리합니다.                                     |
+| `stores/`      | Pinia 전역 상태. 언어 선호와 Works/Highlights UI 선택 상태를 관리합니다.                                     |
 
 ## Assets
 
@@ -51,7 +51,7 @@
 | 폴더/파일                | 담당                                                                                                                                           |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `core/router.options.ts` | Nuxt 라우터 스크롤 동작. 해시 스크롤, 갤러리 목록 복귀 스크롤 복원을 담당합니다. `nuxt.config.ts`의 `pages:routerOptions` hook으로 등록합니다. |
-| `core/config/`           | 런타임 데이터가 아닌 설정성 TS 모듈. 홈 섹션 순서, SEO, shell theme, tablist 접근성, editorial year 타입을 둡니다.                             |
+| `core/config/`           | 런타임 데이터가 아닌 설정성 TS 모듈. 홈 섹션 순서, SEO, tablist 접근성, editorial year 타입을 둡니다.                             |
 | `core/types/`            | 앱 전역 공유 타입. 현재 Highlight tab key 타입을 둡니다.                                                                                       |
 | `core/utils/`            | 순수 유틸. 앵커 스크롤, 작업 정렬/연도 그룹, 갤러리 placeholder capture 판별을 담당합니다.                                                     |
 
@@ -72,7 +72,7 @@
 | `composables/useLocale.ts` | i18n 문자열 선택과 `{ ko, en }` 데이터 선택 helper.                                                          |
 | `composables/gallery/`     | 갤러리 목록/상세 UX. 정렬, 뷰 모드, 목록 복귀 스냅샷, 포커스 복원을 담당합니다.                              |
 | `composables/portfolio/`   | 홈 포트폴리오 UX. 카운트업, GSAP, 여정 보기, Works 탭 렌더링, SEO, 상세 라벨 등을 담당합니다.                |
-| `composables/ui/`          | UI 공통 동작. 모달 포커스 트랩, 좁은 화면 감지, scroll spy, shell theme, 탭 키보드, 테마, 타이포 hover 상태. |
+| `composables/ui/`          | UI 공통 동작. 모달 포커스 트랩, 좁은 화면 감지, scroll spy, 탭 키보드, 테마, 타이포 hover 상태. |
 
 ## Pages
 
@@ -86,12 +86,11 @@
 
 | 폴더/파일                              | 담당                                    |
 | -------------------------------------- | --------------------------------------- |
-| `plugins/app-init.client.ts`           | 클라이언트 앱 시작 시 언어/테마 초기화. |
-| `plugins/shell-theme.ts`               | 라우트별 shell theme 속성 반영.         |
+| `plugins/app-init.client.ts`           | 클라이언트 앱 시작 시 언어 초기화. |
 | `plugins/analytics.client.ts`          | 분석 스크립트 초기화.                   |
 | `plugins/gallery-fonts.client.ts`      | 갤러리 페이지 폰트 preload/최적화.      |
 | `plugins/navigation-restore.client.ts` | 갤러리 목록 복귀 시 스크롤/포커스 복원. |
-| `stores/appPreferenceStore.ts`         | locale/theme 선호 상태.                 |
+| `stores/appPreferenceStore.ts`         | locale 선호 상태.                 |
 | `stores/portfolioUiStore.ts`           | Works 탭/모달과 Highlights 탭 상태.     |
 
 ## Public

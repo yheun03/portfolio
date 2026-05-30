@@ -14,8 +14,6 @@
         <div class="app-header__actions">
             <BaseButton class="app-header__language-toggle" variant="ghost" :label="locale.toUpperCase()"
                 :aria-label="languageToggleAriaLabel" @click="toggleLocale" />
-            <BaseButton class="app-header__theme-toggle" variant="ghost" label="Theme"
-                :aria-label="themeToggleAriaLabel" :title="themeToggleTitle" @click="toggleTheme" />
             <button type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
@@ -31,32 +29,11 @@
 <script setup lang="ts">
 const menuOpen = ref(false);
 const { locale, toggleLocale } = useLocale();
-const { theme, toggleTheme } = useTheme();
 
 const languageToggleAriaLabel = computed(() =>
     locale.value === "ko"
         ? `${locale.value.toUpperCase()} 언어 전환`
         : `${locale.value.toUpperCase()} switch language`
-);
-
-const themeToggleAriaLabel = computed(() =>
-    theme.value === "dark"
-        ? locale.value === "ko"
-            ? "라이트 모드로 전환"
-            : "Switch to light mode"
-        : locale.value === "ko"
-            ? "다크 모드로 전환"
-            : "Switch to dark mode"
-);
-
-const themeToggleTitle = computed(() =>
-    theme.value === "dark"
-        ? locale.value === "ko"
-            ? "라이트 모드 전환"
-            : "Switch to light mode"
-        : locale.value === "ko"
-            ? "다크 모드 전환"
-            : "Switch to dark mode"
 );
 
 const props = withDefaults(

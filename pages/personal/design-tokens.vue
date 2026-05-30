@@ -113,7 +113,7 @@ const colorTokens = [
     {
         name: '--color-surface',
         value: 'var(--color-surface)',
-        reason: '카드와 패널의 실제 역할 이름입니다. 테마가 바뀌어도 컴포넌트 코드는 surface만 바라봅니다.',
+        reason: '카드와 패널의 실제 역할 이름입니다. 컴포넌트 코드는 구체 색상 대신 surface 역할만 바라봅니다.',
     },
     {
         name: '--color-text-muted',

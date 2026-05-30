@@ -221,7 +221,7 @@ $font-presets: (
     --grayscale-800: #1c2536;
     --grayscale-900: #101827;
     --grayscale-950: #08101d;
-    /* Main page: deep editorial blue, separated from beige portfolio pages */
+    /* Portfolio theme: blue editorial base shared across home and gallery pages */
     --primary-50: #edf5ff;
     --primary-100: #d6e8fb;
     --primary-200: #adcdec;
@@ -311,35 +311,28 @@ $font-presets: (
     --space-section-gap: var(--space-fluid-lg);
     --space-block-gap: var(--space-fluid-sm);
 
-    /* Gallery / editorial (light: paper beige · dark: navy poster in [data-theme=dark]) */
+    /* Gallery / editorial */
     --gallery-slab: "Roboto Slab", "Rockwell", "Courier New", serif;
     --gallery-copy-max: 42ch;
     --gallery-year-col: clamp(4.5rem, 11vw, 9.5rem);
     --gallery-year-sticky-top: calc(var(--layout-header-height) + var(--space-5));
     --gallery-pad: clamp(1.35rem, 4.5vw, 3.5rem);
-    --gallery-bg: #efe3cd;
-    --gallery-bg-elevated: #fff7e8;
-    --gallery-cream: #1f1810;
-    --gallery-muted: #4a4034;
-    --gallery-accent: #9d6a25;
-    --gallery-body: #1f1810;
-    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 78%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 42%, var(--gallery-bg-elevated));
-    --gallery-active-fg: #fff8eb;
-    --gallery-active-bg: var(--gallery-accent);
+    --gallery-bg: var(--color-bg);
+    --gallery-bg-elevated: var(--color-surface);
+    --gallery-cream: var(--color-text);
+    --gallery-muted: var(--color-text-muted);
+    --gallery-accent: var(--color-primary);
+    --gallery-body: var(--color-text);
+    --gallery-body-soft: color-mix(in srgb, var(--color-text) 78%, var(--color-text-muted));
+    --gallery-frame: color-mix(in srgb, var(--color-border) 82%, transparent);
+    --gallery-active-fg: var(--color-on-accent);
+    --gallery-active-bg: var(--gradient-accent);
 
-    /* Shell chrome (skip-link 등) — `data-shell-theme`로 페이지별 전환 */
+    /* Shell chrome */
     --shell-skip-bg: var(--color-surface-strong);
     --shell-skip-border: var(--color-border);
     --shell-skip-fg: var(--color-text);
     --shell-skip-outline: var(--color-primary);
-}
-
-html[data-shell-theme="gallery"] {
-    --shell-skip-bg: color-mix(in srgb, var(--gallery-bg-elevated) 72%, var(--gallery-bg));
-    --shell-skip-border: color-mix(in srgb, var(--gallery-muted) 48%, transparent);
-    --shell-skip-fg: var(--gallery-cream);
-    --shell-skip-outline: var(--gallery-accent);
 }
 
 @media (max-width: #{$bp-max-narrow}) {
@@ -377,73 +370,6 @@ html[data-shell-theme="gallery"] {
         --card-padding: clamp(1rem, 5vw, 1.4rem);
         --card-padding-lg: clamp(1.15rem, 6vw, 1.7rem);
     }
-}
-
-[data-theme="dark"] {
-    /* Neutral charcoal (portfolio) — avoids heavy navy slabs */
-    --grayscale-0: #121214;
-    --grayscale-50: #18181b;
-    --grayscale-100: #1f1f23;
-    --grayscale-200: #2a2a2f;
-    --grayscale-300: #3d3d44;
-    --grayscale-400: #63636b;
-    --grayscale-500: #8e8e96;
-    --grayscale-600: #aeaeb6;
-    --grayscale-700: #c8c8d0;
-    --grayscale-800: #e5e5eb;
-    --grayscale-900: #f5f5f7;
-    --grayscale-950: #ffffff;
-
-    /* Blue accent — aligned with light theme */
-    --primary-50: #0f1c2e;
-    --primary-100: #152a42;
-    --primary-200: #1f3f5f;
-    --primary-300: #2f5f87;
-    --primary-400: #4a84b0;
-    --primary-500: #6ba3cc;
-    --primary-600: #8fc0e3;
-    --primary-700: #b3d6ef;
-    --primary-800: #d4e8f8;
-    --primary-900: #edf5ff;
-    --accent-hot: #7eb8e8;
-    --accent-mint: #8a9bb4;
-
-    --color-primary: var(--primary-500);
-    --color-primary-dark: var(--primary-300);
-    --color-bg: var(--grayscale-50);
-    --color-surface: var(--grayscale-100);
-    --color-surface-strong: var(--grayscale-200);
-    --color-text: var(--grayscale-900);
-    --color-text-muted: var(--grayscale-600);
-    --color-on-accent: var(--grayscale-950);
-    --color-border: var(--grayscale-300);
-    --overlay: color-mix(in srgb, var(--grayscale-0) 78%, transparent);
-    --glass-2: color-mix(in srgb, var(--grayscale-200) 72%, transparent);
-    --glass-2-strong: color-mix(in srgb, var(--grayscale-200) 88%, transparent);
-    --shadow-soft: 0 22px 48px color-mix(in srgb, var(--grayscale-0) 55%, transparent);
-    --shadow-lift: 0 32px 72px color-mix(in srgb, var(--grayscale-0) 65%, transparent);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--grayscale-300) 45%, transparent) inset;
-    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-500) 32%, transparent);
-    --gradient-accent: linear-gradient(118deg, var(--primary-300) 0%, var(--primary-500) 52%, var(--primary-700) 100%);
-    --gradient-accent-soft: linear-gradient(135deg,
-            color-mix(in srgb, var(--primary-400) 18%, transparent),
-            color-mix(in srgb, var(--primary-600) 10%, transparent));
-    --gradient-surface: linear-gradient(168deg, var(--grayscale-100) 0%, var(--grayscale-50) 100%);
-    --gradient-noise: linear-gradient(185deg, var(--grayscale-50) 0%, var(--grayscale-100) 52%, var(--grayscale-0) 100%);
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-400) 16%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--primary-500) 8%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 10%, transparent), transparent 45%);
-
-    --gallery-bg: #15110d;
-    --gallery-bg-elevated: #211a13;
-    --gallery-cream: #fff0c9;
-    --gallery-muted: #d4b87a;
-    --gallery-accent: #f4c95d;
-    --gallery-body: #f8ecd0;
-    --gallery-body-soft: color-mix(in srgb, var(--gallery-body) 82%, var(--gallery-muted));
-    --gallery-frame: color-mix(in srgb, var(--gallery-muted) 48%, var(--gallery-bg-elevated));
-    --gallery-active-fg: #030a12;
-    --gallery-active-bg: var(--gallery-accent);
 }
 
 /* =========================================

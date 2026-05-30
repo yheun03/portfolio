@@ -81,31 +81,6 @@
         gap: var(--space-8);
     }
 
-    .hero__focus-list {
-        grid-template-columns: minmax(0, 1fr);
-        border-block: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-    }
-
-    .hero__focus-item {
-        grid-template-columns: 1fr;
-        gap: 0.45rem;
-
-        &:not(:last-child) {
-            border-inline-end: 0;
-            border-block-end: 1px solid color-mix(in srgb, var(--color-border) 62%, transparent);
-        }
-    }
-
-    .hero__metrics-bar {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-4);
-    }
-
-    .hero__metric {
-        padding-inline-start: 0;
-        border-inline-start: 0;
-    }
-
     .journey__flow-header {
         grid-template-columns: 1fr;
         align-items: start;

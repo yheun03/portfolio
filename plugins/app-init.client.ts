@@ -1,11 +1,10 @@
-import { useLocaleStore, useThemeStore } from '@stores/appPreferenceStore';
+import { useLocaleStore } from '@stores/appPreferenceStore';
 
 /**
- * Client app bootstrapping: theme, locale, and skeleton-ready state.
+ * Client app bootstrapping: locale and skeleton-ready state.
  */
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.hook('app:mounted', () => {
-        useThemeStore().initTheme();
         useLocaleStore().initLocale();
 
         const root = document.documentElement;

@@ -52,7 +52,6 @@ export default defineNuxtConfig({
     },
 
     plugins: [
-        '~/plugins/shell-theme',
         '~/plugins/app-init.client',
         '~/plugins/analytics.client',
         '~/plugins/gallery-fonts.client',
