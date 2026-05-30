@@ -55,8 +55,8 @@
         "careerEyebrow": "Works archive",
         "careerTitle": "실무 프로젝트",
         "indexLabel": "인덱스",
-        "detailLabel": "상세",
-        "viewEntry": "프로젝트 상세 보기",
+        "detailLabel": "프로젝트 상세",
+        "viewEntry": "프로젝트 상세 페이지로 이동",
         "viewLegend": "보기",
         "viewAriaLabel": "목록 표시 방식",
         "toolbarAriaLabel": "프로젝트 목록 보기 방식과 정렬 선택",
@@ -107,8 +107,8 @@
         "certifications": "자격/인증",
         "roles": "전문 역할",
         "activities": "리더십/활동",
-        "showMore": "더 보기",
-        "collapse": "접기",
+        "showMore": "하이라이트 항목 더 보기",
+        "collapse": "하이라이트 항목 접기",
         "visibleCount": "대표 {visible} / {total}건",
         "tabSummary": "전체 {total}건 중 이 카테고리 {visible}건"
     },
@@ -123,6 +123,11 @@
         "resume": "은영환 이력서 PDF 보기"
     },
     "footer": {
+        "tagline": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환의 2026 포트폴리오",
+        "navLabel": "사이트 하단 링크",
+        "homeLink": "포트폴리오 홈",
+        "careerLink": "실무 프로젝트 갤러리",
+        "personalLink": "개인 프로젝트 갤러리",
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
     "lnb": {
@@ -141,7 +146,7 @@
     },
     "meta": {
         "title": "은영환 포트폴리오 | 웹 퍼블리셔 · 웹 프론트엔드 개발자 포트폴리오 2026",
-        "description": "웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3, SCSS, JavaScript 기반 UI 개발, 웹 접근성, SEO, 반응형 웹 실무 프로젝트와 프론트엔드 경험을 소개합니다.",
+        "description": "웹 퍼블리셔 은영환의 2026 포트폴리오입니다. HTML, SCSS, JavaScript, Vue 3 기반 UI 개발, 웹 접근성, SEO, 반응형 웹 실무 프로젝트와 프론트엔드 경험을 소개합니다.",
         "ogTitle": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환 2026 포트폴리오",
         "ogDescription": "Vue 3, SCSS, JavaScript UI 개발과 웹 접근성, SEO, 반응형 웹 실무 경험을 정리한 은영환 포트폴리오"
     }

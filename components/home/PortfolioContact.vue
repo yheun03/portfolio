@@ -1,10 +1,10 @@
 <template>
-    <section id="contact" class="section section--contact">
+    <section id="contact" class="section section--contact" aria-labelledby="section-contact-title">
         <span class="section__emoji section__emoji--contact emoji emoji--soft" aria-hidden="true">💬</span>
 
         <div class="contact__poster" data-animate>
             <header class="contact__head">
-                <BaseSectionTitle :eyebrow="t('nav.contact')" :title="t('contact.title')" />
+                <BaseSectionTitle title-id="section-contact-title" :eyebrow="t('nav.contact')" :title="t('contact.title')" />
                 <p class="contact__lead">{{ t("contact.description") }}</p>
             </header>
 

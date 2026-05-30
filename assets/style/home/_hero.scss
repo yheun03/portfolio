@@ -130,6 +130,14 @@
         }
     }
 
+    &__intro {
+        max-width: 52ch;
+        margin-top: clamp(0.75rem, 2vw, 1rem);
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+        line-height: 1.65;
+    }
+
     &__lead {
         max-width: 26ch;
         margin: clamp(2.25rem, 5.5vw, 4rem) 0 0;

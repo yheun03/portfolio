@@ -1,5 +1,5 @@
 <template>
-    <component :is="tag" :class="headingClass">
+    <component :is="tag" :id="id" :class="headingClass">
         <span v-for="(line, lineIndex) in lines" :key="`${groupId}-line-${lineIndex}`" :class="[
             lineClass,
             { [lineAccentClass]: line.accent },
@@ -24,6 +24,7 @@ export type TypoDisplayLine = {
 
 defineProps<{
     tag: 'h1' | 'h2' | 'h3';
+    id?: string;
     lines: TypoDisplayLine[];
     groupId: string;
     headingClass: string;

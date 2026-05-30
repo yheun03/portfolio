@@ -1,8 +1,8 @@
 <template>
-    <section id="personal" class="section section--personal">
+    <section id="personal" class="section section--personal" aria-labelledby="section-personal-title">
         <span class="section__emoji section__emoji--personal emoji emoji--soft" aria-hidden="true">✦</span>
         <div class="personal__head">
-            <BaseSectionTitle :eyebrow="t('nav.personal')" :title="t('personal.title')"
+            <BaseSectionTitle title-id="section-personal-title" :eyebrow="t('nav.personal')" :title="t('personal.title')"
                 :description="sectionDescription" />
             <p class="personal__archive-link">
                 <NuxtLink to="/personal">{{ t('personal.fullArchiveLink') }}</NuxtLink>

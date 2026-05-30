@@ -234,9 +234,16 @@
 .app-lnb__close:focus-visible,
 .app-lnb__link:focus-visible,
 .app-dock__item:focus-visible,
+.app-footer__links a:focus-visible,
 .tab-list .tab-list__tab:focus-visible,
 .works__filters .tab-list__tab:focus-visible,
-.highlights__filters .tab-list__tab:focus-visible {
+.highlights__filters .tab-list__tab:focus-visible,
+.work-card__button:focus-visible,
+.swipe-rail__button:focus-visible,
+.gallery-page__segment:focus-visible,
+.journey__segment:focus-visible,
+.gallery-card:focus-visible,
+.gallery-editorial__entry:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }

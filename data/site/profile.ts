@@ -1,8 +1,8 @@
 const data = {
     name: '은영환',
     role: {
-        ko: '웹 퍼블리셔 / UI 개발자',
-        en: 'Web Publisher / UI Developer',
+        ko: '웹 퍼블리셔 / 웹 프론트엔드 개발자',
+        en: 'Web Publisher / Web Frontend Developer',
     },
     keywords: [
         '웹 퍼블리셔',

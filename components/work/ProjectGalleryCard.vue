@@ -90,9 +90,7 @@ const props = withDefaults(
 const { t, pick, locale } = useLocale();
 const { resolveAppPath } = useAppPath();
 
-const entryLabel = computed(
-    () => props.entryLabel ?? (locale.value === 'ko' ? '상세 보기' : 'View detail'),
-);
+const entryLabel = computed(() => props.entryLabel ?? t('gallery.viewEntry'));
 
 const cardAriaLabel = computed(() => {
     const title = pick(props.work.title);

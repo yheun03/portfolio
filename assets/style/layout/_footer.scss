@@ -20,6 +20,40 @@
             will-change: transform, opacity;
         }
     }
+
+    &__tagline {
+        max-width: 42ch;
+        margin: 0 auto $space-4;
+        color: $grayscale-700;
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+    }
+
+    &__nav {
+        margin-bottom: $space-4;
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $space-3 $space-5;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
+
+        a {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+    }
+
+    &__copyright {
+        margin: 0;
+        font-size: var(--font-size-xs);
+    }
 }
 
 @keyframes footer-emoji-glow {

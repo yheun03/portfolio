@@ -1,5 +1,5 @@
 <template>
-    <section id="highlights" class="section section--highlights highlights">
+    <section id="highlights" class="section section--highlights highlights" aria-labelledby="section-highlights-title">
         <span class="section__emoji section__emoji--highlights emoji emoji--soft" aria-hidden="true">✨</span>
         <div class="highlights__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalHighlightCount }}{{ locale === 'ko' ? '건' : '' }}</span>
@@ -12,7 +12,8 @@
             </small>
         </div>
         <div class="highlights__title-col">
-            <BaseSectionTitle :eyebrow="t('nav.highlights')" :title="t('highlights.title')" />
+            <BaseSectionTitle title-id="section-highlights-title" :eyebrow="t('nav.highlights')"
+                :title="t('highlights.title')" />
             <BaseTabList :model-value="activeTab" :items="tabs" tab-id-prefix="highlights-tab-"
                 panel-id-prefix="highlights-panel" :list-label="locale === 'ko' ? '하이라이트 카테고리' : 'Highlight categories'"
                 scroll-anchor="#highlights" class="highlights__filters"

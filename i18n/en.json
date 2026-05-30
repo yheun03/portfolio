@@ -56,7 +56,7 @@
         "careerTitle": "Client Works",
         "indexLabel": "INDEX",
         "detailLabel": "DETAIL",
-        "viewEntry": "View project details",
+        "viewEntry": "Open project detail page",
         "viewLegend": "View",
         "viewAriaLabel": "List layout",
         "toolbarAriaLabel": "Project list view and sort controls",
@@ -107,8 +107,8 @@
         "certifications": "Certifications",
         "roles": "Professional Roles",
         "activities": "Leadership / Activities",
-        "showMore": "Show more",
-        "collapse": "Collapse",
+        "showMore": "Show more highlights",
+        "collapse": "Collapse highlights",
         "visibleCount": "{visible} of {total} shown",
         "tabSummary": "{visible} in this category of {total} highlights total."
     },
@@ -123,6 +123,11 @@
         "resume": "View Eunyounghwan's resume PDF"
     },
     "footer": {
+        "tagline": "Eunyounghwan's 2026 web publisher and frontend developer portfolio",
+        "navLabel": "Footer links",
+        "homeLink": "Portfolio home",
+        "careerLink": "Client projects gallery",
+        "personalLink": "Personal projects gallery",
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
     "lnb": {
@@ -141,7 +146,7 @@
     },
     "meta": {
         "title": "Eunyounghwan Portfolio | Web Publisher & Web Frontend Developer Portfolio 2026",
-        "description": "Eunyounghwan's 2026 web publisher and frontend developer portfolio, covering Vue 3, SCSS, JavaScript UI development, web accessibility, SEO, responsive web, and production projects.",
+        "description": "Eunyounghwan's 2026 web publisher and frontend developer portfolio, covering HTML, SCSS, JavaScript, Vue 3 UI development, web accessibility, SEO, responsive web, and production projects.",
         "ogTitle": "Eunyounghwan, Web Publisher & Web Frontend Developer Portfolio 2026",
         "ogDescription": "A portfolio showing Vue 3, SCSS, JavaScript UI development, web accessibility, SEO, responsive web, and frontend production work."
     }
