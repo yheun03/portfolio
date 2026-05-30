@@ -98,7 +98,7 @@
 
 ## 9. 관련 코드 진입점
 
-- 작업 목록·필터·모달: `stores/worksUiStore.ts`, `components/home/PortfolioWorks.vue`
+- 작업 목록·필터·모달: `stores/works-ui.ts`, `components/home/PortfolioWorks.vue`
 - 갤러리: `components/gallery/GalleryArchivePage.vue`, `GalleryDetailPage.vue` (공통 화면) · `composables/gallery/useGallery.ts` (아카이브·라우트 데이터) · `pages/projects/*`, `pages/personal/*` (URL 엔트리)
 - 하이라이트 탭: `components/home/PortfolioHighlights.vue`
 

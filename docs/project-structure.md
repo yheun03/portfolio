@@ -9,7 +9,7 @@
 | `.vscode/`     | 로컬 에디터 설정. 앱 실행·빌드 로직에는 관여하지 않습니다.                                                        |
 | `app/`         | Nuxt 앱 레벨 옵션. 현재 라우터 스크롤 정책(`router.options.ts`)을 둡니다.                                         |
 | `assets/`      | Nuxt가 번들링하는 정적 자산과 SCSS 소스. 폰트, 프로필 이미지, 디자인 토큰, 페이지별 스타일을 둡니다.              |
-| `components/`  | Vue 컴포넌트. base, layout, home, work, gallery, motion, page처럼 화면 역할별(소문자)로 나눕니다.                 |
+| `components/`  | Vue 컴포넌트. base, layout, home, work, gallery, motion, renderers처럼 화면 역할별로 나눕니다.                   |
 | `composables/` | Vue/Nuxt 조합 함수. UI 상태 동작, 갤러리 탐색 복원, SEO, 홈 섹션 인터랙션처럼 재사용 가능한 런타임 로직을 둡니다. |
 | `core/`        | 화면에 직접 종속되지 않는 설정, 공유 타입, 순수 유틸을 둡니다.                                                    |
 | `data/`        | 포트폴리오 콘텐츠 데이터. 프로젝트, 프로필, 소개, 여정, 스킬, 하이라이트를 TypeScript 모듈로 관리합니다.          |
@@ -46,6 +46,7 @@
 | `components/work/`    | WorkCard, ProjectGalleryCard, TimelineItem, GalleryEmptyCapture 같은 작업·갤러리 카드 패턴.              |
 | `components/gallery/` | 프로젝트/개인 아카이브 목록·상세 화면 컴포넌트. 라우트 데이터는 `composables/gallery/`에서 공급합니다.   |
 | `components/motion/`  | TypoDisplayHeading처럼 텍스트 모션 전용 컴포넌트.                                                        |
+| `components/renderers/` | 홈·갤러리의 모달, 탭 패널, 리스트 뷰 전환 등 섹션에서 분리한 UI.                                      |
 
 ## Core And App
 
@@ -71,6 +72,8 @@
 | 폴더/파일                  | 담당                                                                                                     |
 | -------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `composables/useLocale.ts` | i18n 문자열 선택과 `{ ko, en }` 데이터 선택 helper.                                                      |
+| `composables/useTheme.ts`  | 라이트/다크 테마 토글 (`stores/theme`).                                                                  |
+| `composables/ui/useLayoutHeaderHeight.ts` | 헤더 실측 높이 → `--layout-header-height` 동기화.                                    |
 | `composables/gallery/`     | 갤러리 목록/상세 UX. 정렬, 뷰 모드, 목록 복귀 스냅샷, 포커스 복원을 담당합니다.                          |
 | `composables/portfolio/`   | 홈 포트폴리오 UX. 카운트업, GSAP, 여정 보기, Works/Highlights 탭 렌더링, SEO, 상세 라벨 등을 담당합니다. |
 | `composables/ui/`          | UI 공통 동작. 모달 포커스 트랩, 좁은 화면 감지, scroll spy, 탭 키보드, 타이포 hover 상태.                |
@@ -87,13 +90,14 @@
 
 | 폴더/파일                              | 담당                                    |
 | -------------------------------------- | --------------------------------------- |
-| `plugins/app-init.client.ts`           | 클라이언트 앱 시작 시 언어 초기화.      |
+| `plugins/init.client.ts`               | locale·theme 초기화, skeleton 해제.     |
 | `plugins/analytics.client.ts`          | 분석 스크립트 초기화.                   |
-| `plugins/gallery-fonts.client.ts`      | 갤러리 페이지 폰트 preload/최적화.      |
-| `plugins/navigation-restore.client.ts` | 갤러리 목록 복귀 시 스크롤/포커스 복원. |
-| `stores/localeStore.ts`                | locale 선호 상태와 html lang 동기화.    |
-| `stores/worksUiStore.ts`               | Works 탭/모달 상태.                     |
-| `stores/highlightsUiStore.ts`          | Highlights 탭 상태.                     |
+| `plugins/gallery-font.client.ts`       | 갤러리 페이지 폰트 preload.               |
+| `plugins/gallery-navigation.client.ts` | 갤러리 목록 복귀 스크롤/포커스 복원.    |
+| `stores/locale.ts`                     | locale 선호와 `html[lang]` 동기화.      |
+| `stores/theme.ts`                      | `data-theme` 및 시스템 테마 동기화.     |
+| `stores/works-ui.ts`                   | Works 탭/모달 상태.                      |
+| `stores/highlights-ui.ts`              | Highlights 탭 상태.                     |
 
 ## Public
 
@@ -107,10 +111,11 @@
 
 ## Removed Or Consolidated
 
-| 이전 폴더  | 정리 결과                                                                                                                     |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `api/`     | 실제 사용처가 없어 제거했습니다. 런타임 API가 생기면 Nuxt 서버 라우트(`server/api`)나 전용 클라이언트 모듈로 다시 설계합니다. |
-| `config/`  | `core/config/`로 통합했습니다. `@config/*` alias는 유지합니다.                                                                |
-| `types/`   | `core/types/`로 통합했습니다. `@app-types/*` alias는 유지합니다.                                                              |
-| `utils/`   | `core/utils/`로 통합했습니다. `@utils/*` alias는 유지합니다.                                                                  |
-| `layouts/` | 슬롯만 있던 빈 `default.vue`를 제거하고 `app.vue`가 `NuxtPage`를 직접 렌더링하도록 단순화했습니다.                            |
+| 이전 항목 | 정리 결과 |
+| --------- | --------- |
+| `design-tokens.json`, `npm run tokens:sync`, `_tokens.generated.scss` | 색·토큰은 `_theme.scss` + `_tokens.scss`만 사용. JSON sync 파이프라인 제거. |
+| `composables/portfolio/useAppPathResolver.ts` | `useAppPath.ts`와 중복되어 제거. |
+| `TempMainProgressModalRenderer` | 임시 공지 모달. 완료 후 삭제. |
+| `api/` | 미사용 제거. 필요 시 `server/api` 등으로 재설계. |
+| `config/`, `types/`, `utils/` (루트) | `core/`로 통합. alias 유지. |
+| `layouts/default.vue` | `app.vue`가 `NuxtPage` 직접 렌더. |
