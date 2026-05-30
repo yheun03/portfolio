@@ -1,18 +1,20 @@
 @use "../abstracts/tokens" as *;
 
 /* Portfolio works */
-.section--works {
-    position: relative;
-    overflow: visible;
-    content-visibility: visible;
-    contain-intrinsic-size: none;
-    padding-top: calc(var(--space-section-y) + 5rem);
-    grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
-    column-gap: var(--space-6);
-    align-items: start;
+.works {
+    &.section--works {
+        position: relative;
+        overflow: visible;
+        content-visibility: visible;
+        contain-intrinsic-size: none;
+        padding-top: calc(var(--space-section-y) + 5rem);
+        grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
+        column-gap: var(--space-6);
+        align-items: start;
+    }
 
     /* 왼쪽: 타이틀 + 탭(sticky) / 오른쪽: 카드 그리드 → 컨트롤 */
-    .works__title-col {
+    &__title-col {
         grid-column: 1;
         grid-row: 1 / -1;
         position: sticky;
@@ -23,12 +25,12 @@
         padding-inline-end: var(--space-2);
     }
 
-    .works__rail-wrap {
+    &__rail-wrap {
         grid-column: 2;
         grid-row: 1;
     }
 
-    .works__list-control {
+    &__list-control {
         grid-column: 2;
         grid-row: 2;
     }

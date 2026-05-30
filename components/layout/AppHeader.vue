@@ -13,11 +13,11 @@
         <div class="app-header__actions">
             <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{{ localeStatusMessage }}</p>
             <BaseButton class="app-header__language-toggle" variant="ghost" :label="locale.toUpperCase()"
-                :aria-label="languageToggleAriaLabel" @click="onToggleLocale" />
+                :aria-label="languageToggleAriaLabel" @click="handleLocaleToggle" />
             <button ref="menuButtonRef" type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
-                aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="onAppLnbToggle">
+                aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="handleAppLnbToggle">
                 {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
             </button>
         </div>
@@ -36,7 +36,7 @@ const languageToggleAriaLabel = computed(() =>
     locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
 );
 
-function onToggleLocale() {
+function handleLocaleToggle() {
     const switchingToEn = locale.value === 'ko';
     toggleLocale();
     localeStatusMessage.value = t(switchingToEn ? 'a11y.localeChangedEn' : 'a11y.localeChangedKo');
@@ -64,11 +64,11 @@ const { isActive, getAriaCurrent } = useNavLinkState({
     activePath: () => props.activePath,
 });
 
-const onAppLnbToggle = () => {
+const handleAppLnbToggle = () => {
     menuOpen.value = !menuOpen.value;
 };
 
-const closeOnEscape = (event: KeyboardEvent) => {
+const handleEscapeKeydown = (event: KeyboardEvent) => {
     if (event.key === 'Escape' && menuOpen.value) closeMobileMenu();
 };
 
@@ -81,11 +81,11 @@ watch(
 );
 
 onMounted(() => {
-    window.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("keydown", handleEscapeKeydown);
 });
 
 onBeforeUnmount(() => {
     document.documentElement.classList.remove("app--menu-open");
-    window.removeEventListener("keydown", closeOnEscape);
+    window.removeEventListener("keydown", handleEscapeKeydown);
 });
 </script>

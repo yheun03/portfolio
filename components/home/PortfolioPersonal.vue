@@ -15,11 +15,11 @@
                 <p id="personal-swipe-help" class="swipe-rail__hint">{{ swipeHint }}</p>
                 <div class="swipe-rail__controls" role="group" :aria-label="swipeControlsLabel">
                     <button type="button" class="swipe-rail__button" :aria-label="swipePrevLabel"
-                        @click="scrollPersonalRail(-1)">
+                        @click="handlePersonalRailScroll(-1)">
                         <span aria-hidden="true">‹</span>
                     </button>
                     <button type="button" class="swipe-rail__button" :aria-label="swipeNextLabel"
-                        @click="scrollPersonalRail(1)">
+                        @click="handlePersonalRailScroll(1)">
                         <span aria-hidden="true">›</span>
                     </button>
                 </div>
@@ -57,7 +57,7 @@ const swipePrevLabel = computed(() => locale.value === "ko" ? "이전 개인 작
 const swipeNextLabel = computed(() => locale.value === "ko" ? "다음 개인 작업 보기" : "Show next personal work");
 const personalRailLabel = computed(() => locale.value === "ko" ? "대표 개인 작업 목록" : "Featured personal work list");
 
-const scrollPersonalRail = (direction: -1 | 1) => {
+const handlePersonalRailScroll = (direction: -1 | 1) => {
     const rail = personalRailRef.value;
     if (!rail) return;
 

@@ -1,5 +1,5 @@
 <template>
-    <section id="hello" ref="heroSectionRef" class="section section--hero">
+    <section id="hello" ref="heroSectionRef" class="section section--hero hero">
         <div class="hero__poster">
             <div v-if="heroCanvasVisible" class="hero__canvas" aria-hidden="true">
                 <canvas ref="canvasRef" id="animatedCanvas" />
@@ -68,7 +68,7 @@ let canvasFrameId = 0;
 let canvasResizeRaf = 0;
 let canvasCleanup: (() => void) | null = null;
 
-function setupHeroCanvas() {
+function initializeHeroCanvasAnimation() {
     const canvas = canvasRef.value;
     const container = canvas?.parentElement;
     if (!canvas || !container) return;
@@ -82,7 +82,7 @@ function setupHeroCanvas() {
     let running = false;
     let textWidth = 0;
 
-    const resize = () => {
+    const handleCanvasResize = () => {
         cancelAnimationFrame(canvasResizeRaf);
         canvasResizeRaf = requestAnimationFrame(() => {
             const width = container.clientWidth;
@@ -93,18 +93,18 @@ function setupHeroCanvas() {
         });
     };
 
-    resize();
-    window.addEventListener("resize", resize, { passive: true });
+    handleCanvasResize();
+    window.addEventListener("resize", handleCanvasResize, { passive: true });
 
-    const wrd = "EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ";
-    const texts = [
-        { text: wrd, y: 0, speed: 1, offset: 0 },
-        { text: wrd, y: 0, speed: 1, offset: -800 },
-        { text: wrd, y: 0, speed: 1, offset: -1600 },
-        { text: wrd, y: 0, speed: 1, offset: -2400 },
+    const marqueeText = "EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ";
+    const marqueeRows = [
+        { text: marqueeText, y: 0, speed: 1, offset: 0 },
+        { text: marqueeText, y: 0, speed: 1, offset: -800 },
+        { text: marqueeText, y: 0, speed: 1, offset: -1600 },
+        { text: marqueeText, y: 0, speed: 1, offset: -2400 },
     ];
 
-    const draw = () => {
+    const renderCanvasFrame = () => {
         if (!running) return;
 
         const base = Math.max(canvas.height / 4, 48);
@@ -115,10 +115,10 @@ function setupHeroCanvas() {
             getComputedStyle(document.documentElement).getPropertyValue("--color-text-heading").trim() || "CanvasText";
 
         if (!textWidth) {
-            textWidth = ctx.measureText(wrd).width;
+            textWidth = ctx.measureText(marqueeText).width;
         }
 
-        texts.forEach((item, index) => {
+        marqueeRows.forEach((item, index) => {
             item.y = base * (0.8 + index * 1);
             let x = item.offset;
             while (x < canvas.width) {
@@ -131,16 +131,16 @@ function setupHeroCanvas() {
             }
         });
 
-        canvasFrameId = requestAnimationFrame(draw);
+        canvasFrameId = requestAnimationFrame(renderCanvasFrame);
     };
 
-    const start = () => {
+    const startCanvasAnimation = () => {
         if (running) return;
         running = true;
-        draw();
+        renderCanvasFrame();
     };
 
-    const stop = () => {
+    const stopCanvasAnimation = () => {
         running = false;
         cancelAnimationFrame(canvasFrameId);
     };
@@ -148,9 +148,9 @@ function setupHeroCanvas() {
     const visibilityObserver = new IntersectionObserver(
         (entries) => {
             if (entries.some((entry) => entry.isIntersecting)) {
-                start();
+                startCanvasAnimation();
             } else {
-                stop();
+                stopCanvasAnimation();
             }
         },
         { threshold: 0.05 },
@@ -160,8 +160,8 @@ function setupHeroCanvas() {
 
     canvasCleanup = () => {
         visibilityObserver.disconnect();
-        window.removeEventListener("resize", resize);
-        stop();
+        window.removeEventListener("resize", handleCanvasResize);
+        stopCanvasAnimation();
         cancelAnimationFrame(canvasResizeRaf);
     };
 }
@@ -197,7 +197,7 @@ let statsObserver: IntersectionObserver | null = null;
 watch(heroCanvasVisible, async (visible) => {
     if (!visible) return;
     await nextTick();
-    setupHeroCanvas();
+    initializeHeroCanvasAnimation();
 });
 
 onMounted(() => {
