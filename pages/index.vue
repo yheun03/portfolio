@@ -10,17 +10,17 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent, type Component } from 'vue';
-import PortfolioHero from '~/components/Home/PortfolioHero.vue';
-import PortfolioWorks from '~/components/Home/PortfolioWorks.vue';
-import PortfolioPersonal from '~/components/Home/PortfolioPersonal.vue';
-import TempMainProgressModalRenderer from '~/components/Page/TempMainProgressModalRenderer.vue';
+import PortfolioHero from '~/components/home/PortfolioHero.vue';
+import PortfolioWorks from '~/components/home/PortfolioWorks.vue';
+import PortfolioPersonal from '~/components/home/PortfolioPersonal.vue';
+import TempMainProgressModalRenderer from '~/components/page/TempMainProgressModalRenderer.vue';
 import { HOME_PAGE_LAYERS, type HomeSectionKey, SCROLL_SECTION_IDS } from '@config/homePage';
 
-const PortfolioAbout = defineAsyncComponent(() => import('~/components/Home/PortfolioAbout.vue'));
-const PortfolioJourney = defineAsyncComponent(() => import('~/components/Home/PortfolioJourney.vue'));
-const PortfolioToolbox = defineAsyncComponent(() => import('~/components/Home/PortfolioToolbox.vue'));
-const PortfolioHighlights = defineAsyncComponent(() => import('~/components/Home/PortfolioHighlights.vue'));
-const PortfolioContact = defineAsyncComponent(() => import('~/components/Home/PortfolioContact.vue'));
+const PortfolioAbout = defineAsyncComponent(() => import('~/components/home/PortfolioAbout.vue'));
+const PortfolioJourney = defineAsyncComponent(() => import('~/components/home/PortfolioJourney.vue'));
+const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
+const PortfolioHighlights = defineAsyncComponent(() => import('~/components/home/PortfolioHighlights.vue'));
+const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
 
 const SECTION_COMPONENTS: Record<HomeSectionKey, Component> = {
     hello: PortfolioHero,
