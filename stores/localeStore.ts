@@ -1,3 +1,7 @@
+/**
+ * 목표: 사용자의 언어 선호를 앱 전역 상태로 관리한다.
+ * 기능: 저장된 locale 복원, locale 변경, 문서 lang 속성 동기화를 수행한다.
+ */
 import { defineStore } from 'pinia';
 
 export type Locale = 'ko' | 'en';

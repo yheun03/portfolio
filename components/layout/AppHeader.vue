@@ -6,35 +6,46 @@
         </BaseLink>
         <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
             <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-header__link"
-                :class="{ 'app-header__link--active': isActive(link.href) }"
-                :aria-current="isActive(link.href) ? 'page' : undefined">
+                :class="{ 'app-header__link--active': isActive(link.href) }" :aria-current="getAriaCurrent(link.href)">
                 {{ link.label }}
             </BaseLink>
         </nav>
         <div class="app-header__actions">
+            <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{{ localeStatusMessage }}</p>
             <BaseButton class="app-header__language-toggle" variant="ghost" :label="locale.toUpperCase()"
-                :aria-label="languageToggleAriaLabel" @click="toggleLocale" />
-            <button type="button" class="app-header__menu-btn" :aria-label="menuOpen
+                :aria-label="languageToggleAriaLabel" @click="onToggleLocale" />
+            <button ref="menuButtonRef" type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
-                aria-controls="app-lnb-panel" @click="onAppLnbToggle">
+                aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="onAppLnbToggle">
                 {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
             </button>
         </div>
         <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId"
-            @close="menuOpen = false" />
+            @close="closeMobileMenu" />
     </header>
 </template>
 
 <script setup lang="ts">
 const menuOpen = ref(false);
-const { locale, toggleLocale } = useLocale();
+const menuButtonRef = ref<HTMLButtonElement | null>(null);
+const localeStatusMessage = ref('');
+const { locale, toggleLocale, t } = useLocale();
 
 const languageToggleAriaLabel = computed(() =>
-    locale.value === "ko"
-        ? `${locale.value.toUpperCase()} 언어 전환`
-        : `${locale.value.toUpperCase()} switch language`
+    locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
 );
+
+function onToggleLocale() {
+    const switchingToEn = locale.value === 'ko';
+    toggleLocale();
+    localeStatusMessage.value = t(switchingToEn ? 'a11y.localeChangedEn' : 'a11y.localeChangedKo');
+}
+
+function closeMobileMenu() {
+    menuOpen.value = false;
+    nextTick(() => menuButtonRef.value?.focus());
+}
 
 const props = withDefaults(
     defineProps<{
@@ -48,7 +59,7 @@ const props = withDefaults(
     }
 );
 
-const { isActive } = useNavLinkState({
+const { isActive, getAriaCurrent } = useNavLinkState({
     activeId: () => props.activeId,
     activePath: () => props.activePath,
 });
@@ -58,7 +69,7 @@ const onAppLnbToggle = () => {
 };
 
 const closeOnEscape = (event: KeyboardEvent) => {
-    if (event.key === "Escape") menuOpen.value = false;
+    if (event.key === 'Escape' && menuOpen.value) closeMobileMenu();
 };
 
 watch(

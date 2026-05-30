@@ -1,3 +1,7 @@
+/**
+ * 목표: 고정 헤더와 scroll-margin을 고려한 섹션 앵커 이동을 표준화한다.
+ * 기능: 해시 기반 즉시/지연 스크롤 함수를 제공한다.
+ */
 /** 고정 헤더·scroll-margin을 반영한 섹션 앵커 스크롤 */
 function scrollToSectionById(id: string, behavior: ScrollBehavior = 'smooth'): boolean {
     if (!import.meta.client) return false;

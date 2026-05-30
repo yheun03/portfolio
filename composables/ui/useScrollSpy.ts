@@ -1,3 +1,7 @@
+/**
+ * 목표: 홈 섹션 스크롤 위치에 따라 현재 활성 섹션을 추적한다.
+ * 기능: DOM 변화 재감지, scroll/resize/hashchange 기반 active id 갱신을 제공한다.
+ */
 export const useScrollSpy = (sectionIds: string[]) => {
     const activeId = ref(sectionIds[0] ?? '');
 

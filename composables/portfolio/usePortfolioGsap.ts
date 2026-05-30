@@ -1,18 +1,12 @@
+import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
+
+/**
+ * 목표: 홈 화면의 고비용 GSAP 스크롤 애니메이션을 초기 렌더 이후 지연 로드한다.
+ * 기능: hero canvas parallax, ScrollTrigger 정리, reduce-motion fallback을 수행한다.
+ */
 export const usePortfolioGsap = () => {
     let cleanup: (() => void) | null = null;
     let cancelled = false;
-
-    const afterInitialPaint = (callback: () => void) => {
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                if (typeof window.requestIdleCallback === 'function') {
-                    window.requestIdleCallback(callback, { timeout: 2800 });
-                } else {
-                    window.setTimeout(callback, 800);
-                }
-            });
-        });
-    };
 
     onMounted(async () => {
         if (!import.meta.client) return;
@@ -24,7 +18,7 @@ export const usePortfolioGsap = () => {
             return;
         }
 
-        await new Promise<void>((resolve) => afterInitialPaint(resolve));
+        await new Promise<void>((resolve) => scheduleAfterFirstPaint(resolve, 2800));
         if (cancelled) return;
 
         const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);

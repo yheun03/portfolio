@@ -1,12 +1,12 @@
+/**
+ * 목표: 홈 Highlights 섹션의 탭 UI와 패널 렌더링 데이터를 연결한다.
+ * 기능: 탭 목록, 활성 항목/설명, 렌더 key, 탭 선택 액션을 제공한다.
+ */
 import { storeToRefs } from 'pinia';
 import { highlights } from '@data/site';
-import { useHighlightsUiStore } from '@stores/portfolioUiStore';
-import type { HighlightTabKey } from '@app-types/highlights';
+import { useHighlightsUiStore } from '@stores/highlightsUiStore';
+import type { HighlightTabKey } from '@app-types/highlight-tabs';
 
-/**
- * 하이라이트 섹션 탭 → 패널 렌더링.
- * 스토어와 탭 목록을 묶고, 패널 `:key`용 값을 제공해 탭 전환 시 리스트를 안정적으로 갱신한다.
- */
 export function useHighlightsTabRenderer() {
     const highlightsUi = useHighlightsUiStore();
     const { activeTab } = storeToRefs(highlightsUi);
@@ -31,9 +31,7 @@ export function useHighlightsTabRenderer() {
     });
 
     const activeItems = computed(() => highlights[activeTab.value].map((item) => pick(item)));
-    const activeTabLabel = computed(
-        () => tabs.value.find((tab) => tab.key === activeTab.value)?.label ?? '',
-    );
+    const activeTabLabel = computed(() => tabs.value.find((tab) => tab.key === activeTab.value)?.label ?? '');
     const activeDescription = computed(() => pick(highlights.descriptions[activeTab.value]));
 
     function selectTab(key: HighlightTabKey) {

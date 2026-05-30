@@ -1,5 +1,5 @@
 <template>
-    <!-- @vue-generic {import('@utils/workSort').WorkYearGroup} -->
+    <!-- @vue-generic {import('@utils/work-timeline').WorkYearGroup} -->
     <BaseYearTimeline v-if="viewMode === 'editorial'" variant="gallery" :ariaLabel="listAriaLabel"
         :eras="editorialYearGroups" id-prefix="gallery-era" :flat-aria-label="flatAriaLabel">
         <template #era="{ era: group, index: groupIndex }">
@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import type { GalleryViewMode } from '@composables/gallery/useGallery';
-import type { WorkYearEntry, WorkYearGroup } from '@utils/workSort';
+import type { WorkYearEntry, WorkYearGroup } from '@utils/work-timeline';
 import ProjectGalleryCard from '~/components/work/ProjectGalleryCard.vue';
 
 defineProps<{

@@ -15,8 +15,7 @@
                         {{ pick(role) }}
                     </li>
                 </ul>
-                <ul v-if="block.summary.clients.length" class="journey__clients"
-                    :aria-label="clientsAriaLabel">
+                <ul v-if="block.summary.clients.length" class="journey__clients" :aria-label="clientsAriaLabel">
                     <li v-for="client in block.summary.clients" :key="`${companyIndex}-${pick(client)}`">
                         {{ pick(client) }}
                     </li>

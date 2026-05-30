@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-            }}</span>
+                }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -34,7 +34,7 @@
         <div class="works__rail-wrap swipe-rail">
             <div class="swipe-rail__head">
                 <p id="works-swipe-help" class="swipe-rail__hint">{{ swipeHint }}</p>
-                <div class="swipe-rail__controls" :aria-label="swipeControlsLabel">
+                <div class="swipe-rail__controls" role="group" :aria-label="swipeControlsLabel">
                     <button type="button" class="swipe-rail__button" :aria-label="swipePrevLabel"
                         @click="scrollWorksRail(-1)">
                         <span aria-hidden="true">‹</span>
@@ -53,11 +53,12 @@
             <p>
                 {{ visibleCountLabel }}
             </p>
-            <button v-if="hasMoreWorks" type="button" class="base-button base-button--ghost" @click="showMoreWorks">
+            <button v-if="hasMoreWorks" type="button" class="base-button base-button--ghost"
+                :aria-label="showMoreAriaLabel" @click="showMoreWorks">
                 {{ t("works.showMore") }}
             </button>
             <button v-else-if="canCollapseWorks" type="button" class="base-button base-button--ghost"
-                @click="collapseWorks">
+                :aria-label="collapseAriaLabel" @click="collapseWorks">
                 {{ t("works.collapse") }}
             </button>
         </div>
@@ -129,6 +130,14 @@ const swipeHint = computed(() => locale.value === "ko" ? "좌우로 스와이프
 const swipeControlsLabel = computed(() => locale.value === "ko" ? "대표 작업 슬라이드 이동" : "Featured work carousel controls");
 const swipePrevLabel = computed(() => locale.value === "ko" ? "이전 작업 보기" : "Show previous work");
 const swipeNextLabel = computed(() => locale.value === "ko" ? "다음 작업 보기" : "Show next work");
+const showMoreAriaLabel = computed(() =>
+    locale.value === "ko"
+        ? `대표 작업 ${Math.min(visibleStep, pinnedFilteredWorks.value.length - visibleWorks.value.length)}건 더 보기`
+        : `Show ${Math.min(visibleStep, pinnedFilteredWorks.value.length - visibleWorks.value.length)} more featured work items`,
+);
+const collapseAriaLabel = computed(() =>
+    locale.value === "ko" ? "대표 작업 목록 처음 개수로 접기" : "Collapse featured work list to the initial count",
+);
 
 const scrollRail = (rail: HTMLElement | null, direction: -1 | 1) => {
     if (!rail) return;

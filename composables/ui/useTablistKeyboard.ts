@@ -1,5 +1,9 @@
+/**
+ * 목표: role="tablist" 컴포넌트의 키보드 조작을 APG 패턴에 맞춰 재사용한다.
+ * 기능: 방향키/Home/End/선택 포커스 이동과 필요 시 스크롤 고정을 제공한다.
+ */
 import type { MaybeRef } from 'vue';
-import { tablistA11y, type TablistA11yOptions } from '@config/tablistA11y';
+import { tablistKeyboardA11y, type TablistA11yOptions } from '@config/tablist-a11y';
 
 export type TablistOrientation = 'horizontal' | 'vertical';
 
@@ -33,14 +37,10 @@ function resolveNavigationDelta(key: string, orientation: TablistOrientation): n
     return null;
 }
 
-/**
- * role="tablist" 키보드 내비게이션.
- * @see https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
- */
 export function useTablistKeyboard<T extends string>(keys: MaybeRef<readonly T[]>, onSelect: (key: T) => void, config: TablistKeyboardConfig) {
     const options = {
-        arrowKeys: config.arrowKeys ?? tablistA11y.arrowKeys,
-        tabCyclesTabs: config.tabCyclesTabs ?? tablistA11y.tabCyclesTabs,
+        arrowKeys: config.arrowKeys ?? tablistKeyboardA11y.arrowKeys,
+        tabCyclesTabs: config.tabCyclesTabs ?? tablistKeyboardA11y.tabCyclesTabs,
     };
 
     function focusTab(key: T) {

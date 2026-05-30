@@ -1,11 +1,11 @@
+/**
+ * 목표: 홈 Works 섹션의 카테고리 탭과 프로젝트 목록 렌더링 데이터를 연결한다.
+ * 기능: 카테고리 목록, 필터 결과, 렌더 key, 탭 선택/모달 열기 액션을 제공한다.
+ */
 import { storeToRefs } from 'pinia';
 import { workCategories, type WorkCategory } from '@data/works';
-import { useWorksUiStore } from '@stores/portfolioUiStore';
+import { useWorksUiStore } from '@stores/worksUiStore';
 
-/**
- * 프로젝트 섹션 탭 → 필터된 목록 렌더링.
- * 스토어와 `workCategories`를 묶고, 패널 `:key`용 값을 제공해 탭 전환 시 리스트를 안정적으로 갱신한다.
- */
 export function useWorksTabRenderer() {
     const worksUi = useWorksUiStore();
     const { selectedCategory, filteredWorks } = storeToRefs(worksUi);

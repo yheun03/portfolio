@@ -8,7 +8,7 @@
                     {{ t(config.listLabelKey) }}
                 </button>
                 <span id="gallery-detail-back-hint" class="gallery-detail__breadcrumb-sr">{{ t('gallery.backHint')
-                }}</span>
+                    }}</span>
                 <span class="gallery-detail__breadcrumb-sep" aria-hidden="true">•</span>
                 <span class="gallery-detail__breadcrumb-current" aria-current="page">{{ pick(work.title) }}</span>
             </nav>
@@ -33,7 +33,7 @@
                         <dt>{{ t('gallery.languages') }}</dt>
                         <dd>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                            }}</span>
+                                }}</span>
                             <template v-if="!work.languages.length">-</template>
                         </dd>
                     </div>
@@ -48,7 +48,8 @@
                     </div>
                 </dl>
                 <p v-if="work.links?.length" class="gallery-detail__links">
-                    <BaseButton v-for="link in work.links" :key="link.href" :label="pick(link.label)" :href="link.href" />
+                    <BaseButton v-for="link in work.links" :key="link.href" :label="pick(link.label)"
+                        :href="link.href" />
                 </p>
             </header>
 
@@ -105,7 +106,10 @@
 import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
 import { getGalleryVariantConfig } from '@composables/gallery/useGallery';
-import { getRealCaptures, isPlaceholderCapture } from '@utils/capturePlaceholder';
+import { seoConfig } from '@config/seo';
+import { profile } from '@data/site';
+import { getRealCaptures, isPlaceholderCapture } from '@utils/capture-image';
+import { buildAbsoluteSeoUrl } from '@utils/seo-url';
 import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = defineProps<{
@@ -138,28 +142,62 @@ function captureAlt(index: number) {
     return locale.value === 'ko' ? `${base} 캡처 ${index + 1}` : `${base} screenshot ${index + 1}`;
 }
 
-usePortfolioSeo(() => ({
-    title: `${pick(props.work.title)} | ${t(config.metaTitleKey)}`,
-    description: pick(props.work.introduction),
-    path: `${config.basePath}/${props.work.id}`,
-    locale: locale.value,
-    type: 'article',
-    image: getRealCaptures(props.work.captures)[0],
-    imageAlt: getRealCaptures(props.work.captures).length ? captureAlt(0) : undefined,
-    keywords: [pick(props.work.title), pick(props.work.type), pick(props.work.role), ...props.work.languages, ...props.work.tech],
-    jsonLd: {
-        '@context': 'https://schema.org',
-        '@type': 'CreativeWork',
-        name: pick(props.work.title),
+usePortfolioSeo(() => {
+    const homeUrl = buildAbsoluteSeoUrl('/');
+    const archiveUrl = buildAbsoluteSeoUrl(config.basePath);
+    const detailUrl = buildAbsoluteSeoUrl(`${config.basePath}/${props.work.id}`);
+    const coverImage = getRealCaptures(props.work.captures)[0];
+
+    return {
+        title: `${pick(props.work.title)} | ${t(config.metaTitleKey)}`,
         description: pick(props.work.introduction),
-        url: `https://yheun03.github.io/portfolio${config.basePath}/${props.work.id}`,
-        inLanguage: locale.value === 'ko' ? 'ko-KR' : 'en-US',
-        creator: {
-            '@type': 'Person',
-            name: '은영환',
-            jobTitle: locale.value === 'ko' ? '웹 퍼블리셔 / 프론트엔드 개발자' : 'Web Publisher / Frontend Developer',
-        },
-        keywords: [pick(props.work.type), pick(props.work.role), ...props.work.languages, ...props.work.tech].join(', '),
-    },
-}));
+        path: `${config.basePath}/${props.work.id}`,
+        locale: locale.value,
+        type: 'article',
+        image: coverImage,
+        imageAlt: coverImage ? captureAlt(0) : undefined,
+        keywords: [pick(props.work.title), pick(props.work.type), pick(props.work.role), ...props.work.languages, ...props.work.tech],
+        jsonLd: [
+            {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    {
+                        '@type': 'ListItem',
+                        position: 1,
+                        name: locale.value === 'ko' ? '홈' : 'Home',
+                        item: homeUrl,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 2,
+                        name: t(config.titleKey),
+                        item: archiveUrl,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 3,
+                        name: pick(props.work.title),
+                        item: detailUrl,
+                    },
+                ],
+            },
+            {
+                '@context': 'https://schema.org',
+                '@type': 'CreativeWork',
+                name: pick(props.work.title),
+                description: pick(props.work.introduction),
+                url: detailUrl,
+                inLanguage: locale.value === 'ko' ? 'ko-KR' : 'en-US',
+                ...(coverImage ? { image: buildAbsoluteSeoUrl(coverImage) } : {}),
+                creator: {
+                    '@type': 'Person',
+                    '@id': `${homeUrl}${seoConfig.personId}`,
+                    name: profile.name,
+                },
+                keywords: [pick(props.work.type), pick(props.work.role), ...props.work.languages, ...props.work.tech].join(', '),
+            },
+        ],
+    };
+});
 </script>

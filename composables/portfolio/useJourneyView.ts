@@ -1,3 +1,7 @@
+/**
+ * 목표: Journey 섹션의 소속별/연대기별 보기 데이터를 구성한다.
+ * 기능: 보기 모드 저장, 기간 정렬, 연도 그룹 생성, 키보드 전환을 제공한다.
+ */
 import { journeyCompanies, type JourneyCompanyBlock, type JourneyTimelineEntry } from '@data/site';
 
 export type JourneyViewMode = 'affiliation' | 'chronological';
@@ -156,6 +160,14 @@ export function useJourneyView() {
 
         const next = list[nextIndex];
         if (next) setViewMode(next);
+
+        nextTick(() => {
+            const target =
+                event.currentTarget instanceof HTMLElement
+                    ? event.currentTarget.parentElement?.querySelectorAll<HTMLElement>('[role="radio"]')[nextIndex]
+                    : undefined;
+            target?.focus();
+        });
     }
 
     return {

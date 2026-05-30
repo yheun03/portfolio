@@ -1,3 +1,7 @@
+/**
+ * 목표: 오버레이 모달의 접근성과 스크롤 제어를 공통 처리한다.
+ * 기능: body scroll lock, Escape 닫기, Tab focus trap, 외부 스크롤 차단을 제공한다.
+ */
 import type { ComputedRef, Ref } from 'vue';
 
 export interface UseModalOptions {
@@ -10,9 +14,6 @@ export interface UseModalOptions {
     initialFocusRef?: Ref<HTMLElement | null>;
 }
 
-/**
- * 오버레이 모달 공통: body 스크롤 잠금, Esc 닫기, Tab 포커스 트랩
- */
 export function useModal(options: UseModalOptions) {
     const { isOpen, onClose, containerRef, initialFocusRef } = options;
     let scrollY = 0;

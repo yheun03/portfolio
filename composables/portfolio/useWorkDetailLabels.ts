@@ -1,3 +1,7 @@
+/**
+ * 목표: Works 상세 모달에서 사용하는 고정 라벨을 locale별로 제공한다.
+ * 기능: 닫기, 역할, 기여, 성과, 포인트 라벨 computed 값을 만든다.
+ */
 export function useWorkDetailLabels() {
     const { locale } = useLocale();
 

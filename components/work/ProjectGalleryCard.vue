@@ -68,8 +68,8 @@
 import type { WorkItem } from '@data/works';
 import type { GalleryViewMode } from '@composables/gallery/useGallery';
 import { galleryEntryId } from '@composables/gallery/useNavigationRestore';
-import { isPlaceholderCapture } from '@utils/capturePlaceholder';
-import { getWorkStartYear } from '@utils/workSort';
+import { isPlaceholderCapture } from '@utils/capture-image';
+import { getWorkStartYear } from '@utils/work-timeline';
 import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = withDefaults(

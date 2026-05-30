@@ -1,5 +1,5 @@
 <template>
-    <header class="section-title" data-animate>
+    <div class="section-title" data-animate>
         <p class="section-title__eyebrow">
             {{ eyebrow }}
         </p>
@@ -8,7 +8,7 @@
             <span class="section-title__spark emoji emoji--soft" aria-hidden="true">✦</span>
         </h2>
         <p v-if="description" class="section-title__description">{{ description }}</p>
-    </header>
+    </div>
 </template>
 
 <script setup lang="ts">

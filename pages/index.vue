@@ -26,24 +26,26 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue';
 import PortfolioHero from '~/components/home/PortfolioHero.vue';
-import PortfolioWorks from '~/components/home/PortfolioWorks.vue';
-import PortfolioPersonal from '~/components/home/PortfolioPersonal.vue';
-import TempMainProgressModalRenderer from '~/components/page/TempMainProgressModalRenderer.vue';
-import { SCROLL_SECTION_IDS } from '@config/homePage';
+import { HOME_SCROLL_SECTION_IDS } from '@config/home-sections';
 
 const PortfolioAbout = defineAsyncComponent(() => import('~/components/home/PortfolioAbout.vue'));
+const PortfolioWorks = defineAsyncComponent(() => import('~/components/home/PortfolioWorks.vue'));
+const PortfolioPersonal = defineAsyncComponent(() => import('~/components/home/PortfolioPersonal.vue'));
 const PortfolioJourney = defineAsyncComponent(() => import('~/components/home/PortfolioJourney.vue'));
 const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
 const PortfolioHighlights = defineAsyncComponent(() => import('~/components/home/PortfolioHighlights.vue'));
 const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
+const TempMainProgressModalRenderer = defineAsyncComponent(
+    () => import('~/components/page/TempMainProgressModalRenderer.vue'),
+);
 
 const { t, locale } = useLocale();
 
-useIntersectionAnimation();
+useIntersectionAnimation({ deferred: true });
 usePortfolioGsap();
 
 const appDockLinks = computed(() =>
-    SCROLL_SECTION_IDS.map((id) => ({
+    HOME_SCROLL_SECTION_IDS.map((id) => ({
         href: `#${id}`,
         label: t(`nav.${id}`),
     }))
@@ -55,7 +57,7 @@ const headerNavLinks = computed(() => [
     { href: '/personal', label: t('nav.personalArchive') },
 ]);
 
-const { activeId } = useScrollSpy([...SCROLL_SECTION_IDS]);
+const { activeId } = useScrollSpy([...HOME_SCROLL_SECTION_IDS]);
 
 usePortfolioSeo(() => ({
     title: t('meta.title'),

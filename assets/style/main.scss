@@ -3,7 +3,6 @@
 
 /* Foundations */
 @use "base/reset";
-@use "base/skeleton";
 @use "base/buttons";
 @use "base/labels";
 @use "base/badges";
@@ -33,10 +32,6 @@
 @use "home/contact";
 @use "home/touch";
 @use "home/responsive";
-
-/* Gallery pages */
-@use "gallery/archive";
-@use "gallery/detail";
 
 /* Route-level pages */
 @use "pages/error";

@@ -1,11 +1,11 @@
 <template>
     <Teleport to="body">
-        <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true"
-            aria-labelledby="works-modal-title" aria-describedby="works-modal-description" @click.self="closeModal">
+        <div v-if="activeWork" class="works__modal" role="dialog" aria-modal="true" aria-labelledby="works-modal-title"
+            aria-describedby="works-modal-description" @click.self="closeModal">
             <div ref="modalCardRef" class="works__modal-content" @click.stop>
                 <BaseCard :animate="false" class="works__modal-card">
                     <div class="works__modal-head">
-                        <h3 id="works-modal-title">{{ pick(activeWork.title) }}</h3>
+                        <h2 id="works-modal-title" class="works__modal-title">{{ pick(activeWork.title) }}</h2>
                         <button ref="closeButtonRef" type="button"
                             class="base-button base-button--ghost works__modal-close"
                             :aria-label="labels.closeModalAria" @click="closeModal">
@@ -54,7 +54,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useWorksUiStore } from '@stores/portfolioUiStore';
+import { useWorksUiStore } from '@stores/worksUiStore';
 
 const { pick } = useLocale();
 const { isAppRoute, resolveAppPath } = useAppPathResolver();

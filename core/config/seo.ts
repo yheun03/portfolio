@@ -1,3 +1,7 @@
+/**
+ * 목표: 포트폴리오 전역 SEO 메타와 구조화 데이터를 한곳에서 관리한다.
+ * 기능: 기본 사이트 정보, 다국어 키워드, Person/WebSite JSON-LD 원천 데이터를 제공한다.
+ */
 export type SeoLocale = 'ko' | 'en';
 
 export const seoConfig = {
@@ -8,6 +12,7 @@ export const seoConfig = {
         height: 1122,
     },
     siteName: 'Eunyounghwan Portfolio',
+    themeColor: '#f7f2ea',
     personId: '#person',
     websiteId: '#website',
     sameAs: ['https://github.com/yheun03'],

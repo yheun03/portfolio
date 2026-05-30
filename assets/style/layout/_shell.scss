@@ -4,6 +4,16 @@
    Portfolio Pages
 ========================================= */
 
+.page__layer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
+.page__layer--hero {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
+}
+
 .portfolio-page {
     position: relative;
     z-index: 1;

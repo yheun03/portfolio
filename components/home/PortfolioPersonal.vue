@@ -13,7 +13,7 @@
         <div class="personal__rail-wrap swipe-rail">
             <div class="swipe-rail__head">
                 <p id="personal-swipe-help" class="swipe-rail__hint">{{ swipeHint }}</p>
-                <div class="swipe-rail__controls" :aria-label="swipeControlsLabel">
+                <div class="swipe-rail__controls" role="group" :aria-label="swipeControlsLabel">
                     <button type="button" class="swipe-rail__button" :aria-label="swipePrevLabel"
                         @click="scrollPersonalRail(-1)">
                         <span aria-hidden="true">‹</span>
@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import { personalWorksList } from "@data/works";
-import { useWorksUiStore } from "@stores/portfolioUiStore";
+import { useWorksUiStore } from "@stores/worksUiStore";
 
 const { t, pick, locale } = useLocale();
 const { isNarrow } = useNarrowLayout();
