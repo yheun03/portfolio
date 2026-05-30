@@ -1,0 +1,273 @@
+@use "../abstracts/tokens" as *;
+
+/* Portfolio highlights — 왼쪽 title-col은 works와 동일, 오른쪽은 간단한 패널 리스트 */
+.section--highlights {
+    position: relative;
+    overflow: visible;
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+    padding-top: calc(var(--space-section-y) + 5rem);
+    grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
+    column-gap: var(--space-6);
+    align-items: start;
+
+    .highlights__title-col {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        position: sticky;
+        top: 5.25rem;
+        align-self: start;
+        display: grid;
+        gap: var(--space-4);
+        padding-inline-end: var(--space-2);
+    }
+
+    .highlights__workspace {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    .section-title {
+        margin-bottom: 0;
+    }
+}
+
+.highlights {
+    &__total-badge {
+        position: absolute;
+        top: clamp(2rem, 4vw, 3.75rem);
+        left: clamp(1rem, 3vw, 2rem);
+        z-index: 12;
+        display: inline-grid;
+        gap: var(--space-1);
+        width: fit-content;
+        min-width: 0;
+        max-width: 100%;
+        overflow: visible;
+        isolation: isolate;
+        padding: calc(var(--space-3) + 0.1rem) var(--space-4);
+        border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+        border-radius: var(--radius-lg);
+        background:
+            linear-gradient(135deg,
+                color-mix(in srgb, var(--color-primary) 16%, var(--color-surface)),
+                color-mix(in srgb, var(--color-surface) 98%, var(--color-primary)));
+        box-shadow:
+            0 18px 42px color-mix(in srgb, var(--color-primary) 18%, transparent),
+            0 0 0 1px color-mix(in srgb, var(--color-surface) 70%, transparent),
+            var(--shadow-ring);
+        transform-origin: 18% 50%;
+        animation: highlights-total-sway 3.2s ease-in-out infinite;
+        backdrop-filter: blur(14px);
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0.9rem;
+            bottom: -0.48rem;
+            z-index: 0;
+            width: 0.7rem;
+            height: 0.7rem;
+            border-right: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+            border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+            background: color-mix(in srgb, var(--color-surface) 96%, var(--color-primary));
+            box-shadow: 8px 8px 18px color-mix(in srgb, var(--color-primary) 14%, transparent);
+            transform: rotate(45deg);
+        }
+
+        span,
+        small {
+            position: relative;
+            z-index: 1;
+        }
+
+        span {
+            color: var(--color-text);
+            font-family: var(--font-display);
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-black);
+            line-height: 1;
+        }
+
+        small {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.35;
+            white-space: nowrap;
+        }
+
+        &:hover {
+            animation-play-state: paused;
+            transform: translateY(-1px) rotate(0deg) scale(1.02);
+        }
+    }
+
+    &__archive-summary {
+        display: grid;
+        gap: var(--space-3);
+        padding: var(--space-5);
+        border: 1px solid color-mix(in srgb, var(--color-primary) 24%, var(--color-border));
+        border-radius: var(--radius-lg);
+        background:
+            linear-gradient(135deg,
+                color-mix(in srgb, var(--color-primary) 9%, transparent),
+                color-mix(in srgb, var(--color-surface) 86%, transparent));
+        box-shadow: var(--shadow-glow);
+        backdrop-filter: blur(12px);
+    }
+
+    &__archive-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        align-items: baseline;
+        margin: 0;
+
+        strong {
+            background: var(--gradient-accent);
+            background-clip: text;
+            color: transparent;
+            font-family: var(--font-display);
+            font-size: clamp(2.6rem, 8vw, 4.6rem);
+            font-weight: var(--font-weight-black);
+            line-height: 0.9;
+            -webkit-background-clip: text;
+        }
+
+        span {
+            color: var(--color-text);
+            font-weight: var(--font-weight-bold);
+        }
+    }
+
+    &__archive-meter {
+        position: relative;
+        overflow: hidden;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--color-border) 72%, transparent);
+
+        span {
+            display: block;
+            width: var(--highlights-highlight-ratio, 0%);
+            height: 100%;
+            border-radius: inherit;
+            background: var(--gradient-accent);
+            transition: width 0.35s ease;
+        }
+    }
+
+    &__archive-caption {
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+        line-height: 1.55;
+    }
+
+    &__filters {
+        align-self: stretch;
+        justify-self: start;
+    }
+
+    &__workspace {
+        display: grid;
+        gap: clamp(1.25rem, 3vw, 2rem);
+        min-width: 0;
+    }
+
+    &__panel {
+        display: grid;
+        gap: clamp(1.75rem, 4vw, 3rem);
+        padding: clamp(1.75rem, 4vw, 2.75rem);
+        border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+        border-radius: var(--radius-2xl);
+        background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+    }
+
+    &__panel-aside {
+        display: grid;
+        gap: clamp(0.75rem, 2vw, 1.25rem);
+        align-content: start;
+        text-align: start;
+    }
+
+    &__panel-index {
+        margin: 0;
+        color: var(--color-primary);
+        @include font(label, $font-weight-bold);
+    }
+
+    &__panel-title {
+        margin: 0;
+        @include font(display-4);
+        text-wrap: balance;
+    }
+
+    &__panel-lead {
+        margin: 0;
+        max-width: 36ch;
+        color: var(--color-text-muted);
+        @include font(body-1);
+        text-wrap: pretty;
+    }
+
+    &__entries {
+        display: grid;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            padding: clamp(0.8rem, 1.8vw, 1.05rem) 0;
+            border-bottom: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+            color: var(--color-text);
+            font-size: var(--font-size-md);
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-body);
+            text-align: start;
+            text-wrap: pretty;
+
+            &:first-child {
+                border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+            }
+        }
+    }
+}
+
+@keyframes highlights-total-sway {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(-1.5deg);
+    }
+
+    45% {
+        transform: translateX(0.55rem) rotate(1.8deg);
+    }
+
+    70% {
+        transform: translateX(-0.18rem) rotate(-0.8deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .highlights__total-badge {
+        animation: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .highlights__panel {
+        grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
+        align-items: start;
+        gap: clamp(2rem, 4.5vw, 3.5rem);
+    }
+
+    .highlights__panel-aside {
+        position: sticky;
+        top: calc(var(--layout-header-height) + 1.25rem);
+    }
+}
