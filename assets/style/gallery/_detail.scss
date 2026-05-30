@@ -456,7 +456,7 @@
 
         width: 100%;
         max-width: none;
-        padding-inline: max(var(--touch-pad-x, 1rem), env(safe-area-inset-left)) max(var(--touch-pad-x, 1rem),
+        padding-inline: max(var(--page-pad-x, 1rem), env(safe-area-inset-left)) max(var(--page-pad-x, 1rem),
                 env(safe-area-inset-right));
     }
 

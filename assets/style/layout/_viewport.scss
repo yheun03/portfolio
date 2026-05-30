@@ -1,0 +1,116 @@
+@use "../abstracts/tokens" as *;
+
+/* =============================================================================
+   Viewport layout — mobile · tablet · desktop
+   Desktop: `layout/_shell.scss` (centered column + grid)
+   ≤1023px: full-width sections with unified --page-pad-x / --section-pad-y
+============================================================================= */
+
+/* ----- Handheld + tablet (≤1023px) ----- */
+@media (max-width: #{$bp-max-tablet}) {
+    .portfolio-page--app-dock {
+        padding-inline-end: 0;
+    }
+
+    .page__layer--hero {
+        padding-bottom: var(--block-gap);
+    }
+
+    .section {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding-inline: var(--page-pad-x);
+        padding-block: var(--section-pad-y);
+        box-sizing: border-box;
+    }
+
+    .section:not(.section--hero) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--section-gap);
+        grid-template-columns: none;
+        grid-template-areas: none;
+        align-items: stretch;
+    }
+
+    .section--hero {
+        padding: var(--section-pad-y) var(--page-pad-x);
+    }
+}
+
+/* ----- Tablet only (768–1023px) ----- */
+@media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
+    .section--works {
+        padding-top: calc(var(--section-pad-y) + 2rem);
+    }
+
+    .hero__actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-4);
+    }
+
+    .hero__actions .base-button:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .contact__actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-4);
+
+        .base-button {
+            width: 100%;
+        }
+
+        .base-button:first-child {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+/* ----- Mobile only (≤767px) ----- */
+@media (max-width: #{$bp-max-mobile}) {
+    .section--works {
+        padding-top: calc(var(--section-pad-y) + 1.25rem);
+    }
+
+    .hero__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+
+    .contact__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        .base-button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+/* ----- Desktop (≥1024px) ----- */
+@media (min-width: #{$bp-min-laptop}) {
+    .section {
+        width: min(100% - var(--page-pad-x), var(--layout-content-max));
+        margin-inline: auto;
+        padding: var(--section-pad-y) 0;
+    }
+
+    .section:not(.section--hero) {
+        display: grid;
+        gap: var(--section-gap);
+    }
+}
+
+@media (min-width: 1920px) {
+    .section {
+        width: min(100% - 8rem, 2040px);
+    }
+}

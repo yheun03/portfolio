@@ -59,7 +59,7 @@
 @media (max-width: #{$bp-max-narrow}) {
 
     .section.section--toolbox {
-        gap: var(--touch-stack-gap);
+        gap: var(--section-gap);
     }
 
     .toolbox__head {

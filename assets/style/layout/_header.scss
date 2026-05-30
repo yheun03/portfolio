@@ -499,7 +499,7 @@
     .app-header {
         gap: $space-3;
         padding-block: $space-3;
-        padding-inline: max(var(--touch-pad-x, 0.85rem), env(safe-area-inset-left)) max(var(--touch-pad-x, 0.85rem),
+        padding-inline: max(var(--page-pad-x, 0.85rem), env(safe-area-inset-left)) max(var(--page-pad-x, 0.85rem),
                 env(safe-area-inset-right));
         min-height: auto;
     }
@@ -527,7 +527,7 @@
     }
 
     .app-lnb {
-        width: min(19.5rem, calc(100vw - var(--touch-pad-x, 0.85rem)));
+        width: min(19.5rem, calc(100vw - var(--page-pad-x, 0.85rem)));
         padding-top: $space-4;
     }
 }

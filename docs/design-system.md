@@ -59,12 +59,26 @@ Primary scale: `--primary-50` … `--primary-900` (앵커 `#0050ff`).
 
 ## Spacing & layout
 
+### Viewport tiers (`_tokens.scss` `:root` + `layout/_viewport.scss`)
+
+| 구간 | Sass | 페이지 여백·리듬 |
+|------|------|------------------|
+| **Mobile** | `≤767px` (`$bp-max-mobile`) | `--page-pad-x` ~1–1.35rem, `--section-pad-y` 타이트, 스와이프 카드 `min(88vw, 21rem)` |
+| **Tablet** | `768–1023px` | `--page-pad-x` ~1.35–2.25rem, 2열 toolbox·히어로 CTA 그리드, 스와이프 `min(44vw, 20rem)` |
+| **Desktop** | `≥1024px` | `:root` baseline, 섹션은 `layout/_shell.scss` 중앙 컬럼 + grid |
+
+공통 rhythm 토큰 (handheld·desktop 모두):
+
 | Token | Notes |
 |-------|--------|
-| `--space-1` … `--space-11` | compact scale |
-| `--space-fluid-*` | responsive clamp |
-| `--inset-page`, `--card-padding` | page/card rhythm |
-| `--layout-header-height` | fixed default; 런타임은 `useLayoutHeaderHeight`로 헤더 실측 동기화 |
+| `--page-pad-x`, `--page-pad-hero` | 좌우 페이지 패딩 |
+| `--section-pad-y`, `--section-gap`, `--block-gap` | 섹션 세로·내부 간격 |
+| `--swipe-card-width` | Works/Personal 가로 스크롤 카드 폭 |
+| `--inset-page` | `--page-pad-x` alias (shell·dock) |
+| `--touch-pad-x`, `--touch-stack-gap` | legacy alias → 위 토큰 |
+| `--space-1` … `--space-11`, `--space-fluid-*` | compact / fluid scale |
+| `--card-padding`, `--card-padding-lg` | 카드 내부 패딩 (viewport별 override) |
+| `--layout-header-height` | 기본값; `useLayoutHeaderHeight`로 실측 동기화 |
 | `--layout-content-max` | `1680px` |
 
 ## Radius
@@ -77,7 +91,7 @@ Primary scale: `--primary-50` … `--primary-900` (앵커 `#0050ff`).
 |--------|------|
 | `abstracts/` | `_theme.scss`, `_tokens.scss`, `_fonts.scss` |
 | `base/` | reset, skeleton, button, label, badge, card, section-title |
-| `layout/` | shell, header, footer, dock |
+| `layout/` | shell, **viewport**, header, footer, dock |
 | `home/` | section composition |
 | `work/`, `gallery/` | card·archive·detail patterns |
 | `motion/` | typo-word |
