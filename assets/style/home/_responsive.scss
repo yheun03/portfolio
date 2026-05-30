@@ -67,6 +67,13 @@
                 background: var(--gradient-accent);
                 box-shadow: none;
             }
+
+            &--active:hover {
+                color: var(--color-on-primary);
+                border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+                background: var(--gradient-accent);
+                box-shadow: none;
+            }
         }
     }
 

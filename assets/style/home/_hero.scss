@@ -225,7 +225,7 @@
 .hero__metrics-bar {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(0.75rem, 2vw, 1.5rem);
+    gap: clamp(0.65rem, 1.6vw, 1rem);
     margin: 0;
     padding: 0;
 }
@@ -239,15 +239,12 @@
 
 .hero__metric {
     display: grid;
-    gap: 0.35rem;
+    gap: 0.4rem;
     min-width: 0;
-    padding-inline-start: clamp(0.75rem, 2vw, 1rem);
-    border-inline-start: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
-
-    &:first-child {
-        padding-inline-start: 0;
-        border-inline-start: 0;
-    }
+    padding: clamp(0.75rem, 1.8vw, 1rem);
+    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--color-surface) 78%, transparent);
 
     dt {
         margin: 0;
@@ -326,8 +323,8 @@
     }
 
     .hero__metric {
-        padding-inline-start: 0;
-        border-inline-start: 0;
+        padding: clamp(0.8rem, 2.6vw, 1rem);
+        border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
     }
 
     .hero__actions {
@@ -445,24 +442,20 @@
         grid-area: metrics;
         align-self: end;
         grid-template-columns: 1fr;
-        gap: clamp(0.75rem, 1.2vw, 1rem);
-        padding: clamp(0.9rem, 1.5vw, 1.2rem) clamp(1rem, 1.6vw, 1.25rem);
-        border: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
-        border-radius: var(--radius-lg);
-        background: color-mix(in srgb, var(--color-surface) 96%, transparent);
-        box-shadow: 0 10px 28px color-mix(in srgb, var(--color-primary) 5%, transparent);
+        gap: clamp(0.65rem, 1vw, 0.85rem);
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
     }
 
     .hero__metric {
-        padding-inline-start: 0;
-        border-inline-start: 0;
-        padding-block-end: clamp(0.55rem, 1vw, 0.75rem);
-        border-block-end: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-
-        &:last-child {
-            padding-block-end: 0;
-            border-block-end: 0;
-        }
+        padding: clamp(0.75rem, 1.2vw, 0.95rem);
+        border: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
+        border-radius: var(--radius-md);
+        background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+        box-shadow: 0 10px 26px color-mix(in srgb, var(--color-primary) 4%, transparent);
 
         dt {
             font-size: 0.625rem;
@@ -518,27 +511,13 @@
 
     .hero__metrics-bar {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0;
-        border-top: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+        gap: var(--space-3);
+        border-top: 0;
     }
 
     .hero__metric {
-        padding: clamp(0.8rem, 4vw, 1rem) 0 0;
-        border: 0;
-
-        &:nth-child(odd) {
-            padding-inline-end: clamp(0.75rem, 4vw, 1rem);
-            border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-        }
-
-        &:nth-child(even) {
-            padding-inline-start: clamp(0.75rem, 4vw, 1rem);
-        }
-
-        &:nth-child(n + 3) {
-            margin-top: clamp(0.7rem, 3vw, 0.9rem);
-            border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-        }
+        padding: clamp(0.8rem, 4vw, 1rem);
+        border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
     }
 }
 
@@ -548,12 +527,11 @@
     }
 
     .hero__metric {
-        padding-inline: 0;
-        border-inline-end: 0;
+        padding: clamp(0.8rem, 4vw, 1rem);
 
         &:not(:first-child) {
-            margin-top: 0.65rem;
-            border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+            margin-top: 0;
+            border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
         }
     }
 }

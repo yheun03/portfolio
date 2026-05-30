@@ -105,6 +105,13 @@
         border-color: color-mix(in srgb, $grayscale-0 35%, $primary-600);
         box-shadow: 0 12px 32px color-mix(in srgb, $primary-600 38%, transparent);
     }
+
+    &--active:hover {
+        color: $grayscale-0;
+        background: $gradient-accent;
+        border-color: color-mix(in srgb, $grayscale-0 40%, $primary-600);
+        box-shadow: 0 12px 32px color-mix(in srgb, $primary-600 38%, transparent);
+    }
 }
 
 /* Tab list — pill(default) · LNB(vertical) · rail(horizontal scroll) */
@@ -163,6 +170,12 @@
         }
 
         &--active {
+            color: $grayscale-900;
+            background: color-mix(in srgb, $primary-600 12%, $grayscale-0);
+            box-shadow: inset var(--lnb-accent-w) 0 0 0 color-mix(in srgb, $primary-600 72%, $grayscale-300);
+        }
+
+        &--active:hover {
             color: $grayscale-900;
             background: color-mix(in srgb, $primary-600 12%, $grayscale-0);
             box-shadow: inset var(--lnb-accent-w) 0 0 0 color-mix(in srgb, $primary-600 72%, $grayscale-300);

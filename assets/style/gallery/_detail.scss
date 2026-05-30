@@ -430,8 +430,8 @@
         min-width: 0;
         max-width: 100%;
         min-height: 0;
-        height: min(100%, clamp(20rem, 34vw, 31rem));
-        aspect-ratio: auto;
+        height: auto;
+        aspect-ratio: 16 / 9;
         border-top: 0;
         border-inline-start: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
 
@@ -507,9 +507,18 @@
         }
 
         &-media {
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 16 / 9;
             margin-top: 0.15rem;
         }
+    }
+
+    .year-timeline--gallery {
+        --year-timeline-era-gap: clamp(2.25rem, 9vw, 3.75rem);
+    }
+
+    .year-timeline--gallery .year-timeline__entries {
+        gap: clamp(1rem, 4vw, 1.5rem);
+        padding-block: 0;
     }
 
     .gallery-editorial__entry-dek {
