@@ -20,6 +20,7 @@
             <PortfolioContact />
         </div>
     </AppLayout>
+    <TempMainProgressModalRenderer />
 </template>
 
 <script setup lang="ts">
@@ -34,6 +35,9 @@ const PortfolioJourney = defineAsyncComponent(() => import('~/components/home/Po
 const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
 const PortfolioHighlights = defineAsyncComponent(() => import('~/components/home/PortfolioHighlights.vue'));
 const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
+const TempMainProgressModalRenderer = defineAsyncComponent(
+    () => import('~/components/renderers/Page_Home/TempMainProgressModalRenderer.vue'),
+);
 
 const { t, locale } = useLocale();
 
