@@ -279,8 +279,8 @@
     }
 
     .hero__canvas {
-        inset: -4% 0 auto;
-        width: 100%;
+        // inset: -4% 0 auto;
+        width: calc(100% + var(--page-pad-x) * 2);
     }
 
     .hero__poster {
@@ -382,10 +382,10 @@
         min-height: min(90svh, 960px);
         padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4.5rem);
         grid-template-areas:
-        "stage metrics"
-        "head head"
-        "focus focus"
-        "actions actions";
+            "stage metrics"
+            "head head"
+            "focus focus"
+            "actions actions";
         grid-template-columns: minmax(0, 1fr) minmax(14.5rem, 0.32fr);
         align-items: start;
 
