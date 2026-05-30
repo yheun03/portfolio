@@ -28,8 +28,6 @@ export const useLocale = () => {
         locale,
         t,
         pick,
-        initLocale: store.initLocale,
-        setLocale: store.setLocale,
         toggleLocale: store.toggleLocale,
     };
 };

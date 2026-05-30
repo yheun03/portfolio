@@ -42,7 +42,6 @@ export const useWorksUiStore = defineStore('worksUi', () => {
 
     return {
         selectedCategory,
-        activeWorkId,
         filteredWorks,
         activeWork,
         setCategory,

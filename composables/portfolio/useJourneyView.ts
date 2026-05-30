@@ -4,7 +4,7 @@ export type JourneyViewMode = 'affiliation' | 'chronological';
 
 const JOURNEY_VIEW_STORAGE_KEY = 'portfolio-journey-view';
 
-export type JourneyChronologicalEntry = {
+type JourneyChronologicalEntry = {
     key: string;
     period: JourneyTimelineEntry['period'];
     title: JourneyTimelineEntry['title'];
@@ -22,7 +22,7 @@ export type JourneyYearGroup = {
 };
 
 /** `2026`, `2026~`, `2022~2023`, `2019.11` 등을 정렬용 숫자로 변환 */
-export function parseJourneyPeriodSortKey(period: string): number {
+function parseJourneyPeriodSortKey(period: string): number {
     const monthMatch = period.match(/(\d{4})\.(\d{1,2})/);
     if (monthMatch) {
         return Number(monthMatch[1]) + Number(monthMatch[2]) / 100;
@@ -34,12 +34,12 @@ export function parseJourneyPeriodSortKey(period: string): number {
 }
 
 /** 타임라인 period를 연도 헤더 라벨로 (예: `2022~2023` → `2022–2023`) */
-export function formatJourneyYearLabel(period: string): string {
+function formatJourneyYearLabel(period: string): string {
     return period.replace(/~/g, '–');
 }
 
 /** 소속 summary.period 시작 시점 (예: `2019.11 ~ 현재` → 2019.11) */
-export function parseAffiliationPeriodStart(period: string): number {
+function parseAffiliationPeriodStart(period: string): number {
     const head = period.split('~')[0]?.trim() ?? period;
     return parseJourneyPeriodSortKey(head);
 }
@@ -67,7 +67,7 @@ function sortAffiliationBlocksByTime(companies: readonly JourneyCompanyBlock[]):
         ) as unknown as JourneyCompanyBlock[];
 }
 
-export function buildJourneyChronologicalEntries(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyChronologicalEntry[] {
+function buildJourneyChronologicalEntries(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyChronologicalEntry[] {
     const entries: JourneyChronologicalEntry[] = [];
 
     companies.forEach((block, companyIndex) => {
@@ -90,7 +90,7 @@ export function buildJourneyChronologicalEntries(companies: readonly JourneyComp
 }
 
 /** 프로젝트 갤러리처럼 연도별 그룹 (동일 연도·기간 라벨은 한 섹션에 묶음) */
-export function buildJourneyYearGroups(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyYearGroup[] {
+function buildJourneyYearGroups(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyYearGroup[] {
     const groups = new Map<string, JourneyYearGroup>();
 
     for (const entry of buildJourneyChronologicalEntries(companies)) {
