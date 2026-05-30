@@ -90,7 +90,7 @@ Primary scale: `--primary-50` … `--primary-900` (앵커 `#0050ff`).
 | Folder | 담당 |
 |--------|------|
 | `abstracts/` | `_theme.scss`, `_tokens.scss`, `_fonts.scss` |
-| `base/` | reset, skeleton, button, label, badge, card, section-title |
+| `base/` | reset, skeleton, button, label, badge, progress, card, section-title |
 | `layout/` | shell, **viewport**, header, footer, dock |
 | `home/` | section composition |
 | `work/`, `gallery/` | card·archive·detail patterns |
@@ -100,7 +100,7 @@ Primary scale: `--primary-50` … `--primary-900` (앵커 `#0050ff`).
 
 | Folder | Components |
 |--------|------------|
-| `base/` | `BaseLink`, `BaseButton`, `BaseBadge`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`, `BaseYearTimeline` |
+| `base/` | `BaseLink`, `BaseButton`, `BaseBadge`, `BaseProgress`, `BaseCard`, `BaseLabel`, `BaseSectionTitle`, `BaseYearTimeline` |
 | `layout/` | `AppLayout`, `AppHeader`, `AppFooter`, `AppLnb`, `AppDock` |
 | `home/` | `Portfolio*` sections |
 | `work/` | `WorkCard`, `ProjectGalleryCard`, `TimelineItem`, … |

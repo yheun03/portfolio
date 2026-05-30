@@ -49,7 +49,7 @@ const languageToggleAriaLabel = computed(() =>
     locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
 );
 const themeToggleLabel = computed(() => {
-    if (locale.value === 'ko') return isDarkTheme.value ? '라이트' : '다크';
+    if (locale.value === 'ko') return isDarkTheme.value ? 'Light' : 'Dark';
 
     return isDarkTheme.value ? 'Light' : 'Dark';
 });
