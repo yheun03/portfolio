@@ -103,7 +103,6 @@
 ========================================= */
 
 .app-header__language-toggle,
-.app-header__theme-toggle,
 .app-header__menu-btn {
     min-width: $size-touch;
     min-height: $size-touch;
@@ -264,34 +263,6 @@
     }
 }
 
-[data-theme="dark"] {
-    --nav-active-bg: linear-gradient(118deg, var(--primary-400) 0%, var(--primary-500) 52%, var(--primary-600) 100%);
-
-    .app-lnb {
-        background:
-            linear-gradient(155deg,
-                color-mix(in srgb, var(--grayscale-100) 92%, transparent) 0%,
-                color-mix(in srgb, var(--grayscale-50) 88%, var(--primary-500) 5%) 62%,
-                color-mix(in srgb, var(--grayscale-0) 96%, transparent) 100%);
-
-        &::before {
-            background: color-mix(in srgb, var(--grayscale-100) 92%, transparent);
-        }
-
-        .app-lnb__link {
-            background: color-mix(in srgb, var(--grayscale-100) 64%, transparent);
-        }
-    }
-
-    .app-header__nav .app-header__link--active,
-    .app-lnb__link--active {
-        color: var(--color-on-accent);
-        border-color: color-mix(in srgb, var(--primary-400) 55%, transparent);
-        background: var(--nav-active-bg);
-        box-shadow: none;
-    }
-}
-
 .app-lnb-fade-enter-active,
 .app-lnb-fade-leave-active,
 .app-lnb-drawer-enter-active,
@@ -337,7 +308,6 @@
     }
 
     .app-header__language-toggle,
-    .app-header__theme-toggle,
     .app-header__menu-btn {
         min-width: auto;
         padding: $space-3 clamp(0.72rem, 2.7vw, #{$space-4});
@@ -368,7 +338,6 @@
     }
 
     .app-header__language-toggle,
-    .app-header__theme-toggle,
     .app-header__menu-btn {
         min-height: calc(var(--size-touch) - 0.25rem);
         padding-inline: 0.72rem;

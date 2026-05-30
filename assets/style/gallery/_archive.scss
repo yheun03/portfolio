@@ -6,146 +6,12 @@
 
 /* =============================================================================
    Gallery archive — projects & personal (editorial + grid)
-   Tokens: --gallery-* in _tokens.scss (:root light, [data-theme=dark])
+   Tokens: --gallery-* in _tokens.scss
    ============================================================================= */
 
 /** WAVE very small text 기준(≈12px) 이상 */
 $gallery-text-min: 0.875rem;
 $gallery-text-ui: 0.8125rem;
-
-/* ----- Editorial shell (list + detail) ----- */
-
-html[data-shell-theme="gallery"] body {
-    background: var(--gallery-bg);
-    color: var(--gallery-body);
-
-    .app-background {
-        opacity: 1;
-        mask-image: none;
-        background-image:
-            radial-gradient(ellipse 82% 56% at 12% -8%, color-mix(in srgb, var(--gallery-accent) 13%, transparent), transparent 58%),
-            radial-gradient(ellipse 60% 40% at 100% 20%, color-mix(in srgb, var(--gallery-muted) 22%, transparent), transparent 52%);
-        background-size: auto, auto;
-
-        &::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            opacity: 0.42;
-            background-image: $texture-noise;
-            background-size: 160px 160px;
-            mix-blend-mode: multiply;
-        }
-    }
-
-    .app-header {
-        border-bottom-color: color-mix(in srgb, var(--gallery-muted) 35%, transparent);
-        background: color-mix(in srgb, var(--gallery-bg) 88%, transparent);
-        box-shadow: none;
-
-        &__brand,
-        &__nav .app-header__link:not(.app-header__link--active),
-        .app-header__language-toggle,
-        .app-header__theme-toggle,
-        &__menu-btn {
-            color: var(--gallery-cream);
-            border-color: color-mix(in srgb, var(--gallery-muted) 55%, transparent);
-            background: color-mix(in srgb, var(--gallery-bg) 72%, transparent);
-        }
-
-        &__nav {
-            background: color-mix(in srgb, var(--gallery-muted) 12%, transparent);
-        }
-
-        &__nav .app-header__link--active {
-            color: var(--gallery-active-fg);
-            background: var(--gallery-active-bg);
-            box-shadow: none;
-            text-shadow: none;
-        }
-    }
-
-    .app-footer {
-        color: var(--gallery-muted);
-        border-top-color: color-mix(in srgb, var(--gallery-muted) 28%, transparent);
-        background: var(--gallery-bg);
-
-        .app-footer__emoji-line {
-            color: color-mix(in srgb, var(--gallery-accent) 72%, var(--gallery-cream));
-
-            .emoji--soft {
-                opacity: 0.88;
-            }
-        }
-    }
-
-    .app-dock {
-        border-color: color-mix(in srgb, var(--gallery-muted) 40%, transparent);
-        background: color-mix(in srgb, var(--gallery-bg) 88%, transparent);
-        opacity: 0.92;
-
-        &__label {
-            color: var(--gallery-cream);
-            background: color-mix(in srgb, var(--gallery-bg) 92%, transparent);
-            border-color: color-mix(in srgb, var(--gallery-muted) 35%, transparent);
-        }
-
-        &__dot {
-            background: color-mix(in srgb, var(--gallery-muted) 70%, transparent);
-        }
-
-        &__item--active .app-dock__dot,
-        &__item:hover .app-dock__dot,
-        &__item:focus-visible .app-dock__dot {
-            background: var(--gallery-accent);
-        }
-    }
-}
-
-html:not([data-theme="dark"])[data-shell-theme="gallery"] body {
-    .app-background {
-        background-image:
-            radial-gradient(ellipse 70% 50% at 8% -5%, color-mix(in srgb, var(--gallery-accent) 14%, transparent), transparent 55%),
-            radial-gradient(ellipse 55% 38% at 100% 15%, color-mix(in srgb, var(--gallery-muted) 10%, transparent), transparent 50%);
-        background-size: auto, auto;
-
-        &::after {
-            opacity: 0.38;
-            mix-blend-mode: multiply;
-        }
-    }
-}
-
-[data-theme="dark"][data-shell-theme="gallery"] body {
-    .app-background::after {
-        opacity: 0.16;
-        mix-blend-mode: normal;
-    }
-}
-
-html[data-shell-theme="gallery"] .portfolio-page {
-    isolation: isolate;
-    background:
-        linear-gradient(180deg, var(--gallery-bg) 0%, var(--gallery-bg-elevated) 42%, var(--gallery-bg) 100%);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        opacity: 0.36;
-        background-image: $texture-noise;
-        background-size: 160px 160px;
-        mix-blend-mode: multiply;
-    }
-}
-
-[data-theme="dark"][data-shell-theme="gallery"] .portfolio-page::before {
-    opacity: 0.2;
-    mix-blend-mode: screen;
-}
 
 .gallery-page--editorial.section,
 .gallery-detail.gallery-page--editorial.section {
@@ -614,11 +480,6 @@ html[data-shell-theme="gallery"] .portfolio-page {
 
 }
 
-[data-theme="dark"] .gallery-editorial__poster::before {
-    opacity: 0.18;
-    mix-blend-mode: screen;
-}
-
 .gallery-card.gallery-editorial__entry {
     display: block;
     min-width: 0;
@@ -813,13 +674,6 @@ html[data-shell-theme="gallery"] .portfolio-page {
                 opacity: 0.5;
             }
         }
-    }
-}
-
-[data-theme="dark"] .gallery-editorial__entry {
-    &-poster::after {
-        opacity: 0.15;
-        mix-blend-mode: screen;
     }
 }
 

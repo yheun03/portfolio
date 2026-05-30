@@ -4,12 +4,6 @@
    Portfolio Pages
 ========================================= */
 
-/* Portfolio shell */
-html[data-shell-theme="gallery"] .portfolio-page {
-    overflow-x: visible;
-    overflow-y: visible;
-}
-
 .portfolio-page {
     position: relative;
     z-index: 1;
@@ -61,14 +55,9 @@ html[data-shell-theme="gallery"] .portfolio-page {
     }
 }
 
-html:not([data-theme="dark"]) .app-background::after {
+.app-background::after {
     opacity: 0.24;
     mix-blend-mode: multiply;
-}
-
-[data-theme="dark"] .app-background::after {
-    opacity: 0.2;
-    mix-blend-mode: soft-light;
 }
 
 .page__layer {

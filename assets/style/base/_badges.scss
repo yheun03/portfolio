@@ -1,0 +1,62 @@
+@use "../abstracts/tokens" as *;
+
+/* Badge */
+.base-badge {
+    --badge-accent: #{$primary-600};
+    --badge-bg: #{$glass-2-strong};
+    --badge-color: #{$grayscale-900};
+    --badge-padding-block: #{$space-2};
+    --badge-padding-inline: #{$space-4};
+    --badge-font-size: #{$font-size-xs};
+    --badge-font-weight: #{$font-weight-medium};
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--badge-padding-block) var(--badge-padding-inline);
+    border-radius: 999px;
+    background: var(--badge-bg);
+    border: 1px solid $grayscale-300;
+    font-size: var(--badge-font-size);
+    font-weight: var(--badge-font-weight);
+    color: var(--badge-color);
+    box-shadow: $shadow-glow;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+
+    &::before {
+        content: "";
+        width: 0.38rem;
+        height: 0.38rem;
+        border-radius: 999px;
+        background: var(--badge-accent);
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--badge-accent) 16%, transparent);
+    }
+
+    &:hover {
+        box-shadow: $shadow-soft;
+        transform: translateY(-1px);
+    }
+
+    &--sm {
+        --badge-padding-block: 0.22rem;
+        --badge-padding-inline: 0.52rem;
+        --badge-font-size: var(--font-size-xs);
+        --badge-font-weight: #{$font-weight-semibold};
+    }
+
+    &--toolbox {
+        --badge-accent: color-mix(in srgb, #{$primary-600} 55%, #{$grayscale-700});
+        --badge-color: #{$grayscale-600};
+        --badge-bg: color-mix(in srgb, #{$grayscale-0} 72%, transparent);
+    }
+
+    &--work {
+        --badge-accent: #{$primary-700};
+        --badge-color: #{$grayscale-600};
+        --badge-bg: color-mix(in srgb, #{$grayscale-0} 72%, transparent);
+    }
+
+    &--plain::before {
+        display: none;
+    }
+}

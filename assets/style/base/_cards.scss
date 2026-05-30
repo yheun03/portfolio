@@ -1,0 +1,262 @@
+@use "../abstracts/tokens" as *;
+
+/* Card */
+.base-card {
+    position: relative;
+    overflow: hidden;
+    padding: var(--card-padding-lg, var(--card-padding));
+    border: 1px solid color-mix(in srgb, $grayscale-300 72%, $primary-600);
+    border-radius: var(--radius-2xl, $radius-lg);
+    background: $gradient-surface;
+    box-shadow: $shadow-soft, $shadow-glow;
+    isolation: isolate;
+    --card-flow-label: #{$space-4};
+    --card-flow-title: #{$space-5};
+    --card-flow-content: #{$space-5};
+    --card-list-gap: #{$space-2};
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(145deg,
+                color-mix(in srgb, $primary-600 8%, transparent) 0%,
+                transparent 42%,
+                color-mix(in srgb, $accent-mint 5%, transparent) 100%);
+        opacity: 0.55;
+        pointer-events: none;
+    }
+
+    > :where(.base-label, .base-label--technical) {
+        margin-bottom: 0;
+    }
+
+    > :where(.base-label, .base-label--technical)+ :where(h2, h3, p, ul, ol) {
+        margin-top: var(--card-flow-label);
+    }
+
+    > :where(h2, h3)+ :where(p, ul, ol) {
+        margin-top: var(--card-flow-title);
+    }
+
+    > :where(p, ul, ol)+ :where(p, ul, ol),
+    > :where(.contact__profile, .work-card__tech)+ :where(p, ul, ol, div) {
+        margin-top: var(--card-flow-content);
+    }
+
+    > :where(.work-card__footer, .contact__profile) {
+        margin-top: var(--card-flow-content);
+    }
+
+    > :where(ul, ol) {
+        display: grid;
+        gap: var(--card-list-gap);
+    }
+
+    > :where(p, li) {
+        line-height: var(--line-height-body);
+    }
+
+    > :where(h2, h3) {
+        line-height: var(--line-height-heading);
+    }
+}
+
+/* Surface + feature cards */
+.surface-card,
+.feature-card {
+    position: relative;
+    overflow: visible;
+    padding: var(--card-padding-lg);
+    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    border-radius: var(--radius-2xl);
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    box-shadow:
+        0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
+        0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
+    backdrop-filter: blur(18px);
+    transition:
+        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s ease,
+        box-shadow 0.38s ease;
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+            box-shadow:
+                0 1px 0 color-mix(in srgb, var(--color-surface) 92%, var(--color-primary)),
+                0 32px 80px color-mix(in srgb, var(--color-primary) 10%, transparent);
+            transform: translateY(-4px);
+        }
+    }
+}
+
+.surface-card {
+    &--metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: flex-end;
+        padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    &--flow {
+        display: grid;
+        gap: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    &__title {
+        margin: 0;
+        @include font(display-6);
+    }
+}
+
+.feature-card {
+    display: grid;
+    gap: clamp(0.65rem, 1.5vw, 1rem);
+    min-height: clamp(11rem, 22vw, 15rem);
+    align-content: start;
+
+    &--skill {
+        height: 100%;
+        min-height: clamp(13rem, 26vw, 17rem);
+    }
+
+    &__eyebrow {
+        margin: 0;
+        color: var(--color-primary);
+        @include font(label, $font-weight-bold);
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+        @include font(display-5);
+        text-wrap: balance;
+    }
+
+    &__description {
+        margin: 0;
+        max-width: 34ch;
+        color: var(--color-text-muted);
+        @include font(body-2);
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            display: contents;
+        }
+    }
+}
+
+.spotlight {
+    display: grid;
+    gap: clamp(1.75rem, 4vw, 3rem);
+
+    &__kicker {
+        margin: 0;
+        max-width: 14ch;
+        @include font(display-4);
+    }
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    list-style: none;
+
+    &--highlights {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    &--toolbox {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.flow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        display: grid;
+        gap: 0.55rem;
+        padding-top: clamp(0.75rem, 1.5vw, 1rem);
+        border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+    }
+
+    &__index {
+        color: var(--color-primary);
+        @include font(label, $font-weight-bold);
+    }
+
+    &__label {
+        @include font(title-1, $font-weight-black);
+    }
+}
+
+@media (max-width: #{$bp-max-narrow}) {
+    .surface-card,
+    .feature-card,
+    .base-card {
+        padding: clamp(1rem, 4.8vw, var(--card-padding-lg));
+    }
+
+    .feature-card {
+        min-height: auto;
+
+        &__title,
+        &__description {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+        }
+    }
+
+    .feature-grid {
+        grid-template-columns: minmax(0, 1fr);
+
+        &--highlights {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .flow-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .surface-card--metrics {
+        display: grid;
+        gap: var(--space-5);
+        align-items: start;
+    }
+
+    .flow-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .surface-card,
+    .feature-card {
+        transition: none;
+    }
+}

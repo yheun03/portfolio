@@ -1,33 +1,5 @@
 @use "../abstracts/tokens" as *;
 
-/* Portfolio hero */
-.section--hero {
-    width: min(100% - var(--inset-page-hero), var(--layout-hero-max));
-    max-width: none;
-    padding-top: var(--space-fluid-lg);
-}
-
-.hero__canvas {
-    position: absolute;
-    inset: -6% -4% auto;
-    z-index: -1;
-    height: 48%;
-    opacity: 0.12;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-
-    canvas {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-[data-theme="dark"] .hero__canvas {
-    opacity: 0.2;
-    filter: invert(1);
-    mix-blend-mode: screen;
-}
-
 .about__workflow {
     background: var(--color-glass-2);
     backdrop-filter: blur(10px);
@@ -344,79 +316,6 @@
     }
 }
 
-.work-card {
-    --card-flow-label: var(--space-4);
-    --card-flow-title: var(--space-4);
-    --card-flow-content: var(--space-4);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-primary));
-    border-radius: var(--radius-lg);
-    background: var(--color-glass-2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 1rem;
-        bottom: 1rem;
-        left: 0;
-        width: 4px;
-        border-radius: 999px;
-        background: var(--gradient-accent);
-        opacity: 0.88;
-    }
-
-    &:hover {
-        box-shadow: var(--shadow-lift), var(--shadow-ring);
-        transform: translateY(-6px);
-    }
-
-    h3 {
-        font-family: var(--font-display);
-        font-size: var(--font-size-xl);
-        font-weight: var(--font-weight-black);
-        letter-spacing: var(--tracking-heading);
-    }
-
-    &__meta {
-        color: var(--color-text-muted);
-        font-size: var(--font-size-sm);
-    }
-
-    &__tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        padding: 0;
-        margin: var(--space-1) 0 0;
-        list-style: none;
-
-        li {
-            padding: var(--space-1) var(--space-3);
-            border: 1px solid var(--color-border);
-            border-radius: 999px;
-            background: color-mix(in srgb, var(--color-surface) 72%, transparent);
-            color: var(--color-text-muted);
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semibold);
-        }
-    }
-
-    &__footer {
-        margin-top: auto;
-    }
-
-    &__button {
-        width: 100%;
-        margin-top: var(--space-5);
-    }
-}
-
 /* Portfolio personal */
 .section--personal {
     grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
@@ -556,18 +455,13 @@
     .section {
         width: min(100% - 8rem, 2040px);
     }
-
-    .section--hero {
-        width: min(100% - 8rem, 2240px);
-    }
 }
 
 /* 좁은 폰 (767px 이하): 타이포·터치 여유만 보강 */
 
 @media (max-width: 767px) {
 
-    .section,
-    .section--hero {
+    .section {
         width: min(100% - var(--space-6), 100%);
     }
 
@@ -647,14 +541,6 @@
         box-sizing: border-box;
     }
 
-    .section--hero {
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
-        padding: var(--touch-stack-gap) var(--touch-pad-x);
-        box-sizing: border-box;
-    }
-
     .section.section--about {
         padding-block: var(--touch-stack-gap);
     }
@@ -695,36 +581,6 @@
 
     .section--contact {
         min-height: auto;
-    }
-
-    /* ----- Hero: 섹션 패딩만 두고 poster 내부 여백은 제거 ----- */
-    .hero__poster {
-        display: grid !important;
-        flex-direction: unset !important;
-        align-items: stretch;
-        gap: var(--touch-stack-gap);
-        min-height: auto;
-        padding: 0;
-        border-radius: 0;
-    }
-
-    .hero__stage {
-        padding-top: 0;
-    }
-
-    .hero__eyebrow {
-        margin-bottom: clamp(0.75rem, 2.5vw, 1.25rem);
-    }
-
-    .hero__lead {
-        margin-top: clamp(1rem, 3vw, 1.5rem);
-    }
-
-    .hero__actions {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: var(--space-3);
     }
 
     .about__workflow {
@@ -960,24 +816,6 @@
 
         .base-button {
             width: 100%;
-        }
-    }
-
-    .work-card {
-        --card-flow-label: var(--space-3);
-        --card-flow-title: var(--space-3);
-        --card-flow-content: var(--space-4);
-
-        h3 {
-            font-size: clamp(1.1rem, 5.5vw, 1.35rem);
-        }
-
-        &__tech {
-            gap: var(--space-2);
-        }
-
-        &__button {
-            margin-top: var(--space-4);
         }
     }
 

@@ -13,7 +13,7 @@
 | `data/site/highlights/`            | **수상·자격·역할·활동** 목록 + 탭 설명              |
 | `data/site.ts`, `data/works.ts`    | 사이트 데이터 export + 작업 타입·조합               |
 | `i18n/ko.json`, `i18n/en.json`     | **UI 껍데기** (네비, 버튼, 섹션 타이틀 틀, 메타 등) |
-| `stores/appPreferenceStore.ts`     | 언어·테마 등 앱 환경 설정 상태                      |
+| `stores/appPreferenceStore.ts`     | 언어 등 앱 환경 설정 상태                      |
 | `stores/portfolioUiStore.ts`       | Works·Highlights 등 포트폴리오 UI 상태              |
 | `composables/`, `plugins/`         | 화면 로직, Nuxt 플러그인                           |
 | `core/`                            | 라우터 옵션과 앱 설정성 TS 모듈                    |

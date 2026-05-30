@@ -5,6 +5,8 @@
 @use "base/skeleton";
 @use "base/buttons";
 @use "base/labels";
+@use "base/badges";
+@use "base/cards" as base-cards;
 @use "base/sections";
 @use "base/editorial-year";
 
@@ -12,8 +14,7 @@
 @use "layout/footer";
 @use "layout/shell";
 
-@use "work/cards";
-@use "work/home-cards";
+@use "work/cards" as work-cards;
 
 @use "motion/typography";
 

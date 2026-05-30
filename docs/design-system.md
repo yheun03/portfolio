@@ -5,7 +5,7 @@
 ## Design Principles
 
 - Code-first naming: SCSS 변수명과 Vue 클래스명을 Figma 토큰/컴포넌트 설명에 그대로 남긴다.
-- Dual theme ready: `:root`와 `[data-theme="dark"]`의 light/dark 값을 Figma Variables mode로 분리한다.
+- Single theme first: `:root` 토큰을 기준으로 모든 섹션과 갤러리의 시각 언어를 일관되게 유지한다.
 - System over pages: `base`는 primitive, `work`와 `gallery`는 pattern, `layout`은 shell, `home`은 page composition으로 다룬다.
 - Density and motion: 기본 UI는 compact한 spacing과 hover lift, focus ring, active 상태를 가진다.
 - Manual fidelity: `color-mix()`, `clamp()`, gradient, inset shadow는 Figma에서 자동 변환이 제한되므로 수동 확인 대상으로 둔다.
@@ -172,7 +172,7 @@ Note: `main.scss` references `--radius-md` in `.tab-list .tab-list__tab`, and th
 | Component             | Class                                                                                                                                         | Props                                                                                                | Variants / size                                       | States                                                                       | Slots        |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- | ------------ |
 | `AppLayout`           | `.portfolio-page`, `.portfolio-page--app-dock`                                                                                                | `links`, `activeId`, `footerText`, `headerLinks?`, `brandHref?`, `activePath?`, `showAppDock?`       | app dock `Shown/Hidden`                               | page layout state                                                            | default slot |
-| `AppHeader`           | `.app-header`, `.app-header__brand`, `.app-header__nav`, `.app-header__actions`, `.language-toggle`, `.theme-toggle`, `.app-header__menu-btn` | `links`, `activeId`, `brandHref?`, `activePath?`; inline `BaseButton` + `useLocale()` / `useTheme()` | desktop nav, locale/theme toggles, mobile menu button | nav item `Default/Active`; toggles `Default/Hover/Focus`; menu `Open/Closed` | none         |
+| `AppHeader`           | `.app-header`, `.app-header__brand`, `.app-header__nav`, `.app-header__actions`, `.language-toggle`, `.app-header__menu-btn` | `links`, `activeId`, `brandHref?`, `activePath?`; inline `BaseButton` + `useLocale()` | desktop nav, locale toggle, mobile menu button | nav item `Default/Active`; toggles `Default/Hover/Focus`; menu `Open/Closed` | none         |
 | `AppLnb`              | `.app-lnb`, `.app-lnb__backdrop`, `.app-lnb__eyebrow`                                                                                         | `id?`, `open`, `links`, `activeId?`, `activePath?`                                                   | drawer `Open/Closed`                                  | link `Default/Active`; emits `close`                                         | none         |
 | `AppDock`             | `.app-dock-ribbon`, `.app-dock`, `.app-dock__item`, `.app-dock__item--active`                                                                 | `links: { href; label }[]`, `activeId: string`, `activePath?`                                        | section anchor nav                                    | item `Default/Active`                                                        | none         |
 | `AppFooter`           | `.app-footer`, `.app-footer__emoji-line`                                                                                                      | `text`                                                                                               | default footer                                        | `Default`                                                                    | none         |
@@ -232,7 +232,6 @@ Recommended variant properties:
 | `Size`    | `Small`, `Medium`                                                                                          |
 | `State`   | `Default`, `Hover`, `Focus`, `Active`, `Open`, `Closed`, `Static`, `Animated`                              |
 | `Dot`     | `On`, `Off`                                                                                                |
-| `Theme`   | `Light`, `Dark`                                                                                            |
 
 ## TODO for Figma Manual Setup
 

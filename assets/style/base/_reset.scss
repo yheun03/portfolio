@@ -26,11 +26,6 @@ body {
     overflow-x: clip;
 }
 
-html[data-shell-theme="gallery"],
-html[data-shell-theme="gallery"] body {
-    overflow-x: visible;
-}
-
 /* Typography */
 body {
     @include font(body-1);
@@ -192,15 +187,8 @@ html.app--menu-open {
         --grayscale-600: #5c5040;
         --grayscale-300: #b8a992;
         --color-text-muted: #3d3429;
-        --gallery-muted: #3d3429;
     }
 
-    [data-theme="dark"] {
-        --grayscale-600: #cbd5e1;
-        --grayscale-300: #94a3b8;
-        --color-text-muted: #d4d4dc;
-        --gallery-muted: #e8d4a8;
-    }
 }
 
 @keyframes emoji-float {
