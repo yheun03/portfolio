@@ -245,7 +245,7 @@
         margin: 0;
         color: var(--gallery-body-soft);
         font-size: var(--font-size-sm);
-        line-height: 1.55;
+        line-height: 1.6;
     }
 
     .gallery-card__langs {
@@ -307,7 +307,7 @@
     color: var(--gallery-body-soft);
     font-size: clamp(#{$gallery-text-min}, 1.7vw, 0.95rem);
     font-weight: 600;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 /* ----- Editorial sports poster layout ----- */
@@ -747,4 +747,3 @@
         }
     }
 }
-

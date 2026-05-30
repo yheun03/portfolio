@@ -3,7 +3,7 @@
         <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
-                }}</span>
+            }}</span>
             <small>
                 {{ locale === 'ko'
                     ? `실무 ${totalCareerWorkCount} + 개인 ${personalWorkCount}`
@@ -16,7 +16,8 @@
                 panel-id-prefix="works-panel" :list-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'"
                 scroll-anchor="#works" class="works__filters" />
             <p class="section-title__description">{{ t("works.sectionDescription") }}</p>
-            <div class="works__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite">
+            <aside class="works__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite"
+                :aria-label="locale === 'ko' ? '작업 아카이브 요약' : 'Work archive summary'">
                 <p class="works__archive-meta">
                     <strong>{{ totalCareerWorkCount }}</strong>
                     <span>{{ t("works.archiveCountLabel") }}</span>
@@ -28,7 +29,7 @@
                     {{ archiveSummaryText }}
                 </p>
                 <NuxtLink class="works__archive-cta" to="/projects">{{ t('works.fullArchiveLink') }}</NuxtLink>
-            </div>
+            </aside>
         </div>
 
         <div class="works__rail-wrap swipe-rail">

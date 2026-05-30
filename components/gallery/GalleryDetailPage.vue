@@ -61,9 +61,8 @@
                         class="gallery-detail__figure"
                         :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(src) }">
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(src)" />
-                        <img v-else :src="resolveAppPath(src)" :alt="captureAlt(index)"
-                            :loading="index === 0 ? 'eager' : 'lazy'" decoding="async"
-                            :fetchpriority="index === 0 ? 'high' : 'low'" width="1200" height="675" />
+                        <img v-else :src="resolveAppPath(src)" :alt="captureAlt(index)" loading="lazy"
+                            decoding="async" fetchpriority="low" width="1200" height="675" />
                     </figure>
                 </div>
             </section>

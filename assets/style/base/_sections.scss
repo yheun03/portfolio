@@ -30,7 +30,7 @@
     }
 
     &__title {
-        color: $grayscale-900;
+        color: var(--color-text-strong);
         @include font(heading-2);
         line-height: var(--line-height-heading);
         text-wrap: balance;
@@ -45,11 +45,11 @@
 
     &__description {
         max-width: 48ch;
-        margin-top: clamp(1rem, 2.5vw, 1.5rem);
-        color: $grayscale-600;
+        margin-top: clamp(1.25rem, 3vw, 2rem);
+        color: var(--color-text);
         @include font(body-1, $line-height: $line-height-body);
         font-size: $font-size-lg;
-        line-height: var(--line-height-body);
+        line-height: 1.6;
     }
 
     &--minimal &__eyebrow::after {

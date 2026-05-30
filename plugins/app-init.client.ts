@@ -6,4 +6,21 @@ import { useLocaleStore } from '@stores/localeStore';
 
 export default defineNuxtPlugin(() => {
     useLocaleStore().initLocale();
+
+    const html = document.documentElement;
+    const clearSkeleton = () => html.classList.remove('skeleton-active');
+    const fonts = document.fonts;
+
+    window.setTimeout(clearSkeleton, 1800);
+
+    if (fonts?.ready) {
+        fonts.ready.then(clearSkeleton).catch(clearSkeleton);
+        return;
+    }
+
+    if (document.readyState === 'complete') {
+        clearSkeleton();
+    } else {
+        window.addEventListener('load', clearSkeleton, { once: true });
+    }
 });
