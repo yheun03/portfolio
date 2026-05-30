@@ -27,7 +27,7 @@
 | `assets/font/`            | Pretendard 웹폰트 파일. `assets/style/abstracts/_fonts.scss`에서 등록합니다.                                                         |
 | `assets/images/`          | 번들링 대상 이미지. 현재 프로필 이미지처럼 Nuxt 컴포넌트에서 import/resolve될 수 있는 자산을 둡니다.                                 |
 | `assets/style/`           | 전체 SCSS 진입점과 스타일 모듈. `main.scss`가 모든 하위 모듈을 조합합니다.                                                           |
-| `assets/style/abstracts/` | 디자인 토큰(`_tokens.scss`, `_tokens.generated.scss`), 폰트 등록, Sass mixin/function. `design-tokens.json` → `npm run tokens:sync`. |
+| `assets/style/abstracts/` | `_theme.scss`(색), `_tokens.scss`(foundation·Sass), `_fonts.scss`. |
 | `assets/style/base/`      | reset, skeleton, 버튼, 라벨, 배지, 카드, 섹션 타이틀, editorial year 등 primitive 스타일.                                            |
 | `assets/style/layout/`    | 앱 shell, header, footer, dock, page layer, section 레이아웃.                                                                        |
 | `assets/style/home/`      | 홈 섹션별 스타일 — hero, about, works, personal, journey, toolbox, contact, touch/responsive.                                        |

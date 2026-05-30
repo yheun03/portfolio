@@ -42,7 +42,7 @@ export default defineNuxtConfig({
             viewport: 'width=device-width, initial-scale=1',
             meta: [
                 { name: 'color-scheme', content: 'light dark' },
-                { name: 'theme-color', content: '#e8f0ee', media: '(prefers-color-scheme: light)' },
+                { name: 'theme-color', content: '#f2f4f6', media: '(prefers-color-scheme: light)' },
                 { name: 'theme-color', content: '#060a10', media: '(prefers-color-scheme: dark)' },
                 { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
             ],

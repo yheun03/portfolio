@@ -7,7 +7,8 @@
                 <h1 id="token-page-title">디자인 토큰 정리</h1>
                 <p>
                     2026 포트폴리오에서 반복해서 쓰는 색, 여백, 타이포그래피, 형태 값을 목적별 토큰으로
-                    나눠 정리했습니다. 이름은 값 자체보다 화면 안에서 맡는 역할이 먼저 읽히도록 잡았습니다.
+                    나눠 정리했습니다. 색상은 <code>assets/style/abstracts/_theme.scss</code>, 나머지 foundation은
+                    <code>_tokens.scss</code>에서 관리합니다.
                 </p>
                 <div class="token-hero__actions" aria-label="토큰 페이지 이동">
                     <BaseButton label="개인 프로젝트 목록으로" href="/personal" variant="ghost" />
