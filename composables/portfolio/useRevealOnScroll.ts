@@ -1,6 +1,6 @@
 import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
 
-type UseIntersectionAnimationOptions = {
+type UseRevealOnScrollOptions = {
     /** true면 첫 페인트 이후에 관찰자를 붙인다 */
     deferred?: boolean;
 };
@@ -9,7 +9,7 @@ type UseIntersectionAnimationOptions = {
  * 목표: 홈 화면의 지연 등장 애니메이션을 브라우저 관찰자로 가볍게 처리한다.
  * 기능: data-animate 노드 관찰, 동적 마운트 재관찰, reduce-motion 대응을 수행한다.
  */
-export const useIntersectionAnimation = (options: UseIntersectionAnimationOptions = {}) => {
+export const useRevealOnScroll = (options: UseRevealOnScrollOptions = {}) => {
     let observer: IntersectionObserver | null = null;
     let mutationObserver: MutationObserver | null = null;
     let mainEl: HTMLElement | null = null;

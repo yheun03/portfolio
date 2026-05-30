@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import JourneyViewRenderer from '~/components/home/JourneyViewRenderer.vue';
+import JourneyViewRenderer from '~/components/renderers/Page_Home/JourneyViewRenderer.vue';
 
 const { t, locale } = useLocale();
 const {

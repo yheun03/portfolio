@@ -4,9 +4,9 @@
  */
 import { storeToRefs } from 'pinia';
 import { workCategories, type WorkCategory } from '@data/works';
-import { useWorksUiStore } from '@stores/worksUiStore';
+import { useWorksUiStore } from '@stores/works-ui';
 
-export function useWorksTabRenderer() {
+export function useWorksTabs() {
     const worksUi = useWorksUiStore();
     const { selectedCategory, filteredWorks } = storeToRefs(worksUi);
 

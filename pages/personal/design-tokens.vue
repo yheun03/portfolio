@@ -97,7 +97,7 @@ import BaseButton from '~/components/base/BaseButton.vue';
 
 const { t, locale } = useLocale();
 
-const layoutLinks = useSubpageNavLinks();
+const layoutLinks = useSubpageLinks();
 
 const colorTokens = [
     {
