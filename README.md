@@ -16,7 +16,7 @@
 ## 기술 스택
 
 - **Nuxt 3** · Vue 3 · Pinia
-- **SCSS** 디자인 토큰 (`assets/style/abstracts/_tokens.scss`)
+- **SCSS** — 색상 `_theme.scss`, foundation `_tokens.scss`
 - **GSAP** (히어로·모션)
 - **GitHub Pages** 배포 (`baseURL`: `/portfolio/`)
 
@@ -24,7 +24,8 @@
 
 - **[프로젝트 폴더 구조](docs/project-structure.md)** — 전체 폴더별 책임과 `core` 앱 공용 계층
 - **[데이터 · 다국어 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 데이터, 갤러리 라우트
-- **[디자인 시스템](docs/design-system.md)** — 컴포넌트·토큰·Figma 매핑
+- **[디자인 시스템](docs/design-system.md)** — SCSS 토큰·컴포넌트·BEM
+- **[문서 목록](docs/README.md)** — docs 폴더 안내
 - **[Lighthouse 로드맵](docs/lighthouse-roadmap.md)** — 성능·접근성 개선 계획
 
 ## 프로젝트 구조
@@ -78,13 +79,18 @@ npm run deploy   # build + gh-pages 브랜치 배포
 
 ## 디자인 토큰 (요약)
 
-토큰은 `assets/style/abstracts/_tokens.scss`에 정의되며, `nuxt.config.ts`에서 전역 `@use`됩니다. 화면 진입점은 `assets/style/main.scss`입니다.
+진입점: `assets/style/main.scss` (`nuxt.config.ts` → `css`).
 
-- **색상**: `$grayscale-*`, `$primary-*`, `$state-*` (다크 모드는 CSS 변수만 교체)
-- **타이포**: `@include font(heading-1)` 등 프리셋 (`heading-*`, `title-*`, `body-*`, `caption-*`, `label`, `button`)
-- **간격·형태**: `$space-*`, `$radius-*`, `$shadow-*`
+| 파일 | 담당 |
+|------|------|
+| `assets/style/abstracts/_theme.scss` | 색상·그라데이션·shadow (`#0050FF` 브랜드 등) |
+| `assets/style/abstracts/_tokens.scss` | typography, spacing, radius, Sass mixin |
 
-자세한 사용 예와 컴포넌트 매핑은 [design-system.md](docs/design-system.md)를 참고하세요.
+- **색상**: `_theme.scss`만 편집. Sass에서는 `$primary-600`, `var(--color-primary)` 등 사용.
+- **타이포**: `@include font(heading-1)` 등 (`_tokens.scss`의 `$font-presets`)
+- **테마**: 헤더 토글 + `stores/theme.ts` → `html[data-theme]`
+
+자세한 내용은 [design-system.md](docs/design-system.md)를 참고하세요.
 
 ```scss
 @use 'abstracts/tokens' as *;

@@ -34,8 +34,8 @@ const data = [
                 en: 'Organized color, spacing, typography, radius, and shadow into role-based design tokens and built a dedicated overview page',
             },
             {
-                ko: '흩어져 있던 SCSS partial을 화면 스타일 main.scss와 토큰 _tokens.scss로 통합해 현재 규모에 맞는 스타일 관리 구조로 리팩터링',
-                en: 'Refactored scattered SCSS partials into main.scss for screen styles and _tokens.scss for tokens, matching the project scale',
+                ko: 'SCSS를 main.scss(화면)와 _theme.scss(색)·_tokens.scss(foundation)로 분리해 유지보수 구조로 정리',
+                en: 'Split SCSS into main.scss (screens), _theme.scss (colors), and _tokens.scss (foundation) for maintainability',
             },
             {
                 ko: 'core 폴더에 모여 있던 앱 계층을 composables·stores·plugins·i18n·api·data·config 루트 구조로 재배치',
