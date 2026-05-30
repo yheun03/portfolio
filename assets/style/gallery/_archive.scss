@@ -532,7 +532,7 @@
         grid-template-rows: auto auto auto auto;
         row-gap: clamp(0.75rem, 1.6vw, 1rem);
         min-width: 0;
-        min-height: 100%;
+        min-height: 0;
         overflow: visible;
         padding: var(--gallery-surface-pad);
         border: 1px solid var(--gallery-frame);
