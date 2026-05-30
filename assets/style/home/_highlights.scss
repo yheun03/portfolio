@@ -8,8 +8,8 @@
         content-visibility: visible;
         contain-intrinsic-size: none;
         padding-top: calc(var(--space-section-y) + 5rem);
-        grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
-        column-gap: var(--space-6);
+        grid-template-columns: var(--home-section-columns);
+        column-gap: var(--home-section-column-gap);
         align-items: start;
     }
 
@@ -17,7 +17,7 @@
         grid-column: 1;
         grid-row: 1 / -1;
         position: sticky;
-        top: 5.25rem;
+        top: var(--home-sticky-top);
         align-self: start;
         display: grid;
         gap: var(--space-4);
@@ -270,6 +270,6 @@
 
     .highlights__panel-aside {
         position: sticky;
-        top: calc(var(--layout-header-height) + 1.25rem);
+        top: var(--home-sticky-top);
     }
 }

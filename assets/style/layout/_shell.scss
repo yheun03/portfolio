@@ -22,7 +22,6 @@
     overflow-x: clip;
     overflow-y: visible;
 
-    counter-reset: section-count;
     background: var(--gradient-noise);
     scroll-behavior: smooth;
 
@@ -101,10 +100,9 @@
     &:not(.section--hero) {
         display: grid;
         gap: var(--section-gap);
-        counter-increment: section-count;
 
         .section-title::before {
-            content: counter(section-count, decimal-leading-zero);
+            content: var(--section-index, "00");
             display: block;
             margin-bottom: var(--space-2);
             font-family: var(--font-display);
@@ -118,6 +116,34 @@
             -webkit-background-clip: text;
         }
     }
+}
+
+.section--about {
+    --section-index: "01";
+}
+
+.section--works {
+    --section-index: "02";
+}
+
+.section--personal {
+    --section-index: "03";
+}
+
+.section--journey {
+    --section-index: "04";
+}
+
+.section--toolbox {
+    --section-index: "05";
+}
+
+.section--highlights {
+    --section-index: "06";
+}
+
+.section--contact {
+    --section-index: "07";
 }
 
 .section__emoji {

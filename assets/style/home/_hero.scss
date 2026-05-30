@@ -3,7 +3,6 @@
 /* Portfolio hero */
 .hero {
     &.section--hero {
-        width: min(100% - var(--inset-page-hero), var(--layout-hero-max));
         max-width: none;
         padding-top: var(--space-fluid-lg);
     }
@@ -236,6 +235,8 @@
         flex-wrap: wrap;
         gap: var(--space-3);
         grid-area: actions;
+        padding-block-end: clamp(0.5rem, 2vw, 1rem);
+        overflow: visible;
     }
 
     &__metric {
@@ -270,7 +271,7 @@
 }
 
 @media (max-width: #{$bp-max-narrow}) {
-    .section--hero {
+    .hero.section--hero {
         width: 100%;
         max-width: none;
         margin-inline: 0;
@@ -283,13 +284,14 @@
     }
 
     .hero__poster {
-        overflow: clip;
+        overflow: visible;
         display: grid !important;
         flex-direction: unset !important;
         align-items: stretch;
         gap: var(--section-gap);
         min-height: auto;
         padding: 0;
+        padding-block-end: clamp(0.35rem, 1.2vw, 0.65rem);
         border-radius: 0;
     }
 
@@ -355,11 +357,16 @@
 
 @media (min-width: 1920px) {
     .section--hero {
-        width: min(100% - 8rem, 2240px);
+        width: min(100% - var(--page-pad-hero), var(--layout-hero-max));
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: #{$bp-min-laptop}) {
+    .hero.section--hero {
+        width: min(100% - var(--inset-page-hero), var(--layout-hero-max));
+        margin-inline: auto;
+    }
+
     .section--hero {
         padding-block: clamp(2.5rem, 6vw, 6rem) clamp(4rem, 10vw, 9rem);
     }
@@ -486,9 +493,8 @@
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .section--hero {
+    .hero.section--hero {
         padding-top: clamp(0.75rem, 4vw, 1.4rem);
-        padding-bottom: clamp(2.5rem, 10vw, 4rem);
     }
 
     .hero__actions {

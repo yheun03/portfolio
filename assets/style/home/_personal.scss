@@ -2,13 +2,13 @@
 
 /* Portfolio personal */
 .section--personal {
-    grid-template-columns: minmax(260px, 0.45fr) minmax(0, 1fr);
-    column-gap: var(--space-6);
+    grid-template-columns: var(--home-section-columns);
+    column-gap: var(--home-section-column-gap);
     align-items: start;
 
     .personal__head {
         position: sticky;
-        top: 5.25rem;
+        top: var(--home-sticky-top);
         align-self: start;
         display: grid;
         gap: var(--space-3);

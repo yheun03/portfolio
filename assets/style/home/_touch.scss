@@ -208,6 +208,8 @@
     .section--personal .personal__rail-wrap {
         display: grid;
         gap: var(--space-1);
+        width: calc(100% + (var(--page-pad-x) * 2));
+        margin-inline: calc(-1 * var(--page-pad-x));
     }
 
     .highlights__panel {
@@ -239,6 +241,7 @@
         align-items: center;
         justify-content: space-between;
         gap: var(--space-3);
+        padding-inline: var(--page-pad-x);
     }
 }
 
