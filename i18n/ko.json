@@ -105,7 +105,11 @@
         "awards": "수상",
         "certifications": "자격/인증",
         "roles": "전문 역할",
-        "activities": "리더십/활동"
+        "activities": "리더십/활동",
+        "showMore": "더 보기",
+        "collapse": "접기",
+        "visibleCount": "대표 {visible} / {total}건",
+        "tabSummary": "전체 {total}건 중 이 카테고리 {visible}건"
     },
     "contact": {
         "title": "프로젝트 문의",

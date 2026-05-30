@@ -105,7 +105,11 @@
         "awards": "Awards",
         "certifications": "Certifications",
         "roles": "Professional Roles",
-        "activities": "Leadership / Activities"
+        "activities": "Leadership / Activities",
+        "showMore": "Show more",
+        "collapse": "Collapse",
+        "visibleCount": "{visible} of {total} shown",
+        "tabSummary": "{visible} in this category of {total} highlights total."
     },
     "contact": {
         "title": "Project inquiries",
