@@ -165,6 +165,7 @@ usePortfolioSeo(() => ({
     path: '/personal/design-tokens',
     locale: locale.value,
     type: 'article',
+    noindex: true,
     keywords: ['design tokens', '디자인 토큰', 'SCSS', 'Vue portfolio'],
 }));
 </script>

@@ -10,7 +10,7 @@
                 <h1 id="gallery-poster-title" class="gallery-editorial__headline">{{ title }}</h1>
                 <span class="gallery-editorial__rule" aria-hidden="true" />
                 <p class="gallery-editorial__hero-num" aria-hidden="true">{{ heroNumber }}</p>
-                <p v-if="heroAriaLabel" class="gallery-editorial__hero-sr" aria-hidden="true">{{ heroAriaLabel }}</p>
+                <p v-if="heroAriaLabel" class="visually-hidden">{{ heroAriaLabel }}</p>
                 <p class="gallery-editorial__status">{{ statusLabel }}</p>
             </div>
 
@@ -20,7 +20,8 @@
         <nav class="gallery-page__toolbar" :aria-label="sortAriaLabel">
             <div v-if="viewOptions.length" class="gallery-page__control">
                 <span :id="viewLabelId" class="gallery-page__control-label">{{ viewLegend }}</span>
-                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="viewLabelId">
+                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="viewLabelId"
+                    :aria-label="viewAriaLabel">
                     <button v-for="option in viewOptions" :key="option.value" type="button"
                         class="gallery-page__segment"
                         :class="{ 'gallery-page__segment--active': viewMode === option.value }"
@@ -33,7 +34,8 @@
             </div>
             <div v-if="sortOptions.length" class="gallery-page__control">
                 <span :id="sortLabelId" class="gallery-page__control-label">{{ sortLegend }}</span>
-                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="sortLabelId">
+                <div class="gallery-page__segments" role="radiogroup" :aria-labelledby="sortLabelId"
+                    :aria-label="sortAriaLabel">
                     <button v-for="option in sortOptions" :key="option.value" type="button"
                         class="gallery-page__segment"
                         :class="{ 'gallery-page__segment--active': sortMode === option.value }"
@@ -50,7 +52,7 @@
 
 <script setup lang="ts">
 import type { GalleryViewMode } from '@composables/gallery/useGallery';
-import type { WorkSortMode } from '@utils/workSort';
+import type { WorkSortMode } from '@utils/work-timeline';
 
 defineProps<{
     viewMode: GalleryViewMode;
@@ -105,5 +107,12 @@ function handleSegmentKeydown<T extends string>(
     if (nextValue && eventName === 'update:viewMode') {
         emit(eventName, nextValue as GalleryViewMode);
     }
+
+    nextTick(() => {
+        const target = event.currentTarget instanceof HTMLElement
+            ? event.currentTarget.parentElement?.querySelectorAll<HTMLElement>('[role="radio"]')[nextIndex]
+            : undefined;
+        target?.focus();
+    });
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
-    <section id="hello" class="section section--hero">
+    <section id="hello" ref="heroSectionRef" class="section section--hero">
         <div class="hero__poster">
-            <div v-if="heroCanvasReady" class="hero__canvas" aria-hidden="true">
+            <div v-if="heroCanvasVisible" class="hero__canvas" aria-hidden="true">
                 <canvas ref="canvasRef" id="animatedCanvas" />
             </div>
 
@@ -55,10 +55,12 @@
 <script setup lang="ts">
 import { profile } from "@data/site";
 import { splitTypoWords } from '@composables/ui/useTypoInteraction';
+import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
 
 const { t, pick, locale } = useLocale();
 
-const heroCanvasReady = ref(false);
+const heroSectionRef = ref<HTMLElement | null>(null);
+const heroCanvasVisible = ref(false);
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const heroFocusCards = computed(() => profile.focusAreas);
 
@@ -107,7 +109,7 @@ function setupHeroCanvas() {
 
         const base = Math.max(canvas.height / 4, 48);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.font = `900 ${base}px Pretendard`;
+        ctx.font = `800 ${base}px Pretendard`;
         ctx.lineWidth = 2;
         ctx.strokeStyle = "#000";
 
@@ -191,20 +193,26 @@ const statValues = computed(() => counters.map((counter) => counter.value.value)
 const statsRef = ref<HTMLElement | null>(null);
 let statsObserver: IntersectionObserver | null = null;
 
-watch(heroCanvasReady, async (ready) => {
-    if (!ready) return;
+watch(heroCanvasVisible, async (visible) => {
+    if (!visible) return;
     await nextTick();
     setupHeroCanvas();
 });
 
 onMounted(() => {
-    const mountCanvas = () => {
-        heroCanvasReady.value = true;
-    };
-    if (typeof window.requestIdleCallback === "function") {
-        window.requestIdleCallback(mountCanvas, { timeout: 1800 });
-    } else {
-        window.setTimeout(mountCanvas, 600);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion && heroSectionRef.value) {
+        const heroObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) return;
+                scheduleAfterFirstPaint(() => {
+                    heroCanvasVisible.value = true;
+                }, 1600);
+                heroObserver.disconnect();
+            },
+            { rootMargin: "120px 0px", threshold: 0 },
+        );
+        heroObserver.observe(heroSectionRef.value);
     }
 
     if (!statsRef.value) return;

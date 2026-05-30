@@ -120,6 +120,12 @@
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
+    "a11y": {
+        "switchToEn": "영어로 전환",
+        "switchToKo": "한국어로 전환",
+        "localeChangedKo": "표시 언어가 한국어로 변경되었습니다.",
+        "localeChangedEn": "표시 언어가 영어로 변경되었습니다."
+    },
     "meta": {
         "title": "웹 퍼블리셔 은영환 | 웹 프론트엔드 개발자 포트폴리오",
         "description": "웹 퍼블리셔 은영환의 프론트엔드 개발자 포트폴리오입니다. Vue 3, SCSS, 웹 표준, 접근성, SEO, 반응형 UI 퍼블리싱 실무 프로젝트를 정리했습니다.",

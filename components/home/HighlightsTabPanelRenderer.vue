@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import type { HighlightTabKey } from '@app-types/highlights';
+import type { HighlightTabKey } from '@app-types/highlight-tabs';
 
 defineProps<{
     activeTab: HighlightTabKey;

@@ -1,8 +1,15 @@
+import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
+
+type UseIntersectionAnimationOptions = {
+    /** true면 첫 페인트 이후에 관찰자를 붙인다 */
+    deferred?: boolean;
+};
+
 /**
- * 뷰포트 진입 시 `[data-animate]`에 `animate--visible` 부여.
- * 탭 전환·동적 마운트로 나중에 추가된 노드도 `#main-content` 변화를 관찰해 다시 observe 한다.
+ * 목표: 홈 화면의 지연 등장 애니메이션을 브라우저 관찰자로 가볍게 처리한다.
+ * 기능: data-animate 노드 관찰, 동적 마운트 재관찰, reduce-motion 대응을 수행한다.
  */
-export const useIntersectionAnimation = () => {
+export const useIntersectionAnimation = (options: UseIntersectionAnimationOptions = {}) => {
     let observer: IntersectionObserver | null = null;
     let mutationObserver: MutationObserver | null = null;
     let mainEl: HTMLElement | null = null;
@@ -26,7 +33,7 @@ export const useIntersectionAnimation = () => {
         mainEl?.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => el.classList.add('animate--visible'));
     };
 
-    onMounted(() => {
+    const start = () => {
         if (!import.meta.client) return;
 
         mainEl = document.getElementById('main-content');
@@ -61,6 +68,15 @@ export const useIntersectionAnimation = () => {
         if (mainEl) {
             mutationObserver.observe(mainEl, { childList: true, subtree: true });
         }
+    };
+
+    onMounted(() => {
+        if (!import.meta.client) return;
+        if (options.deferred) {
+            scheduleAfterFirstPaint(start, 2200);
+            return;
+        }
+        start();
     });
 
     onBeforeUnmount(() => {

@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts" generic="TEra extends EditorialYearEraItem = EditorialYearEraItem">
-import type { EditorialYearEntriesTag, EditorialYearEraItem, EditorialYearVariant } from '@config/editorialYear';
+import type { EditorialYearEntriesTag, EditorialYearEraItem, EditorialYearVariant } from '@app-types/editorial-year';
 
 const props = withDefaults(
     defineProps<{

@@ -1,6 +1,11 @@
+/**
+ * 목표: 프로젝트/개인 작업 갤러리 화면에 필요한 데이터와 뷰 상태를 구성한다.
+ * 기능: 갤러리 변형 설정, 정렬, 보기 모드 저장, SEO, 상세 라우트 작업 조회를 제공한다.
+ */
 import type { WorkItem } from '@data/works';
 import { careerWorks, getCareerWorkById, getPersonalWorkById, personalWorksList } from '@data/works';
-import { createWorkYearEntries, groupWorkYearEntries, sortWorksByStartDesc, sortWorksByTitleAsc, type WorkSortMode } from '@utils/workSort';
+import { createWorkYearEntries, groupWorkYearEntries, sortWorksByStartDesc, sortWorksByTitleAsc, type WorkSortMode } from '@utils/work-timeline';
+import { buildAbsoluteSeoUrl } from '@utils/seo-url';
 
 export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
@@ -125,30 +130,55 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: readonl
     const viewLegend = computed(() => t('gallery.viewLegend'));
     const viewAriaLabel = computed(() => t('gallery.viewAriaLabel'));
 
-    usePortfolioSeo(() => ({
-        title: t(config.metaTitleKey),
-        description: t(config.metaDescriptionKey),
-        path: config.basePath,
-        locale: locale.value,
-        keywords: works.flatMap((work) => [pick(work.title), ...work.languages, ...work.tech]),
-        jsonLd: {
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: t(config.metaTitleKey),
+    usePortfolioSeo(() => {
+        const homeUrl = buildAbsoluteSeoUrl('/');
+        const archiveUrl = buildAbsoluteSeoUrl(config.basePath);
+
+        return {
+            title: t(config.metaTitleKey),
             description: t(config.metaDescriptionKey),
-            url: `https://yheun03.github.io/portfolio${config.basePath}`,
-            inLanguage: locale.value === 'ko' ? 'ko-KR' : 'en-US',
-            mainEntity: {
-                '@type': 'ItemList',
-                itemListElement: sortedWorks.value.map((work, index) => ({
-                    '@type': 'ListItem',
-                    position: index + 1,
-                    name: pick(work.title),
-                    url: `https://yheun03.github.io/portfolio${config.basePath}/${work.id}`,
-                })),
-            },
-        },
-    }));
+            path: config.basePath,
+            locale: locale.value,
+            keywords: works.flatMap((work) => [pick(work.title), ...work.languages, ...work.tech]),
+            jsonLd: [
+                {
+                    '@context': 'https://schema.org',
+                    '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        {
+                            '@type': 'ListItem',
+                            position: 1,
+                            name: locale.value === 'ko' ? '홈' : 'Home',
+                            item: homeUrl,
+                        },
+                        {
+                            '@type': 'ListItem',
+                            position: 2,
+                            name: t(config.titleKey),
+                            item: archiveUrl,
+                        },
+                    ],
+                },
+                {
+                    '@context': 'https://schema.org',
+                    '@type': 'CollectionPage',
+                    name: t(config.metaTitleKey),
+                    description: t(config.metaDescriptionKey),
+                    url: archiveUrl,
+                    inLanguage: locale.value === 'ko' ? 'ko-KR' : 'en-US',
+                    mainEntity: {
+                        '@type': 'ItemList',
+                        itemListElement: sortedWorks.value.map((work, index) => ({
+                            '@type': 'ListItem',
+                            position: index + 1,
+                            name: pick(work.title),
+                            url: buildAbsoluteSeoUrl(`${config.basePath}/${work.id}`),
+                        })),
+                    },
+                },
+            ],
+        };
+    });
 
     return {
         t,

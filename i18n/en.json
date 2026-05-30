@@ -120,6 +120,12 @@
     "footer": {
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
+    "a11y": {
+        "switchToEn": "Switch to English",
+        "switchToKo": "Switch to Korean",
+        "localeChangedEn": "Display language switched to English.",
+        "localeChangedKo": "Display language switched to Korean."
+    },
     "meta": {
         "title": "Eunyounghwan | Web Publisher & Frontend Developer Portfolio",
         "description": "Frontend developer and web publisher portfolio by Eunyounghwan, covering Vue 3, SCSS, web standards, accessibility, SEO, responsive UI publishing, and production projects.",

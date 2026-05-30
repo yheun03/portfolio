@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { HighlightTabKey } from '@app-types/highlights';
+import type { HighlightTabKey } from '@app-types/highlight-tabs';
 import { useHighlightsTabRenderer } from '@composables/portfolio/useHighlightsTabRenderer';
 import HighlightsTabPanelRenderer from '~/components/home/HighlightsTabPanelRenderer.vue';
 

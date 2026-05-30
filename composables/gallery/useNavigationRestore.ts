@@ -1,3 +1,7 @@
+/**
+ * 목표: 갤러리 목록과 상세 페이지를 오갈 때 사용자의 위치와 포커스를 복원한다.
+ * 기능: 카드 활성화, 스냅샷 저장/복원, Escape 뒤로가기, 키보드 포커스 이동을 제공한다.
+ */
 import type { MaybeRef } from 'vue';
 
 const GALLERY_ENTRY_ACTIVE_CLASS = 'is-gallery-entry-active';
@@ -43,9 +47,10 @@ function findEntryAtViewportTarget(scope: HTMLElement, ratio = VIEWPORT_CENTER_R
         return nextDistance < currentDistance ? next : current;
     });
 
-    return candidates
-        .filter(({ rect }) => Math.abs(rect.top - closest.rect.top) <= ROW_TOP_TOLERANCE)
-        .sort((a, b) => a.rect.left - b.rect.left)[0]?.entry ?? closest.entry;
+    return (
+        candidates.filter(({ rect }) => Math.abs(rect.top - closest.rect.top) <= ROW_TOP_TOLERANCE).sort((a, b) => a.rect.left - b.rect.left)[0]
+            ?.entry ?? closest.entry
+    );
 }
 
 /** 카드 세로 중앙이 뷰포트 높이의 50%에 오도록 스크롤 */

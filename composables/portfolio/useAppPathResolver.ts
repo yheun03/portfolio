@@ -1,8 +1,9 @@
+/**
+ * 목표: GitHub Pages baseURL 환경에서도 앱 경로와 정적 파일 경로를 일관되게 해석한다.
+ * 기능: public/라우트 경로 보정과 NuxtLink 사용 가능 여부 판별을 제공한다.
+ */
 import { joinURL } from 'ufo';
 
-/**
- * `app.baseURL`(예: `/portfolio/`) 아래에 두는 public·라우트 경로 처리.
- */
 export function useAppPathResolver() {
     const baseURL = useRuntimeConfig().app.baseURL;
 

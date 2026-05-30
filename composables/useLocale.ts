@@ -1,6 +1,10 @@
+/**
+ * 목표: 정적 i18n 메시지와 locale별 데이터 선택을 간단한 composable로 제공한다.
+ * 기능: 번역 key 조회, { ko, en } 값 선택, locale 전환 액션 연결을 수행한다.
+ */
 import ko from '@i18n/ko.json';
 import en from '@i18n/en.json';
-import { useLocaleStore, type Locale } from '@stores/appPreferenceStore';
+import { useLocaleStore, type Locale } from '@stores/localeStore';
 
 type LocaleMessageValue = string | { readonly [key: string]: LocaleMessageValue };
 type LocaleMessages = Record<string, LocaleMessageValue>;

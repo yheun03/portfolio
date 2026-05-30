@@ -4,9 +4,9 @@
 
 ## 무엇이 들어 있나
 
-| 구분                  | 설명                                                                | 접근                                 |
-| --------------------- | ------------------------------------------------------------------- | ------------------------------------ |
-| **포트폴리오 (Nuxt)** | 프로필, 경력·개인 프로젝트, 갤러리, 다국어(ko/en), 일관된 단일 테마 | `/` · `/projects` · `/personal`      |
+| 구분                  | 설명                                                                | 접근                                           |
+| --------------------- | ------------------------------------------------------------------- | ---------------------------------------------- |
+| **포트폴리오 (Nuxt)** | 프로필, 경력·개인 프로젝트, 갤러리, 다국어(ko/en), 일관된 단일 테마 | `/` · `/projects` · `/personal`                |
 | **이력서**            | 채용·지원용 PDF 문서                                                | [`/files/Resume.pdf`](public/files/Resume.pdf) |
 
 홈 **연락처** 섹션의 「이력서 보기」 링크가 `public/files/Resume.pdf`로 연결됩니다.
@@ -22,28 +22,29 @@
 
 ## 문서
 
-- **[프로젝트 폴더 구조](docs/project-structure.md)** — 전체 폴더별 책임과 통합된 `core` 구조
+- **[프로젝트 폴더 구조](docs/project-structure.md)** — 전체 폴더별 책임과 `core` 앱 공용 계층
 - **[데이터 · 다국어 구조](docs/project-data-notes.md)** — `data`, `i18n`, 작업 데이터, 갤러리 라우트
 - **[디자인 시스템](docs/design-system.md)** — 컴포넌트·토큰·Figma 매핑
 - **[Lighthouse 로드맵](docs/lighthouse-roadmap.md)** — 성능·접근성 개선 계획
 
 ## 프로젝트 구조
 
-Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정성 코드와 순수 유틸은 `core/`로 통합했습니다. 전체 폴더 설명은 [project-structure.md](docs/project-structure.md)를 기준으로 합니다.
+Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정·타입·순수 유틸은 `core/` 앱 공용 계층으로 분리했습니다. 전체 폴더 설명은 [project-structure.md](docs/project-structure.md)를 기준으로 합니다.
 
 ```
 ├── components/          # Vue 컴포넌트 (폴더명 PascalCase)
-│   ├── Base/            # 버튼, 카드, 라벨 등 primitive
-│   ├── Work/            # 작업 카드, 타임라인, 갤러리 카드
-│   ├── Home/            # 홈 섹션 (Hero, Works, About, …)
-│   ├── Layout/          # AppLayout, Header, Footer, Lnb, Dock
-│   ├── Gallery/         # 프로젝트 아카이브·상세
-│   └── Motion/          # 모션 타이포그래피
+│   ├── base/            # 버튼, 카드, 라벨 등 primitive
+│   ├── work/            # 작업 카드, 타임라인, 갤러리 카드
+│   ├── home/            # 홈 섹션 (Hero, Works, About, …)
+│   ├── layout/          # AppLayout, Header, Footer, Lnb, Dock
+│   ├── gallery/         # 프로젝트 아카이브·상세
+│   └── motion/          # 모션 타이포그래피
 ├── pages/               # 라우트 (index, projects, personal)
 ├── data/
 │   ├── works/           # 경력·개인 프로젝트 (카테고리별 TS)
 │   └── site/            # 프로필, 소개, 여정, 스킬, 하이라이트
-├── core/                # config, router options, shared types, utils
+├── app/                 # Nuxt 앱 옵션 (router.options.ts)
+├── core/                # config, app types, pure utils
 │   ├── config/
 │   ├── types/
 │   └── utils/

@@ -1,9 +1,9 @@
-/** `assets/style/_tokens.scss` — $bp-max-narrow (1023px) 와 동일 */
+/**
+ * 목표: 컴포넌트가 좁은 화면 레이아웃 여부를 반응형으로 판단하게 한다.
+ * 기능: media query 구독과 boolean 상태를 제공한다.
+ */
 const NARROW_LAYOUT_MAX = '1023px';
 
-/**
- * narrow layout 기준 — 탭 리스트 aria-orientation 등에 사용
- */
 export function useNarrowLayout() {
     const isNarrow = ref(false);
     let mq: MediaQueryList | null = null;

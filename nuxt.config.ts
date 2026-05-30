@@ -1,24 +1,67 @@
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { defineNuxtConfig } from 'nuxt/config';
+import { createJiti } from 'jiti';
 import { fileURLToPath } from 'node:url';
 import { joinURL } from 'ufo';
+
+const rootDir = fileURLToPath(new URL('.', import.meta.url));
+const jiti = createJiti(rootDir);
+
+function writePublicSitemap() {
+    const { buildSitemapXml } = jiti('./core/sitemap/build-sitemap.ts') as typeof import('./core/sitemap/build-sitemap');
+    writeFileSync(join(rootDir, 'public/sitemap.xml'), buildSitemapXml());
+}
 
 /** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
+// 빌드 시 해시 없는 public 경로 — LCP용 Pretendard Bold preload
+const pretendardBoldHref = joinURL(resolvedBaseURL, 'fonts/Pretendard-Bold.woff2');
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
-    experimental: { appManifest: false },
+    experimental: {
+        appManifest: false,
+        defaults: {
+            nuxtLink: {
+                prefetch: false,
+            },
+        },
+    },
     /** 정적 배포 시 CSS를 HTML에 인라인해 렌더 차단 외부 stylesheet 완화 */
     features: { inlineStyles: true },
 
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            link: [{ rel: 'icon', type: 'image/svg+xml', href: faviconHref }],
+            htmlAttrs: { lang: 'ko' },
+            charset: 'utf-8',
+            viewport: 'width=device-width, initial-scale=1',
+            meta: [
+                { name: 'color-scheme', content: 'light' },
+                { name: 'theme-color', content: '#f7f2ea' },
+                { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
+            ],
+            link: [
+                { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
+                { rel: 'apple-touch-icon', href: faviconHref },
+                {
+                    rel: 'preload',
+                    href: pretendardBoldHref,
+                    as: 'font',
+                    type: 'font/woff2',
+                    crossorigin: 'anonymous',
+                },
+            ],
         },
+    },
+
+    hooks: {
+        /** `nuxt build` / `nuxt generate` 공통 — Nuxt 3에는 `generate:before` 훅이 없음 */
+        'build:before': writePublicSitemap,
     },
 
     modules: ['@pinia/nuxt'],
@@ -34,14 +77,6 @@ export default defineNuxtConfig({
         '@utils': fileURLToPath(new URL('./core/utils', import.meta.url)),
     },
 
-    hooks: {
-        'pages:routerOptions'({ files }) {
-            files.push({
-                path: fileURLToPath(new URL('./core/router.options.ts', import.meta.url)),
-            });
-        },
-    },
-
     imports: {
         dirs: ['~/composables', '~/composables/**'],
     },
@@ -50,12 +85,7 @@ export default defineNuxtConfig({
         storesDirs: ['~/stores'],
     },
 
-    plugins: [
-        '~/plugins/app-init.client',
-        '~/plugins/analytics.client',
-        '~/plugins/gallery-fonts.client',
-        '~/plugins/navigation-restore.client',
-    ],
+    plugins: ['~/plugins/app-init.client', '~/plugins/analytics.client', '~/plugins/gallery-fonts.client', '~/plugins/navigation-restore.client'],
 
     components: [
         { path: '~/components/base', pathPrefix: false },
@@ -76,6 +106,9 @@ export default defineNuxtConfig({
                 output: {
                     manualChunks(id) {
                         if (id.includes('node_modules/gsap')) return 'gsap';
+                        if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) return 'vue';
+                        if (id.includes('node_modules/pinia')) return 'pinia';
+                        if (id.includes('/data/works')) return 'works-data';
                     },
                 },
             },
@@ -110,6 +143,7 @@ export default defineNuxtConfig({
         routeRules: {
             '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
             '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+            '/portfolio/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
             '/images/**': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
             '/assets/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
             '/**/*.webp': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },

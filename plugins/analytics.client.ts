@@ -1,3 +1,7 @@
+/**
+ * 목표: 초기 렌더를 방해하지 않도록 외부 분석 스크립트를 지연 로드한다.
+ * 기능: GTM과 Naver WCS를 idle/load/user interaction 이후 한 번만 주입한다.
+ */
 declare global {
     interface Window {
         dataLayer?: Record<string, unknown>[];

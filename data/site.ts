@@ -8,7 +8,7 @@ import journeyData from './site/journey';
 import profileData from './site/profile';
 import skillsData from './site/skills';
 
-import type { HighlightTabKey } from '@app-types/highlights';
+import type { HighlightTabKey } from '@app-types/highlight-tabs';
 
 /** `site/journey.ts` 의 `as const` 데이터와 동기화된 타입 (readonly 추론 유지) */
 export type JourneyCompanyBlock = (typeof journeyData.companies)[number];

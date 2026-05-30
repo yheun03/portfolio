@@ -1,3 +1,7 @@
+/**
+ * 목표: 숫자 지표가 뷰포트에 진입했을 때 자연스럽게 증가하는 표시값을 만든다.
+ * 기능: 카운트 시작 제어와 reduce-motion 대응 값을 제공한다.
+ */
 export const useCountUp = (end: number, duration = 1200) => {
     const value = ref(0);
     const started = ref(false);
