@@ -23,7 +23,8 @@
                 </ul>
             </section>
 
-            <div class="about__workflow surface-card surface-card--flow" data-animate>
+            <section class="about__workflow surface-card surface-card--flow" data-animate
+                :aria-label="locale === 'ko' ? '작업 흐름' : 'Workflow'">
                 <h3 class="surface-card__title">{{ t("about.workflowTitle") }}</h3>
                 <ol class="flow-steps" :aria-label="locale === 'ko' ? '단계' : 'Steps'">
                     <li v-for="(step, index) in workflowSteps" :key="step">
@@ -31,7 +32,7 @@
                         <span class="flow-steps__label">{{ step }}</span>
                     </li>
                 </ol>
-            </div>
+            </section>
         </div>
     </section>
 </template>

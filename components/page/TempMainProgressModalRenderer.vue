@@ -281,7 +281,7 @@ onMounted(() => {
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
     font-weight: 520;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 .temp-main-modal__actions {

@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     app: {
         baseURL: resolvedBaseURL,
         head: {
-            htmlAttrs: { lang: 'ko' },
+            htmlAttrs: { lang: 'ko', class: 'skeleton-active' },
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
             meta: [

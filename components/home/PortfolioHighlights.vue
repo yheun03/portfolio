@@ -5,8 +5,10 @@
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalHighlightCount }}{{ locale === 'ko' ? '건' : '' }}</span>
             <small>
                 {{ locale === 'ko'
-                    ? `수상 ${tabCounts.awards} · 자격 ${tabCounts.certifications} · 역할 ${tabCounts.roles} · 활동 ${tabCounts.activities}`
-                    : `${tabCounts.awards} awards · ${tabCounts.certifications} certs · ${tabCounts.roles} roles · ${tabCounts.activities} activities` }}
+                    ? `수상 ${tabCounts.awards} · 자격 ${tabCounts.certifications} · 역할 ${tabCounts.roles} · 활동
+                ${tabCounts.activities}`
+                    : `${tabCounts.awards} awards · ${tabCounts.certifications} certs · ${tabCounts.roles} roles ·
+                ${tabCounts.activities} activities` }}
             </small>
         </div>
         <div class="highlights__title-col">
@@ -16,7 +18,8 @@
                 scroll-anchor="#highlights" class="highlights__filters"
                 @update:model-value="(key) => selectTab(key as HighlightTabKey)" />
             <p class="section-title__description">{{ t('highlights.summary') }}</p>
-            <div class="highlights__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite">
+            <aside class="highlights__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite"
+                :aria-label="locale === 'ko' ? '하이라이트 요약' : 'Highlights summary'">
                 <p class="highlights__archive-meta">
                     <strong>{{ activeItems.length }}</strong>
                     <span>{{ activeTabLabel }}</span>
@@ -27,7 +30,7 @@
                 <p class="highlights__archive-caption">
                     {{ archiveSummaryText }}
                 </p>
-            </div>
+            </aside>
         </div>
 
         <div class="highlights__workspace" data-animate>
