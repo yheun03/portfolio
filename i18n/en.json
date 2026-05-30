@@ -134,6 +134,20 @@
         "eyebrow": "Explore",
         "title": "Menu"
     },
+    "error": {
+        "eyebrow404": "Page not found",
+        "eyebrow500": "Something went wrong",
+        "title404": "There isn’t a page at this address yet",
+        "title500": "This screen didn’t load quite right",
+        "message404": "The link may have moved, or this page might not be published yet. Head home, or let me know if you followed a broken link.",
+        "message500": "Looks like a hiccup on my side. Please try again in a moment, or head back to the home page.",
+        "pathLabel": "Requested path",
+        "home": "Back to portfolio home",
+        "report": "Report a broken link",
+        "reportSubject": "[Portfolio] Broken link report",
+        "reportBody": "I reached the page below, but it didn’t load as expected.",
+        "seoTitle": "Error {code} · Eunyounghwan Portfolio"
+    },
     "a11y": {
         "switchToEn": "Switch to English",
         "switchToKo": "Switch to Korean",
