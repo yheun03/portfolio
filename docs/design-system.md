@@ -1,17 +1,16 @@
 # Design System
 
-코드와 Figma(Tokens Studio) 사이의 기준 문서입니다. **런타임 CSS 변수의 단일 소스는 `design-tokens.json`**이며, `npm run tokens:sync`로 `assets/style/abstracts/_tokens.generated.scss`가 생성됩니다. Sass mixin·breakpoint·responsive override는 `assets/style/abstracts/_tokens.scss`에 남깁니다.
+코드 기준 디자인 시스템 문서입니다. **색상·그라데이션·시맨틱 surface는 `assets/style/abstracts/_theme.scss`만** 편집합니다. 타이포·spacing·radius·layout·Sass mixin은 `assets/style/abstracts/_tokens.scss`에 있습니다.
 
 ## Token Pipeline
 
-| 단계    | 파일                   | 역할                                                             |
-| ------- | ---------------------- | ---------------------------------------------------------------- |
-| 1. 편집 | `design-tokens.json`   | Figma/Tokens Studio import + `palette`·`typography`·`spacing` 등 |
-| 2. 생성 | `npm run tokens:sync`  | `:root` 블록 → `_tokens.generated.scss`                          |
-| 3. 검증 | `npm run tokens:check` | JSON과 generated 파일 drift 확인                                 |
-| 4. Sass | `_tokens.scss`         | `$bp-*`, `@mixin font`, narrow/mobile `:root` override           |
+| 파일            | 역할                                                                 |
+| --------------- | -------------------------------------------------------------------- |
+| `_theme.scss`   | 색 팔레트, `--color-*`, gradient, shadow, gallery/shell 색 alias     |
+| `_tokens.scss`  | `:root` foundation(폰트·여백·radius·layout), `$bp-*`, `@mixin font` |
+| `main.scss`     | `@use tokens` → `@use theme` 순으로 로드 (theme이 색을 최종 확정)    |
 
-`palette` 토큰은 프로덕션 editorial blue 테마(`#2f6fa7` 계열)를 반영합니다. `semantic/dark`는 Figma Dark 모드용이며, **현재 사이트는 Light `:root`만 사용**합니다.
+라이트/다크는 `:root[data-theme="light|dark"]`와 `prefers-color-scheme`로 전환합니다.
 
 ## Design Principles
 
@@ -22,12 +21,12 @@
 
 ## Color Tokens (Light / Production)
 
-Source: `design-tokens.json` → `palette`, `scripts/sync-design-tokens.mjs` computed aliases
+Source: `assets/style/abstracts/_theme.scss` (`theme-light-palette` mixin)
 
 | Token                    | Value                              | Usage                            |
 | ------------------------ | ---------------------------------- | -------------------------------- |
-| `--color-primary`        | `var(--primary-600)` → `#255987`   | CTA, focus, active, label accent |
-| `--color-primary-dark`   | `var(--primary-700)` → `#1d4568`   | work tone accent                 |
+| `--color-primary`        | `#0050ff` (`--primary-600`)        | CTA, focus, active, label accent |
+| `--color-primary-dark`   | `#0040cc` (`--primary-700`)        | work tone accent                 |
 | `--color-accent-hot`     | `#476f9f`                          | editorial mix accent             |
 | `--color-accent-mint`    | `#7898b8`                          | editorial mix accent             |
 | `--color-bg`             | `var(--grayscale-100)` → `#e7eef7` | page background                  |
@@ -119,7 +118,7 @@ Narrow/mobile breakpoint에서 display scale은 `_tokens.scss` media query가 ov
 
 | Folder                    | 담당                                                                       |
 | ------------------------- | -------------------------------------------------------------------------- |
-| `assets/style/abstracts/` | `_tokens.scss`, `_tokens.generated.scss`, `_fonts.scss`                    |
+| `assets/style/abstracts/` | `_theme.scss`, `_tokens.scss`, `_fonts.scss`                                 |
 | `assets/style/base/`      | reset, skeleton, button, label, badge, card, section-title, year-timeline  |
 | `assets/style/layout/`    | shell, header, footer, dock                                                |
 | `assets/style/home/`      | hero, about, works, personal, journey, toolbox, contact, touch, responsive |
@@ -198,15 +197,13 @@ Narrow/mobile breakpoint에서 display scale은 `_tokens.scss` media query가 ov
 | `.tab-list`                | vertical LNB-style filter (desktop works) |
 | `.tab-list.tab-list--rail` | horizontal scroll rail (narrow viewport)  |
 
-## Figma Mapping Guide
+## Figma / Handoff
 
-1. Import `design-tokens.json` into Tokens Studio.
-2. Light theme: `palette` + `semantic/light` + `typography` + `spacing` + `radius` + `layout`.
-3. Dark theme: `semantic/dark` (Figma only until site supports `[data-theme=dark]`).
-4. After JSON edits: run `npm run tokens:sync` and commit `_tokens.generated.scss`.
-5. Preserve CSS variable names in token `$description` or `$cssVar` fields.
-6. For `color-mix()` / multi-stop gradients: sample in browser or use `scripts/sync-design-tokens.mjs` `COMPUTED_ROOT` definitions.
-7. Convert rem with `1rem = 16px`.
+1. 색 변경: `_theme.scss`의 `theme-light-palette` / `dark-theme` mixin만 수정.
+2. 타이포·spacing·radius: `_tokens.scss`의 `:root` foundation 또는 responsive override.
+3. CSS 변수명은 컴포넌트·SCSS에서 이미 쓰는 `--color-*`, `--space-*` 이름을 유지.
+4. `color-mix()`·멀티 스톱 gradient는 브라우저에서 확인 후 theme mixin에 반영.
+5. rem 기준: `1rem = 16px`.
 
 ## Naming Convention
 

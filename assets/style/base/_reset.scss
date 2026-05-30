@@ -36,7 +36,7 @@ body {
     word-break: keep-all;
 }
 
-/* 라벨·캡션: UI 최소 14px (design-tokens --font-size-xs) */
+/* 라벨·캡션: UI 최소 14px (--font-size-xs) */
 :where(.base-label, .base-label--technical, small) {
     @include font(label);
 }
