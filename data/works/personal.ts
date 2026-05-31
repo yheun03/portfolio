@@ -118,6 +118,105 @@ const data = [
         ],
     },
     {
+        id: 'singil-bmc',
+        category: 'personal',
+        title: {
+            ko: '신길교회 야구 선교단 홈페이지',
+            en: 'Singil Church Baseball Mission Website',
+        },
+        period: '2026.05.31',
+        type: {
+            ko: '개인 / Nuxt 커뮤니티 사이트',
+            en: 'Personal / Nuxt community website',
+        },
+        role: {
+            ko: '기획·디자인·퍼블리싱·프론트엔드 개발 전체 담당',
+            en: 'End-to-end planning, design, publishing, and frontend development',
+        },
+        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Pinia', 'SCSS'],
+        introduction: {
+            ko: '2026년 5월 31일 하루 만에 제작한 신길교회 야구 선교단 공식 홈페이지입니다. Nuxt 3 기반으로 TEAM·GAMES·STATS·MEDIA IA를 잡고, JSON 중심의 경기 기록·MVP 통계·선수 명단·David TV(YouTube)·구단 소식을 연결했습니다. GitHub 커밋 14회(약 3시간)로 프로젝트 설정부터 GitHub Pages(`/singil-bmc/`) 배포 URL까지 이어 붙였습니다.',
+            en: 'The official Singil Church Baseball Mission website, built in a single day on May 31, 2026. On Nuxt 3, it wires TEAM, GAMES, STATS, and MEDIA IA to JSON-driven game records, MVP stats, roster, David TV (YouTube), and news. Fourteen GitHub commits (~3 hours) took it from initial setup to a live GitHub Pages deployment at `/singil-bmc/`.',
+        },
+        myWorks: [
+            {
+                ko: '앱 제목·base URL·i18n 번역을 선교단 브랜드에 맞게 바꾸고 HOME·TEAM·GAMES·STATS·MEDIA LNB 구조 설계',
+                en: 'Retargeted app title, base URL, and i18n copy for the mission brand and designed HOME·TEAM·GAMES·STATS·MEDIA LNB structure',
+            },
+            {
+                ko: '게임 기록·MVP·선수 JSON 데이터 구조 정리, 조별 그룹·플레이어 ID 형식 통일, 기록 갱신 npm 스크립트 추가',
+                en: 'Normalized game record, MVP, and player JSON schemas with group fields and player IDs, plus npm scripts to refresh records',
+            },
+            {
+                ko: '기록 페이지 탭 UI·MVP 조별 필터·시즌 승패 요약·경기 상세 승패 배지로 STATS 영역 구현',
+                en: 'Built the STATS area with tabbed records, group-filtered MVP, season W/L/T summary, and win/loss badges on game detail pages',
+            },
+            {
+                ko: 'A·D조 중복 선수 카드 병합, `useSiteLnb`로 하위 메뉴 active 정확 매칭, pages 라우트 구조 단순화',
+                en: 'Merged duplicate A/D roster cards, matched sub-menu active state via `useSiteLnb`, and simplified pages routing',
+            },
+            {
+                ko: 'David TV YouTube 링크·썸네일·게시일 JSON 정리 및 날짜 내림차순 정렬, 경기·뉴스 페이지 동적 SEO 메타 설정',
+                en: 'Structured David TV YouTube JSON (links, thumbnails, dates) with date-desc sorting and dynamic SEO meta for games and news',
+            },
+            {
+                ko: '헤더 aria 속성·드롭다운 그룹 active 상태·탭 pill 변형 등 SCSS/UI 마감과 GitHub Pages 배포 설정',
+                en: 'Polished SCSS/UI with header aria, dropdown group active states, pill tabs, and GitHub Pages deployment config',
+            },
+        ],
+        achievements: [
+            {
+                ko: 'GitHub 커밋 14회·약 3시간 만에 IA·기록·통계·명단·미디어·배포 URL까지 하루 안에 완성',
+                en: 'Shipped IA, records, stats, roster, media, and deployment URL in ~3 hours across 14 GitHub commits in one day',
+            },
+            {
+                ko: '월간·주간 MVP 페이지를 통합 MVP 페이지 하나로 정리하고, 내비·푸터 링크를 함께 맞춰 STATS 흐름 단순화',
+                en: 'Consolidated monthly/weekly MVP pages into one MVP route and aligned nav and footer links for a simpler STATS flow',
+            },
+            {
+                ko: '정적 JSON 데이터만으로 경기 결과·MVP·영상 목록을 갱신할 수 있는 운영 구조를 README와 스크립트로 정리',
+                en: 'Documented a static JSON workflow (README + scripts) to update game results, MVP, and video lists without a backend',
+            },
+        ],
+        points: [
+            {
+                ko: '하루 집중 개발로 교회 공동체에 바로 쓸 수 있는 Nuxt 3 정적 사이트 골격을 완성',
+                en: 'A focused one-day build that delivered a usable Nuxt 3 static site skeleton for a church community',
+            },
+            {
+                ko: '커밋 이력 기준으로 기록·MVP·명단·미디어 기능을 순차적으로 쌓아 올린 실제 작업 흐름이 남아 있음',
+                en: 'Commit history shows records, MVP, roster, and media features stacked in a clear, sequential workflow',
+            },
+            {
+                ko: 'GitHub Pages base path(`/singil-bmc/`)와 접근성·SEO 메타까지 포함한 배포 가능한 1차 버전',
+                en: 'A deployable v1 including GitHub Pages base path (`/singil-bmc/`), accessibility, and SEO metadata',
+            },
+        ],
+        pin: true,
+        duration: {
+            ko: '1일 (GitHub 커밋 14회)',
+            en: '1 day (14 GitHub commits)',
+        },
+        captures: ['/images/projects/placeholder.svg'],
+        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia'],
+        links: [
+            {
+                label: {
+                    ko: '데모 보기',
+                    en: 'View demo',
+                },
+                href: 'https://yheun03.github.io/singil-bmc/',
+            },
+            {
+                label: {
+                    ko: 'GitHub',
+                    en: 'GitHub',
+                },
+                href: 'https://github.com/yheun03/singil-bmc',
+            },
+        ],
+    },
+    {
         id: 'clone-kakaotalk',
         category: 'personal',
         title: {
