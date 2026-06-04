@@ -217,6 +217,101 @@ const data = [
         ],
     },
     {
+        id: 'clone-flighty',
+        category: 'personal',
+        title: {
+            ko: '플라이티 클론 데모',
+            en: 'Flighty Clone Demo',
+        },
+        period: '2026.05.24~',
+        type: {
+            ko: '개인 / Nuxt 클론 서비스',
+            en: 'Personal / Nuxt clone service',
+        },
+        role: {
+            ko: '기획·디자인 분석·피그마 재설계·프론트엔드 개발 전체 담당',
+            en: 'End-to-end planning, design analysis, Figma redesign, and frontend development',
+        },
+        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Pinia', 'SCSS', 'Figma', 'AG Grid', 'Chart.js'],
+        introduction: {
+            ko: '친구 덕분에 항덕이 되었고, 22번의 비행 끝에 공부 겸 플라이티를 클론 개발하고자 시작한 개인 프로젝트입니다. 좋은 디자인과 좋은 UX로 본인의 비행을 예쁘게 정리해 공유할 수 있는 점이 마음에 들었지만, 영어만 지원되는 점과 비행기 기체 이미지가 부족한 점이 아쉬웠습니다. 그래서 다국어 지원과 다양한 기체 등록까지 확장할 수 있는 비행 기록 클론 서비스를 기획했습니다.',
+            en: 'A personal project I started after becoming an aviation enthusiast through a friend and taking 22 flights myself. I liked how Flighty lets people organize and share their flights through polished design and UX, but wanted to explore a version with multilingual support and a richer aircraft image library. This clone demo studies the original service and extends the idea toward localized flight records and broader aircraft registration.',
+        },
+        myWorks: [
+            {
+                ko: 'Flighty 4.8.2 PC 버전 화면을 캡처하고 정보 구조, 폰트 계층, 카드 구성, 인터랙션 밀도를 분석',
+                en: 'Captured the Flighty 4.8.2 desktop UI and analyzed IA, typography hierarchy, card structure, and interaction density',
+            },
+            {
+                ko: '캡처를 기반으로 Figma에서 원본 디자인을 그대로 클론해 레이아웃 규칙과 시각적 디테일을 학습',
+                en: 'Recreated the captured UI in Figma to study the layout rules and visual details of the original design',
+            },
+            {
+                ko: '모바일 환경에 맞춰 폰트 위계, 간격, 컴포넌트 크기, 색상 역할을 다시 정리한 최종 디자인 시안 제작',
+                en: 'Designed a mobile-adapted version with refined typography, spacing, component sizing, and color roles',
+            },
+            {
+                ko: 'Nuxt 3 기반으로 워크스페이스, 인증, 설정, 공통 컴포넌트 데모, 그리드·차트·업로드 UI 골격 구성',
+                en: 'Built a Nuxt 3 foundation with workspace, auth, settings, component demos, grid, chart, and upload UI patterns',
+            },
+            {
+                ko: 'Pinia·Axios·i18n 사전·GitHub Pages base path를 정리해 다국어 확장과 정적 배포를 고려한 구조로 설계',
+                en: 'Organized Pinia, Axios, i18n dictionaries, and GitHub Pages base-path handling for localization and static deployment',
+            },
+        ],
+        achievements: [
+            {
+                ko: '원본 서비스 캡처, 디자인 클론, 모바일 재설계까지 이어지는 디자인 학습 과정을 프로젝트 산출물로 정리',
+                en: 'Documented the design-learning process from original-service capture to Figma clone and mobile redesign',
+            },
+            {
+                ko: 'Nuxt 3 + Pinia 기반의 공통 UI 컴포넌트와 데모 페이지를 먼저 구축해 서비스 화면 확장 기반 마련',
+                en: 'Prepared a scalable base by building shared UI components and demo pages on Nuxt 3 + Pinia first',
+            },
+        ],
+        points: [
+            {
+                ko: '항공 경험에서 출발한 개인 동기를 서비스 기획과 프론트엔드 학습으로 연결한 클론 프로젝트',
+                en: 'A clone project that connects a personal aviation interest to service planning and frontend practice',
+            },
+            {
+                ko: '영어 중심 서비스의 한계를 다국어 지원 과제로, 기체 이미지 부족을 데이터·자산 확장 과제로 재정의',
+                en: 'Reframed English-only UX as a localization task and limited aircraft imagery as a data and asset expansion task',
+            },
+            {
+                ko: '실제 서비스를 그대로 따라 만드는 단계에서 끝내지 않고, 모바일 사용성과 디자인 시스템 관점으로 다시 해석',
+                en: 'Moves beyond a direct clone by reinterpreting the product through mobile usability and design-system decisions',
+            },
+        ],
+        pin: true,
+        duration: {
+            ko: '진행 중',
+            en: 'In progress',
+        },
+        captures: [
+            '/images/projects/flighty/image-1.png',
+            '/images/projects/flighty/image-2.png',
+            '/images/projects/flighty/image-3.png',
+        ],
+        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'Figma'],
+        links: [
+            {
+                label: {
+                    ko: '데모 보기',
+                    en: 'View demo',
+                },
+                href: 'https://yheun03.github.io/cloneFlighty/',
+            },
+            {
+                label: {
+                    ko: 'GitHub',
+                    en: 'GitHub',
+                },
+                href: 'https://github.com/yheun03/cloneFlighty',
+            },
+        ],
+    },
+    {
         id: 'clone-kakaotalk',
         category: 'personal',
         title: {
