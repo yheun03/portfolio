@@ -118,6 +118,196 @@ const data = [
         ],
     },
     {
+        id: 'singil-bmc',
+        category: 'personal',
+        title: {
+            ko: '신길교회 야구 선교단 홈페이지',
+            en: 'Singil Church Baseball Mission Website',
+        },
+        period: '2026.05.31',
+        type: {
+            ko: '개인 / Nuxt 커뮤니티 사이트',
+            en: 'Personal / Nuxt community website',
+        },
+        role: {
+            ko: '기획·디자인·퍼블리싱·프론트엔드 개발 전체 담당',
+            en: 'End-to-end planning, design, publishing, and frontend development',
+        },
+        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Pinia', 'SCSS'],
+        introduction: {
+            ko: '2026년 5월 31일 하루 만에 제작한 신길교회 야구 선교단 공식 홈페이지입니다. Nuxt 3 기반으로 TEAM·GAMES·STATS·MEDIA IA를 잡고, JSON 중심의 경기 기록·MVP 통계·선수 명단·David TV(YouTube)·구단 소식을 연결했습니다. GitHub 커밋 14회(약 3시간)로 프로젝트 설정부터 GitHub Pages(`/singil-bmc/`) 배포 URL까지 이어 붙였습니다.',
+            en: 'The official Singil Church Baseball Mission website, built in a single day on May 31, 2026. On Nuxt 3, it wires TEAM, GAMES, STATS, and MEDIA IA to JSON-driven game records, MVP stats, roster, David TV (YouTube), and news. Fourteen GitHub commits (~3 hours) took it from initial setup to a live GitHub Pages deployment at `/singil-bmc/`.',
+        },
+        myWorks: [
+            {
+                ko: '앱 제목·base URL·i18n 번역을 선교단 브랜드에 맞게 바꾸고 HOME·TEAM·GAMES·STATS·MEDIA LNB 구조 설계',
+                en: 'Retargeted app title, base URL, and i18n copy for the mission brand and designed HOME·TEAM·GAMES·STATS·MEDIA LNB structure',
+            },
+            {
+                ko: '게임 기록·MVP·선수 JSON 데이터 구조 정리, 조별 그룹·플레이어 ID 형식 통일, 기록 갱신 npm 스크립트 추가',
+                en: 'Normalized game record, MVP, and player JSON schemas with group fields and player IDs, plus npm scripts to refresh records',
+            },
+            {
+                ko: '기록 페이지 탭 UI·MVP 조별 필터·시즌 승패 요약·경기 상세 승패 배지로 STATS 영역 구현',
+                en: 'Built the STATS area with tabbed records, group-filtered MVP, season W/L/T summary, and win/loss badges on game detail pages',
+            },
+            {
+                ko: 'A·D조 중복 선수 카드 병합, `useSiteLnb`로 하위 메뉴 active 정확 매칭, pages 라우트 구조 단순화',
+                en: 'Merged duplicate A/D roster cards, matched sub-menu active state via `useSiteLnb`, and simplified pages routing',
+            },
+            {
+                ko: 'David TV YouTube 링크·썸네일·게시일 JSON 정리 및 날짜 내림차순 정렬, 경기·뉴스 페이지 동적 SEO 메타 설정',
+                en: 'Structured David TV YouTube JSON (links, thumbnails, dates) with date-desc sorting and dynamic SEO meta for games and news',
+            },
+            {
+                ko: '헤더 aria 속성·드롭다운 그룹 active 상태·탭 pill 변형 등 SCSS/UI 마감과 GitHub Pages 배포 설정',
+                en: 'Polished SCSS/UI with header aria, dropdown group active states, pill tabs, and GitHub Pages deployment config',
+            },
+        ],
+        achievements: [
+            {
+                ko: 'GitHub 커밋 14회·약 3시간 만에 IA·기록·통계·명단·미디어·배포 URL까지 하루 안에 완성',
+                en: 'Shipped IA, records, stats, roster, media, and deployment URL in ~3 hours across 14 GitHub commits in one day',
+            },
+            {
+                ko: '월간·주간 MVP 페이지를 통합 MVP 페이지 하나로 정리하고, 내비·푸터 링크를 함께 맞춰 STATS 흐름 단순화',
+                en: 'Consolidated monthly/weekly MVP pages into one MVP route and aligned nav and footer links for a simpler STATS flow',
+            },
+            {
+                ko: '정적 JSON 데이터만으로 경기 결과·MVP·영상 목록을 갱신할 수 있는 운영 구조를 README와 스크립트로 정리',
+                en: 'Documented a static JSON workflow (README + scripts) to update game results, MVP, and video lists without a backend',
+            },
+        ],
+        points: [
+            {
+                ko: '하루 집중 개발로 교회 공동체에 바로 쓸 수 있는 Nuxt 3 정적 사이트 골격을 완성',
+                en: 'A focused one-day build that delivered a usable Nuxt 3 static site skeleton for a church community',
+            },
+            {
+                ko: '커밋 이력 기준으로 기록·MVP·명단·미디어 기능을 순차적으로 쌓아 올린 실제 작업 흐름이 남아 있음',
+                en: 'Commit history shows records, MVP, roster, and media features stacked in a clear, sequential workflow',
+            },
+            {
+                ko: 'GitHub Pages base path(`/singil-bmc/`)와 접근성·SEO 메타까지 포함한 배포 가능한 1차 버전',
+                en: 'A deployable v1 including GitHub Pages base path (`/singil-bmc/`), accessibility, and SEO metadata',
+            },
+        ],
+        pin: true,
+        duration: {
+            ko: '1일 (GitHub 커밋 14회)',
+            en: '1 day (14 GitHub commits)',
+        },
+        captures: ['/images/projects/placeholder.svg'],
+        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia'],
+        links: [
+            {
+                label: {
+                    ko: '페이지 이동하기',
+                    en: 'View demo',
+                },
+                href: 'https://yheun03.github.io/singil-bmc/',
+            },
+            {
+                label: {
+                    ko: 'GitHub',
+                    en: 'GitHub',
+                },
+                href: 'https://github.com/yheun03/singil-bmc',
+            },
+        ],
+    },
+    {
+        id: 'clone-flighty',
+        category: 'personal',
+        title: {
+            ko: '플라이티 클론 데모',
+            en: 'Flighty Clone Demo',
+        },
+        period: '2026.05.24~',
+        type: {
+            ko: '개인 / Nuxt 클론 서비스',
+            en: 'Personal / Nuxt clone service',
+        },
+        role: {
+            ko: '기획·디자인 분석·피그마 재설계·프론트엔드 개발 전체 담당',
+            en: 'End-to-end planning, design analysis, Figma redesign, and frontend development',
+        },
+        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Pinia', 'SCSS', 'Figma', 'AG Grid', 'Chart.js'],
+        introduction: {
+            ko: '친구 덕분에 항덕이 되었고, 22번의 비행 끝에 공부 겸 플라이티를 클론 개발하고자 시작한 개인 프로젝트입니다. 좋은 디자인과 좋은 UX로 본인의 비행을 예쁘게 정리해 공유할 수 있는 점이 마음에 들었지만, 영어만 지원되는 점과 비행기 기체 이미지가 부족한 점이 아쉬웠습니다. 그래서 다국어 지원과 다양한 기체 등록까지 확장할 수 있는 비행 기록 클론 서비스를 기획했습니다.',
+            en: 'A personal project I started after becoming an aviation enthusiast through a friend and taking 22 flights myself. I liked how Flighty lets people organize and share their flights through polished design and UX, but wanted to explore a version with multilingual support and a richer aircraft image library. This clone demo studies the original service and extends the idea toward localized flight records and broader aircraft registration.',
+        },
+        myWorks: [
+            {
+                ko: 'Flighty 4.8.2 PC 버전 화면을 캡처하고 정보 구조, 폰트 계층, 카드 구성, 인터랙션 밀도를 분석',
+                en: 'Captured the Flighty 4.8.2 desktop UI and analyzed IA, typography hierarchy, card structure, and interaction density',
+            },
+            {
+                ko: '캡처를 기반으로 Figma에서 원본 디자인을 그대로 클론해 레이아웃 규칙과 시각적 디테일을 학습',
+                en: 'Recreated the captured UI in Figma to study the layout rules and visual details of the original design',
+            },
+            {
+                ko: '모바일 환경에 맞춰 폰트 위계, 간격, 컴포넌트 크기, 색상 역할을 다시 정리한 최종 디자인 시안 제작',
+                en: 'Designed a mobile-adapted version with refined typography, spacing, component sizing, and color roles',
+            },
+            {
+                ko: 'Nuxt 3 기반으로 워크스페이스, 인증, 설정, 공통 컴포넌트 데모, 그리드·차트·업로드 UI 골격 구성',
+                en: 'Built a Nuxt 3 foundation with workspace, auth, settings, component demos, grid, chart, and upload UI patterns',
+            },
+            {
+                ko: 'Pinia·Axios·i18n 사전·GitHub Pages base path를 정리해 다국어 확장과 정적 배포를 고려한 구조로 설계',
+                en: 'Organized Pinia, Axios, i18n dictionaries, and GitHub Pages base-path handling for localization and static deployment',
+            },
+        ],
+        achievements: [
+            {
+                ko: '원본 서비스 캡처, 디자인 클론, 모바일 재설계까지 이어지는 디자인 학습 과정을 프로젝트 산출물로 정리',
+                en: 'Documented the design-learning process from original-service capture to Figma clone and mobile redesign',
+            },
+            {
+                ko: 'Nuxt 3 + Pinia 기반의 공통 UI 컴포넌트와 데모 페이지를 먼저 구축해 서비스 화면 확장 기반 마련',
+                en: 'Prepared a scalable base by building shared UI components and demo pages on Nuxt 3 + Pinia first',
+            },
+        ],
+        points: [
+            {
+                ko: '항공 경험에서 출발한 개인 동기를 서비스 기획과 프론트엔드 학습으로 연결한 클론 프로젝트',
+                en: 'A clone project that connects a personal aviation interest to service planning and frontend practice',
+            },
+            {
+                ko: '영어 중심 서비스의 한계를 다국어 지원 과제로, 기체 이미지 부족을 데이터·자산 확장 과제로 재정의',
+                en: 'Reframed English-only UX as a localization task and limited aircraft imagery as a data and asset expansion task',
+            },
+            {
+                ko: '실제 서비스를 그대로 따라 만드는 단계에서 끝내지 않고, 모바일 사용성과 디자인 시스템 관점으로 다시 해석',
+                en: 'Moves beyond a direct clone by reinterpreting the product through mobile usability and design-system decisions',
+            },
+        ],
+        pin: true,
+        duration: {
+            ko: '진행 중',
+            en: 'In progress',
+        },
+        captures: ['/images/projects/flighty/image-1.png', '/images/projects/flighty/image-2.png', '/images/projects/flighty/image-3.png'],
+        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'Figma'],
+        links: [
+            {
+                label: {
+                    ko: '페이지 이동하기',
+                    en: 'View demo',
+                },
+                href: 'https://yheun03.github.io/cloneFlighty/',
+            },
+            {
+                label: {
+                    ko: 'GitHub',
+                    en: 'GitHub',
+                },
+                href: 'https://github.com/yheun03/cloneFlighty',
+            },
+        ],
+    },
+    {
         id: 'clone-kakaotalk',
         category: 'personal',
         title: {
@@ -190,7 +380,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/cloneKakaoTalk/',
@@ -351,7 +541,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/matemate/',
@@ -434,7 +624,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/gongting/intro.html',
