@@ -202,7 +202,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/singil-bmc/',
@@ -288,16 +288,12 @@ const data = [
             ko: '진행 중',
             en: 'In progress',
         },
-        captures: [
-            '/images/projects/flighty/image-1.png',
-            '/images/projects/flighty/image-2.png',
-            '/images/projects/flighty/image-3.png',
-        ],
+        captures: ['/images/projects/flighty/image-1.png', '/images/projects/flighty/image-2.png', '/images/projects/flighty/image-3.png'],
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'Figma'],
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/cloneFlighty/',
@@ -384,7 +380,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/cloneKakaoTalk/',
@@ -545,7 +541,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/matemate/',
@@ -628,7 +624,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'View demo',
                 },
                 href: 'https://yheun03.github.io/gongting/intro.html',
