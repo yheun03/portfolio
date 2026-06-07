@@ -35,10 +35,6 @@ const data = [
         ko: '컴퓨터활용능력 1급 필기합격',
         en: 'Computer Literacy Level 1 - Written Passed',
     },
-    {
-        ko: '2종보통운전면허',
-        en: 'Class 2 Driver License',
-    },
 ] as const;
 
 export default data;
