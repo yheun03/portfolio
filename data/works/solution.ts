@@ -15,7 +15,21 @@ const data = [
             ko: '퍼블리싱 100%, 프론트엔드 구조 설계 70%, 디자인 시스템 구축 70%',
             en: 'Publishing 100%, frontend architecture 70%, design system 70%',
         },
-        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'JavaScript', 'SCSS', 'Pinia', 'Axios', 'Vite', 'Chart.js', 'vue-chartjs', 'AG Grid', 'flatpickr', 'noUiSlider'],
+        tech: [
+            'Nuxt 3',
+            'Vue 3',
+            'TypeScript',
+            'JavaScript',
+            'SCSS',
+            'Pinia',
+            'Axios',
+            'Vite',
+            'Chart.js',
+            'vue-chartjs',
+            'AG Grid',
+            'flatpickr',
+            'noUiSlider',
+        ],
         introduction: {
             ko: '사내 프로젝트의 개발 생산성과 UI 품질을 높이기 위해 Nuxt 3 기반 프론트엔드 프레임워크와 재사용 가능한 UI 컴포넌트, SCSS 토큰 구조를 구축했습니다.',
             en: 'Built a Nuxt 3 frontend framework, reusable UI components, and SCSS token architecture to improve internal project productivity and UI quality.',
@@ -68,7 +82,7 @@ const data = [
         links: [
             {
                 label: {
-                    ko: '데모 보기',
+                    ko: '페이지 이동하기',
                     en: 'Open demo',
                 },
                 href: 'https://yheun03.github.io/framework/',
