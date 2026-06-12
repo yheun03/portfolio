@@ -17,6 +17,7 @@
 @use "layout/shell";
 @use "layout/viewport";
 @use "layout/dock";
+@use "layout/scroll-progress";
 
 /* Card patterns */
 @use "work/cards" as work-cards;

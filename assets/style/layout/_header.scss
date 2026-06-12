@@ -23,12 +23,26 @@
     padding: $space-4 $space-7;
     min-height: $layout-header-height;
 
-    border-bottom: 1px solid color-mix(in srgb, $primary-600 22%, $grayscale-300);
-    background: color-mix(in srgb, $glass-2-strong 92%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, $primary-600 10%, $grayscale-300);
+    background: color-mix(in srgb, $glass-2-strong 72%, transparent);
     box-shadow:
         $shadow-glow,
-        0 16px 40px color-mix(in srgb, $grayscale-800 12%, transparent);
-    backdrop-filter: blur(14px) saturate(1.2);
+        0 8px 24px color-mix(in srgb, $grayscale-800 6%, transparent);
+    backdrop-filter: blur(20px) saturate(1.6);
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        backdrop-filter 0.4s ease;
+
+    &--scrolled {
+        border-bottom-color: color-mix(in srgb, $primary-600 18%, $grayscale-300);
+        background: color-mix(in srgb, $glass-2-strong 90%, transparent);
+        box-shadow:
+            $shadow-glow,
+            0 16px 48px color-mix(in srgb, $grayscale-800 14%, transparent);
+        backdrop-filter: blur(32px) saturate(2);
+    }
 
     &__brand {
         display: inline-flex;

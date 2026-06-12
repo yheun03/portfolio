@@ -39,7 +39,8 @@
                 </ul>
 
                 <dl ref="statsRef" class="hero__metrics-bar" :aria-label="locale === 'ko' ? '핵심 지표' : 'Key metrics'">
-                    <div v-for="(stat, idx) in convertedStats" :key="stat.label" class="hero__metric">
+                    <div v-for="(stat, idx) in convertedStats" :key="stat.label" class="hero__metric"
+                        :style="{ '--stagger-i': idx }" data-stagger>
                         <dt>{{ stat.label }}</dt>
                         <dd>{{ statValues[idx] }}{{ stat.suffix }}</dd>
                     </div>

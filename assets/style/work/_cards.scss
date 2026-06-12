@@ -30,8 +30,16 @@
     }
 
     &:hover {
-        box-shadow: var(--shadow-lift), var(--shadow-ring);
-        transform: translateY(-6px);
+        box-shadow:
+            var(--shadow-lift),
+            var(--shadow-ring),
+            0 0 0 1px color-mix(in srgb, var(--color-primary) 14%, transparent);
+        transform: translateY(-8px) scale(1.01);
+    }
+
+    &:active {
+        transform: translateY(-2px) scale(0.99);
+        transition-duration: 0.1s;
     }
 
     h3 {

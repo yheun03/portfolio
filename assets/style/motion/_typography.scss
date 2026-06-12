@@ -23,18 +23,21 @@
 
 [data-animate] .typo-word {
     opacity: 0;
-    transform: translate3d(0, 0.45em, 0);
+    transform: translate3d(0, 0.52em, 0) scale(0.96);
+    filter: blur(4px);
 }
 
 [data-animate].animate--visible .typo-word {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
     transition:
-        opacity 0.55s ease,
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.62s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.55s ease,
         color 0.35s ease,
         letter-spacing 0.42s ease;
-    transition-delay: calc(0.08s + (var(--word-index, 0) * 0.045s));
+    transition-delay: calc(0.06s + (var(--word-index, 0) * 0.048s));
 }
 
 .typo-word--active,
