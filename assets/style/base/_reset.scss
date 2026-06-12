@@ -45,7 +45,7 @@ body {
     :where(p, li, dd) {
         color: var(--color-text);
         font-size: max(1em, var(--font-size-sm));
-        line-height: 1.6;
+        line-height: 1.75;
     }
 
     :where(p, li, dd, .section-title__description) {

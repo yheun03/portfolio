@@ -135,7 +135,7 @@
         margin-top: clamp(0.75rem, 2vw, 1rem);
         color: var(--color-text-muted);
         font-size: var(--font-size-sm);
-        line-height: 1.65;
+        line-height: var(--line-height-body);
     }
 
     &__lead {
@@ -468,7 +468,7 @@
 
     .hero__focus-copy span {
         font-size: var(--font-size-xs);
-        line-height: 1.45;
+        line-height: var(--line-height-body);
     }
 
     .hero__metrics-bar {
