@@ -1,6 +1,5 @@
 <template>
     <section id="works" class="section section--works works" aria-labelledby="section-works-title">
-        <span class="section__emoji section__emoji--works emoji emoji--soft" aria-hidden="true">🗂️</span>
         <div class="works__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalPortfolioWorkCount }}{{ locale === 'ko' ? '건' : ''
             }}</span>

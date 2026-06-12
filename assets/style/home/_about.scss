@@ -1,32 +1,24 @@
 @use "../abstracts/tokens" as *;
-/* Portfolio about refresh */
+
+/* =========================================
+   Portfolio About — dark editorial panel
+========================================= */
+
 .section.section--about {
     display: block;
     min-height: auto;
-    /* Apple-style section separator */
-    &::before {
+    background: transparent; // let page__layer--profile bg show through
+
+    &::before,
+    &::after {
         content: none;
     }
 }
 
 @media (min-width: 1024px) {
     .section.section--about {
-        padding-block: clamp(5rem, 14vw, 11rem) clamp(6rem, 16vw, 13rem);
+        padding-block: clamp(5rem, 13vw, 10rem) clamp(6rem, 15vw, 12rem);
     }
-}
-
-.section.section--about::after {
-    content: "Read · Build · Ship";
-    right: 50%;
-    bottom: clamp(2rem, 6vw, 5rem);
-    left: auto;
-    transform: translateX(50%);
-    max-width: 96vw;
-    color: color-mix(in srgb, var(--color-text) 5%, transparent);
-    @include font(display-1);
-    text-align: center;
-    white-space: nowrap;
-    pointer-events: none;
 }
 
 .about__stage {
@@ -38,10 +30,10 @@
         "intro"
         "spotlight"
         "workflow";
-    gap: clamp(1.5rem, 4.2vw, 2.5rem);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
 
     @media (min-width: 1024px) {
-        gap: clamp(4rem, 11vw, 8rem);
+        gap: clamp(4rem, 10vw, 7.5rem);
     }
 }
 
@@ -53,9 +45,7 @@
     background: transparent;
     box-shadow: none;
 
-    &::after {
-        display: none;
-    }
+    &::after { display: none; }
 }
 
 .about__display {
@@ -65,7 +55,7 @@
 
 .about__display-line {
     display: block;
-    margin-bottom: 0.12em;
+    margin-bottom: 0.1em;
     font-size: var(--font-size-display-1);
     line-height: var(--line-height-display);
 
@@ -79,7 +69,7 @@
 
 .about__lead {
     max-width: 28ch;
-    margin: clamp(2.25rem, 5.5vw, 4rem) 0 0;
+    margin: clamp(2rem, 5vw, 3.5rem) 0 0;
     color: var(--color-text-muted);
     @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
 }
@@ -88,9 +78,23 @@
     grid-area: spotlight;
 }
 
-.about__workflow {
-    grid-area: workflow;
-    background: var(--color-glass-2);
-    backdrop-filter: blur(10px);
+// Override spotlight kicker for dark context
+.section--about .spotlight__kicker {
+    color: var(--color-text-heading);
 }
 
+// Override feature-card for dark context
+.section--about .feature-card {
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    border-color: color-mix(in srgb, var(--color-border) 65%, transparent);
+    box-shadow:
+        0 1px 0 color-mix(in srgb, var(--color-surface) 85%, var(--color-primary)),
+        0 20px 52px color-mix(in srgb, #020407 28%, transparent);
+}
+
+.about__workflow {
+    grid-area: workflow;
+    background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    backdrop-filter: blur(12px);
+    border-color: color-mix(in srgb, var(--color-border) 65%, transparent);
+}

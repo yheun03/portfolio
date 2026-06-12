@@ -1,7 +1,5 @@
 <template>
     <section id="toolbox" class="section section--toolbox" aria-labelledby="section-toolbox-title">
-        <span class="section__emoji section__emoji--toolbox emoji emoji--soft" aria-hidden="true">🛠️</span>
-
         <header class="toolbox__head">
             <BaseSectionTitle title-id="section-toolbox-title" :eyebrow="t('nav.toolbox')" :title="t('toolbox.title')" />
             <p class="section-title__description">{{ t("toolbox.copy") }}</p>

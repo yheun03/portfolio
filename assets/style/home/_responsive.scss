@@ -228,38 +228,6 @@
         font-size: clamp(2rem, 12vw, 2.8rem);
     }
 
-    .section__emoji {
-        transform: scale(0.72);
-    }
-
-    .section__emoji--about {
-        opacity: 0.08;
-    }
-
-    .section__emoji--works {
-        opacity: 0.09;
-    }
-
-    .section__emoji--personal {
-        opacity: 0.1;
-    }
-
-    .section__emoji--journey {
-        opacity: 0.08;
-    }
-
-    .section__emoji--toolbox {
-        opacity: 0.1;
-    }
-
-    .section__emoji--highlights {
-        opacity: 0.14;
-    }
-
-    .section__emoji--contact {
-        opacity: 0.08;
-    }
-
     .journey__flow {
         gap: var(--space-6);
     }

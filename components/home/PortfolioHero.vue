@@ -1,10 +1,6 @@
 <template>
     <section id="hello" ref="heroSectionRef" class="section section--hero hero" aria-labelledby="hero-display-title">
         <div class="hero__poster">
-            <div v-if="heroCanvasVisible" class="hero__canvas" aria-hidden="true">
-                <canvas ref="canvasRef" id="animatedCanvas" />
-            </div>
-
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
                 <span aria-hidden="true">·</span>
@@ -58,116 +54,11 @@
 <script setup lang="ts">
 import { profile } from "@data/site";
 import { splitTypoWords } from '@composables/ui/useTypoInteraction';
-import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
 
 const { t, pick, locale } = useLocale();
 
 const heroSectionRef = ref<HTMLElement | null>(null);
-const heroCanvasVisible = ref(false);
-const canvasRef = ref<HTMLCanvasElement | null>(null);
 const heroFocusCards = computed(() => profile.focusAreas);
-
-let canvasFrameId = 0;
-let canvasResizeRaf = 0;
-let canvasCleanup: (() => void) | null = null;
-
-function initializeHeroCanvasAnimation() {
-    const canvas = canvasRef.value;
-    const container = canvas?.parentElement;
-    if (!canvas || !container) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
-
-    let running = false;
-    let textWidth = 0;
-
-    const handleCanvasResize = () => {
-        cancelAnimationFrame(canvasResizeRaf);
-        canvasResizeRaf = requestAnimationFrame(() => {
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-            if (width < 1 || height < 1) return;
-            canvas.width = width;
-            canvas.height = height;
-        });
-    };
-
-    handleCanvasResize();
-    window.addEventListener("resize", handleCanvasResize, { passive: true });
-
-    const marqueeText = "EUN YOUNG HWAN #ILLUSION__IS #APPLE #BASEBALL #ENTJ  ";
-    const marqueeRows = [
-        { text: marqueeText, y: 0, speed: 1, offset: 0 },
-        { text: marqueeText, y: 0, speed: 1, offset: -800 },
-        { text: marqueeText, y: 0, speed: 1, offset: -1600 },
-        { text: marqueeText, y: 0, speed: 1, offset: -2400 },
-    ];
-
-    const renderCanvasFrame = () => {
-        if (!running) return;
-
-        const base = Math.max(canvas.height / 4, 48);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.font = `800 ${base}px Pretendard`;
-        ctx.lineWidth = 2;
-        ctx.strokeStyle =
-            getComputedStyle(document.documentElement).getPropertyValue("--color-text-heading").trim() || "CanvasText";
-
-        if (!textWidth) {
-            textWidth = ctx.measureText(marqueeText).width;
-        }
-
-        marqueeRows.forEach((item, index) => {
-            item.y = base * (0.8 + index * 1);
-            let x = item.offset;
-            while (x < canvas.width) {
-                ctx.strokeText(item.text, x, item.y);
-                x += textWidth;
-            }
-            item.offset -= item.speed;
-            if (item.offset < -textWidth) {
-                item.offset += textWidth;
-            }
-        });
-
-        canvasFrameId = requestAnimationFrame(renderCanvasFrame);
-    };
-
-    const startCanvasAnimation = () => {
-        if (running) return;
-        running = true;
-        renderCanvasFrame();
-    };
-
-    const stopCanvasAnimation = () => {
-        running = false;
-        cancelAnimationFrame(canvasFrameId);
-    };
-
-    const visibilityObserver = new IntersectionObserver(
-        (entries) => {
-            if (entries.some((entry) => entry.isIntersecting)) {
-                startCanvasAnimation();
-            } else {
-                stopCanvasAnimation();
-            }
-        },
-        { threshold: 0.05 },
-    );
-
-    visibilityObserver.observe(container);
-
-    canvasCleanup = () => {
-        visibilityObserver.disconnect();
-        window.removeEventListener("resize", handleCanvasResize);
-        stopCanvasAnimation();
-        cancelAnimationFrame(canvasResizeRaf);
-    };
-}
 
 const heroLines = computed(() => {
     if (locale.value === "ko") {
@@ -197,28 +88,7 @@ const statValues = computed(() => counters.map((counter) => counter.value.value)
 const statsRef = ref<HTMLElement | null>(null);
 let statsObserver: IntersectionObserver | null = null;
 
-watch(heroCanvasVisible, async (visible) => {
-    if (!visible) return;
-    await nextTick();
-    initializeHeroCanvasAnimation();
-});
-
 onMounted(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduceMotion && heroSectionRef.value) {
-        const heroObserver = new IntersectionObserver(
-            (entries) => {
-                if (!entries.some((entry) => entry.isIntersecting)) return;
-                scheduleAfterFirstPaint(() => {
-                    heroCanvasVisible.value = true;
-                }, 1600);
-                heroObserver.disconnect();
-            },
-            { rootMargin: "120px 0px", threshold: 0 },
-        );
-        heroObserver.observe(heroSectionRef.value);
-    }
-
     if (!statsRef.value) return;
     statsObserver = new IntersectionObserver(
         (entries) => {
@@ -234,8 +104,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-    canvasCleanup?.();
-    canvasCleanup = null;
     statsObserver?.disconnect();
     statsObserver = null;
 });

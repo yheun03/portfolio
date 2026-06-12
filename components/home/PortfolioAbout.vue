@@ -1,7 +1,5 @@
 <template>
     <section id="about" class="section section--about" aria-labelledby="section-about-title">
-        <span class="section__emoji section__emoji--about emoji emoji--soft" aria-hidden="true">🧭</span>
-
         <div class="about__stage">
             <header class="about__intro" data-animate>
                 <p class="section-title__eyebrow">{{ t("nav.about") }}</p>

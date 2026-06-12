@@ -14,19 +14,10 @@
         gap: $space-3;
         align-items: center;
         margin-bottom: $space-2;
-        color: $primary-600;
-        @include font(label, $font-weight-medium);
+        color: var(--color-primary);
+        @include font(label, $font-weight-semibold);
         text-transform: uppercase;
-
-        &::after {
-            content: "";
-            flex: 1;
-            min-width: 2.5rem;
-            height: 2px;
-            border-radius: 999px;
-            background: $gradient-accent;
-            opacity: 0.85;
-        }
+        letter-spacing: 0.1em;
     }
 
     &__title {
