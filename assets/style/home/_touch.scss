@@ -172,7 +172,8 @@
         width: 100%;
         max-width: 100%;
         margin-inline: 0;
-        padding-block: var(--space-3) var(--space-8);
+        /* overflow-x: auto forces overflow-y: auto → bottom padding must cover box-shadow extent */
+        padding-block: var(--space-4) clamp(3.5rem, 8vw, 5rem);
         padding-inline: var(--swipe-edge-space);
         grid-template-columns: none;
         overflow-x: auto;

@@ -45,7 +45,7 @@ body {
     :where(p, li, dd) {
         color: var(--color-text);
         font-size: max(1em, var(--font-size-sm));
-        line-height: 1.6;
+        line-height: 1.75;
     }
 
     :where(p, li, dd, .section-title__description) {
@@ -176,11 +176,33 @@ html.app--menu-open {
 
 [data-animate] {
     opacity: 0;
-    transition: opacity 0.32s ease;
+    transform: translateY(36px);
+    transition:
+        opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 
 [data-animate].animate--visible {
     opacity: 1;
+    transform: translateY(0);
+}
+
+/* stagger siblings inside a revealed container */
+[data-animate].animate--visible [data-stagger] {
+    animation: apple-stagger-in 0.68s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--stagger-i, 0) * 80ms);
+}
+
+@keyframes apple-stagger-in {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 @media (hover: hover) {

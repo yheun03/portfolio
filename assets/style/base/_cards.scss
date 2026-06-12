@@ -10,10 +10,10 @@
     background: $gradient-surface;
     box-shadow: $shadow-soft, $shadow-glow;
     isolation: isolate;
-    --card-flow-label: #{$space-4};
-    --card-flow-title: #{$space-5};
-    --card-flow-content: #{$space-5};
-    --card-list-gap: #{$space-2};
+    --card-flow-label: #{$space-5};
+    --card-flow-title: #{$space-6};
+    --card-flow-content: #{$space-7};
+    --card-list-gap: #{$space-3};
 
     &::before {
         content: "";
@@ -76,18 +76,32 @@
         0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
         0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     backdrop-filter: blur(18px);
+    transform-origin: center center;
     transition:
-        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
         border-color 0.32s ease,
-        box-shadow 0.38s ease;
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &.feature-card--tilted {
+        transition:
+            transform 0.1s ease,
+            border-color 0.32s ease,
+            box-shadow 0.32s ease;
+    }
 
     @media (hover: hover) {
         &:hover {
             border-color: color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
             box-shadow:
                 0 1px 0 color-mix(in srgb, var(--color-surface) 92%, var(--color-primary)),
-                0 32px 80px color-mix(in srgb, var(--color-primary) 10%, transparent);
-            transform: translateY(-4px);
+                0 40px 96px color-mix(in srgb, var(--color-primary) 12%, transparent),
+                0 0 0 1px color-mix(in srgb, var(--color-primary) 10%, transparent);
+            transform: translateY(-6px) scale(1.008);
+        }
+
+        &:active {
+            transform: translateY(-1px) scale(0.995);
+            transition-duration: 0.1s;
         }
     }
 }
@@ -114,13 +128,13 @@
 
 .feature-card {
     display: grid;
-    gap: clamp(0.65rem, 1.5vw, 1rem);
-    min-height: clamp(11rem, 22vw, 15rem);
+    gap: clamp(0.85rem, 2vw, 1.35rem);
+    min-height: clamp(12rem, 24vw, 16rem);
     align-content: start;
 
     &--skill {
         height: 100%;
-        min-height: clamp(13rem, 26vw, 17rem);
+        min-height: clamp(14rem, 28vw, 18rem);
     }
 
     &__eyebrow {

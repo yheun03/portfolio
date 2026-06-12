@@ -40,16 +40,16 @@
     --font-weight-medium: 650;
     --font-weight-regular: 500;
     --font-weight-semibold: 720;
-    --line-height-body: 1.72;
+    --line-height-body: 1.82;
     --line-height-display: 1.12;
     --line-height-heading: 1.14;
     --line-height-tight: 1.05;
-    --line-height-title: 1.22;
-    --line-height-ui: 1.2;
-    --tracking-heading: -0.035em;
-    --tracking-label: 0.1em;
-    --tracking-tight: -0.04em;
-    --tracking-ui: 0.02em;
+    --line-height-title: 1.32;
+    --line-height-ui: 1.25;
+    --tracking-heading: -0.04em;
+    --tracking-label: 0.08em;
+    --tracking-tight: -0.05em;
+    --tracking-ui: 0.015em;
     --state-error: #dc2626;
     --state-success: #0f9f6e;
     --state-warning: #d97706;
@@ -101,12 +101,12 @@
     --touch-pad-x: var(--page-pad-x);
     --touch-stack-gap: var(--section-pad-y);
     --cluster-gap: var(--space-3);
-    --card-flow-content: var(--space-5);
-    --card-flow-label: var(--space-4);
-    --card-flow-title: var(--space-5);
-    --card-list-gap: var(--space-2);
-    --card-padding: clamp(1.35rem, 3vw, 2.35rem);
-    --card-padding-lg: clamp(1.75rem, 4vw, 3rem);
+    --card-flow-content: var(--space-7);
+    --card-flow-label: var(--space-5);
+    --card-flow-title: var(--space-6);
+    --card-list-gap: var(--space-3);
+    --card-padding: clamp(1.5rem, 3.2vw, 2.5rem);
+    --card-padding-lg: clamp(1.85rem, 4.2vw, 3.25rem);
     --size-touch: 2.75rem;
     --size-touch-compact: 2.5rem;
     --layout-content-max: 1680px;
@@ -304,8 +304,8 @@ $font-presets: (
         --space-block-gap: var(--block-gap);
         --inset-page: var(--page-pad-x);
         --inset-page-hero: var(--page-pad-hero);
-        --card-padding: clamp(1.15rem, 2.8vw, 1.85rem);
-        --card-padding-lg: clamp(1.35rem, 3.2vw, 2.1rem);
+        --card-padding: clamp(1.25rem, 3vw, 2rem);
+        --card-padding-lg: clamp(1.5rem, 3.5vw, 2.35rem);
     }
 }
 
@@ -395,8 +395,8 @@ $font-presets: (
         --inset-page: var(--page-pad-x);
         --inset-page-hero: var(--page-pad-hero);
         --inset-panel: clamp(1rem, 4.5vw, 1.3rem);
-        --card-padding: clamp(1rem, 4.5vw, 1.35rem);
-        --card-padding-lg: clamp(1.1rem, 5vw, 1.55rem);
+        --card-padding: clamp(1.1rem, 4.8vw, 1.5rem);
+        --card-padding-lg: clamp(1.25rem, 5.2vw, 1.75rem);
         --font-size-contact: clamp(2rem, 8.5vw, 3.25rem);
     }
 }

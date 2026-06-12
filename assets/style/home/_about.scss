@@ -3,6 +3,10 @@
 .section.section--about {
     display: block;
     min-height: auto;
+    /* Apple-style section separator */
+    &::before {
+        content: none;
+    }
 }
 
 @media (min-width: 1024px) {

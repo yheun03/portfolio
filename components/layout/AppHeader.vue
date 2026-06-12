@@ -1,5 +1,5 @@
 <template>
-    <header ref="headerRef" class="app-header">
+    <header ref="headerRef" class="app-header" :class="{ 'app-header--scrolled': isScrolled }">
         <BaseLink class="app-header__brand" :href="brandHref"
             :aria-label="locale === 'ko' ? '포트폴리오 홈' : 'Portfolio home'">
             <span aria-hidden="true">Eun</span>
@@ -39,6 +39,11 @@
 const menuOpen = ref(false);
 const headerRef = ref<HTMLElement | null>(null);
 const menuButtonRef = ref<HTMLButtonElement | null>(null);
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+    isScrolled.value = window.scrollY > 48;
+};
 
 useLayoutHeaderHeight(headerRef);
 const statusMessage = ref('');
@@ -109,10 +114,13 @@ watch(
 
 onMounted(() => {
     window.addEventListener("keydown", handleEscapeKeydown);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 });
 
 onBeforeUnmount(() => {
     document.documentElement.classList.remove("app--menu-open");
     window.removeEventListener("keydown", handleEscapeKeydown);
+    window.removeEventListener("scroll", handleScroll);
 });
 </script>
