@@ -10,16 +10,9 @@
         <div class="journey__flow" data-animate>
             <div class="journey__flow-header">
                 <div class="journey__toolbar">
-                    <span :id="journeyViewLabelId" class="journey__control-label">{{ t('journey.viewLegend') }}</span>
-                    <div class="journey__segments" role="radiogroup" :aria-labelledby="journeyViewLabelId"
-                        :style="{ '--segment-count': viewOptions.length }">
-                        <button v-for="option in viewOptions" :key="option.value" type="button" class="journey__segment"
-                            :class="{ 'journey__segment--active': viewMode === option.value }" role="radio"
-                            :aria-checked="viewMode === option.value" :tabindex="viewMode === option.value ? 0 : -1"
-                            @click="setViewMode(option.value)" @keydown="handleViewKeydown($event, viewMode)">
-                            {{ t(option.labelKey) }}
-                        </button>
-                    </div>
+                    <BaseSegmentControl :model-value="viewMode" :options="resolvedViewOptions"
+                        :label-text="t('journey.viewLegend')" label-id="journey-view-label"
+                        @update:model-value="setViewMode($event as typeof viewMode)" />
                 </div>
                 <p class="journey__kicker">{{ t("journey.kicker") }}</p>
             </div>
@@ -43,9 +36,8 @@ const {
     affiliationBlocks,
     chronologicalYearGroups,
     setViewMode,
-    handleViewKeydown,
 } = useJourneyView();
 
-const journeyViewLabelId = "journey-view-label";
+const resolvedViewOptions = computed(() => viewOptions.value.map((o) => ({ value: o.value, label: t(o.labelKey) })));
 const tempLabel = computed(() => t("journey.tempLabel"));
 </script>

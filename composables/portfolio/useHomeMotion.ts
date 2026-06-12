@@ -1,10 +1,8 @@
+// 홈 페이지 Apple-style 스크롤 모션 — GSAP·ScrollTrigger 첫 페인트 이후 지연 로드
+// hero 시차, 섹션 stagger, depth layer 를 처리합니다
 import { scheduleAfterFirstPaint } from '@utils/schedule-idle';
 
-/**
- * Apple-style scroll motion: hero parallax, section stagger, depth layers.
- * GSAP + ScrollTrigger are lazy-loaded after first paint.
- */
-export const useHomeMotion = () => {
+export function useHomeMotion() {
     let cleanup: (() => void) | null = null;
     let cancelled = false;
 
@@ -221,4 +219,4 @@ export const useHomeMotion = () => {
         cleanup?.();
         cleanup = null;
     });
-};
+}

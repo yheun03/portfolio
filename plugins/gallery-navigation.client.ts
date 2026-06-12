@@ -1,7 +1,4 @@
-/**
- * 목표: 갤러리 상세 진입/복귀 시 브라우저 기본 스크롤 복원과 앱 복원 로직 충돌을 막는다.
- * 기능: 상세 진입 전 목록 스냅샷 저장, 목록 복귀 후 스크롤/포커스 복원을 수행한다.
- */
+// 갤러리 상세 진입 전 목록 스냅샷 저장, 복귀 시 스크롤·포커스 복원 — 브라우저 scrollRestoration 충돌 방지
 import {
     clearNavigationRestoreSnapshot,
     getGalleryDetailWorkId,

@@ -10,6 +10,7 @@
 @use "base/cards" as base-cards;
 @use "base/sections";
 @use "base/year-timeline";
+@use "base/segment-control";
 
 /* Layout shell */
 @use "layout/header";

@@ -1,0 +1,75 @@
+@use "../abstracts/tokens" as *;
+
+/* =============================================================================
+   Segment Control — radiogroup pill switcher
+   Usage: --sc-* CSS 변수로 컨텍스트별 색상 오버라이드
+   ============================================================================= */
+
+.segment-control {
+    display: grid;
+    gap: var(--space-2);
+    min-width: min(100%, 18rem);
+    justify-self: start;
+}
+
+.segment-control__label {
+    display: block;
+    margin: 0;
+    color: var(--sc-label-color, var(--color-text-muted));
+    font-size: var(--sc-label-font-size, #{$font-size-sm});
+    font-weight: $font-weight-bold;
+    letter-spacing: var(--sc-label-tracking, normal);
+    line-height: 1.3;
+    text-transform: var(--sc-label-transform, none);
+}
+
+.segment-control__group {
+    display: grid;
+    grid-template-columns: repeat(var(--segment-count, 2), minmax(0, 1fr));
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid var(--sc-border, color-mix(in srgb, var(--color-primary) 18%, var(--color-border)));
+    border-radius: var(--radius-md);
+    background: var(--sc-group-bg, color-mix(in srgb, var(--color-surface) 82%, var(--color-bg)));
+}
+
+.segment-control__button {
+    min-height: 2.65rem;
+    padding: var(--space-2) var(--space-3);
+    border: 0;
+    border-radius: calc(var(--radius-md) - 2px);
+    background: transparent;
+    color: var(--sc-btn-color, var(--color-text));
+    font: inherit;
+    font-size: var(--sc-btn-font-size, #{$font-size-sm});
+    font-weight: $font-weight-bold;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover:not(&--active) {
+        background: var(--sc-hover-bg, color-mix(in srgb, var(--color-primary) 10%, var(--color-surface)));
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--sc-focus-color, var(--color-primary));
+        outline-offset: 1px;
+    }
+
+    &--active {
+        color: var(--sc-active-fg, var(--color-on-accent, #{$grayscale-0}));
+        background: var(--sc-active-bg, var(--color-primary));
+        box-shadow: var(--sc-active-shadow, var(--shadow-ring));
+    }
+
+    &--active:hover {
+        color: var(--sc-active-fg, var(--color-on-accent, #{$grayscale-0}));
+        background: var(--sc-active-hover-bg, var(--color-primary-dark, var(--color-primary)));
+        box-shadow: var(--sc-active-shadow-hover, var(--shadow-soft));
+    }
+}
