@@ -184,8 +184,8 @@
     .journey__chapter .journey__steps .timeline-item,
     .year-timeline__entries .timeline-item {
         position: relative;
-        gap: 0.35rem;
-        padding: var(--space-5) 0;
+        gap: 0.5rem;
+        padding: var(--space-6) 0;
         padding-inline-start: var(--space-4);
 
         &::before {
@@ -223,7 +223,7 @@
 
         &__description {
             font-size: var(--font-size-sm);
-            line-height: 1.6;
+            line-height: var(--line-height-body);
         }
     }
 

@@ -2,9 +2,9 @@
 
 /* Work card */
 .work-card {
-    --card-flow-label: var(--space-4);
-    --card-flow-title: var(--space-4);
-    --card-flow-content: var(--space-4);
+    --card-flow-label: var(--space-5);
+    --card-flow-title: var(--space-5);
+    --card-flow-content: var(--space-6);
 
     position: relative;
     display: flex;
@@ -77,9 +77,9 @@
 
 @media (max-width: #{$bp-max-narrow}) {
     .work-card {
-        --card-flow-label: var(--space-3);
-        --card-flow-title: var(--space-3);
-        --card-flow-content: var(--space-4);
+        --card-flow-label: var(--space-4);
+        --card-flow-title: var(--space-4);
+        --card-flow-content: var(--space-5);
 
         h3 {
             font-size: clamp(1.1rem, 5.5vw, 1.35rem);
