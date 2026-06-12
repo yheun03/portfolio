@@ -1,7 +1,4 @@
-/**
- * 목표: 갤러리 목록과 상세 페이지를 오갈 때 사용자의 위치와 포커스를 복원한다.
- * 기능: 카드 활성화, 스냅샷 저장/복원, Escape 뒤로가기, 키보드 포커스 이동을 제공한다.
- */
+// 갤러리 목록↔상세 이동 시 스크롤·포커스 복원 — sessionStorage 스냅샷 저장, Escape 뒤로가기, 카드 활성화
 import type { MaybeRef } from 'vue';
 
 const GALLERY_ENTRY_ACTIVE_CLASS = 'is-gallery-entry-active';

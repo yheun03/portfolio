@@ -26,7 +26,7 @@ const props = withDefaults(
         eyebrow?: string;
         title: string;
         description?: string;
-        items?: string[];
+        items?: readonly string[];
         variant?: 'plain' | 'skill';
         animate?: boolean;
     }>(),

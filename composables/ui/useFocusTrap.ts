@@ -1,17 +1,18 @@
+// 오버레이·드로어 내부 Tab 순환 및 Escape 닫기 처리 (APG focus trap 패턴)
 import type { Ref } from 'vue';
 
-const FOCUSABLE_SELECTOR =
-    'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 type UseFocusTrapOptions = {
     onEscape?: () => void;
 };
 
-/**
- * 오버레이·드로어 내부 Tab 순환 및 Escape 처리.
- */
-export function useFocusTrap(containerRef: Ref<HTMLElement | null | undefined>, isActive: Ref<boolean>, options: UseFocusTrapOptions = {}) {
-    const handleKeydown = (event: KeyboardEvent) => {
+export function useFocusTrap(
+    containerRef: Ref<HTMLElement | null | undefined>,
+    isActive: Ref<boolean>,
+    options: UseFocusTrapOptions = {},
+) {
+    function handleKeydown(event: KeyboardEvent) {
         if (!isActive.value) return;
 
         if (event.key === 'Escape') {
@@ -35,7 +36,7 @@ export function useFocusTrap(containerRef: Ref<HTMLElement | null | undefined>, 
             event.preventDefault();
             first.focus();
         }
-    };
+    }
 
     watch(isActive, (active) => {
         if (!import.meta.client) return;

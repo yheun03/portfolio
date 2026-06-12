@@ -1,7 +1,4 @@
-/**
- * 목표: 고정 토큰과 실제 헤더 높이 불일치를 막는다.
- * 기능: .app-header 측정값을 --layout-header-height에 동기화한다.
- */
+// 고정 헤더 실제 높이를 CSS 변수 --layout-header-height에 실시간 동기화
 export function useLayoutHeaderHeight(headerRef: Ref<HTMLElement | null>) {
     if (!import.meta.client) return;
 
@@ -10,10 +7,8 @@ export function useLayoutHeaderHeight(headerRef: Ref<HTMLElement | null>) {
     function syncHeaderHeight() {
         const header = headerRef.value;
         if (!header) return;
-
         const height = header.offsetHeight;
         if (height <= 0) return;
-
         document.documentElement.style.setProperty('--layout-header-height', `${Math.ceil(height)}px`);
     }
 

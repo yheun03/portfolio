@@ -1,27 +1,22 @@
-/**
- * 목표: role="tablist" 컴포넌트의 키보드 조작을 APG 패턴에 맞춰 재사용한다.
- * 기능: 방향키/Home/End/선택 포커스 이동과 필요 시 스크롤 고정을 제공한다.
- */
+// APG Tabs 패턴 키보드 조작 — 방향키·Home·End 포커스 이동, 선택 시 스크롤 고정 지원
 import type { MaybeRef } from 'vue';
 import { tablistKeyboardA11y, type TablistA11yOptions } from '@config/tablist-a11y';
 
 export type TablistOrientation = 'horizontal' | 'vertical';
 
 export type TablistKeyboardConfig = TablistA11yOptions & {
-    /** `works-tab-${key}` 등 — id 접두사 (끝에 key가 붙음) */
+    // id 접두사: `${tabIdPrefix}${key}` 형태로 탭 요소를 찾음 (예: 'works-tab-')
     tabIdPrefix: string;
     orientation?: MaybeRef<TablistOrientation>;
-    /** 방향키·Home/End 후 스크롤을 해당 섹션 top에 고정 (예: `#works`) */
+    // 방향키·Home·End 이동 후 이 섹션 top에 스크롤을 고정 (예: '#works')
     scrollAnchorSelector?: string;
 };
 
 function pinScrollAnchor(selector: string) {
     const target = document.querySelector(selector);
     if (!target) return;
-
     const scrollMargin = Number.parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
     const top = target.getBoundingClientRect().top + window.scrollY - scrollMargin;
-
     window.scrollTo({ top, behavior: 'instant' });
 }
 
@@ -31,14 +26,17 @@ function resolveNavigationDelta(key: string, orientation: TablistOrientation): n
         if (key === 'ArrowUp') return -1;
         return null;
     }
-
     if (key === 'ArrowRight') return 1;
     if (key === 'ArrowLeft') return -1;
     return null;
 }
 
-export function useTablistKeyboard<T extends string>(keys: MaybeRef<readonly T[]>, onSelect: (key: T) => void, config: TablistKeyboardConfig) {
-    const options = {
+export function useTablistKeyboard<T extends string>(
+    keys: MaybeRef<readonly T[]>,
+    onSelect: (key: T) => void,
+    config: TablistKeyboardConfig,
+) {
+    const a11y = {
         arrowKeys: config.arrowKeys ?? tablistKeyboardA11y.arrowKeys,
         tabCyclesTabs: config.tabCyclesTabs ?? tablistKeyboardA11y.tabCyclesTabs,
     };
@@ -48,11 +46,11 @@ export function useTablistKeyboard<T extends string>(keys: MaybeRef<readonly T[]
         document.getElementById(`${config.tabIdPrefix}${key}`)?.focus({ preventScroll: true });
     }
 
-    function selectAndFocus(key: T, options?: { pinScroll?: boolean }) {
+    function selectAndFocus(key: T, opts?: { pinScroll?: boolean }) {
         onSelect(key);
         nextTick(() => {
             focusTab(key);
-            if (options?.pinScroll && config.scrollAnchorSelector) {
+            if (opts?.pinScroll && config.scrollAnchorSelector) {
                 pinScrollAnchor(config.scrollAnchorSelector);
             }
         });
@@ -64,36 +62,31 @@ export function useTablistKeyboard<T extends string>(keys: MaybeRef<readonly T[]
         if (index < 0 || list.length === 0) return;
 
         const orientation = unref(config.orientation) ?? 'horizontal';
+        const pinScroll = Boolean(config.scrollAnchorSelector);
 
-        if (options.arrowKeys) {
-            const pinScroll = Boolean(config.scrollAnchorSelector);
-
+        if (a11y.arrowKeys) {
             if (event.key === 'Home') {
                 event.preventDefault();
                 selectAndFocus(list[0]!, { pinScroll });
                 return;
             }
-
             if (event.key === 'End') {
                 event.preventDefault();
                 selectAndFocus(list[list.length - 1]!, { pinScroll });
                 return;
             }
-
             const delta = resolveNavigationDelta(event.key, orientation);
             if (delta !== null) {
                 event.preventDefault();
-                const nextIndex = (index + delta + list.length) % list.length;
-                selectAndFocus(list[nextIndex]!, { pinScroll });
+                selectAndFocus(list[(index + delta + list.length) % list.length]!, { pinScroll });
                 return;
             }
         }
 
-        if (options.tabCyclesTabs && event.key === 'Tab') {
+        if (a11y.tabCyclesTabs && event.key === 'Tab') {
             event.preventDefault();
             const step = event.shiftKey ? -1 : 1;
-            const nextIndex = (index + step + list.length) % list.length;
-            selectAndFocus(list[nextIndex]!);
+            selectAndFocus(list[(index + step + list.length) % list.length]!);
         }
     }
 

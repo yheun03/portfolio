@@ -54,69 +54,9 @@
     }
 }
 
+// journey 컨텍스트 — segment-control 기본값 그대로 사용 (추가 오버라이드 불필요)
 .journey__toolbar {
-    display: grid;
-    gap: var(--space-2);
-    min-width: min(100%, 18rem);
     justify-self: start;
-}
-
-.journey__control-label {
-    display: block;
-    margin: 0;
-    color: var(--color-text-muted);
-    @include font(label, $font-weight-bold);
-}
-
-.journey__segments {
-    display: grid;
-    grid-template-columns: repeat(var(--segment-count, 2), minmax(0, 1fr));
-    gap: 2px;
-    padding: 3px;
-    border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
-    border-radius: var(--radius-md);
-    background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
-}
-
-.journey__segment {
-    min-height: 2.65rem;
-    padding: var(--space-2) var(--space-3);
-    border: 0;
-    border-radius: calc(var(--radius-md) - 2px);
-    background: transparent;
-    color: var(--color-text);
-    font: inherit;
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    line-height: 1.25;
-    letter-spacing: 0.02em;
-    text-align: center;
-    cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease;
-
-    &:hover:not(.journey__segment--active) {
-        background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
-    }
-
-    &:focus-visible {
-        outline: 2px solid var(--color-primary);
-        outline-offset: 1px;
-    }
-
-    &--active {
-        color: var(--color-on-accent, var(--grayscale-0));
-        background: var(--color-primary);
-        box-shadow: var(--shadow-ring);
-    }
-
-    &--active:hover {
-        color: var(--color-on-accent, var(--grayscale-0));
-        background: var(--color-primary-dark, var(--color-primary));
-        box-shadow: var(--shadow-soft);
-    }
 }
 
 .journey__chapters {

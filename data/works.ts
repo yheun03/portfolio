@@ -1,6 +1,4 @@
-/**
- * 작업 데이터: `data/works/*.ts` (카테고리별) + `personal.ts`
- */
+// 프로젝트 데이터 진입점 — 카테고리별 works/*.ts 집계, WorkItem 타입, 필터·조회 함수 내보내기
 import awardData from './works/award';
 import operationData from './works/operation';
 import personalData from './works/personal';
@@ -10,7 +8,7 @@ import solutionData from './works/solution';
 
 export type WorkCategory = 'all' | 'project' | 'operation' | 'solution' | 'renewal' | 'award' | 'personal';
 
-/** `works/*.ts` 의 `as const` 항목과 동기화 (readonly 추론 유지) */
+// works/*.ts의 as const 항목에서 readonly 추론을 그대로 유지하는 파생 타입
 type WorkEntry =
     | (typeof projectData)[number]
     | (typeof operationData)[number]
@@ -19,7 +17,7 @@ type WorkEntry =
     | (typeof awardData)[number]
     | (typeof personalData)[number];
 
-/** 일부 항목만 `links` 보유 → 공통 optional로 두어 UI에서 별도 narrow 없이 접근 */
+// 일부 항목만 links를 보유 → 공통 optional로 선언해 UI에서 타입 좁히기 불필요
 export type WorkItem = WorkEntry & {
     readonly links?: readonly {
         readonly label: { readonly ko: string; readonly en: string };
@@ -36,12 +34,11 @@ export const workCategories = [
     { key: 'award', label: { ko: '수상 연계 프로젝트', en: 'Award-linked' } },
 ] as const;
 
-/** 실무 경력 — 카테고리별 TS 데이터를 한 목록으로 합침 (`data/works/`) */
+// 실무 경력 전체 (카테고리별 데이터 합산)
 export const careerWorks = [...projectData, ...operationData, ...solutionData, ...renewalData, ...awardData];
-
 export const personalWorksList = personalData;
 
-/** 스토어·필터용 전체 목록 (실무 + 개인) */
+// 스토어·필터 공용 전체 목록 (실무 + 개인)
 export const works = [...careerWorks, ...personalWorksList];
 
 export function getCareerWorkById(id: string): WorkItem | null {

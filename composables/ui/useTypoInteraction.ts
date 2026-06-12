@@ -1,19 +1,22 @@
-/**
- * 목표: 단어 단위 타이포그래피 인터랙션 상태를 컴포넌트 밖으로 분리한다.
- * 기능: 문장 단어 분리, 활성 단어 key 생성/설정/판별을 제공한다.
- */
-export const splitTypoWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
+// 타이포그래피 단어 단위 인터랙션 — 단어 분리, 활성 key 관리
+export function splitTypoWords(text: string): string[] {
+    return text.trim().split(/\s+/).filter(Boolean);
+}
 
-export const useTypoInteraction = () => {
+export function useTypoInteraction() {
     const activeKey = ref<string | null>(null);
 
-    const wordKey = (group: string, index: number) => `${group}-${index}`;
+    function wordKey(group: string, index: number) {
+        return `${group}-${index}`;
+    }
 
-    const setActive = (key: string | null) => {
+    function setActive(key: string | null) {
         activeKey.value = key;
-    };
+    }
 
-    const isActive = (key: string) => activeKey.value === key;
+    function isActive(key: string) {
+        return activeKey.value === key;
+    }
 
     return { activeKey, wordKey, setActive, isActive };
-};
+}
