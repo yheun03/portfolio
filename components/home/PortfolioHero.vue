@@ -1,5 +1,11 @@
 <template>
     <section id="hello" ref="heroSectionRef" class="section section--hero hero" aria-labelledby="hero-display-title">
+        <div class="hero__canvas" aria-hidden="true">
+            <span class="hero__orb hero__orb--a"></span>
+            <span class="hero__orb hero__orb--b"></span>
+            <span class="hero__orb hero__orb--c"></span>
+        </div>
+        <div class="hero__spotlight" aria-hidden="true"></div>
         <div class="hero__poster">
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
@@ -15,50 +21,32 @@
                     line-accent-class="hero__display-line--accent" />
 
                 <p class="hero__lead">{{ heroLead }}</p>
-                <p class="hero__intro">{{ t("hero.subtitle") }}</p>
             </div>
-
-            <section class="hero__essentials" data-animate :aria-label="locale === 'ko' ? '핵심 역량' : 'Core focus'">
-                <header class="hero__essentials-head">
-                    <h2 class="hero__essentials-title">{{ t("hero.kicker") }}</h2>
-                    <p class="hero__essentials-lead">{{ t("hero.essentialsLead") }}</p>
-                </header>
-
-                <ul class="hero__focus-list">
-                    <li v-for="(area, index) in heroFocusCards" :key="pick(area.label)" class="hero__focus-item">
-                        <span class="hero__focus-index">{{ String(index + 1).padStart(2, "0") }}</span>
-                        <div class="hero__focus-copy">
-                            <h3 class="hero__focus-title">{{ pick(area.label) }}</h3>
-                            <span>{{ pick(area.value) }}</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <dl ref="statsRef" class="hero__metrics-bar" :aria-label="locale === 'ko' ? '핵심 지표' : 'Key metrics'">
-                    <div v-for="(stat, idx) in convertedStats" :key="stat.label" class="hero__metric"
-                        :style="{ '--stagger-i': idx }" data-stagger>
-                        <dt>{{ stat.label }}</dt>
-                        <dd>{{ statValues[idx] }}{{ stat.suffix }}</dd>
-                    </div>
-                </dl>
-            </section>
 
             <nav class="hero__actions" :aria-label="locale === 'ko' ? '주요 포트폴리오 섹션 바로가기' : 'Primary portfolio sections'">
                 <a class="base-button base-button--primary" href="#works">{{ t("hero.ctaWorks") }}</a>
                 <a class="base-button base-button--ghost" href="#toolbox">{{ t("hero.ctaToolbox") }}</a>
             </nav>
         </div>
+
+        <a class="hero__cue" href="#about" :aria-label="t('hero.scrollCueLabel')">
+            <span class="hero__cue-label" aria-hidden="true">{{ t("hero.scrollCue") }}</span>
+            <span class="hero__cue-line" aria-hidden="true"></span>
+        </a>
     </section>
 </template>
 
 <script setup lang="ts">
 import { profile } from "@data/site";
 import { splitTypoWords } from '@composables/ui/useTypoInteraction';
+import { useMagnetic } from '@composables/ui/useMagnetic';
+import { usePointerGlow } from '@composables/ui/usePointerGlow';
 
 const { t, pick, locale } = useLocale();
 
 const heroSectionRef = ref<HTMLElement | null>(null);
-const heroFocusCards = computed(() => profile.focusAreas);
+useMagnetic(heroSectionRef, '.hero__actions .base-button');
+usePointerGlow(heroSectionRef);
 
 const heroLines = computed(() => {
     if (locale.value === "ko") {
@@ -81,30 +69,4 @@ const heroLead = computed(() =>
         ? "복잡한 요구를 단순한 흐름으로."
         : "Complex asks, clear flows."
 );
-
-const convertedStats = computed(() => profile.stats.map((item) => ({ ...item, label: pick(item.label) })));
-const counters = convertedStats.value.map((item) => useCountUp(item.value));
-const statValues = computed(() => counters.map((counter) => counter.value.value));
-const statsRef = ref<HTMLElement | null>(null);
-let statsObserver: IntersectionObserver | null = null;
-
-onMounted(() => {
-    if (!statsRef.value) return;
-    statsObserver = new IntersectionObserver(
-        (entries) => {
-            const isVisible = entries.some((entry) => entry.isIntersecting);
-            if (!isVisible) return;
-            counters.forEach((counter) => counter.start());
-            statsObserver?.disconnect();
-            statsObserver = null;
-        },
-        { threshold: 0.35 }
-    );
-    statsObserver.observe(statsRef.value);
-});
-
-onBeforeUnmount(() => {
-    statsObserver?.disconnect();
-    statsObserver = null;
-});
 </script>

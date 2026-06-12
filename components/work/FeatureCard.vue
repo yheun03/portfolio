@@ -42,6 +42,8 @@ const props = withDefaults(
 const cardRef = ref<HTMLElement | null>(null);
 const rotateX = ref(0);
 const rotateY = ref(0);
+const glowX = ref(50);
+const glowY = ref(50);
 const isHovered = ref(false);
 
 const cardClass = computed(() => ({
@@ -51,10 +53,14 @@ const cardClass = computed(() => ({
 }));
 
 const tiltStyle = computed(() => {
-    if (!isHovered.value) return {};
-    return {
-        transform: `perspective(700px) rotateX(${rotateX.value}deg) rotateY(${rotateY.value}deg) translateZ(8px)`,
+    const style: Record<string, string> = {
+        '--glow-x': `${glowX.value}%`,
+        '--glow-y': `${glowY.value}%`,
     };
+    if (isHovered.value) {
+        style.transform = `perspective(700px) rotateX(${rotateX.value}deg) rotateY(${rotateY.value}deg) translateZ(8px)`;
+    }
+    return style;
 });
 
 let rafId = 0;
@@ -71,6 +77,8 @@ function onMouseMove(e: MouseEvent) {
         const dy = (e.clientY - cy) / (rect.height / 2);
         rotateX.value = +(dy * -5).toFixed(2);
         rotateY.value = +(dx * 5).toFixed(2);
+        glowX.value = +(((e.clientX - rect.left) / rect.width) * 100).toFixed(1);
+        glowY.value = +(((e.clientY - rect.top) / rect.height) * 100).toFixed(1);
         isHovered.value = true;
     });
 }

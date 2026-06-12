@@ -5,16 +5,15 @@
             <PortfolioHero />
         </div>
         <div class="page__layer page__layer--profile">
-            <PortfolioAbout />
+            <PortfolioWhy />
         </div>
         <div class="page__layer page__layer--works">
-            <PortfolioWorks />
-            <PortfolioPersonal />
+            <PortfolioShowcase />
         </div>
         <div class="page__layer page__layer--capability">
-            <PortfolioJourney />
+            <PortfolioProof />
+            <PortfolioHow />
             <PortfolioToolbox />
-            <PortfolioHighlights />
         </div>
         <div class="page__layer page__layer--contact">
             <PortfolioContact />
@@ -28,12 +27,11 @@ import { defineAsyncComponent } from 'vue';
 import PortfolioHero from '~/components/home/PortfolioHero.vue';
 import { HOME_SCROLL_SECTION_IDS } from '@config/home-sections';
 
-const PortfolioAbout = defineAsyncComponent(() => import('~/components/home/PortfolioAbout.vue'));
-const PortfolioWorks = defineAsyncComponent(() => import('~/components/home/PortfolioWorks.vue'));
-const PortfolioPersonal = defineAsyncComponent(() => import('~/components/home/PortfolioPersonal.vue'));
-const PortfolioJourney = defineAsyncComponent(() => import('~/components/home/PortfolioJourney.vue'));
+const PortfolioWhy = defineAsyncComponent(() => import('~/components/home/PortfolioWhy.vue'));
+const PortfolioShowcase = defineAsyncComponent(() => import('~/components/home/PortfolioShowcase.vue'));
+const PortfolioProof = defineAsyncComponent(() => import('~/components/home/PortfolioProof.vue'));
+const PortfolioHow = defineAsyncComponent(() => import('~/components/home/PortfolioHow.vue'));
 const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
-const PortfolioHighlights = defineAsyncComponent(() => import('~/components/home/PortfolioHighlights.vue'));
 const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
 const TempMainProgressModalRenderer = defineAsyncComponent(
     () => import('~/components/renderers/Page_Home/TempMainProgressModalRenderer.vue'),
@@ -51,11 +49,7 @@ const appDockLinks = computed(() =>
     }))
 );
 
-const headerNavLinks = computed(() => [
-    { href: '/', label: t('nav.home') },
-    { href: '/projects', label: t('nav.worksArchive') },
-    { href: '/personal', label: t('nav.personalArchive') },
-]);
+const headerNavLinks = useSubpageLinks();
 
 const { activeId } = useScrollSpy([...HOME_SCROLL_SECTION_IDS]);
 

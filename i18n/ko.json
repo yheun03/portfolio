@@ -10,7 +10,9 @@
         "journey": "여정",
         "toolbox": "기술 스택",
         "highlights": "하이라이트",
-        "contact": "연락하기"
+        "contact": "연락하기",
+        "proof": "성과",
+        "how": "작업 방식"
     },
     "hero": {
         "title": "기분 좋은 인터랙션과 탄탄한 구조를 함께 만드는 웹 퍼블리셔",
@@ -20,7 +22,9 @@
         "essentialsLead": "구조 · 퍼블리싱 · 협업을 한 흐름으로 맞춥니다.",
         "ctaWorks": "웹 퍼블리셔 실무 프로젝트 보기",
         "ctaToolbox": "Vue 3·SCSS UI 개발 역량 보기",
-        "ctaContact": "연락하기"
+        "ctaContact": "연락하기",
+        "scrollCue": "Scroll",
+        "scrollCueLabel": "다음 섹션으로 이동"
     },
     "about": {
         "title": "감각과 구조를 함께 설계하는 방식",
@@ -163,5 +167,15 @@
         "description": "웹 퍼블리셔 은영환의 2026 포트폴리오입니다. HTML, SCSS, JavaScript, Vue 3 기반 UI 개발, 웹 접근성, SEO, 반응형 웹 실무 프로젝트와 프론트엔드 경험을 소개합니다.",
         "ogTitle": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환 2026 포트폴리오",
         "ogDescription": "Vue 3, SCSS, JavaScript UI 개발과 웹 접근성, SEO, 반응형 웹 실무 경험을 정리한 은영환 포트폴리오"
+    },
+    "story": {
+        "showcaseTitle": "대표 작업 셋만 먼저 보여드립니다",
+        "showcaseDescription": "수상작·자사 솔루션·SI 대표 사례입니다. 나머지는 갤러리에 정리되어 있습니다.",
+        "caseCta": "케이스 보기",
+        "proofDescription": "숫자와 기록으로 정리한 결과입니다. 자세한 내용은 각 페이지에서 볼 수 있습니다.",
+        "proofLinkHighlights": "수상·자격 기록 보기",
+        "proofLinkJourney": "성장 여정 보기",
+        "featuredBadge": "대표작",
+        "howDescription": "파악 → 정리 → 구현 → 검증. 모든 화면을 같은 리듬으로 만듭니다."
     }
 }

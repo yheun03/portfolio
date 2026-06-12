@@ -1,6 +1,6 @@
 <template>
-    <section id="contact" class="section section--contact" aria-labelledby="section-contact-title">
-        <div class="contact__poster" data-animate>
+    <section id="contact" ref="contactSectionRef" class="section section--contact" aria-labelledby="section-contact-title">
+        <div class="contact__poster" data-animate="zoom">
             <header class="contact__head">
                 <BaseSectionTitle title-id="section-contact-title" :eyebrow="t('nav.contact')" :title="t('contact.title')" />
                 <p class="contact__lead">{{ t("contact.description") }}</p>
@@ -48,8 +48,11 @@
 <script setup lang="ts">
 import { profile } from "@data/site";
 import profilePhotoUrl from "~/assets/images/profile/photo-1440.webp";
+import { useMagnetic } from "@composables/ui/useMagnetic";
 
 const { t, locale } = useLocale();
+const contactSectionRef = ref<HTMLElement | null>(null);
+useMagnetic(contactSectionRef, ".contact__actions .base-button");
 const emailLetters = computed(() => profile.contacts.email.split(""));
 const atSignIndex = computed(() => profile.contacts.email.indexOf("@"));
 const profilePhotoSrc = profilePhotoUrl;

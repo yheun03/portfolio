@@ -45,12 +45,9 @@ body {
     :where(p, li, dd) {
         color: var(--color-text);
         font-size: max(1em, var(--font-size-sm));
-        line-height: 1.75;
+        line-height: var(--line-height-body);
     }
 
-    :where(p, li, dd, .section-title__description) {
-        // max-width: 68ch;
-    }
 }
 
 h1,
@@ -180,12 +177,30 @@ html.app--menu-open {
     transition:
         opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--animate-delay, 0s);
     will-change: opacity, transform;
+}
+
+/* 방향 변형 — 섹션마다 진입 방향을 달리해 리듬을 만든다 */
+[data-animate="left"] {
+    transform: translateX(-36px);
+}
+
+[data-animate="right"] {
+    transform: translateX(36px);
+}
+
+[data-animate="zoom"] {
+    transform: translateY(20px) scale(0.95);
+}
+
+[data-animate="fade"] {
+    transform: none;
 }
 
 [data-animate].animate--visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 /* stagger siblings inside a revealed container */

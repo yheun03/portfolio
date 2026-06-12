@@ -10,7 +10,9 @@
         "journey": "Journey",
         "toolbox": "Toolbox",
         "highlights": "Highlights",
-        "contact": "Say Hi"
+        "contact": "Say Hi",
+        "proof": "Proof",
+        "how": "Process"
     },
     "hero": {
         "title": "A web publisher who creates delightful interaction with solid structure",
@@ -20,7 +22,9 @@
         "essentialsLead": "Structure, publishing, and collaboration in one flow.",
         "ctaWorks": "Web publishing case studies",
         "ctaToolbox": "Vue 3 & SCSS UI skills",
-        "ctaContact": "Contact"
+        "ctaContact": "Contact",
+        "scrollCue": "Scroll",
+        "scrollCueLabel": "Scroll to next section"
     },
     "about": {
         "title": "How I design with taste and structure",
@@ -163,5 +167,15 @@
         "description": "Eunyounghwan's 2026 web publisher and frontend developer portfolio, covering HTML, SCSS, JavaScript, Vue 3 UI development, web accessibility, SEO, responsive web, and production projects.",
         "ogTitle": "Eunyounghwan, Web Publisher & Web Frontend Developer Portfolio 2026",
         "ogDescription": "A portfolio showing Vue 3, SCSS, JavaScript UI development, web accessibility, SEO, responsive web, and frontend production work."
+    },
+    "story": {
+        "showcaseTitle": "Three works, up front",
+        "showcaseDescription": "Award-winning, in-house solution, and SI highlights. The rest live in the galleries.",
+        "caseCta": "View case",
+        "proofDescription": "Results in numbers and records. Full details live on each page.",
+        "proofLinkHighlights": "View awards & records",
+        "proofLinkJourney": "View journey",
+        "featuredBadge": "Featured",
+        "howDescription": "Read, shape, build, check — every screen follows the same rhythm."
     }
 }

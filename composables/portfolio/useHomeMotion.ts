@@ -76,6 +76,44 @@ export function useHomeMotion() {
                 });
             }
 
+            /* ── Hero scroll cue: 스크롤 시작과 함께 사라짐 ── */
+            const heroCue = root.querySelector<HTMLElement>('.hero__cue');
+            if (heroCue) {
+                gsap.to(heroCue, {
+                    autoAlpha: 0,
+                    yPercent: 30,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.section--hero',
+                        start: 'top top',
+                        end: '18% top',
+                        scrub: true,
+                    },
+                });
+            }
+
+            /* ── Why: 대형 헤드라인이 안쪽에서 제자리로 정착하는 드리프트 (가운데 정렬 항목 제외)
+               바깥 방향 시작은 페이지 패딩을 넘어 잘려 보여 안쪽 시작으로 고정 ── */
+            root.querySelectorAll<HTMLElement>('.why__list > li h3').forEach((heading, i) => {
+                if (i === 1) return;
+                const inward = i === 0 ? 4 : -4;
+                gsap.fromTo(
+                    heading,
+                    { xPercent: inward },
+                    {
+                        xPercent: 0,
+                        ease: 'none',
+                        force3D: true,
+                        scrollTrigger: {
+                            trigger: heading,
+                            start: 'top 95%',
+                            end: 'bottom 30%',
+                            scrub: 1.2,
+                        },
+                    }
+                );
+            });
+
             /* ── About: feature grid stagger on scroll ── */
             const featureCards = root.querySelectorAll<HTMLElement>('.about__spotlight .feature-card');
             if (featureCards.length) {
@@ -98,27 +136,7 @@ export function useHomeMotion() {
                 );
             }
 
-            /* ── About workflow steps stagger ── */
-            const flowSteps = root.querySelectorAll<HTMLElement>('.flow-steps li');
-            if (flowSteps.length) {
-                gsap.fromTo(
-                    flowSteps,
-                    { opacity: 0, y: 32, scaleY: 0.9 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scaleY: 1,
-                        duration: 0.7,
-                        ease: 'power3.out',
-                        stagger: 0.1,
-                        scrollTrigger: {
-                            trigger: '.about__workflow',
-                            start: 'top 80%',
-                            toggleActions: 'play none none none',
-                        },
-                    }
-                );
-            }
+            /* flow-steps 는 data-stagger CSS 애니메이션이 전담 — GSAP 중복 트윈 없음 */
 
             /* ── Section titles: slide-in line accent ── */
             root.querySelectorAll<HTMLElement>('.section-title__eyebrow').forEach((eyebrow) => {
