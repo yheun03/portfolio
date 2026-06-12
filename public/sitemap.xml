@@ -19,6 +19,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://yheun03.github.io/portfolio/journey</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://yheun03.github.io/portfolio/projects/samhwa-eco-dashboard</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>

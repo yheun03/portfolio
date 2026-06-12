@@ -3,7 +3,7 @@
         <span v-for="(line, lineIndex) in lines" :key="`${groupId}-line-${lineIndex}`" :class="[
             lineClass,
             { [lineAccentClass]: line.accent },
-        ]">
+        ]" :style="{ '--line-index': lineIndex }">
             <span v-for="(word, wordIndex) in line.words" :key="wordKey(`${groupId}-${lineIndex}`, wordIndex)"
                 class="typo-word"
                 :class="{ 'typo-word--active': isActive(wordKey(`${groupId}-${lineIndex}`, wordIndex)) }"

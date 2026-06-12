@@ -76,85 +76,77 @@
     &--profile {
         position: relative;
         overflow: visible;
-        // Dark editorial panel — About section
-        background: #111827;
-        --color-bg: #111827;
-        --color-surface: #1c2436;
-        --color-surface-strong: #252e42;
-        --color-text: #d1d6db;
-        --color-text-strong: #f2f4f6;
-        --color-text-heading: #f9fafb;
-        --color-text-muted: #8b95a1;
-        --color-text-subtle: #6b7684;
-        --color-border: #2d3748;
-        --color-primary: #4a8cff;
-        --color-primary-dark: #6fa3ff;
-        --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
-        --gradient-surface: linear-gradient(168deg, #1c2436 0%, #1a2030 100%);
-        --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.42);
-        --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
-        --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
-        --shadow-ring: 0 0 0 3px rgba(74, 140, 255, 0.28);
-        --color-glass-2: rgba(28, 36, 54, 0.78);
-        --color-glass-2-strong: rgba(37, 46, 66, 0.86);
-        --color-on-primary: #fff;
-
-        @media (prefers-color-scheme: dark) {
-            background: #020407;
-            --color-bg: #020407;
-            --color-surface: #0d1117;
-            --color-border: #1c2333;
-        }
     }
 
     &--contact {
         position: relative;
-        // Dark editorial panel — Contact section
-        background: #0d1117;
-        --color-bg: #0d1117;
-        --color-surface: #161c27;
-        --color-surface-strong: #1e2538;
-        --color-text: #d1d6db;
-        --color-text-strong: #f2f4f6;
-        --color-text-heading: #f9fafb;
-        --color-text-muted: #8b95a1;
-        --color-text-subtle: #6b7684;
-        --color-border: #252e42;
-        --color-primary: #4a8cff;
-        --color-primary-dark: #6fa3ff;
-        --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
-        --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
-        --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
-        --shadow-glow: 0 0 0 1px rgba(37, 46, 66, 0.58) inset;
-        --color-glass-2: rgba(22, 28, 39, 0.78);
-        --color-glass-2-strong: rgba(30, 37, 56, 0.86);
-        --color-on-primary: #fff;
+    }
+}
 
-        @media (prefers-color-scheme: dark) {
-            background: #020407;
-            --color-bg: #020407;
-        }
+// Dark editorial panel — 다크 테마에서만 적용 (라이트 테마는 페이지 배경 그대로)
+@mixin editorial-panel-profile {
+    background: #020407;
+    --color-bg: #020407;
+    --color-surface: #0d1117;
+    --color-surface-strong: #252e42;
+    --color-text: #d1d6db;
+    --color-text-strong: #f2f4f6;
+    --color-text-heading: #f9fafb;
+    --color-text-muted: #8b95a1;
+    --color-text-subtle: #6b7684;
+    --color-border: #1c2333;
+    --color-primary: #4a8cff;
+    --color-primary-dark: #6fa3ff;
+    --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+    --gradient-surface: linear-gradient(168deg, #1c2436 0%, #1a2030 100%);
+    --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.42);
+    --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
+    --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
+    --shadow-ring: 0 0 0 3px rgba(74, 140, 255, 0.28);
+    --color-glass-2: rgba(28, 36, 54, 0.78);
+    --color-glass-2-strong: rgba(37, 46, 66, 0.86);
+    --color-on-primary: #fff;
+}
+
+@mixin editorial-panel-contact {
+    background: #020407;
+    --color-bg: #020407;
+    --color-surface: #161c27;
+    --color-surface-strong: #1e2538;
+    --color-text: #d1d6db;
+    --color-text-strong: #f2f4f6;
+    --color-text-heading: #f9fafb;
+    --color-text-muted: #8b95a1;
+    --color-text-subtle: #6b7684;
+    --color-border: #252e42;
+    --color-primary: #4a8cff;
+    --color-primary-dark: #6fa3ff;
+    --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+    --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
+    --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
+    --shadow-glow: 0 0 0 1px rgba(37, 46, 66, 0.58) inset;
+    --color-glass-2: rgba(22, 28, 39, 0.78);
+    --color-glass-2-strong: rgba(30, 37, 56, 0.86);
+    --color-on-primary: #fff;
+}
+
+// data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .page__layer--profile {
+        @include editorial-panel-profile;
+    }
+
+    :root:not([data-theme="light"]) .page__layer--contact {
+        @include editorial-panel-contact;
     }
 }
 
 :root[data-theme="dark"] .page__layer--profile {
-    background: #020407;
-    --color-bg: #020407;
-    --color-surface: #0d1117;
-    --color-border: #1c2333;
-}
-
-:root[data-theme="light"] .page__layer--profile {
-    background: #111827;
+    @include editorial-panel-profile;
 }
 
 :root[data-theme="dark"] .page__layer--contact {
-    background: #020407;
-    --color-bg: #020407;
-}
-
-:root[data-theme="light"] .page__layer--contact {
-    background: #0d1117;
+    @include editorial-panel-contact;
 }
 
 .section {
@@ -195,11 +187,11 @@
     --section-index: "02";
 }
 
-.section--personal {
+.section--proof {
     --section-index: "03";
 }
 
-.section--journey {
+.section--how {
     --section-index: "04";
 }
 
@@ -207,12 +199,19 @@
     --section-index: "05";
 }
 
-.section--highlights {
+.section--contact {
     --section-index: "06";
 }
 
-.section--contact {
-    --section-index: "07";
+/* 독립 페이지 섹션 — 단독 노출이므로 01 고정 */
+.section--journey,
+.section--personal {
+    --section-index: "01";
+}
+
+/* 여정 페이지 두 번째 섹션 */
+.section--highlights {
+    --section-index: "02";
 }
 
 

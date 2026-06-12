@@ -36,6 +36,123 @@
         .hero__essentials { grid-area: essentials; }
     }
 
+    /* ── Ambient canvas: 블러 그라디언트 오브 (GSAP 시차 대상) ── */
+    &__canvas {
+        position: absolute;
+        inset: -8% -4%;
+        z-index: -1;
+        overflow: visible;
+        pointer-events: none;
+    }
+
+    &__orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(clamp(2.5rem, 6vw, 4.5rem));
+        will-change: transform;
+        animation: hero-orb-drift 22s ease-in-out infinite alternate;
+
+        &--a {
+            top: 6%;
+            right: 8%;
+            width: clamp(16rem, 34vw, 34rem);
+            aspect-ratio: 1;
+            opacity: 0.38;
+            background: radial-gradient(circle at 32% 32%,
+                    color-mix(in srgb, var(--color-primary) 52%, transparent),
+                    transparent 70%);
+        }
+
+        &--b {
+            bottom: 4%;
+            left: -4%;
+            width: clamp(13rem, 26vw, 26rem);
+            aspect-ratio: 1;
+            opacity: 0.26;
+            background: radial-gradient(circle at 60% 40%,
+                    color-mix(in srgb, var(--accent-mint, var(--color-primary)) 46%, transparent),
+                    transparent 72%);
+            animation-duration: 28s;
+            animation-delay: -8s;
+        }
+
+        &--c {
+            top: 38%;
+            left: 36%;
+            width: clamp(9rem, 18vw, 18rem);
+            aspect-ratio: 1;
+            opacity: 0.2;
+            background: radial-gradient(circle at 50% 50%,
+                    color-mix(in srgb, var(--accent-hot, var(--color-primary)) 40%, transparent),
+                    transparent 70%);
+            animation-duration: 18s;
+            animation-delay: -14s;
+        }
+    }
+
+    /* ── Pointer spotlight: 커서를 따라오는 라디얼 하이라이트 ── */
+    &__spotlight {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        background: radial-gradient(36rem circle at var(--glow-x, 50%) var(--glow-y, 30%),
+                color-mix(in srgb, var(--color-primary) 8%, transparent),
+                transparent 70%);
+    }
+
+    &.is-glow .hero__spotlight {
+        opacity: 1;
+    }
+
+    /* ── Scroll cue ── */
+    &__cue {
+        position: absolute;
+        bottom: clamp(1.25rem, 3vw, 2.5rem);
+        left: 50%;
+        translate: -50% 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    &__cue-label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    &__cue-line {
+        position: relative;
+        width: 1px;
+        height: clamp(2.5rem, 4vw, 3.5rem);
+        overflow: hidden;
+        background: color-mix(in srgb, var(--color-border) 85%, transparent);
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-accent);
+            transform: translateY(-100%);
+            animation: hero-cue-scan 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+    }
+
     &__meta {
         grid-area: meta;
         display: inline-flex;
@@ -168,9 +285,24 @@
         gap: clamp(0.65rem, 1.8vw, 1.1rem);
         align-items: start;
         padding: clamp(0.9rem, 2.2vw, 1.25rem) clamp(0.9rem, 1.8vw, 1.35rem);
+        transition: background-color 0.32s ease;
 
         &:not(:last-child) {
             border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background: color-mix(in srgb, var(--color-primary) 5%, transparent);
+            }
+
+            &:hover .hero__focus-index {
+                transform: translateY(-2px) scale(1.15);
+            }
+
+            &:hover .hero__focus-title {
+                color: var(--color-primary);
+            }
         }
     }
 
@@ -181,6 +313,8 @@
         font-weight: 700;
         letter-spacing: var(--tracking-label);
         line-height: 1;
+        transform-origin: left center;
+        transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     &__focus-copy {
@@ -191,6 +325,7 @@
         .hero__focus-title {
             margin: 0;
             @include font(title-1, $font-weight-black, $line-height: $line-height-heading);
+            transition: color 0.28s ease;
         }
 
         span {
@@ -483,4 +618,111 @@
     .section--hero {
         width: min(100% - var(--page-pad-hero), var(--layout-hero-max));
     }
+}
+
+/* 스크롤 큐는 히어로가 100svh를 차지하는 데스크톱에서만 노출
+   섹션이 뷰포트보다 길어질 수 있어 svh 기준으로 첫 화면 하단에 고정 배치 */
+@media (min-width: #{$bp-min-laptop}) {
+    .hero__cue {
+        display: inline-flex;
+        bottom: auto;
+        top: calc(100svh - var(--layout-header-height) - 8.5rem);
+    }
+}
+
+/* 모바일: 오브 수·블러 강도를 줄여 GPU 부담 최소화 */
+@media (max-width: #{$bp-max-mobile}) {
+    .hero__orb {
+        filter: blur(2rem);
+
+        &--c {
+            display: none;
+        }
+    }
+}
+
+/* =========================================
+   Hero entrance — 첫 로드 시퀀스
+   fill: backwards 만 사용해 종료 후 hover 인터랙션과 충돌하지 않음
+========================================= */
+@keyframes hero-rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes hero-word-in {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 0.45em, 0) scale(0.97);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes hero-orb-drift {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(4%, -7%, 0) scale(1.12);
+    }
+}
+
+@keyframes hero-cue-scan {
+    to {
+        transform: translateY(100%);
+    }
+}
+
+.hero__meta,
+.hero__eyebrow,
+.hero__lead,
+.hero__intro,
+.hero__actions,
+.hero__cue,
+.hero__canvas {
+    animation: hero-rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.hero__canvas {
+    animation-name: hero-fade-in;
+    animation-duration: 1.6s;
+}
+
+.hero__meta { animation-delay: 0.05s; }
+.hero__eyebrow { animation-delay: 0.16s; }
+.hero__lead { animation-delay: 0.82s; }
+.hero__intro { animation-delay: 0.94s; }
+.hero__actions { animation-delay: 1.08s; }
+.hero__cue { animation-delay: 1.45s; }
+.hero__canvas { animation-delay: 0.1s; }
+
+@keyframes hero-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero__display .typo-word {
+    animation: hero-word-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(0.28s + (var(--line-index, 0) * 0.16s) + (var(--word-index, 0) * 0.06s));
 }

@@ -16,7 +16,9 @@ export function useCountUp(end: number, duration = 1200) {
 
         function tick(now: number) {
             const progress = Math.min((now - startTime) / duration, 1);
-            value.value = Math.floor(end * progress);
+            // ease-out expo — 끝으로 갈수록 감속해 숫자가 자연스럽게 멈추도록
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            value.value = Math.round(end * eased);
             if (progress < 1) requestAnimationFrame(tick);
         }
 
