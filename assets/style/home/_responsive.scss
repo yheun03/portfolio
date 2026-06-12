@@ -89,18 +89,10 @@
         gap: var(--space-8);
     }
 
-    .journey__flow-header {
-        grid-template-columns: 1fr;
-        align-items: start;
-    }
-
-    .journey__kicker {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
-
-    .journey__toolbar {
-        width: 100%;
-        max-width: none;
+    .journey__view-switch {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
     }
 
     .journey__chapter {

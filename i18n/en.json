@@ -18,8 +18,8 @@
         "branding": "From publishing to frontend, with UI at the center",
         "kicker": "The essentials.",
         "essentialsLead": "Structure, publishing, and collaboration in one flow.",
-        "ctaWorks": "View web publishing case studies",
-        "ctaToolbox": "View Vue 3 and SCSS UI skills",
+        "ctaWorks": "Web publishing case studies",
+        "ctaToolbox": "Vue 3 & SCSS UI skills",
         "ctaContact": "Contact"
     },
     "about": {
@@ -89,9 +89,9 @@
     "journey": {
         "title": "A growth path built through delivery",
         "summary": "From a middle-school council site through high school and university to parallel publishing work at a company.",
-        "kicker": "Choose how to read the timeline.",
-        "viewLegend": "View",
-        "viewAffiliation": "By affiliation",
+        "kicker": "By company, or by year.",
+        "viewLegend": "Timeline view",
+        "viewAffiliation": "By company",
         "viewChronological": "By year",
         "tempLabel": "Sample data"
     },
@@ -102,7 +102,7 @@
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
-        "summary": "Pick a category—context on the left, the full list on the right.",
+        "summary": "Awards, certifications, roles, and activities.",
         "awards": "Awards",
         "certifications": "Certifications",
         "roles": "Professional Roles",
