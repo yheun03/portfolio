@@ -8,13 +8,11 @@
         </header>
 
         <div class="journey__flow" data-animate>
-            <div class="journey__flow-header">
-                <div class="journey__toolbar">
-                    <BaseSegmentControl :model-value="viewMode" :options="resolvedViewOptions"
-                        :label-text="t('journey.viewLegend')" label-id="journey-view-label"
-                        @update:model-value="setViewMode($event as typeof viewMode)" />
-                </div>
-                <p class="journey__kicker">{{ t("journey.kicker") }}</p>
+            <div class="journey__view-switch">
+                <p class="journey__view-kicker" aria-hidden="true">{{ t("journey.kicker") }}</p>
+                <BaseSegmentControl :model-value="viewMode" :options="resolvedViewOptions"
+                    :label-text="t('journey.viewLegend')" label-id="journey-view-label" label-hidden
+                    @update:model-value="setViewMode($event as typeof viewMode)" />
             </div>
 
             <JourneyViewRenderer :view-mode="viewMode" :affiliation-blocks="affiliationBlocks"

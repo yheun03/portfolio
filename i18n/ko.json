@@ -89,8 +89,8 @@
     "journey": {
         "title": "경험이 쌓인 성장의 흐름",
         "summary": "중학교 학생회 페이지부터 고등학교·대학, 회사 실무 병행까지 퍼블리싱·프론트엔드 중심으로 쌓아 온 경험입니다.",
-        "kicker": "보기 방식을 고를 수 있습니다.",
-        "viewLegend": "보기",
+        "kicker": "소속별, 또는 시간순으로.",
+        "viewLegend": "여정 보기 방식",
         "viewAffiliation": "소속순",
         "viewChronological": "시간순",
         "tempLabel": "임시 예시 데이터"
@@ -102,7 +102,7 @@
     },
     "highlights": {
         "title": "성과와 전문성 한눈에 보기",
-        "summary": "카테고리를 고르면 왼쪽에 맥락, 오른쪽에 항목이 정렬되어 한눈에 읽힙니다.",
+        "summary": "수상, 자격, 역할, 활동 — 분야별로 정리했습니다.",
         "awards": "수상",
         "certifications": "자격/인증",
         "roles": "전문 역할",

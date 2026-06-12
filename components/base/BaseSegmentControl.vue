@@ -1,6 +1,6 @@
 <template>
     <div class="segment-control">
-        <span :id="labelId" class="segment-control__label">{{ labelText }}</span>
+        <span :id="labelId" class="segment-control__label" :class="{ 'visually-hidden': labelHidden }">{{ labelText }}</span>
         <div class="segment-control__group" role="radiogroup" :aria-labelledby="labelId"
             :style="{ '--segment-count': options.length }">
             <button v-for="option in options" :key="option.value" type="button" class="segment-control__button"
@@ -25,6 +25,7 @@ const props = defineProps<{
     options: readonly SegmentOption[];
     labelText: string;
     labelId: string;
+    labelHidden?: boolean;
 }>();
 
 const emit = defineEmits<{

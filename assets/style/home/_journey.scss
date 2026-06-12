@@ -34,29 +34,20 @@
     overflow: visible;
 }
 
-.journey__flow-header {
-    display: grid;
-    gap: clamp(1rem, 2.5vw, 1.5rem);
-    align-items: end;
-
-    @media (min-width: 720px) {
-        grid-template-columns: auto minmax(0, 1fr);
-        gap: clamp(1.25rem, 3vw, 2rem);
-    }
+/* view-switch: kicker + segment control 한 행 배치 */
+.journey__view-switch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4) clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.journey__kicker {
+.journey__view-kicker {
+    flex: 1 0 max-content;
     margin: 0;
     @include font(display-4);
-
-    @media (min-width: 720px) {
-        text-align: end;
-    }
-}
-
-// journey 컨텍스트 — segment-control 기본값 그대로 사용 (추가 오버라이드 불필요)
-.journey__toolbar {
-    justify-self: start;
+    text-wrap: balance;
 }
 
 .journey__chapters {
