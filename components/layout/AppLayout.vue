@@ -3,6 +3,7 @@
     <AppDock v-if="showAppDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
     <div class="app-background" aria-hidden="true" />
     <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
+    <AppScrollProgress />
     <main id="main-content" class="portfolio-page" :class="{ 'portfolio-page--app-dock': showAppDock }" tabindex="-1">
         <slot />
     </main>

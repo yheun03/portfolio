@@ -104,16 +104,15 @@
         .section-title::before {
             content: var(--section-index, "00");
             display: block;
-            margin-bottom: var(--space-2);
-            font-family: var(--font-display);
-            font-size: var(--font-size-counter);
-            font-weight: var(--font-weight-black);
-            line-height: 0.9;
-            letter-spacing: var(--tracking-tight);
-            color: transparent;
-            background: var(--gradient-accent);
-            background-clip: text;
-            -webkit-background-clip: text;
+            margin-bottom: var(--space-3);
+            font-family: var(--font-mono);
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            font-weight: var(--font-weight-bold);
+            line-height: 1;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            opacity: 0.72;
         }
     }
 }

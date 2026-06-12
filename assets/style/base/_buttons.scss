@@ -35,16 +35,29 @@
     }
 
     &:hover {
-        transform: translateY(-3px) scale(1.012);
+        transform: translateY(-4px) scale(1.016);
         box-shadow: $shadow-lift, $shadow-glow;
     }
 
+    &:active {
+        transform: translateY(0px) scale(0.975);
+        box-shadow: $shadow-glow;
+        transition-duration: 0.12s;
+    }
+
     &--primary {
-        // overflow: visible;
         background: $gradient-accent;
         color: $grayscale-0;
         border-color: color-mix(in srgb, $primary-600 55%, $grayscale-0);
-        box-shadow: 0 14px 36px color-mix(in srgb, $primary-600 35%, transparent);
+        box-shadow:
+            0 1px 0 color-mix(in srgb, $grayscale-0 24%, transparent) inset,
+            0 14px 36px color-mix(in srgb, $primary-600 38%, transparent);
+
+        &:active {
+            box-shadow:
+                0 1px 0 color-mix(in srgb, $grayscale-0 10%, transparent) inset,
+                0 4px 12px color-mix(in srgb, $primary-600 28%, transparent);
+        }
     }
 
     &--primary::before {
