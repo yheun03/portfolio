@@ -9,6 +9,7 @@
         @mouseleave="onMouseLeave"
     >
         <p v-if="eyebrow" class="feature-card__eyebrow">{{ eyebrow }}</p>
+        <p v-if="icon" class="feature-card__icon" aria-hidden="true">{{ icon }}</p>
         <h3 class="feature-card__title">{{ title }}</h3>
         <ul v-if="items.length" class="feature-card__tags">
             <li v-for="item in items" :key="item">
@@ -24,6 +25,7 @@
 const props = withDefaults(
     defineProps<{
         eyebrow?: string;
+        icon?: string;
         title: string;
         description?: string;
         items?: readonly string[];

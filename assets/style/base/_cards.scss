@@ -143,6 +143,15 @@
         text-transform: uppercase;
     }
 
+    &__icon {
+        margin: 0;
+        font-size: 1.25rem;
+        line-height: 1;
+        color: color-mix(in srgb, var(--color-primary) 60%, var(--color-text-muted));
+        letter-spacing: 0;
+        font-style: normal;
+    }
+
     &__title {
         margin: 0;
         @include font(display-5);

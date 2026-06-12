@@ -9,7 +9,7 @@
             <h3 class="spotlight__kicker">{{ t("toolbox.kicker") }}</h3>
             <ul class="toolbox__grid feature-grid feature-grid--toolbox">
                 <li v-for="(skill, index) in skills" :key="skill.key">
-                    <FeatureCard variant="skill" :eyebrow="String(index + 1).padStart(2, '0')" :title="skill.title"
+                    <FeatureCard variant="skill" :eyebrow="String(index + 1).padStart(2, '0')" :icon="skill.icon" :title="skill.title"
                         :items="pick(skill.items)" :description="pick(skill.description)" />
                 </li>
             </ul>
