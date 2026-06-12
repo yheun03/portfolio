@@ -45,28 +45,20 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.58;
-    background-image: var(--gradient-hero-mesh),
-        linear-gradient(color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px);
-    background-size: auto, 88px 88px, 88px 88px;
-    mask-image: radial-gradient(ellipse 86% 76% at 50% 8%, var(--theme-black) 18%, transparent 76%);
+    opacity: 0.45;
+    background-image: var(--gradient-hero-mesh);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, var(--theme-black) 20%, transparent 72%);
 
     &::after {
         content: "";
         position: absolute;
         inset: 0;
         pointer-events: none;
-        opacity: 0.26;
+        opacity: 0.18;
         background-image: $texture-noise;
         background-size: 160px 160px;
         mix-blend-mode: multiply;
     }
-}
-
-.app-background::after {
-    opacity: 0.24;
-    mix-blend-mode: multiply;
 }
 
 .page__layer {
@@ -84,7 +76,85 @@
     &--profile {
         position: relative;
         overflow: visible;
+        // Dark editorial panel — About section
+        background: #111827;
+        --color-bg: #111827;
+        --color-surface: #1c2436;
+        --color-surface-strong: #252e42;
+        --color-text: #d1d6db;
+        --color-text-strong: #f2f4f6;
+        --color-text-heading: #f9fafb;
+        --color-text-muted: #8b95a1;
+        --color-text-subtle: #6b7684;
+        --color-border: #2d3748;
+        --color-primary: #4a8cff;
+        --color-primary-dark: #6fa3ff;
+        --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+        --gradient-surface: linear-gradient(168deg, #1c2436 0%, #1a2030 100%);
+        --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.42);
+        --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
+        --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
+        --shadow-ring: 0 0 0 3px rgba(74, 140, 255, 0.28);
+        --color-glass-2: rgba(28, 36, 54, 0.78);
+        --color-glass-2-strong: rgba(37, 46, 66, 0.86);
+        --color-on-primary: #fff;
+
+        @media (prefers-color-scheme: dark) {
+            background: #020407;
+            --color-bg: #020407;
+            --color-surface: #0d1117;
+            --color-border: #1c2333;
+        }
     }
+
+    &--contact {
+        position: relative;
+        // Dark editorial panel — Contact section
+        background: #0d1117;
+        --color-bg: #0d1117;
+        --color-surface: #161c27;
+        --color-surface-strong: #1e2538;
+        --color-text: #d1d6db;
+        --color-text-strong: #f2f4f6;
+        --color-text-heading: #f9fafb;
+        --color-text-muted: #8b95a1;
+        --color-text-subtle: #6b7684;
+        --color-border: #252e42;
+        --color-primary: #4a8cff;
+        --color-primary-dark: #6fa3ff;
+        --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+        --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
+        --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
+        --shadow-glow: 0 0 0 1px rgba(37, 46, 66, 0.58) inset;
+        --color-glass-2: rgba(22, 28, 39, 0.78);
+        --color-glass-2-strong: rgba(30, 37, 56, 0.86);
+        --color-on-primary: #fff;
+
+        @media (prefers-color-scheme: dark) {
+            background: #020407;
+            --color-bg: #020407;
+        }
+    }
+}
+
+:root[data-theme="dark"] .page__layer--profile {
+    background: #020407;
+    --color-bg: #020407;
+    --color-surface: #0d1117;
+    --color-border: #1c2333;
+}
+
+:root[data-theme="light"] .page__layer--profile {
+    background: #111827;
+}
+
+:root[data-theme="dark"] .page__layer--contact {
+    background: #020407;
+    --color-bg: #020407;
+}
+
+:root[data-theme="light"] .page__layer--contact {
+    background: #0d1117;
 }
 
 .section {
@@ -145,89 +215,6 @@
     --section-index: "07";
 }
 
-.section__emoji {
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-
-    /** emoji--soft 키프레임 opacity(0.88~1)가 섹션 장식 투명도를 덮어쓰지 않도록 분리 */
-    &.emoji--soft {
-        animation: section-emoji-drift 4.1s ease-in-out infinite;
-        will-change: transform;
-    }
-}
-
-@keyframes section-emoji-drift {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg) scale(1);
-    }
-
-    45% {
-        transform: translateY(-3px) rotate(-5deg) scale(1.04);
-    }
-
-    70% {
-        transform: translateY(-1px) rotate(4deg) scale(0.98);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .section__emoji.emoji--soft {
-        animation: none;
-    }
-}
-
-.section__emoji--about {
-    top: clamp(2rem, 5vw, 4rem);
-    right: clamp(0rem, 3vw, 2.4rem);
-    font-size: clamp(5rem, 11vw, 12rem);
-    opacity: 0.1;
-}
-
-.section__emoji--works {
-    top: clamp(1.5rem, 4vw, 3rem);
-    left: clamp(0rem, 3vw, 2rem);
-    font-size: clamp(4rem, 8vw, 8.5rem);
-    opacity: 0.11;
-}
-
-.section__emoji--personal {
-    top: clamp(1rem, 3vw, 2.5rem);
-    right: clamp(0rem, 4vw, 2.5rem);
-    font-size: clamp(3.6rem, 7vw, 7rem);
-    opacity: 0.12;
-}
-
-.section__emoji--journey {
-    top: clamp(2rem, 5vw, 4rem);
-    right: clamp(0rem, 4vw, 3rem);
-    font-size: clamp(4rem, 8vw, 8.5rem);
-    opacity: 0.1;
-}
-
-.section__emoji--toolbox {
-    right: clamp(0rem, 3vw, 2rem);
-    bottom: clamp(1rem, 4vw, 3rem);
-    font-size: clamp(4rem, 7vw, 7.5rem);
-    opacity: 0.12;
-}
-
-.section__emoji--highlights {
-    top: clamp(1rem, 4vw, 3rem);
-    right: clamp(0rem, 3vw, 2rem);
-    font-size: clamp(3.2rem, 6vw, 6rem);
-    opacity: 0.18;
-}
-
-.section__emoji--contact {
-    top: clamp(1rem, 3vw, 2rem);
-    left: clamp(0rem, 3vw, 2rem);
-    font-size: clamp(4rem, 9vw, 9rem);
-    opacity: 0.1;
-}
 
 .app-header__link:focus-visible,
 .app-lnb__close:focus-visible,

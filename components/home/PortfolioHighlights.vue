@@ -1,6 +1,5 @@
 <template>
     <section id="highlights" class="section section--highlights highlights" aria-labelledby="section-highlights-title">
-        <span class="section__emoji section__emoji--highlights emoji emoji--soft" aria-hidden="true">✨</span>
         <div class="highlights__total-badge" aria-live="polite">
             <span>{{ locale === 'ko' ? '총' : 'Total' }} {{ totalHighlightCount }}{{ locale === 'ko' ? '건' : '' }}</span>
             <small>
