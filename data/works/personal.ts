@@ -104,7 +104,7 @@ const data = [
             '/images/portfolio-2026/home-dark-tablet.png',
             '/images/portfolio-2026/home-light-mobile.png',
             '/images/portfolio-2026/home-dark-mobile.png',
-            '/images/og-image-2026.png',
+            '/images/og-image-2026.jpg',
         ],
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS'],
         links: [
@@ -446,7 +446,7 @@ const data = [
             en: '~1 month',
         },
         captures: [
-            '/images/portfolio/ver-2025/og-image.png',
+            '/images/portfolio/ver-2025/og-image.jpg',
             '/images/portfolio/ver-2025/photo-1920.webp',
             '/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png',
             '/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png',
