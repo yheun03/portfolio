@@ -136,7 +136,12 @@
     },
     "lnb": {
         "eyebrow": "탐색",
-        "title": "메뉴"
+        "title": "메뉴",
+        "subtitle": "웹 퍼블리셔 · 프론트엔드",
+        "connect": "연락하기",
+        "email": "메일 보내기",
+        "github": "GitHub",
+        "signature": "© 2026 은영환 포트폴리오"
     },
     "error": {
         "eyebrow404": "페이지를 찾지 못했어요",

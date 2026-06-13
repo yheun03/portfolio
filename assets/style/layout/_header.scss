@@ -227,11 +227,23 @@
     }
 
     &__glow {
-        display: none;
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 0;
+        height: 13rem;
+        pointer-events: none;
+        background:
+            radial-gradient(
+                120% 80% at 100% 0%,
+                color-mix(in srgb, var(--color-primary) 16%, transparent),
+                transparent 62%
+            );
+        opacity: 0.9;
     }
 
     &__head,
-    &__nav {
+    &__nav,
+    &__foot {
         position: relative;
         z-index: 1;
     }
@@ -261,6 +273,13 @@
     &__title {
         color: var(--color-text-heading);
         @include font(title-2, $font-weight-black);
+    }
+
+    &__subtitle {
+        margin-top: $space-1;
+        color: var(--color-text-muted);
+        letter-spacing: 0.01em;
+        @include font(caption-1, $font-weight-medium);
     }
 
     &__close {
@@ -387,6 +406,78 @@
         opacity: 0.35;
         transform: rotate(45deg);
         transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    &__foot {
+        display: grid;
+        gap: $space-4;
+        margin-top: auto;
+        padding-top: $space-5;
+        border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+    }
+
+    &__foot-eyebrow {
+        color: var(--color-text-subtle);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        @include font(caption-2, $font-weight-semibold);
+    }
+
+    &__socials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-2;
+    }
+
+    &__social {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: $space-2;
+        min-height: $size-touch;
+        padding: $space-2 $space-3;
+        border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+        border-radius: $radius-card;
+        background: color-mix(in srgb, var(--color-surface) 45%, transparent);
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition:
+            color 0.18s ease,
+            border-color 0.18s ease,
+            background-color 0.18s ease,
+            transform 0.18s ease;
+
+        &:hover {
+            color: var(--color-text-strong);
+            border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+            background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+            transform: translateY(-0.06rem);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    }
+
+    &__social-icon {
+        display: inline-flex;
+        flex: 0 0 auto;
+
+        svg {
+            width: 1.05rem;
+            height: 1.05rem;
+        }
+    }
+
+    &__social-text {
+        @include font(caption-1, $font-weight-semibold);
+    }
+
+    &__signature {
+        color: var(--color-text-subtle);
+        font-variant-numeric: tabular-nums;
+        @include font(caption-2, $font-weight-medium);
     }
 }
 
