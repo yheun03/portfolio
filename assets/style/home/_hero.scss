@@ -460,6 +460,8 @@
         max-width: none;
         margin-inline: 0;
         box-sizing: border-box;
+        // 고정 헤더와의 여백 — 베이스 padding-top:0 복원
+        padding-top: clamp(2rem, 4vw, 3rem);
     }
 
     .hero__focus-list {
@@ -492,6 +494,9 @@
         width: 100%;
         max-width: none;
         margin-inline: 0;
+        // 고정 헤더와의 숨 쉴 여백. 베이스 `.hero.section--hero{padding-top:0}` 를
+        // 같은 specificity 로 덮어 복원(페이지 헤더 오프셋 위에 추가되는 간격).
+        padding-top: clamp(2.25rem, 4vw, 4rem);
     }
 
     .section--hero {
@@ -499,7 +504,10 @@
         min-height: min(100svh, 1080px);
         display: flex;
         flex-direction: column;
+        // 콘텐츠가 뷰포트보다 길면 center 가 위아래로 넘쳐 meta 가 고정 헤더 밑으로 파묻힌다.
+        // safe center: 넘칠 때는 flex-start 로 폴백해 상단 패딩(헤더와의 여백)을 항상 보장.
         justify-content: center;
+        justify-content: safe center;
     }
 
     .hero__poster {
