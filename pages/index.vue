@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId"
-        :footer-text="t('footer.copyright')">
+        page-variant="home" :footer-text="t('footer.copyright')">
         <div class="page__layer page__layer--hero">
             <PortfolioHero />
         </div>

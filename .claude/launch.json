@@ -7,6 +7,13 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3300,
       "autoPort": false
+    },
+    {
+      "name": "portfolio-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".output/public", "-l", "3301"],
+      "port": 3301,
+      "autoPort": false
     }
   ]
 }

@@ -19,12 +19,14 @@
 @use "layout/viewport";
 @use "layout/dock";
 @use "layout/scroll-progress";
+@use "layout/page-variants";
 
 /* Card patterns */
 @use "work/cards" as work-cards;
 
 /* Motion */
 @use "motion/typography";
+@use "motion/scroll-driven";
 
 /* Home sections */
 @use "home/hero";

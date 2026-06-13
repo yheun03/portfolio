@@ -1,7 +1,7 @@
 <template>
     <NuxtLink :id="galleryEntryId(work.id)" :to="to" class="gallery-card"
         :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift"
-        :aria-label="cardAriaLabel">
+        data-animate="zoom" :aria-label="cardAriaLabel">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <span v-if="entryYearSuffix" class="gallery-editorial__entry-index" aria-hidden="true">{{

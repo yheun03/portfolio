@@ -3,7 +3,6 @@ export function useSubpageLinks() {
     const { t } = useLocale();
 
     return computed(() => [
-        { href: '/', label: t('nav.home') },
         { href: '/projects', label: t('nav.worksArchive') },
         { href: '/personal', label: t('nav.personalArchive') },
         { href: '/journey', label: t('nav.journey') },

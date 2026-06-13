@@ -3,7 +3,9 @@
     <AppDock v-if="showAppDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
     <div class="app-background" aria-hidden="true" />
     <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
-    <main id="main-content" class="portfolio-page" :class="{ 'portfolio-page--app-dock': showAppDock }" tabindex="-1">
+    <main id="main-content" class="portfolio-page"
+        :class="[{ 'portfolio-page--app-dock': showAppDock }, pageVariant && `portfolio-page--${pageVariant}`]"
+        tabindex="-1">
         <slot />
     </main>
     <AppFooter :text="footerText" />
@@ -25,6 +27,8 @@ const props = withDefaults(
         /** 서브페이지 네비 활성 경로 (예: `/projects`) */
         activePath?: string;
         showAppDock?: boolean;
+        /** 페이지별 색상·여백 개성 (home·journey·archive-career·archive-personal) */
+        pageVariant?: string;
     }>(),
     {
         brandHref: "#hello",
