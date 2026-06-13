@@ -136,7 +136,12 @@
     },
     "lnb": {
         "eyebrow": "Explore",
-        "title": "Menu"
+        "title": "Menu",
+        "subtitle": "Web Publisher · Frontend",
+        "connect": "Get in touch",
+        "email": "Email me",
+        "github": "GitHub",
+        "signature": "© 2026 Eunyounghwan Portfolio"
     },
     "error": {
         "eyebrow404": "Page not found",
