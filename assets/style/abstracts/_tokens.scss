@@ -9,7 +9,8 @@
     --font-body: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
     --font-display: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    --font-pretendard: Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+    /* Pretendard 웹폰트는 로드하지 않음(성능). 시스템 폰트로 통일 — 로컬 설치 여부와 무관하게 일관 렌더 */
+    --font-pretendard: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
     --font-size-2xs: var(--font-size-xs);
     --font-size-body-1: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
     --font-size-body-2: 0.9375rem;

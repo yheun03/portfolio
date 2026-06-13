@@ -6,11 +6,11 @@ export type SeoLocale = 'ko' | 'en';
 
 export const seoConfig = {
     siteUrl: 'https://yheun03.github.io/portfolio/',
-    defaultOgImage: '/images/og-image-2026.png',
+    defaultOgImage: '/images/og-image-2026.jpg',
     personImage: '/images/portfolio/ver-2025/photo-1440.webp',
     defaultOgImageSize: {
-        width: 280,
-        height: 360,
+        width: 1402,
+        height: 1122,
     },
     siteName: '은영환 웹 퍼블리셔 포트폴리오',
     themeColor: '#f7f2ea',
