@@ -101,6 +101,10 @@
         background: radial-gradient(36rem circle at var(--glow-x, 50%) var(--glow-y, 30%),
                 color-mix(in srgb, var(--color-primary) 8%, transparent),
                 transparent 70%);
+        // 위/아래 가장자리에서 글로우를 0으로 페이드 → 인접 섹션 경계의 하드 컷 제거
+        // (좌우는 풀블리드라 화면 끝과 맞닿아 별도 처리 불필요)
+        mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
     }
 
     &.is-glow .hero__spotlight {
@@ -483,8 +487,11 @@
 ========================================= */
 @media (min-width: #{$bp-min-laptop}) {
     .hero.section--hero {
-        width: min(100% - var(--inset-page-hero), var(--layout-hero-max));
-        margin-inline: auto;
+        // 풀블리드: 포인터 스포트라이트(.hero__spotlight, inset:0)가 페이지 거터에
+        // 잘리지 않도록 섹션을 뷰포트 전체 폭으로. 콘텐츠 인셋은 .hero__poster 로 이동.
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
     }
 
     .section--hero {
@@ -498,7 +505,9 @@
     .hero__poster {
         gap: clamp(2.5rem, 4.5vw, 4rem);
         padding: 0;
-        width: 100%;
+        // 섹션이 풀블리드로 바뀌었으므로 콘텐츠 폭 제약을 여기서 담당(기존 섹션 폭 공식 그대로).
+        width: min(100% - var(--inset-page-hero), var(--layout-hero-max));
+        margin-inline: auto;
         // Override to single-column (remove sidebar layout)
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
