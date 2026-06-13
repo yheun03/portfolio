@@ -13,9 +13,17 @@
         <div class="app-header__actions">
             <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{{ statusMessage }}</p>
             <BaseButton class="app-header__theme-toggle" variant="ghost" :label="themeToggleLabel"
-                :aria-label="themeToggleAriaLabel" @click="handleThemeToggle" />
-            <BaseButton class="app-header__language-toggle" variant="ghost" :label="locale.toUpperCase()"
-                :aria-label="languageToggleAriaLabel" @click="handleLocaleToggle" />
+                :aria-label="themeToggleAriaLabel" @click="handleThemeToggle">
+                <Transition name="toggle-swap" mode="out-in">
+                    <span :key="themeToggleLabel" class="toggle-swap">{{ themeToggleLabel }}</span>
+                </Transition>
+            </BaseButton>
+            <BaseButton class="app-header__language-toggle" variant="ghost" :label="localeLabel"
+                :aria-label="languageToggleAriaLabel" @click="handleLocaleToggle">
+                <Transition name="toggle-swap" mode="out-in">
+                    <span :key="localeLabel" class="toggle-swap">{{ localeLabel }}</span>
+                </Transition>
+            </BaseButton>
             <button ref="menuButtonRef" type="button" class="app-header__menu-btn" :aria-label="menuOpen
                 ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
                 : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
@@ -50,6 +58,7 @@ const statusMessage = ref('');
 const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
 
+const localeLabel = computed(() => locale.value.toUpperCase());
 const languageToggleAriaLabel = computed(() =>
     locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
 );
