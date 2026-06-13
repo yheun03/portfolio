@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        :page-variant="`archive-${variant}`" :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article ref="galleryPageRef" class="gallery-page section gallery-page--editorial" :class="galleryVariantClass"
             aria-labelledby="gallery-poster-title">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
@@ -55,4 +55,7 @@ const {
 
 const galleryPageRef = ref<HTMLElement | null>(null);
 useGalleryEntryFocusScope(galleryPageRef);
+
+// 카드의 data-animate 진입 리빌 (reduce-motion·동적 마운트 대응)
+useRevealOnScroll();
 </script>

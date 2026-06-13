@@ -1,0 +1,93 @@
+@use "../abstracts/tokens" as *;
+
+/* =========================================
+   Scroll-driven motion (CSS only)
+   animation-timeline: view() 기반 — JS 없이 컴포지터 스레드에서 도는
+   스크롤 연동 모션. transform/opacity만 사용해 성능 영향 최소.
+   - prefers-reduced-motion: no-preference 으로 접근성 가드
+   - @supports 로 미지원 브라우저는 기본 정적 스타일 유지(프로그레시브 인핸스먼트)
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+
+        /* 섹션 번호(::before) — 섹션이 뷰포트를 통과할 때 미세 패럴랙스 드리프트 */
+        .section:not(.section--hero) .section-title::before {
+            animation: sd-index-drift linear both;
+            animation-timeline: view();
+            animation-range: entry 0% exit 100%;
+        }
+
+        @keyframes sd-index-drift {
+            from {
+                transform: translateY(0.6rem);
+                opacity: 0.4;
+            }
+
+            22% {
+                opacity: 0.92;
+            }
+
+            to {
+                transform: translateY(-0.7rem);
+                opacity: 0.4;
+            }
+        }
+
+        /* sticky 타이틀 컬럼 — 핀 고정되며 부드럽게 안착 */
+        .works__title-col,
+        .highlights__title-col {
+            animation: sd-title-settle linear both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 18%;
+        }
+
+        @keyframes sd-title-settle {
+            from {
+                transform: translateY(1.4rem);
+                opacity: 0.5;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* 히어로 포스터 — 스크롤로 빠져나갈 때 살짝 올라가며 페이드아웃 */
+        .hero__poster {
+            animation: sd-hero-exit linear both;
+            animation-timeline: view();
+            animation-range: exit 0% exit 100%;
+        }
+
+        @keyframes sd-hero-exit {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-2.5rem);
+                opacity: 0.35;
+            }
+        }
+
+        /* 히어로 데코 오브 — 진입/이탈 동안 느린 역방향 패럴랙스 */
+        .hero__canvas {
+            animation: sd-hero-orbs linear both;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+        }
+
+        @keyframes sd-hero-orbs {
+            from {
+                transform: translateY(-1.5rem) scale(1.02);
+            }
+
+            to {
+                transform: translateY(2.5rem) scale(1.06);
+            }
+        }
+    }
+}

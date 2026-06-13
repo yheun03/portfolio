@@ -1,0 +1,69 @@
+@use "../abstracts/tokens" as *;
+
+/* =========================================
+   Page-level personality
+   각 라우트가 고유한 색상 액센트·타이포 계층·여백 리듬을 갖도록
+   페이지 래퍼(.portfolio-page--*)에서 커스텀 프로퍼티를 오버라이드한다.
+   액센트는 테마 토큰을 color-mix 해 라이트/다크 모두에 자연 적응.
+   여백은 고정 rem 단계 (clamp 최소화).
+========================================= */
+
+/* Home — 캐노니컬 Toss 블루. 가장 넓은 리듬 + 섹션 번호 대비 강조 */
+.portfolio-page--home {
+    .section:not(.section--hero) .section-title::before {
+        opacity: 0.9;
+        letter-spacing: 0.18em;
+    }
+
+    .section-title__eyebrow {
+        letter-spacing: 0.13em;
+    }
+}
+
+/* Journey — mint-leaning 쿨 액센트, 타임라인 상단 여백 확대, 본문 measure 넓힘 */
+.portfolio-page--journey {
+    --color-primary: color-mix(in srgb, var(--accent-mint) 42%, var(--primary-500));
+    --color-primary-dark: color-mix(in srgb, var(--accent-mint) 30%, var(--primary-600));
+    --gradient-accent: linear-gradient(
+        122deg,
+        var(--accent-mint) 0%,
+        var(--primary-500) 58%,
+        var(--primary-700) 100%
+    );
+
+    .section--journey {
+        padding-block-start: calc(var(--section-pad-y) + 1.5rem);
+    }
+
+    .section-title__eyebrow {
+        letter-spacing: 0.16em;
+    }
+
+    .section-title__description {
+        max-width: 52ch;
+    }
+}
+
+/* Archive (career) — 신뢰감 있는 딥 블루, eyebrow tracking 강조 */
+.portfolio-page--archive-career {
+    --color-primary: var(--primary-600);
+    --color-primary-dark: var(--primary-700);
+
+    .gallery-page__kicker,
+    .section-title__eyebrow {
+        letter-spacing: 0.17em;
+    }
+}
+
+/* Archive (personal) — 실험적인 violet/hot 액센트, 카드 간 여백 확대 */
+.portfolio-page--archive-personal {
+    --color-primary: color-mix(in srgb, var(--accent-hot) 52%, var(--primary-500));
+    --color-primary-dark: color-mix(in srgb, var(--accent-hot) 38%, var(--primary-600));
+    --gradient-accent: linear-gradient(
+        128deg,
+        var(--accent-hot) 0%,
+        var(--primary-500) 56%,
+        var(--primary-700) 100%
+    );
+    --card-list-gap: var(--space-6);
+}
