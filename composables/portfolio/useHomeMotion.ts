@@ -138,8 +138,11 @@ export function useHomeMotion() {
 
             /* flow-steps 는 data-stagger CSS 애니메이션이 전담 — GSAP 중복 트윈 없음 */
 
-            /* ── Section titles: slide-in line accent ── */
-            root.querySelectorAll<HTMLElement>('.section-title__eyebrow').forEach((eyebrow) => {
+            /* ── Section titles: slide-in line accent ──
+               히어로 eyebrow(.hero__eyebrow)는 CSS hero-rise-in(translateY 26→0, fill:backwards)
+               전용 진입을 가지므로 제외. 포함하면 GSAP 이 진입 중 transform 의 y(26px)를 inline 에
+               구워버리고, CSS 애니메이션 종료 시 그 base 로 되돌아가 eyebrow 가 26px 뚝 떨어진다. */
+            root.querySelectorAll<HTMLElement>('.section-title__eyebrow:not(.hero__eyebrow)').forEach((eyebrow) => {
                 gsap.fromTo(
                     eyebrow,
                     { opacity: 0, x: -20 },
