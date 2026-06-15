@@ -1,5 +1,6 @@
 <template>
-    <section id="hello" ref="heroSectionRef" class="section section--hero hero" aria-labelledby="hero-display-title">
+    <section id="hello" ref="heroSectionRef" class="section section--hero hero"
+        :class="{ 'hero--intro-done': isIntroDone }" aria-labelledby="hero-display-title">
         <div class="hero__canvas" aria-hidden="true">
             <span class="hero__orb hero__orb--a"></span>
             <span class="hero__orb hero__orb--b"></span>
@@ -45,8 +46,29 @@ import { usePointerGlow } from '@composables/ui/usePointerGlow';
 const { t, pick, locale } = useLocale();
 
 const heroSectionRef = ref<HTMLElement | null>(null);
+const isIntroDone = ref(false);
+let introTimer: ReturnType<typeof window.setTimeout> | null = null;
 useMagnetic(heroSectionRef, '.hero__actions .base-button');
 usePointerGlow(heroSectionRef);
+
+onMounted(() => {
+    const introKey = 'portfolio:hero-intro-played';
+    isIntroDone.value = sessionStorage.getItem(introKey) === 'true';
+    sessionStorage.setItem(introKey, 'true');
+
+    if (!isIntroDone.value) {
+        introTimer = window.setTimeout(() => {
+            isIntroDone.value = true;
+            introTimer = null;
+        }, 1900);
+    }
+});
+
+onBeforeUnmount(() => {
+    if (!introTimer) return;
+    window.clearTimeout(introTimer);
+    introTimer = null;
+});
 
 const heroLines = computed(() => {
     if (locale.value === "ko") {
