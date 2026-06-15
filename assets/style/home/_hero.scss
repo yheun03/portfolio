@@ -513,8 +513,8 @@
     .hero__poster {
         gap: clamp(2.5rem, 4.5vw, 4rem);
         padding: 0;
-        // 섹션이 풀블리드로 바뀌었으므로 콘텐츠 폭 제약을 여기서 담당(기존 섹션 폭 공식 그대로).
-        width: min(100% - var(--inset-page-hero), var(--layout-hero-max));
+        // 섹션이 풀블리드로 바뀌었으므로 콘텐츠 폭 제약을 여기서 담당.
+        width: min(100% - var(--page-pad-x), var(--layout-content-max));
         margin-inline: auto;
         // Override to single-column (remove sidebar layout)
         grid-template-columns: minmax(0, 1fr);
@@ -633,7 +633,7 @@
 
 @media (min-width: 1920px) {
     .section--hero {
-        width: min(100% - var(--page-pad-hero), var(--layout-hero-max));
+        width: min(100% - var(--page-pad-x), var(--layout-content-max));
     }
 }
 
