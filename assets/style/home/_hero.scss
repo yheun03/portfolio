@@ -743,3 +743,24 @@
     animation: hero-word-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
     animation-delay: calc(0.28s + (var(--line-index, 0) * 0.16s) + (var(--word-index, 0) * 0.06s));
 }
+
+.hero--intro-done {
+    .hero__meta,
+    .hero__eyebrow,
+    .hero__lead,
+    .hero__intro,
+    .hero__actions,
+    .hero__cue,
+    .hero__canvas {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    .hero__display .typo-word {
+        animation: none;
+        opacity: 1;
+        filter: none;
+    }
+}

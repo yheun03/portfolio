@@ -24,6 +24,25 @@ export function useHomeMotion() {
 
         gsap.registerPlugin(ScrollTrigger);
 
+        const refreshMotion = () => {
+            if (cancelled) return;
+            ScrollTrigger.refresh();
+            ScrollTrigger.update();
+
+            if (window.scrollY > 2) return;
+
+            gsap.set(root.querySelector('.hero__stage'), { clearProps: 'opacity,transform,translate,rotate,scale' });
+            gsap.set(root.querySelector('.hero__canvas'), { clearProps: 'transform,translate,rotate,scale' });
+            gsap.set(root.querySelector('.hero__cue'), { clearProps: 'opacity,visibility,transform,translate,rotate,scale' });
+        };
+
+        const scheduleRefresh = () => {
+            requestAnimationFrame(() => {
+                refreshMotion();
+                requestAnimationFrame(refreshMotion);
+            });
+        };
+
         const context = gsap.context(() => {
 
             /* ── Hero canvas parallax ── */
@@ -38,7 +57,7 @@ export function useHomeMotion() {
                         trigger: '.section--hero',
                         start: 'top top',
                         end: 'bottom top',
-                        scrub: 1.2,
+                        scrub: true,
                     },
                 });
             }
@@ -55,7 +74,7 @@ export function useHomeMotion() {
                         trigger: '.section--hero',
                         start: 'top top',
                         end: '60% top',
-                        scrub: 1.6,
+                        scrub: true,
                     },
                 });
             }
@@ -225,11 +244,11 @@ export function useHomeMotion() {
 
         }, root);
 
-        requestAnimationFrame(() => {
-            if (!cancelled) ScrollTrigger.refresh();
-        });
+        scheduleRefresh();
+        window.addEventListener('pageshow', scheduleRefresh);
 
         cleanup = () => {
+            window.removeEventListener('pageshow', scheduleRefresh);
             context.revert();
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
