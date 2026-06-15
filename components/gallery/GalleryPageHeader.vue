@@ -19,10 +19,10 @@
 
         <nav class="gallery-page__toolbar" :aria-label="toolbarAriaLabel">
             <BaseSegmentControl v-if="viewOptions.length" :model-value="viewMode" :options="viewOptions"
-                :label-text="viewLegend" :label-id="viewLabelId"
+                :label-text="viewLegend" :label-id="viewLabelId" label-hidden
                 @update:model-value="emit('update:viewMode', $event as GalleryViewMode)" />
             <BaseSegmentControl v-if="sortOptions.length" :model-value="sortMode" :options="sortOptions"
-                :label-text="sortLegend" :label-id="sortLabelId"
+                :label-text="sortLegend" :label-id="sortLabelId" label-hidden
                 @update:model-value="emit('update:sortMode', $event as WorkSortMode)" />
         </nav>
     </header>

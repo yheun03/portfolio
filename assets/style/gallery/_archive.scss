@@ -45,25 +45,6 @@
         border-top-color: color-mix(in srgb, var(--gallery-muted) 22%, transparent);
     }
 
-    // gallery 컨텍스트 — segment-control CSS 변수 오버라이드
-    .segment-control {
-        min-width: 0;
-        --sc-label-color: var(--gallery-muted);
-        --sc-label-font-size: clamp(#{$gallery-text-min}, 1.5vw, #{$gallery-text-ui});
-        --sc-label-tracking: 0.14em;
-        --sc-label-transform: uppercase;
-        --sc-border: var(--gallery-frame);
-        --sc-group-bg: color-mix(in srgb, var(--gallery-bg) 72%, var(--gallery-muted) 28%);
-        --sc-btn-color: var(--gallery-ink);
-        --sc-btn-font-size: clamp(#{$gallery-text-min}, 1.8vw, 0.875rem);
-        --sc-hover-bg: color-mix(in srgb, var(--gallery-muted) 18%, transparent);
-        --sc-focus-color: var(--gallery-accent);
-        --sc-active-fg: var(--gallery-active-fg);
-        --sc-active-bg: var(--gallery-active-bg);
-        --sc-active-hover-bg: var(--gallery-active-bg);
-        --sc-active-shadow: 0 4px 14px color-mix(in srgb, var(--gallery-accent) 35%, transparent);
-        --sc-active-shadow-hover: 0 6px 18px color-mix(in srgb, var(--gallery-accent) 42%, transparent);
-    }
 }
 
 @media (min-width: 640px) {
