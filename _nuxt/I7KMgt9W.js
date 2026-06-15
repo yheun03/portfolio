@@ -1,1 +1,0 @@
-import{u as e}from"#entry";import{f as s}from"./WG0cfFi7.js";function l(){const{pick:o}=e();return s(()=>({close:o({ko:"닫기",en:"Close"}),closeModalAria:o({ko:"상세 모달 닫기",en:"Close detail modal"}),role:o({ko:"역할",en:"Role"}),contributions:o({ko:"내가 한 일",en:"My Contributions"}),results:o({ko:"성과",en:"Results"}),points:o({ko:"포인트",en:"Key Points"})}))}export{l as u};
