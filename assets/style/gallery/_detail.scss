@@ -430,21 +430,12 @@
         grid-area: media;
         align-self: center;
         justify-self: stretch;
-        width: 100%;
         min-width: 0;
-        max-width: 100%;
         min-height: 0;
         height: auto;
         aspect-ratio: 16 / 9;
         border-top: 0;
         border-inline-start: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
-
-        img {
-            width: 100%;
-            height: 100%;
-            min-height: 0;
-            object-fit: cover;
-        }
 
     }
 }

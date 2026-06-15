@@ -55,7 +55,4 @@ const {
 
 const galleryPageRef = ref<HTMLElement | null>(null);
 useGalleryEntryFocusScope(galleryPageRef);
-
-// 카드의 data-animate 진입 리빌 (reduce-motion·동적 마운트 대응)
-useRevealOnScroll();
 </script>
