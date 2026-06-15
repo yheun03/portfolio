@@ -68,10 +68,11 @@
 
 @media (min-width: 640px) {
     .gallery-page__toolbar {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 2rem);
         align-items: start;
+        justify-content: flex-start;
     }
 }
 
