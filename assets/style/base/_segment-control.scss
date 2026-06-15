@@ -10,6 +10,7 @@
     gap: var(--space-2);
     min-width: min(100%, 18rem);
     justify-self: start;
+    --sc-base-color: var(--primary-500);
 }
 
 .segment-control__label {
@@ -28,7 +29,7 @@
     grid-template-columns: repeat(var(--segment-count, 2), minmax(0, 1fr));
     gap: 2px;
     padding: 3px;
-    border: 1px solid var(--sc-border, color-mix(in srgb, var(--color-primary) 18%, var(--color-border)));
+    border: 1px solid var(--sc-border, color-mix(in srgb, var(--sc-base-color) 18%, var(--color-border)));
     border-radius: var(--radius-md);
     background: var(--sc-group-bg, color-mix(in srgb, var(--color-surface) 82%, var(--color-bg)));
 }
@@ -53,23 +54,23 @@
         box-shadow 0.2s ease;
 
     &:hover:not(&--active) {
-        background: var(--sc-hover-bg, color-mix(in srgb, var(--color-primary) 10%, var(--color-surface)));
+        background: var(--sc-hover-bg, color-mix(in srgb, var(--sc-base-color) 10%, var(--color-surface)));
     }
 
     &:focus-visible {
-        outline: 2px solid var(--sc-focus-color, var(--color-primary));
+        outline: 2px solid var(--sc-focus-color, var(--sc-base-color));
         outline-offset: 1px;
     }
 
     &--active {
         color: var(--sc-active-fg, var(--color-on-accent, #{$grayscale-0}));
-        background: var(--sc-active-bg, var(--color-primary));
+        background: var(--sc-active-bg, var(--sc-base-color));
         box-shadow: var(--sc-active-shadow, var(--shadow-ring));
     }
 
     &--active:hover {
         color: var(--sc-active-fg, var(--color-on-accent, #{$grayscale-0}));
-        background: var(--sc-active-hover-bg, var(--color-primary-dark, var(--color-primary)));
+        background: var(--sc-active-hover-bg, var(--sc-base-color));
         box-shadow: var(--sc-active-shadow-hover, var(--shadow-soft));
     }
 }
