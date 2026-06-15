@@ -1,0 +1,1 @@
+import{z as a,a7 as o,r}from"./WG0cfFi7.js";const s="1023px";function i(){const t=r(!1);let e=null;function n(){e&&(t.value=e.matches)}return a(()=>{e=window.matchMedia(`(max-width: ${s})`),n(),e.addEventListener("change",n)}),o(()=>{e?.removeEventListener("change",n)}),{isNarrow:t}}export{i as u};

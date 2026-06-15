@@ -1,1 +1,0 @@
-import{z as a,a7 as o,r}from"./Du-D16Ms.js";const s="1023px";function i(){const t=r(!1);let e=null;const n=()=>{e&&(t.value=e.matches)};return a(()=>{e=window.matchMedia(`(max-width: ${s})`),n(),e.addEventListener("change",n)}),o(()=>{e?.removeEventListener("change",n)}),{isNarrow:t}}export{i as u};
