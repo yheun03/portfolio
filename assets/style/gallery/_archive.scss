@@ -625,7 +625,10 @@
         min-width: 0;
         max-width: 100%;
         margin: 0;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-gutter: stable;
         aspect-ratio: 16 / 9;
         border: 0;
         border-top: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
@@ -636,8 +639,7 @@
             display: block;
             width: 100%;
             max-width: none;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             opacity: 0.9;
             filter: saturate(0.85) contrast(1.06);
         }
@@ -647,8 +649,6 @@
     &-screen {
         display: block;
         width: 100%;
-        height: 100%;
-        overflow: hidden;
-
+        min-height: 100%;
     }
 }

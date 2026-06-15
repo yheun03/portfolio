@@ -21,7 +21,8 @@
 
     border-bottom: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
     background: color-mix(in srgb, var(--color-bg) 82%, transparent);
-    backdrop-filter: blur(16px) saturate(1.4);
+    /* 스크롤 중 매 프레임 재계산되는 blur — 반경을 낮춰 메인스레드 부담을 줄인다 */
+    backdrop-filter: blur(10px) saturate(1.25);
     transition:
         background-color 0.3s ease,
         border-color 0.3s ease;

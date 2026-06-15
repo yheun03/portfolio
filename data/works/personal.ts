@@ -289,6 +289,7 @@ const data = [
             en: 'In progress',
         },
         captures: ['/images/projects/flighty/image-1.png', '/images/projects/flighty/image-2.png', '/images/projects/flighty/image-3.png'],
+        thumbnail: '/images/archive-thumbs/flighty.jpg',
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'Figma'],
         links: [
             {
@@ -537,6 +538,7 @@ const data = [
             '/images/portfolio/ver-2025/project/matemate/modal/modal-02.png',
             '/images/portfolio/ver-2025/project/matemate/modal/modal-03.png',
         ],
+        thumbnail: '/images/archive-thumbs/matemate.jpg',
         languages: ['HTML', 'SCSS', 'JavaScript', 'Firebase', 'Figma'],
         links: [
             {
@@ -691,6 +693,7 @@ const data = [
             en: '~2 months',
         },
         captures: ['/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png', '/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png'],
+        thumbnail: '/images/archive-thumbs/jonsoft-2022.jpg',
         languages: ['HTML', 'CSS', 'jQuery', 'Figma'],
         links: [
             {
