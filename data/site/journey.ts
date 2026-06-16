@@ -8,16 +8,16 @@ const data = {
                     en: 'Company',
                 },
                 team: {
-                    ko: '조앤소프트 · DX 솔루션 2팀 · UI 퍼블리셔 / 프론트엔드',
-                    en: 'JO&SOFT · DX Solution Team 2 · UI Publisher / Frontend',
+                    ko: '조앤소프트 · DX 솔루션 2팀 · 주임 · 웹 퍼블리셔 / 프론트엔드',
+                    en: 'JO&SOFT · DX Solution Team 2 · Associate (Juim) · Web Publisher / Frontend',
                 },
                 period: {
                     ko: '2019.11 ~ 현재',
                     en: 'Nov 2019 ~ Present',
                 },
                 intro: {
-                    ko: '조앤소프트에서 구축·운영·리뉴얼 프로젝트를 수행하며, 요구사항 파악, 화면 구조 설계, 반응형 퍼블리싱, Vue 화면 구현, CMS 커스터마이징, 운영 유지보수까지 납품형 웹 UI 전 과정을 경험했습니다.',
-                    en: 'At JO&SOFT I deliver build, operation, and renewal projects end to end—from requirements and UI structure to responsive publishing, Vue, CMS, and maintenance.',
+                    ko: '조앤소프트 DX 솔루션 2팀 주임으로 구축·운영·리뉴얼 프로젝트를 수행하며, 요구사항 파악, 화면 구조 설계, 반응형 퍼블리싱, Vue 화면 구현, CMS 커스터마이징, 운영 유지보수까지 납품형 웹 UI 전 과정을 경험했습니다.',
+                    en: 'As an Associate (Juim) on JO&SOFT DX Solution Team 2, I deliver build, operation, and renewal projects end to end—from requirements and UI structure to responsive publishing, Vue, CMS, and maintenance.',
                 },
                 clients: [
                     { ko: '태림포장', en: 'TaeLim Packaging' },
@@ -59,8 +59,8 @@ const data = {
                         en: 'Operation, renewal, and CMS expansion',
                     },
                     description: {
-                        ko: '운영·리뉴얼·CMS 커스터마이징을 병행하며 반응형·웹 표준·접근성 기준을 프로젝트별로 맞췄습니다. 인수인계 문서와 퍼블리싱 가이드를 정리해 이후 수정이 쉬운 화면 구조로 넘기는 비중을 키웠고, 대학 재학과 병행하며 낮 시간대 납품 일정을 유지했습니다.',
-                        en: 'Balanced operations, renewals, and CMS work with project-level responsive, standards, and accessibility baselines—plus handoff docs and publishing guides, keeping daytime delivery while studying in parallel.',
+                        ko: '운영·리뉴얼·CMS 커스터마이징을 병행하며 반응형·웹 표준·접근성 기준을 프로젝트별로 맞췄습니다. 인수인계 문서와 퍼블리싱 가이드를 정리해 이후 수정이 쉬운 화면 구조로 넘기는 비중을 키웠고, 대학 졸업과 병행하며 낮 시간대 납품 일정을 유지했습니다.',
+                        en: 'Balanced operations, renewals, and CMS work with project-level responsive, standards, and accessibility baselines—plus handoff docs and publishing guides, keeping daytime delivery while finishing my degree.',
                     },
                 },
                 {
@@ -125,8 +125,8 @@ const data = {
                         en: 'Transitioning into professional work',
                     },
                     description: {
-                        ko: '제이콥시스템을 거쳐 11월 조앤소프트에 합류했습니다. 학교·동아리에서 하던 웹 제작이 납품형 프로젝트로 바뀌면서 일정·품질·커뮤니케이션·수정 범위를 실무 기준으로 익혔습니다.',
-                        en: 'Joined JO&SOFT in November after Jacob System—shifting school and club web work into client delivery and learning production standards for schedule, quality, communication, and scope control.',
+                        ko: '11월 조앤소프트에 웹 퍼블리셔로 합류했습니다. 학교·동아리에서 하던 웹 제작이 납품형 프로젝트로 바뀌면서 일정·품질·커뮤니케이션·수정 범위를 실무 기준으로 익혔습니다.',
+                        en: 'Joined JO&SOFT as a web publisher in November—shifting school and club web work into client delivery and learning production standards for schedule, quality, communication, and scope control.',
                     },
                 },
             ],
@@ -139,22 +139,22 @@ const data = {
                     en: 'University',
                 },
                 team: {
-                    ko: '컴퓨터공학 · 편입·재학',
-                    en: 'Computer Engineering · Transfer & enrollment',
+                    ko: '한국공학대학교 · 컴퓨터전자공학과 · 편입·졸업 (학점 4.45/4.5)',
+                    en: 'Tech University of Korea · Computer & Electronic Engineering · Transfer & Graduated (GPA 4.45/4.5)',
                 },
                 period: {
-                    ko: '2022.03 ~ 2025.03',
-                    en: 'Mar 2022 ~ Mar 2025',
+                    ko: '2023.03 ~ 2025.02',
+                    en: 'Mar 2023 ~ Feb 2025',
                 },
                 intro: {
-                    ko: '컴퓨터공학을 편입·재학하며 프로그래밍·소프트웨어 공학 수업을 들었습니다. 회사 실무와 병행해 과제·시험 일정과 납품 마감을 맞추고, 과대·학회장으로 학과 행사·소통을 맡으며 협업·문서화 경험을 이어갔습니다.',
-                    en: 'Studied computer engineering through transfer and enrollment while continuing client work—balancing coursework with delivery and leading class and society activities.',
+                    ko: '전적대학교(배화여자대학교)를 거쳐 한국공학대학교 컴퓨터전자공학과에 편입해 4.45/4.5의 학점으로 졸업하며 프로그래밍·소프트웨어 공학 수업을 들었습니다. 회사 실무와 병행해 과제·시험 일정과 납품 마감을 맞추고, 학과대표·학회장으로 학생회 설립과 학과 행사·소통을 이끌며 협업·문서화 경험을 이어갔습니다.',
+                    en: 'After my prior college (Baehwa Women’s University), I transferred into Computer & Electronic Engineering at Tech University of Korea and graduated with a 4.45/4.5 GPA, taking programming and software engineering courses. While continuing client work, I balanced coursework with delivery and—as class representative and society president—launched the student council and led department events and communication.',
                 },
                 clients: [],
                 roles: [
-                    { ko: '컴퓨터공학 편입·재학', en: 'Computer Engineering transfer & enrollment' },
+                    { ko: '컴퓨터전자공학과 편입·졸업 (학점 4.45/4.5)', en: 'Computer & Electronic Engineering, transfer & graduated (GPA 4.45/4.5)' },
                     { ko: '회사 실무 병행', en: 'Parallel professional work' },
-                    { ko: '과대·학회장', en: 'Class representative & society president' },
+                    { ko: '학과대표·학회장 (학생회 설립)', en: 'Class representative & society president (founded student council)' },
                     { ko: '프로그래밍·소프트웨어 공학 수업', en: 'Programming and software engineering courses' },
                 ],
             },
@@ -162,45 +162,45 @@ const data = {
                 {
                     period: '2025',
                     title: {
-                        ko: '과대·학회장 운영',
-                        en: 'Class rep and society president',
+                        ko: '컴퓨터전자공학과 졸업',
+                        en: 'Graduating in Computer & Electronic Engineering',
                     },
                     description: {
-                        ko: '과대와 학회장을 맡아 학과 행사·학술·소통 채널을 정리했습니다. 회원·교수·학과 사무실과 일정을 맞추는 경험이 이후 프로젝트 스테이크홀더 조율과 비슷한 패턴으로 이어졌고, 납품 일정도 병행했습니다.',
-                        en: 'As class representative and society president, organized department events and communication channels—stakeholder coordination that mirrored project work, alongside continued client delivery.',
+                        ko: '컴퓨터전자공학과를 4.45/4.5의 학점으로 졸업했습니다. 학업과 회사 납품 일정을 끝까지 병행했고, 학생회·학과 운영에서 익힌 일정·이해관계 조율 경험을 실무 스테이크홀더 조율로 이어갔습니다.',
+                        en: 'Graduated in Computer & Electronic Engineering with a 4.45/4.5 GPA, balancing study and client delivery to the end and carrying schedule and stakeholder coordination from student-council work into professional projects.',
                     },
                 },
                 {
                     period: '2024',
                     title: {
-                        ko: '전공 수업·재학',
-                        en: 'Major coursework',
+                        ko: '학회장 운영·전공 수업',
+                        en: 'Leading the society and major coursework',
                     },
                     description: {
-                        ko: '컴퓨터공학과에 재학하며 프로그래밍·소프트웨어 공학 과목을 수강하기 시작했습니다. 전공 수업과 회사 실무를 병행하며 웹 퍼블·개발 역량을 이론과 연결해 보는 시간을 가졌습니다.',
-                        en: 'Continued computer engineering coursework while balancing client delivery—connecting publishing practice with formal CS study.',
+                        ko: '2024년 2월까지 학회장을 맡아 학과 점퍼·MT·해커톤 같은 프로그램을 기획·주최하고, 전공 수업을 들으며 웹 퍼블·개발 역량을 이론과 연결했습니다. 회사 실무도 병행했습니다.',
+                        en: 'Served as society president through February 2024—planning and hosting programs like department jackets, MT, and a hackathon—while taking major courses and connecting publishing and development practice to theory, alongside client work.',
                     },
                 },
                 {
                     period: '2023',
                     title: {
-                        ko: '편입 2학년 수업·과제',
-                        en: 'Second-year coursework',
+                        ko: '학과대표·학생회 설립·학회장',
+                        en: 'Class rep, founding the council, society president',
                     },
                     description: {
-                        ko: '편입 2학년 과정에서 프로그래밍·자료구조·소프트웨어 공학 과목을 수강하며 과제와 프로젝트 마감을 실무 일정과 맞춰 진행했습니다. 수업에서 다룬 구조·문서화 방식이 화면 스펙 정리 습관으로 이어졌습니다.',
-                        en: 'Took programming, data structures, and software engineering courses—aligning assignment deadlines with client delivery and carrying documentation habits into screen specs.',
+                        ko: '3학년 학과대표(2023.03)를 거쳐 4월부터 학회장을 맡았습니다. 기존에 없던 학생회 설립을 끌어내 학우들의 목소리를 대변하고, 셔틀버스 배차·주차 등 학과 내 문제를 조율하며 리더십과 문제 해결력을 키웠습니다.',
+                        en: 'Served as third-year class representative (Mar 2023), then society president from April—founding the previously nonexistent student council to represent students and resolving issues like shuttle scheduling and parking, growing leadership and problem-solving.',
                     },
                 },
                 {
                     period: '2022',
                     title: {
-                        ko: '컴퓨터공학 편입',
-                        en: 'Transfer into computer engineering',
+                        ko: '컴퓨터전자공학과 편입',
+                        en: 'Transfer into Computer & Electronic Engineering',
                     },
                     description: {
-                        ko: '컴퓨터공학과에 편입했습니다. 낮에는 회사 프로젝트, 저녁·주말에는 수업·과제를 병행하며 학업과 납품 일정을 함께 조율하는 방식을 익혔습니다.',
-                        en: 'Transferred into computer engineering—balancing daytime client projects with evening and weekend coursework.',
+                        ko: '한국공학대학교 컴퓨터전자공학과에 편입했습니다. 낮에는 회사 프로젝트, 저녁·주말에는 수업·과제를 병행하며 학업과 납품 일정을 함께 조율하는 방식을 익혔습니다.',
+                        en: 'Transferred into Computer & Electronic Engineering at Tech University of Korea—balancing daytime client projects with evening and weekend coursework.',
                     },
                 },
             ],
