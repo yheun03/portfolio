@@ -16,8 +16,8 @@ const data = {
                     en: 'Nov 2019 ~ Present',
                 },
                 intro: {
-                    ko: '조앤소프트 DX 솔루션 2팀 주임으로 구축·운영·리뉴얼 프로젝트를 수행하며, 요구사항 파악, 화면 구조 설계, 반응형 퍼블리싱, Vue 화면 구현, CMS 커스터마이징, 운영 유지보수까지 납품형 웹 UI 전 과정을 경험했습니다.',
-                    en: 'As an Associate (Juim) on JO&SOFT DX Solution Team 2, I deliver build, operation, and renewal projects end to end—from requirements and UI structure to responsive publishing, Vue, CMS, and maintenance.',
+                    ko: '조앤소프트에서 구축·운영·리뉴얼 프로젝트를 수행하며, 요구사항 파악, 화면 구조 설계, 반응형 퍼블리싱, Vue 화면 구현, CMS 커스터마이징, 운영 유지보수까지 납품형 웹 UI 전 과정을 경험했습니다.',
+                    en: 'While delivering build, operation, and renewal projects at JO&SOFT, I experience the entire process of web UI from requirements to UI structure, responsive publishing, Vue, CMS, and maintenance.',
                 },
                 clients: [
                     { ko: '태림포장', en: 'TaeLim Packaging' },
@@ -147,12 +147,15 @@ const data = {
                     en: 'Mar 2023 ~ Feb 2025',
                 },
                 intro: {
-                    ko: '전적대학교(배화여자대학교)를 거쳐 한국공학대학교 컴퓨터전자공학과에 편입해 4.45/4.5의 학점으로 졸업하며 프로그래밍·소프트웨어 공학 수업을 들었습니다. 회사 실무와 병행해 과제·시험 일정과 납품 마감을 맞추고, 학과대표·학회장으로 학생회 설립과 학과 행사·소통을 이끌며 협업·문서화 경험을 이어갔습니다.',
-                    en: 'After my prior college (Baehwa Women’s University), I transferred into Computer & Electronic Engineering at Tech University of Korea and graduated with a 4.45/4.5 GPA, taking programming and software engineering courses. While continuing client work, I balanced coursework with delivery and—as class representative and society president—launched the student council and led department events and communication.',
+                    ko: '한국공학대학교 컴퓨터전자공학과에 편입해 4.45/4.5의 학점으로 졸업하며 프로그래밍·소프트웨어 공학 수업을 들었습니다. 회사 실무와 병행해 과제·시험 일정과 납품 마감을 맞추고, 학과대표·학회장으로 학생회 설립과 학과 행사·소통을 이끌며 협업·문서화 경험을 이어갔습니다.',
+                    en: 'After transferring into Computer & Electronic Engineering at Tech University of Korea and graduating with a 4.45/4.5 GPA, taking programming and software engineering courses. While continuing client work, I balanced coursework with delivery and—as class representative and society president—launched the student council and led department events and communication.',
                 },
                 clients: [],
                 roles: [
-                    { ko: '컴퓨터전자공학과 편입·졸업 (학점 4.45/4.5)', en: 'Computer & Electronic Engineering, transfer & graduated (GPA 4.45/4.5)' },
+                    {
+                        ko: '컴퓨터전자공학과 편입·졸업 (학점 4.45/4.5)',
+                        en: 'Computer & Electronic Engineering, transfer & graduated (GPA 4.45/4.5)',
+                    },
                     { ko: '회사 실무 병행', en: 'Parallel professional work' },
                     { ko: '학과대표·학회장 (학생회 설립)', en: 'Class representative & society president (founded student council)' },
                     { ko: '프로그래밍·소프트웨어 공학 수업', en: 'Programming and software engineering courses' },
@@ -184,23 +187,75 @@ const data = {
                 {
                     period: '2023',
                     title: {
-                        ko: '학과대표·학생회 설립·학회장',
-                        en: 'Class rep, founding the council, society president',
+                        ko: '편입·학과대표·학생회 설립',
+                        en: 'Transfer, class rep, founding the council',
                     },
                     description: {
-                        ko: '3학년 학과대표(2023.03)를 거쳐 4월부터 학회장을 맡았습니다. 기존에 없던 학생회 설립을 끌어내 학우들의 목소리를 대변하고, 셔틀버스 배차·주차 등 학과 내 문제를 조율하며 리더십과 문제 해결력을 키웠습니다.',
-                        en: 'Served as third-year class representative (Mar 2023), then society president from April—founding the previously nonexistent student council to represent students and resolving issues like shuttle scheduling and parking, growing leadership and problem-solving.',
+                        ko: '전적대를 졸업하고 한국공학대학교 컴퓨터전자공학과 3학년으로 편입했습니다. 학과대표(2023.03)를 거쳐 4월부터 학회장을 맡아 기존에 없던 학생회 설립을 끌어냈고, 셔틀버스 배차·주차 등 학과 내 문제를 조율하며 리더십과 문제 해결력을 키웠습니다.',
+                        en: 'After my Previous university, I transferred into the third year of Computer & Electronic Engineering at Tech University of Korea. As class representative (Mar 2023) and then society president from April, I founded the previously nonexistent student council and resolved issues like shuttle scheduling and parking, growing leadership and problem-solving.',
+                    },
+                },
+            ],
+        },
+        {
+            temp: false,
+            summary: {
+                company: {
+                    ko: '전적대학교',
+                    en: 'Previous university',
+                },
+                team: {
+                    ko: '***대학교 · 모바일소프트웨어학과 · 졸업 (학점 4.27/4.5)',
+                    en: '*** University · Mobile Software · Graduated (GPA 4.27/4.5)',
+                },
+                period: {
+                    ko: '2021.03 ~ 2023.02',
+                    en: 'Mar 2021 ~ Feb 2023',
+                },
+                intro: {
+                    ko: '한국공학대학교 편입 전의 전적대학으로, ***대학교 모바일소프트웨어학과를 4.27/4.5의 학점으로 졸업했습니다. 모바일·소프트웨어 기초를 다지며 회사 실무와 학업을 병행했고, 이때의 전공 기반이 이후 컴퓨터전자공학과 편입으로 이어졌습니다.',
+                    en: 'My Previous university before transferring to Tech University of Korea: I graduated from *** University, Mobile Software, with a 4.27/4.5 GPA. I built mobile and software fundamentals while balancing study with client work—groundwork that led to the later transfer into Computer & Electronic Engineering.',
+                },
+                clients: [],
+                roles: [
+                    { ko: '모바일소프트웨어학과 졸업 (학점 4.27/4.5)', en: 'Mobile Software, graduated (GPA 4.27/4.5)' },
+                    { ko: '한국공학대학교 편입 전 전적대', en: 'Previous university before transferring to Tech University of Korea' },
+                    { ko: '회사 실무 병행', en: 'Parallel professional work' },
+                    { ko: '모바일·소프트웨어 기초 학습', en: 'Mobile and software fundamentals' },
+                ],
+            },
+            timeline: [
+                {
+                    period: '2023',
+                    title: {
+                        ko: '전적대 졸업·편입 준비',
+                        en: 'Prior-college graduation and transfer prep',
+                    },
+                    description: {
+                        ko: '*** 대학교 모바일소프트웨어학과를 4.27/4.5 학점으로 졸업하고, 한국공학대학교 컴퓨터전자공학과 편입을 준비했습니다. 회사 납품 일정과 학업을 끝까지 병행했습니다.',
+                        en: 'Graduated from *** University (Mobile Software) with a 4.27/4.5 GPA and prepared to transfer into Computer & Electronic Engineering at Tech University of Korea—balancing client delivery with study throughout.',
                     },
                 },
                 {
                     period: '2022',
                     title: {
-                        ko: '컴퓨터전자공학과 편입',
-                        en: 'Transfer into Computer & Electronic Engineering',
+                        ko: '모바일·소프트웨어 전공 수업',
+                        en: 'Mobile software coursework',
                     },
                     description: {
-                        ko: '한국공학대학교 컴퓨터전자공학과에 편입했습니다. 낮에는 회사 프로젝트, 저녁·주말에는 수업·과제를 병행하며 학업과 납품 일정을 함께 조율하는 방식을 익혔습니다.',
-                        en: 'Transferred into Computer & Electronic Engineering at Tech University of Korea—balancing daytime client projects with evening and weekend coursework.',
+                        ko: '모바일소프트웨어 전공 과목을 들으며 앱·소프트웨어 기초와 개발 흐름을 익혔습니다. 회사 실무와 병행해 학업 일정을 조율했습니다.',
+                        en: 'Took mobile software major courses, learning app and software fundamentals and the development flow while balancing study with client work.',
+                    },
+                },
+                {
+                    period: '2021',
+                    title: {
+                        ko: '전적대 입학',
+                        en: 'Entering the Previous university',
+                    },
+                    description: {
+                        ko: '고등학교 졸업 후 ***대학교 모바일소프트웨어학과에 입학했습니다. 회사 퍼블리싱 실무를 이어가며 전공 공부를 시작했습니다.',
+                        en: 'After high school, entered *** University, Mobile Software—starting major study while continuing professional publishing work.',
                     },
                 },
             ],
