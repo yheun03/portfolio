@@ -413,8 +413,8 @@ const data = [
         },
         tech: ['HTML', 'SCSS', 'JavaScript', 'jQuery', 'Swiper'],
         introduction: {
-            ko: '2025년에 제작한 정적 HTML 기반 포트폴리오입니다. 자기소개, 프로젝트 소개, 다크 모드, 캔버스 모션을 하나의 페이지 흐름으로 구성해 당시 퍼블리싱 역량과 화면 구성 방식을 기록했습니다.',
-            en: 'A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion.',
+            ko: '2025년에 제작한 정적 HTML 기반 포트폴리오입니다. 자기소개, 프로젝트 소개, 다크 모드, 캔버스 모션을 하나의 페이지 흐름으로 구성해 당시의 퍼블리싱 역량과 화면 구성 방식을 기록했습니다. Nuxt 기반 2026 포트폴리오로 넘어오기 직전의 작업 방식을 그대로 보여주는, 성장 과정을 가늠할 수 있는 아카이브입니다.',
+            en: 'A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion—an archive that shows exactly how I worked just before moving to the Nuxt-based 2026 portfolio.',
         },
         myWorks: [
             {
@@ -430,7 +430,16 @@ const data = [
                 en: 'Managed profile images, mockups, OG image, and static resume assets together',
             },
         ],
-        achievements: [],
+        achievements: [
+            {
+                ko: '프레임워크 없이 정적 자산만으로 단일 페이지 포트폴리오를 완성해 배포',
+                en: 'Completed and deployed a single-page portfolio using only static assets, no framework',
+            },
+            {
+                ko: '2026 Nuxt 포트폴리오와 비교 가능한 작업 방식·구조 아카이브로 정리',
+                en: 'Preserved it as an archive whose approach and structure can be compared with the 2026 Nuxt portfolio',
+            },
+        ],
         points: [
             {
                 ko: 'Nuxt 기반 2026 포트폴리오 이전의 구조와 표현 방식을 비교할 수 있는 아카이브',

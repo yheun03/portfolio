@@ -17,27 +17,27 @@ const data = [
         },
         tech: ['HTML', 'CSS', 'jQuery', 'Figma'],
         introduction: {
-            ko: '태림포장 사내 원지·박스 주문 서비스를 리뉴얼하며 필요한 애플리케이션의 디자인 협업, UX 기획, 퍼블리싱을 수행했습니다. 프로젝트 결과물은 스마트앱어워드 2022 업무향상 부문 대상 수상으로 이어졌습니다.',
-            en: 'Renewed an internal order service for Tailim Packaging and handled design collaboration, UX planning, and publishing for the required application. The outcome won the Smart App Awards 2022 Grand Prize in the work improvement category.',
+            ko: '태림포장 사내 원지·박스 주문 서비스를 리뉴얼·구축하며 필요한 애플리케이션의 디자인 협업·UX 기획·퍼블리싱을 함께 수행한 프로젝트입니다. 디자이너와 Figma로 소통하면서 사용법을 익혀 고객사 요구사항을 정확히 반영해 직접 디자인했고, 그 결과물이 스마트앱어워드 2022 업무향상 부문 대상으로 이어졌습니다.',
+            en: 'A renewal/build of Tailim Packaging’s internal paper-and-box ordering service, where I combined design collaboration, UX planning, and publishing for the required application. Communicating with the designer in Figma, I learned the tooling, reflected client requirements precisely, and designed directly—an outcome that won the Smart App Awards 2022 Grand Prize in the work-improvement category.',
         },
         myWorks: [
             {
-                ko: 'Figma 기반 디자이너 협업 및 고객 요구사항 반영',
-                en: 'Collaborated in Figma and reflected client requirements',
+                ko: 'Figma 기반으로 디자이너와 협업하며 고객 요구사항을 정확히 반영',
+                en: 'Collaborated with the designer in Figma and reflected client requirements precisely',
             },
             {
-                ko: 'HTML/CSS/jQuery 기반 애플리케이션 화면 퍼블리싱 100% 수행',
-                en: 'Owned 100% of application screen publishing with HTML/CSS/jQuery',
+                ko: 'HTML·CSS·jQuery 기반 애플리케이션 화면 퍼블리싱 100% 수행',
+                en: 'Owned 100% of application screen publishing with HTML, CSS, and jQuery',
             },
             {
-                ko: '업무 흐름을 고려한 UX 기획 및 화면 사용성 개선',
+                ko: '업무 흐름을 고려한 UX 기획과 화면 사용성 개선',
                 en: 'Planned UX around work flows and improved screen usability',
             },
         ],
         achievements: [
             {
-                ko: '스마트앱어워드 2022 업무향상 부문 대상',
-                en: 'Smart App Awards 2022 Grand Prize',
+                ko: '스마트앱어워드 2022 업무향상 부문 대상 수상',
+                en: 'Won the Smart App Awards 2022 Grand Prize (work-improvement category)',
             },
         ],
         points: [
@@ -46,8 +46,8 @@ const data = [
                 en: 'Award-linked achievement',
             },
             {
-                ko: '디자인·UX·퍼블리싱을 연결한 실무형 구축 사례',
-                en: 'A practical build connecting design, UX, and publishing',
+                ko: '디자인·UX·퍼블리싱 일체형 구축',
+                en: 'Design, UX, and publishing in one build',
             },
         ],
         pin: true,
