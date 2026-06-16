@@ -616,20 +616,19 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         align-items: start;
-        gap: clamp(1.5rem, 3vw, 2.25rem);
+        gap: clamp(1rem, 2.4vw, 1.65rem);
     }
 
     &.gallery-page--editorial &__content-card {
         min-width: 0;
-        padding: clamp(1rem, 2.4vw, 1.35rem) 0 0;
-        border-top: 1px solid color-mix(in srgb, var(--gallery-muted) 28%, transparent);
-        border-radius: 0;
-        background: transparent;
+        padding: clamp(1rem, 2.4vw, 1.35rem);
+        border-top: 0;
+        border-radius: var(--radius-lg);
+        background: color-mix(in srgb, var(--gallery-bg) 88%, var(--gallery-ink) 3%);
         box-shadow: none;
 
         &--wide {
             grid-column: 1 / -1;
-            padding-top: clamp(1.25rem, 2.8vw, 1.6rem);
         }
     }
 
@@ -659,15 +658,14 @@
     &.gallery-page--editorial &__number-list {
         counter-reset: detail-item;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0 clamp(1.5rem, 4vw, 2.5rem);
+        gap: 0.75rem clamp(1rem, 3vw, 1.75rem);
 
         li {
             display: grid;
             grid-template-columns: 2rem minmax(0, 1fr);
             gap: 0.7rem;
             align-items: start;
-            padding-block: 0.85rem;
-            border-top: 1px solid color-mix(in srgb, var(--gallery-muted) 16%, transparent);
+            padding: 0.65rem 0;
         }
 
         li::before {
@@ -682,8 +680,8 @@
 
     &.gallery-page--editorial &__card-list li,
     &.gallery-page--editorial &__point-list li {
-        padding: 0 0 0.75rem;
-        border-bottom: 1px solid color-mix(in srgb, var(--gallery-muted) 16%, transparent);
+        padding: 0.35rem 0;
+        border-bottom: 0;
         border-radius: 0;
         background: transparent;
     }
