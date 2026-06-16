@@ -139,26 +139,23 @@ const data = {
                     en: 'University',
                 },
                 team: {
-                    ko: '한국공학대학교 · 컴퓨터전자공학과 · 편입·졸업 (학점 4.45/4.5)',
-                    en: 'Tech University of Korea · Computer & Electronic Engineering · Transfer & Graduated (GPA 4.45/4.5)',
+                    ko: '한국공학대학교 컴퓨터전자공학과 편입·졸업 (4.45/4.5) · 전적대 모바일소프트웨어학과 (4.27/4.5)',
+                    en: 'Tech University of Korea · Computer & Electronic Engineering · Transfer & Graduated (GPA 4.45/4.5) · Prior college: Mobile Software (GPA 4.27/4.5)',
                 },
                 period: {
-                    ko: '2023.03 ~ 2025.02',
-                    en: 'Mar 2023 ~ Feb 2025',
+                    ko: '2021.03 ~ 2025.02',
+                    en: 'Mar 2021 ~ Feb 2025',
                 },
                 intro: {
-                    ko: '한국공학대학교 컴퓨터전자공학과에 편입해 4.45/4.5의 학점으로 졸업하며 프로그래밍·소프트웨어 공학 수업을 들었습니다. 회사 실무와 병행해 과제·시험 일정과 납품 마감을 맞추고, 학과대표·학회장으로 학생회 설립과 학과 행사·소통을 이끌며 협업·문서화 경험을 이어갔습니다.',
-                    en: 'After transferring into Computer & Electronic Engineering at Tech University of Korea and graduating with a 4.45/4.5 GPA, taking programming and software engineering courses. While continuing client work, I balanced coursework with delivery and—as class representative and society president—launched the student council and led department events and communication.',
+                    ko: '전적대 모바일소프트웨어학과(학점 4.27/4.5)를 졸업한 뒤 한국공학대학교 컴퓨터전자공학과에 편입해 4.45/4.5의 학점으로 졸업했습니다. 모바일·소프트웨어 기초부터 프로그래밍·소프트웨어 공학까지 학습하며 회사 실무와 병행했고, 학과대표·학회장으로 학생회 설립과 학과 행사·소통을 이끌며 협업·문서화 경험을 이어갔습니다.',
+                    en: 'After graduating from my prior college in Mobile Software (GPA 4.27/4.5), I transferred into Computer & Electronic Engineering at Tech University of Korea and graduated with a 4.45/4.5 GPA. From mobile and software fundamentals to programming and software engineering, I studied while balancing client work—and as class representative and society president, I launched the student council and led department events and communication.',
                 },
                 clients: [],
                 roles: [
-                    {
-                        ko: '컴퓨터전자공학과 편입·졸업 (학점 4.45/4.5)',
-                        en: 'Computer & Electronic Engineering, transfer & graduated (GPA 4.45/4.5)',
-                    },
-                    { ko: '회사 실무 병행', en: 'Parallel professional work' },
+                    { ko: '한국공학대학교 컴퓨터전자공학과 편입·졸업 (4.45/4.5)', en: 'Tech University of Korea, Computer & Electronic Engineering — transfer & graduated (GPA 4.45/4.5)' },
+                    { ko: '전적대 모바일소프트웨어학과 졸업 (4.27/4.5)', en: 'Prior college, Mobile Software — graduated (GPA 4.27/4.5)' },
                     { ko: '학과대표·학회장 (학생회 설립)', en: 'Class representative & society president (founded student council)' },
-                    { ko: '프로그래밍·소프트웨어 공학 수업', en: 'Programming and software engineering courses' },
+                    { ko: '회사 실무 병행', en: 'Parallel professional work' },
                 ],
             },
             timeline: [
@@ -169,8 +166,8 @@ const data = {
                         en: 'Graduating in Computer & Electronic Engineering',
                     },
                     description: {
-                        ko: '컴퓨터전자공학과를 4.45/4.5의 학점으로 졸업했습니다. 학업과 회사 납품 일정을 끝까지 병행했고, 학생회·학과 운영에서 익힌 일정·이해관계 조율 경험을 실무 스테이크홀더 조율로 이어갔습니다.',
-                        en: 'Graduated in Computer & Electronic Engineering with a 4.45/4.5 GPA, balancing study and client delivery to the end and carrying schedule and stakeholder coordination from student-council work into professional projects.',
+                        ko: '한국공학대학교 컴퓨터전자공학과를 4.45/4.5의 학점으로 졸업했습니다. 학업과 회사 납품 일정을 끝까지 병행했고, 학생회·학과 운영에서 익힌 일정·이해관계 조율 경험을 실무 스테이크홀더 조율로 이어갔습니다.',
+                        en: 'Graduated in Computer & Electronic Engineering at Tech University of Korea with a 4.45/4.5 GPA, balancing study and client delivery to the end and carrying schedule and stakeholder coordination from student-council work into professional projects.',
                     },
                 },
                 {
@@ -192,70 +189,29 @@ const data = {
                     },
                     description: {
                         ko: '전적대를 졸업하고 한국공학대학교 컴퓨터전자공학과 3학년으로 편입했습니다. 학과대표(2023.03)를 거쳐 4월부터 학회장을 맡아 기존에 없던 학생회 설립을 끌어냈고, 셔틀버스 배차·주차 등 학과 내 문제를 조율하며 리더십과 문제 해결력을 키웠습니다.',
-                        en: 'After my Previous university, I transferred into the third year of Computer & Electronic Engineering at Tech University of Korea. As class representative (Mar 2023) and then society president from April, I founded the previously nonexistent student council and resolved issues like shuttle scheduling and parking, growing leadership and problem-solving.',
-                    },
-                },
-            ],
-        },
-        {
-            temp: false,
-            summary: {
-                company: {
-                    ko: '전적대학교',
-                    en: 'Previous university',
-                },
-                team: {
-                    ko: '***대학교 · 모바일소프트웨어학과 · 졸업 (학점 4.27/4.5)',
-                    en: '*** University · Mobile Software · Graduated (GPA 4.27/4.5)',
-                },
-                period: {
-                    ko: '2021.03 ~ 2023.02',
-                    en: 'Mar 2021 ~ Feb 2023',
-                },
-                intro: {
-                    ko: '한국공학대학교 편입 전의 전적대학으로, ***대학교 모바일소프트웨어학과를 4.27/4.5의 학점으로 졸업했습니다. 모바일·소프트웨어 기초를 다지며 회사 실무와 학업을 병행했고, 이때의 전공 기반이 이후 컴퓨터전자공학과 편입으로 이어졌습니다.',
-                    en: 'My Previous university before transferring to Tech University of Korea: I graduated from *** University, Mobile Software, with a 4.27/4.5 GPA. I built mobile and software fundamentals while balancing study with client work—groundwork that led to the later transfer into Computer & Electronic Engineering.',
-                },
-                clients: [],
-                roles: [
-                    { ko: '모바일소프트웨어학과 졸업 (학점 4.27/4.5)', en: 'Mobile Software, graduated (GPA 4.27/4.5)' },
-                    { ko: '한국공학대학교 편입 전 전적대', en: 'Previous university before transferring to Tech University of Korea' },
-                    { ko: '회사 실무 병행', en: 'Parallel professional work' },
-                    { ko: '모바일·소프트웨어 기초 학습', en: 'Mobile and software fundamentals' },
-                ],
-            },
-            timeline: [
-                {
-                    period: '2023',
-                    title: {
-                        ko: '전적대 졸업·편입 준비',
-                        en: 'Prior-college graduation and transfer prep',
-                    },
-                    description: {
-                        ko: '*** 대학교 모바일소프트웨어학과를 4.27/4.5 학점으로 졸업하고, 한국공학대학교 컴퓨터전자공학과 편입을 준비했습니다. 회사 납품 일정과 학업을 끝까지 병행했습니다.',
-                        en: 'Graduated from *** University (Mobile Software) with a 4.27/4.5 GPA and prepared to transfer into Computer & Electronic Engineering at Tech University of Korea—balancing client delivery with study throughout.',
+                        en: 'After graduating from my prior college, I transferred into the third year of Computer & Electronic Engineering at Tech University of Korea. As class representative (Mar 2023) and then society president from April, I founded the previously nonexistent student council and resolved issues like shuttle scheduling and parking, growing leadership and problem-solving.',
                     },
                 },
                 {
                     period: '2022',
                     title: {
-                        ko: '모바일·소프트웨어 전공 수업',
-                        en: 'Mobile software coursework',
+                        ko: '전적대 전공 수업 (모바일·소프트웨어)',
+                        en: 'Prior-college coursework (mobile software)',
                     },
                     description: {
-                        ko: '모바일소프트웨어 전공 과목을 들으며 앱·소프트웨어 기초와 개발 흐름을 익혔습니다. 회사 실무와 병행해 학업 일정을 조율했습니다.',
-                        en: 'Took mobile software major courses, learning app and software fundamentals and the development flow while balancing study with client work.',
+                        ko: '전적대 모바일소프트웨어학과에서 앱·소프트웨어 기초와 개발 흐름을 익혔습니다. 회사 실무와 병행해 학업 일정을 조율했습니다.',
+                        en: 'At my prior college in Mobile Software, I learned app and software fundamentals and the development flow while balancing study with client work.',
                     },
                 },
                 {
                     period: '2021',
                     title: {
-                        ko: '전적대 입학',
-                        en: 'Entering the Previous university',
+                        ko: '전적대 입학 (모바일소프트웨어학과)',
+                        en: 'Entering the prior college (Mobile Software)',
                     },
                     description: {
-                        ko: '고등학교 졸업 후 ***대학교 모바일소프트웨어학과에 입학했습니다. 회사 퍼블리싱 실무를 이어가며 전공 공부를 시작했습니다.',
-                        en: 'After high school, entered *** University, Mobile Software—starting major study while continuing professional publishing work.',
+                        ko: '고등학교 졸업 후 전적대 모바일소프트웨어학과에 입학했습니다. 회사 퍼블리싱 실무를 이어가며 전공 공부를 시작했습니다.',
+                        en: 'After high school, I entered my prior college in Mobile Software—starting major study while continuing professional publishing work.',
                     },
                 },
             ],
