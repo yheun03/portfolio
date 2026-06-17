@@ -152,7 +152,10 @@ const data = {
                 },
                 clients: [],
                 roles: [
-                    { ko: '한국공학대학교 컴퓨터전자공학과 편입·졸업 (4.45/4.5)', en: 'Tech University of Korea, Computer & Electronic Engineering — transfer & graduated (GPA 4.45/4.5)' },
+                    {
+                        ko: '한국공학대학교 컴퓨터전자공학과 편입·졸업 (4.45/4.5)',
+                        en: 'Tech University of Korea, Computer & Electronic Engineering — transfer & graduated (GPA 4.45/4.5)',
+                    },
                     { ko: '전적대 모바일소프트웨어학과 졸업 (4.27/4.5)', en: 'Prior college, Mobile Software — graduated (GPA 4.27/4.5)' },
                     { ko: '학과대표·학회장 (학생회 설립)', en: 'Class representative & society president (founded student council)' },
                     { ko: '회사 실무 병행', en: 'Parallel professional work' },
