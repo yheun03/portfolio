@@ -288,7 +288,7 @@
         min-height: 0;
         padding: 0;
         border: 0;
-        background: color-mix(in srgb, var(--grayscale-950) 55%, transparent);
+        background: var(--color-scrim);
         backdrop-filter: blur(6px);
         cursor: pointer;
     }
