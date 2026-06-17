@@ -107,20 +107,15 @@
 
 /* ----- Desktop (≥1024px) ----- */
 @media (min-width: #{$bp-min-laptop}) {
+    /* 가운데 max-width 칼럼 대신 전체 폭 + 좌우 page-pad-x 패딩 (handheld와 동일 방식) */
     .section {
-        width: min(100% - var(--page-pad-x), var(--layout-content-max));
-        margin-inline: auto;
-        padding: var(--section-pad-y) 0;
+        width: 100%;
+        margin-inline: 0;
+        padding: var(--section-pad-y) var(--page-pad-x);
     }
 
     .section:not(.section--hero) {
         display: grid;
         gap: var(--section-gap);
-    }
-}
-
-@media (min-width: 1920px) {
-    .section {
-        width: min(100% - var(--page-pad-x), var(--layout-content-max));
     }
 }

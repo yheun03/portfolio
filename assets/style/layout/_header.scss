@@ -11,7 +11,8 @@
     left: 0;
     z-index: 100;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: space-between;
     gap: $space-6;
@@ -43,6 +44,7 @@
     &__nav {
         display: none;
         align-items: center;
+        justify-content: center;
         gap: $space-1;
 
         .app-header__link {
@@ -87,6 +89,7 @@
     &__actions {
         display: flex;
         gap: $space-2;
+        justify-content: flex-end;
     }
 
     &__menu-btn {
@@ -175,6 +178,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .app-header__theme-toggle:active,
     .app-header__language-toggle:active,
     .app-header__menu-btn:active {
@@ -212,14 +216,20 @@
             opacity 0.16s ease,
             top 0.22s ease;
 
-        &:nth-child(1) { top: 0; }
+        &:nth-child(1) {
+            top: 0;
+        }
+
         &:nth-child(2) {
             top: calc(50% - 1px);
             width: 68%;
             right: 0;
             left: auto;
         }
-        &:nth-child(3) { top: calc(100% - 2px); }
+
+        &:nth-child(3) {
+            top: calc(100% - 2px);
+        }
     }
 }
 
@@ -232,10 +242,12 @@
             top: calc(50% - 1px);
             transform: rotate(45deg);
         }
+
         span:nth-child(2) {
             opacity: 0;
             transform: translateX(6px);
         }
+
         span:nth-child(3) {
             top: calc(50% - 1px);
             transform: rotate(-45deg);
@@ -260,10 +272,7 @@
 
     width: min(312px, 100vw);
     padding:
-        $space-6
-        max($space-5, env(safe-area-inset-right))
-        max($space-7, env(safe-area-inset-bottom))
-        $space-5;
+        $space-6 max($space-5, env(safe-area-inset-right)) max($space-7, env(safe-area-inset-bottom)) $space-5;
 
     border-left: 1px solid var(--color-border);
     background: color-mix(in srgb, var(--color-bg) 96%, transparent);
@@ -291,11 +300,9 @@
         height: 208px;
         pointer-events: none;
         background:
-            radial-gradient(
-                120% 80% at 100% 0%,
+            radial-gradient(120% 80% at 100% 0%,
                 color-mix(in srgb, var(--color-primary) 16%, transparent),
-                transparent 62%
-            );
+                transparent 62%);
         opacity: 0.9;
     }
 
@@ -382,8 +389,13 @@
             background: currentColor;
             transform-origin: center;
 
-            &:nth-child(1) { transform: translateY(-50%) rotate(45deg); }
-            &:nth-child(2) { transform: translateY(-50%) rotate(-45deg); }
+            &:nth-child(1) {
+                transform: translateY(-50%) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translateY(-50%) rotate(-45deg);
+            }
         }
     }
 
@@ -584,6 +596,7 @@
         padding-block: $space-3;
         padding-inline: max(var(--page-pad-x, 14px), env(safe-area-inset-left)) max(var(--page-pad-x, 14px), env(safe-area-inset-right));
         min-height: auto;
+        grid-template-columns: 1fr 1fr;
     }
 
     .app-header__brand {
