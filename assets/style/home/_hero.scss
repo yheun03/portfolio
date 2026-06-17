@@ -134,7 +134,7 @@
 
     &__cue-label {
         font-family: var(--font-mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 0.22em;
         text-transform: uppercase;
@@ -625,7 +625,7 @@
         background: color-mix(in srgb, var(--color-surface) 88%, transparent);
         box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 3%, transparent);
 
-        dt { font-size: 0.62rem; }
+        dt { font-size: 0.75rem; }
 
         dd { font-size: clamp(1.2rem, 1.75vw, 1.65rem); }
     }

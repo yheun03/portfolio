@@ -7,7 +7,7 @@
             <div v-if="open" :id="id" ref="drawerRef" class="app-lnb" role="dialog" aria-modal="true"
                 :aria-labelledby="`${id}-title`">
                 <div class="app-lnb__glow" aria-hidden="true" />
-                <header class="app-lnb__head">
+                <div class="app-lnb__head">
                     <div class="app-lnb__head-copy">
                         <p class="app-lnb__eyebrow">{{ t('lnb.eyebrow') }}</p>
                         <p :id="`${id}-title`" class="app-lnb__title">{{ t('lnb.title') }}</p>
@@ -20,7 +20,7 @@
                             <span />
                         </span>
                     </button>
-                </header>
+                </div>
                 <nav class="app-lnb__nav" :aria-label="locale === 'ko' ? '모바일 주요 메뉴' : 'Mobile primary menu'">
                     <BaseLink v-for="(item, index) in links" :key="item.href" :href="item.href" class="app-lnb__link"
                         :class="{ 'app-lnb__link--active': isActive(item.href) }"
@@ -31,7 +31,7 @@
                         <span class="app-lnb__link-arrow" aria-hidden="true" />
                     </BaseLink>
                 </nav>
-                <footer class="app-lnb__foot">
+                <div class="app-lnb__foot">
                     <p class="app-lnb__foot-eyebrow">{{ t('lnb.connect') }}</p>
                     <div class="app-lnb__socials">
                         <a class="app-lnb__social" :href="`mailto:${profile.contacts.email}`">
@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <p class="app-lnb__signature">{{ t('lnb.signature') }}</p>
-                </footer>
+                </div>
             </div>
         </transition>
     </Teleport>

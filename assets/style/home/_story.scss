@@ -171,7 +171,7 @@
         border-radius: var(--radius-pill);
         background: var(--gradient-accent);
         color: var(--color-on-primary, #fff);
-        font-size: 0.68rem;
+        font-size: 0.75rem;
         letter-spacing: 0.08em;
     }
 
@@ -212,7 +212,7 @@
             background: color-mix(in srgb, var(--color-surface) 65%, transparent);
             color: var(--color-text-muted);
             font-family: var(--font-mono);
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 0.03em;
             line-height: var(--line-height-ui);

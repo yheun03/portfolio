@@ -34,6 +34,9 @@ body {
     transition: background-color 0.35s ease, color 0.35s ease;
     text-wrap: pretty;
     word-break: keep-all;
+    /* Apple HIG: -apple-system 폰트의 선명한 렌더 (Retina 디바이스 기준) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* 라벨·캡션: UI 최소 14px (--font-size-xs) */

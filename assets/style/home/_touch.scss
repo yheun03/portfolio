@@ -6,14 +6,10 @@
 ============================================================================= */
 
 @media (max-width: #{$bp-max-tablet}) {
+
     .section.section--about,
     .section.section--contact {
         padding-block: var(--section-pad-y);
-    }
-
-    /* 연락처: 좁은 화면에서 좌우 패딩을 줄여 콘텐츠를 화면 끝 가깝게 꽉 채움 */
-    .section.section--contact {
-        padding-inline: clamp(10px, 3vw, 16px);
     }
 
     .about__stage {
@@ -82,7 +78,7 @@
     }
 
     /* ----- Journey / Toolbox ----- */
-    .section--toolbox > .section-title {
+    .section--toolbox>.section-title {
         position: static;
         width: 100%;
     }
@@ -259,7 +255,8 @@
     }
 
     .contact__mail-display {
-        font-size: clamp(2rem, 5.5vw, 3rem);
+        font-size: clamp(5rem, 7.5vw, 12rem);
+        // font-size: clamp(2rem, 5.5vw, 3rem);
     }
 
     .works__list-control {
@@ -277,7 +274,8 @@
 /* ----- Mobile: compact type & rails ----- */
 @media (max-width: #{$bp-max-mobile}) {
     .contact__mail-display {
-        font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+        font-size: clamp(4rem, 7.5vw, 9rem);
+        // font-size: clamp(1.65rem, 7.5vw, 2.5rem);
     }
 
     .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab,
