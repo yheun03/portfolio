@@ -10,11 +10,11 @@
     top: 0;
     bottom: 0;
     // right: max(var(--app-dock-edge),
-    //         calc(var(--section-margin-x) - var(--app-dock-slot, 3.15rem)));
+    //         calc(var(--section-margin-x) - var(--app-dock-slot, 50px)));
     right: var(--app-dock-edge);
     z-index: 85;
     display: none;
-    width: min(4.5rem, 12vw);
+    width: min(72px, 12vw);
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
@@ -37,8 +37,8 @@
 
     &:hover .app-dock .app-dock__dot,
     &:focus-within .app-dock .app-dock__dot {
-        width: 0.55rem;
-        height: 0.55rem;
+        width: 9px;
+        height: 9px;
     }
 }
 
@@ -88,7 +88,7 @@
         &:hover .app-dock__label,
         &:focus-visible .app-dock__label {
             opacity: 1;
-            transform: translateY(-50%) translateX(-0.12rem);
+            transform: translateY(-50%) translateX(-2px);
         }
 
         &--active .app-dock__dot {
@@ -105,8 +105,8 @@
     }
 
     &__dot {
-        width: 0.35rem;
-        height: 0.35rem;
+        width: 6px;
+        height: 6px;
         border-radius: 999px;
         background: color-mix(in srgb, var(--color-text-muted) 80%, transparent);
         /* --dock-mag: useDockMagnify 가 커서 근접도에 따라 갱신하는 스케일 배수 */
@@ -122,15 +122,15 @@
 
     &:hover &__dot,
     &:focus-within &__dot {
-        width: 0.55rem;
-        height: 0.55rem;
+        width: 9px;
+        height: 9px;
     }
 
     /** 독(점) 기준 왼쪽 = 본문 쪽으로 섹션 타이틀 노출 */
     &__label {
         position: absolute;
         top: 50%;
-        right: calc(100% + 0.7rem);
+        right: calc(100% + 11px);
         left: auto;
         padding: var(--space-3) var(--space-5);
         border: 1px solid var(--color-border);
@@ -141,7 +141,7 @@
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-50%) translateX(0.2rem);
+        transform: translateY(-50%) translateX(3px);
         transition: opacity 0.18s ease, transform 0.18s ease;
         z-index: 1;
     }

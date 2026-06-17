@@ -12,7 +12,7 @@
     gap: $space-3;
     min-width: $size-touch;
     min-height: $size-touch;
-    padding: $space-5 clamp(1.25rem, 2.4vw, 1.75rem);
+    padding: $space-5 clamp(20px, 2.4vw, 28px);
     border-radius: $radius-pill;
     border: 1px solid color-mix(in srgb, $grayscale-300 85%, transparent);
     cursor: pointer;

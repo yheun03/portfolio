@@ -14,7 +14,7 @@
         flex-wrap: nowrap;
         align-items: stretch;
         align-self: stretch;
-        gap: 0.5rem;
+        gap: 8px;
         width: calc(100% + (var(--filter-edge-space) * 2));
         max-width: none;
         margin-inline: calc(-1 * var(--filter-edge-space));
@@ -41,9 +41,9 @@
             width: auto;
             min-width: max-content;
             max-width: none;
-            min-height: 2.75rem;
+            min-height: 44px;
             margin: 0;
-            padding: 0.55rem 1.1rem;
+            padding: 9px 18px;
             justify-content: center;
             align-items: center;
             border: 1px solid color-mix(in srgb, var(--color-border) 88%, transparent);
@@ -132,7 +132,7 @@
     }
 
     .journey__chapter-roles {
-        padding-left: 1rem;
+        padding-left: 16px;
         margin-top: 0;
 
         li {
@@ -176,19 +176,19 @@
     .journey__chapter .journey__steps .timeline-item,
     .year-timeline__entries .timeline-item {
         position: relative;
-        gap: 0.5rem;
+        gap: 8px;
         padding: var(--space-6) 0;
         padding-inline-start: var(--space-4);
 
         &::before {
             content: "";
             position: absolute;
-            left: calc(-1 * var(--space-6) + 0.15rem);
+            left: calc(-1 * var(--space-6) + 2px);
             transform: translateX(-85%);
-            top: 1.35rem;
+            top: 22px;
             z-index: 1;
-            width: 0.55rem;
-            height: 0.55rem;
+            width: 9px;
+            height: 9px;
             aspect-ratio: 1;
             border: 2px solid var(--color-surface);
             border-radius: 999px;
@@ -203,7 +203,7 @@
         &__period {
             display: inline-block;
             width: fit-content;
-            padding: 0.2rem 0.55rem;
+            padding: 3px 9px;
             border-radius: 999px;
             background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
             font-size: 0.75rem;

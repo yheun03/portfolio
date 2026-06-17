@@ -17,7 +17,7 @@
 
 @media (min-width: 1024px) {
     .section.section--about {
-        padding-block: clamp(5rem, 13vw, 10rem) clamp(6rem, 15vw, 12rem);
+        padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
     }
 }
 
@@ -30,16 +30,16 @@
         "intro"
         "spotlight"
         "workflow";
-    gap: clamp(1.5rem, 4vw, 2.5rem);
+    gap: clamp(24px, 4vw, 40px);
 
     @media (min-width: 1024px) {
-        gap: clamp(4rem, 10vw, 7.5rem);
+        gap: clamp(64px, 10vw, 120px);
     }
 }
 
 .about__intro {
     grid-area: intro;
-    max-width: min(72rem, 100%);
+    max-width: min(1152px, 100%);
     padding: 0;
     border: 0;
     background: transparent;
@@ -69,7 +69,7 @@
 
 .about__lead {
     max-width: 28ch;
-    margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+    margin: clamp(32px, 5vw, 56px) 0 0;
     color: var(--color-text-muted);
     @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
 }

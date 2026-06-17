@@ -59,7 +59,7 @@
         position: relative;
 
         @media (min-width: 1024px) {
-            padding-bottom: clamp(2rem, 6vw, 4rem);
+            padding-bottom: clamp(32px, 6vw, 64px);
         }
     }
 

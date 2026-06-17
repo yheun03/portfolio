@@ -8,14 +8,14 @@
 /* Why — 핵심 가치 3개 대형 타이포 */
 .why__list {
     display: grid;
-    gap: clamp(3rem, 8vw, 6rem);
+    gap: clamp(48px, 8vw, 96px);
     margin: 0;
     padding: 0;
     list-style: none;
 
     li {
         display: grid;
-        gap: clamp(0.75rem, 1.8vw, 1.25rem);
+        gap: clamp(12px, 1.8vw, 20px);
 
         &:nth-child(2) {
             justify-items: center;
@@ -60,7 +60,7 @@
 .showcase__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.25rem, 3vw, 2rem);
+    gap: clamp(20px, 3vw, 32px);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -78,8 +78,8 @@
     position: relative;
     display: grid;
     align-content: start;
-    gap: clamp(0.9rem, 2vw, 1.4rem);
-    min-height: clamp(15rem, 28vw, 21rem);
+    gap: clamp(14px, 2vw, 22px);
+    min-height: clamp(240px, 28vw, 336px);
     padding: var(--card-padding-lg);
     overflow: hidden;
     border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
@@ -98,7 +98,7 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background: radial-gradient(26rem circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        background: radial-gradient(416px circle at var(--glow-x, 50%) var(--glow-y, 50%),
                 color-mix(in srgb, var(--color-primary) 9%, transparent),
                 transparent 65%);
         opacity: 0;
@@ -129,7 +129,7 @@
 
     &__watermark {
         position: absolute;
-        right: clamp(0.6rem, 2vw, 1.6rem);
+        right: clamp(10px, 2vw, 26px);
         bottom: -0.16em;
         font-family: var(--font-display);
         font-size: clamp(4.5rem, 10vw, 8.5rem);
@@ -149,14 +149,14 @@
         flex-wrap: wrap;
         align-items: baseline;
         justify-content: space-between;
-        gap: 0.4rem 1rem;
+        gap: 6px 16px;
         margin: 0;
     }
 
     &__tag {
         display: inline-flex;
         align-items: center;
-        gap: 0.55rem;
+        gap: 9px;
         margin: 0;
         color: var(--color-primary);
         font-family: var(--font-mono);
@@ -167,7 +167,7 @@
     }
 
     &__badge {
-        padding: 0.18rem 0.6rem;
+        padding: 3px 10px;
         border-radius: var(--radius-pill);
         background: var(--gradient-accent);
         color: var(--color-on-primary, #fff);
@@ -200,13 +200,13 @@
     &__stack {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.4rem;
+        gap: 6px;
         margin: 0;
         padding: 0;
         list-style: none;
 
         li {
-            padding: 0.26rem 0.68rem;
+            padding: 4px 11px;
             border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
             border-radius: var(--radius-pill);
             background: color-mix(in srgb, var(--color-surface) 65%, transparent);
@@ -222,7 +222,7 @@
     &__cta {
         display: inline-flex;
         align-items: center;
-        gap: 0.45rem;
+        gap: 7px;
         margin-top: auto;
         color: var(--color-primary);
         font-size: var(--font-size-sm);
@@ -244,9 +244,9 @@
             "title summary"
             "stack summary"
             "cta summary";
-        column-gap: clamp(2rem, 4vw, 3.5rem);
+        column-gap: clamp(32px, 4vw, 56px);
         align-items: start;
-        min-height: clamp(17rem, 26vw, 23rem);
+        min-height: clamp(272px, 26vw, 368px);
 
         .story-case__head {
             grid-area: head;
@@ -286,30 +286,30 @@
 .proof__metrics {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1.5rem, 4vw, 3rem);
+    gap: clamp(24px, 4vw, 48px);
     margin: 0;
-    padding: clamp(2rem, 4.5vw, 3.5rem) 0;
+    padding: clamp(32px, 4.5vw, 56px) 0;
     border-block: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
 
     @media (max-width: 767px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(1.25rem, 5vw, 2rem);
+        gap: clamp(20px, 5vw, 32px);
     }
 
     > div {
         position: relative;
         display: grid;
-        gap: 0.5rem;
+        gap: 8px;
         min-width: 0;
-        padding-inline-start: clamp(1rem, 2vw, 1.5rem);
+        padding-inline-start: clamp(16px, 2vw, 24px);
 
         /* 스펙시트 느낌의 세로 구분선 */
         &::before {
             content: "";
             position: absolute;
             left: 0;
-            top: 0.3rem;
-            bottom: 0.3rem;
+            top: 5px;
+            bottom: 5px;
             width: 1px;
             background: linear-gradient(180deg, var(--color-primary), transparent);
             opacity: 0.45;
@@ -354,7 +354,7 @@
 /* How — 작업 방식 (flow-steps 재사용) + 스택 링크 */
 .how__steps-card {
     display: grid;
-    gap: clamp(1.5rem, 3.5vw, 2.5rem);
+    gap: clamp(24px, 3.5vw, 40px);
 
     .flow-steps li {
         position: relative;

@@ -96,7 +96,7 @@
         inset: 0;
         border-radius: inherit;
         background: radial-gradient(
-            18rem circle at var(--glow-x, 50%) var(--glow-y, 50%),
+            288px circle at var(--glow-x, 50%) var(--glow-y, 50%),
             color-mix(in srgb, var(--color-primary) 9%, transparent),
             transparent 65%
         );
@@ -129,14 +129,14 @@
     &--metrics {
         display: flex;
         flex-wrap: wrap;
-        gap: clamp(1.5rem, 4vw, 3.5rem);
+        gap: clamp(24px, 4vw, 56px);
         align-items: flex-end;
-        padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.5rem, 3vw, 2.5rem);
+        padding: clamp(20px, 2.5vw, 32px) clamp(24px, 3vw, 40px);
     }
 
     &--flow {
         display: grid;
-        gap: clamp(1.25rem, 3vw, 2rem);
+        gap: clamp(20px, 3vw, 32px);
     }
 
     &__title {
@@ -147,13 +147,13 @@
 
 .feature-card {
     display: grid;
-    gap: clamp(1.1rem, 2.4vw, 1.7rem);
-    min-height: clamp(12rem, 24vw, 16rem);
+    gap: clamp(18px, 2.4vw, 27px);
+    min-height: clamp(192px, 24vw, 256px);
     align-content: start;
 
     &--skill {
         height: 100%;
-        min-height: clamp(14rem, 28vw, 18rem);
+        min-height: clamp(224px, 28vw, 288px);
     }
 
     &__eyebrow {
@@ -201,7 +201,7 @@
 
 .spotlight {
     display: grid;
-    gap: clamp(1.75rem, 4vw, 3rem);
+    gap: clamp(28px, 4vw, 48px);
 
     &__kicker {
         margin: 0;
@@ -213,7 +213,7 @@
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(1.25rem, 3vw, 2rem);
+    gap: clamp(20px, 3vw, 32px);
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -231,15 +231,15 @@
 .flow-steps {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1.25rem, 3vw, 2.25rem);
+    gap: clamp(20px, 3vw, 36px);
     padding: 0;
     margin: 0;
     list-style: none;
 
     li {
         display: grid;
-        gap: 0.75rem;
-        padding-top: clamp(0.9rem, 1.8vw, 1.2rem);
+        gap: 12px;
+        padding-top: clamp(14px, 1.8vw, 19px);
         border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
     }
 
@@ -257,7 +257,7 @@
     .surface-card,
     .feature-card,
     .base-card {
-        padding: clamp(1rem, 4.8vw, var(--card-padding-lg));
+        padding: clamp(16px, 4.8vw, var(--card-padding-lg));
     }
 
     .feature-card {

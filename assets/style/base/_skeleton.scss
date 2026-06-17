@@ -23,7 +23,7 @@
             color-mix(in srgb, var(--color-surface-strong) 72%, var(--color-border)) 100%);
     background-size: 240% 100%;
     animation: skeleton-shimmer 1.35s ease-in-out infinite;
-    border-radius: 0.32rem;
+    border-radius: 5px;
 }
 
 html.skeleton-active {
