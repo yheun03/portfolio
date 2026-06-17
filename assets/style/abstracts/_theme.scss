@@ -36,12 +36,14 @@
     --accent-hot: #6b7fff;
     --accent-mint: #4dc9ff;
 
-    /* Text */
+    /* Text — light theme.
+       muted/subtle 는 WCAG AA(4.5:1)를 페이지 배경(#f2f4f6)·surface(#fff) 양쪽에서 충족하도록 조정.
+       기존 #6b7684(4.19/bg)·#8b95a1(2.76/bg)는 본문 텍스트로 명암비 미달이었음. */
     --color-text: #333d4b;
     --color-text-strong: #191f28;
     --color-text-heading: #191f28;
-    --color-text-muted: #6b7684;
-    --color-text-subtle: #8b95a1;
+    --color-text-muted: #4e5968; /* 6.45:1 on bg · 7.11:1 on surface */
+    --color-text-subtle: #5b6573; /* 5.36:1 on bg · 5.91:1 on surface — muted 보다 옅되 AA 충족 */
 
     /* Semantic surfaces */
     --color-bg: #f2f4f6;
@@ -58,6 +60,12 @@
     /* Foreground on filled/accent surfaces */
     --color-on-primary: var(--theme-white);
     --color-on-accent: var(--theme-white);
+
+    /* State (light theme) — 흰/연회색 배경에서 AA(4.5:1) 충족.
+       색상에만 의존하지 않도록 사용처에서는 아이콘/텍스트 레이블을 병기할 것. */
+    --state-error: #c81e1e; /* 5.74:1 on surface */
+    --state-success: #047857; /* 5.48:1 on surface */
+    --state-warning: #b45309; /* 5.02:1 on surface */
 
     /* Shared overlays */
     --color-scrim: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
@@ -137,6 +145,12 @@
     --color-text-subtle: #8b95a1;
     --color-on-primary: #fff;
     --color-on-accent: #fff;
+
+    /* State (dark theme) — 어두운 배경에서 AA 충족하도록 밝게 재정의 */
+    --state-error: #f87171; /* 6.99:1 on bg */
+    --state-success: #10b981; /* 7.62:1 on bg */
+    --state-warning: #f59e0b; /* 9.01:1 on bg */
+
     --color-overlay: color-mix(in srgb, #020407 82%, transparent);
     --color-scrim: color-mix(in srgb, #020407 78%, transparent);
     --color-light-sheen: color-mix(in srgb, var(--theme-white) 10%, transparent);
@@ -195,5 +209,6 @@
         --grayscale-600: #3d4654;
         --grayscale-300: #a8b3c0;
         --color-text-muted: #3d4654;
+        --color-text-subtle: #3d4654; /* 고대비 모드에서는 subtle 도 최대 명암으로 끌어올림 */
     }
 }
