@@ -145,7 +145,7 @@ html.app--menu-open {
     left: $space-5;
     top: -100px;
     padding: $space-3 $space-5;
-    border-radius: 0.6rem;
+    border-radius: 10px;
     color: var(--shell-skip-fg);
     background: var(--shell-skip-bg);
     border: 1px solid var(--shell-skip-border);

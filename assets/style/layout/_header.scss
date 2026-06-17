@@ -73,10 +73,10 @@
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: 0.35rem;
+                    bottom: 6px;
                     left: $space-5;
                     right: $space-5;
-                    height: 1.5px;
+                    height: 2px;
                     background: var(--color-primary);
                     border-radius: $radius-pill;
                 }
@@ -195,15 +195,15 @@
 .app-header__menu-icon {
     position: relative;
     display: grid;
-    width: 1.15rem;
-    height: 0.9rem;
+    width: 18px;
+    height: 14px;
     align-items: center;
 
     span {
         position: absolute;
         left: 0;
         width: 100%;
-        height: 1.5px;
+        height: 2px;
         border-radius: $radius-pill;
         background: currentColor;
         transform-origin: center;
@@ -214,12 +214,12 @@
 
         &:nth-child(1) { top: 0; }
         &:nth-child(2) {
-            top: calc(50% - 0.75px);
+            top: calc(50% - 1px);
             width: 68%;
             right: 0;
             left: auto;
         }
-        &:nth-child(3) { top: calc(100% - 1.5px); }
+        &:nth-child(3) { top: calc(100% - 2px); }
     }
 }
 
@@ -229,15 +229,15 @@
 
     .app-header__menu-icon {
         span:nth-child(1) {
-            top: calc(50% - 0.75px);
+            top: calc(50% - 1px);
             transform: rotate(45deg);
         }
         span:nth-child(2) {
             opacity: 0;
-            transform: translateX(0.35rem);
+            transform: translateX(6px);
         }
         span:nth-child(3) {
-            top: calc(50% - 0.75px);
+            top: calc(50% - 1px);
             transform: rotate(-45deg);
         }
     }
@@ -258,7 +258,7 @@
     flex-direction: column;
     gap: $space-6;
 
-    width: min(19.5rem, 100vw);
+    width: min(312px, 100vw);
     padding:
         $space-6
         max($space-5, env(safe-area-inset-right))
@@ -288,7 +288,7 @@
         position: absolute;
         inset: 0 0 auto;
         z-index: 0;
-        height: 13rem;
+        height: 208px;
         pointer-events: none;
         background:
             radial-gradient(
@@ -369,15 +369,15 @@
     &__close-icon {
         position: relative;
         display: block;
-        width: 1rem;
-        height: 1rem;
+        width: 16px;
+        height: 16px;
 
         span {
             position: absolute;
             top: 50%;
             left: 0;
             width: 100%;
-            height: 1.5px;
+            height: 2px;
             border-radius: $radius-pill;
             background: currentColor;
             transform-origin: center;
@@ -416,11 +416,11 @@
         &:hover:not(&--active) {
             color: var(--color-text-strong);
             background: color-mix(in srgb, var(--color-primary) 8%, transparent);
-            transform: translateX(0.1rem);
+            transform: translateX(2px);
 
             .app-lnb__link-arrow {
                 opacity: 0.8;
-                transform: translateX(0.08rem) rotate(45deg);
+                transform: translateX(1px) rotate(45deg);
             }
         }
 
@@ -445,7 +445,7 @@
     }
 
     &__index {
-        min-width: 1.75rem;
+        min-width: 28px;
         color: var(--color-text-subtle);
         font-variant-numeric: tabular-nums;
         @include font(caption-2, $font-weight-bold);
@@ -457,10 +457,10 @@
     }
 
     &__link-arrow {
-        width: 0.45rem;
-        height: 0.45rem;
-        border-top: 1.5px solid currentColor;
-        border-right: 1.5px solid currentColor;
+        width: 7px;
+        height: 7px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
         opacity: 0.35;
         transform: rotate(45deg);
         transition: opacity 0.18s ease, transform 0.18s ease;
@@ -509,7 +509,7 @@
             color: var(--color-text-strong);
             border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
             background: color-mix(in srgb, var(--color-primary) 8%, transparent);
-            transform: translateY(-0.06rem);
+            transform: translateY(-1px);
         }
 
         &:focus-visible {
@@ -523,8 +523,8 @@
         flex: 0 0 auto;
 
         svg {
-            width: 1.05rem;
-            height: 1.05rem;
+            width: 17px;
+            height: 17px;
         }
     }
 
@@ -567,7 +567,7 @@
 .app-lnb-drawer-enter-from .app-lnb__link,
 .app-lnb-drawer-leave-to .app-lnb__link {
     opacity: 0;
-    transform: translateX(0.75rem);
+    transform: translateX(12px);
 }
 
 .app-lnb-drawer-enter-active .app-lnb__link {
@@ -582,7 +582,7 @@
     .app-header {
         gap: $space-3;
         padding-block: $space-3;
-        padding-inline: max(var(--page-pad-x, 0.85rem), env(safe-area-inset-left)) max(var(--page-pad-x, 0.85rem), env(safe-area-inset-right));
+        padding-inline: max(var(--page-pad-x, 14px), env(safe-area-inset-left)) max(var(--page-pad-x, 14px), env(safe-area-inset-right));
         min-height: auto;
     }
 
@@ -596,7 +596,7 @@
 
     .app-header__actions {
         flex: 0 0 auto;
-        gap: clamp(0.3rem, 1.6vw, #{$space-2});
+        gap: clamp(5px, 1.6vw, #{$space-2});
     }
 
     .app-header__language-toggle,
@@ -605,11 +605,11 @@
     }
 
     .app-header__language-toggle {
-        padding: $space-2 clamp(0.65rem, 2.5vw, #{$space-4});
+        padding: $space-2 clamp(10px, 2.5vw, #{$space-4});
     }
 
     .app-lnb {
-        width: min(19.5rem, calc(100vw - var(--page-pad-x, 0.85rem)));
+        width: min(312px, calc(100vw - var(--page-pad-x, 14px)));
         padding-top: $space-4;
     }
 }
@@ -625,16 +625,16 @@
 
     .app-header__language-toggle,
     .app-header__menu-btn {
-        min-height: calc(var(--size-touch) - 0.25rem);
+        min-height: calc(var(--size-touch) - 4px);
         font-size: var(--font-size-xs);
     }
 
     .app-header__language-toggle {
-        padding-inline: 0.65rem;
+        padding-inline: 10px;
     }
 
     .app-header__menu-btn {
-        width: calc(var(--size-touch) - 0.25rem);
+        width: calc(var(--size-touch) - 4px);
     }
 }
 

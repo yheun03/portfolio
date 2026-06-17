@@ -11,6 +11,11 @@
         padding-block: var(--section-pad-y);
     }
 
+    /* 연락처: 좁은 화면에서 좌우 패딩을 줄여 콘텐츠를 화면 끝 가깝게 꽉 채움 */
+    .section.section--contact {
+        padding-inline: clamp(10px, 3vw, 16px);
+    }
+
     .about__stage {
         gap: var(--section-gap);
     }
@@ -173,7 +178,7 @@
         max-width: 100%;
         margin-inline: 0;
         /* overflow-x: auto forces overflow-y: auto → bottom padding must cover box-shadow extent */
-        padding-block: var(--space-4) clamp(3.5rem, 8vw, 5rem);
+        padding-block: var(--space-4) clamp(56px, 8vw, 80px);
         padding-inline: var(--swipe-edge-space);
         grid-template-columns: none;
         overflow-x: auto;
@@ -278,6 +283,6 @@
     .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab,
     .section--highlights .highlights__filters.tab-list.tab-list--rail .tab-list__tab {
         min-height: var(--size-touch);
-        padding-inline: 1rem;
+        padding-inline: 16px;
     }
 }

@@ -105,13 +105,13 @@ onMounted(() => {
     z-index: 200;
     display: grid;
     place-items: center;
-    padding: clamp(1rem, 4vw, 2rem);
+    padding: clamp(16px, 4vw, 32px);
     background: var(--color-scrim);
     backdrop-filter: blur(18px) saturate(1.2);
 
     &__content {
-        width: min(100%, 36rem);
-        max-height: min(92dvh, 44rem);
+        width: min(100%, 576px);
+        max-height: min(92dvh, 704px);
     }
 
     &__card {
@@ -148,7 +148,7 @@ onMounted(() => {
         flex-shrink: 0;
         min-width: auto;
         min-height: auto;
-        padding: 0.45rem 0.85rem;
+        padding: 7px 14px;
         font-size: var(--font-size-xs);
     }
 
@@ -182,7 +182,7 @@ onMounted(() => {
     opacity: 0;
 
     .temp-main-modal__content {
-        transform: translateY(0.9rem) scale(0.985);
+        transform: translateY(14px) scale(0.985);
     }
 }
 

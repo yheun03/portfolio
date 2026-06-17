@@ -152,7 +152,7 @@ const typographyTokens = [
 ];
 
 const shapeTokens = [
-    { name: '--radius-card', value: '0.95rem', reason: '주요 카드와 버튼의 공통 모서리입니다. 포트폴리오의 부드러운 톤을 기본값으로 둡니다.', demoClass: 'shape-demo--card' },
+    { name: '--radius-card', value: '15px', reason: '주요 카드와 버튼의 공통 모서리입니다. 포트폴리오의 부드러운 톤을 기본값으로 둡니다.', demoClass: 'shape-demo--card' },
     { name: '--radius-pill', value: '999px', reason: '태그, 세그먼트, 작은 상태값처럼 알약형 UI임을 이름만으로 알 수 있습니다.', demoClass: 'shape-demo--pill' },
     { name: '--shadow-soft', value: '0 18px 44px ...', reason: '기본 떠오름 상태입니다. 과한 장식보다 계층을 보여주는 용도라 soft로 부릅니다.', demoClass: 'shape-demo--soft' },
     { name: '--shadow-ring', value: '0 0 0 3px ...', reason: '키보드 포커스와 선택 상태처럼 둘러싸는 피드백을 ring으로 분리했습니다.', demoClass: 'shape-demo--ring' },
@@ -187,7 +187,7 @@ usePortfolioSeo(() => ({
 }
 
 .token-hero {
-    max-width: 76rem;
+    max-width: 1216px;
 }
 
 .token-hero h1 {
@@ -226,7 +226,7 @@ usePortfolioSeo(() => ({
 
 .token-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
     gap: var(--space-fluid-sm);
 }
 
@@ -271,7 +271,7 @@ usePortfolioSeo(() => ({
 }
 
 .token-swatch {
-    min-height: 7rem;
+    min-height: 112px;
     border: 1px solid color-mix(in srgb, var(--color-border) 76%, transparent);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-glow);
@@ -283,7 +283,7 @@ usePortfolioSeo(() => ({
 
 .token-table__row {
     display: grid;
-    grid-template-columns: minmax(9rem, 0.8fr) minmax(8rem, 0.7fr) minmax(0, 1.5fr);
+    grid-template-columns: minmax(144px, 0.8fr) minmax(128px, 0.7fr) minmax(0, 1.5fr);
     gap: var(--space-5);
     padding: var(--space-5) var(--space-6);
     border-top: 1px solid color-mix(in srgb, var(--color-border) 62%, transparent);
@@ -319,7 +319,7 @@ usePortfolioSeo(() => ({
 
 .type-item {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.8fr);
+    grid-template-columns: minmax(0, 1fr) minmax(224px, 0.8fr);
     gap: var(--space-fluid-md);
     align-items: center;
     padding: var(--card-padding);
@@ -389,8 +389,8 @@ usePortfolioSeo(() => ({
 }
 
 .shape-demo {
-    width: min(100%, 12rem);
-    height: 5rem;
+    width: min(100%, 192px);
+    height: 80px;
     background: var(--gradient-surface);
     border: 1px solid var(--color-border);
 }
@@ -400,8 +400,8 @@ usePortfolioSeo(() => ({
 }
 
 .shape-demo--pill {
-    width: 12rem;
-    height: 3.5rem;
+    width: 192px;
+    height: 56px;
     border-radius: var(--radius-pill);
 }
 
@@ -450,7 +450,7 @@ usePortfolioSeo(() => ({
 
     .shape-demo,
     .shape-demo--pill {
-        width: min(100%, 12rem);
+        width: min(100%, 192px);
     }
 }
 </style>

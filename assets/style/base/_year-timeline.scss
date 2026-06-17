@@ -2,9 +2,9 @@
 
 /* Year timeline — 연도 sticky + era 항목 목록 (BaseYearTimeline) */
 .year-timeline {
-    --year-timeline-col: clamp(9.5rem, 11vw, 10.25rem);
+    --year-timeline-col: clamp(152px, 11vw, 164px);
     --year-timeline-sticky-top: calc(var(--layout-header-height) + var(--space-5));
-    --year-timeline-era-gap: clamp(3rem, 7vw, 5.5rem);
+    --year-timeline-era-gap: clamp(48px, 7vw, 88px);
 
     width: 100%;
     min-width: 0;
@@ -28,7 +28,7 @@
         min-width: 0;
         display: grid;
         grid-template-columns: var(--year-timeline-col) minmax(0, 1fr);
-        gap: clamp(1.25rem, 3.5vw, 3rem);
+        gap: clamp(20px, 3.5vw, 48px);
         align-items: stretch;
 
         &--flat {
@@ -36,16 +36,16 @@
         }
 
         &--home {
-            --year-timeline-entries-gap: clamp(1.25rem, 2.5vw, 1.75rem);
+            --year-timeline-entries-gap: clamp(20px, 2.5vw, 28px);
         }
 
         &--gallery {
-            --year-timeline-entries-gap: clamp(2rem, 4vw, 3rem);
+            --year-timeline-entries-gap: clamp(32px, 4vw, 48px);
         }
 
         &--gallery:not(&--flat) .year-timeline__entries {
             @media (min-width: 768px) {
-                padding-inline-start: clamp(0.85rem, 2.5vw, 1.75rem);
+                padding-inline-start: clamp(14px, 2.5vw, 28px);
             }
         }
 
@@ -106,8 +106,8 @@
         min-width: 0;
         margin: 0;
         padding: 0;
-        padding-inline-start: clamp(0.85rem, 2vw, 1.1rem);
-        padding-block: 0 clamp(0.75rem, 2vw, 1.25rem);
+        padding-inline-start: clamp(14px, 2vw, 18px);
+        padding-block: 0 clamp(12px, 2vw, 20px);
         border-inline-start: 2px solid var(--year-timeline-rail);
         list-style: none;
     }

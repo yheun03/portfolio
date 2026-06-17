@@ -21,7 +21,7 @@
             "stage"
             "essentials"
             "actions";
-        gap: clamp(2rem, 4.5vw, 3.5rem);
+        gap: clamp(32px, 4.5vw, 56px);
         align-items: start;
         padding: 0;
         overflow: visible;
@@ -48,14 +48,14 @@
     &__orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(clamp(2.5rem, 6vw, 4.5rem));
+        filter: blur(clamp(40px, 6vw, 72px));
         will-change: transform;
         animation: hero-orb-drift 22s ease-in-out infinite alternate;
 
         &--a {
             top: 6%;
             right: 8%;
-            width: clamp(16rem, 34vw, 34rem);
+            width: clamp(256px, 34vw, 544px);
             aspect-ratio: 1;
             opacity: 0.38;
             background: radial-gradient(circle at 32% 32%,
@@ -66,7 +66,7 @@
         &--b {
             bottom: 4%;
             left: -4%;
-            width: clamp(13rem, 26vw, 26rem);
+            width: clamp(208px, 26vw, 416px);
             aspect-ratio: 1;
             opacity: 0.26;
             background: radial-gradient(circle at 60% 40%,
@@ -79,7 +79,7 @@
         &--c {
             top: 38%;
             left: 36%;
-            width: clamp(9rem, 18vw, 18rem);
+            width: clamp(144px, 18vw, 288px);
             aspect-ratio: 1;
             opacity: 0.2;
             background: radial-gradient(circle at 50% 50%,
@@ -98,7 +98,7 @@
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.6s ease;
-        background: radial-gradient(36rem circle at var(--glow-x, 50%) var(--glow-y, 30%),
+        background: radial-gradient(576px circle at var(--glow-x, 50%) var(--glow-y, 30%),
                 color-mix(in srgb, var(--color-primary) 8%, transparent),
                 transparent 70%);
         // 위/아래 가장자리에서 글로우를 0으로 페이드 → 인접 섹션 경계의 하드 컷 제거
@@ -114,13 +114,13 @@
     /* ── Scroll cue ── */
     &__cue {
         position: absolute;
-        bottom: clamp(1.25rem, 3vw, 2.5rem);
+        bottom: clamp(20px, 3vw, 40px);
         left: 50%;
         translate: -50% 0;
         display: none;
         flex-direction: column;
         align-items: center;
-        gap: 0.6rem;
+        gap: 10px;
         color: var(--color-text-muted);
         text-decoration: none;
         transition: color 0.3s ease;
@@ -143,7 +143,7 @@
     &__cue-line {
         position: relative;
         width: 1px;
-        height: clamp(2.5rem, 4vw, 3.5rem);
+        height: clamp(40px, 4vw, 56px);
         overflow: hidden;
         background: color-mix(in srgb, var(--color-border) 85%, transparent);
 
@@ -161,7 +161,7 @@
         grid-area: meta;
         display: inline-flex;
         flex-wrap: wrap;
-        gap: 0.4rem 0.6rem;
+        gap: 6px 10px;
         margin: 0;
         color: var(--color-text-muted);
         font-family: var(--font-mono);
@@ -176,11 +176,11 @@
 
     &__stage {
         grid-area: stage;
-        max-width: min(78rem, 100%);
+        max-width: min(1248px, 100%);
     }
 
     &__eyebrow {
-        margin-bottom: clamp(1.25rem, 3vw, 2rem);
+        margin-bottom: clamp(20px, 3vw, 32px);
         padding: 0;
         border: 0;
         border-radius: 0;
@@ -224,14 +224,14 @@
 
     &__lead {
         max-width: 28ch;
-        margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+        margin: clamp(32px, 5vw, 56px) 0 0;
         color: var(--color-text-muted);
         @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
     }
 
     &__intro {
         max-width: 52ch;
-        margin-top: clamp(0.65rem, 1.8vw, 0.9rem);
+        margin-top: clamp(10px, 1.8vw, 14px);
         color: var(--color-text-muted);
         font-size: var(--font-size-sm);
         line-height: var(--line-height-body);
@@ -240,11 +240,11 @@
 
     &__essentials {
         display: grid;
-        gap: clamp(1.1rem, 2.5vw, 1.75rem);
+        gap: clamp(18px, 2.5vw, 28px);
         overflow: visible;
 
         @media (max-width: #{$bp-max-narrow}) {
-            padding: clamp(1.15rem, 3vw, 1.75rem);
+            padding: clamp(18px, 3vw, 28px);
             border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent);
             border-radius: var(--radius-2xl);
             background: color-mix(in srgb, var(--color-surface) 90%, transparent);
@@ -256,7 +256,7 @@
 
     &__essentials-head {
         display: grid;
-        gap: 0.3rem;
+        gap: 5px;
     }
 
     &__essentials-title {
@@ -286,9 +286,9 @@
     &__focus-item {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: clamp(0.65rem, 1.8vw, 1.1rem);
+        gap: clamp(10px, 1.8vw, 18px);
         align-items: start;
-        padding: clamp(0.9rem, 2.2vw, 1.25rem) clamp(0.9rem, 1.8vw, 1.35rem);
+        padding: clamp(14px, 2.2vw, 20px) clamp(14px, 1.8vw, 22px);
         transition: background-color 0.32s ease;
 
         &:not(:last-child) {
@@ -323,7 +323,7 @@
 
     &__focus-copy {
         display: grid;
-        gap: 0.28rem;
+        gap: 4px;
         min-width: 0;
 
         .hero__focus-title {
@@ -343,7 +343,7 @@
     &__metrics-bar {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: clamp(0.55rem, 1.4vw, 0.9rem);
+        gap: clamp(9px, 1.4vw, 14px);
         margin: 0;
         padding: 0;
     }
@@ -353,15 +353,15 @@
         flex-wrap: wrap;
         gap: var(--space-3);
         grid-area: actions;
-        padding-block-end: clamp(0.5rem, 2vw, 1rem);
+        padding-block-end: clamp(8px, 2vw, 16px);
         overflow: visible;
     }
 
     &__metric {
         display: grid;
-        gap: 0.35rem;
+        gap: 6px;
         min-width: 0;
-        padding: clamp(0.75rem, 1.6vw, 1rem);
+        padding: clamp(12px, 1.6vw, 16px);
         border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
         border-radius: var(--radius-md);
         background: color-mix(in srgb, var(--color-surface) 75%, transparent);
@@ -392,7 +392,7 @@
 ========================================= */
 @media (max-width: #{$bp-max-mobile}) {
     .hero.section--hero {
-        padding-top: clamp(0.75rem, 4vw, 1.25rem);
+        padding-top: clamp(12px, 4vw, 20px);
         width: 100%;
         max-width: none;
         margin-inline: 0;
@@ -400,8 +400,8 @@
     }
 
     .hero__poster {
-        gap: clamp(0.85rem, 4vw, 1.25rem);
-        padding-block-end: clamp(0.35rem, 1.5vw, 0.65rem);
+        gap: clamp(14px, 4vw, 20px);
+        padding-block-end: clamp(6px, 1.5vw, 10px);
     }
 
     .hero__display-line {
@@ -411,7 +411,7 @@
 
     .hero__lead {
         max-width: 24ch;
-        margin-top: clamp(0.85rem, 4.5vw, 1.5rem);
+        margin-top: clamp(14px, 4.5vw, 24px);
     }
 
     .hero__actions {
@@ -421,8 +421,8 @@
     }
 
     .hero__essentials {
-        gap: clamp(0.85rem, 3.8vw, 1.2rem);
-        padding: clamp(0.95rem, 4.5vw, 1.25rem);
+        gap: clamp(14px, 3.8vw, 19px);
+        padding: clamp(15px, 4.5vw, 20px);
     }
 
     .hero__focus-list {
@@ -432,8 +432,8 @@
 
     .hero__focus-item {
         grid-template-columns: 1fr;
-        gap: 0.42rem;
-        padding-block: clamp(0.6rem, 3.5vw, 0.9rem);
+        gap: 7px;
+        padding-block: clamp(10px, 3.5vw, 14px);
 
         &:not(:last-child) {
             border-inline-end: 0;
@@ -447,7 +447,7 @@
     }
 
     .hero__metric {
-        padding: clamp(0.75rem, 3.8vw, 1rem);
+        padding: clamp(12px, 3.8vw, 16px);
     }
 }
 
@@ -461,7 +461,7 @@
         margin-inline: 0;
         box-sizing: border-box;
         // 고정 헤더와의 여백 — 베이스 padding-top:0 복원
-        padding-top: clamp(2rem, 4vw, 3rem);
+        padding-top: clamp(32px, 4vw, 48px);
     }
 
     .hero__focus-list {
@@ -470,7 +470,7 @@
 
     .hero__focus-item {
         grid-template-columns: auto 1fr;
-        gap: clamp(0.65rem, 1.8vw, 1.1rem);
+        gap: clamp(10px, 1.8vw, 18px);
 
         &:not(:last-child) {
             border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
@@ -496,11 +496,11 @@
         margin-inline: 0;
         // 고정 헤더와의 숨 쉴 여백. 베이스 `.hero.section--hero{padding-top:0}` 를
         // 같은 specificity 로 덮어 복원(페이지 헤더 오프셋 위에 추가되는 간격).
-        padding-top: clamp(2.25rem, 4vw, 4rem);
+        padding-top: clamp(36px, 4vw, 64px);
     }
 
     .section--hero {
-        padding-block: clamp(5rem, 11vw, 8rem) clamp(5rem, 11vw, 9rem);
+        padding-block: clamp(80px, 11vw, 128px) clamp(80px, 11vw, 144px);
         min-height: min(100svh, 1080px);
         display: flex;
         flex-direction: column;
@@ -511,7 +511,7 @@
     }
 
     .hero__poster {
-        gap: clamp(2.5rem, 4.5vw, 4rem);
+        gap: clamp(40px, 4.5vw, 64px);
         padding: 0;
         // 섹션이 풀블리드로 바뀌었으므로 콘텐츠 폭 제약을 여기서 담당.
         width: min(100% - var(--page-pad-x), var(--layout-content-max));
@@ -535,13 +535,13 @@
         grid-area: stage;
         align-self: auto;
         padding-top: 0;
-        max-width: min(82rem, 100%);
+        max-width: min(1312px, 100%);
     }
 
     // Restore essentials as a proper grid block (not display: contents)
     .hero__essentials {
         display: grid;
-        gap: clamp(1.35rem, 2.5vw, 2rem);
+        gap: clamp(22px, 2.5vw, 32px);
     }
 
     .hero__essentials-head {
@@ -549,14 +549,14 @@
         flex-wrap: wrap;
         align-items: baseline;
         justify-content: space-between;
-        gap: 0.5rem 1.5rem;
-        padding-block: clamp(0.8rem, 1.4vw, 1.1rem);
+        gap: 8px 24px;
+        padding-block: clamp(13px, 1.4vw, 18px);
         border-block: 1px solid color-mix(in srgb, var(--color-border) 52%, transparent);
     }
 
     .hero__essentials-title {
         margin: 0;
-        font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+        font-size: clamp(0.94rem, 1.15vw, 1.06rem);
         font-weight: 800;
         letter-spacing: var(--tracking-label);
         text-transform: uppercase;
@@ -579,9 +579,9 @@
     }
 
     .hero__focus-item {
-        padding: clamp(0.8rem, 1.4vw, 1.15rem) clamp(1.15rem, 1.8vw, 1.85rem) clamp(0.8rem, 1.4vw, 1.15rem);
+        padding: clamp(13px, 1.4vw, 18px) clamp(18px, 1.8vw, 30px) clamp(13px, 1.4vw, 18px);
         grid-template-columns: 1fr;
-        gap: 0.38rem;
+        gap: 6px;
 
         &:not(:last-child) {
             border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 48%, transparent);
@@ -609,7 +609,7 @@
     // Horizontal metrics bar (4 columns) on desktop
     .hero__metrics-bar {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: clamp(0.6rem, 0.9vw, 0.85rem);
+        gap: clamp(10px, 0.9vw, 14px);
         padding: 0;
         border: 0;
         border-radius: 0;
@@ -619,13 +619,13 @@
     }
 
     .hero__metric {
-        padding: clamp(0.8rem, 1.2vw, 1rem);
+        padding: clamp(13px, 1.2vw, 16px);
         border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
         border-radius: var(--radius-md);
         background: color-mix(in srgb, var(--color-surface) 88%, transparent);
         box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 3%, transparent);
 
-        dt { font-size: 0.625rem; }
+        dt { font-size: 0.62rem; }
 
         dd { font-size: clamp(1.2rem, 1.75vw, 1.65rem); }
     }
@@ -643,14 +643,14 @@
     .hero__cue {
         display: inline-flex;
         bottom: auto;
-        top: calc(100svh - var(--layout-header-height) - 8.5rem);
+        top: calc(100svh - var(--layout-header-height) - 136px);
     }
 }
 
 /* 모바일: 오브 수·블러 강도를 줄여 GPU 부담 최소화 */
 @media (max-width: #{$bp-max-mobile}) {
     .hero__orb {
-        filter: blur(2rem);
+        filter: blur(32px);
 
         &--c {
             display: none;

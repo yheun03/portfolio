@@ -72,13 +72,13 @@
 
     &__modal-content {
         width: min(760px, 100%);
-        max-height: min(82vh, 52rem);
+        max-height: min(82vh, 832px);
     }
 
     &__modal-card {
         display: grid;
         grid-template-rows: auto minmax(0, 1fr) auto;
-        max-height: min(82vh, 52rem);
+        max-height: min(82vh, 832px);
         padding: 0;
         overflow: hidden;
     }

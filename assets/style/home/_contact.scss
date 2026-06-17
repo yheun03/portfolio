@@ -16,8 +16,8 @@
 
 @media (min-width: 1024px) {
     .section.section--contact {
-        min-height: min(88dvh, 56rem);
-        padding-block: clamp(4rem, 10vw, 7rem) clamp(5rem, 12vw, 9rem);
+        min-height: min(88dvh, 896px);
+        padding-block: clamp(64px, 10vw, 112px) clamp(80px, 12vw, 144px);
     }
 }
 
@@ -27,14 +27,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(1.5rem, 4.2vw, 2.5rem);
+    gap: clamp(24px, 4.2vw, 40px);
 
     @media (min-width: 1024px) {
-        gap: clamp(2.5rem, 7vw, 5rem);
+        gap: clamp(40px, 7vw, 80px);
     }
 
     width: 100%;
-    // max-width: min(64rem, 100%);
+    // max-width: min(1024px, 100%);
     margin-inline: auto;
     text-align: center;
 }
@@ -42,7 +42,7 @@
 .contact__head {
     display: grid;
     justify-items: center;
-    gap: clamp(1rem, 2.5vw, 1.75rem);
+    gap: clamp(16px, 2.5vw, 28px);
     width: 100%;
 
     .section-title {
@@ -69,7 +69,7 @@
     justify-content: center;
     width: 100%;
     margin: 0 auto;
-    padding: clamp(1rem, 2.5vw, 1.4rem) clamp(1.1rem, 3.5vw, 2rem);
+    padding: clamp(16px, 2.5vw, 22px) clamp(18px, 3.5vw, 32px);
     border: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
     border-radius: var(--radius-xl);
     background: color-mix(in srgb, var(--color-surface) 62%, transparent);
@@ -82,7 +82,7 @@
 
 .contact__spotlight {
     display: grid;
-    gap: clamp(1.25rem, 3vw, 2rem);
+    gap: clamp(20px, 3vw, 32px);
     width: 100%;
 
     .spotlight__kicker {
@@ -287,12 +287,12 @@
 
 @media (max-width: #{$bp-max-narrow}) {
     .contact__poster {
-        max-width: min(100%, 42rem);
+        max-width: min(100%, 672px);
     }
 
     .contact__lead {
         width: 100%;
-        padding: clamp(0.95rem, 4vw, 1.2rem);
+        padding: clamp(15px, 4vw, 19px);
         border-radius: var(--radius-lg);
         font-size: var(--font-size-md);
     }
@@ -338,12 +338,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: clamp(0.65rem, 1.5vw, 1rem);
+    gap: clamp(10px, 1.5vw, 16px);
     width: 100%;
 
     .base-button {
         min-height: var(--size-touch);
-        padding-inline: clamp(1.25rem, 3vw, 1.75rem);
+        padding-inline: clamp(20px, 3vw, 28px);
         font-size: var(--font-size-md);
         font-weight: var(--font-weight-semibold);
     }
@@ -363,10 +363,10 @@
     flex-direction: column;
     align-items: center;
     gap: var(--space-4);
-    margin-block: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    margin-block: clamp(8px, 2vw, 24px) clamp(24px, 4vw, 48px);
 
     img {
-        width: clamp(3.5rem, 8vw, 5rem);
+        width: clamp(56px, 8vw, 80px);
         aspect-ratio: 1;
         object-fit: cover;
         object-position: top;
@@ -380,7 +380,7 @@
     margin: 0;
     color: var(--color-text);
     font-family: var(--font-display);
-    font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+    font-size: clamp(1.12rem, 2.2vw, 1.5rem);
     font-weight: 800;
     line-height: var(--line-height-title);
     letter-spacing: -0.02em;
