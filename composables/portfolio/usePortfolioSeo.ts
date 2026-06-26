@@ -96,6 +96,24 @@ function createProfilePageJsonLd(locale: SeoLocale, homeUrl: string, title: stri
     };
 }
 
+function createFaqPageJsonLd(locale: SeoLocale, homeUrl: string) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        '@id': `${homeUrl}#faq`,
+        url: homeUrl,
+        inLanguage: getLanguageTag(locale),
+        mainEntity: seoStructuredData.answerEngine.questions[locale].map((item) => ({
+            '@type': 'Question',
+            name: item.name,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.acceptedAnswer,
+            },
+        })),
+    };
+}
+
 export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) {
     useHead(() => {
         const resolved = toValue(options);
@@ -121,7 +139,12 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             createPersonJsonLd(resolved.locale, homeUrl, personImageUrl),
             createWebSiteJsonLd(resolved.locale, homeUrl),
             createWebPageJsonLd(resolved.locale, canonicalUrl, resolved.title, resolved.description, imageUrl),
-            ...(isHome ? [createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl)] : []),
+            ...(isHome
+                ? [
+                      createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl),
+                      createFaqPageJsonLd(resolved.locale, homeUrl),
+                  ]
+                : []),
             ...(Array.isArray(resolved.jsonLd) ? resolved.jsonLd : resolved.jsonLd ? [resolved.jsonLd] : []),
         ];
 
@@ -142,10 +165,12 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             ],
             meta: [
                 { name: 'description', content: resolved.description },
+                { name: 'abstract', content: resolved.description },
                 { name: 'author', content: profile.name },
                 { name: 'creator', content: profile.name },
                 { name: 'publisher', content: seoConfig.siteName },
                 { name: 'subject', content: seoStructuredData.person.jobTitle[resolved.locale] },
+                { name: 'classification', content: seoStructuredData.person.jobTitle[resolved.locale] },
                 { name: 'keywords', content: [...new Set(keywords)].join(', ') },
                 { name: 'robots', content: robotsContent },
                 { name: 'googlebot', content: googlebotContent },
