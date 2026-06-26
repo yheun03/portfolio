@@ -1,7 +1,4 @@
-/**
- * 목표: 헤더/도크/LNB에서 공유하는 내비게이션 링크 상태를 계산한다.
- * 기능: 현재 섹션과 라우트 기준 활성 링크, aria-current 값을 제공한다.
- */
+// 헤더·도크·LNB 공용 내비게이션 링크 활성 상태 계산 — aria-current 포함
 import type { MaybeRefOrGetter } from 'vue';
 
 export type AppNavLink = {
@@ -9,7 +6,10 @@ export type AppNavLink = {
     label: string;
 };
 
-export function useNavLinkState(options: { activeId?: MaybeRefOrGetter<string | undefined>; activePath?: MaybeRefOrGetter<string | undefined> }) {
+export function useNavLinkState(options: {
+    activeId?: MaybeRefOrGetter<string | undefined>;
+    activePath?: MaybeRefOrGetter<string | undefined>;
+}) {
     const route = useRoute();
 
     function isActive(href: string): boolean {
@@ -19,15 +19,8 @@ export function useNavLinkState(options: { activeId?: MaybeRefOrGetter<string | 
         if (href.startsWith('#')) {
             return !activePath && Boolean(activeId) && activeId === href.slice(1);
         }
-
-        if (!href.startsWith('/')) {
-            return false;
-        }
-
-        if (activePath) {
-            return href === '/' ? route.path === '/' : activePath === href;
-        }
-
+        if (!href.startsWith('/')) return false;
+        if (activePath) return href === '/' ? route.path === '/' : activePath === href;
         return href === '/' ? route.path === '/' : route.path === href || route.path.startsWith(`${href}/`);
     }
 

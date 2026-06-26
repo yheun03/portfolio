@@ -1,35 +1,35 @@
-/**
- * 목표: 사용자의 언어 선호를 앱 전역 상태로 관리한다.
- * 기능: 저장된 locale 복원, locale 변경, 문서 lang 속성 동기화를 수행한다.
- */
+// 앱 전역 언어(locale) 상태 — localStorage 동기화 포함
 import { defineStore } from 'pinia';
 
 export type Locale = 'ko' | 'en';
 
-const LOCALE_STORAGE_KEY = 'portfolio-locale';
+const STORAGE_KEY = 'portfolio-locale';
 
-const isLocale = (value: string | null): value is Locale => value === 'ko' || value === 'en';
+function isLocale(v: string | null): v is Locale {
+    return v === 'ko' || v === 'en';
+}
 
-export const useLocaleStore = defineStore('locale', {
-    state: () => ({
-        current: 'ko' as Locale,
-    }),
-    actions: {
-        initLocale() {
-            if (import.meta.server) return;
-            const saved = localStorage.getItem(LOCALE_STORAGE_KEY);
-            this.current = isLocale(saved) ? saved : 'ko';
-            document.documentElement.setAttribute('lang', this.current);
-        },
-        setLocale(locale: Locale) {
-            this.current = locale;
-            if (import.meta.client) {
-                localStorage.setItem(LOCALE_STORAGE_KEY, locale);
-                document.documentElement.setAttribute('lang', locale);
-            }
-        },
-        toggleLocale() {
-            this.setLocale(this.current === 'ko' ? 'en' : 'ko');
-        },
-    },
+export const useLocaleStore = defineStore('locale', () => {
+    const current = ref<Locale>('ko');
+
+    function initLocale() {
+        if (import.meta.server) return;
+        const saved = localStorage.getItem(STORAGE_KEY);
+        current.value = isLocale(saved) ? saved : 'ko';
+        document.documentElement.setAttribute('lang', current.value);
+    }
+
+    function setLocale(locale: Locale) {
+        current.value = locale;
+        if (import.meta.client) {
+            localStorage.setItem(STORAGE_KEY, locale);
+            document.documentElement.setAttribute('lang', locale);
+        }
+    }
+
+    function toggleLocale() {
+        setLocale(current.value === 'ko' ? 'en' : 'ko');
+    }
+
+    return { current, initLocale, setLocale, toggleLocale };
 });

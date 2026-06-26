@@ -1,7 +1,4 @@
-/**
- * 목표: 프로젝트 목록 정렬과 연도별 타임라인 구성을 순수 함수로 분리한다.
- * 기능: 시작일/제목 정렬, 시작 연도 추출, 연도 그룹 생성을 제공한다.
- */
+// 프로젝트 목록 정렬·연도 추출·연도별 타임라인 그룹 구성 — 갤러리·홈 Works 섹션 공용 순수 함수
 import type { WorkItem } from '@data/works';
 
 export type WorkSortMode = 'start' | 'title';

@@ -3,7 +3,7 @@
 .section.section--toolbox {
     display: flex;
     flex-direction: column;
-    gap: clamp(3rem, 8vw, 6rem);
+    gap: clamp(48px, 8vw, 96px);
     align-items: stretch;
     grid-template-columns: unset;
 }
@@ -11,7 +11,7 @@
 .toolbox__head {
     display: grid;
     gap: var(--space-section-gap);
-    max-width: min(52rem, 100%);
+    max-width: min(832px, 100%);
     margin-inline: auto;
     text-align: center;
 
@@ -29,7 +29,7 @@
 
 .toolbox__spotlight {
     display: grid;
-    gap: clamp(2rem, 5vw, 3.5rem);
+    gap: clamp(32px, 5vw, 56px);
     min-width: 0;
 
     .spotlight__kicker {

@@ -2,9 +2,9 @@
 
 /* Work card */
 .work-card {
-    --card-flow-label: var(--space-4);
-    --card-flow-title: var(--space-4);
-    --card-flow-content: var(--space-4);
+    --card-flow-label: var(--space-5);
+    --card-flow-title: var(--space-5);
+    --card-flow-content: var(--space-6);
 
     position: relative;
     display: flex;
@@ -20,8 +20,8 @@
     &::after {
         content: "";
         position: absolute;
-        top: 1rem;
-        bottom: 1rem;
+        top: 16px;
+        bottom: 16px;
         left: 0;
         width: 4px;
         border-radius: 999px;
@@ -30,8 +30,16 @@
     }
 
     &:hover {
-        box-shadow: var(--shadow-lift), var(--shadow-ring);
-        transform: translateY(-6px);
+        box-shadow:
+            var(--shadow-lift),
+            var(--shadow-ring),
+            0 0 0 1px color-mix(in srgb, var(--color-primary) 14%, transparent);
+        transform: translateY(-8px) scale(1.01);
+    }
+
+    &:active {
+        transform: translateY(-2px) scale(0.99);
+        transition-duration: 0.1s;
     }
 
     h3 {
@@ -77,9 +85,9 @@
 
 @media (max-width: #{$bp-max-narrow}) {
     .work-card {
-        --card-flow-label: var(--space-3);
-        --card-flow-title: var(--space-3);
-        --card-flow-content: var(--space-4);
+        --card-flow-label: var(--space-4);
+        --card-flow-title: var(--space-4);
+        --card-flow-content: var(--space-5);
 
         h3 {
             font-size: clamp(1.1rem, 5.5vw, 1.35rem);

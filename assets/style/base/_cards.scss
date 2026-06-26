@@ -10,10 +10,10 @@
     background: $gradient-surface;
     box-shadow: $shadow-soft, $shadow-glow;
     isolation: isolate;
-    --card-flow-label: #{$space-4};
-    --card-flow-title: #{$space-5};
-    --card-flow-content: #{$space-5};
-    --card-list-gap: #{$space-2};
+    --card-flow-label: #{$space-5};
+    --card-flow-title: #{$space-6};
+    --card-flow-content: #{$space-7};
+    --card-list-gap: #{$space-3};
 
     &::before {
         content: "";
@@ -76,18 +76,51 @@
         0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
         0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     backdrop-filter: blur(18px);
+    transform-origin: center center;
     transition:
-        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
         border-color 0.32s ease,
-        box-shadow 0.38s ease;
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &.feature-card--tilted {
+        transition:
+            transform 0.1s ease,
+            border-color 0.32s ease,
+            box-shadow 0.32s ease;
+    }
+
+    /* 포인터 추적 글로우 — --glow-x/--glow-y 는 FeatureCard 가 갱신 */
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+            288px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+            color-mix(in srgb, var(--color-primary) 9%, transparent),
+            transparent 65%
+        );
+        opacity: 0;
+        transition: opacity 0.45s ease;
+        pointer-events: none;
+    }
 
     @media (hover: hover) {
+        &:hover::after {
+            opacity: 1;
+        }
+
         &:hover {
-            border-color: color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+            border-color: color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
             box-shadow:
                 0 1px 0 color-mix(in srgb, var(--color-surface) 92%, var(--color-primary)),
-                0 32px 80px color-mix(in srgb, var(--color-primary) 10%, transparent);
-            transform: translateY(-4px);
+                0 28px 72px color-mix(in srgb, var(--color-primary) 8%, transparent);
+            transform: translateY(-4px) scale(1.004);
+        }
+
+        &:active {
+            transform: translateY(-1px) scale(0.997);
+            transition-duration: 0.1s;
         }
     }
 }
@@ -96,14 +129,14 @@
     &--metrics {
         display: flex;
         flex-wrap: wrap;
-        gap: clamp(1.5rem, 4vw, 3.5rem);
+        gap: clamp(24px, 4vw, 56px);
         align-items: flex-end;
-        padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.5rem, 3vw, 2.5rem);
+        padding: clamp(20px, 2.5vw, 32px) clamp(24px, 3vw, 40px);
     }
 
     &--flow {
         display: grid;
-        gap: clamp(1.25rem, 3vw, 2rem);
+        gap: clamp(20px, 3vw, 32px);
     }
 
     &__title {
@@ -114,13 +147,13 @@
 
 .feature-card {
     display: grid;
-    gap: clamp(0.65rem, 1.5vw, 1rem);
-    min-height: clamp(11rem, 22vw, 15rem);
+    gap: clamp(18px, 2.4vw, 27px);
+    min-height: clamp(192px, 24vw, 256px);
     align-content: start;
 
     &--skill {
         height: 100%;
-        min-height: clamp(13rem, 26vw, 17rem);
+        min-height: clamp(224px, 28vw, 288px);
     }
 
     &__eyebrow {
@@ -128,6 +161,15 @@
         color: var(--color-primary);
         @include font(label, $font-weight-bold);
         text-transform: uppercase;
+    }
+
+    &__icon {
+        margin: 0;
+        font-size: 1.25rem;
+        line-height: 1;
+        color: color-mix(in srgb, var(--color-primary) 60%, var(--color-text-muted));
+        letter-spacing: 0;
+        font-style: normal;
     }
 
     &__title {
@@ -159,7 +201,7 @@
 
 .spotlight {
     display: grid;
-    gap: clamp(1.75rem, 4vw, 3rem);
+    gap: clamp(28px, 4vw, 48px);
 
     &__kicker {
         margin: 0;
@@ -171,7 +213,7 @@
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(1rem, 2.5vw, 1.5rem);
+    gap: clamp(20px, 3vw, 32px);
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -189,15 +231,15 @@
 .flow-steps {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1rem, 2.5vw, 1.75rem);
+    gap: clamp(20px, 3vw, 36px);
     padding: 0;
     margin: 0;
     list-style: none;
 
     li {
         display: grid;
-        gap: 0.55rem;
-        padding-top: clamp(0.75rem, 1.5vw, 1rem);
+        gap: 12px;
+        padding-top: clamp(14px, 1.8vw, 19px);
         border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
     }
 
@@ -215,7 +257,7 @@
     .surface-card,
     .feature-card,
     .base-card {
-        padding: clamp(1rem, 4.8vw, var(--card-padding-lg));
+        padding: clamp(16px, 4.8vw, var(--card-padding-lg));
     }
 
     .feature-card {

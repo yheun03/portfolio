@@ -1,7 +1,4 @@
-/**
- * 목표: 프로젝트/개인 작업 갤러리 화면에 필요한 데이터와 뷰 상태를 구성한다.
- * 기능: 갤러리 변형 설정, 정렬, 보기 모드 저장, SEO, 상세 라우트 작업 조회를 제공한다.
- */
+// 갤러리(실무·개인) 뷰 상태 — 보기 모드·정렬·연도 그룹·SEO·상세 라우트 작업 조회 제공
 import type { WorkItem } from '@data/works';
 import { careerWorks, getCareerWorkById, getPersonalWorkById, personalWorksList } from '@data/works';
 import { createWorkYearEntries, groupWorkYearEntries, sortWorksByStartDesc, sortWorksByTitleAsc, type WorkSortMode } from '@utils/work-timeline';

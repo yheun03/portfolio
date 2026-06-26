@@ -5,12 +5,14 @@
         "about": "About Me",
         "works": "Works",
         "personal": "Personal",
-        "worksArchive": "All client works",
-        "personalArchive": "All personal projects",
+        "worksArchive": "Works",
+        "personalArchive": "Personal",
         "journey": "Journey",
         "toolbox": "Toolbox",
         "highlights": "Highlights",
-        "contact": "Say Hi"
+        "contact": "Say Hi",
+        "proof": "Proof",
+        "how": "Process"
     },
     "hero": {
         "title": "A web publisher who creates delightful interaction with solid structure",
@@ -18,9 +20,11 @@
         "branding": "From publishing to frontend, with UI at the center",
         "kicker": "The essentials.",
         "essentialsLead": "Structure, publishing, and collaboration in one flow.",
-        "ctaWorks": "View web publishing case studies",
-        "ctaToolbox": "View Vue 3 and SCSS UI skills",
-        "ctaContact": "Contact"
+        "ctaWorks": "Web publishing case studies",
+        "ctaToolbox": "Vue 3 & SCSS UI skills",
+        "ctaContact": "Contact",
+        "scrollCue": "Scroll",
+        "scrollCueLabel": "Scroll to next section"
     },
     "about": {
         "title": "How I design with taste and structure",
@@ -89,9 +93,9 @@
     "journey": {
         "title": "A growth path built through delivery",
         "summary": "From a middle-school council site through high school and university to parallel publishing work at a company.",
-        "kicker": "Choose how to read the timeline.",
-        "viewLegend": "View",
-        "viewAffiliation": "By affiliation",
+        "kicker": "By company, or by year.",
+        "viewLegend": "Timeline view",
+        "viewAffiliation": "By company",
         "viewChronological": "By year",
         "tempLabel": "Sample data"
     },
@@ -102,7 +106,7 @@
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
-        "summary": "Pick a category—context on the left, the full list on the right.",
+        "summary": "Awards, certifications, roles, and activities.",
         "awards": "Awards",
         "certifications": "Certifications",
         "roles": "Professional Roles",
@@ -132,7 +136,12 @@
     },
     "lnb": {
         "eyebrow": "Explore",
-        "title": "Menu"
+        "title": "Menu",
+        "subtitle": "Web Publisher · Frontend",
+        "connect": "Get in touch",
+        "email": "Email me",
+        "github": "GitHub",
+        "signature": "© 2026 Eunyounghwan Portfolio"
     },
     "error": {
         "eyebrow404": "Page not found",
@@ -163,5 +172,15 @@
         "description": "Eunyounghwan's 2026 web publisher and frontend developer portfolio, covering HTML, SCSS, JavaScript, Vue 3 UI development, web accessibility, SEO, responsive web, and production projects.",
         "ogTitle": "Eunyounghwan, Web Publisher & Web Frontend Developer Portfolio 2026",
         "ogDescription": "A portfolio showing Vue 3, SCSS, JavaScript UI development, web accessibility, SEO, responsive web, and frontend production work."
+    },
+    "story": {
+        "showcaseTitle": "Three works, up front",
+        "showcaseDescription": "Award-winning, in-house solution, and SI highlights. The rest live in the galleries.",
+        "caseCta": "View case",
+        "proofDescription": "Results in numbers and records. Full details live on each page.",
+        "proofLinkHighlights": "View awards & records",
+        "proofLinkJourney": "View journey",
+        "featuredBadge": "Featured",
+        "howDescription": "Read, shape, build, check — every screen follows the same rhythm."
     }
 }

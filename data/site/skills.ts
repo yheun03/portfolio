@@ -1,6 +1,7 @@
 const data = [
     {
         key: 'markup',
+        icon: '</>',
         title: 'Markup',
         items: {
             ko: ['HTML5', '시맨틱 마크업', '웹표준', '웹접근성', '크로스브라우징'],
@@ -13,6 +14,7 @@ const data = [
     },
     {
         key: 'style',
+        icon: '◈',
         title: 'Style',
         items: {
             ko: ['CSS3', 'SCSS', '반응형 웹', '컴포넌트 스타일링', '유지보수형 구조'],
@@ -25,6 +27,7 @@ const data = [
     },
     {
         key: 'interaction',
+        icon: '⚡',
         title: 'Interaction',
         items: {
             ko: ['JavaScript', 'jQuery', '동적 UI', '인터랙션 구현'],
@@ -37,6 +40,7 @@ const data = [
     },
     {
         key: 'framework',
+        icon: '⬡',
         title: 'Framework',
         items: {
             ko: ['Vue 3', 'React.js', '컴포넌트 구조', '프론트엔드 확장 학습'],
@@ -49,6 +53,7 @@ const data = [
     },
     {
         key: 'cms',
+        icon: '▦',
         title: 'CMS / Solution',
         items: {
             ko: ['ICE CMS', 'WebSquare', 'Nexacro', 'eGovFrame', '커스터마이징'],
@@ -61,6 +66,7 @@ const data = [
     },
     {
         key: 'collaboration',
+        icon: '✦',
         title: 'Design / Collaboration',
         items: {
             ko: ['Figma', 'Zeplin', 'Photoshop', 'Illustrator', 'Git', '문서화', '교육 지원'],

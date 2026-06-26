@@ -1,6 +1,6 @@
 <template>
     <NuxtLink :id="galleryEntryId(work.id)" :to="to" class="gallery-card"
-        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'" data-motion="lift"
+        :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
         :aria-label="cardAriaLabel">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
@@ -71,6 +71,10 @@ import { isPlaceholderCapture } from '@utils/capture-image';
 import { getWorkStartYear } from '@utils/work-timeline';
 import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
+type WorkItemWithThumbnail = WorkItem & {
+    thumbnail?: string;
+};
+
 const props = withDefaults(
     defineProps<{
         work: WorkItem;
@@ -102,7 +106,7 @@ const entryYearSuffix = computed(() => {
     return year ? year.slice(-2) : '';
 });
 
-const coverCapture = computed(() => props.work.captures[0] ?? '');
+const coverCapture = computed(() => (props.work as WorkItemWithThumbnail).thumbnail ?? props.work.captures[0] ?? '');
 const coverSrc = computed(() => resolveAppPath(coverCapture.value || '/images/projects/placeholder.svg'));
 const isPlaceholderCover = computed(() => isPlaceholderCapture(coverCapture.value));
 

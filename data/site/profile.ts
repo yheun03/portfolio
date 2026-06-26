@@ -77,7 +77,7 @@ const data = {
                 ko: '실무 경험',
                 en: 'Experience',
             },
-            value: 67,
+            value: 79,
             suffix: 'M+',
         },
         {

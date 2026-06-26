@@ -13,87 +13,134 @@
                 <span class="gallery-detail__breadcrumb-current" aria-current="page">{{ pick(work.title) }}</span>
             </nav>
 
-            <header class="gallery-detail__header gallery-editorial__poster">
-                <div class="gallery-editorial__poster-top">
+            <header class="gallery-detail__header gallery-detail__hero">
+                <div class="gallery-detail__hero-copy">
                     <p class="gallery-editorial__kicker">{{ detailKicker }}</p>
-                    <p class="gallery-editorial__stats">{{ work.period }} · {{ pick(work.type) }}</p>
-                </div>
-                <div class="gallery-editorial__poster-hero">
                     <h1 class="gallery-detail__title">{{ pick(work.title) }}</h1>
-                    <span class="gallery-editorial__rule" aria-hidden="true" />
-                    <p class="gallery-detail__status">{{ t('gallery.detailLabel') }}</p>
+                    <p class="gallery-detail__intro">{{ pick(work.introduction) }}</p>
+                    <p v-if="work.links?.length" class="gallery-detail__links">
+                        <BaseButton v-for="link in work.links" :key="link.href" :label="projectLinkLabel(link)"
+                            :href="link.href" :aria-label="projectLinkAriaLabel(link)"
+                            :variant="isGithubLink(link.href) ? 'ghost' : 'primary'" />
+                    </p>
                 </div>
-                <p class="gallery-detail__intro gallery-editorial__dek">{{ pick(work.introduction) }}</p>
-                <dl class="gallery-detail__facts">
+                <dl class="gallery-detail__hero-meta">
+                    <div>
+                        <dt>{{ metaLabels.type }}</dt>
+                        <dd>{{ pick(work.type) }}</dd>
+                    </div>
                     <div>
                         <dt>{{ t('gallery.duration') }}</dt>
                         <dd>{{ pick(work.duration) }}</dd>
                     </div>
                     <div>
-                        <dt>{{ t('gallery.languages') }}</dt>
-                        <dd>
+                        <dt>{{ metaLabels.period }}</dt>
+                        <dd>{{ work.period }}</dd>
+                    </div>
+                    <div>
+                        <dt>{{ t('gallery.role') }}</dt>
+                        <dd>{{ pick(work.role) }}</dd>
+                    </div>
+                </dl>
+            </header>
+
+            <section class="gallery-detail__showcase" :aria-labelledby="capturesTitleId">
+                <div class="gallery-detail__gallery">
+                    <div class="gallery-detail__section-head">
+                        <h2 :id="capturesTitleId" class="gallery-detail__section-title">{{ t('gallery.captures') }}</h2>
+                        <span class="gallery-detail__counter">{{ activeCaptureIndex + 1 }} / {{ galleryCaptures.length
+                            }}</span>
+                    </div>
+                    <figure class="gallery-detail__figure"
+                        :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(activeCapture) }">
+                        <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" />
+                        <div v-else class="gallery-detail__image-frame">
+                            <img :src="resolveAppPath(activeCapture)" :alt="captureAlt(activeCaptureIndex)"
+                                :class="{ 'is-loading': isCaptureLoading }" loading="lazy" decoding="async"
+                                fetchpriority="low" width="1200" height="675" @load="completeCaptureLoading"
+                                @error="completeCaptureLoading" />
+                            <div v-if="isCaptureLoading" class="gallery-detail__capture-loader"
+                                :aria-label="loadingLabel" role="status" />
+                        </div>
+                    </figure>
+                    <div class="gallery-detail__gallery-controls" :class="{ 'is-single': galleryCaptures.length < 2 }">
+                        <button type="button" class="gallery-detail__arrow" :disabled="galleryCaptures.length < 2"
+                            :aria-label="galleryLabels.prev" @click="moveCapture(-1)">‹</button>
+                        <div class="gallery-detail__dots">
+                            <button v-for="(_, index) in galleryCaptures" :key="index" type="button"
+                                class="gallery-detail__dot" :class="{ 'is-active': index === activeCaptureIndex }"
+                                :aria-label="captureDotLabel(index)" @click="activeCaptureIndex = index" />
+                        </div>
+                        <button type="button" class="gallery-detail__arrow" :disabled="galleryCaptures.length < 2"
+                            :aria-label="galleryLabels.next" @click="moveCapture(1)">›</button>
+                    </div>
+                    <p class="gallery-detail__caption">{{ captureCaption }}</p>
+                </div>
+
+                <aside class="gallery-detail__summary" :aria-labelledby="overviewTitleId">
+                    <h2 :id="overviewTitleId" class="gallery-detail__section-title">{{ t('gallery.overview') }}</h2>
+                    <dl class="gallery-detail__summary-grid">
+                        <div>
+                            <dt>{{ metaLabels.type }}</dt>
+                            <dd>{{ pick(work.type) }}</dd>
+                        </div>
+                        <div>
+                            <dt>{{ metaLabels.period }}</dt>
+                            <dd>{{ work.period }}</dd>
+                        </div>
+                    </dl>
+                    <div class="gallery-detail__stack-group">
+                        <h3>{{ stackLabels.core }}</h3>
+                        <p>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
                                 }}</span>
                             <template v-if="!work.languages.length">-</template>
-                        </dd>
+                        </p>
                     </div>
-                    <div class="gallery-detail__facts--wide">
-                        <dt>{{ t('gallery.techFull') }}</dt>
-                        <dd>
-                            <span v-for="tech in work.tech" :key="tech"
-                                class="gallery-detail__chip gallery-detail__chip--muted">{{ tech
-                                }}</span>
-                            <template v-if="!work.tech.length">-</template>
-                        </dd>
+                    <div class="gallery-detail__stack-group">
+                        <h3>{{ stackLabels.library }}</h3>
+                        <p>
+                            <span v-for="tech in secondaryTech" :key="tech"
+                                class="gallery-detail__chip gallery-detail__chip--muted">{{ tech }}</span>
+                            <template v-if="!secondaryTech.length">-</template>
+                        </p>
                     </div>
-                </dl>
-                <p v-if="work.links?.length" class="gallery-detail__links">
-                    <BaseButton v-for="link in work.links" :key="link.href" :label="pick(link.label)"
-                        :href="link.href" :aria-label="projectLinkAriaLabel(link)" />
-                </p>
-            </header>
-
-            <section v-if="work.captures.length" class="gallery-detail__captures-section"
-                :aria-labelledby="capturesTitleId">
-                <h2 :id="capturesTitleId" class="gallery-detail__section-title">{{ t('gallery.captures') }}</h2>
-                <div class="gallery-detail__captures">
-                    <figure v-for="(src, index) in work.captures" :key="`${src}-${index}`"
-                        class="gallery-detail__figure"
-                        :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(src) }">
-                        <GalleryEmptyCapture v-if="isPlaceholderCapture(src)" />
-                        <img v-else :src="resolveAppPath(src)" :alt="captureAlt(index)" loading="lazy"
-                            decoding="async" fetchpriority="low" width="1200" height="675" />
-                    </figure>
-                </div>
+                </aside>
             </section>
 
-            <section class="gallery-detail__body" :aria-labelledby="overviewTitleId">
-                <div class="gallery-detail__column">
-                    <h2 :id="overviewTitleId">{{ t('gallery.overview') }}</h2>
-                    <p><strong>{{ t('gallery.role') }}:</strong> {{ pick(work.role) }}</p>
-                    <h3 class="gallery-detail__section-title">{{ labels.contributions }}</h3>
-                    <ul>
-                        <li v-for="item in work.myWorks" :key="pick(item)">{{ pick(item) }}</li>
-                    </ul>
-                    <template v-if="work.achievements.length">
-                        <h3 class="gallery-detail__section-title">{{ labels.results }}</h3>
-                        <ul>
+            <section class="gallery-detail__body">
+                <div class="gallery-detail__content-grid">
+                    <section class="gallery-detail__content-card gallery-detail__content-card--wide">
+                        <h2 class="gallery-detail__section-title">{{ labels.contributions }}</h2>
+                        <ol class="gallery-detail__number-list">
+                            <li v-for="item in work.myWorks" :key="pick(item)">{{ pick(item) }}</li>
+                        </ol>
+                    </section>
+                    <section v-if="work.achievements.length" class="gallery-detail__content-card">
+                        <h2 class="gallery-detail__section-title">{{ labels.results }}</h2>
+                        <ul class="gallery-detail__card-list">
                             <li v-for="item in work.achievements" :key="pick(item)">{{ pick(item) }}</li>
                         </ul>
-                    </template>
-                    <h3 class="gallery-detail__section-title">{{ labels.points }}</h3>
-                    <ul>
-                        <li v-for="item in work.points" :key="pick(item)">{{ pick(item) }}</li>
-                    </ul>
+                    </section>
+                    <section class="gallery-detail__content-card">
+                        <h2 class="gallery-detail__section-title">{{ labels.points }}</h2>
+                        <ul class="gallery-detail__point-list">
+                            <li v-for="item in work.points" :key="pick(item)">{{ pick(item) }}</li>
+                        </ul>
+                    </section>
                 </div>
             </section>
 
             <footer class="gallery-detail__end">
                 <p class="gallery-detail__end-line">{{ t('gallery.detailEndLine') }}</p>
                 <p class="gallery-detail__footer-nav">
+                    <NuxtLink v-if="prevWork" class="base-button base-button--ghost"
+                        :to="`${config.basePath}/${prevWork.id}`">{{ navLabels.prev }}</NuxtLink>
                     <button type="button" class="base-button base-button--ghost" @click="goBack">
                         {{ t(detailEndCtaKey) }}
                     </button>
+                    <NuxtLink v-if="nextWork" class="base-button base-button--ghost"
+                        :to="`${config.basePath}/${nextWork.id}`">{{ navLabels.next }}</NuxtLink>
                 </p>
             </footer>
 
@@ -104,7 +151,7 @@
 <script setup lang="ts">
 import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
 import type { WorkItem } from '@data/works';
-import { getGalleryVariantConfig } from '@composables/gallery/useGallery';
+import { getGalleryVariantConfig, useGalleryRouteWorks } from '@composables/gallery/useGallery';
 import { seoConfig } from '@config/seo';
 import { profile } from '@data/site';
 import { getRealCaptures, isPlaceholderCapture } from '@utils/capture-image';
@@ -135,10 +182,61 @@ const detailKicker = computed(() =>
 const detailEndCtaKey = computed(() =>
     props.variant === 'career' ? 'gallery.detailEndBackCareer' : 'gallery.detailEndBackPersonal',
 );
+const galleryCaptures = computed(() => (props.work.captures.length ? props.work.captures : ['']));
+const activeCaptureIndex = ref(0);
+const activeCapture = computed(() => galleryCaptures.value[activeCaptureIndex.value] ?? '');
+const isCaptureLoading = ref(!isPlaceholderCapture(activeCapture.value));
+const works = useGalleryRouteWorks(props.variant);
+const currentWorkIndex = computed(() => works.findIndex((item) => item.id === props.work.id));
+const prevWork = computed(() => (currentWorkIndex.value > 0 ? works[currentWorkIndex.value - 1] : null));
+const nextWork = computed(() => (currentWorkIndex.value >= 0 ? works[currentWorkIndex.value + 1] ?? null : null));
+const secondaryTech = computed(() => props.work.tech.filter((tech) => !props.work.languages.includes(tech)));
+const metaLabels = computed(() => ({
+    type: locale.value === 'ko' ? '유형' : 'Type',
+    period: locale.value === 'ko' ? '기간' : 'Period',
+}));
+const stackLabels = computed(() => ({
+    core: locale.value === 'ko' ? 'Core' : 'Core',
+    library: locale.value === 'ko' ? 'Library / Tool' : 'Library / Tool',
+}));
+const galleryLabels = computed(() => ({
+    prev: locale.value === 'ko' ? '이전 이미지' : 'Previous image',
+    next: locale.value === 'ko' ? '다음 이미지' : 'Next image',
+}));
+const navLabels = computed(() => ({
+    prev: locale.value === 'ko' ? '이전 프로젝트' : 'Previous project',
+    next: locale.value === 'ko' ? '다음 프로젝트' : 'Next project',
+}));
+const captureCaption = computed(() =>
+    isPlaceholderCapture(activeCapture.value)
+        ? locale.value === 'ko'
+            ? '등록된 프로젝트 이미지가 없습니다.'
+            : 'No project image is available.'
+        : captureAlt(activeCaptureIndex.value),
+);
+const loadingLabel = computed(() => (locale.value === 'ko' ? '이미지 불러오는 중' : 'Loading image'));
+
+watch(activeCapture, (src) => {
+    isCaptureLoading.value = !isPlaceholderCapture(src);
+});
+
+function moveCapture(direction: -1 | 1) {
+    const total = galleryCaptures.value.length;
+    if (total < 2) return;
+    activeCaptureIndex.value = (activeCaptureIndex.value + direction + total) % total;
+}
+
+function completeCaptureLoading() {
+    isCaptureLoading.value = false;
+}
 
 function captureAlt(index: number) {
     const base = pick(props.work.title);
     return locale.value === 'ko' ? `${base} 캡처 ${index + 1}` : `${base} screenshot ${index + 1}`;
+}
+
+function captureDotLabel(index: number) {
+    return locale.value === 'ko' ? `${index + 1}번째 이미지 보기` : `View image ${index + 1}`;
 }
 
 function projectLinkAriaLabel(link: NonNullable<WorkItem['links']>[number]) {
@@ -146,6 +244,15 @@ function projectLinkAriaLabel(link: NonNullable<WorkItem['links']>[number]) {
     const label = pick(link.label);
 
     return locale.value === 'ko' ? `${title} ${label}` : `${label} for ${title}`;
+}
+
+function isGithubLink(href: string) {
+    return /github\.com/i.test(href);
+}
+
+function projectLinkLabel(link: NonNullable<WorkItem['links']>[number]) {
+    if (isGithubLink(link.href)) return 'GitHub';
+    return locale.value === 'ko' ? '페이지 이동하기' : 'Open page';
 }
 
 usePortfolioSeo(() => {

@@ -1,12 +1,11 @@
-/**
- * 목표: Journey 섹션의 소속별/연대기별 보기 데이터를 구성한다.
- * 기능: 보기 모드 저장, 기간 정렬, 연도 그룹 생성, 키보드 전환을 제공한다.
- */
+// Journey 섹션 소속별·연대기별 보기 데이터 구성 — 기간 정렬, 연도 그룹, sessionStorage 보기 모드 저장
 import { journeyCompanies, type JourneyCompanyBlock, type JourneyTimelineEntry } from '@data/site';
 
 export type JourneyViewMode = 'affiliation' | 'chronological';
 
-const JOURNEY_VIEW_STORAGE_KEY = 'portfolio-journey-view';
+const STORAGE_KEY = 'portfolio-journey-view';
+
+// --- 내부 타입 ---
 
 type JourneyChronologicalEntry = {
     key: string;
@@ -25,67 +24,59 @@ export type JourneyYearGroup = {
     entries: JourneyChronologicalEntry[];
 };
 
-/** `2026`, `2026~`, `2022~2023`, `2019.11` 등을 정렬용 숫자로 변환 */
-function parseJourneyPeriodSortKey(period: string): number {
+// --- 기간 파싱 헬퍼 ---
+
+// `2026`, `2026~`, `2022~2023`, `2019.11` 등을 정렬용 숫자로 변환
+function parsePeriodSortKey(period: string): number {
     const monthMatch = period.match(/(\d{4})\.(\d{1,2})/);
-    if (monthMatch) {
-        return Number(monthMatch[1]) + Number(monthMatch[2]) / 100;
-    }
+    if (monthMatch) return Number(monthMatch[1]) + Number(monthMatch[2]) / 100;
 
     const years = period.match(/\d{4}/g)?.map(Number) ?? [];
-    if (!years.length) return 0;
-    return Math.max(...years);
+    return years.length ? Math.max(...years) : 0;
 }
 
-/** 타임라인 period를 연도 헤더 라벨로 (예: `2022~2023` → `2022–2023`) */
-function formatJourneyYearLabel(period: string): string {
+// `2022~2023` → `2022–2023` (표시용 대시 변환)
+function formatYearLabel(period: string): string {
     return period.replace(/~/g, '–');
 }
 
-/** 소속 summary.period 시작 시점 (예: `2019.11 ~ 현재` → 2019.11) */
-function parseAffiliationPeriodStart(period: string): number {
-    const head = period.split('~')[0]?.trim() ?? period;
-    return parseJourneyPeriodSortKey(head);
+function parseAffiliationStart(period: string): number {
+    return parsePeriodSortKey(period.split('~')[0]?.trim() ?? period);
 }
 
-/** `현재` 등 진행 중 기간은 정렬 시 가장 최신으로 취급 */
-function parseAffiliationPeriodEnd(period: string): number {
+// `현재`·`present` 포함 기간은 정렬 시 가장 최신으로 취급
+function parseAffiliationEnd(period: string): number {
     const tail = period.split('~')[1]?.trim() ?? '';
     if (/현재|present/i.test(tail)) {
-        return parseJourneyPeriodSortKey(new Date().getFullYear().toString()) + 0.99;
+        return parsePeriodSortKey(new Date().getFullYear().toString()) + 0.99;
     }
-    if (tail) {
-        return parseJourneyPeriodSortKey(tail);
-    }
-    return parseAffiliationPeriodStart(period);
+    return tail ? parsePeriodSortKey(tail) : parseAffiliationStart(period);
 }
 
-function sortAffiliationBlocksByTime(companies: readonly JourneyCompanyBlock[]): JourneyCompanyBlock[] {
+// --- 데이터 빌더 ---
+
+function sortAffiliationBlocks(companies: readonly JourneyCompanyBlock[]): JourneyCompanyBlock[] {
     return [...companies]
         .map((block) => ({
             ...block,
-            timeline: [...block.timeline].sort((a, b) => parseJourneyPeriodSortKey(b.period) - parseJourneyPeriodSortKey(a.period)),
+            timeline: [...block.timeline].sort((a, b) => parsePeriodSortKey(b.period) - parsePeriodSortKey(a.period)),
         }))
-        .sort(
-            (a, b) => parseAffiliationPeriodEnd(b.summary.period.ko) - parseAffiliationPeriodEnd(a.summary.period.ko),
-        ) as unknown as JourneyCompanyBlock[];
+        .sort((a, b) => parseAffiliationEnd(b.summary.period.ko) - parseAffiliationEnd(a.summary.period.ko)) as unknown as JourneyCompanyBlock[];
 }
 
-function buildJourneyChronologicalEntries(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyChronologicalEntry[] {
+function buildChronologicalEntries(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyChronologicalEntry[] {
     const entries: JourneyChronologicalEntry[] = [];
 
-    companies.forEach((block, companyIndex) => {
-        const companyLabel = block.summary.company.ko;
-
-        block.timeline.forEach((item, itemIndex) => {
+    companies.forEach((block, ci) => {
+        block.timeline.forEach((item, ti) => {
             entries.push({
-                key: `${companyIndex}-${itemIndex}-${item.period}-${companyLabel}`,
+                key: `${ci}-${ti}-${item.period}-${block.summary.company.ko}`,
                 period: item.period,
                 title: item.title,
                 description: item.description,
                 company: block.summary.company,
-                sortKey: parseJourneyPeriodSortKey(item.period),
-                yearLabel: formatJourneyYearLabel(item.period),
+                sortKey: parsePeriodSortKey(item.period),
+                yearLabel: formatYearLabel(item.period),
             });
         });
     });
@@ -93,27 +84,28 @@ function buildJourneyChronologicalEntries(companies: readonly JourneyCompanyBloc
     return entries.sort((a, b) => b.sortKey - a.sortKey);
 }
 
-/** 프로젝트 갤러리처럼 연도별 그룹 (동일 연도·기간 라벨은 한 섹션에 묶음) */
-function buildJourneyYearGroups(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyYearGroup[] {
+// 동일 연도·기간 라벨은 한 그룹으로 묶음 (갤러리 연도 레일과 동일 패턴)
+function buildYearGroups(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyYearGroup[] {
     const groups = new Map<string, JourneyYearGroup>();
 
-    for (const entry of buildJourneyChronologicalEntries(companies)) {
+    for (const entry of buildChronologicalEntries(companies)) {
         const existing = groups.get(entry.yearLabel);
         if (existing) {
             existing.entries.push(entry);
-            continue;
+        } else {
+            groups.set(entry.yearLabel, {
+                key: entry.yearLabel,
+                year: entry.yearLabel,
+                sortKey: entry.sortKey,
+                entries: [entry],
+            });
         }
-
-        groups.set(entry.yearLabel, {
-            key: entry.yearLabel,
-            year: entry.yearLabel,
-            sortKey: entry.sortKey,
-            entries: [entry],
-        });
     }
 
     return [...groups.values()].sort((a, b) => b.sortKey - a.sortKey);
 }
+
+// --- 컴포저블 ---
 
 export function useJourneyView() {
     const viewMode = ref<JourneyViewMode>('affiliation');
@@ -123,59 +115,20 @@ export function useJourneyView() {
         { value: 'chronological' as const, labelKey: 'journey.viewChronological' },
     ]);
 
-    /** 소속순: 회사 → 대학교 → 고등학교 → 중학교 (최신 → 과거), 챕터 내 타임라인도 최신순 */
-    const affiliationBlocks = computed(() => sortAffiliationBlocksByTime(journeyCompanies));
-
-    const chronologicalYearGroups = computed(() => buildJourneyYearGroups());
-
-    onMounted(() => {
-        if (!import.meta.client) return;
-        const stored = sessionStorage.getItem(JOURNEY_VIEW_STORAGE_KEY);
-        if (stored === 'affiliation' || stored === 'chronological') {
-            viewMode.value = stored;
-        }
-    });
+    // 소속순: 최신 회사부터, 각 챕터 내 타임라인도 최신순
+    const affiliationBlocks = computed(() => sortAffiliationBlocks(journeyCompanies));
+    const chronologicalYearGroups = computed(() => buildYearGroups());
 
     function setViewMode(mode: JourneyViewMode) {
         viewMode.value = mode;
-        if (import.meta.client) {
-            sessionStorage.setItem(JOURNEY_VIEW_STORAGE_KEY, mode);
-        }
+        if (import.meta.client) sessionStorage.setItem(STORAGE_KEY, mode);
     }
 
-    function handleViewKeydown(event: KeyboardEvent, current: JourneyViewMode) {
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    onMounted(() => {
+        if (!import.meta.client) return;
+        const stored = sessionStorage.getItem(STORAGE_KEY);
+        if (stored === 'affiliation' || stored === 'chronological') viewMode.value = stored;
+    });
 
-        const list = viewOptions.value.map((o) => o.value);
-        const index = list.indexOf(current);
-        if (index < 0) return;
-
-        event.preventDefault();
-
-        let nextIndex = index;
-        if (event.key === 'Home') nextIndex = 0;
-        else if (event.key === 'End') nextIndex = list.length - 1;
-        else if (event.key === 'ArrowRight') nextIndex = (index + 1) % list.length;
-        else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + list.length) % list.length;
-
-        const next = list[nextIndex];
-        if (next) setViewMode(next);
-
-        nextTick(() => {
-            const target =
-                event.currentTarget instanceof HTMLElement
-                    ? event.currentTarget.parentElement?.querySelectorAll<HTMLElement>('[role="radio"]')[nextIndex]
-                    : undefined;
-            target?.focus();
-        });
-    }
-
-    return {
-        viewMode,
-        viewOptions,
-        affiliationBlocks,
-        chronologicalYearGroups,
-        setViewMode,
-        handleViewKeydown,
-    };
+    return { viewMode, viewOptions, affiliationBlocks, chronologicalYearGroups, setViewMode };
 }

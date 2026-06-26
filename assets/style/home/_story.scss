@@ -1,0 +1,398 @@
+@use "../abstracts/tokens" as *;
+
+/* =========================================
+   Home story blocks — Why · Showcase · Proof · How
+   제품 소개형 홈 6블록 (Apple-style showcase)
+========================================= */
+
+/* Why — 핵심 가치 3개 대형 타이포 */
+.why__list {
+    display: grid;
+    gap: clamp(48px, 8vw, 96px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: grid;
+        gap: clamp(12px, 1.8vw, 20px);
+
+        &:nth-child(2) {
+            justify-items: center;
+            text-align: center;
+        }
+
+        &:nth-child(3) {
+            justify-items: end;
+            text-align: right;
+        }
+    }
+
+    h3 {
+        max-width: 22ch;
+        @include font(display-3);
+        line-height: var(--line-height-display);
+
+        em {
+            font-style: normal;
+            color: var(--color-primary);
+        }
+    }
+
+    p {
+        max-width: 44ch;
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-body);
+    }
+}
+
+.why__index {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+}
+
+/* Showcase — 대표 작업 3 케이스: 피처드 1 + 서브 2 */
+.showcase__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 32px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: #{$bp-max-narrow}) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.showcase__item--featured {
+    grid-column: 1 / -1;
+}
+
+.story-case {
+    position: relative;
+    display: grid;
+    align-content: start;
+    gap: clamp(14px, 2vw, 22px);
+    min-height: clamp(240px, 28vw, 336px);
+    padding: var(--card-padding-lg);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    border-radius: var(--radius-2xl);
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
+    color: inherit;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s ease,
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* 포인터 글로우 — usePointerGlow가 갱신하는 --glow-x/--glow-y 사용 */
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(416px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+                color-mix(in srgb, var(--color-primary) 9%, transparent),
+                transparent 65%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    &.is-glow::before {
+        opacity: 1;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-5px);
+            border-color: color-mix(in srgb, var(--color-primary) 26%, var(--color-border));
+            box-shadow: 0 30px 76px color-mix(in srgb, var(--color-primary) 10%, transparent);
+        }
+
+        &:hover .story-case__cta-arrow {
+            translate: 5px 0;
+        }
+
+        &:hover .story-case__watermark {
+            opacity: 0.85;
+            translate: 0 -4px;
+        }
+    }
+
+    &__watermark {
+        position: absolute;
+        right: clamp(10px, 2vw, 26px);
+        bottom: -0.16em;
+        font-family: var(--font-display);
+        font-size: clamp(4.5rem, 10vw, 8.5rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: transparent;
+        -webkit-text-stroke: 1px color-mix(in srgb, var(--color-primary) 24%, transparent);
+        opacity: 0.5;
+        transition: opacity 0.45s ease, translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 6px 16px;
+        margin: 0;
+    }
+
+    &__tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0;
+        color: var(--color-primary);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
+    }
+
+    &__badge {
+        padding: 3px 10px;
+        border-radius: var(--radius-pill);
+        background: var(--gradient-accent);
+        color: var(--color-on-primary, #fff);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+    }
+
+    &__period {
+        color: var(--color-text-subtle, var(--color-text-muted));
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        letter-spacing: 0.04em;
+    }
+
+    h3 {
+        @include font(display-6);
+    }
+
+    &__summary {
+        margin: 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-body);
+    }
+
+    &__stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 4px 11px;
+            border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+            border-radius: var(--radius-pill);
+            background: color-mix(in srgb, var(--color-surface) 65%, transparent);
+            color: var(--color-text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            line-height: var(--line-height-ui);
+        }
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: auto;
+        color: var(--color-primary);
+        font-size: var(--font-size-sm);
+        font-weight: 700;
+    }
+
+    &__cta-arrow {
+        display: inline-block;
+        transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+}
+
+/* 피처드 카드 — 데스크톱에서 에디토리얼 2컬럼 */
+@media (min-width: #{$bp-min-laptop}) {
+    .showcase__item--featured .story-case {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        grid-template-areas:
+            "head head"
+            "title summary"
+            "stack summary"
+            "cta summary";
+        column-gap: clamp(32px, 4vw, 56px);
+        align-items: start;
+        min-height: clamp(272px, 26vw, 368px);
+
+        .story-case__head {
+            grid-area: head;
+        }
+
+        h3 {
+            grid-area: title;
+            max-width: 18ch;
+            @include font(display-4);
+        }
+
+        .story-case__summary {
+            grid-area: summary;
+            -webkit-line-clamp: 6;
+            font-size: var(--font-size-md);
+            max-width: 52ch;
+        }
+
+        .story-case__stack {
+            grid-area: stack;
+            align-self: end;
+        }
+
+        .story-case__cta {
+            grid-area: cta;
+        }
+    }
+}
+
+.showcase__more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+/* Proof — 숫자 밴드 + 이력 링크 */
+.proof__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 48px);
+    margin: 0;
+    padding: clamp(32px, 4.5vw, 56px) 0;
+    border-block: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(20px, 5vw, 32px);
+    }
+
+    > div {
+        position: relative;
+        display: grid;
+        gap: 8px;
+        min-width: 0;
+        padding-inline-start: clamp(16px, 2vw, 24px);
+
+        /* 스펙시트 느낌의 세로 구분선 */
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 1px;
+            background: linear-gradient(180deg, var(--color-primary), transparent);
+            opacity: 0.45;
+        }
+    }
+
+    dd {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: var(--font-size-display-4);
+        font-weight: 900;
+        letter-spacing: var(--tracking-tight);
+        line-height: 1;
+        background: var(--gradient-accent);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    dt {
+        color: var(--color-text-muted);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
+    }
+
+    @media (hover: hover) {
+        > div:hover dd {
+            translate: 0 -3px;
+        }
+    }
+}
+
+.proof__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+/* How — 작업 방식 (flow-steps 재사용) + 스택 링크 */
+.how__steps-card {
+    display: grid;
+    gap: clamp(24px, 3.5vw, 40px);
+
+    .flow-steps li {
+        position: relative;
+        transition: border-color 0.3s ease;
+
+        /* 상단 보더 위로 차오르는 액센트 라인 */
+        &::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gradient-accent);
+            transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+    }
+
+    .flow-steps__index {
+        display: inline-block;
+        transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform-origin: left center;
+    }
+
+    @media (hover: hover) {
+        .flow-steps li:hover::before {
+            width: 100%;
+        }
+
+        .flow-steps li:hover .flow-steps__index {
+            transform: translateY(-2px) scale(1.15);
+        }
+    }
+}
+
+.flow-steps__desc {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body);
+}
