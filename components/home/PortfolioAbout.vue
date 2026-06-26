@@ -1,7 +1,5 @@
 <template>
     <section id="about" class="section section--about" aria-labelledby="section-about-title">
-        <span class="section__emoji section__emoji--about emoji emoji--soft" aria-hidden="true">🧭</span>
-
         <div class="about__stage">
             <header class="about__intro" data-animate>
                 <p class="section-title__eyebrow">{{ t("nav.about") }}</p>
@@ -17,9 +15,10 @@
                 :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
                 <h3 class="spotlight__kicker">{{ t("about.kicker") }}</h3>
                 <ul class="feature-grid">
-                    <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)">
+                    <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)"
+                        :style="{ '--stagger-i': index }" data-stagger>
                         <FeatureCard :eyebrow="String(index + 1).padStart(2, '0')" :title="pick(principle.title)"
-                            :description="pick(principle.description)" />
+                            :description="pick(principle.description)" :animate="false" />
                     </li>
                 </ul>
             </section>
@@ -28,7 +27,8 @@
                 :aria-label="locale === 'ko' ? '작업 흐름' : 'Workflow'">
                 <h3 class="surface-card__title">{{ t("about.workflowTitle") }}</h3>
                 <ol class="flow-steps" :aria-label="locale === 'ko' ? '단계' : 'Steps'">
-                    <li v-for="(step, index) in workflowSteps" :key="step">
+                    <li v-for="(step, index) in workflowSteps" :key="step"
+                        :style="{ '--stagger-i': index }" data-stagger>
                         <span class="flow-steps__index">{{ String(index + 1).padStart(2, "0") }}</span>
                         <span class="flow-steps__label">{{ step }}</span>
                     </li>

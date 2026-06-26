@@ -104,7 +104,7 @@ const data = [
             '/images/portfolio-2026/home-dark-tablet.png',
             '/images/portfolio-2026/home-light-mobile.png',
             '/images/portfolio-2026/home-dark-mobile.png',
-            '/images/og-image-2026.png',
+            '/images/og-image-2026.jpg',
         ],
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS'],
         links: [
@@ -124,81 +124,81 @@ const data = [
             ko: '신길교회 야구 선교단 홈페이지',
             en: 'Singil Church Baseball Mission Website',
         },
-        period: '2026.05.31',
+        period: '2026.05.31~',
         type: {
             ko: '개인 / Nuxt 커뮤니티 사이트',
             en: 'Personal / Nuxt community website',
         },
         role: {
-            ko: '기획·디자인·퍼블리싱·프론트엔드 개발 전체 담당',
-            en: 'End-to-end planning, design, publishing, and frontend development',
+            ko: '기획·디자인·퍼블리싱·프론트엔드·기록 파이프라인 개발 전체 담당',
+            en: 'End-to-end planning, design, publishing, frontend, and record-pipeline development',
         },
-        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Pinia', 'SCSS'],
+        tech: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Pinia', 'SCSS', 'AG Grid', 'Node.js', 'cheerio'],
         introduction: {
-            ko: '2026년 5월 31일 하루 만에 제작한 신길교회 야구 선교단 공식 홈페이지입니다. Nuxt 3 기반으로 TEAM·GAMES·STATS·MEDIA IA를 잡고, JSON 중심의 경기 기록·MVP 통계·선수 명단·David TV(YouTube)·구단 소식을 연결했습니다. GitHub 커밋 14회(약 3시간)로 프로젝트 설정부터 GitHub Pages(`/singil-bmc/`) 배포 URL까지 이어 붙였습니다.',
-            en: 'The official Singil Church Baseball Mission website, built in a single day on May 31, 2026. On Nuxt 3, it wires TEAM, GAMES, STATS, and MEDIA IA to JSON-driven game records, MVP stats, roster, David TV (YouTube), and news. Fourteen GitHub commits (~3 hours) took it from initial setup to a live GitHub Pages deployment at `/singil-bmc/`.',
+            ko: '신길교회 야구 선교단 공식 홈페이지입니다. 2026년 5월 31일 Nuxt 3 기반 골격을 집중 개발한 뒤, 6월에 게임원 HTML→JSON 파싱 파이프라인·다크/라이트 테마·리더 카드·MVP 확장·최신 경기 데이터 반영까지 이어 개선했습니다. 서버 API 없이 `npm run update`로 경기 기록을 갱신하고, 소개·기록·경기·선수·MVP·영상·소식·문의 IA를 GitHub Pages(`/singil-bmc/`)에 정적 배포합니다.',
+            en: 'The official Singil Church Baseball Mission website. After an intensive Nuxt 3 foundation on May 31, 2026, June work added a GameOne HTML→JSON parsing pipeline, dark/light themes, leader cards, expanded MVP stats, and fresh game data. With no backend API, `npm run update` refreshes records while about, records, games, roster, MVP, videos, news, and contact IA ship as a static GitHub Pages site at `/singil-bmc/`.',
         },
         myWorks: [
             {
-                ko: '앱 제목·base URL·i18n 번역을 선교단 브랜드에 맞게 바꾸고 HOME·TEAM·GAMES·STATS·MEDIA LNB 구조 설계',
-                en: 'Retargeted app title, base URL, and i18n copy for the mission brand and designed HOME·TEAM·GAMES·STATS·MEDIA LNB structure',
+                ko: '선교단 소개·조직·히스토리, 단체사진, 전체/연도별/월별/조별 기록, 월·주간 MVP, 선수·경기·YouTube·소식·문의 페이지 IA 설계',
+                en: 'Designed IA for about/leaders/history, team gallery, full/yearly/monthly/group records, monthly/weekly MVP, roster, games, YouTube, news, and contact',
             },
             {
-                ko: '게임 기록·MVP·선수 JSON 데이터 구조 정리, 조별 그룹·플레이어 ID 형식 통일, 기록 갱신 npm 스크립트 추가',
-                en: 'Normalized game record, MVP, and player JSON schemas with group fields and player IDs, plus npm scripts to refresh records',
+                ko: '게임원 경기 HTML을 cheerio로 파싱해 경기·누적 기록 JSON을 생성하는 `parse-game-html`·`build-records`·`update-records` 스크립트 구축',
+                en: 'Built `parse-game-html`, `build-records`, and `update-records` scripts that parse GameOne HTML with cheerio into per-game and summary JSON',
             },
             {
-                ko: '기록 페이지 탭 UI·MVP 조별 필터·시즌 승패 요약·경기 상세 승패 배지로 STATS 영역 구현',
-                en: 'Built the STATS area with tabbed records, group-filtered MVP, season W/L/T summary, and win/loss badges on game detail pages',
+                ko: 'A조(Davids)·D조(다윗) 자동 구분, `playerId` 기준 통계 집계, AG Grid 기록 표·경기 상세 MVP/하이라이트 섹션 구현',
+                en: 'Implemented A-group (Davids) / D-group auto classification, playerId-based stat aggregation, AG Grid record tables, and game-detail MVP/highlight sections',
             },
             {
-                ko: 'A·D조 중복 선수 카드 병합, `useSiteLnb`로 하위 메뉴 active 정확 매칭, pages 라우트 구조 단순화',
-                en: 'Merged duplicate A/D roster cards, matched sub-menu active state via `useSiteLnb`, and simplified pages routing',
+                ko: '`useBasePath`·`fetchJson()`으로 GitHub Pages base path 대응, `GAME_RECORD_UPDATE_HANDOFF.md`로 경기 후 운영 절차 문서화',
+                en: 'Handled GitHub Pages base paths via `useBasePath`/`fetchJson()` and documented post-game ops in `GAME_RECORD_UPDATE_HANDOFF.md`',
             },
             {
-                ko: 'David TV YouTube 링크·썸네일·게시일 JSON 정리 및 날짜 내림차순 정렬, 경기·뉴스 페이지 동적 SEO 메타 설정',
-                en: 'Structured David TV YouTube JSON (links, thumbnails, dates) with date-desc sorting and dynamic SEO meta for games and news',
+                ko: '6월: 다크·라이트 테마, 홈 최근 경기·영상 링크 레이아웃, 리더 카드 컴포넌트·이미지 경로 동적 처리, favicon·SCSS 통합',
+                en: 'In June: dark/light themes, home layout for recent games and video links, leader card component with dynamic image paths, favicon, and SCSS consolidation',
             },
             {
-                ko: '헤더 aria 속성·드롭다운 그룹 active 상태·탭 pill 변형 등 SCSS/UI 마감과 GitHub Pages 배포 설정',
-                en: 'Polished SCSS/UI with header aria, dropdown group active states, pill tabs, and GitHub Pages deployment config',
+                ko: 'GitHub Actions·`npm run deploy`·sitemap 생성·JSON-LD·경기·뉴스 동적 SEO 메타로 정적 배포 파이프라인 정리',
+                en: 'Organized static deployment with GitHub Actions, `npm run deploy`, sitemap generation, JSON-LD, and dynamic SEO meta for games and news',
             },
         ],
         achievements: [
             {
-                ko: 'GitHub 커밋 14회·약 3시간 만에 IA·기록·통계·명단·미디어·배포 URL까지 하루 안에 완성',
-                en: 'Shipped IA, records, stats, roster, media, and deployment URL in ~3 hours across 14 GitHub commits in one day',
+                ko: '5/31 하루 33커밋으로 IA·기록·통계·명단·미디어·배포 골격을 완성하고, 6월 20커밋으로 테마·MVP·운영 데이터까지 확장 (누적 53커밋)',
+                en: 'Shipped IA, records, stats, roster, media, and deployment in 33 commits on May 31, then extended themes, MVP, and ops data with 20 more commits in June (53 total)',
             },
             {
-                ko: '월간·주간 MVP 페이지를 통합 MVP 페이지 하나로 정리하고, 내비·푸터 링크를 함께 맞춰 STATS 흐름 단순화',
-                en: 'Consolidated monthly/weekly MVP pages into one MVP route and aligned nav and footer links for a simpler STATS flow',
+                ko: '게임원 HTML만 추가하면 `npm run update` 한 번으로 경기·누적·조별 기록을 재생성하는 비개발자 친화 운영 구조 확립',
+                en: 'Established an operator-friendly flow: drop GameOne HTML and run `npm run update` once to rebuild game and summary records',
             },
             {
-                ko: '정적 JSON 데이터만으로 경기 결과·MVP·영상 목록을 갱신할 수 있는 운영 구조를 README와 스크립트로 정리',
-                en: 'Documented a static JSON workflow (README + scripts) to update game results, MVP, and video lists without a backend',
+                ko: '상대팀 선수 기록 제외·선수명 `players.json` 매칭 등 야구 기록 도메인 규칙을 파싱 스크립트와 README에 반영',
+                en: 'Encoded baseball-domain rules—excluding opponent stats and matching names via `players.json`—in parsing scripts and the README',
             },
         ],
         points: [
             {
-                ko: '하루 집중 개발로 교회 공동체에 바로 쓸 수 있는 Nuxt 3 정적 사이트 골격을 완성',
-                en: 'A focused one-day build that delivered a usable Nuxt 3 static site skeleton for a church community',
+                ko: '교회 공동체 운영에 맞춘 정적 사이트 — 서버 없이도 경기 후 기록 갱신이 가능한 파이프라인',
+                en: 'A church-community static site with a post-game record pipeline that needs no server',
             },
             {
-                ko: '커밋 이력 기준으로 기록·MVP·명단·미디어 기능을 순차적으로 쌓아 올린 실제 작업 흐름이 남아 있음',
-                en: 'Commit history shows records, MVP, roster, and media features stacked in a clear, sequential workflow',
+                ko: '초기 하루 집중 개발 이후에도 실제 경기·영상·MVP 데이터를 반영하며 6월까지 지속 개선',
+                en: 'Continued improvement through June with real games, videos, and MVP data after the initial one-day push',
             },
             {
-                ko: 'GitHub Pages base path(`/singil-bmc/`)와 접근성·SEO 메타까지 포함한 배포 가능한 1차 버전',
-                en: 'A deployable v1 including GitHub Pages base path (`/singil-bmc/`), accessibility, and SEO metadata',
+                ko: 'GitHub Pages base path, 접근성, SEO, 다크/라이트 테마를 포함한 배포·운영 가능한 실서비스',
+                en: 'A deployable, maintainable live site with GitHub Pages base path, accessibility, SEO, and dark/light themes',
             },
         ],
         pin: true,
         duration: {
-            ko: '1일 (GitHub 커밋 14회)',
-            en: '1 day (14 GitHub commits)',
+            ko: '5/31 집중 개발 후 지속 개선 (GitHub 커밋 53회)',
+            en: 'Intensive May 31 build, then ongoing (53 GitHub commits)',
         },
         captures: ['/images/projects/placeholder.svg'],
-        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia'],
+        languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'Node.js'],
         links: [
             {
                 label: {
@@ -289,6 +289,7 @@ const data = [
             en: 'In progress',
         },
         captures: ['/images/projects/flighty/image-1.png', '/images/projects/flighty/image-2.png', '/images/projects/flighty/image-3.png'],
+        thumbnail: '/images/archive-thumbs/flighty.jpg',
         languages: ['Nuxt 3', 'Vue 3', 'TypeScript', 'SCSS', 'Pinia', 'Figma'],
         links: [
             {
@@ -412,8 +413,8 @@ const data = [
         },
         tech: ['HTML', 'SCSS', 'JavaScript', 'jQuery', 'Swiper'],
         introduction: {
-            ko: '2025년에 제작한 정적 HTML 기반 포트폴리오입니다. 자기소개, 프로젝트 소개, 다크 모드, 캔버스 모션을 하나의 페이지 흐름으로 구성해 당시 퍼블리싱 역량과 화면 구성 방식을 기록했습니다.',
-            en: 'A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion.',
+            ko: '2025년에 제작한 정적 HTML 기반 포트폴리오입니다. 자기소개, 프로젝트 소개, 다크 모드, 캔버스 모션을 하나의 페이지 흐름으로 구성해 당시의 퍼블리싱 역량과 화면 구성 방식을 기록했습니다. Nuxt 기반 2026 포트폴리오로 넘어오기 직전의 작업 방식을 그대로 보여주는, 성장 과정을 가늠할 수 있는 아카이브입니다.',
+            en: 'A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion—an archive that shows exactly how I worked just before moving to the Nuxt-based 2026 portfolio.',
         },
         myWorks: [
             {
@@ -429,7 +430,16 @@ const data = [
                 en: 'Managed profile images, mockups, OG image, and static resume assets together',
             },
         ],
-        achievements: [],
+        achievements: [
+            {
+                ko: '프레임워크 없이 정적 자산만으로 단일 페이지 포트폴리오를 완성해 배포',
+                en: 'Completed and deployed a single-page portfolio using only static assets, no framework',
+            },
+            {
+                ko: '2026 Nuxt 포트폴리오와 비교 가능한 작업 방식·구조 아카이브로 정리',
+                en: 'Preserved it as an archive whose approach and structure can be compared with the 2026 Nuxt portfolio',
+            },
+        ],
         points: [
             {
                 ko: 'Nuxt 기반 2026 포트폴리오 이전의 구조와 표현 방식을 비교할 수 있는 아카이브',
@@ -446,7 +456,7 @@ const data = [
             en: '~1 month',
         },
         captures: [
-            '/images/portfolio/ver-2025/og-image.png',
+            '/images/portfolio/ver-2025/og-image.jpg',
             '/images/portfolio/ver-2025/photo-1920.webp',
             '/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png',
             '/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png',
@@ -537,6 +547,7 @@ const data = [
             '/images/portfolio/ver-2025/project/matemate/modal/modal-02.png',
             '/images/portfolio/ver-2025/project/matemate/modal/modal-03.png',
         ],
+        thumbnail: '/images/archive-thumbs/matemate.jpg',
         languages: ['HTML', 'SCSS', 'JavaScript', 'Firebase', 'Figma'],
         links: [
             {
@@ -691,6 +702,7 @@ const data = [
             en: '~2 months',
         },
         captures: ['/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png', '/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png'],
+        thumbnail: '/images/archive-thumbs/jonsoft-2022.jpg',
         languages: ['HTML', 'CSS', 'jQuery', 'Figma'],
         links: [
             {

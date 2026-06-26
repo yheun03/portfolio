@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-const PROGRESS = 95;
+const PROGRESS = 98;
 const STORAGE_KEY = 'portfolio-temp-main-modal-dismissed-date';
 
 const COPY = {
@@ -43,9 +43,9 @@ const COPY = {
         eyebrow: '아직 다듬는 중이에요',
         title: '거의 다 왔습니다.',
         description:
-            '완성 전에도 들러주셔서 감사합니다. 마지막 5%를 정리하는 중이라 일부 화면은 조금 더 다듬어질 예정입니다.',
+            '완성 전에도 들러주셔서 감사합니다. 마지막 2%를 정리하는 중이라 일부 화면은 조금 더 다듬어질 예정입니다.',
         progressLabel: '현재 완성도',
-        progressAria: '포트폴리오 제작 진행률 95%',
+        progressAria: '포트폴리오 제작 진행률 98%',
         note: '조금 덜 익은 부분은 있어도, 보여드리고 싶은 방향은 또렷하게 담아두었습니다.',
         close: '닫기',
         closeAria: '안내 모달 닫기',
@@ -56,9 +56,9 @@ const COPY = {
         eyebrow: 'Still getting polished',
         title: 'Almost there.',
         description:
-            'Thanks for visiting before launch. I am finishing the last 5%, so a few screens may still sharpen up.',
+            'Thanks for visiting before launch. I am finishing the last 2%, so a few screens may still sharpen up.',
         progressLabel: 'Current progress',
-        progressAria: 'Portfolio production progress 95%',
+        progressAria: 'Portfolio production progress 98%',
         note: 'A few corners are still warm from the oven, but the direction is already here.',
         close: 'Close',
         closeAria: 'Close notice modal',
@@ -105,13 +105,13 @@ onMounted(() => {
     z-index: 200;
     display: grid;
     place-items: center;
-    padding: clamp(1rem, 4vw, 2rem);
+    padding: clamp(16px, 4vw, 32px);
     background: var(--color-scrim);
     backdrop-filter: blur(18px) saturate(1.2);
 
     &__content {
-        width: min(100%, 36rem);
-        max-height: min(92dvh, 44rem);
+        width: min(100%, 576px);
+        max-height: min(92dvh, 704px);
     }
 
     &__card {
@@ -148,7 +148,7 @@ onMounted(() => {
         flex-shrink: 0;
         min-width: auto;
         min-height: auto;
-        padding: 0.45rem 0.85rem;
+        padding: 7px 14px;
         font-size: var(--font-size-xs);
     }
 
@@ -182,7 +182,7 @@ onMounted(() => {
     opacity: 0;
 
     .temp-main-modal__content {
-        transform: translateY(0.9rem) scale(0.985);
+        transform: translateY(14px) scale(0.985);
     }
 }
 

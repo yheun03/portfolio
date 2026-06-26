@@ -4,16 +4,6 @@
    Portfolio Pages
 ========================================= */
 
-.page__layer {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 720px;
-}
-
-.page__layer--hero {
-    content-visibility: visible;
-    contain-intrinsic-size: none;
-}
-
 .portfolio-page {
     position: relative;
     z-index: 1;
@@ -45,28 +35,20 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.58;
-    background-image: var(--gradient-hero-mesh),
-        linear-gradient(color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--color-border) 30%, transparent) 1px, transparent 1px);
-    background-size: auto, 88px 88px, 88px 88px;
-    mask-image: radial-gradient(ellipse 86% 76% at 50% 8%, var(--theme-black) 18%, transparent 76%);
+    opacity: 0.45;
+    background-image: var(--gradient-hero-mesh);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, var(--theme-black) 20%, transparent 72%);
 
     &::after {
         content: "";
         position: absolute;
         inset: 0;
         pointer-events: none;
-        opacity: 0.26;
+        opacity: 0.18;
         background-image: $texture-noise;
         background-size: 160px 160px;
         mix-blend-mode: multiply;
     }
-}
-
-.app-background::after {
-    opacity: 0.24;
-    mix-blend-mode: multiply;
 }
 
 .page__layer {
@@ -77,7 +59,7 @@
         position: relative;
 
         @media (min-width: 1024px) {
-            padding-bottom: clamp(2rem, 6vw, 4rem);
+            padding-bottom: clamp(32px, 6vw, 64px);
         }
     }
 
@@ -85,6 +67,76 @@
         position: relative;
         overflow: visible;
     }
+
+    &--contact {
+        position: relative;
+    }
+}
+
+// Dark editorial panel — 다크 테마에서만 적용 (라이트 테마는 페이지 배경 그대로)
+@mixin editorial-panel-profile {
+    background: #020407;
+    --color-bg: #020407;
+    --color-surface: #0d1117;
+    --color-surface-strong: #252e42;
+    --color-text: #d1d6db;
+    --color-text-strong: #f2f4f6;
+    --color-text-heading: #f9fafb;
+    --color-text-muted: #8b95a1;
+    --color-text-subtle: #7b8694; /* 어두운 에디토리얼 패널에서 AA 충족(기존 #6b7684=3.70:1 미달) */
+    --color-border: #1c2333;
+    --color-primary: #4a8cff;
+    --color-primary-dark: #6fa3ff;
+    --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+    --gradient-surface: linear-gradient(168deg, #1c2436 0%, #1a2030 100%);
+    --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.42);
+    --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
+    --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
+    --shadow-ring: 0 0 0 3px rgba(74, 140, 255, 0.28);
+    --color-glass-2: rgba(28, 36, 54, 0.78);
+    --color-glass-2-strong: rgba(37, 46, 66, 0.86);
+    --color-on-primary: #fff;
+}
+
+@mixin editorial-panel-contact {
+    background: #020407;
+    --color-bg: #020407;
+    --color-surface: #161c27;
+    --color-surface-strong: #1e2538;
+    --color-text: #d1d6db;
+    --color-text-strong: #f2f4f6;
+    --color-text-heading: #f9fafb;
+    --color-text-muted: #8b95a1;
+    --color-text-subtle: #7b8694; /* 어두운 에디토리얼 패널에서 AA 충족(기존 #6b7684=3.70:1 미달) */
+    --color-border: #252e42;
+    --color-primary: #4a8cff;
+    --color-primary-dark: #6fa3ff;
+    --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+    --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
+    --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
+    --shadow-glow: 0 0 0 1px rgba(37, 46, 66, 0.58) inset;
+    --color-glass-2: rgba(22, 28, 39, 0.78);
+    --color-glass-2-strong: rgba(30, 37, 56, 0.86);
+    --color-on-primary: #fff;
+}
+
+// data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .page__layer--profile {
+        @include editorial-panel-profile;
+    }
+
+    :root:not([data-theme="light"]) .page__layer--contact {
+        @include editorial-panel-contact;
+    }
+}
+
+:root[data-theme="dark"] .page__layer--profile {
+    @include editorial-panel-profile;
+}
+
+:root[data-theme="dark"] .page__layer--contact {
+    @include editorial-panel-contact;
 }
 
 .section {
@@ -92,10 +144,10 @@
     z-index: 1;
     scroll-margin-top: var(--layout-header-height);
     overflow: visible;
-    width: min(100% - var(--inset-page), var(--layout-content-max));
+    width: 100%;
     max-width: none;
-    margin-inline: auto;
-    padding: var(--section-pad-y) 0;
+    margin-inline: 0;
+    padding: var(--section-pad-y) var(--page-pad-x);
 
     &:not(.section--hero) {
         display: grid;
@@ -104,16 +156,15 @@
         .section-title::before {
             content: var(--section-index, "00");
             display: block;
-            margin-bottom: var(--space-2);
-            font-family: var(--font-display);
-            font-size: var(--font-size-counter);
-            font-weight: var(--font-weight-black);
-            line-height: 0.9;
-            letter-spacing: var(--tracking-tight);
-            color: transparent;
-            background: var(--gradient-accent);
-            background-clip: text;
-            -webkit-background-clip: text;
+            margin-bottom: var(--space-3);
+            font-family: var(--font-mono);
+            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+            font-weight: var(--font-weight-bold);
+            line-height: 1;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            opacity: 0.72;
         }
     }
 }
@@ -126,11 +177,11 @@
     --section-index: "02";
 }
 
-.section--personal {
+.section--proof {
     --section-index: "03";
 }
 
-.section--journey {
+.section--how {
     --section-index: "04";
 }
 
@@ -138,97 +189,21 @@
     --section-index: "05";
 }
 
-.section--highlights {
+.section--contact {
     --section-index: "06";
 }
 
-.section--contact {
-    --section-index: "07";
+/* 독립 페이지 섹션 — 단독 노출이므로 01 고정 */
+.section--journey,
+.section--personal {
+    --section-index: "01";
 }
 
-.section__emoji {
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-
-    /** emoji--soft 키프레임 opacity(0.88~1)가 섹션 장식 투명도를 덮어쓰지 않도록 분리 */
-    &.emoji--soft {
-        animation: section-emoji-drift 4.1s ease-in-out infinite;
-        will-change: transform;
-    }
+/* 여정 페이지 두 번째 섹션 */
+.section--highlights {
+    --section-index: "02";
 }
 
-@keyframes section-emoji-drift {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg) scale(1);
-    }
-
-    45% {
-        transform: translateY(-3px) rotate(-5deg) scale(1.04);
-    }
-
-    70% {
-        transform: translateY(-1px) rotate(4deg) scale(0.98);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .section__emoji.emoji--soft {
-        animation: none;
-    }
-}
-
-.section__emoji--about {
-    top: clamp(2rem, 5vw, 4rem);
-    right: clamp(0rem, 3vw, 2.4rem);
-    font-size: clamp(5rem, 11vw, 12rem);
-    opacity: 0.1;
-}
-
-.section__emoji--works {
-    top: clamp(1.5rem, 4vw, 3rem);
-    left: clamp(0rem, 3vw, 2rem);
-    font-size: clamp(4rem, 8vw, 8.5rem);
-    opacity: 0.11;
-}
-
-.section__emoji--personal {
-    top: clamp(1rem, 3vw, 2.5rem);
-    right: clamp(0rem, 4vw, 2.5rem);
-    font-size: clamp(3.6rem, 7vw, 7rem);
-    opacity: 0.12;
-}
-
-.section__emoji--journey {
-    top: clamp(2rem, 5vw, 4rem);
-    right: clamp(0rem, 4vw, 3rem);
-    font-size: clamp(4rem, 8vw, 8.5rem);
-    opacity: 0.1;
-}
-
-.section__emoji--toolbox {
-    right: clamp(0rem, 3vw, 2rem);
-    bottom: clamp(1rem, 4vw, 3rem);
-    font-size: clamp(4rem, 7vw, 7.5rem);
-    opacity: 0.12;
-}
-
-.section__emoji--highlights {
-    top: clamp(1rem, 4vw, 3rem);
-    right: clamp(0rem, 3vw, 2rem);
-    font-size: clamp(3.2rem, 6vw, 6rem);
-    opacity: 0.18;
-}
-
-.section__emoji--contact {
-    top: clamp(1rem, 3vw, 2rem);
-    left: clamp(0rem, 3vw, 2rem);
-    font-size: clamp(4rem, 9vw, 9rem);
-    opacity: 0.1;
-}
 
 .app-header__link:focus-visible,
 .app-lnb__close:focus-visible,

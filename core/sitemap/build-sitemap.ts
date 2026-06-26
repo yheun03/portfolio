@@ -22,6 +22,7 @@ export function buildSitemapXml(lastmod = new Date().toISOString().slice(0, 10))
         { loc: buildAbsoluteSeoUrl('/'), changefreq: 'weekly', priority: '1.0' },
         { loc: buildAbsoluteSeoUrl('/projects'), changefreq: 'weekly', priority: '0.9' },
         { loc: buildAbsoluteSeoUrl('/personal'), changefreq: 'weekly', priority: '0.9' },
+        { loc: buildAbsoluteSeoUrl('/journey'), changefreq: 'monthly', priority: '0.7' },
         ...careerWorks.map((work) => ({
             loc: buildAbsoluteSeoUrl(`/projects/${work.id}`),
             changefreq: 'monthly' as const,

@@ -1,7 +1,4 @@
-/**
- * 목표: Nuxt 라우터 스크롤 복원 정책을 앱 표준으로 정의한다.
- * 기능: 저장 위치, 해시 이동, 갤러리 상세 복귀 위치를 처리한다.
- */
+// Nuxt 라우터 스크롤 복원 정책 — savedPosition·해시 이동·갤러리 복귀 위치를 순서대로 처리
 import type { RouterConfig } from '@nuxt/schema';
 import { isGalleryDetailPath, readNavigationRestoreSnapshot } from '@composables/gallery/useNavigationRestore';
 import { scrollToSectionHashWhenReady } from '@utils/section-anchor-scroll';

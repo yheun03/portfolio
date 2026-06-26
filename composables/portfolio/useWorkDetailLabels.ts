@@ -1,16 +1,13 @@
-/**
- * 목표: Works 상세 모달에서 사용하는 고정 라벨을 locale별로 제공한다.
- * 기능: 닫기, 역할, 기여, 성과, 포인트 라벨 computed 값을 만든다.
- */
+// Works 상세 모달에서 사용하는 locale별 고정 라벨 (닫기, 역할, 기여 등)
 export function useWorkDetailLabels() {
-    const { locale } = useLocale();
+    const { pick } = useLocale();
 
     return computed(() => ({
-        close: locale.value === 'ko' ? '닫기' : 'Close',
-        closeModalAria: locale.value === 'ko' ? '상세 모달 닫기' : 'Close detail modal',
-        role: locale.value === 'ko' ? '역할' : 'Role',
-        contributions: locale.value === 'ko' ? '내가 한 일' : 'My Contributions',
-        results: locale.value === 'ko' ? '성과' : 'Results',
-        points: locale.value === 'ko' ? '포인트' : 'Key Points',
+        close: pick({ ko: '닫기', en: 'Close' }),
+        closeModalAria: pick({ ko: '상세 모달 닫기', en: 'Close detail modal' }),
+        role: pick({ ko: '역할', en: 'Role' }),
+        contributions: pick({ ko: '내가 한 일', en: 'My Contributions' }),
+        results: pick({ ko: '성과', en: 'Results' }),
+        points: pick({ ko: '포인트', en: 'Key Points' }),
     }));
 }

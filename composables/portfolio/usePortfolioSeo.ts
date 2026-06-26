@@ -1,7 +1,4 @@
-/**
- * 목표: 포트폴리오 페이지별 SEO 메타와 구조화 데이터를 일관되게 생성한다.
- * 기능: canonical, OG/Twitter 메타, Person/WebSite/페이지 JSON-LD를 주입한다.
- */
+// 포트폴리오 페이지별 SEO 메타·canonical·OG·Twitter·JSON-LD 구조화 데이터 일괄 주입
 import { profile } from '@data/site';
 import { seoConfig, seoKeywords, seoStructuredData, type SeoLocale } from '@config/seo';
 import { seoPublicEnv } from '@config/seo-env';
@@ -20,7 +17,6 @@ interface PortfolioSeoOptions {
     imageAlt?: string;
     imageWidth?: number;
     imageHeight?: number;
-    /** 검색 색인 제외(에러·내부 문서 등) */
     noindex?: boolean;
     jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -65,20 +61,12 @@ function createWebSiteJsonLd(locale: SeoLocale, homeUrl: string) {
         alternateName: seoConfig.siteName,
         url: homeUrl,
         inLanguage: [getLanguageTag('ko'), getLanguageTag('en')],
-        publisher: {
-            '@id': `${homeUrl}${seoConfig.personId}`,
-        },
+        publisher: { '@id': `${homeUrl}${seoConfig.personId}` },
         about: seoKeywords[locale],
     };
 }
 
-function createWebPageJsonLd(
-    locale: SeoLocale,
-    canonicalUrl: string,
-    title: string,
-    description: string,
-    imageUrl: string,
-) {
+function createWebPageJsonLd(locale: SeoLocale, canonicalUrl: string, title: string, description: string, imageUrl: string) {
     return {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
@@ -87,16 +75,9 @@ function createWebPageJsonLd(
         name: title,
         description,
         inLanguage: getLanguageTag(locale),
-        isPartOf: {
-            '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.websiteId}`,
-        },
-        author: {
-            '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}`,
-        },
-        primaryImageOfPage: {
-            '@type': 'ImageObject',
-            url: imageUrl,
-        },
+        isPartOf: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.websiteId}` },
+        author: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}` },
+        primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
     };
 }
 
@@ -109,16 +90,27 @@ function createProfilePageJsonLd(locale: SeoLocale, homeUrl: string, title: stri
         name: title,
         description,
         inLanguage: getLanguageTag(locale),
-        isPartOf: {
-            '@id': `${homeUrl}${seoConfig.websiteId}`,
-        },
-        mainEntity: {
-            '@id': `${homeUrl}${seoConfig.personId}`,
-        },
-        primaryImageOfPage: {
-            '@type': 'ImageObject',
-            url: imageUrl,
-        },
+        isPartOf: { '@id': `${homeUrl}${seoConfig.websiteId}` },
+        mainEntity: { '@id': `${homeUrl}${seoConfig.personId}` },
+        primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
+    };
+}
+
+function createFaqPageJsonLd(locale: SeoLocale, homeUrl: string) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        '@id': `${homeUrl}#faq`,
+        url: homeUrl,
+        inLanguage: getLanguageTag(locale),
+        mainEntity: seoStructuredData.answerEngine.questions[locale].map((item) => ({
+            '@type': 'Question',
+            name: item.name,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.acceptedAnswer,
+            },
+        })),
     };
 }
 
@@ -139,9 +131,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const imageWidth = resolved.imageWidth ?? (!resolved.image ? seoConfig.defaultOgImageSize.width : undefined);
         const imageHeight = resolved.imageHeight ?? (!resolved.image ? seoConfig.defaultOgImageSize.height : undefined);
         const isHome = !resolved.path || resolved.path === '/';
-        const robotsContent = resolved.noindex
-            ? 'noindex, nofollow'
-            : 'index, follow, max-image-preview:large';
+        const robotsContent = resolved.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
         const googlebotContent = resolved.noindex
             ? 'noindex, nofollow'
             : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
@@ -149,39 +139,38 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             createPersonJsonLd(resolved.locale, homeUrl, personImageUrl),
             createWebSiteJsonLd(resolved.locale, homeUrl),
             createWebPageJsonLd(resolved.locale, canonicalUrl, resolved.title, resolved.description, imageUrl),
-            ...(isHome ? [createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl)] : []),
+            ...(isHome
+                ? [
+                      createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl),
+                      createFaqPageJsonLd(resolved.locale, homeUrl),
+                  ]
+                : []),
             ...(Array.isArray(resolved.jsonLd) ? resolved.jsonLd : resolved.jsonLd ? [resolved.jsonLd] : []),
         ];
 
-        const hreflangLinks = [
-            { rel: 'canonical', href: canonicalUrl },
-            { rel: 'image_src', href: imageUrl },
-            { rel: 'alternate', hreflang: 'ko-KR', href: canonicalUrl },
-            { rel: 'alternate', hreflang: 'en', href: canonicalUrl },
-            { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl },
-        ];
-
         const verificationMeta = [
-            ...(seoPublicEnv.googleSiteVerification
-                ? [{ name: 'google-site-verification', content: seoPublicEnv.googleSiteVerification }]
-                : []),
-            ...(seoPublicEnv.naverSiteVerification
-                ? [{ name: 'naver-site-verification', content: seoPublicEnv.naverSiteVerification }]
-                : []),
+            ...(seoPublicEnv.googleSiteVerification ? [{ name: 'google-site-verification', content: seoPublicEnv.googleSiteVerification }] : []),
+            ...(seoPublicEnv.naverSiteVerification ? [{ name: 'naver-site-verification', content: seoPublicEnv.naverSiteVerification }] : []),
         ];
 
         return {
-            htmlAttrs: {
-                lang: resolved.locale,
-            },
+            htmlAttrs: { lang: resolved.locale },
             title: resolved.title,
-            link: hreflangLinks,
+            link: [
+                { rel: 'canonical', href: canonicalUrl },
+                { rel: 'image_src', href: imageUrl },
+                { rel: 'alternate', hreflang: 'ko-KR', href: canonicalUrl },
+                { rel: 'alternate', hreflang: 'en', href: canonicalUrl },
+                { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl },
+            ],
             meta: [
                 { name: 'description', content: resolved.description },
+                { name: 'abstract', content: resolved.description },
                 { name: 'author', content: profile.name },
                 { name: 'creator', content: profile.name },
                 { name: 'publisher', content: seoConfig.siteName },
                 { name: 'subject', content: seoStructuredData.person.jobTitle[resolved.locale] },
+                { name: 'classification', content: seoStructuredData.person.jobTitle[resolved.locale] },
                 { name: 'keywords', content: [...new Set(keywords)].join(', ') },
                 { name: 'robots', content: robotsContent },
                 { name: 'googlebot', content: googlebotContent },
@@ -201,17 +190,11 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image:secure_url', content: imageUrl },
                 { property: 'og:image:type', content: getImageMimeType(imageUrl) },
                 ...(imageWidth && imageHeight
-                    ? [
-                          { property: 'og:image:width', content: String(imageWidth) },
-                          { property: 'og:image:height', content: String(imageHeight) },
-                      ]
+                    ? [{ property: 'og:image:width', content: String(imageWidth) }, { property: 'og:image:height', content: String(imageHeight) }]
                     : []),
                 { property: 'og:image:alt', content: resolved.imageAlt ?? socialTitle },
                 ...(resolved.type === 'article'
-                    ? [
-                          { property: 'article:author', content: profile.name },
-                          { property: 'article:section', content: 'Portfolio' },
-                      ]
+                    ? [{ property: 'article:author', content: profile.name }, { property: 'article:section', content: 'Portfolio' }]
                     : []),
                 { name: 'twitter:card', content: 'summary_large_image' },
                 { name: 'twitter:title', content: socialTitle },

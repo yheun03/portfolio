@@ -1,7 +1,4 @@
-/**
- * 목표: 홈 Highlights 섹션의 탭 선택 상태를 전역으로 관리한다.
- * 기능: 현재 활성 탭을 보관하고, 탭 전환 액션을 제공한다.
- */
+// Highlights 섹션 탭 선택 상태 — 활성 탭 key 관리
 import { defineStore } from 'pinia';
 import type { HighlightTabKey } from '@app-types/highlight-tabs';
 

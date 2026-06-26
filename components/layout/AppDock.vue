@@ -1,6 +1,7 @@
 <template>
     <div class="app-dock-ribbon">
-        <nav class="app-dock" :aria-label="locale === 'ko' ? '빠른 페이지 이동' : 'Quick page navigation'">
+        <nav ref="dockRef" class="app-dock"
+            :aria-label="locale === 'ko' ? '빠른 페이지 이동' : 'Quick page navigation'">
             <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-dock__item"
                 :class="{ 'app-dock__item--active': isActive(link.href) }" :aria-current="getAriaCurrent(link.href)"
                 :aria-disabled="isHashLinkDisabled(link.href) ? 'true' : undefined"
@@ -25,6 +26,8 @@ const props = defineProps<{
 }>();
 
 const router = useRouter();
+const dockRef = ref<HTMLElement | null>(null);
+useDockMagnify(dockRef);
 const isHashNavigationLocked = ref(false);
 /** 브라우저 `window.setTimeout` 반환값 (DOM: number) */
 let hashNavigationTimer: number | null = null;

@@ -1,47 +1,35 @@
-/**
- * 목표: 홈 Highlights 섹션의 탭 UI와 패널 렌더링 데이터를 연결한다.
- * 기능: 탭 목록, 활성 항목/설명, 렌더 key, 탭 선택 액션을 제공한다.
- */
+// Highlights 섹션 탭 목록·활성 항목·설명 computed 및 탭 선택 액션 제공
 import { storeToRefs } from 'pinia';
 import { highlights } from '@data/site';
 import { useHighlightsUiStore } from '@stores/highlights-ui';
 import type { HighlightTabKey } from '@app-types/highlight-tabs';
 
+const TAB_KEYS: HighlightTabKey[] = ['awards', 'certifications', 'roles', 'activities'];
+
 export function useHighlightsTabs() {
-    const highlightsUi = useHighlightsUiStore();
-    const { activeTab } = storeToRefs(highlightsUi);
+    const store = useHighlightsUiStore();
+    const { activeTab } = storeToRefs(store);
     const { t, pick } = useLocale();
 
-    const panelRenderKey = computed(() => activeTab.value);
-
-    const tabs = computed(() => {
-        const entries: { key: HighlightTabKey; label: string }[] = [
-            { key: 'awards', label: t('highlights.awards') },
-            { key: 'certifications', label: t('highlights.certifications') },
-            { key: 'roles', label: t('highlights.roles') },
-            { key: 'activities', label: t('highlights.activities') },
-        ];
-
-        return entries;
-    });
+    const tabs = computed(() => TAB_KEYS.map((key) => ({ key, label: t(`highlights.${key}`) })));
 
     const activeTabIndex = computed(() => {
-        const index = tabs.value.findIndex((tab) => tab.key === activeTab.value);
-        return String(index + 1).padStart(2, '0');
+        const i = TAB_KEYS.indexOf(activeTab.value);
+        return String(i + 1).padStart(2, '0');
     });
 
     const activeItems = computed(() => highlights[activeTab.value].map((item) => pick(item)));
-    const activeTabLabel = computed(() => tabs.value.find((tab) => tab.key === activeTab.value)?.label ?? '');
+    const activeTabLabel = computed(() => t(`highlights.${activeTab.value}`));
     const activeDescription = computed(() => pick(highlights.descriptions[activeTab.value]));
 
     function selectTab(key: HighlightTabKey) {
-        highlightsUi.setTab(key);
+        store.setTab(key);
     }
 
     return {
         activeTab,
         tabs,
-        panelRenderKey,
+        panelRenderKey: activeTab,
         activeTabIndex,
         activeItems,
         activeTabLabel,

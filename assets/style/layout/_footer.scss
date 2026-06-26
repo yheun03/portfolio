@@ -1,7 +1,7 @@
 @use "../abstracts/tokens" as *;
 
 .app-footer {
-    padding: clamp(2.5rem, 5vw, 3.5rem) $space-6 clamp(3rem, 6vw, 4.5rem);
+    padding: clamp(40px, 5vw, 56px) $space-6 clamp(48px, 6vw, 72px);
     text-align: center;
     color: $grayscale-600;
     border-top: 1px solid $grayscale-300;

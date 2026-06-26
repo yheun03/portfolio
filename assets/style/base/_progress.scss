@@ -5,7 +5,7 @@
     gap: var(--space-3);
 
     &--panel {
-        padding: clamp(1rem, 3vw, 1.25rem);
+        padding: clamp(16px, 3vw, 20px);
         border: 1px solid color-mix(in srgb, var(--color-primary) 16%, var(--color-border));
         border-radius: var(--radius-xl);
         background: color-mix(in srgb, var(--color-primary) 7%, var(--color-surface));
@@ -33,7 +33,7 @@
     }
 
     &__track {
-        height: 0.62rem;
+        height: 10px;
         overflow: hidden;
         border-radius: 999px;
         background: color-mix(in srgb, var(--color-border) 68%, transparent);

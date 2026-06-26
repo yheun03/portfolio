@@ -3,7 +3,7 @@
 /* Section title (layout for .section lives in layout/_shell.scss) */
 .section-title {
     position: relative;
-    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+    margin-bottom: clamp(16px, 3vw, 32px);
 
     &::before {
         line-height: var(--line-height-display);
@@ -13,20 +13,11 @@
         display: inline-flex;
         gap: $space-3;
         align-items: center;
-        margin-bottom: $space-2;
-        color: $primary-600;
-        @include font(label, $font-weight-medium);
+        margin-bottom: clamp(10px, 1.5vw, 16px);
+        color: var(--color-primary);
+        @include font(label, $font-weight-semibold);
         text-transform: uppercase;
-
-        &::after {
-            content: "";
-            flex: 1;
-            min-width: 2.5rem;
-            height: 2px;
-            border-radius: 999px;
-            background: $gradient-accent;
-            opacity: 0.85;
-        }
+        letter-spacing: 0.1em;
     }
 
     &__title {
@@ -44,12 +35,12 @@
     }
 
     &__description {
-        max-width: 48ch;
-        margin-top: clamp(1.25rem, 3vw, 2rem);
-        color: var(--color-text);
+        max-width: 44ch;
+        margin-top: clamp(28px, 4vw, 44px);
+        color: var(--color-text-muted);
         @include font(body-1, $line-height: $line-height-body);
         font-size: $font-size-lg;
-        line-height: 1.6;
+        line-height: var(--line-height-body);
     }
 
     &--minimal &__eyebrow::after {

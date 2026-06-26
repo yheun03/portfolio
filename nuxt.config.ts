@@ -141,8 +141,6 @@ export default defineNuxtConfig({
         preset: 'static',
         routeRules: {
             '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-            '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-            '/portfolio/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
             '/images/**': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
             '/assets/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
             '/**/*.webp': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },

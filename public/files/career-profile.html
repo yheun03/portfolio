@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>은영환 2026 경력기술서 및 자기소개서</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #20252b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    .page {
+      width: min(100%, 920px);
+      margin: 0 auto;
+      padding: 48px 28px;
+    }
+
+    .document {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      padding: 56px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid #20252b;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #5a6675;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    h1 {
+      font-size: 34px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-top: 44px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #cfd8e3;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin-top: 24px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 10px 0 0;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .contact {
+      min-width: 220px;
+      color: #4c5867;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .summary-item {
+      border: 1px solid #dfe5ec;
+      padding: 14px;
+      background: #f8fafc;
+    }
+
+    .summary-item strong {
+      display: block;
+      color: #1b4d89;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .summary-item span {
+      display: block;
+      margin-top: 4px;
+      color: #5a6675;
+      font-size: 13px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      margin: 0;
+      border: 1px solid #cad5e2;
+      padding: 5px 10px;
+      background: #f8fafc;
+      color: #344153;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .timeline {
+      margin-top: 18px;
+    }
+
+    .role {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .role:last-child {
+      border-bottom: 0;
+    }
+
+    .period {
+      color: #5a6675;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .project {
+      margin-top: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .project:last-child {
+      border-bottom: 0;
+    }
+
+    .project-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-title span {
+      color: #5a6675;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .intro-section {
+      margin-top: 20px;
+      padding-top: 2px;
+    }
+
+    .quote {
+      margin-top: 8px;
+      color: #1b4d89;
+      font-weight: 700;
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      margin-top: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .education:last-child {
+      border-bottom: 0;
+    }
+
+    .compact-list {
+      columns: 2;
+      column-gap: 36px;
+    }
+
+    .portfolio a {
+      color: #1b4d89;
+      word-break: break-all;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 0;
+      }
+
+      .document {
+        border: 0;
+        padding: 32px 20px;
+      }
+
+      .header,
+      .role,
+      .education {
+        display: block;
+      }
+
+      .contact {
+        margin-top: 16px;
+        text-align: left;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-title {
+        display: block;
+      }
+
+      .compact-list {
+        columns: 1;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .document {
+        border: 0;
+        padding: 0;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+
+      .project,
+      .role,
+      .education,
+      .summary-item {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="document">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Web Publisher · Frontend Developer</p>
+          <h1>은영환 2026 경력기술서</h1>
+          <p>HTML, SCSS 기반 웹 퍼블리싱에서 Vue 3 기반 프론트엔드 개발로 확장 중인 실무형 웹 퍼블리셔입니다. 기업 홈페이지, MES/OMS/SCM/TMS 등 업무 시스템, 자사 솔루션 화면 구축과 운영을 수행했습니다.</p>
+        </div>
+        <div class="contact">
+          <p>경력 5년 9개월</p>
+          <p>조앤소프트㈜ DX 솔루션 2팀 · 주임</p>
+          <p>Web Publisher / Frontend</p>
+        </div>
+      </header>
+
+      <section>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <strong>20+</strong>
+            <span>프로젝트 수행</span>
+          </div>
+          <div class="summary-item">
+            <strong>100%</strong>
+            <span>주요 화면 퍼블리싱</span>
+          </div>
+          <div class="summary-item">
+            <strong>60%</strong>
+            <span>공통 UI 공수 절감</span>
+          </div>
+          <div class="summary-item">
+            <strong>30%</strong>
+            <span>가이드 기반 협업 개선</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>프로필 요약</h2>
+        <ul>
+          <li>5년 9개월 동안 제조·물류·항공·기업 홈페이지 중심의 SI/SM 및 자사 솔루션 프로젝트를 수행했습니다.</li>
+          <li>퍼블리싱 결과물을 단순 화면 구현이 아닌 유지보수 가능한 UI 구조, 공통 컴포넌트, 개발 연동 기준으로 정리합니다.</li>
+          <li>Vue 3 기반 프로젝트에서 컴포넌트 구조, API 연동, Router, i18n, 상태 관리 흐름까지 이해하며 프론트엔드 영역을 확장하고 있습니다.</li>
+          <li>공식 가이드가 부족한 환경에서도 산출물, 개발 가이드, 교육 문서를 직접 정리해 협업 기준을 만들었습니다.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>핵심 키워드</h2>
+        <ul class="tags">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>SCSS</li>
+          <li>JavaScript</li>
+          <li>Vue 3</li>
+          <li>Axios</li>
+          <li>Pinia</li>
+          <li>Router</li>
+          <li>i18n</li>
+          <li>React</li>
+          <li>Figma</li>
+          <li>WebSquare</li>
+          <li>Nexacro</li>
+          <li>ICE CMS</li>
+          <li>웹표준</li>
+          <li>크로스브라우징</li>
+          <li>Responsive UI</li>
+          <li>CMS Customizing</li>
+          <li>UI Guide</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>경력 요약</h2>
+        <div class="timeline">
+          <div class="role">
+            <div class="period">2020.09 - 재직중</div>
+            <div>
+              <h3>조앤소프트㈜ · DX 솔루션 2팀 · 주임</h3>
+              <p>기업 홈페이지, 스마트팩토리, 물류 시스템, 자사 솔루션 구축과 운영 프로젝트에서 퍼블리싱 전반을 담당했습니다. 요구사항 분석, 화면 구조 설계, SCSS 컴포넌트화, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 수행했습니다.</p>
+              <p>Robo TMS, Robo MES, 태림포장, 삼화페인트, 대양제지, 깨끗한나라, 경동원, 한진칼 등 프로젝트에서 화면 품질과 일정 준수에 기여했습니다. 가이드가 부족한 환경에서는 개발 가이드와 교육 문서를 직접 제작해 협업 기준을 정리했습니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>성과 중심 요약</h2>
+        <ul>
+          <li>20건 이상 프로젝트에서 주요 화면 퍼블리싱을 책임지고, 신규 구축과 운영 유지보수를 모두 경험했습니다.</li>
+          <li>SCSS 컴포넌트화와 공통 UI 모듈화로 반복 작업을 줄이고, 프로젝트별 퍼블리싱 공수를 최대 60% 절감했습니다.</li>
+          <li>개발 가이드, 교육 문서, 산출물 정리로 협력사 커뮤니케이션 비용을 약 30% 줄였습니다.</li>
+          <li>UI/UX 개선 제안과 이슈 리포트 체계화를 통해 운영 문의 및 사용자 불편 감소에 기여했습니다.</li>
+          <li>다국어, SSL, OG, 검색 노출 요소를 정리해 자사 홈페이지의 글로벌 대응력과 브랜드 신뢰도를 높였습니다.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>주요 프로젝트</h2>
+        <div class="project">
+          <div class="project-title">
+            <h3>오알켐 MES 리뉴얼</h3>
+            <span>2026.03 - 진행중</span>
+          </div>
+          <p><strong>역할:</strong> Vue 3 기반 화면 구조 설계 및 퍼블리싱</p>
+          <p><strong>성과:</strong> 납품 예정 MES 화면을 재구성하고, 개발 방식의 편차를 줄여 동일한 품질로 확장 가능한 기준을 정리했습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>자사 홈페이지 리뉴얼</h3>
+            <span>2025.07 - 2025.08</span>
+          </div>
+          <p><strong>역할:</strong> HTML/SCSS 기반 전면 리뉴얼, 다국어 구조, 배포 안정화 지원</p>
+          <p><strong>성과:</strong> 중복 마크업을 제거하고 SCSS 컴포넌트 구조를 정리해 유지보수 효율을 높였습니다. 영문·베트남어·일어 구조와 SSL, OG 설정을 적용했습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>한진칼 및 계열사 홈페이지 리뉴얼</h3>
+            <span>2025.02 - 2025.07</span>
+          </div>
+          <p><strong>역할:</strong> Vue 컴포넌트 기반 ICE CMS 커스터마이징</p>
+          <p><strong>성과:</strong> 공식 가이드가 부족한 상황에서 개발 가이드와 교육 문서를 제작해 협업 기준을 만들고 운영 안정성을 높였습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>깨끗한나라 OMS 리뉴얼</h3>
+            <span>2024.07 - 2025.02</span>
+          </div>
+          <p><strong>역할:</strong> Vue 기반 OMS 주요 화면 퍼블리싱</p>
+          <p><strong>성과:</strong> 주요 화면을 조기 완료하고 UX 개선안을 반영해 사용자 편의성 향상에 기여했습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>대양제지 SCM 구축</h3>
+            <span>2024.05 - 2024.06</span>
+          </div>
+          <p><strong>역할:</strong> SCM 공통 UI 모듈화 및 화면 퍼블리싱</p>
+          <p><strong>성과:</strong> 반복 UI를 컴포넌트 단위로 정리해 퍼블리싱 공수를 줄이고 개발 일정 단축에 기여했습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>Robo TMS 솔루션</h3>
+            <span>2024.02 - 2024.04</span>
+          </div>
+          <p><strong>역할:</strong> 기획, 디자인, 퍼블리싱 전담</p>
+          <p><strong>성과:</strong> 고객 요구사항을 바탕으로 UI/UX를 재설계하고 사용 흐름을 정리해 운영 문의 감소에 기여했습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>Robo MES 솔루션</h3>
+            <span>2022.08 - 2023.04</span>
+          </div>
+          <p><strong>역할:</strong> 스마트팩토리 솔루션 화면 퍼블리싱 및 컴포넌트 구축</p>
+          <p><strong>성과:</strong> 반복 화면을 모듈 단위로 구조화해 유지보수성과 확장성을 개선했습니다.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">
+            <h3>TOMS 서비스 구축</h3>
+            <span>2021.10 - 2021.12</span>
+          </div>
+          <p><strong>역할:</strong> 디자인, 퍼블리싱, UX 기획 전담</p>
+          <p><strong>성과:</strong> 프로젝트 결과물이 스마트앱어워드 2022 업무향상 부문 대상을 수상했습니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>자기소개서 요약</h2>
+        <div class="intro-section">
+          <h3>성장 과정</h3>
+          <p class="quote">실전 경험으로 성장한 웹 퍼블리셔</p>
+          <p>고등학교 시절 HTML, CSS, JavaScript를 배우며 웹 개발을 시작했고, 동아리와 메이커톤, 팀 프로젝트를 통해 직접 결과물을 만드는 경험을 쌓았습니다. 이후 실무에서는 기업 시스템과 자사 솔루션 프로젝트를 수행하며 사용자 관점과 개발 구조를 함께 고려하는 퍼블리셔로 성장했습니다.</p>
+        </div>
+        <div class="intro-section">
+          <h3>직무 강점</h3>
+          <p class="quote">디자인과 개발 사이를 연결하는 실행력</p>
+          <p>저의 강점은 화면을 구현하는 데서 끝나지 않고, 유지보수 가능한 구조로 정리하는 데 있습니다. SCSS 컴포넌트화, 공통 UI 정리, CMS 커스터마이징을 통해 반복 작업을 줄이고 개발자가 안정적으로 연동할 수 있는 화면을 만들었습니다.</p>
+        </div>
+        <div class="intro-section">
+          <h3>성격 및 협업 방식</h3>
+          <p class="quote">꼼꼼함과 공유 중심의 협업 방식</p>
+          <p>화면 간격, 폰트, 반응형 흐름처럼 작은 차이가 사용자 경험을 좌우한다고 생각합니다. 그래서 구현 과정에서 디자인 의도와 개발 제약을 함께 확인합니다. 협업에서는 먼저 정리하고 공유하는 방식을 선호하며, 가이드와 예시를 만들어 팀원들이 같은 기준으로 작업할 수 있도록 돕습니다.</p>
+        </div>
+        <div class="intro-section">
+          <h3>가치관 및 포부</h3>
+          <p class="quote">퍼블리싱을 기반으로 프론트엔드까지 확장</p>
+          <p>앞으로는 HTML, SCSS 기반의 강점을 유지하면서 Vue 3, API 연동, 상태 관리, 라우팅, 다국어 처리 등 프론트엔드 영역을 더 깊게 확장하고자 합니다. 디자인 의도를 정확히 구현하는 퍼블리셔를 넘어, 서비스 구조와 사용자 경험을 함께 고민하는 프론트엔드 개발자로 성장하겠습니다.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>학력</h2>
+        <div class="education">
+          <div class="period">2023.03 - 2025.02</div>
+          <div>
+            <h3>한국공학대학교 컴퓨터전자공학과</h3>
+            <p>편입/졸업 · 학점 4.45/4.5</p>
+          </div>
+        </div>
+        <div class="education">
+          <div class="period">2021.03 - 2023.02</div>
+          <div>
+            <h3>배화여자대학교 모바일소프트웨어과</h3>
+            <p>졸업 · 학점 4.27/4.5</p>
+          </div>
+        </div>
+        <div class="education">
+          <div class="period">2018.03 - 2021.02</div>
+          <div>
+            <h3>서울디지텍고등학교 사물인터넷학과</h3>
+            <p>특성화/마이스터고 졸업</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>자격 및 수상</h2>
+        <ul class="compact-list">
+          <li>정보통신기술자경력수첩 초급</li>
+          <li>NCS 인공지능개발_L5</li>
+          <li>NCS SW개발_L5</li>
+          <li>정보처리산업기사</li>
+          <li>정보처리기능사</li>
+          <li>웹디자인기능사</li>
+          <li>NCA 네이버 클라우드</li>
+          <li>i-AWARDS 평가위원</li>
+          <li>2023 일학습병행 우수사례 경진대회 대상</li>
+          <li>2022 메이커톤 지구(EARTH) 우수상</li>
+          <li>제5회 G AI & IoT 메이커톤 최우수상</li>
+          <li>2020 명동 루프탑 캐릭터 메이커톤 대상</li>
+        </ul>
+      </section>
+
+      <section class="portfolio">
+        <h2>포트폴리오</h2>
+        <ul>
+          <li><a href="https://github.com/yheun03">https://github.com/yheun03</a></li>
+          <li><a href="https://yheun03.github.io/portfolio/">https://yheun03.github.io/portfolio/</a></li>
+          <li><a href="https://jonsoft.co.kr/">https://jonsoft.co.kr/</a></li>
+          <li><a href="https://yheun03.github.io/jonsoft-project-orchem/">https://yheun03.github.io/jonsoft-project-orchem/</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

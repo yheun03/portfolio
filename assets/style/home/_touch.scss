@@ -6,6 +6,7 @@
 ============================================================================= */
 
 @media (max-width: #{$bp-max-tablet}) {
+
     .section.section--about,
     .section.section--contact {
         padding-block: var(--section-pad-y);
@@ -77,7 +78,7 @@
     }
 
     /* ----- Journey / Toolbox ----- */
-    .section--toolbox > .section-title {
+    .section--toolbox>.section-title {
         position: static;
         width: 100%;
     }
@@ -172,7 +173,8 @@
         width: 100%;
         max-width: 100%;
         margin-inline: 0;
-        padding-block: var(--space-3) var(--space-8);
+        /* overflow-x: auto forces overflow-y: auto → bottom padding must cover box-shadow extent */
+        padding-block: var(--space-4) clamp(56px, 8vw, 80px);
         padding-inline: var(--swipe-edge-space);
         grid-template-columns: none;
         overflow-x: auto;
@@ -253,7 +255,8 @@
     }
 
     .contact__mail-display {
-        font-size: clamp(2rem, 5.5vw, 3rem);
+        font-size: clamp(5rem, 7.5vw, 12rem);
+        // font-size: clamp(2rem, 5.5vw, 3rem);
     }
 
     .works__list-control {
@@ -271,12 +274,13 @@
 /* ----- Mobile: compact type & rails ----- */
 @media (max-width: #{$bp-max-mobile}) {
     .contact__mail-display {
-        font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+        font-size: clamp(4rem, 7.5vw, 9rem);
+        // font-size: clamp(1.65rem, 7.5vw, 2.5rem);
     }
 
     .section--works .works__filters.tab-list.tab-list--rail .tab-list__tab,
     .section--highlights .highlights__filters.tab-list.tab-list--rail .tab-list__tab {
         min-height: var(--size-touch);
-        padding-inline: 1rem;
+        padding-inline: 16px;
     }
 }

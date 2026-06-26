@@ -1,37 +1,32 @@
-/**
- * 목표: 정적 i18n 메시지와 locale별 데이터 선택을 간단한 composable로 제공한다.
- * 기능: 번역 key 조회, { ko, en } 값 선택, locale 전환 액션 연결을 수행한다.
- */
+// i18n 번역(t), 다국어 값 선택(pick), 언어 전환(toggleLocale) 제공
 import ko from '@i18n/ko.json';
 import en from '@i18n/en.json';
 import { useLocaleStore, type Locale } from '@stores/locale';
 
 type LocaleMessageValue = string | { readonly [key: string]: LocaleMessageValue };
 type LocaleMessages = Record<string, LocaleMessageValue>;
-type LocalizedValue<T> = Readonly<Record<Locale, T>>;
 
 const messages = { ko, en } satisfies Record<Locale, LocaleMessages>;
 
-const getByPath = (obj: LocaleMessages, path: string): string => {
+function getByPath(obj: LocaleMessages, path: string): string {
     const value = path.split('.').reduce<LocaleMessageValue | undefined>((acc, key) => {
         if (!acc || typeof acc === 'string') return undefined;
         return acc[key];
     }, obj);
-
     return typeof value === 'string' ? value : path;
-};
+}
 
-export const useLocale = () => {
+export function useLocale() {
     const store = useLocaleStore();
     const locale = computed(() => store.current);
 
-    const t = (key: string) => getByPath(messages[locale.value], key);
-    const pick = <T>(record: LocalizedValue<T>) => record[locale.value];
+    function t(key: string) {
+        return getByPath(messages[locale.value], key);
+    }
 
-    return {
-        locale,
-        t,
-        pick,
-        toggleLocale: store.toggleLocale,
-    };
-};
+    function pick<R extends { readonly ko: unknown; readonly en: unknown }>(record: R): R['ko'] | R['en'] {
+        return record[locale.value];
+    }
+
+    return { locale, t, pick, toggleLocale: store.toggleLocale };
+}
