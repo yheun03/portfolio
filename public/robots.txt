@@ -7,3 +7,4 @@ Disallow: /portfolio/personal/design-tokens
 Disallow: /portfolio/personal/design-tokens/
 
 Sitemap: https://yheun03.github.io/portfolio/sitemap.xml
+LLMs: https://yheun03.github.io/portfolio/llms.txt
