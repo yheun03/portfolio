@@ -41,7 +41,6 @@
         "displayLine1": "Easy to read",
         "displayLine2": "Fast to use",
         "displayLine3": "Built to last",
-        "workflowSteps": ["Read", "Shape", "Build", "Check"],
         "principlesAriaLabel": "Work principles",
         "workflowAriaLabel": "Workflow",
         "stepsAriaLabel": "Steps"

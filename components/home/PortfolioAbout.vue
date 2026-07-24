@@ -24,13 +24,13 @@
                 </ul>
             </section>
 
-            <SurfaceCard class="about__workflow" flow data-animate :aria-label="t('about.workflowAriaLabel')"
+            <SurfaceCard class="about__workflow" data-card-pointer="glow" flow data-animate :aria-label="t('about.workflowAriaLabel')"
                 :title="t('about.workflowTitle')">
                 <ol class="flow-steps" :aria-label="t('about.stepsAriaLabel')">
                     <li v-for="(step, index) in aboutContent.workflow" :key="index"
                         :style="{ '--stagger-i': index }" data-stagger>
                         <span class="flow-steps__index">{{ String(index + 1).padStart(2, "0") }}</span>
-                        <span class="flow-steps__label">{{ t(`about.workflowSteps.${index}`) }}</span>
+                        <span class="flow-steps__label">{{ pick(step.label) }}</span>
                     </li>
                 </ol>
             </SurfaceCard>

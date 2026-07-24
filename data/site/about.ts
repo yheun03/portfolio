@@ -83,24 +83,39 @@ const data = {
     ],
     workflow: [
         {
-            ko: '요구사항과 화면 목적을 먼저 파악합니다.',
-            en: 'Clarify requirements and screen purpose first.',
+            label: { ko: '파악', en: 'Read' },
+            description: {
+                ko: '요구사항과 화면 목적을 먼저 파악합니다.',
+                en: 'Clarify requirements and screen purpose first.',
+            },
         },
         {
-            ko: '구조와 공통 요소를 먼저 정리합니다.',
-            en: 'Organize structure and common elements early.',
+            label: { ko: '정리', en: 'Shape' },
+            description: {
+                ko: '구조와 공통 요소를 먼저 정리합니다.',
+                en: 'Organize structure and common elements early.',
+            },
         },
         {
-            ko: '반복 스타일은 SCSS 컴포넌트화합니다.',
-            en: 'Componentize repeated styles with SCSS.',
+            label: { ko: '구현', en: 'Build' },
+            description: {
+                ko: '반복 스타일은 SCSS 컴포넌트화합니다.',
+                en: 'Componentize repeated styles with SCSS.',
+            },
         },
         {
-            ko: '협업자가 이해하기 쉬운 형태로 문서화합니다.',
-            en: 'Document for collaboration readability.',
+            label: { ko: '검증', en: 'Check' },
+            description: {
+                ko: '협업자가 이해하기 쉬운 형태로 문서화합니다.',
+                en: 'Document for collaboration readability.',
+            },
         },
         {
-            ko: '빠른 납기에서도 품질 우선순위를 유지합니다.',
-            en: 'Keep quality priorities under fast schedules.',
+            label: { ko: '품질', en: 'Quality' },
+            description: {
+                ko: '빠른 납기에서도 품질 우선순위를 유지합니다.',
+                en: 'Keep quality priorities under fast schedules.',
+            },
         },
     ],
     direction: {

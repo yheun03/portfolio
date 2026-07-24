@@ -41,7 +41,6 @@
         "displayLine1": "쉽게 읽히고",
         "displayLine2": "빠르게 쓰이는",
         "displayLine3": "화면을 만듭니다",
-        "workflowSteps": ["파악", "정리", "구현", "검증"],
         "principlesAriaLabel": "작업 원칙",
         "workflowAriaLabel": "작업 흐름",
         "stepsAriaLabel": "단계"
