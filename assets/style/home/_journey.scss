@@ -1,40 +1,11 @@
 @use "../abstracts/tokens" as *;
-/* Portfolio journey refresh */
-.section.section--journey {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(48px, 8vw, 96px);
-    align-items: stretch;
-    grid-template-columns: unset;
-}
-
-.journey__head {
-    display: grid;
-    gap: var(--space-section-gap);
-    max-width: min(640px, 100%);
-    text-align: start;
-
-    .section-title {
-        align-items: flex-start;
-        margin-bottom: 0;
-        text-align: start;
-    }
-
-    .section-title__description {
-        margin-inline: 0;
-        max-width: 42ch;
-    }
-}
 
 .journey__flow {
     display: grid;
     gap: clamp(40px, 6vw, 64px);
     min-width: 0;
-    max-width: 100%;
-    overflow: visible;
 }
 
-/* view-switch: kicker + segment control 한 행 배치 */
 .journey__view-switch {
     display: flex;
     flex-wrap: wrap;
@@ -48,11 +19,6 @@
     margin: 0;
     @include font(display-4);
     text-wrap: balance;
-}
-
-.journey__chapters {
-    display: grid;
-    gap: 0;
 }
 
 .journey__chapter {
@@ -72,22 +38,20 @@
 }
 
 .journey__chapter-card {
-    position: sticky;
-    top: var(--home-sticky-top);
+    @include sticky-sidebar;
     display: grid;
     gap: clamp(10px, 1.5vw, 16px);
     align-content: start;
     min-width: 0;
 }
 
-.journey__chapter-index {
+.journey__chapter-index,
+.journey__temp-label {
     margin: 0;
-    color: var(--color-primary);
-    @include font(label, $font-weight-bold);
+    @include index-label;
 }
 
 .journey__temp-label {
-    margin: 0;
     @include font(label, $font-weight-medium);
     text-transform: uppercase;
     color: color-mix(in srgb, var(--color-primary) 72%, var(--color-text-muted));
@@ -135,8 +99,6 @@
     list-style: none;
 
     li {
-        display: inline-flex;
-        align-items: center;
         padding: 6px 12px;
         border: 1px solid color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
         border-radius: 999px;
@@ -144,13 +106,10 @@
         color: var(--color-text);
         @include font(chip, $font-weight-bold);
         line-height: 1.25;
-        letter-spacing: 0.01em;
         white-space: nowrap;
-        box-shadow: 0 1px 0 color-mix(in srgb, var(--color-surface) 88%, var(--color-primary));
     }
 }
 
-/* 소속순 — editorial entries와 동일한 목록 레일 */
 .journey__chapter .journey__steps {
     display: grid;
     gap: clamp(20px, 2.5vw, 28px);
@@ -169,8 +128,7 @@
 
     &__period {
         margin: 0;
-        color: var(--color-primary);
-        @include font(label, $font-weight-bold);
+        @include index-label;
     }
 
     &__title {

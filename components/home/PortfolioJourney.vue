@@ -1,6 +1,6 @@
 <template>
     <section id="journey" class="section section--journey" aria-labelledby="section-journey-title">
-        <header class="journey__head">
+        <header class="section-head section-head--start">
             <BaseSectionTitle title-id="section-journey-title" :eyebrow="t('nav.journey')" :title="t('journey.title')"
                 :description="t('journey.summary')" />
         </header>

@@ -1,36 +1,96 @@
 @use "../abstracts/tokens" as *;
 
-/* Shared home section patterns for split-column editorial blocks. */
-.works.section--works,
+/* Stacked editorial sections */
+.section.section--journey,
+.section.section--toolbox {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(48px, 8vw, 96px);
+    align-items: stretch;
+    grid-template-columns: unset;
+}
+
+.section-head {
+    display: grid;
+    gap: var(--space-section-gap);
+
+    .section-title {
+        margin-bottom: 0;
+    }
+
+    &--center {
+        max-width: min(832px, 100%);
+        margin-inline: auto;
+        text-align: center;
+
+        .section-title {
+            align-items: center;
+            text-align: center;
+        }
+
+        .section-title__description {
+            margin-inline: auto;
+            max-width: 46ch;
+        }
+    }
+
+    &--start {
+        max-width: min(640px, 100%);
+        text-align: start;
+
+        .section-title {
+            align-items: flex-start;
+            text-align: start;
+        }
+
+        .section-title__description {
+            margin-inline: 0;
+            max-width: 42ch;
+        }
+    }
+}
+
+.spotlight-block {
+    display: grid;
+    gap: clamp(20px, 3vw, 32px);
+    width: 100%;
+
+    .spotlight__kicker {
+        max-width: none;
+        margin-inline: auto;
+        text-align: center;
+        text-wrap: balance;
+    }
+}
+
+/* Journey highlights — split sidebar layout */
 .highlights.section--highlights {
     position: relative;
     overflow: visible;
-    content-visibility: visible;
-    contain-intrinsic-size: none;
     padding-top: calc(var(--space-section-y) + 80px);
     grid-template-columns: var(--home-section-columns);
     column-gap: var(--home-section-column-gap);
     align-items: start;
 }
 
-.works__title-col,
+.highlights__filters {
+    align-self: stretch;
+    justify-self: start;
+}
+
+.highlights .section-title {
+    margin-bottom: 0;
+}
+
 .highlights__title-col {
     grid-column: 1;
     grid-row: 1 / -1;
-    position: sticky;
-    top: var(--home-sticky-top);
-    align-self: start;
+    @include sticky-sidebar;
     display: grid;
     gap: var(--space-4);
     padding-inline-end: var(--space-2);
 }
 
-.works .section-title,
-.highlights .section-title {
-    margin-bottom: 0;
-}
-
-.works__total-badge,
 .highlights__total-badge {
     position: absolute;
     top: clamp(24px, 3.5vw, 48px);
@@ -39,16 +99,9 @@
     display: inline-grid;
     gap: var(--space-1);
     width: fit-content;
-    min-width: 0;
-    max-width: 100%;
-    overflow: visible;
     isolation: isolate;
     padding: var(--space-3) var(--space-5);
-    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-    border-radius: var(--radius-lg);
-    background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(12px);
+    @include glass-panel;
 
     span,
     small {
@@ -73,7 +126,6 @@
     }
 }
 
-.works__archive-summary,
 .highlights__archive-summary {
     display: grid;
     gap: var(--space-3);
@@ -88,7 +140,6 @@
     backdrop-filter: blur(12px);
 }
 
-.works__archive-meta,
 .highlights__archive-meta {
     display: flex;
     flex-wrap: wrap;
@@ -97,14 +148,11 @@
     margin: 0;
 
     strong {
-        background: var(--gradient-accent);
-        background-clip: text;
-        color: transparent;
+        @include gradient-accent-text;
         font-family: var(--font-display);
         font-size: clamp(2.6rem, 8vw, 4.6rem);
         font-weight: var(--font-weight-black);
         line-height: 0.9;
-        -webkit-background-clip: text;
     }
 
     span {
@@ -113,8 +161,8 @@
     }
 }
 
-.works__archive-meter,
 .highlights__archive-meter {
+    --home-archive-ratio: var(--highlights-highlight-ratio, 0%);
     position: relative;
     overflow: hidden;
     height: 7px;
@@ -131,15 +179,6 @@
     }
 }
 
-.works__archive-meter {
-    --home-archive-ratio: var(--works-highlight-ratio, 0%);
-}
-
-.highlights__archive-meter {
-    --home-archive-ratio: var(--highlights-highlight-ratio, 0%);
-}
-
-.works__archive-caption,
 .highlights__archive-caption {
     margin: 0;
     color: var(--color-text-muted);
@@ -147,3 +186,19 @@
     line-height: 1.6;
 }
 
+@media (max-width: #{$bp-max-tablet}) {
+    .section.section--toolbox {
+        gap: var(--section-gap);
+    }
+
+    .section-head--center {
+        text-align: start;
+
+        .section-title,
+        .section-title__description {
+            align-items: flex-start;
+            margin-inline: 0;
+            text-align: start;
+        }
+    }
+}

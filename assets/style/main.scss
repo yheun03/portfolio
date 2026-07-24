@@ -30,17 +30,12 @@
 
 /* Home sections */
 @use "home/hero";
-@use "home/about";
 @use "home/story";
 @use "home/shared";
-@use "home/works";
-@use "home/personal";
 @use "home/journey";
 @use "home/highlights";
-@use "home/toolbox-highlights";
 @use "home/contact";
-@use "home/touch";
-@use "home/responsive";
+@use "home/handheld";
 
 /* Route-level pages */
 @use "pages/error";

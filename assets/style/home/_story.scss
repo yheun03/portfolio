@@ -1,11 +1,47 @@
 @use "../abstracts/tokens" as *;
 
-/* =========================================
-   Home story blocks — Why · Showcase · Proof · How
-   제품 소개형 홈 6블록 (Apple-style showcase)
-========================================= */
+/* About (PortfolioWhy) */
+.section.section--about {
+    display: block;
+    min-height: auto;
+    background: transparent;
 
-/* Why — 핵심 가치 3개 대형 타이포 */
+    &::before,
+    &::after {
+        content: none;
+    }
+
+    @media (min-width: #{$bp-min-laptop}) {
+        padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
+    }
+}
+
+.about__stage {
+    display: grid;
+    gap: clamp(24px, 4vw, 40px);
+
+    @media (min-width: #{$bp-min-laptop}) {
+        gap: clamp(64px, 10vw, 120px);
+    }
+}
+
+.about__intro {
+    max-width: min(1152px, 100%);
+}
+
+.about__display {
+    margin: 0;
+    @include font(display-1);
+}
+
+.about__display-line {
+    @include display-line;
+}
+
+.about__lead {
+    @include editorial-lead;
+}
+
 .why__list {
     display: grid;
     gap: clamp(48px, 8vw, 96px);
@@ -49,14 +85,9 @@
 }
 
 .why__index {
-    color: var(--color-primary);
-    font-family: var(--font-mono);
-    font-size: var(--font-size-label);
-    font-weight: 700;
-    letter-spacing: var(--tracking-label);
+    @include index-label;
 }
 
-/* Showcase — 대표 작업 3 케이스: 피처드 1 + 서브 2 */
 .showcase__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -65,7 +96,7 @@
     padding: 0;
     list-style: none;
 
-    @media (max-width: #{$bp-max-narrow}) {
+    @media (max-width: #{$bp-max-tablet}) {
         grid-template-columns: minmax(0, 1fr);
     }
 }
@@ -75,49 +106,16 @@
 }
 
 .story-case {
-    position: relative;
     display: grid;
     align-content: start;
     gap: clamp(14px, 2vw, 22px);
     min-height: clamp(240px, 28vw, 336px);
     height: 100%;
-    padding: var(--card-padding-lg);
     overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-    border-radius: var(--radius-2xl);
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-    box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     color: inherit;
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.32s ease,
-        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-
-    /* 포인터 글로우 — usePointerGlow가 갱신하는 --glow-x/--glow-y 사용 */
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: radial-gradient(416px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-                color-mix(in srgb, var(--color-primary) 9%, transparent),
-                transparent 65%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-    }
-
-    &.is-glow::before {
-        opacity: 1;
-    }
+    text-decoration: none;
 
     @media (hover: hover) {
-        &:hover {
-            transform: translateY(-5px);
-            border-color: color-mix(in srgb, var(--color-primary) 26%, var(--color-border));
-            box-shadow: 0 30px 76px color-mix(in srgb, var(--color-primary) 10%, transparent);
-        }
-
         &:hover .story-case__cta-arrow {
             translate: 5px 0;
         }
@@ -155,15 +153,11 @@
     }
 
     &__tag {
+        @include index-label;
         display: inline-flex;
         align-items: center;
         gap: 9px;
         margin: 0;
-        color: var(--color-primary);
-        font-family: var(--font-mono);
-        font-size: var(--font-size-xs);
-        font-weight: 700;
-        letter-spacing: var(--tracking-label);
         text-transform: uppercase;
     }
 
@@ -236,22 +230,15 @@
     }
 }
 
-/* 피처드 카드 — 데스크톱에서 에디토리얼 2컬럼 */
 @media (min-width: #{$bp-min-laptop}) {
     .showcase__item--featured .story-case {
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        grid-template-areas:
-            "head head"
-            "title summary"
-            "stack summary"
-            "cta summary";
+        grid-template-areas: "head head" "title summary" "stack summary" "cta summary";
         column-gap: clamp(32px, 4vw, 56px);
         align-items: start;
         min-height: clamp(272px, 26vw, 368px);
 
-        .story-case__head {
-            grid-area: head;
-        }
+        .story-case__head { grid-area: head; }
 
         h3 {
             grid-area: title;
@@ -266,14 +253,8 @@
             max-width: 52ch;
         }
 
-        .story-case__stack {
-            grid-area: stack;
-            align-self: end;
-        }
-
-        .story-case__cta {
-            grid-area: cta;
-        }
+        .story-case__stack { grid-area: stack; align-self: end; }
+        .story-case__cta { grid-area: cta; }
     }
 }
 
@@ -283,7 +264,6 @@
     gap: var(--space-3);
 }
 
-/* Proof — 숫자 밴드 + 이력 링크 */
 .proof__metrics {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -292,7 +272,7 @@
     padding: clamp(32px, 4.5vw, 56px) 0;
     border-block: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
 
-    @media (max-width: 767px) {
+    @media (max-width: #{$bp-max-mobile}) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: clamp(20px, 5vw, 32px);
     }
@@ -304,7 +284,6 @@
         min-width: 0;
         padding-inline-start: clamp(16px, 2vw, 24px);
 
-        /* 스펙시트 느낌의 세로 구분선 */
         &:not(:first-child)::before {
             content: "";
             position: absolute;
@@ -324,10 +303,7 @@
         font-weight: 900;
         letter-spacing: var(--tracking-tight);
         line-height: 1;
-        background: var(--gradient-accent);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
+        @include gradient-accent-text;
         transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -352,7 +328,6 @@
     gap: var(--space-3);
 }
 
-/* How — 작업 방식 (flow-steps 재사용) + 스택 링크 */
 .how__steps-card {
     display: grid;
     gap: clamp(24px, 3.5vw, 40px);
@@ -361,7 +336,6 @@
         position: relative;
         transition: border-color 0.3s ease;
 
-        /* 상단 보더 위로 차오르는 액센트 라인 */
         &::before {
             content: "";
             position: absolute;

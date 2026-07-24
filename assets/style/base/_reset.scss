@@ -90,7 +90,7 @@ label {
     line-height: inherit;
 }
 
-@media (max-width: 767px) {
+@media (max-width: #{$bp-max-mobile}) {
     body {
         @include font(body-1);
     }

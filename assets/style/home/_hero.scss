@@ -1,11 +1,5 @@
 @use "../abstracts/tokens" as *;
 
-/* =========================================
-   Portfolio Hero — 2026 Editorial
-   Apple-inspired: full viewport, centered,
-   single-column layout with generous spacing
-========================================= */
-
 .hero {
     &.section--hero {
         max-width: none;
@@ -15,41 +9,24 @@
     &__poster {
         position: relative;
         display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:
-            "meta"
-            "stage"
-            "essentials"
-            "actions";
+        grid-template-areas: "meta" "stage" "actions";
         gap: clamp(32px, 4.5vw, 56px);
         align-items: start;
         padding: 0;
-        overflow: visible;
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
-        background: transparent;
         isolation: isolate;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
 
-        .hero__actions {
-            grid-area: actions;
-        }
-
-        .hero__stage {
-            grid-area: stage;
-        }
-
-        .hero__essentials {
-            grid-area: essentials;
-        }
+        .hero__meta { grid-area: meta; }
+        .hero__stage { grid-area: stage; }
+        .hero__actions { grid-area: actions; }
     }
 
-    /* ── Ambient canvas: 블러 그라디언트 오브 (GSAP 시차 대상) ── */
     &__canvas {
         position: absolute;
         inset: -8% -4%;
         z-index: -1;
-        overflow: visible;
         pointer-events: none;
     }
 
@@ -98,7 +75,6 @@
         }
     }
 
-    /* ── Pointer spotlight: 커서를 따라오는 라디얼 하이라이트 ── */
     &__spotlight {
         position: absolute;
         inset: 0;
@@ -109,8 +85,6 @@
         background: radial-gradient(576px circle at var(--glow-x, 50%) var(--glow-y, 30%),
                 color-mix(in srgb, var(--color-primary) 8%, transparent),
                 transparent 70%);
-        // 위/아래 가장자리에서 글로우를 0으로 페이드 → 인접 섹션 경계의 하드 컷 제거
-        // (좌우는 풀블리드라 화면 끝과 맞닿아 별도 처리 불필요)
         mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
     }
@@ -119,7 +93,6 @@
         opacity: 1;
     }
 
-    /* ── Scroll cue ── */
     &__cue {
         position: absolute;
         bottom: clamp(20px, 3vw, 40px);
@@ -166,7 +139,6 @@
     }
 
     &__meta {
-        grid-area: meta;
         display: inline-flex;
         flex-wrap: wrap;
         gap: 6px 10px;
@@ -185,16 +157,11 @@
     }
 
     &__stage {
-        grid-area: stage;
         max-width: min(1248px, 100%);
     }
 
     &__eyebrow {
         margin-bottom: clamp(20px, 3vw, 32px);
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
         color: var(--color-text-muted);
         font-size: var(--font-size-sm);
         letter-spacing: var(--tracking-label);
@@ -211,19 +178,11 @@
     }
 
     &__display-line {
-        display: block;
-        margin-bottom: 0.1em;
-        font-size: var(--font-size-display-1);
+        @include display-line;
         font-weight: inherit;
-        line-height: var(--line-height-display);
         transform-origin: left center;
 
         &--accent .typo-word {
-            background: var(--gradient-accent);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-
             &.typo-word--active,
             &:hover,
             &:focus-visible {
@@ -233,180 +192,20 @@
     }
 
     &__lead {
-        max-width: 28ch;
-        margin: clamp(32px, 5vw, 56px) 0 0;
-        color: var(--color-text-muted);
-        @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
-    }
-
-    &__intro {
-        max-width: 52ch;
-        margin-top: clamp(10px, 1.8vw, 14px);
-        color: var(--color-text-muted);
-        font-size: var(--font-size-sm);
-        line-height: var(--line-height-body);
-        opacity: 0.8;
-    }
-
-    &__essentials {
-        display: grid;
-        gap: clamp(18px, 2.5vw, 28px);
-        overflow: visible;
-
-        @media (max-width: #{$bp-max-narrow}) {
-            padding: clamp(18px, 3vw, 28px);
-            border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent);
-            border-radius: var(--radius-2xl);
-            background: color-mix(in srgb, var(--color-surface) 90%, transparent);
-            box-shadow: 0 1px 0 color-mix(in srgb, var(--color-surface) 88%, var(--color-primary)),
-                0 16px 40px color-mix(in srgb, var(--color-primary) 4%, transparent);
-            backdrop-filter: blur(16px);
-        }
-    }
-
-    &__essentials-head {
-        display: grid;
-        gap: 5px;
-    }
-
-    &__essentials-title {
-        margin: 0;
-        @include font(display-6);
-    }
-
-    &__essentials-lead {
-        margin: 0;
-        max-width: 36ch;
-        color: var(--color-text-muted);
-        font-size: var(--font-size-sm);
-        font-weight: 500;
-        line-height: var(--line-height-body);
-    }
-
-    &__focus-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        border-block: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
-    }
-
-    &__focus-item {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: clamp(10px, 1.8vw, 18px);
-        align-items: start;
-        padding: clamp(14px, 2.2vw, 20px) clamp(14px, 1.8vw, 22px);
-        transition: background-color 0.32s ease;
-
-        &:not(:last-child) {
-            border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                background: color-mix(in srgb, var(--color-primary) 5%, transparent);
-            }
-
-            &:hover .hero__focus-index {
-                transform: translateY(-2px) scale(1.15);
-            }
-
-            &:hover .hero__focus-title {
-                color: var(--color-primary);
-            }
-        }
-    }
-
-    &__focus-index {
-        color: var(--color-primary);
-        font-family: var(--font-mono);
-        font-size: var(--font-size-xs);
-        font-weight: 700;
-        letter-spacing: var(--tracking-label);
-        line-height: 1;
-        transform-origin: left center;
-        transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    &__focus-copy {
-        display: grid;
-        gap: 4px;
-        min-width: 0;
-
-        .hero__focus-title {
-            margin: 0;
-            @include font(title-1, $font-weight-black, $line-height: $line-height-heading);
-            transition: color 0.28s ease;
-        }
-
-        span {
-            color: var(--color-text-muted);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            line-height: var(--line-height-body);
-        }
-    }
-
-    &__metrics-bar {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: clamp(9px, 1.4vw, 14px);
-        margin: 0;
-        padding: 0;
+        @include editorial-lead;
     }
 
     &__actions {
         display: flex;
         flex-wrap: wrap;
         gap: var(--space-3);
-        grid-area: actions;
         padding-block-end: clamp(8px, 2vw, 16px);
-        overflow: visible;
-    }
-
-    &__metric {
-        display: grid;
-        gap: 6px;
-        min-width: 0;
-        padding: clamp(12px, 1.6vw, 16px);
-        border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-        border-radius: var(--radius-md);
-        background: color-mix(in srgb, var(--color-surface) 75%, transparent);
-
-        dt {
-            margin: 0;
-            color: var(--color-text-muted);
-            font-size: var(--font-size-xs);
-            font-weight: 700;
-            letter-spacing: var(--tracking-label);
-            line-height: var(--line-height-ui);
-            text-transform: uppercase;
-        }
-
-        dd {
-            margin: 0;
-            font-family: var(--font-display);
-            font-size: clamp(1.3rem, 2.4vw, 2rem);
-            font-weight: 900;
-            line-height: var(--line-height-heading);
-            letter-spacing: -0.02em;
-        }
     }
 }
 
-/* =========================================
-   Mobile (≤767px)
-========================================= */
 @media (max-width: #{$bp-max-mobile}) {
     .hero.section--hero {
         padding-top: clamp(12px, 4vw, 20px);
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
-        box-sizing: border-box;
     }
 
     .hero__poster {
@@ -424,246 +223,6 @@
         margin-top: clamp(14px, 4.5vw, 24px);
     }
 
-    .hero__actions {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero__essentials {
-        gap: clamp(14px, 3.8vw, 19px);
-        padding: clamp(15px, 4.5vw, 20px);
-    }
-
-    .hero__focus-list {
-        grid-template-columns: minmax(0, 1fr);
-        border-block: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
-    }
-
-    .hero__focus-item {
-        grid-template-columns: 1fr;
-        gap: 7px;
-        padding-block: clamp(10px, 3.5vw, 14px);
-
-        &:not(:last-child) {
-            border-inline-end: 0;
-            border-block-end: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-        }
-    }
-
-    .hero__metrics-bar {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-3);
-    }
-
-    .hero__metric {
-        padding: clamp(12px, 3.8vw, 16px);
-    }
-}
-
-/* =========================================
-   Tablet (768–1023px)
-========================================= */
-@media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
-    .hero.section--hero {
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
-        box-sizing: border-box;
-        // 고정 헤더와의 여백 — 베이스 padding-top:0 복원
-        padding-top: clamp(32px, 4vw, 48px);
-    }
-
-    .hero__focus-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .hero__focus-item {
-        grid-template-columns: auto 1fr;
-        gap: clamp(10px, 1.8vw, 18px);
-
-        &:not(:last-child) {
-            border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
-            border-block-end: 0;
-        }
-    }
-
-    .hero__metrics-bar {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-}
-
-/* =========================================
-   Desktop (≥1024px)
-   Single-column, full-viewport height
-========================================= */
-@media (min-width: #{$bp-min-laptop}) {
-    .hero.section--hero {
-        // 풀블리드: 포인터 스포트라이트(.hero__spotlight, inset:0)가 페이지 거터에
-        // 잘리지 않도록 섹션을 뷰포트 전체 폭으로. 콘텐츠 인셋은 .hero__poster 로 이동.
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
-        // 고정 헤더와의 숨 쉴 여백. 베이스 `.hero.section--hero{padding-top:0}` 를
-        // 같은 specificity 로 덮어 복원(페이지 헤더 오프셋 위에 추가되는 간격).
-        padding-top: clamp(36px, 4vw, 64px);
-    }
-
-    .section--hero {
-        padding-block: clamp(80px, 11vw, 128px) clamp(80px, 11vw, 144px);
-        min-height: min(100svh, 1080px);
-        display: flex;
-        flex-direction: column;
-        // 콘텐츠가 뷰포트보다 길면 center 가 위아래로 넘쳐 meta 가 고정 헤더 밑으로 파묻힌다.
-        // safe center: 넘칠 때는 flex-start 로 폴백해 상단 패딩(헤더와의 여백)을 항상 보장.
-        justify-content: center;
-        justify-content: safe center;
-    }
-
-    .hero__poster {
-        gap: clamp(40px, 4.5vw, 64px);
-        padding: 0;
-        // 섹션이 풀블리드로 바뀌었으므로 콘텐츠 폭 제약을 여기서 담당.
-        // width: min(100% - var(--page-pad-x), var(--layout-content-max));
-        width: 100%;
-        margin-inline: auto;
-        // Override to single-column (remove sidebar layout)
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:
-            "meta"
-            "stage"
-            "essentials"
-            "actions";
-        min-height: auto;
-        align-items: start;
-    }
-
-    .hero__meta {
-        padding-top: 0;
-    }
-
-    .hero__stage {
-        grid-area: stage;
-        align-self: auto;
-        padding-top: 0;
-        max-width: min(1312px, 100%);
-    }
-
-    // Restore essentials as a proper grid block (not display: contents)
-    .hero__essentials {
-        display: grid;
-        gap: clamp(22px, 2.5vw, 32px);
-    }
-
-    .hero__essentials-head {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 8px 24px;
-        padding-block: clamp(13px, 1.4vw, 18px);
-        border-block: 1px solid color-mix(in srgb, var(--color-border) 52%, transparent);
-    }
-
-    .hero__essentials-title {
-        margin: 0;
-        font-size: clamp(0.94rem, 1.15vw, 1.06rem);
-        font-weight: 800;
-        letter-spacing: var(--tracking-label);
-        text-transform: uppercase;
-        color: var(--color-text-muted);
-    }
-
-    .hero__essentials-lead {
-        margin: 0;
-        max-width: none;
-        flex: 1 1 20ch;
-        font-size: clamp(0.9rem, 1.1vw, 1rem);
-        color: var(--color-text-muted);
-        font-weight: 500;
-        text-align: end;
-    }
-
-    .hero__focus-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        border-block: 0;
-    }
-
-    .hero__focus-item {
-        padding: clamp(13px, 1.4vw, 18px) clamp(18px, 1.8vw, 30px) clamp(13px, 1.4vw, 18px);
-        grid-template-columns: 1fr;
-        gap: 6px;
-
-        &:not(:last-child) {
-            border-inline-end: 1px solid color-mix(in srgb, var(--color-border) 48%, transparent);
-        }
-    }
-
-    .hero__focus-index {
-        font-size: var(--font-size-xs);
-    }
-
-    .hero__focus-title {
-        margin: 0;
-        font-family: var(--font-display);
-        font-size: clamp(1.05rem, 1.3vw, 1.25rem);
-        font-weight: 800;
-        line-height: var(--line-height-heading);
-        letter-spacing: -0.02em;
-    }
-
-    .hero__focus-copy span {
-        font-size: var(--font-size-xs);
-        line-height: var(--line-height-body);
-    }
-
-    // Horizontal metrics bar (4 columns) on desktop
-    .hero__metrics-bar {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: clamp(10px, 0.9vw, 14px);
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-        box-shadow: none;
-        align-self: auto;
-    }
-
-    .hero__metric {
-        padding: clamp(13px, 1.2vw, 16px);
-        border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
-        border-radius: var(--radius-md);
-        background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-        box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 3%, transparent);
-
-        dt {
-            font-size: 0.75rem;
-        }
-
-        dd {
-            font-size: clamp(1.2rem, 1.75vw, 1.65rem);
-        }
-    }
-}
-
-@media (min-width: 1920px) {
-    .section--hero {
-        width: min(100% - var(--page-pad-x), var(--layout-content-max));
-    }
-}
-
-/* 스크롤 큐는 히어로가 100svh를 차지하는 데스크톱에서만 노출
-   섹션이 뷰포트보다 길어질 수 있어 svh 기준으로 첫 화면 하단에 고정 배치 */
-@media (min-width: #{$bp-min-laptop}) {
-    .hero__cue {
-        display: inline-flex;
-        bottom: auto;
-        top: calc(100svh - var(--layout-header-height) - 136px);
-    }
-}
-
-/* 모바일: 오브 수·블러 강도를 줄여 GPU 부담 최소화 */
-@media (max-width: #{$bp-max-mobile}) {
     .hero__orb {
         filter: blur(32px);
 
@@ -673,10 +232,52 @@
     }
 }
 
-/* =========================================
-   Hero entrance — 첫 로드 시퀀스
-   fill: backwards 만 사용해 종료 후 hover 인터랙션과 충돌하지 않음
-========================================= */
+@media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
+    .hero.section--hero {
+        padding-top: clamp(32px, 4vw, 48px);
+    }
+}
+
+@media (min-width: #{$bp-min-laptop}) {
+    .hero.section--hero {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding-top: clamp(36px, 4vw, 64px);
+    }
+
+    .section--hero {
+        padding-block: clamp(80px, 11vw, 128px) clamp(80px, 11vw, 144px);
+        min-height: min(100svh, 1080px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: safe center;
+    }
+
+    .hero__poster {
+        gap: clamp(40px, 4.5vw, 64px);
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .hero__stage {
+        max-width: min(1312px, 100%);
+    }
+
+    .hero__cue {
+        display: inline-flex;
+        bottom: auto;
+        top: calc(100svh - var(--layout-header-height) - 136px);
+    }
+}
+
+@media (min-width: 1920px) {
+    .section--hero {
+        width: min(100% - var(--page-pad-x), var(--layout-content-max));
+    }
+}
+
 @keyframes hero-rise-in {
     from {
         opacity: 0;
@@ -706,25 +307,22 @@
 }
 
 @keyframes hero-orb-drift {
-    from {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(4%, -7%, 0) scale(1.12);
-    }
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(4%, -7%, 0) scale(1.12); }
 }
 
 @keyframes hero-cue-scan {
-    to {
-        transform: translateY(100%);
-    }
+    to { transform: translateY(100%); }
+}
+
+@keyframes hero-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .hero__meta,
 .hero__eyebrow,
 .hero__lead,
-.hero__intro,
 .hero__actions,
 .hero__cue,
 .hero__canvas {
@@ -732,47 +330,15 @@
 }
 
 .hero__canvas {
-    animation-name: hero-fade-in;
-    animation-duration: 1.6s;
-}
-
-.hero__meta {
-    animation-delay: 0.05s;
-}
-
-.hero__eyebrow {
-    animation-delay: 0.16s;
-}
-
-.hero__lead {
-    animation-delay: 0.82s;
-}
-
-.hero__intro {
-    animation-delay: 0.94s;
-}
-
-.hero__actions {
-    animation-delay: 1.08s;
-}
-
-.hero__cue {
-    animation-delay: 1.45s;
-}
-
-.hero__canvas {
+    animation: hero-fade-in 1.6s backwards;
     animation-delay: 0.1s;
 }
 
-@keyframes hero-fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
+.hero__meta { animation-delay: 0.05s; }
+.hero__eyebrow { animation-delay: 0.16s; }
+.hero__lead { animation-delay: 0.82s; }
+.hero__actions { animation-delay: 1.08s; }
+.hero__cue { animation-delay: 1.45s; }
 
 .hero__display .typo-word {
     animation: hero-word-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
@@ -784,19 +350,13 @@
     .hero__meta,
     .hero__eyebrow,
     .hero__lead,
-    .hero__intro,
     .hero__actions,
     .hero__cue,
-    .hero__canvas {
-        animation: none;
-        opacity: 1;
-        transform: none;
-        filter: none;
-    }
-
+    .hero__canvas,
     .hero__display .typo-word {
         animation: none;
         opacity: 1;
+        transform: none;
         filter: none;
     }
 }

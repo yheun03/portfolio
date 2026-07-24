@@ -83,7 +83,7 @@
     }
 }
 
-@media (max-width: #{$bp-max-narrow}) {
+@media (max-width: #{$bp-max-tablet}) {
     .work-card {
         --card-flow-label: var(--space-4);
         --card-flow-title: var(--space-4);

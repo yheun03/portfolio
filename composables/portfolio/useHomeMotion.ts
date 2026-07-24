@@ -79,22 +79,6 @@ export function useHomeMotion() {
                 });
             }
 
-            /* ── Hero metrics bar: depth pop ── */
-            const metricsBar = root.querySelector<HTMLElement>('.hero__metrics-bar');
-            if (metricsBar) {
-                gsap.to(metricsBar, {
-                    yPercent: -18,
-                    ease: 'none',
-                    force3D: true,
-                    scrollTrigger: {
-                        trigger: '.section--hero',
-                        start: 'top top',
-                        end: 'bottom top',
-                        scrub: 0.8,
-                    },
-                });
-            }
-
             /* ── Hero scroll cue: 스크롤 시작과 함께 사라짐 ── */
             const heroCue = root.querySelector<HTMLElement>('.hero__cue');
             if (heroCue) {
@@ -132,28 +116,6 @@ export function useHomeMotion() {
                     }
                 );
             });
-
-            /* ── About: feature grid stagger on scroll ── */
-            const featureCards = root.querySelectorAll<HTMLElement>('.about__spotlight .feature-card');
-            if (featureCards.length) {
-                gsap.fromTo(
-                    featureCards,
-                    { opacity: 0, y: 48, scale: 0.96 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.82,
-                        ease: 'power3.out',
-                        stagger: { amount: 0.36, from: 'start' },
-                        scrollTrigger: {
-                            trigger: '.about__spotlight',
-                            start: 'top 78%',
-                            toggleActions: 'play none none none',
-                        },
-                    }
-                );
-            }
 
             /* flow-steps 는 data-stagger CSS 애니메이션이 전담 — GSAP 중복 트윈 없음 */
 
