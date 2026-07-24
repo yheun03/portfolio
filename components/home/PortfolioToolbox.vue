@@ -1,11 +1,11 @@
 <template>
     <section id="toolbox" class="section section--toolbox" aria-labelledby="section-toolbox-title">
-        <header class="toolbox__head">
+        <header class="section-head section-head--center">
             <BaseSectionTitle title-id="section-toolbox-title" :eyebrow="t('nav.toolbox')" :title="t('toolbox.title')" />
             <p class="section-title__description">{{ t("toolbox.copy") }}</p>
         </header>
 
-        <div class="toolbox__spotlight spotlight" data-animate>
+        <div class="spotlight-block" data-animate>
             <h3 class="spotlight__kicker">{{ t("toolbox.kicker") }}</h3>
             <ul class="toolbox__grid feature-grid feature-grid--toolbox">
                 <li v-for="(skill, index) in skills" :key="skill.key" data-stagger

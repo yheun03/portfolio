@@ -21,7 +21,7 @@
     pointer-events: auto;
     background: transparent;
 
-    @media (min-width: 1024px) {
+    @media (min-width: #{$bp-min-laptop}) {
         display: flex;
     }
 

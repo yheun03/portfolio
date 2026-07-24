@@ -6,7 +6,7 @@
                 <p class="contact__lead">{{ t("contact.description") }}</p>
             </header>
 
-            <section class="contact__spotlight spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
+            <section class="spotlight-block spotlight" :aria-label="locale === 'ko' ? '연락처' : 'Contact'">
                 <h3 class="spotlight__kicker">{{ t("contact.kicker") }}</h3>
                 <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`"
                     :aria-label="emailDisplayLabel">

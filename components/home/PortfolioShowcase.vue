@@ -7,7 +7,7 @@
             <li v-for="(work, index) in showcaseWorks" :key="work.id"
                 :class="['showcase__item', { 'showcase__item--featured': index === 0 }]"
                 :style="{ '--animate-delay': `${index * 90}ms` }" data-animate>
-                <NuxtLink :to="`/projects/${work.id}`" class="story-case"
+                <NuxtLink :to="`/projects/${work.id}`" class="story-case surface-card"
                     :aria-label="`${pick(work.title)}, ${t('story.caseCta')}`">
                     <span class="story-case__watermark" aria-hidden="true">{{ String(index + 1).padStart(2, "0") }}</span>
 
