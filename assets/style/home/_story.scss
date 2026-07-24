@@ -80,6 +80,7 @@
     align-content: start;
     gap: clamp(14px, 2vw, 22px);
     min-height: clamp(240px, 28vw, 336px);
+    height: 100%;
     padding: var(--card-padding-lg);
     overflow: hidden;
     border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
@@ -296,7 +297,7 @@
         gap: clamp(20px, 5vw, 32px);
     }
 
-    > div {
+    >div {
         position: relative;
         display: grid;
         gap: 8px;
@@ -304,7 +305,7 @@
         padding-inline-start: clamp(16px, 2vw, 24px);
 
         /* 스펙시트 느낌의 세로 구분선 */
-        &::before {
+        &:not(:first-child)::before {
             content: "";
             position: absolute;
             left: 0;
@@ -339,7 +340,7 @@
     }
 
     @media (hover: hover) {
-        > div:hover dd {
+        >div:hover dd {
             translate: 0 -3px;
         }
     }
