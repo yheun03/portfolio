@@ -31,9 +31,17 @@
         background: transparent;
         isolation: isolate;
 
-        .hero__actions { grid-area: actions; }
-        .hero__stage { grid-area: stage; }
-        .hero__essentials { grid-area: essentials; }
+        .hero__actions {
+            grid-area: actions;
+        }
+
+        .hero__stage {
+            grid-area: stage;
+        }
+
+        .hero__essentials {
+            grid-area: essentials;
+        }
     }
 
     /* ── Ambient canvas: 블러 그라디언트 오브 (GSAP 시차 대상) ── */
@@ -171,7 +179,9 @@
         line-height: var(--line-height-ui);
         text-transform: uppercase;
 
-        span:nth-child(2) { opacity: 0.4; }
+        span:nth-child(2) {
+            opacity: 0.4;
+        }
     }
 
     &__stage {
@@ -249,7 +259,7 @@
             border-radius: var(--radius-2xl);
             background: color-mix(in srgb, var(--color-surface) 90%, transparent);
             box-shadow: 0 1px 0 color-mix(in srgb, var(--color-surface) 88%, var(--color-primary)),
-                        0 16px 40px color-mix(in srgb, var(--color-primary) 4%, transparent);
+                0 16px 40px color-mix(in srgb, var(--color-primary) 4%, transparent);
             backdrop-filter: blur(16px);
         }
     }
@@ -514,7 +524,8 @@
         gap: clamp(40px, 4.5vw, 64px);
         padding: 0;
         // 섹션이 풀블리드로 바뀌었으므로 콘텐츠 폭 제약을 여기서 담당.
-        width: min(100% - var(--page-pad-x), var(--layout-content-max));
+        // width: min(100% - var(--page-pad-x), var(--layout-content-max));
+        width: 100%;
         margin-inline: auto;
         // Override to single-column (remove sidebar layout)
         grid-template-columns: minmax(0, 1fr);
@@ -625,9 +636,13 @@
         background: color-mix(in srgb, var(--color-surface) 88%, transparent);
         box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 3%, transparent);
 
-        dt { font-size: 0.75rem; }
+        dt {
+            font-size: 0.75rem;
+        }
 
-        dd { font-size: clamp(1.2rem, 1.75vw, 1.65rem); }
+        dd {
+            font-size: clamp(1.2rem, 1.75vw, 1.65rem);
+        }
     }
 }
 
@@ -721,13 +736,33 @@
     animation-duration: 1.6s;
 }
 
-.hero__meta { animation-delay: 0.05s; }
-.hero__eyebrow { animation-delay: 0.16s; }
-.hero__lead { animation-delay: 0.82s; }
-.hero__intro { animation-delay: 0.94s; }
-.hero__actions { animation-delay: 1.08s; }
-.hero__cue { animation-delay: 1.45s; }
-.hero__canvas { animation-delay: 0.1s; }
+.hero__meta {
+    animation-delay: 0.05s;
+}
+
+.hero__eyebrow {
+    animation-delay: 0.16s;
+}
+
+.hero__lead {
+    animation-delay: 0.82s;
+}
+
+.hero__intro {
+    animation-delay: 0.94s;
+}
+
+.hero__actions {
+    animation-delay: 1.08s;
+}
+
+.hero__cue {
+    animation-delay: 1.45s;
+}
+
+.hero__canvas {
+    animation-delay: 0.1s;
+}
 
 @keyframes hero-fade-in {
     from {
@@ -745,6 +780,7 @@
 }
 
 .hero--intro-done {
+
     .hero__meta,
     .hero__eyebrow,
     .hero__lead,
