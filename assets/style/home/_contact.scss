@@ -85,12 +85,12 @@
     filter: drop-shadow(0 16px 40px color-mix(in srgb, var(--color-primary) 18%, transparent));
     transition: color 0.25s ease, filter 0.25s ease, transform 0.16s ease;
 
-    >span {
+    > span {
         position: relative;
         flex: 1 1 0;
         height: 100%;
 
-        >span {
+        > span {
             position: absolute;
             inset: 0;
             display: flex;
@@ -106,9 +106,9 @@
         }
 
         &.contact__mail-slot--suffix {
-            flex: .6;
+            flex: 0.6;
 
-            >span {
+            > span {
                 top: 60%;
                 font-size: 0.6em;
                 letter-spacing: -0.5em;
@@ -125,12 +125,12 @@
             color: color-mix(in srgb, var(--color-primary) 88%, var(--color-text));
             filter: drop-shadow(0 20px 52px color-mix(in srgb, var(--color-primary) 30%, transparent));
 
-            >span:nth-child(2n)>span {
+            > span:nth-child(2n) > span {
                 color: var(--color-primary);
                 transform: translate(-50%, calc(-50% - 0.14em)) rotate(0.03turn) scale(1.06);
             }
 
-            >span:nth-child(2n + 1)>span {
+            > span:nth-child(2n + 1) > span {
                 color: color-mix(in srgb, var(--color-primary) 70%, var(--color-text));
                 transform: translate(-50%, calc(-50% + 0.08em)) rotate(-0.03turn) scale(1.04);
             }
@@ -150,7 +150,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        >span>span {
+        > span > span {
             transition: color 0.2s ease;
             transition-delay: 0ms;
         }
@@ -158,7 +158,7 @@
         &:is(:hover, :focus-visible, :active) {
             transform: none;
 
-            >span>span {
+            > span > span {
                 transform: translate(-50%, -50%);
             }
         }

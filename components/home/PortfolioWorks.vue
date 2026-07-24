@@ -15,7 +15,7 @@
                 panel-id-prefix="works-panel" :list-label="locale === 'ko' ? '프로젝트 필터' : 'Project filters'"
                 scroll-anchor="#works" class="works__filters" />
             <p class="section-title__description">{{ t("works.sectionDescription") }}</p>
-            <aside class="works__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite"
+            <aside class="works__archive-summary surface-card" data-card-pointer :style="archiveSummaryStyle" aria-live="polite"
                 :aria-label="locale === 'ko' ? '작업 아카이브 요약' : 'Work archive summary'">
                 <p class="works__archive-meta">
                     <strong>{{ totalCareerWorkCount }}</strong>

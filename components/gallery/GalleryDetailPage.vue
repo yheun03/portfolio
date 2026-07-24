@@ -134,13 +134,11 @@
             <footer class="gallery-detail__end">
                 <p class="gallery-detail__end-line">{{ t('gallery.detailEndLine') }}</p>
                 <p class="gallery-detail__footer-nav">
-                    <NuxtLink v-if="prevWork" class="base-button base-button--ghost"
-                        :to="`${config.basePath}/${prevWork.id}`">{{ navLabels.prev }}</NuxtLink>
-                    <button type="button" class="base-button base-button--ghost" @click="goBack">
-                        {{ t(detailEndCtaKey) }}
-                    </button>
-                    <NuxtLink v-if="nextWork" class="base-button base-button--ghost"
-                        :to="`${config.basePath}/${nextWork.id}`">{{ navLabels.next }}</NuxtLink>
+                    <BaseButton v-if="prevWork" :to="`${config.basePath}/${prevWork.id}`" :label="navLabels.prev"
+                        variant="ghost" />
+                    <BaseButton :label="t(detailEndCtaKey)" variant="ghost" @click="goBack" />
+                    <BaseButton v-if="nextWork" :to="`${config.basePath}/${nextWork.id}`" :label="navLabels.next"
+                        variant="ghost" />
                 </p>
             </footer>
 

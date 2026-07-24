@@ -18,7 +18,7 @@
                 scroll-anchor="#highlights" class="highlights__filters"
                 @update:model-value="handleHighlightTabChange" />
             <p class="section-title__description">{{ t('highlights.summary') }}</p>
-            <aside class="highlights__archive-summary surface-card" :style="archiveSummaryStyle" aria-live="polite"
+            <aside class="highlights__archive-summary surface-card" data-card-pointer :style="archiveSummaryStyle" aria-live="polite"
                 :aria-label="locale === 'ko' ? '하이라이트 요약' : 'Highlights summary'">
                 <p class="highlights__archive-meta">
                     <strong>{{ activeItems.length }}</strong>

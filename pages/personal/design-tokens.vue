@@ -11,6 +11,7 @@
                     <code>_tokens.scss</code>에서 관리합니다.
                 </p>
                 <nav class="token-hero__actions" aria-label="토큰 페이지 이동">
+                    <BaseButton label="컴포넌트 카탈로그" href="/personal/components" variant="ghost" />
                     <BaseButton label="개인 프로젝트 목록으로" href="/personal" variant="ghost" />
                     <BaseButton label="홈에서 포트폴리오 보기" href="/" />
                 </nav>

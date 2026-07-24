@@ -6,8 +6,7 @@
                 <BaseCard :animate="false" class="works__modal-card">
                     <div class="works__modal-head">
                         <h2 id="works-modal-title" class="works__modal-title">{{ pick(activeWork.title) }}</h2>
-                        <button ref="closeButtonRef" type="button"
-                            class="base-button base-button--ghost works__modal-close"
+                        <button ref="closeButtonRef" type="button" class="base-button base-button--ghost works__modal-close"
                             :aria-label="labels.closeModalAria" @click="closeModal">
                             {{ labels.close }}
                         </button>
@@ -35,16 +34,9 @@
                     </div>
 
                     <div v-if="activeWork.links?.length" class="works__modal-links">
-                        <template v-for="link in activeWork.links" :key="link.href">
-                            <NuxtLink v-if="isAppRoute(link.href)" class="base-button base-button--primary"
-                                :to="link.href" :aria-label="workLinkAriaLabel(link)">
-                                {{ pick(link.label) }}
-                            </NuxtLink>
-                            <a v-else class="base-button base-button--primary" :href="resolveAppPath(link.href)"
-                                target="_blank" rel="noopener noreferrer" :aria-label="workLinkAriaLabel(link)">
-                                {{ pick(link.label) }}
-                            </a>
-                        </template>
+                        <BaseButton v-for="link in activeWork.links" :key="link.href" :href="link.href"
+                            :label="pick(link.label)" :aria-label="workLinkAriaLabel(link)"
+                            :external="!isAppRoute(link.href)" />
                     </div>
                 </BaseCard>
             </div>
@@ -58,7 +50,7 @@ import { useWorksUiStore } from '@stores/works-ui';
 import type { WorkItem } from '@data/works';
 
 const { pick } = useLocale();
-const { isAppRoute, resolveAppPath } = useAppPath();
+const { isAppRoute } = useAppPath();
 const labels = useWorkDetailLabels();
 
 const worksUi = useWorksUiStore();
