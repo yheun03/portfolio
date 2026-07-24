@@ -22,12 +22,8 @@
                     </p>
 
                     <nav class="error-page__actions" :aria-label="locale === 'ko' ? '오류 페이지 안내' : 'Error page actions'">
-                        <button type="button" class="base-button base-button--primary" @click="handleError">
-                            {{ t('error.home') }}
-                        </button>
-                        <a class="base-button base-button--ghost" :href="reportHref">
-                            {{ t('error.report') }}
-                        </a>
+                        <BaseButton :label="t('error.home')" @click="handleError" />
+                        <BaseButton :label="t('error.report')" :href="reportHref" variant="ghost" />
                     </nav>
                 </div>
             </div>

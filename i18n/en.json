@@ -24,7 +24,12 @@
         "ctaToolbox": "Vue 3 & SCSS UI skills",
         "ctaContact": "Contact",
         "scrollCue": "Scroll",
-        "scrollCueLabel": "Scroll to next section"
+        "scrollCueLabel": "Scroll to next section",
+        "displayLine1": "Interfaces",
+        "displayLine2": "with rhythm",
+        "displayLine3": "and structure",
+        "lead": "Complex asks, clear flows.",
+        "actionsAriaLabel": "Primary portfolio sections"
     },
     "about": {
         "title": "How I design with taste and structure",
@@ -32,7 +37,14 @@
         "direction": "I keep growing in Vue 3 component structure and frontend design.",
         "kicker": "A closer look.",
         "workflowTitle": "Workflow",
-        "tagline": "Simple structure. Light feel."
+        "tagline": "Simple structure. Light feel.",
+        "displayLine1": "Easy to read",
+        "displayLine2": "Fast to use",
+        "displayLine3": "Built to last",
+        "workflowSteps": ["Read", "Shape", "Build", "Check"],
+        "principlesAriaLabel": "Work principles",
+        "workflowAriaLabel": "Workflow",
+        "stepsAriaLabel": "Steps"
     },
     "works": {
         "title": "Web publishing case studies",
@@ -124,7 +136,10 @@
         "profileLabel": "New projects welcome",
         "email": "Send Email",
         "github": "View Eunyounghwan's GitHub profile",
-        "resume": "View Eunyounghwan's resume PDF"
+        "resume": "View Eunyounghwan's resume PDF",
+        "mailPrefix": "Email address",
+        "linksAriaLabel": "Contact links",
+        "spotlightAriaLabel": "Contact"
     },
     "footer": {
         "tagline": "Eunyounghwan's 2026 web publisher and frontend developer portfolio",
@@ -181,6 +196,10 @@
         "proofLinkHighlights": "View awards & records",
         "proofLinkJourney": "View journey",
         "featuredBadge": "Featured",
-        "howDescription": "Read, shape, build, check — every screen follows the same rhythm."
+        "howDescription": "Read, shape, build, check — every screen follows the same rhythm.",
+        "galleriesAriaLabel": "Project galleries",
+        "techStackAriaLabel": "Tech stack",
+        "proofMetricsAriaLabel": "Key metrics",
+        "proofLinksAriaLabel": "Career detail pages"
     }
 }

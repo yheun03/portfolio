@@ -24,7 +24,12 @@
         "ctaToolbox": "Vue 3·SCSS UI 개발 역량 보기",
         "ctaContact": "연락하기",
         "scrollCue": "Scroll",
-        "scrollCueLabel": "다음 섹션으로 이동"
+        "scrollCueLabel": "다음 섹션으로 이동",
+        "displayLine1": "기분 좋은",
+        "displayLine2": "화면 구조",
+        "displayLine3": "만듭니다",
+        "lead": "복잡한 요구를 단순한 흐름으로.",
+        "actionsAriaLabel": "주요 포트폴리오 섹션 바로가기"
     },
     "about": {
         "title": "감각과 구조를 함께 설계하는 방식",
@@ -32,7 +37,14 @@
         "direction": "Vue 3 컴포넌트 구조와 프론트엔드 설계 역량을 꾸준히 넓혀 가고 있습니다.",
         "kicker": "조금 더.",
         "workflowTitle": "작업 흐름",
-        "tagline": "구조는 단순하게. 사용감은 가볍게."
+        "tagline": "구조는 단순하게. 사용감은 가볍게.",
+        "displayLine1": "쉽게 읽히고",
+        "displayLine2": "빠르게 쓰이는",
+        "displayLine3": "화면을 만듭니다",
+        "workflowSteps": ["파악", "정리", "구현", "검증"],
+        "principlesAriaLabel": "작업 원칙",
+        "workflowAriaLabel": "작업 흐름",
+        "stepsAriaLabel": "단계"
     },
     "works": {
         "title": "웹 퍼블리셔 실무 프로젝트",
@@ -124,7 +136,10 @@
         "profileLabel": "새 프로젝트 문의 환영",
         "email": "메일 보내기",
         "github": "은영환 GitHub 프로필 보기",
-        "resume": "은영환 이력서 PDF 보기"
+        "resume": "은영환 이력서 PDF 보기",
+        "mailPrefix": "이메일 주소",
+        "linksAriaLabel": "연락 링크",
+        "spotlightAriaLabel": "연락처"
     },
     "footer": {
         "tagline": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환의 2026 포트폴리오",
@@ -181,6 +196,10 @@
         "proofLinkHighlights": "수상·자격 기록 보기",
         "proofLinkJourney": "성장 여정 보기",
         "featuredBadge": "대표작",
-        "howDescription": "파악 → 정리 → 구현 → 검증. 모든 화면을 같은 리듬으로 만듭니다."
+        "howDescription": "파악 → 정리 → 구현 → 검증. 모든 화면을 같은 리듬으로 만듭니다.",
+        "galleriesAriaLabel": "프로젝트 갤러리 바로가기",
+        "techStackAriaLabel": "사용 기술",
+        "proofMetricsAriaLabel": "핵심 지표",
+        "proofLinksAriaLabel": "이력 상세 페이지"
     }
 }

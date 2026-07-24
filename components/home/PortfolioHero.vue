@@ -1,6 +1,5 @@
 <template>
-    <section id="hello" ref="heroSectionRef" class="section section--hero hero"
-        :class="{ 'hero--intro-done': isIntroDone }" aria-labelledby="hero-display-title">
+    <section id="hello" class="section section--hero hero" aria-labelledby="hero-display-title">
         <div class="hero__canvas" aria-hidden="true">
             <span class="hero__orb hero__orb--a"></span>
             <span class="hero__orb hero__orb--b"></span>
@@ -17,16 +16,18 @@
             <div class="hero__stage">
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
-                <TypoDisplayHeading id="hero-display-title" tag="h1" group-id="hero" :lines="heroLines"
-                    heading-class="hero__display" line-class="hero__display-line"
-                    line-accent-class="hero__display-line--accent" />
+                <h1 id="hero-display-title" class="hero__display">
+                    <span class="hero__display-line" style="--line-index: 0">{{ t("hero.displayLine1") }}</span>
+                    <span class="hero__display-line hero__display-line--accent" style="--line-index: 1">{{ t("hero.displayLine2") }}</span>
+                    <span class="hero__display-line" style="--line-index: 2">{{ t("hero.displayLine3") }}</span>
+                </h1>
 
-                <p class="hero__lead">{{ heroLead }}</p>
+                <p class="hero__lead">{{ t("hero.lead") }}</p>
             </div>
 
-            <nav class="hero__actions" :aria-label="locale === 'ko' ? '주요 포트폴리오 섹션 바로가기' : 'Primary portfolio sections'">
-                <a class="base-button base-button--primary" href="#works">{{ t("hero.ctaWorks") }}</a>
-                <a class="base-button base-button--ghost" href="#toolbox">{{ t("hero.ctaToolbox") }}</a>
+            <nav class="hero__actions" :aria-label="t('hero.actionsAriaLabel')">
+                <BaseButton href="#works" :label="t('hero.ctaWorks')" />
+                <BaseButton href="#toolbox" :label="t('hero.ctaToolbox')" variant="ghost" />
             </nav>
         </div>
 
@@ -39,56 +40,6 @@
 
 <script setup lang="ts">
 import { profile } from "@data/site";
-import { splitTypoWords } from '@composables/ui/useTypoInteraction';
-import { useMagnetic } from '@composables/ui/useMagnetic';
-import { usePointerGlow } from '@composables/ui/usePointerGlow';
 
-const { t, pick, locale } = useLocale();
-
-const heroSectionRef = ref<HTMLElement | null>(null);
-const isIntroDone = ref(false);
-let introTimer: ReturnType<typeof window.setTimeout> | null = null;
-useMagnetic(heroSectionRef, '.hero__actions .base-button');
-usePointerGlow(heroSectionRef);
-
-onMounted(() => {
-    const introKey = 'portfolio:hero-intro-played';
-    isIntroDone.value = sessionStorage.getItem(introKey) === 'true';
-    sessionStorage.setItem(introKey, 'true');
-
-    if (!isIntroDone.value) {
-        introTimer = window.setTimeout(() => {
-            isIntroDone.value = true;
-            introTimer = null;
-        }, 1900);
-    }
-});
-
-onBeforeUnmount(() => {
-    if (!introTimer) return;
-    window.clearTimeout(introTimer);
-    introTimer = null;
-});
-
-const heroLines = computed(() => {
-    if (locale.value === "ko") {
-        return [
-            { words: splitTypoWords("기분 좋은"), accent: false },
-            { words: splitTypoWords("화면 구조"), accent: true },
-            { words: splitTypoWords("만듭니다"), accent: false },
-        ];
-    }
-
-    return [
-        { words: splitTypoWords("Interfaces"), accent: false },
-        { words: splitTypoWords("with rhythm"), accent: true },
-        { words: splitTypoWords("and structure"), accent: false },
-    ];
-});
-
-const heroLead = computed(() =>
-    locale.value === "ko"
-        ? "복잡한 요구를 단순한 흐름으로."
-        : "Complex asks, clear flows."
-);
+const { t, pick } = useLocale();
 </script>

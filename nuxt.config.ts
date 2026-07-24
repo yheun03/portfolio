@@ -74,6 +74,7 @@ export default defineNuxtConfig({
         '@i18n': fileURLToPath(new URL('./i18n', import.meta.url)),
         '@stores': fileURLToPath(new URL('./stores', import.meta.url)),
         '@app-types': fileURLToPath(new URL('./core/types', import.meta.url)),
+        '@core': fileURLToPath(new URL('./core', import.meta.url)),
         '@utils': fileURLToPath(new URL('./core/utils', import.meta.url)),
     },
 

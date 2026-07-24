@@ -1,46 +1,31 @@
 <template>
-    <section id="about" class="section section--about" aria-labelledby="section-about-title">
+    <HomeSection id="about" section-class="section--about" title-id="section-about-title">
         <div class="about__stage">
             <header class="about__intro" data-animate>
                 <p class="section-title__eyebrow">{{ t("nav.about") }}</p>
 
-                <TypoDisplayHeading id="section-about-title" tag="h2" group-id="about" :lines="displayLines"
-                    heading-class="about__display"
-                    line-class="about__display-line" line-accent-class="about__display-line--accent" />
+                <h2 id="section-about-title" class="about__display">
+                    <span class="about__display-line" style="--line-index: 0">{{ t("about.displayLine1") }}</span>
+                    <span class="about__display-line about__display-line--accent" style="--line-index: 1">{{ t("about.displayLine2") }}</span>
+                    <span class="about__display-line" style="--line-index: 2">{{ t("about.displayLine3") }}</span>
+                </h2>
 
                 <p class="about__lead">{{ t("about.tagline") }}</p>
             </header>
 
-            <ol class="why__list" :aria-label="locale === 'ko' ? '작업 원칙' : 'Work principles'">
+            <ol class="why__list" :aria-label="t('about.principlesAriaLabel')">
                 <li v-for="(principle, index) in aboutContent.principles" :key="pick(principle.title)" data-animate>
-                    <span class="why__index" aria-hidden="true">{{ String(index + 1).padStart(2, "0") }}</span>
+                    <BaseIndexLabel :value="String(index + 1).padStart(2, '0')" aria-hidden="true" />
                     <h3>{{ pick(principle.title) }}</h3>
                     <p>{{ pick(principle.description) }}</p>
                 </li>
             </ol>
         </div>
-    </section>
+    </HomeSection>
 </template>
 
 <script setup lang="ts">
 import { aboutContent } from '@data/site';
-import { splitTypoWords } from '@composables/ui/useTypoInteraction';
 
-const { t, pick, locale } = useLocale();
-
-const displayLines = computed(() => {
-    if (locale.value === "ko") {
-        return [
-            { words: splitTypoWords("쉽게 읽히고"), accent: false },
-            { words: splitTypoWords("빠르게 쓰이는"), accent: true },
-            { words: splitTypoWords("화면을 만듭니다"), accent: false },
-        ];
-    }
-
-    return [
-        { words: splitTypoWords("Easy to read"), accent: false },
-        { words: splitTypoWords("Fast to use"), accent: true },
-        { words: splitTypoWords("Built to last"), accent: false },
-    ];
-});
+const { t, pick } = useLocale();
 </script>
