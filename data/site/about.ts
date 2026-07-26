@@ -5,12 +5,12 @@ const data = {
     },
     paragraphs: {
         ko: [
-            '조앤소프트 DX 솔루션 2팀 주임으로 6년 이상 다양한 웹 시스템 구축과 운영 프로젝트에 참여하며, 요구사항 분석부터 마크업 구조 설계, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 프로젝트 전 주기에 관여해 왔습니다.',
+            '조앤소프트 DX 솔루션 2팀 대리로 6년 이상 다양한 웹 시스템 구축과 운영 프로젝트에 참여하며, 요구사항 분석부터 마크업 구조 설계, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 프로젝트 전 주기에 관여해 왔습니다.',
             'HTML, SCSS, JavaScript를 기반으로 Vue.js·React.js 환경에 적응하며 컴포넌트 기반 구조 설계 경험을 쌓았고, ICE CMS, WebSquare, Nexacro 등 다양한 CMS·솔루션 환경에서도 퍼블리싱 품질을 안정적으로 맞춰왔습니다.',
             'SCSS 컴포넌트화로 공수를 최대 60% 절감하고, 문서화·교육 체계 구축으로 협업 효율을 약 30% 높인 경험이 있습니다. 앞으로도 Vue 3 등 최신 프론트엔드 환경에서 구조와 품질을 함께 책임지는 UI 개발자로 성장하고 있습니다.',
         ],
         en: [
-            'As an Associate (Juim) on the JO&soft DX Solution Team 2 for over six years, I have worked across web system builds and operations, covering requirements analysis, markup architecture, CMS customization, responsive implementation, and maintenance.',
+            'As an Assistant Manager (Daeri) on the JO&soft DX Solution Team 2 for over six years, I have worked across web system builds and operations, covering requirements analysis, markup architecture, CMS customization, responsive implementation, and maintenance.',
             'Based on HTML, SCSS, and JavaScript, I have adapted to Vue.js and React.js environments while building component-oriented structures, and I have maintained stable publishing quality across ICE CMS, WebSquare, Nexacro, and in-house solutions.',
             'I reduced publishing effort by up to 60% through SCSS componentization and improved collaboration efficiency by around 30% through documentation and training systems. I continue to grow as a UI developer who owns both structure and quality in modern frontend environments such as Vue 3.',
         ],

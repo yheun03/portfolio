@@ -8,8 +8,8 @@ const data = {
                     en: 'Company',
                 },
                 team: {
-                    ko: '조앤소프트 · DX 솔루션 2팀 · 주임 · 웹 퍼블리셔 / 프론트엔드',
-                    en: 'JO&SOFT · DX Solution Team 2 · Associate (Juim) · Web Publisher / Frontend',
+                    ko: '조앤소프트 · DX 솔루션 2팀 · 대리 · 웹 퍼블리셔 / 프론트엔드',
+                    en: 'JO&SOFT · DX Solution Team 2 · Assistant Manager (Daeri) · Web Publisher / Frontend',
                 },
                 period: {
                     ko: '2019.11 ~ 현재',
