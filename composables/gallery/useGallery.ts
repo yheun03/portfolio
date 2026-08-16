@@ -22,7 +22,7 @@ function getStartValue(period: string) {
     return Number(match[1]) * 100 + Number(match[2] ?? '1');
 }
 
-export function getWorkStartYear(work: WorkItem) {
+function getWorkStartYear(work: WorkItem) {
     return work.period.match(/\d{4}/)?.[0] ?? '';
 }
 

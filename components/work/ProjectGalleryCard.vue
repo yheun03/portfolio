@@ -4,9 +4,6 @@
         :aria-label="cardAriaLabel">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
-                <span v-if="entryYearSuffix" class="gallery-editorial__entry-index" aria-hidden="true">{{
-                    entryYearSuffix }}</span>
-
                 <p class="gallery-editorial__entry-kicker">
                     <span>{{ work.duration }}</span>
                     <span aria-hidden="true">•</span>
@@ -65,7 +62,7 @@
 
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
-import { type GalleryViewMode, getWorkStartYear, isPlaceholderCapture } from '~/composables/gallery/useGallery';
+import { type GalleryViewMode, isPlaceholderCapture } from '~/composables/gallery/useGallery';
 import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 type WorkItemWithThumbnail = WorkItem & {
@@ -96,11 +93,6 @@ const entryLabel = computed(() => props.entryLabel ?? t('gallery.viewEntry'));
 const cardAriaLabel = computed(() => {
     const title = props.work.title;
     return `${title}, ${entryLabel.value}`;
-});
-
-const entryYearSuffix = computed(() => {
-    const year = getWorkStartYear(props.work);
-    return year ? year.slice(-2) : '';
 });
 
 const coverCapture = computed(() => (props.work as WorkItemWithThumbnail).thumbnail ?? props.work.captures[0] ?? '');
