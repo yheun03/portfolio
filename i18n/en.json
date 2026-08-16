@@ -28,7 +28,7 @@
         "displayLine1": "Interfaces",
         "displayLine2": "with rhythm",
         "displayLine3": "and structure",
-        "lead": "Complex asks, clear flows.",
+        "lead": "Seven years of HTML and SCSS, with Vue used only where it helps.",
         "actionsAriaLabel": "Primary portfolio sections"
     },
     "about": {
@@ -87,19 +87,47 @@
         "projectList": "Project list",
         "otherProjects": "Projects without a year",
         "languages": "Languages & core stack",
-        "techFull": "Tools & full stack",
         "captures": "Screenshots",
-        "details": "Details",
         "overview": "Overview",
         "role": "Role",
         "breadcrumbLabel": "Breadcrumb",
         "backToCareerList": "Back to client works",
         "backToPersonalList": "Back to personal projects",
-        "backPrevious": "Back to previous view",
-        "backHint": "Press Esc to return to your previous scroll position",
         "detailEndLine": "That's the last line—thanks for reading all the way through.",
         "detailEndBackCareer": "Read it all? Back to client works",
-        "detailEndBackPersonal": "Read it all? Back to personal projects"
+        "detailEndBackPersonal": "Read it all? Back to personal projects",
+        "sortStart": "Start date",
+        "sortTitle": "A-Z",
+        "sortLegend": "Sort",
+        "archive": "ARCHIVE",
+        "result": "RESULT",
+        "careerLead": "{total} client and in-house projects with captures, duration, and language stack.",
+        "personalLead": "{total} personal projects in an archive layout.",
+        "stats": "{total} PROJECTS • CAPTURES • STACK",
+        "totalProjects": "{total} projects total",
+        "careerSortLabel": "Project sort order",
+        "personalSortLabel": "Personal project sort order",
+        "home": "Home",
+        "type": "Type",
+        "period": "Period",
+        "coreStack": "Core",
+        "libraryStack": "Library / Tool",
+        "previousImage": "Previous image",
+        "nextImage": "Next image",
+        "previousProject": "Previous project",
+        "nextProject": "Next project",
+        "noCapture": "No project image is available.",
+        "loadingImage": "Loading image",
+        "captureAlt": "{title} screenshot {index}",
+        "captureCardAlt": "Screenshot: {title}",
+        "captureDotLabel": "View image {index}",
+        "projectLinkLabel": "{label} for {title}",
+        "openPage": "Open page",
+        "emptyCaptureTitle": "Image pending",
+        "emptyCaptureDescription": "The context is already open.",
+        "contributions": "My Contributions",
+        "results": "Results",
+        "points": "Key Points"
     },
     "journey": {
         "title": "A growth path built through delivery",
@@ -108,11 +136,12 @@
         "viewLegend": "Timeline view",
         "viewAffiliation": "By company",
         "viewChronological": "By year",
-        "tempLabel": "Sample data"
+        "tempLabel": "Sample data",
+        "clientsAriaLabel": "Clients served"
     },
     "toolbox": {
         "title": "Tools and practices proven in production",
-        "copy": "I build the screen—and the structure that keeps it easy to maintain.",
+        "copy": "HTML and SCSS stay central, with Vue templates, props, v-if, v-for, and Teleport used as needed.",
         "kicker": "By discipline."
     },
     "highlights": {
@@ -125,7 +154,11 @@
         "showMore": "Show more highlights",
         "collapse": "Collapse highlights",
         "visibleCount": "{visible} of {total} shown",
-        "tabSummary": "{visible} in this category of {total} highlights total."
+        "tabSummary": "{visible} in this category of {total} highlights total.",
+        "totalCount": "{total} total",
+        "countSummary": "{awards} awards · {certifications} certs · {roles} roles · {activities} activities",
+        "categoriesAriaLabel": "Highlight categories",
+        "summaryAriaLabel": "Highlights summary"
     },
     "contact": {
         "title": "Project inquiries",
@@ -179,13 +212,88 @@
         "localeChangedEn": "Display language switched to English.",
         "localeChangedKo": "Display language switched to Korean.",
         "themeChangedDark": "Dark theme enabled.",
-        "themeChangedLight": "Light theme enabled."
+        "themeChangedLight": "Light theme enabled.",
+        "skipToContent": "Skip to main content",
+        "portfolioHome": "Portfolio home",
+        "primaryNavigation": "Primary pages",
+        "quickNavigation": "Quick page navigation",
+        "mobileMenuOpen": "Open mobile menu",
+        "mobileMenuClose": "Close mobile menu",
+        "mobileNavigation": "Mobile primary menu",
+        "menu": "Menu",
+        "close": "Close",
+        "errorActions": "Error page actions"
+    },
+    "catalog": {
+        "componentsMetaTitle": "2026 Portfolio Component Catalog | Eunyounghwan",
+        "componentsMetaDescription": "A preview page for Vue base components used in the 2026 portfolio — buttons, labels, badges, chips, stats, and cards.",
+        "tokensMetaTitle": "2026 Portfolio Design Tokens | Eunyounghwan",
+        "tokensMetaDescription": "A design token overview for the 2026 portfolio, covering color, spacing, typography, radius, shadows, and naming rationale.",
+        "pageLabel": "2026 Portfolio Components",
+        "title": "Component Catalog",
+        "introBefore": "Reusable UI patterns from the home, gallery, and detail pages are organized as Vue base components. Styles map directly to",
+        "introAfter": "SCSS.",
+        "navigation": "Catalog page navigation",
+        "viewTokens": "View design tokens",
+        "viewPersonal": "Personal projects",
+        "viewHome": "Home",
+        "buttonTitle": "Buttons",
+        "buttonDescription": "Primary and ghost variants supporting internal routes, anchors, external links, and click handlers.",
+        "labelTitle": "Labels",
+        "labelDescription": "Pill labels for section chips, card categories, and UI hierarchy.",
+        "badgeTitle": "Badges",
+        "badgeDescription": "Status, category, and highlighted pill badges.",
+        "indexTitle": "Index Labels",
+        "indexDescription": "Mono accent text for principle lists and case tags.",
+        "chipTitle": "Tech Chips",
+        "chipDescription": "Mono pill lists used in project cards and detail pages.",
+        "sampleTech": "Sample tech stack",
+        "statTitle": "Stats",
+        "statDescription": "The number and label grid used in the Proof section.",
+        "sampleStats": "Sample stats",
+        "sectionTitle": "Section Title",
+        "sectionDescription": "An eyebrow, title, and description combination.",
+        "sectionDemoTitle": "Featured Projects",
+        "sectionDemoDescription": "The same section heading pattern used by the home showcase.",
+        "cardTitle": "Cards",
+        "cardDescription": "A general card shell and a home showcase case card.",
+        "baseCardDescription": "The basic card container used by galleries and dialogs.",
+        "caseAria": "TOMS, view details",
+        "caseTag": "Award Project",
+        "caseTitle": "TOMS Integrated Management System",
+        "caseSummary": "A representative SI case that makes the operating flow readable on one screen.",
+        "caseCta": "View details",
+        "caseTech": "Technologies used"
+    },
+    "tokens": {
+        "pageLabel": "2026 Portfolio Design Tokens",
+        "title": "Design Token Reference",
+        "introBefore": "The recurring color, spacing, typography, and shape values in the 2026 portfolio are organized by purpose. Colors live in",
+        "introMiddle": "and the remaining foundations live in",
+        "introAfter": ".",
+        "navigation": "Token page navigation",
+        "viewCatalog": "Component catalog",
+        "viewPersonal": "Personal projects",
+        "viewHome": "View portfolio home",
+        "colorTitle": "Color Tokens",
+        "colorDescription": "Primitive tokens are raw colors; semantic tokens describe their UI roles.",
+        "spacingTitle": "Spacing Tokens",
+        "spacingDescription": "Chips and labels keep a 12px–14px minimum scale, while page, section, and card spacing becomes denser from desktop to mobile.",
+        "spacingTable": "Spacing token list",
+        "tokenColumn": "Token",
+        "valueColumn": "Value",
+        "reasonColumn": "Naming rationale",
+        "typeTitle": "Typography Tokens",
+        "typeDescription": "Display sets the visual rhythm, Title and Body control density, and Label/Chip preserve the smallest UI scale.",
+        "typeSample": "The structure feels light.",
+        "shapeTitle": "Shape and Effect Tokens",
+        "shapeDescription": "Radii and shadows keep component hierarchy, touch areas, and focus states consistent."
     },
     "meta": {
-        "title": "Eunyounghwan Portfolio | Web Publisher & Web Frontend Developer Portfolio 2026",
-        "description": "Eunyounghwan's 2026 web publisher and frontend developer portfolio, covering HTML, SCSS, JavaScript, Vue 3 UI development, web accessibility, SEO, responsive web, and production projects.",
-        "ogTitle": "Eunyounghwan, Web Publisher & Web Frontend Developer Portfolio 2026",
-        "ogDescription": "A portfolio showing Vue 3, SCSS, JavaScript UI development, web accessibility, SEO, responsive web, and frontend production work."
+        "title": "Eunyounghwan Portfolio | 7-Year Web Publisher · Vue UI Development",
+        "description": "The 2026 portfolio of Eunyounghwan, a seven-year HTML and SCSS web publisher using Vue 3 templates, props, v-if, v-for, and Teleport for practical UI work.",
+        "ogTitle": "Eunyounghwan, 7-Year Web Publisher Portfolio 2026",
+        "ogDescription": "A portfolio of production HTML and SCSS work with practical, lightweight use of Vue 3 for UI structure."
     },
     "story": {
         "showcaseTitle": "Three works, up front",
@@ -195,10 +303,1489 @@
         "proofLinkHighlights": "View awards & records",
         "proofLinkJourney": "View journey",
         "featuredBadge": "Featured",
-        "howDescription": "Read, shape, build, check — every screen follows the same rhythm.",
+        "howDescription": "HTML structure, SCSS styling, then only the Vue that is needed. The publishing workflow stays familiar.",
         "galleriesAriaLabel": "Project galleries",
         "techStackAriaLabel": "Tech stack",
         "proofMetricsAriaLabel": "Key metrics",
         "proofLinksAriaLabel": "Career detail pages"
+    },
+    "content": {
+        "seo": {
+            "keywords": [
+                "Eunyounghwan",
+                "Eunyounghwan portfolio",
+                "web publisher",
+                "web publisher portfolio",
+                "web publisher portfolio 2026",
+                "frontend developer",
+                "web frontend developer",
+                "web frontend developer portfolio",
+                "web frontend developer portfolio 2026",
+                "UI developer",
+                "UI development",
+                "Vue frontend",
+                "Vue 3",
+                "SCSS",
+                "JavaScript",
+                "frontend portfolio",
+                "2026 portfolio",
+                "web standards",
+                "web accessibility",
+                "SEO",
+                "AEO",
+                "GEO",
+                "AI search optimization",
+                "responsive web"
+            ],
+            "jobTitle": "7-Year Web Publisher, Vue UI Development",
+            "description": "Eunyounghwan is a seven-year web publisher centered on HTML and SCSS, using Vue 3 templates, props, v-if, v-for, and Teleport only where they help the UI.",
+            "websiteName": "Eunyounghwan Frontend Developer Portfolio 2026",
+            "questions": [
+                {
+                    "name": "What does Eunyounghwan do?",
+                    "acceptedAnswer": "Eunyounghwan is a web publisher and web frontend developer focused on HTML, SCSS, JavaScript, Vue 3 UI implementation, responsive web, accessibility, and SEO."
+                },
+                {
+                    "name": "What skills are shown in this portfolio?",
+                    "acceptedAnswer": "The portfolio highlights production projects, personal projects, Vue 3 and SCSS component structure, CMS customization, maintainable UI architecture, documentation, and collaboration."
+                },
+                {
+                    "name": "How can I contact Eunyounghwan for a project?",
+                    "acceptedAnswer": "Use the contact section or resume link in the portfolio. The primary email contact is eyh208@naver.com."
+                }
+            ]
+        },
+        "componentCatalogSamples": {
+            "tech": ["Vue 3", "Nuxt 3", "TypeScript", "SCSS"],
+            "stats": [
+                { "label": "Years", "value": "8", "suffix": "+" },
+                { "label": "Projects", "value": "40", "suffix": "+" },
+                { "label": "Teams", "value": "12", "suffix": "" },
+                { "label": "Awards", "value": "3", "suffix": "" }
+            ]
+        },
+        "designTokens": {
+            "colors": [
+                {
+                    "name": "--primary-*",
+                    "value": "var(--primary-600)",
+                    "reason": "A stepped brand scale keeps buttons, links, and focus rings in the same color family."
+                },
+                {
+                    "name": "--grayscale-*",
+                    "value": "var(--grayscale-100)",
+                    "reason": "A numbered neutral scale makes contrast relationships readable from backgrounds through body text."
+                },
+                {
+                    "name": "--color-surface",
+                    "value": "var(--color-surface)",
+                    "reason": "This semantic name describes the role of cards and panels instead of tying components to a specific color."
+                },
+                {
+                    "name": "--color-text-muted",
+                    "value": "var(--color-text-muted)",
+                    "reason": "Muted text is separated clearly for supporting descriptions and metadata."
+                },
+                {
+                    "name": "--accent-hot / --accent-mint",
+                    "value": "linear-gradient(135deg, var(--accent-hot), var(--accent-mint))",
+                    "reason": "These supporting colors add emphasis while keeping names tied to role and temperature."
+                },
+                {
+                    "name": "--gallery-*",
+                    "value": "var(--gallery-bg)",
+                    "reason": "Gallery tokens use their own namespace so editorial gallery styling does not conflict with portfolio tokens."
+                }
+            ],
+            "spacing": [
+                {
+                    "name": "--space-1 ~ --space-11",
+                    "value": "4px ~ 54px",
+                    "reason": "Dense UI spacing inside chips, buttons, and cards follows a numbered 4px-based scale."
+                },
+                {
+                    "name": "--space-fluid-xs ~ 3xl",
+                    "value": "clamp(...)",
+                    "reason": "Fluid spacing allows more room on desktop while preserving information density on tablet and mobile."
+                },
+                {
+                    "name": "--space-section-y / gap",
+                    "value": "PC > TB > MB override",
+                    "reason": "Section padding and internal gaps are prioritized through breakpoint-specific CSS variable overrides."
+                },
+                {
+                    "name": "--inset-page / --inset-panel",
+                    "value": "responsive inset",
+                    "reason": "Separate page and panel insets prevent cards from becoming too narrow on mobile."
+                },
+                {
+                    "name": "--card-padding / lg",
+                    "value": "responsive padding",
+                    "reason": "Repeated card padding stays in a card namespace and reduces to the 16px range on mobile."
+                },
+                {
+                    "name": "--size-touch / compact",
+                    "value": "44px / 40px",
+                    "reason": "Button and toggle sizes are separated around accessible touch target requirements."
+                }
+            ],
+            "typography": [
+                {
+                    "name": "Display-1",
+                    "value": "PC 64~136 / TB 51~96 / MB 44~76px · 900",
+                    "reason": "The highest-level token is reserved for the home hero and strongest activity titles.",
+                    "sampleClass": "type-item__sample--display1"
+                },
+                {
+                    "name": "Display-2 / Display-3",
+                    "value": "Emphasis sections · large cards · 900",
+                    "reason": "These keep a strong visual signal without competing with Display-1.",
+                    "sampleClass": "type-item__sample--display3"
+                },
+                {
+                    "name": "Display-4 / Display-5 / Display-6",
+                    "value": "Section and card titles · 760~900",
+                    "reason": "These levels separate section titles, major card titles, and small module headings.",
+                    "sampleClass": "type-item__sample--display5"
+                },
+                {
+                    "name": "Title-1 / Title-2 / Title-3",
+                    "value": "18~23 / 16~19 / 16~17px · 720~760",
+                    "reason": "Information headings inside cards and lists stay below the Display scale.",
+                    "sampleClass": "type-item__sample--title"
+                },
+                {
+                    "name": "Body-1 / Body-2",
+                    "value": "16px+ / 15px · 500",
+                    "reason": "Body text starts at 16px, while supporting descriptions use a denser 15px size.",
+                    "sampleClass": "type-item__sample--body"
+                },
+                {
+                    "name": "Label / Chip",
+                    "value": "14px / 12px · 720",
+                    "reason": "Metadata labels use 14px and chips use a fixed 12px minimum to keep small UI consistent.",
+                    "sampleClass": "type-item__sample--label"
+                }
+            ],
+            "shapes": [
+                {
+                    "name": "--radius-card",
+                    "value": "15px",
+                    "reason": "The shared radius for primary cards and buttons sets the portfolio's soft baseline.",
+                    "demoClass": "shape-demo--card"
+                },
+                {
+                    "name": "--radius-pill",
+                    "value": "999px",
+                    "reason": "The name clearly identifies pill UI such as tags, segments, and small states.",
+                    "demoClass": "shape-demo--pill"
+                },
+                {
+                    "name": "--shadow-soft",
+                    "value": "0 18px 44px ...",
+                    "reason": "The default elevation shadow shows hierarchy without excessive decoration.",
+                    "demoClass": "shape-demo--soft"
+                },
+                {
+                    "name": "--shadow-ring",
+                    "value": "0 0 0 3px ...",
+                    "reason": "The ring name describes feedback that surrounds keyboard focus and selected states.",
+                    "demoClass": "shape-demo--ring"
+                }
+            ]
+        },
+        "profile": {
+            "name": "은영환",
+            "role": "7-Year Web Publisher / Vue UI Development",
+            "keywords": [
+                "웹 퍼블리셔",
+                "웹 프론트엔드 개발자",
+                "프론트엔드 개발자",
+                "UI 개발자",
+                "HTML5",
+                "SCSS",
+                "JavaScript",
+                "Vue 3",
+                "React",
+                "CMS Customizing",
+                "UI/UX",
+                "Accessibility",
+                "SEO",
+                "Multi-language",
+                "Documentation"
+            ],
+            "focusAreas": [
+                {
+                    "label": "Structure",
+                    "value": "Components / SCSS / File architecture"
+                },
+                {
+                    "label": "Publishing Quality",
+                    "value": "Responsive / A11y / Cross-browser"
+                },
+                {
+                    "label": "Team Efficiency",
+                    "value": "Docs / Reuse / Operations"
+                }
+            ],
+            "deliveryPillars": [
+                "Design-to-code fidelity",
+                "Maintainable UI system",
+                "SEO and accessibility-first markup",
+                "Production-ready structure"
+            ],
+            "stats": [
+                {
+                    "label": "Experience",
+                    "value": 7,
+                    "suffix": "Y+"
+                },
+                {
+                    "label": "Projects",
+                    "value": 20,
+                    "suffix": "+"
+                },
+                {
+                    "label": "Publishing Ownership",
+                    "value": 100,
+                    "suffix": "%"
+                },
+                {
+                    "label": "On-Time Delivery",
+                    "value": 100,
+                    "suffix": "%"
+                }
+            ],
+            "contacts": {
+                "email": "eyh208@naver.com",
+                "github": "https://github.com/yheun03",
+                "resume": "files/Resume.pdf"
+            }
+        },
+        "about": {
+            "intro": "Hi, I am Eunyounghwan. I see publishing not just as visual implementation, but as translating requirements into structure while designing user experience and collaboration flow.",
+            "paragraphs": [
+                "As an Assistant Manager (Daeri) on the JO&soft DX Solution Team 2 for over six years, I have worked across web system builds and operations, covering requirements analysis, markup architecture, CMS customization, responsive implementation, and maintenance.",
+                "Based on HTML, SCSS, and JavaScript, I have adapted to Vue.js and React.js environments while building component-oriented structures, and I have maintained stable publishing quality across ICE CMS, WebSquare, Nexacro, and in-house solutions.",
+                "I reduced publishing effort by up to 60% through SCSS componentization and improved collaboration efficiency by around 30% through documentation and training systems. I continue to grow as a UI developer who owns both structure and quality in modern frontend environments such as Vue 3."
+            ],
+            "keywords": [
+                "Detail-oriented",
+                "Diligence",
+                "Structured thinking",
+                "User-centered",
+                "Maintainability",
+                "Collaboration-friendly",
+                "Execution",
+                "Leadership"
+            ],
+            "principles": [
+                {
+                    "title": "User Experience",
+                    "description": "I prioritize interfaces that are practically usable, not only visually pleasing."
+                },
+                {
+                    "title": "Maintainable Structure",
+                    "description": "As projects grow, structure matters more. I reduce duplication and increase reuse."
+                },
+                {
+                    "title": "Clear Communication",
+                    "description": "I bridge designers, developers, and clients with explainable outputs."
+                }
+            ],
+            "workflow": [
+                {
+                    "label": "Read",
+                    "description": "Clarify requirements and screen purpose first."
+                },
+                {
+                    "label": "Shape",
+                    "description": "Organize structure and common elements early."
+                },
+                {
+                    "label": "Build",
+                    "description": "Componentize repeated styles with SCSS."
+                },
+                {
+                    "label": "Check",
+                    "description": "Document for collaboration readability."
+                },
+                {
+                    "label": "Quality",
+                    "description": "Keep quality priorities under fast schedules."
+                }
+            ],
+            "direction": "Built on publishing foundations, my goal is to lead UI development by deepening component architecture and frontend structural understanding."
+        },
+        "skills": [
+            {
+                "key": "markup",
+                "icon": "</>",
+                "title": "Markup",
+                "items": ["HTML5", "Semantic Markup", "Web Standards", "Web Accessibility", "Cross-browser"],
+                "description": "Skilled in semantic and accessible markup for production services."
+            },
+            {
+                "key": "style",
+                "icon": "◈",
+                "title": "Style",
+                "items": ["CSS3", "SCSS", "Responsive Web", "Component Styling", "Maintainable Structure"],
+                "description": "Improves maintainability and reuse through SCSS componentization."
+            },
+            {
+                "key": "interaction",
+                "icon": "⚡",
+                "title": "Interaction",
+                "items": ["JavaScript", "jQuery", "Dynamic UI", "Interaction Implementation"],
+                "description": "Experienced in practical interaction and dynamic UI delivery."
+            },
+            {
+                "key": "framework",
+                "icon": "⬡",
+                "title": "Framework",
+                "items": ["Vue 3", "React.js", "Component Architecture", "Frontend Growth Learning"],
+                "description": "Growing frontend depth with Vue-centered component architecture."
+            },
+            {
+                "key": "cms",
+                "icon": "▦",
+                "title": "CMS / Solution",
+                "items": ["ICE CMS", "WebSquare", "Nexacro", "eGovFrame", "Customization"],
+                "description": "Flexible in adapting to enterprise CMS and solution ecosystems."
+            },
+            {
+                "key": "collaboration",
+                "icon": "✦",
+                "title": "Design / Collaboration",
+                "items": ["Figma", "Zeplin", "Photoshop", "Illustrator", "Git", "Documentation", "Training Support"],
+                "description": "Strong documentation and communication for efficient collaboration."
+            }
+        ],
+        "journey": [
+            {
+                "temp": false,
+                "summary": {
+                    "company": "Company",
+                    "team": "JO&SOFT · DX Solution Team 2 · Assistant Manager (Daeri) · Web Publisher / Frontend",
+                    "period": "Nov 2019 ~ Present",
+                    "intro": "While delivering build, operation, and renewal projects at JO&SOFT, I experience the entire process of web UI from requirements to UI structure, responsive publishing, Vue, CMS, and maintenance.",
+                    "clients": [
+                        "TaeLim Packaging",
+                        "Samhwa Paints",
+                        "Daeyang Paper",
+                        "Daeyang Paperboard",
+                        "KleanNara",
+                        "Kyungdong One",
+                        "Hanjin Kal",
+                        "Hanon Systems",
+                        "ORCHEM",
+                        "Kwangjang Partners",
+                        "Incheon National University"
+                    ],
+                    "roles": [
+                        "100% publishing ownership",
+                        "Vue-based UI implementation",
+                        "CMS customization",
+                        "UI architecture and standardization",
+                        "Operation and maintenance"
+                    ]
+                },
+                "timeline": [
+                    {
+                        "period": "2026",
+                        "title": "Advancing Vue 3 architecture",
+                        "description": "Reorganizing portfolio and delivery UI around Vue 3 and the Composition API, tightening reusable components, SCSS modules, and design tokens as one system—while keeping accessibility, SEO, and static deployment in mind at the screen level."
+                    },
+                    {
+                        "period": "2025",
+                        "title": "Operation, renewal, and CMS expansion",
+                        "description": "Balanced operations, renewals, and CMS work with project-level responsive, standards, and accessibility baselines—plus handoff docs and publishing guides, keeping daytime delivery while finishing my degree."
+                    },
+                    {
+                        "period": "2024",
+                        "title": "Strengthening Vue-based delivery",
+                        "description": "On Vue 3 admin and operations systems, aligned component boundaries, state/routing, and SCSS layers so planning, design, and publishing stayed connected—with stable QA and feedback loops."
+                    },
+                    {
+                        "period": "2023",
+                        "title": "WebSquare and software development credentials",
+                        "description": "Earned WebSquare Certified Publisher and SW Development L5 to align enterprise UI deliverables with day-to-day work—documenting screen specs and markup rules while balancing study and client schedules."
+                    },
+                    {
+                        "period": "2022",
+                        "title": "Structuring in-house solution UI",
+                        "description": "Grouped shared layouts, components, and SCSS variables across in-house and client UIs, and earned NCA to broaden a publishing view that includes deployment and environments."
+                    },
+                    {
+                        "period": "2021",
+                        "title": "Establishing publishing practice",
+                        "description": "Owned more end-to-end publishing on system builds—wireframes, design, HTML/CSS, and interaction in one flow—and aligned portfolio and collaboration habits with workplace expectations around graduation."
+                    },
+                    {
+                        "period": "2020",
+                        "title": "Adapting to production publishing",
+                        "description": "After joining, learned to apply responsive layouts, cross-browser checks, and web standards per project—restructuring UI when requirements shifted and handling maintenance tickets within delivery timelines."
+                    },
+                    {
+                        "period": "2019",
+                        "title": "Transitioning into professional work",
+                        "description": "Joined JO&SOFT as a web publisher in November—shifting school and club web work into client delivery and learning production standards for schedule, quality, communication, and scope control."
+                    }
+                ]
+            },
+            {
+                "temp": false,
+                "summary": {
+                    "company": "University",
+                    "team": "Tech University of Korea · Computer & Electronic Engineering · Transfer & Graduated (GPA 4.45/4.5) · Prior college: Mobile Software (GPA 4.27/4.5)",
+                    "period": "Mar 2021 ~ Feb 2025",
+                    "intro": "After graduating from my prior college in Mobile Software (GPA 4.27/4.5), I transferred into Computer & Electronic Engineering at Tech University of Korea and graduated with a 4.45/4.5 GPA. From mobile and software fundamentals to programming and software engineering, I studied while balancing client work—and as class representative and society president, I launched the student council and led department events and communication.",
+                    "clients": [],
+                    "roles": [
+                        "Tech University of Korea, Computer & Electronic Engineering — transfer & graduated (GPA 4.45/4.5)",
+                        "Prior college, Mobile Software — graduated (GPA 4.27/4.5)",
+                        "Class representative & society president (founded student council)",
+                        "Parallel professional work"
+                    ]
+                },
+                "timeline": [
+                    {
+                        "period": "2025",
+                        "title": "Graduating in Computer & Electronic Engineering",
+                        "description": "Graduated in Computer & Electronic Engineering at Tech University of Korea with a 4.45/4.5 GPA, balancing study and client delivery to the end and carrying schedule and stakeholder coordination from student-council work into professional projects."
+                    },
+                    {
+                        "period": "2024",
+                        "title": "Leading the society and major coursework",
+                        "description": "Served as society president through February 2024—planning and hosting programs like department jackets, MT, and a hackathon—while taking major courses and connecting publishing and development practice to theory, alongside client work."
+                    },
+                    {
+                        "period": "2023",
+                        "title": "Transfer, class rep, founding the council",
+                        "description": "After graduating from my prior college, I transferred into the third year of Computer & Electronic Engineering at Tech University of Korea. As class representative (Mar 2023) and then society president from April, I founded the previously nonexistent student council and resolved issues like shuttle scheduling and parking, growing leadership and problem-solving."
+                    },
+                    {
+                        "period": "2022",
+                        "title": "Prior-college coursework (mobile software)",
+                        "description": "At my prior college in Mobile Software, I learned app and software fundamentals and the development flow while balancing study with client work."
+                    },
+                    {
+                        "period": "2021",
+                        "title": "Entering the prior college (Mobile Software)",
+                        "description": "After high school, I entered my prior college in Mobile Software—starting major study while continuing professional publishing work."
+                    }
+                ]
+            },
+            {
+                "temp": false,
+                "summary": {
+                    "company": "High School",
+                    "team": "Web design · MOD club",
+                    "period": "Mar 2018 ~ Jan 2021",
+                    "intro": "Built HTML, CSS, and JavaScript fundamentals in the web design track and MOD club, shipping real-user sites such as online learning and student election pages.",
+                    "clients": [],
+                    "roles": [
+                        "President of MOD web design club",
+                        "Online learning site development",
+                        "Student election site development",
+                        "School election and learning-info web TF",
+                        "Web Design · Information Processing Craftsman"
+                    ]
+                },
+                "timeline": [
+                    {
+                        "period": "2021",
+                        "title": "Graduation and handoff to work",
+                        "description": "Before graduation, turned MOD and TF screens into a portfolio and aligned markup, folder, and naming habits with team delivery—then continued publishing work professionally."
+                    },
+                    {
+                        "period": "2020",
+                        "title": "Building real-user web services",
+                        "description": "For remote schooling, planned and built the school online learning site plus student election voting and candidate pages—and earned the Industrial Engineer Information Processing certification to formalize dev and publishing basics."
+                    },
+                    {
+                        "period": "2019",
+                        "title": "Web projects and first professional role",
+                        "description": "As MOD president, ran club curriculum, tutoring, and assignments; earned craftsman certifications; led the school election and learning-info web TF under real users and deadlines—then started professional publishing."
+                    },
+                    {
+                        "period": "2018",
+                        "title": "Web design foundations",
+                        "description": "Entered the web design track and joined MOD, practicing HTML/CSS layout, responsive basics, and static pages—building a sense for turning design comps into markup through senior-led tasks and school contests."
+                    }
+                ]
+            },
+            {
+                "temp": false,
+                "summary": {
+                    "company": "Middle School",
+                    "team": "Student council PR team",
+                    "period": "Mar 2015 ~ Feb 2017",
+                    "intro": "As student council PR lead, began publishing school news on the web—an early step from org communication to later publishing and frontend work.",
+                    "clients": [],
+                    "roles": ["Class president", "Student council PR head", "Launched and ran student council pages"]
+                },
+                "timeline": [
+                    {
+                        "period": "2017",
+                        "title": "Launching the student council site",
+                        "description": "As PR head, created and ran the school’s first dedicated student council site for introductions, events, and notices—tuning content updates, menu structure, and mobile readability and seeing the web as a practical school communication tool."
+                    },
+                    {
+                        "period": "2016",
+                        "title": "Expanding PR work",
+                        "description": "Took on student council PR—organizing event announcements and posters—and explored formats that could be shared on campus, which later led to gathering them on a single page."
+                    },
+                    {
+                        "period": "2015",
+                        "title": "Class and council leadership",
+                        "description": "Entered middle school as class president coordinating schedules and communication, then joined the student council PR team helping with notices and events—getting used to delivering school news in writing and visuals."
+                    }
+                ]
+            }
+        ],
+        "highlights": {
+            "awards": [
+                "2023 Work-Learning Excellence Case Contest - Grand Prize",
+                "2022 Makethon \"Earth\" - Excellence Award",
+                "Korean Peninsula Change Makethon - Excellence Award",
+                "5th G AI & IoT Makethon - Top Award",
+                "2020 Myeongdong Rooftop Character Makethon - Grand Prize",
+                "6th Shinhan 29s Film Festival - Special Prize (General)"
+            ],
+            "certifications": [
+                "NCS AI Development_L5",
+                "NCS Software Development_L5",
+                "Corporate Field Instructor Level 3",
+                "ICT Engineer Career Booklet - Junior",
+                "Industrial Engineer Information Processing",
+                "Craftsman Information Processing",
+                "Craftsman Web Design",
+                "NCA",
+                "Computer Literacy Level 1 - Written Passed"
+            ],
+            "roles": [
+                "i-AWARDS Evaluator",
+                "Curriculum Standards Development Committee",
+                "Question Writer/Reviewer",
+                "External Evaluation Supervisor",
+                "Monitoring/Consulting Committee",
+                "Course Designation Reviewer"
+            ],
+            "activities": [
+                "Temporary Student Council Operations at Tech University of Korea",
+                "Founded/Operated Youth Self-Development Club MC",
+                "Seoul Digitech High School Student Council Activity",
+                "President of Web Design Club MOD"
+            ],
+            "descriptions": {
+                "awards": "Since school years, I have consistently turned ideas into outcomes through project-based activities and competitions connected to real practice.",
+                "certifications": "Alongside hands-on experience, I validated both core and advanced capabilities through certifications.",
+                "roles": "Beyond execution, I have been trusted to participate in evaluation, review, and standards development.",
+                "activities": "Since student years, I have consistently played roles connecting people and structure through leadership and execution."
+            }
+        },
+        "works": {
+            "career": [
+                {
+                    "id": "samhwa-eco-dashboard",
+                    "category": "project",
+                    "title": "Samhwa Paint Eco-factory Dashboard",
+                    "period": "2026.05",
+                    "type": "SI / Dashboard",
+                    "role": "Publishing 100%, UI Improvement 50%",
+                    "tech": ["Visual Studio Code", "Git", "Vue", "JavaScript", "SCSS", "HTML"],
+                    "introduction": "An eco-factory dashboard where operators scan process and environmental data at a glance. I owned the client-side publishing and unified inconsistent cards, status indicators, charts, and informational UI under one visual rule—aiming not for a pretty screen but for one that reads fast.",
+                    "myWorks": [
+                        "Published all client dashboard screens—cards, data areas, status indicators, charts, and informational UI",
+                        "Unified scattered hierarchy, spacing, and alignment rules into a consistent card-based layout",
+                        "Codified normal/warning states into color and label rules to make data easier to read",
+                        "Kept charts and metric areas readable across resolutions with responsive handling",
+                        "Improved the existing UI (50%) while cleaning up irregular styles"
+                    ],
+                    "achievements": [
+                        "Improved readability and UI consistency so operators read data faster",
+                        "Standardized card layouts and status rules so new widgets can reuse them"
+                    ],
+                    "points": ["Data-focused dashboard UI", "Status and hierarchy visualization rules", "Screen consistency in a short timeframe"],
+                    "pin": true,
+                    "duration": "~1 month",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue", "JavaScript", "SCSS", "HTML"]
+                },
+                {
+                    "id": "orchem-mes",
+                    "category": "project",
+                    "title": "Orchem MES Renewal",
+                    "period": "2026.03~",
+                    "type": "Project / Build",
+                    "role": "Publishing 100%, UI component structure 70%, screen architecture 50%",
+                    "tech": [
+                        "Vue 3",
+                        "Vite",
+                        "JavaScript",
+                        "SCSS",
+                        "HTML",
+                        "Vue Router",
+                        "Pinia",
+                        "Axios",
+                        "Vue I18n",
+                        "AG Grid",
+                        "Chart.js",
+                        "flatpickr",
+                        "marked"
+                    ],
+                    "introduction": "A shop-floor MES renewal on Vue 3 + Vite. On top of a Vue Router / Pinia / Axios / Vue I18n structure, I published the work screens while consolidating repeated layouts into shared components and raising both AG Grid table UX and tablet usability.",
+                    "myWorks": [
+                        "Published and structured MES work screens to fit the Vue Router / Pinia / Axios / Vue I18n setup",
+                        "Used and improved shared components (AppGrid, AppInput, AppSelect, AppButton, AppAccordion, AppModalHost) for cross-screen consistency",
+                        "Improved layouts and interactions for material prep, intermediate inspection, inspection results, and tablet screens",
+                        "Organized AG Grid behavior—search, selection, deletion, chip rendering, conditional styling, Excel export, and row/header heights",
+                        "Refined responsive and touch UI for buttons, cards, accordions, and grids on tablets",
+                        "Tidied props, state, and event handling so API responses and i18n keys bind reliably"
+                    ],
+                    "achievements": [
+                        "Improved maintainability by centering repeated MES screens on shared components",
+                        "Standardized AG Grid search/selection/render/download patterns, raising scalability and reuse project-wide",
+                        "Tightened the seam between publishing and frontend development for smoother collaboration"
+                    ],
+                    "points": ["AG Grid table UX standardization", "Tablet workflow UI", "Vue 3 + Vite integration"],
+                    "pin": true,
+                    "duration": "Ongoing · ~3+ months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue 3", "Vite", "JavaScript", "SCSS", "AG Grid"]
+                },
+                {
+                    "id": "hanjinkal",
+                    "category": "project",
+                    "title": "HANJIN KAL and Affiliates Renewal",
+                    "period": "2025.02~07",
+                    "type": "Corporate / CMS",
+                    "role": "Documentation/training 80%, stability 80%, collaboration 40%",
+                    "tech": ["IntelliJ", "ICE 5.0", "Microsoft Teams", "Word", "PowerPoint", "HTML", "SCSS", "Vue.js"],
+                    "introduction": "A renewal of the HANJIN KAL group sites where I customized Concentrix-built Vue components to fit iontech ICE 5.0 CMS. With no official guide, training caused confusion—so I authored a component-development and ICE-setup guide myself and shared it with the partner and client, then owned external communication after the ICE engineer rolled off.",
+                    "myWorks": [
+                        "Customized and restructured Concentrix-delivered Vue components for the ICE 5.0 CMS",
+                        "Designed the ICE-required file structure and converted components into a reusable, extensible CMS-friendly form",
+                        "Authored a development-structure and ICE-setup guide to resolve training confusion and shared it with Concentrix and HANJIN KAL",
+                        "Cut issue-resolution time by communicating continuously with the ICE engineer about CMS limitations",
+                        "Proactively adapted markup and styling for multiple devices while preserving the publishing guide",
+                        "Took over external communication after the April 2025 ICE roll-off, keeping collaboration efficient through organized deliverables"
+                    ],
+                    "achievements": [
+                        "Estimated ~30% lower communication cost by reducing training and collaboration friction with guides and clean deliverables",
+                        "Secured reusable, extensible component structure despite CMS limitations, improving operational stability",
+                        "Acted as the communication hub between partners (Concentrix, iontech) and the client (HANJIN KAL)"
+                    ],
+                    "points": ["CMS customization adaptability", "Led guides, documentation, and training", "Multi-party collaboration"],
+                    "pin": true,
+                    "duration": "~6 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "SCSS", "Vue"]
+                },
+                {
+                    "id": "oms",
+                    "category": "project",
+                    "title": "KleanNara OMS Renewal",
+                    "period": "2024.07~2025.02",
+                    "type": "System Renewal",
+                    "role": "Full Publishing 100%",
+                    "tech": ["Vue", "SCSS", "Figma"],
+                    "introduction": "A KleanNara OMS renewal where I owned all screen publishing. After finishing the key screens ahead of schedule, I used the remaining time to volunteer on Vue component development and to compile UI/UX improvement proposals before launch—a case where attention to detail down to margins and fonts paid off.",
+                    "myWorks": [
+                        "Owned full Vue-based publishing across all screens",
+                        "Completed the major screens in about a month, creating schedule slack",
+                        "Volunteered on Vue component development in the remaining time to broaden frontend contribution",
+                        "Compiled pre-launch UI/UX improvements for the team lead; several were adopted",
+                        "Checked details down to margins and font sizes to keep screen quality high"
+                    ],
+                    "achievements": [
+                        "De-risked the schedule by finishing major screens about a month early",
+                        "Contributed to UX gains as several improvement proposals shipped"
+                    ],
+                    "points": ["Speed and quality together", "Self-initiated frontend contribution", "Improvement-driven publisher"],
+                    "pin": true,
+                    "duration": "~8 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue", "SCSS"]
+                },
+                {
+                    "id": "smart-factory-gov",
+                    "category": "project",
+                    "title": "Smart Factory Government Projects",
+                    "period": "2021.05~2022.07",
+                    "type": "SI·SM",
+                    "role": "Publishing 100%, Design 20%",
+                    "tech": ["eGovFrame", "Adobe XD", "HTML", "CSS", "jQuery"],
+                    "introduction": "A government-funded program that began with Teraeco MES/smart-factory work and expanded across manufacturers like Sungel, Dawoo, and Sinae Electronics. Rather than one-off delivery, it grew into an in-house solution: I tailored each client UI to its brand identity and colors, and the screen know-how here became the foundation for Robo MES.",
+                    "myWorks": [
+                        "Delivered 100% of publishing for Teraeco MES adoption and smart-factory build",
+                        "Reflected per-client requirements while expanding to Sungel, Dawoo, Sinae, and more",
+                        "Provided tailored UI design (20%) matching each brand identity and colors",
+                        "Organized repeated screens with a productization lens for later reuse"
+                    ],
+                    "achievements": [
+                        "Expanded across multiple clients with tailored design and high satisfaction",
+                        "The accumulated MES screen know-how seeded the in-house Robo MES solution"
+                    ],
+                    "points": ["Handled multiple enterprise clients", "Brand-tailored design", "Productization-grounded experience"],
+                    "pin": false,
+                    "duration": "~15 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "kwangjang-homepage",
+                    "category": "project",
+                    "title": "Kwangjang Partners Website",
+                    "period": "2020.11~2020.12",
+                    "type": "SI / Build",
+                    "role": "Publishing 100%",
+                    "tech": ["Visual Studio Code", "Sketch", "HTML", "CSS", "jQuery"],
+                    "introduction": "An early-career build where I owned publishing for the Kwangjang Partners corporate site. Working from Sketch designs, I covered responsive layout and cross-browser support, building the fundamentals of corporate-site delivery.",
+                    "myWorks": ["Owned publishing for all corporate-site screens", "Handled responsive and cross-browser work from Sketch designs"],
+                    "achievements": [],
+                    "points": ["Early-stage production build experience", "Corporate-site publishing fundamentals"],
+                    "pin": false,
+                    "duration": "~2 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "hama-app",
+                    "category": "project",
+                    "title": "Hama Application",
+                    "period": "2020.09~2020.10",
+                    "type": "SI / Build",
+                    "role": "Publishing 100%",
+                    "tech": ["Visual Studio Code", "Sketch", "HTML", "CSS", "JavaScript"],
+                    "introduction": "A real-estate/construction service application that I published and built as a web app. Taken on in my first month, it was my first application project—from screen publishing through to app-style usage flow.",
+                    "myWorks": [
+                        "Published the real-estate/construction service application screens",
+                        "Implemented JavaScript-based interactions",
+                        "Built it as a web app to realize an app-style usage flow"
+                    ],
+                    "achievements": [],
+                    "points": ["App-like web implementation", "Service application publishing"],
+                    "pin": false,
+                    "duration": "~2 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "JavaScript"]
+                },
+                {
+                    "id": "hanon",
+                    "category": "operation",
+                    "title": "Hanon Systems Website Operation",
+                    "period": "2025.07~",
+                    "type": "SM Operation",
+                    "role": "Publishing 100%, operation issue response 100%",
+                    "tech": ["Rider", "Teams", "JIRA", "C#", "CSS3", "csHtml", "JavaScript"],
+                    "introduction": "An SM engagement operating the Hanon Systems website with Concentrix CATALYST. Rather than treating JIRA tickets as one-off screen edits, I reviewed impact from a publishing angle—csHtml views, CSP, encoding, static-resource paths, 404 handling, and security checks—to keep operations stable.",
+                    "myWorks": [
+                        "Analyzed and prioritized requests from JIRA operation tickets",
+                        "Handled publishing-focused maintenance—text, titles, images, links, layouts, and content areas",
+                        "Reviewed csHtml view structure and edited CSS and static resources as needed",
+                        "Reviewed CSP, encoding, static-resource paths, 404, and security issues from a publishing angle and scoped their impact"
+                    ],
+                    "achievements": [
+                        "Kept site content current by turning operation requests around quickly",
+                        "Contributed to stability by also reviewing view structure, CSS paths, and security-setting impact"
+                    ],
+                    "points": ["Operational responsiveness", "Ticket-driven maintenance", "Awareness of deploy and security impact"],
+                    "pin": true,
+                    "duration": "Ongoing",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["C#", "CSS3", "csHtml", "JavaScript"]
+                },
+                {
+                    "id": "tms-maintenance",
+                    "category": "operation",
+                    "title": "TMS Operation & Maintenance",
+                    "period": "2023.05~2023.07",
+                    "type": "SM Operation & Maintenance",
+                    "role": "Issue reporting & ops 100%, maintenance publishing 100%",
+                    "tech": ["Nexacro"],
+                    "introduction": "Brought in to fix performance degradation in the Tailim/Daeyoung TMS, I traced the cause through unit testing, resolved it, and carried on into operations. As I grew familiar with the service I volunteered to handle customers directly—cutting daily complaints from 15+ to about 2—and turned recurring issues into UX/UI improvements and maintenance.",
+                    "myWorks": [
+                        "Isolated the performance issue via unit testing and resolved its cause",
+                        "Volunteered for customer support, resolving speed and screen issues on the spot",
+                        "Escalated unresolved issues to the dev team and documented resolution cases as deliverables",
+                        "Analyzed recurring complaints and turned them into UX/UI improvements and maintenance screens in Nexacro"
+                    ],
+                    "achievements": [
+                        "Cut average daily complaints from 15+ to around 2",
+                        "Resolution-case documents were reused to handle recurrences faster"
+                    ],
+                    "points": ["Operations-improving publishing", "Self-initiated customer support", "Recurrence-prevention documentation"],
+                    "pin": false,
+                    "duration": "~3 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Nexacro"]
+                },
+                {
+                    "id": "framework",
+                    "category": "solution",
+                    "title": "JO&SOFT Frontend Framework",
+                    "period": "2026.02~",
+                    "type": "Internal / Framework",
+                    "role": "Publishing 100%, frontend architecture 70%, design system 70%",
+                    "tech": [
+                        "Nuxt 3",
+                        "Vue 3",
+                        "TypeScript",
+                        "JavaScript",
+                        "SCSS",
+                        "Pinia",
+                        "Axios",
+                        "Vite",
+                        "Vue I18n",
+                        "Chart.js",
+                        "vue-chartjs",
+                        "AG Grid",
+                        "flatpickr",
+                        "noUiSlider"
+                    ],
+                    "introduction": "An internal project where I built a Nuxt 3 frontend framework to end the per-project habit of rebuilding screen structure, shared UI, and SCSS from scratch. I unified the base layer—auto routing, auto component imports, state management, and the API plugin—with reusable UI components covering production states (size, disabled, readonly, focus, error) and a design-token SCSS system, all as one standard.",
+                    "myWorks": [
+                        "Organized the base layer—auto routing, auto component imports, Pinia state, and the Axios API plugin",
+                        "Built reusable components: AppButton, AppInput, AppSelect, AppDatePicker, AppProgress, Chart, and AG Grid",
+                        "Covered real-world states per component—size, disabled, readonly, focus, error, loading, and active",
+                        "Designed the SCSS structure around BEM naming and design tokens (color, type, spacing, state, breakpoints)",
+                        "Shaped composables, layouts, and shared plugins for production use and built example pages"
+                    ],
+                    "achievements": [
+                        "Frameworkized the base UI, layout, API integration, and SCSS rebuilt on every project",
+                        "Built a collaboration standard—components, API structure, and examples—that speeds up new-project kickoff"
+                    ],
+                    "points": ["Nuxt 3 frameworkization", "Production-state components", "Design-token SCSS"],
+                    "pin": true,
+                    "duration": "Ongoing",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS"],
+                    "links": [
+                        {
+                            "label": "Open demo",
+                            "href": "https://yheun03.github.io/framework/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/framework"
+                        }
+                    ]
+                },
+                {
+                    "id": "infra",
+                    "category": "solution",
+                    "title": "In-house Development Infra & Publishing Standardization",
+                    "period": "2026.02~",
+                    "type": "Internal Project",
+                    "role": "Publishing standardization 80%, UI structure 70%, documentation 50%",
+                    "tech": ["GitHub", "Visual Studio Code", "Cursor", "Figma", "Vue 3", "Nuxt 3", "SCSS", "JavaScript", "TypeScript"],
+                    "introduction": "Alongside the framework, this work standardized what had been written ad hoc per project—screen structure, SCSS, component naming, folder layout, API integration, and i18n—into one baseline. Beyond setting rules, I shipped production-ready example pages and a style guide so publishing and frontend development could collaborate in the same language.",
+                    "myWorks": [
+                        "Standardized buttons, forms, selects, date pickers, progress, charts, grids, LNB, and layouts",
+                        "Defined reusable conventions for naming, folder structure, API integration, and i18n for new projects",
+                        "Established SCSS tokens, BEM naming, and component-level style management",
+                        "Built and documented production-ready example pages and a style guide"
+                    ],
+                    "achievements": [
+                        "Created a foundation for quickly applying base layouts, components, and the style guide on new projects",
+                        "Unified scattered UI structures into a base that lifts publishing–frontend collaboration productivity"
+                    ],
+                    "points": ["Publishing standardization", "Reuse and collaboration", "Examples and guide docs"],
+                    "pin": true,
+                    "duration": "Ongoing",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue 3", "Nuxt 3", "SCSS", "TypeScript"]
+                },
+                {
+                    "id": "robo-tms",
+                    "category": "solution",
+                    "title": "Robo TMS Solution",
+                    "period": "2024.02~04",
+                    "type": "In-house Solution",
+                    "role": "Planning 30%, Publishing 100%, Design 80%",
+                    "tech": ["Vue", "SCSS", "Figma"],
+                    "introduction": "Built on hands-on experience resolving customer requests during TMS operation, this project produced the in-house Robo TMS solution. I cared most about the customer-facing app—owning it from UI/UX design through publishing—and lifted satisfaction with a redesigned UI and a more comfortable UX.",
+                    "myWorks": [
+                        "Contributed to planning from customer needs gathered during operation",
+                        "Designed the customer application UI/UX directly",
+                        "Owned full screen publishing on Vue and SCSS",
+                        "Improved usability with a redesigned UI and smoother flow"
+                    ],
+                    "achievements": [
+                        "Estimated ~25% fewer user inquiries from the improved UX",
+                        "Turned operational experience into a finished in-house product"
+                    ],
+                    "points": ["Planning, design, and publishing in one", "Operation experience to productization", "UX improvement case"],
+                    "pin": false,
+                    "duration": "~3 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue", "SCSS"]
+                },
+                {
+                    "id": "robo-mes",
+                    "category": "solution",
+                    "title": "Robo MES Solution Development",
+                    "period": "2022.08~2023.04",
+                    "type": "In-house Solution",
+                    "role": "Publishing 100%",
+                    "tech": ["WebSquare", "Figma", "HTML", "CSS", "jQuery"],
+                    "introduction": "A project that consolidated MES/smart-factory know-how from multiple manufacturers into the productized Robo MES solution. Owning publishing end to end, I built screens as module-level components, creating a base that sharply reduced screen-build effort on later projects.",
+                    "myWorks": [
+                        "Built repeated screens as module-level UI components",
+                        "Owned all publishing and tightened structural consistency",
+                        "Established a component-reuse system in the WebSquare environment"
+                    ],
+                    "achievements": [
+                        "Cut publishing effort by about 40% through modularization",
+                        "Converted field-project know-how into reusable solution assets"
+                    ],
+                    "points": ["Solution productization", "Modularization-driven productivity"],
+                    "pin": false,
+                    "duration": "~9 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "company-renewal",
+                    "category": "renewal",
+                    "title": "Corporate Site Renewal",
+                    "period": "2025.07~2025.08",
+                    "type": "Internal Project",
+                    "role": "Publishing 100%, UI Improvement 50%, Content Planning 30%",
+                    "tech": ["Cursor", "Figma", "Git", "FileZilla", "Whois Hosting", "HTML", "SCSS", "JavaScript", "jQuery"],
+                    "introduction": "A three-week full renewal of our corporate site—plagued by structural complexity and stale content—ahead of the AW VIETNAM 2025 exhibition. I refactored the structural limits of the 2022 code, proposed and led the move from unversioned FTP deployment to Git, and raised EN/VI localization, SSL, SEO, and accessibility together.",
+                    "myWorks": [
+                        "Removed duplicate markup and dead elements and introduced an SCSS component structure for maintainability",
+                        "Designed and built EN/VI localization with a flexible text-application approach for AW VIETNAM 2025",
+                        "Proactively proposed and adopted Git in place of unversioned FTP deployment",
+                        "Refreshed content—recent references, solutions, company intro—and planned several page compositions",
+                        "Applied an SSL certificate and met SEO, Open Graph, accessibility, and responsive standards"
+                    ],
+                    "achievements": [
+                        "Improved maintainability by ~40% through duplicate-markup removal and SCSS componentization",
+                        "Improved global accessibility and search inflow (~25% est.) via i18n, SEO, SSL, and OG",
+                        "Secured deploy stability and change traceability by moving FTP to Git"
+                    ],
+                    "points": ["Brand and information trust", "i18n and web-standard readiness", "Led the Git adoption proposal"],
+                    "pin": true,
+                    "duration": "~3 weeks",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
+                    "links": [
+                        {
+                            "label": "Open site",
+                            "href": "https://jonsoft.co.kr/"
+                        }
+                    ]
+                },
+                {
+                    "id": "kyungdongwon-cms",
+                    "category": "renewal",
+                    "title": "Kyungdongwon CMS Renewal",
+                    "period": "2025.07",
+                    "type": "SI / CMS",
+                    "role": "Publishing 100%",
+                    "tech": ["WebSquare SP5", "XML", "CSS3"],
+                    "introduction": "A short-term assignment to cover a teammate’s extended leave. I quickly understood screens someone else had been building, fixed detailed defects, and produced new pages—demonstrating the ability to onboard smoothly even on a tight timeline.",
+                    "myWorks": [
+                        "Fixed detailed defects in screens built by the previous developer",
+                        "Published new pages",
+                        "Adapted quickly to the WebSquare SP5 CMS to ramp up fast"
+                    ],
+                    "achievements": [
+                        "Delivered new and revised screens within about two weeks",
+                        "Matched code conventions to minimize conflicts with existing work"
+                    ],
+                    "points": ["Short-term ramp-up", "CMS publishing stabilization"],
+                    "pin": false,
+                    "duration": "~2 weeks",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["XML", "CSS3"]
+                },
+                {
+                    "id": "fems",
+                    "category": "renewal",
+                    "title": "Samhwa Paint FEMS Renewal",
+                    "period": "2024.11",
+                    "type": "SI / Rapid Delivery",
+                    "role": "Publishing 50%",
+                    "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS", "React.js"],
+                    "introduction": "Part of the Samhwa Paint FEMS adoption, this work answered a tight deadline to ship key React-based screens within a week. Drawing on extensive business web-app publishing experience, I kept quality high under the time pressure and helped stabilize the project.",
+                    "myWorks": [
+                        "Built the priority React screens needed within one week",
+                        "Delivered publishing that held quality under a rushed deadline"
+                    ],
+                    "achievements": ["Supported on-time delivery and stabilization by shipping key screens within a week"],
+                    "points": ["Rapid-delivery capability", "React publishing experience"],
+                    "pin": false,
+                    "duration": "~1 week",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "SCSS", "React"]
+                },
+                {
+                    "id": "scm-daeyang-paper",
+                    "category": "renewal",
+                    "title": "Daeyang Paper SCM Renewal",
+                    "period": "2024.05~2024.06",
+                    "type": "SI / New Build",
+                    "role": "Publishing 100%",
+                    "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS"],
+                    "introduction": "A new SCM build where I owned publishing. By leaning on reusable common-component patterns accumulated across prior projects, I cut total publishing effort by about 60% while keeping maintainability and scalability in mind.",
+                    "myWorks": [
+                        "Systematized shared UI elements and applied a reuse-oriented structure",
+                        "Ensured screen consistency through component-based publishing",
+                        "Designed markup for maintainability and scalability"
+                    ],
+                    "achievements": [
+                        "Cut total publishing effort by ~60% through component reuse",
+                        "Contributed to a shorter schedule via publishing efficiency"
+                    ],
+                    "points": ["Reuse-oriented publishing", "Delivery acceleration"],
+                    "pin": false,
+                    "duration": "~2 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "SCSS"]
+                },
+                {
+                    "id": "scm-daeyang-board",
+                    "category": "renewal",
+                    "title": "Daeyang Board SCM Renewal",
+                    "period": "2023.08~2024.01",
+                    "type": "SI / Renewal",
+                    "role": "Publishing 100%",
+                    "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS", "React"],
+                    "introduction": "An SCM renewal where I published customer and admin versions separately. The customer version was implemented in HTML, while the admin version was published in HTML and then componentized to fit a React structure—handling two screen strategies within one project.",
+                    "myWorks": [
+                        "Published the customer version in HTML",
+                        "Built admin components aligned to a React structure",
+                        "Split and structured screens per version requirements"
+                    ],
+                    "achievements": [],
+                    "points": ["Multi-version structure handling", "React component adaptation"],
+                    "pin": false,
+                    "duration": "~6 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "SCSS", "React"]
+                },
+                {
+                    "id": "company-renewal-2022",
+                    "category": "renewal",
+                    "title": "Corporate Site Renewal (2022)",
+                    "period": "2022.01~2022.03",
+                    "type": "Internal Project",
+                    "role": "Publishing 100%, Design 40%, UX Planning 25%",
+                    "tech": ["Visual Studio Code", "Figma", "FileZilla", "Whois Hosting", "HTML", "CSS", "jQuery"],
+                    "introduction": "After proposing the renewal myself, I delivered our plain, one-way corporate site end to end—planning, design, publishing, deployment, and operation. I gathered references from strong sites to plan content, applied SEO and Open Graph, and deployed via Whois hosting, maintaining it ever since.",
+                    "myWorks": [
+                        "Planned the site content myself and gathered/applied successful references",
+                        "Published with SEO and Open Graph protocol in mind",
+                        "Deployed via Whois hosting and kept operating it afterward"
+                    ],
+                    "achievements": ["Improved the one-way structure, lifting corporate professionalism and brand trust"],
+                    "points": ["End-to-end plan, build, and operate", "Contributed to brand trust"],
+                    "pin": false,
+                    "duration": "~3 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "incheon-university",
+                    "category": "renewal",
+                    "title": "Incheon National University Engineering Site Renewal",
+                    "period": "2021.03~2021.04",
+                    "type": "SM / Renewal",
+                    "role": "Publishing 100%",
+                    "tech": ["Visual Studio Code", "Adobe XD", "HTML", "CSS", "jQuery"],
+                    "introduction": "A renewal where I owned publishing for the engineering college site. When the school’s brochure and the official site’s faculty data didn’t match, I didn’t let it slide—I took ownership and raised it with the school so the information was corrected and completed.",
+                    "myWorks": [
+                        "Owned publishing for the engineering college site",
+                        "Spotted brochure-vs-site data mismatches and proposed corrections to the school",
+                        "Reflected accurate data through corrections and additions"
+                    ],
+                    "achievements": ["Improved site data accuracy through a proactive flag"],
+                    "points": ["Proactive problem discovery and fix", "Ownership-driven improvement"],
+                    "pin": false,
+                    "duration": "~2 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "tos-renewal",
+                    "category": "renewal",
+                    "title": "Tailim TOS Renewal",
+                    "period": "2021.01~2021.02",
+                    "type": "SI / Renewal",
+                    "role": "Publishing 100%",
+                    "tech": ["eGovFrame", "Sketch", "HTML", "CSS", "jQuery"],
+                    "introduction": "A renewal of Tailim Packaging’s internal order system (TOS) where I handled publishing. Working with business-system screens on the eGovFrame stack, it was the first of a long collaboration with Tailim that later included TOMS and TMS.",
+                    "myWorks": ["Published the internal order-system renewal screens", "Structured markup for the eGovFrame environment"],
+                    "achievements": [],
+                    "points": ["Business-system publishing", "Start of a long client relationship"],
+                    "pin": false,
+                    "duration": "~2 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "toms",
+                    "category": "award",
+                    "title": "TOMS Service Build",
+                    "period": "2021.10~12",
+                    "type": "New Build",
+                    "role": "Design 30%, Publishing 100%, UX Planning 25%",
+                    "tech": ["HTML", "CSS", "jQuery", "Figma"],
+                    "introduction": "A renewal/build of Tailim Packaging’s internal paper-and-box ordering service, where I combined design collaboration, UX planning, and publishing for the required application. Communicating with the designer in Figma, I learned the tooling, reflected client requirements precisely, and designed directly—an outcome that won the Smart App Awards 2022 Grand Prize in the work-improvement category.",
+                    "myWorks": [
+                        "Collaborated with the designer in Figma and reflected client requirements precisely",
+                        "Owned 100% of application screen publishing with HTML, CSS, and jQuery",
+                        "Planned UX around work flows and improved screen usability"
+                    ],
+                    "achievements": ["Won the Smart App Awards 2022 Grand Prize (work-improvement category)"],
+                    "points": ["Award-linked achievement", "Design, UX, and publishing in one build"],
+                    "pin": true,
+                    "duration": "~3 months",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                }
+            ],
+            "personal": [
+                {
+                    "id": "jonsoft-framework-portfolio",
+                    "category": "personal",
+                    "title": "Portfolio Website 2026",
+                    "period": "2026",
+                    "type": "Personal / Nuxt Portfolio",
+                    "role": "End-to-end design, publishing, architecture, and frontend development",
+                    "tech": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript", "Vite"],
+                    "introduction": "My 2026 portfolio, built as a seven-year HTML and SCSS web publisher taking an introductory step into Vue. Semantic HTML and SCSS remain the foundation, while Vue is used lightly for templates, props, v-if, v-for, and Teleport. Client work, personal projects, and bilingual content are organized so their editing locations stay obvious.",
+                    "myWorks": [
+                        "Published the home, gallery, and detail pages around semantic HTML and SCSS",
+                        "Used Vue templates, props, v-if, v-for, and Teleport for repeated UI and the mobile menu",
+                        "Centralized Korean and English UI copy and project content in i18n/ko.json and i18n/en.json",
+                        "Used Nuxt file-based routing and the Vite bundle environment for a static portfolio",
+                        "Organized color, spacing, typography, radii, and shadows as SCSS design tokens",
+                        "Removed unused motion, stores, and components to keep the screen code close to HTML",
+                        "Prepared static deployment around the GitHub Pages base path and public asset paths"
+                    ],
+                    "achievements": [
+                        "Handled the full process independently from design and publishing to architecture and frontend development",
+                        "Unified the editing location for all client, personal, Korean, and English content into two i18n JSON files",
+                        "Kept only essential language and theme state with Nuxt useState",
+                        "Removed unused GSAP and Pinia dependencies together with motion and dialog code",
+                        "Kept only components that are actually rendered, making the code easier for a publisher to read and edit"
+                    ],
+                    "points": [
+                        "An introductory Vue structure centered on HTML and SCSS publishing",
+                        "Components are limited to screen units that need props or repeated templates",
+                        "Bilingual content is not scattered across feature files, so editing locations are clear",
+                        "Continuously improved against the live deployed portfolio URL"
+                    ],
+                    "pin": true,
+                    "duration": "~2 months (ongoing improvements)",
+                    "captures": [
+                        "/images/portfolio-2026/home-light-desktop.png",
+                        "/images/portfolio-2026/home-dark-desktop.png",
+                        "/images/portfolio-2026/design-tokens-light-desktop.png",
+                        "/images/portfolio-2026/design-tokens-dark-desktop.png",
+                        "/images/portfolio-2026/home-light-tablet.png",
+                        "/images/portfolio-2026/home-dark-tablet.png",
+                        "/images/portfolio-2026/home-light-mobile.png",
+                        "/images/portfolio-2026/home-dark-mobile.png",
+                        "/images/og-image-2026.jpg"
+                    ],
+                    "languages": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript"],
+                    "links": [
+                        {
+                            "label": "View design tokens",
+                            "href": "/personal/design-tokens"
+                        }
+                    ]
+                },
+                {
+                    "id": "singil-bmc",
+                    "category": "personal",
+                    "title": "Singil Church Baseball Mission Website",
+                    "period": "2026.05.31~",
+                    "type": "Personal / Nuxt community website",
+                    "role": "End-to-end planning, design, publishing, frontend, and record-pipeline development",
+                    "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "AG Grid", "Node.js", "cheerio"],
+                    "introduction": "The official Singil Church Baseball Mission website. After an intensive Nuxt 3 foundation on May 31, 2026, June work added a GameOne HTML→JSON parsing pipeline, dark/light themes, leader cards, expanded MVP stats, and fresh game data. With no backend API, `npm run update` refreshes records while about, records, games, roster, MVP, videos, news, and contact IA ship as a static GitHub Pages site at `/singil-bmc/`.",
+                    "myWorks": [
+                        "Designed IA for about/leaders/history, team gallery, full/yearly/monthly/group records, monthly/weekly MVP, roster, games, YouTube, news, and contact",
+                        "Built `parse-game-html`, `build-records`, and `update-records` scripts that parse GameOne HTML with cheerio into per-game and summary JSON",
+                        "Implemented A-group (Davids) / D-group auto classification, playerId-based stat aggregation, AG Grid record tables, and game-detail MVP/highlight sections",
+                        "Handled GitHub Pages base paths via `useBasePath`/`fetchJson()` and documented post-game ops in `GAME_RECORD_UPDATE_HANDOFF.md`",
+                        "In June: dark/light themes, home layout for recent games and video links, leader card component with dynamic image paths, favicon, and SCSS consolidation",
+                        "Organized static deployment with GitHub Actions, `npm run deploy`, sitemap generation, JSON-LD, and dynamic SEO meta for games and news"
+                    ],
+                    "achievements": [
+                        "Shipped IA, records, stats, roster, media, and deployment in 33 commits on May 31, then extended themes, MVP, and ops data with 20 more commits in June (53 total)",
+                        "Established an operator-friendly flow: drop GameOne HTML and run `npm run update` once to rebuild game and summary records",
+                        "Encoded baseball-domain rules—excluding opponent stats and matching names via `players.json`—in parsing scripts and the README"
+                    ],
+                    "points": [
+                        "A church-community static site with a post-game record pipeline that needs no server",
+                        "Continued improvement through June with real games, videos, and MVP data after the initial one-day push",
+                        "A deployable, maintainable live site with GitHub Pages base path, accessibility, SEO, and dark/light themes"
+                    ],
+                    "pin": true,
+                    "duration": "Intensive May 31 build, then ongoing (53 GitHub commits)",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Node.js"],
+                    "links": [
+                        {
+                            "label": "View demo",
+                            "href": "https://yheun03.github.io/singil-bmc/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/singil-bmc"
+                        }
+                    ]
+                },
+                {
+                    "id": "clone-flighty",
+                    "category": "personal",
+                    "title": "Flighty Clone Demo",
+                    "period": "2026.05.24~",
+                    "type": "Personal / Nuxt clone service",
+                    "role": "End-to-end planning, design analysis, Figma redesign, and frontend development",
+                    "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "Figma", "AG Grid", "Chart.js"],
+                    "introduction": "A personal project I started after becoming an aviation enthusiast through a friend and taking 22 flights myself. I liked how Flighty lets people organize and share their flights through polished design and UX, but wanted to explore a version with multilingual support and a richer aircraft image library. This clone demo studies the original service and extends the idea toward localized flight records and broader aircraft registration.",
+                    "myWorks": [
+                        "Captured the Flighty 4.8.2 desktop UI and analyzed IA, typography hierarchy, card structure, and interaction density",
+                        "Recreated the captured UI in Figma to study the layout rules and visual details of the original design",
+                        "Designed a mobile-adapted version with refined typography, spacing, component sizing, and color roles",
+                        "Built a Nuxt 3 foundation with workspace, auth, settings, component demos, grid, chart, and upload UI patterns",
+                        "Organized Pinia, Axios, i18n dictionaries, and GitHub Pages base-path handling for localization and static deployment"
+                    ],
+                    "achievements": [
+                        "Documented the design-learning process from original-service capture to Figma clone and mobile redesign",
+                        "Prepared a scalable base by building shared UI components and demo pages on Nuxt 3 + Pinia first"
+                    ],
+                    "points": [
+                        "A clone project that connects a personal aviation interest to service planning and frontend practice",
+                        "Reframed English-only UX as a localization task and limited aircraft imagery as a data and asset expansion task",
+                        "Moves beyond a direct clone by reinterpreting the product through mobile usability and design-system decisions"
+                    ],
+                    "pin": true,
+                    "duration": "In progress",
+                    "captures": [
+                        "/images/projects/flighty/image-1.png",
+                        "/images/projects/flighty/image-2.png",
+                        "/images/projects/flighty/image-3.png"
+                    ],
+                    "thumbnail": "/images/archive-thumbs/flighty.jpg",
+                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Figma"],
+                    "links": [
+                        {
+                            "label": "View demo",
+                            "href": "https://yheun03.github.io/cloneFlighty/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/cloneFlighty"
+                        }
+                    ]
+                },
+                {
+                    "id": "clone-kakaotalk",
+                    "category": "personal",
+                    "title": "KakaoTalk Clone",
+                    "period": "2025.09.27~2026.05.23",
+                    "type": "Personal / Vue clone project",
+                    "role": "End-to-end planning, UI implementation, publishing, and frontend development",
+                    "tech": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "@vuepic/vue-datepicker", "holiday-kr", "vite-svg-loader"],
+                    "introduction": "A personal Vue 3 clone of KakaoTalk, built to learn a new frontend stack while following an existing product’s planning and design. I split major flows—chat, friends, settings—into components and practiced a production-like setup including GitHub Pages deployment with a `/cloneKakaoTalk/` base path.",
+                    "myWorks": [
+                        "Mapped core KakaoTalk screens to Vue Router 4 routes and layout components",
+                        "Set up Vite 6 with Sass (SCSS) and SVG icons via vite-svg-loader",
+                        "Integrated @vuepic/vue-datepicker and holiday-kr for date and holiday-aware UI",
+                        "Aligned local and deployed paths with `VITE_APP_BASE_URL` and dev/root npm scripts for GitHub Pages",
+                        "Configured gh-pages deployment (`npm run deploy`)"
+                    ],
+                    "achievements": [
+                        "Grew the UI incrementally across 120+ GitHub commits, getting comfortable with Vue 3 Composition API",
+                        "Moved from the 2025 HTML-only portfolio to a Vue SPA with routing and a modern build toolchain"
+                    ],
+                    "points": [
+                        "A learning clone focused on component boundaries, state, and routing by following a real product UI",
+                        "Documented local run and base-path rules in the repo README against the live deployment URL"
+                    ],
+                    "pin": true,
+                    "duration": "~8 months (ongoing improvements)",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "JavaScript"],
+                    "links": [
+                        {
+                            "label": "View demo",
+                            "href": "https://yheun03.github.io/cloneKakaoTalk/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/cloneKakaoTalk"
+                        }
+                    ]
+                },
+                {
+                    "id": "portfolio-2025",
+                    "category": "personal",
+                    "title": "Portfolio Website 2025",
+                    "period": "2025",
+                    "type": "Personal / HTML Portfolio",
+                    "role": "End-to-end planning, design, publishing, and interaction implementation",
+                    "tech": ["HTML", "SCSS", "JavaScript", "jQuery", "Swiper"],
+                    "introduction": "A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion—an archive that shows exactly how I worked just before moving to the Nuxt-based 2026 portfolio.",
+                    "myWorks": [
+                        "Designed the IA and visual layout for a single-page HTML/SCSS portfolio",
+                        "Implemented dark/light mode, Swiper project sections, and modal interactions",
+                        "Managed profile images, mockups, OG image, and static resume assets together"
+                    ],
+                    "achievements": [
+                        "Completed and deployed a single-page portfolio using only static assets, no framework",
+                        "Preserved it as an archive whose approach and structure can be compared with the 2026 Nuxt portfolio"
+                    ],
+                    "points": [
+                        "An archive that makes the structure and expression before the Nuxt-based 2026 portfolio easy to compare",
+                        "HTML-first work completed with static assets and no application framework"
+                    ],
+                    "pin": true,
+                    "duration": "~1 month",
+                    "captures": [
+                        "/images/portfolio/ver-2025/og-image.jpg",
+                        "/images/portfolio/ver-2025/photo-1920.webp",
+                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png",
+                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png",
+                        "/images/portfolio/ver-2025/project/matemate/thumbnail-pc.png",
+                        "/images/portfolio/ver-2025/project/matemate/modal/modal-01.png",
+                        "/images/portfolio/ver-2025/project/matemate/modal/modal-02.png",
+                        "/images/portfolio/ver-2025/project/matemate/modal/modal-03.png",
+                        "/images/portfolio/ver-2025/project/gongting/thumbnail-mb.png"
+                    ],
+                    "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
+                    "links": [
+                        {
+                            "label": "Open 2025 version",
+                            "href": "/ver.2025/index.html"
+                        }
+                    ]
+                },
+                {
+                    "id": "matemate-capstone",
+                    "category": "personal",
+                    "title": "MateMate Roommate Matching",
+                    "period": "2025.01.04~2025.01.30",
+                    "type": "Team / Capstone & vacation (mobile web)",
+                    "role": "90% planning, 30% UI design, 100% publishing (team-matemate)",
+                    "tech": ["HTML", "SCSS", "JavaScript", "Firebase Hosting", "Firestore", "Cloud Functions", "Figma"],
+                    "introduction": "A Korea Polytechnic University capstone/vacation team project: a mobile web service that matches dorm roommates by lifestyle and preferences instead of random assignment or referrals. Source and deployment live in the team-matemate/matemate repo and Firebase project matemate-2025.",
+                    "myWorks": [
+                        "Defined the problem and IA for matching, auth, chat, board, and related user flows",
+                        "Published auth, match, chat, board, cutline, user, and main screens under `public/html/` with an SCSS component structure",
+                        "Configured Firebase Hosting (root → main), Firestore/Storage rules, and Cloud Functions",
+                        "Implemented matching and list interactions with Swiper and shared JS, tuned UX for repeated C2C edits"
+                    ],
+                    "achievements": [
+                        "Shipped an MVP and deployment pipeline with ~74 commits over four weeks in the team-matemate org repo",
+                        "Implemented automatic condition-based matching in the UI, differentiated from paper checklists and ad-hoc posts"
+                    ],
+                    "points": [
+                        "Led planning and publishing in a team capstone, splitting work by screen in a shared repo",
+                        "Bundled hosting, database, and functions on Firebase so the mobile web prototype is shareable via a live URL"
+                    ],
+                    "pin": false,
+                    "duration": "~4 weeks (focused GitHub development)",
+                    "captures": [
+                        "/images/portfolio/ver-2025/project/matemate/thumbnail-pc.png",
+                        "/images/portfolio/ver-2025/project/matemate/modal/modal-01.png",
+                        "/images/portfolio/ver-2025/project/matemate/modal/modal-02.png",
+                        "/images/portfolio/ver-2025/project/matemate/modal/modal-03.png"
+                    ],
+                    "thumbnail": "/images/archive-thumbs/matemate.jpg",
+                    "languages": ["HTML", "SCSS", "JavaScript", "Firebase", "Figma"],
+                    "links": [
+                        {
+                            "label": "View demo",
+                            "href": "https://yheun03.github.io/matemate/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/team-matemate/matemate"
+                        }
+                    ]
+                },
+                {
+                    "id": "gongting-blind-matching",
+                    "category": "personal",
+                    "title": "Gongting Blind Matching Service",
+                    "period": "2024.05.16~2024.07.21",
+                    "type": "Personal / Mobile Web Service",
+                    "role": "50% design and 100% publishing",
+                    "tech": ["HTML", "SCSS", "JavaScript", "Figma", "Photoshop", "Illustrator", "GitHub Pages"],
+                    "introduction": "A blind matching web service for Korea Polytechnic University students. It offers a mobile-first UI that helps students connect through interests and traits after pandemic-era isolation. Static HTML for intro, sign-up, profile, matching, and result flows is maintained in the yheun03/gongting repo and deployed on GitHub Pages.",
+                    "myWorks": [
+                        "Structured intro, user, and match flows as static pages under `html/` with `intro.html` as the entry",
+                        "Set a mobile-first UI direction and organized brand tone, graphics, SCSS, and JS under `resources/`",
+                        "Split UI component samples into `component.html` for reusable screen-level publishing",
+                        "Deployed to GitHub Pages (`yheun03.github.io/gongting`) with favicon and asset sets"
+                    ],
+                    "achievements": [
+                        "Documented early service participation: 171 users in the first round and 121 in the second",
+                        "Version-controlled screens and assets on GitHub, separate from the portfolio archive copy"
+                    ],
+                    "points": [
+                        "A campus project that shipped mobile UI and publishing within a focused launch week",
+                        "Documented a friend-matching expansion direction based on user feedback"
+                    ],
+                    "pin": false,
+                    "duration": "~1 week launch · ~2 months in repo",
+                    "captures": ["/images/portfolio/ver-2025/project/gongting/thumbnail-mb.png"],
+                    "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
+                    "links": [
+                        {
+                            "label": "View demo",
+                            "href": "https://yheun03.github.io/gongting/intro.html"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/gongting"
+                        }
+                    ]
+                },
+                {
+                    "id": "jonsoft-homepage-2022-archive",
+                    "category": "personal",
+                    "title": "JO&soft Homepage Renewal Archive",
+                    "period": "2022.01.03~2022.03.04",
+                    "type": "Archive / Corporate Website",
+                    "role": "Planning and publishing-focused contribution",
+                    "tech": ["HTML", "CSS", "jQuery", "Figma", "Photoshop", "Illustrator"],
+                    "introduction": "An archive item from the 2025 portfolio for the JO&soft homepage renewal. It covered reference research, content structure, publishing, SEO, and Open Graph management to improve the previous website’s plain structure and low trust impression.",
+                    "myWorks": [
+                        "Proposed renewal direction and organized the main content structure",
+                        "Handled publishing, responsive screens, SEO, and Open Graph metadata",
+                        "Organized PC and mobile screenshots from the 2025 portfolio as an archive"
+                    ],
+                    "achievements": ["Contributed to improving corporate professionalism and external trust"],
+                    "points": ["An early corporate renewal experience connected to my current career project history"],
+                    "pin": false,
+                    "duration": "~2 months",
+                    "captures": [
+                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png",
+                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png"
+                    ],
+                    "thumbnail": "/images/archive-thumbs/jonsoft-2022.jpg",
+                    "languages": ["HTML", "CSS", "jQuery", "Figma"],
+                    "links": [
+                        {
+                            "label": "Open site",
+                            "href": "http://jonsoft.co.kr/"
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }

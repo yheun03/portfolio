@@ -1,6 +1,5 @@
 <template>
-    <div ref="tabListRef" role="tablist" class="tab-list tab-list--rail" :class="$attrs.class"
-        :aria-orientation="isNarrow ? 'horizontal' : 'vertical'" :aria-label="listLabel">
+    <div ref="tabListRef" role="tablist" class="tab-list tab-list--rail" :class="$attrs.class" :aria-label="listLabel">
         <button v-for="item in items" :key="item.key" :id="`${tabIdPrefix}${item.key}`" type="button" role="tab"
             :aria-controls="`${panelIdPrefix}-${item.key}`" :aria-selected="modelValue === item.key"
             :tabindex="modelValue === item.key ? 0 : -1" class="tab-list__tab"
@@ -27,34 +26,38 @@ const props = defineProps<{
     tabIdPrefix: string;
     panelIdPrefix: string;
     listLabel: string;
-    scrollAnchor?: string;
 }>();
 
 const emit = defineEmits<{
     'update:modelValue': [value: string];
 }>();
 
-const { isNarrow } = useNarrowLayout();
 const tabListRef = ref<HTMLElement | null>(null);
-
 const tabKeys = computed(() => props.items.map((item) => item.key));
 
-const { handleTabKeydown } = useTablistKeyboard(
-    tabKeys,
-    (key) => emit('update:modelValue', key),
-    {
-        tabIdPrefix: props.tabIdPrefix,
-        orientation: computed(() => (isNarrow.value ? 'horizontal' : 'vertical')),
-        scrollAnchorSelector: props.scrollAnchor,
-    },
-);
+function handleTabKeydown(event: KeyboardEvent, currentKey: string) {
+    const currentIndex = tabKeys.value.indexOf(currentKey);
+    if (currentIndex < 0) return;
+
+    let nextIndex: number | null = null;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = currentIndex + 1;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = currentIndex - 1;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = tabKeys.value.length - 1;
+    if (nextIndex === null) return;
+
+    event.preventDefault();
+    const key = tabKeys.value[(nextIndex + tabKeys.value.length) % tabKeys.value.length];
+    if (!key) return;
+    emit('update:modelValue', key);
+    nextTick(() => document.getElementById(`${props.tabIdPrefix}${key}`)?.focus());
+}
 
 function handleTabSelect(key: string) {
     emit('update:modelValue', key);
 }
 
 function handleTabFocus(event: FocusEvent) {
-    if (!isNarrow.value) return;
     const tab = event.currentTarget instanceof HTMLElement ? event.currentTarget : null;
     const tabList = tabListRef.value;
     if (!tab || !tabList) return;

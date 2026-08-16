@@ -31,10 +31,7 @@
     },
     "dependencies": {
         "@fontsource/roboto-slab": "^5.2.8",
-        "@pinia/nuxt": "^0.5.4",
-        "gsap": "^3.15.0",
         "nuxt": "^3.14.1593",
-        "pinia": "^2.2.4",
         "vue": "^3.5.12",
         "vue-router": "^4.4.5"
     },

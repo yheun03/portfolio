@@ -17,7 +17,7 @@
                 :chronological-year-groups="chronologicalYearGroups"
                 :affiliation-aria-label="t('journey.viewAffiliation')"
                 :chronological-aria-label="t('journey.viewChronological')" :temp-label="tempLabel"
-                :clients-aria-label="locale === 'ko' ? '참여 고객사' : 'Clients served'" />
+                :clients-aria-label="t('journey.clientsAriaLabel')" />
         </div>
     </section>
 </template>
@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import JourneyViewRenderer from '~/components/renderers/Page_Home/JourneyViewRenderer.vue';
 
-const { t, locale } = useLocale();
+const { t } = useLocale();
 const {
     viewMode,
     viewOptions,

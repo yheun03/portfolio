@@ -1,6 +1,6 @@
 <template>
-    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId"
-        page-variant="home" :footer-text="t('footer.copyright')">
+    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home"
+        :footer-text="t('footer.copyright')">
         <div class="page__layer page__layer--hero">
             <PortfolioHero />
         </div>
@@ -19,31 +19,21 @@
             <PortfolioContact />
         </div>
     </AppLayout>
-    <TempMainProgressModalRenderer />
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue';
 import PortfolioHero from '~/components/home/PortfolioHero.vue';
-import { HOME_SCROLL_SECTION_IDS } from '@config/home-sections';
-
-const PortfolioWhy = defineAsyncComponent(() => import('~/components/home/PortfolioWhy.vue'));
-const PortfolioShowcase = defineAsyncComponent(() => import('~/components/home/PortfolioShowcase.vue'));
-const PortfolioProof = defineAsyncComponent(() => import('~/components/home/PortfolioProof.vue'));
-const PortfolioHow = defineAsyncComponent(() => import('~/components/home/PortfolioHow.vue'));
-const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
-const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
-const TempMainProgressModalRenderer = defineAsyncComponent(
-    () => import('~/components/renderers/Page_Home/TempMainProgressModalRenderer.vue'),
-);
-
+import PortfolioWhy from '~/components/home/PortfolioWhy.vue';
+import PortfolioShowcase from '~/components/home/PortfolioShowcase.vue';
+import PortfolioProof from '~/components/home/PortfolioProof.vue';
+import PortfolioHow from '~/components/home/PortfolioHow.vue';
+import PortfolioToolbox from '~/components/home/PortfolioToolbox.vue';
+import PortfolioContact from '~/components/home/PortfolioContact.vue';
 const { t, locale } = useLocale();
-
-useRevealOnScroll({ deferred: true });
-useHomeMotion();
+const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'contact'] as const;
 
 const appDockLinks = computed(() =>
-    HOME_SCROLL_SECTION_IDS.map((id) => ({
+    sectionIds.map((id) => ({
         href: `#${id}`,
         label: t(`nav.${id}`),
     }))
@@ -51,7 +41,7 @@ const appDockLinks = computed(() =>
 
 const headerNavLinks = useSubpageLinks();
 
-const { activeId } = useScrollSpy([...HOME_SCROLL_SECTION_IDS]);
+const activeId = '';
 
 usePortfolioSeo(() => ({
     title: t('meta.title'),

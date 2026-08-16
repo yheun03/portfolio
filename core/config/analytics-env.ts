@@ -1,1 +1,0 @@
-export { analyticsPublicEnv } from './env';

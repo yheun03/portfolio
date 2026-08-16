@@ -13,15 +13,15 @@
                         <p :id="`${id}-title`" class="app-lnb__title">{{ t('lnb.title') }}</p>
                         <p class="app-lnb__subtitle">{{ t('lnb.subtitle') }}</p>
                     </div>
-                    <button type="button" class="app-lnb__close"
-                        :aria-label="locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'" @click="emitClose">
+                    <button type="button" class="app-lnb__close" :aria-label="t('a11y.mobileMenuClose')"
+                        @click="emitClose">
                         <span class="app-lnb__close-icon" aria-hidden="true">
                             <span />
                             <span />
                         </span>
                     </button>
                 </div>
-                <nav class="app-lnb__nav" :aria-label="locale === 'ko' ? '모바일 주요 메뉴' : 'Mobile primary menu'">
+                <nav class="app-lnb__nav" :aria-label="t('a11y.mobileNavigation')">
                     <BaseLink v-for="(item, index) in links" :key="item.href" :href="item.href" class="app-lnb__link"
                         :class="{ 'app-lnb__link--active': isActive(item.href) }"
                         :aria-current="getAriaCurrent(item.href)" :style="{ '--lnb-item-delay': `${index * 45}ms` }"
@@ -63,10 +63,10 @@
 </template>
 
 <script setup lang="ts">
-import type { AppNavLink } from '@composables/portfolio/useNavLinkState';
-import { profile } from '@data/site';
+import type { AppNavLink } from '~/composables/portfolio/useNavLinkState';
 
-const { locale, t } = useLocale();
+const { content, t } = useLocale();
+const profile = computed(() => content.value.profile);
 const drawerRef = ref<HTMLElement | null>(null);
 
 const props = withDefaults(
@@ -79,8 +79,6 @@ const props = withDefaults(
     }>(),
     { activeId: '' },
 );
-
-const menuOpen = computed(() => props.open);
 
 const emit = defineEmits(['close']);
 
@@ -96,8 +94,6 @@ const { isActive, getAriaCurrent } = useNavLinkState({
     activeId: () => props.activeId,
     activePath: () => props.activePath,
 });
-
-useFocusTrap(drawerRef, menuOpen, { onEscape: emitClose });
 
 watch(
     () => props.open,
