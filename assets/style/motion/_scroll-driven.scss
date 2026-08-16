@@ -35,7 +35,6 @@
         }
 
         /* sticky 타이틀 컬럼 — 핀 고정되며 부드럽게 안착 */
-        .works__title-col,
         .highlights__title-col {
             animation: sd-title-settle linear both;
             animation-timeline: view();

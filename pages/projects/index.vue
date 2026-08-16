@@ -1,10 +1,6 @@
 <template>
-    <GalleryArchivePage variant="career" :works="works" />
+    <GalleryArchivePage variant="career" />
 </template>
-
-<script setup lang="ts">
-const works = useGalleryRouteWorks('career');
-</script>
 
 <style lang="scss">
 @use '~/assets/style/gallery.scss';

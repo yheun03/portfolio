@@ -1,18 +1,8 @@
-import { writeFileSync } from 'node:fs';
-import { join } from 'node:path';
 import { defineNuxtConfig } from 'nuxt/config';
-import { createJiti } from 'jiti';
 import { fileURLToPath } from 'node:url';
 import { joinURL } from 'ufo';
-import { analyticsPublicEnv } from './core/config/analytics-env';
 
-const rootDir = fileURLToPath(new URL('.', import.meta.url));
-const jiti = createJiti(rootDir);
-
-function writePublicSitemap() {
-    const { buildSitemapXml } = jiti('./core/sitemap/build-sitemap.ts') as typeof import('./core/sitemap/build-sitemap');
-    writeFileSync(join(rootDir, 'public/sitemap.xml'), buildSitemapXml());
-}
+const analyticsEnabled = !['false', '0'].includes(process.env.NUXT_PUBLIC_ANALYTICS_ENABLED ?? 'true');
 
 /** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
@@ -25,19 +15,13 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            gtmId: analyticsPublicEnv.gtmId,
-            gaMeasurementId: analyticsPublicEnv.gaMeasurementId,
-            naverWcsWa: analyticsPublicEnv.naverWcsWa,
-            naverWcsScriptUrl: analyticsPublicEnv.naverWcsScriptUrl,
-            analyticsEnabled: analyticsPublicEnv.analyticsEnabled,
-        },
-    },
-    experimental: {
-        appManifest: false,
-        defaults: {
-            nuxtLink: {
-                prefetch: false,
-            },
+            gtmId: process.env.NUXT_PUBLIC_GTM_ID?.trim() ?? '',
+            gaMeasurementId: process.env.NUXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? '',
+            naverWcsWa: process.env.NUXT_PUBLIC_NAVER_WCS_WA?.trim() ?? '',
+            naverWcsScriptUrl: process.env.NUXT_PUBLIC_NAVER_WCS_SCRIPT_URL?.trim() ?? '',
+            analyticsEnabled,
+            googleSiteVerification: process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ?? '',
+            naverSiteVerification: process.env.NUXT_PUBLIC_NAVER_SITE_VERIFICATION?.trim() ?? '',
         },
     },
     app: {
@@ -59,67 +43,31 @@ export default defineNuxtConfig({
         },
     },
 
-    hooks: {
-        /** `nuxt build` / `nuxt generate` 공통 — Nuxt 3에는 `generate:before` 훅이 없음 */
-        'build:before': writePublicSitemap,
-    },
-
-    modules: ['@pinia/nuxt'],
-    css: ['~/assets/style/main.scss'],
+    css: [
+        '@fontsource/roboto-slab/latin-400.css',
+        '@fontsource/roboto-slab/latin-700.css',
+        '@fontsource/roboto-slab/latin-900.css',
+        '~/assets/style/main.scss',
+    ],
 
     alias: {
-        '@composables': fileURLToPath(new URL('./composables', import.meta.url)),
-        '@config': fileURLToPath(new URL('./core/config', import.meta.url)),
         '@data': fileURLToPath(new URL('./data', import.meta.url)),
         '@i18n': fileURLToPath(new URL('./i18n', import.meta.url)),
-        '@stores': fileURLToPath(new URL('./stores', import.meta.url)),
-        '@app-types': fileURLToPath(new URL('./core/types', import.meta.url)),
-        '@core': fileURLToPath(new URL('./core', import.meta.url)),
-        '@utils': fileURLToPath(new URL('./core/utils', import.meta.url)),
     },
 
     imports: {
         dirs: ['~/composables', '~/composables/**'],
     },
 
-    pinia: {
-        storesDirs: ['~/stores'],
-    },
-
-    plugins: ['~/plugins/init.client', '~/plugins/analytics.client', '~/plugins/gallery-font.client', '~/plugins/gallery-navigation.client'],
-
     components: [
         { path: '~/components/base', pathPrefix: false },
         { path: '~/components/work', pathPrefix: false },
         { path: '~/components/gallery', pathPrefix: false },
-        { path: '~/components/motion', pathPrefix: false },
         { path: '~/components/home', pathPrefix: false },
         { path: '~/components/layout', pathPrefix: false },
     ],
 
     vite: {
-        build: {
-            chunkSizeWarningLimit: 900,
-            target: 'es2022',
-            modulePreload: { polyfill: false },
-            rollupOptions: {
-                output: {
-                    manualChunks(id) {
-                        if (id.includes('node_modules/gsap')) return 'gsap';
-                        if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) return 'vue';
-                        if (id.includes('node_modules/pinia')) return 'pinia';
-                        if (id.includes('/data/works')) return 'works-data';
-                    },
-                },
-            },
-        },
-        server: {
-            watch: {
-                usePolling: process.env.CHOKIDAR_USEPOLLING === '1',
-                interval: 300,
-                ignored: ['**/.git/**', '**/.output/**', '**/node_modules/**'],
-            },
-        },
         css: {
             preprocessorOptions: {
                 scss: {
@@ -130,21 +78,7 @@ export default defineNuxtConfig({
         },
     },
 
-    watchers: {
-        chokidar: {
-            usePolling: process.env.CHOKIDAR_USEPOLLING === '1',
-            interval: 300,
-            ignored: ['**/.git/**', '**/.output/**'],
-        },
-    },
-
     nitro: {
         preset: 'static',
-        routeRules: {
-            '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-            '/images/**': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
-            '/assets/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-            '/**/*.webp': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-        },
     },
 });

@@ -1,5 +1,5 @@
 <template>
-    <component :is="tag" class="surface-card" :class="surfaceClass" data-card-pointer v-bind="$attrs">
+    <component :is="tag" class="surface-card" :class="surfaceClass" v-bind="$attrs">
         <h3 v-if="title" class="surface-card__title">{{ title }}</h3>
         <slot />
     </component>

@@ -45,9 +45,7 @@
 
 ### Performance
 
-- Split below-the-fold sections into async components:
-    - `PortfolioAbout`, `PortfolioJourney`, `PortfolioToolbox`, `PortfolioHighlights`, `PortfolioContact`.
-- Keep hero and works as immediate render, defer non-critical section JS.
+- 홈 섹션은 일반 Vue 컴포넌트 import로 유지합니다.
 
 ### Accessibility
 

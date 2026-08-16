@@ -111,8 +111,7 @@
         outline: none;
     }
 
-    &:focus-visible,
-    &.is-gallery-entry-active {
+    &:focus-visible {
         outline: 3px solid var(--gallery-accent);
         outline-offset: 3px;
         border-color: var(--gallery-accent);
@@ -443,8 +442,7 @@
         outline: none;
     }
 
-    &:focus-visible,
-    &.is-gallery-entry-active {
+    &:focus-visible {
         outline: 3px solid var(--gallery-accent);
         outline-offset: clamp(3px, 0.6vw, 7px);
         border-radius: var(--radius-lg);

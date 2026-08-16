@@ -6,10 +6,7 @@ export type AppNavLink = {
     label: string;
 };
 
-export function useNavLinkState(options: {
-    activeId?: MaybeRefOrGetter<string | undefined>;
-    activePath?: MaybeRefOrGetter<string | undefined>;
-}) {
+export function useNavLinkState(options: { activeId?: MaybeRefOrGetter<string | undefined>; activePath?: MaybeRefOrGetter<string | undefined> }) {
     const route = useRoute();
 
     function isActive(href: string): boolean {

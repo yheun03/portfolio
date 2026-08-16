@@ -15,9 +15,9 @@
 
 ## 기술 스택
 
-- **Nuxt 3** · Vue 3 · Pinia
+- **Nuxt 3** · Vue 3 · Vite
 - **SCSS** — 색상 `_theme.scss`, foundation `_tokens.scss`
-- **GSAP** (히어로·모션)
+- **CSS 기반 인터랙션**
 - **GitHub Pages** 배포 (`baseURL`: `/portfolio/`)
 
 ## 문서
@@ -30,33 +30,25 @@
 
 ## 프로젝트 구조
 
-Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정·타입·순수 유틸은 `core/` 앱 공용 계층으로 분리했습니다. 전체 폴더 설명은 [project-structure.md](docs/project-structure.md)를 기준으로 합니다.
+Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 한 곳에서만 쓰는 설정·타입·유틸은 사용 파일 가까이에 둡니다. 전체 폴더 설명은 [project-structure.md](docs/project-structure.md)를 기준으로 합니다.
 
 ```
 ├── components/          # Vue 컴포넌트 (폴더명 PascalCase)
 │   ├── base/            # 버튼, 카드, 라벨 등 primitive
-│   ├── work/            # 작업 카드, 타임라인, 갤러리 카드
-│   ├── home/            # 홈 섹션 (Hero, Works, About, …)
+│   ├── work/            # 타임라인, 갤러리 카드
+│   ├── home/            # 홈 섹션 (Hero, Why, Showcase, …)
 │   ├── layout/          # AppLayout, Header, Footer, Lnb, Dock
 │   ├── gallery/         # 프로젝트 아카이브·상세
-│   └── motion/          # 모션 타이포그래피
 ├── pages/               # 라우트 (index, projects, personal)
 ├── data/
-│   ├── works/           # 경력·개인 프로젝트 (카테고리별 TS)
-│   └── site/            # 프로필, 소개, 여정, 스킬, 하이라이트
-├── app/                 # Nuxt 앱 옵션 (router.options.ts)
-├── core/                # config, app types, pure utils
-│   ├── config/
-│   ├── types/
-│   └── utils/
+│   └── works.ts         # 프로젝트 타입
 ├── composables/         # 재사용 런타임 로직
-├── plugins/             # Nuxt 클라이언트/앱 플러그인
-├── stores/              # Pinia 상태
-├── i18n/                # UI 문구 (ko.json, en.json)
+├── plugins/             # 방문 분석 클라이언트 플러그인
+├── i18n/                # 전체 콘텐츠 (ko.json, en.json)
 ├── public/
 │   └── files/
 │       └── Resume.pdf   # PDF 이력서
-└── assets/style/        # SCSS (base, layout, home, work, gallery, motion)
+└── assets/style/        # SCSS (base, layout, home, gallery, motion)
 ```
 
 ## 환경 변수 (`.env`)
@@ -67,16 +59,16 @@ Nuxt 관례에 맞춰 화면 계층은 루트에서 관리하고, 설정·타입
 cp .env.example .env
 ```
 
-| 변수                            | 설명                                                              |
-| ------------------------------- | ----------------------------------------------------------------- |
-| `NUXT_PUBLIC_GTM_ID`               | Google Tag Manager (`GTM-…`)                                      |
-| `NUXT_PUBLIC_GA_MEASUREMENT_ID`    | Google Analytics 4 gtag (`G-…`, 구버전 사이트와 동일 시)          |
-| `NUXT_PUBLIC_NAVER_WCS_WA`         | 네이버 `wcs_add["wa"]`                                            |
-| `NUXT_PUBLIC_NAVER_WCS_SCRIPT_URL` | 네이버 `wcslog.js` URL                                            |
-| `NUXT_PUBLIC_ANALYTICS_ENABLED`    | `false`면 분석 스크립트 전부 미로드                               |
-| `NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML 태그 값 (선택)                      |
-| `NUXT_PUBLIC_NAVER_SITE_VERIFICATION`  | 네이버 서치어드바이저 사이트 소유 확인 값 (선택)               |
-| `NUXT_APP_BASE_URL`             | 앱 base path (기본 `/portfolio/`)                                 |
+| 변수                                   | 설명                                                     |
+| -------------------------------------- | -------------------------------------------------------- |
+| `NUXT_PUBLIC_GTM_ID`                   | Google Tag Manager (`GTM-…`)                             |
+| `NUXT_PUBLIC_GA_MEASUREMENT_ID`        | Google Analytics 4 gtag (`G-…`, 구버전 사이트와 동일 시) |
+| `NUXT_PUBLIC_NAVER_WCS_WA`             | 네이버 `wcs_add["wa"]`                                   |
+| `NUXT_PUBLIC_NAVER_WCS_SCRIPT_URL`     | 네이버 `wcslog.js` URL                                   |
+| `NUXT_PUBLIC_ANALYTICS_ENABLED`        | `false`면 분석 스크립트 전부 미로드                      |
+| `NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML 태그 값 (선택)                |
+| `NUXT_PUBLIC_NAVER_SITE_VERIFICATION`  | 네이버 서치어드바이저 사이트 소유 확인 값 (선택)         |
+| `NUXT_APP_BASE_URL`                    | 앱 base path (기본 `/portfolio/`)                        |
 
 `NUXT_PUBLIC_*` 값은 **클라이언트 번들에 포함**됩니다. `plugins/analytics.client.ts`가 빌드·런타임에 이 값을 읽습니다.
 
@@ -111,7 +103,7 @@ npm run deploy   # build + gh-pages 브랜치 배포
 
 - **색상**: `_theme.scss`만 편집. Sass에서는 `$primary-600`, `var(--color-primary)` 등 사용.
 - **타이포**: `@include font(heading-1)` 등 (`_tokens.scss`의 `$font-presets`)
-- **테마**: 헤더 토글 + `stores/theme.ts` → `html[data-theme]`
+- **테마**: 헤더 토글 + `composables/useTheme.ts` → `html[data-theme]`
 
 자세한 내용은 [design-system.md](docs/design-system.md)를 참고하세요.
 

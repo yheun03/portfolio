@@ -175,30 +175,10 @@ html.app--menu-open {
 }
 
 [data-animate] {
-    opacity: 0;
-    transform: translateY(36px);
-    transition:
-        opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: var(--animate-delay, 0s);
-    will-change: opacity, transform;
-}
-
-/* 방향 변형 — 섹션마다 진입 방향을 달리해 리듬을 만든다 */
-[data-animate="left"] {
-    transform: translateX(-36px);
-}
-
-[data-animate="right"] {
-    transform: translateX(36px);
-}
-
-[data-animate="zoom"] {
-    transform: translateY(20px) scale(0.95);
-}
-
-[data-animate="fade"] {
+    opacity: 1;
     transform: none;
+    transition: none;
+    transition-delay: var(--animate-delay, 0s);
 }
 
 [data-animate].animate--visible {

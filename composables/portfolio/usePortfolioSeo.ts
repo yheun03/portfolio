@@ -1,10 +1,9 @@
-// 포트폴리오 페이지별 SEO 메타·canonical·OG·Twitter·JSON-LD 구조화 데이터 일괄 주입
-import { profile } from '@data/site';
-import { seoConfig, seoKeywords, seoStructuredData, type SeoLocale } from '@config/seo';
-import { seoPublicEnv } from '@config/seo-env';
-import { buildAbsoluteSeoUrl } from '@utils/seo-url';
+import ko from '@i18n/ko.json';
+import en from '@i18n/en.json';
 
-interface PortfolioSeoOptions {
+type SeoLocale = 'ko' | 'en';
+
+type PortfolioSeoOptions = {
     title: string;
     description: string;
     ogTitle?: string;
@@ -15,240 +14,55 @@ interface PortfolioSeoOptions {
     type?: 'website' | 'article';
     image?: string;
     imageAlt?: string;
-    imageWidth?: number;
-    imageHeight?: number;
     noindex?: boolean;
-    jsonLd?: Record<string, unknown> | Record<string, unknown>[];
-}
+};
 
-function getLanguageTag(locale: SeoLocale) {
-    return locale === 'ko' ? 'ko-KR' : 'en-US';
-}
+const SITE_URL = 'https://yheun03.github.io/portfolio/';
+const DEFAULT_IMAGE = '/images/og-image-2026.jpg';
+const contentByLocale = { ko: ko.content, en: en.content };
 
-function getImageMimeType(imageUrl: string) {
-    if (imageUrl.endsWith('.png')) return 'image/png';
-    if (imageUrl.endsWith('.webp')) return 'image/webp';
-    if (imageUrl.endsWith('.gif')) return 'image/gif';
-    return 'image/jpeg';
-}
-
-function sanitizeJsonLd(data: Record<string, unknown> | Record<string, unknown>[]) {
-    return JSON.stringify(data).replace(/</g, '\\u003c');
-}
-
-function createPersonJsonLd(locale: SeoLocale, homeUrl: string, personImageUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        '@id': `${homeUrl}${seoConfig.personId}`,
-        name: profile.name,
-        alternateName: [...seoStructuredData.person.alternateName],
-        email: profile.contacts.email,
-        jobTitle: seoStructuredData.person.jobTitle[locale],
-        hasOccupation: {
-            '@type': 'Occupation',
-            name: seoStructuredData.person.jobTitle[locale],
-            skills: profile.keywords.join(', '),
-        },
-        description: seoStructuredData.person.description[locale],
-        url: homeUrl,
-        image: personImageUrl,
-        sameAs: [...seoConfig.sameAs],
-        knowsAbout: seoKeywords[locale],
-        knowsLanguage: ['ko-KR', 'en-US'],
-        mainEntityOfPage: `${homeUrl}${seoConfig.profilePageId}`,
-    };
-}
-
-function createWebSiteJsonLd(locale: SeoLocale, homeUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        '@id': `${homeUrl}${seoConfig.websiteId}`,
-        name: seoStructuredData.website.name[locale],
-        alternateName: seoConfig.siteName,
-        url: homeUrl,
-        inLanguage: [getLanguageTag('ko'), getLanguageTag('en')],
-        publisher: { '@id': `${homeUrl}${seoConfig.personId}` },
-        about: { '@id': `${homeUrl}${seoConfig.personId}` },
-        keywords: seoKeywords[locale].join(', '),
-    };
-}
-
-function createWebPageJsonLd(locale: SeoLocale, canonicalUrl: string, title: string, description: string, imageUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        '@id': `${canonicalUrl}#webpage`,
-        url: canonicalUrl,
-        name: title,
-        description,
-        inLanguage: getLanguageTag(locale),
-        isPartOf: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.websiteId}` },
-        author: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}` },
-        about: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}` },
-        primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
-        dateModified: seoConfig.dateModified,
-    };
-}
-
-function createProfilePageJsonLd(locale: SeoLocale, homeUrl: string, title: string, description: string, imageUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'ProfilePage',
-        '@id': `${homeUrl}${seoConfig.profilePageId}`,
-        url: homeUrl,
-        name: title,
-        description,
-        inLanguage: getLanguageTag(locale),
-        isPartOf: { '@id': `${homeUrl}${seoConfig.websiteId}` },
-        mainEntity: { '@id': `${homeUrl}${seoConfig.personId}` },
-        primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
-        dateModified: seoConfig.dateModified,
-    };
-}
-
-function createFaqPageJsonLd(locale: SeoLocale, homeUrl: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        '@id': `${homeUrl}#faq`,
-        url: homeUrl,
-        inLanguage: getLanguageTag(locale),
-        mainEntity: seoStructuredData.answerEngine.questions[locale].map((item) => ({
-            '@type': 'Question',
-            name: item.name,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: item.acceptedAnswer,
-            },
-        })),
-    };
-}
-
-function createBreadcrumbListJsonLd(locale: SeoLocale, canonicalUrl: string, title: string) {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        '@id': `${canonicalUrl}#breadcrumb`,
-        inLanguage: getLanguageTag(locale),
-        itemListElement: [
-            {
-                '@type': 'ListItem',
-                position: 1,
-                name: seoStructuredData.website.name[locale],
-                item: buildAbsoluteSeoUrl('/'),
-            },
-            {
-                '@type': 'ListItem',
-                position: 2,
-                name: title,
-                item: canonicalUrl,
-            },
-        ],
-    };
+function absoluteUrl(path = '/') {
+    return new URL(path.startsWith('/') ? path.slice(1) : path, SITE_URL).toString();
 }
 
 export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) {
-    useHead(() => {
-        const resolved = toValue(options);
-        const homeUrl = buildAbsoluteSeoUrl('/');
-        const canonicalUrl = buildAbsoluteSeoUrl(resolved.path);
-        const imagePath = resolved.image?.endsWith('.svg') ? seoConfig.defaultOgImage : (resolved.image ?? seoConfig.defaultOgImage);
-        const imageUrl = buildAbsoluteSeoUrl(imagePath);
-        const personImageUrl = buildAbsoluteSeoUrl(seoConfig.personImage);
-        const ogLocale = resolved.locale === 'ko' ? 'ko_KR' : 'en_US';
-        const alternateLocale = resolved.locale === 'ko' ? 'en_US' : 'ko_KR';
-        const languageTag = getLanguageTag(resolved.locale);
-        const socialTitle = resolved.ogTitle ?? resolved.title;
-        const socialDescription = resolved.ogDescription ?? resolved.description;
-        const keywords = [...seoKeywords[resolved.locale], ...(resolved.keywords ?? [])];
-        const imageWidth = resolved.imageWidth ?? (!resolved.image ? seoConfig.defaultOgImageSize.width : undefined);
-        const imageHeight = resolved.imageHeight ?? (!resolved.image ? seoConfig.defaultOgImageSize.height : undefined);
-        const isHome = !resolved.path || resolved.path === '/';
-        const robotsContent = resolved.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
-        const googlebotContent = resolved.noindex
-            ? 'noindex, nofollow'
-            : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
-        const naverBotContent = resolved.noindex ? 'noindex, nofollow' : 'index, follow';
-        const jsonLd = [
-            createPersonJsonLd(resolved.locale, homeUrl, personImageUrl),
-            createWebSiteJsonLd(resolved.locale, homeUrl),
-            createWebPageJsonLd(resolved.locale, canonicalUrl, resolved.title, resolved.description, imageUrl),
-            ...(!isHome ? [createBreadcrumbListJsonLd(resolved.locale, canonicalUrl, resolved.title)] : []),
-            ...(isHome
-                ? [
-                      createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl),
-                      createFaqPageJsonLd(resolved.locale, homeUrl),
-                  ]
-                : []),
-            ...(Array.isArray(resolved.jsonLd) ? resolved.jsonLd : resolved.jsonLd ? [resolved.jsonLd] : []),
-        ];
+    const { public: config } = useRuntimeConfig();
 
-        const verificationMeta = [
-            ...(seoPublicEnv.googleSiteVerification ? [{ name: 'google-site-verification', content: seoPublicEnv.googleSiteVerification }] : []),
-            ...(seoPublicEnv.naverSiteVerification ? [{ name: 'naver-site-verification', content: seoPublicEnv.naverSiteVerification }] : []),
-        ];
+    useHead(() => {
+        const page = toValue(options);
+        const { profile, seo } = contentByLocale[page.locale];
+        const canonical = absoluteUrl(page.path);
+        const imagePath = page.image?.endsWith('.svg') ? DEFAULT_IMAGE : (page.image ?? DEFAULT_IMAGE);
+        const image = absoluteUrl(imagePath);
+        const title = page.ogTitle ?? page.title;
+        const description = page.ogDescription ?? page.description;
+        const robots = page.noindex ? 'noindex, nofollow' : 'index, follow';
+        const googleVerification = String(config.googleSiteVerification ?? '').trim();
+        const naverVerification = String(config.naverSiteVerification ?? '').trim();
 
         return {
-            htmlAttrs: { lang: resolved.locale },
-            title: resolved.title,
-            link: [
-                { rel: 'canonical', href: canonicalUrl },
-                { rel: 'image_src', href: imageUrl },
-                { rel: 'alternate', hreflang: 'ko-KR', href: canonicalUrl },
-                { rel: 'alternate', hreflang: 'en', href: canonicalUrl },
-                { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl },
-            ],
+            htmlAttrs: { lang: page.locale },
+            title: page.title,
+            link: [{ rel: 'canonical', href: canonical }],
             meta: [
-                { name: 'description', content: resolved.description },
-                { name: 'abstract', content: resolved.description },
+                { name: 'description', content: page.description },
                 { name: 'author', content: profile.name },
-                { name: 'creator', content: profile.name },
-                { name: 'publisher', content: seoConfig.siteName },
-                { name: 'subject', content: seoStructuredData.person.jobTitle[resolved.locale] },
-                { name: 'classification', content: seoStructuredData.person.jobTitle[resolved.locale] },
-                { name: 'keywords', content: [...new Set(keywords)].join(', ') },
-                { name: 'robots', content: robotsContent },
-                { name: 'googlebot', content: googlebotContent },
-                { name: 'naverbot', content: naverBotContent },
-                { name: 'Yeti', content: naverBotContent },
-                { name: 'application-name', content: seoConfig.siteName },
-                { name: 'theme-color', content: seoConfig.themeColor },
-                { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
-                { 'http-equiv': 'content-language', content: languageTag },
-                ...verificationMeta,
-                { property: 'og:type', content: resolved.type ?? 'website' },
-                { property: 'og:locale', content: ogLocale },
-                { property: 'og:locale:alternate', content: alternateLocale },
-                { property: 'og:site_name', content: seoConfig.siteName },
-                { property: 'og:url', content: canonicalUrl },
-                { property: 'og:title', content: socialTitle },
-                { property: 'og:description', content: socialDescription },
-                { property: 'og:image', content: imageUrl },
-                { property: 'og:image:secure_url', content: imageUrl },
-                { property: 'og:image:type', content: getImageMimeType(imageUrl) },
-                ...(imageWidth && imageHeight
-                    ? [{ property: 'og:image:width', content: String(imageWidth) }, { property: 'og:image:height', content: String(imageHeight) }]
-                    : []),
-                { property: 'og:image:alt', content: resolved.imageAlt ?? socialTitle },
-                ...(resolved.type === 'article'
-                    ? [{ property: 'article:author', content: profile.name }, { property: 'article:section', content: 'Portfolio' }]
-                    : []),
+                { name: 'keywords', content: [...new Set([...seo.keywords, ...(page.keywords ?? [])])].join(', ') },
+                { name: 'robots', content: robots },
+                ...(googleVerification ? [{ name: 'google-site-verification', content: googleVerification }] : []),
+                ...(naverVerification ? [{ name: 'naver-site-verification', content: naverVerification }] : []),
+                { property: 'og:type', content: page.type ?? 'website' },
+                { property: 'og:locale', content: page.locale === 'ko' ? 'ko_KR' : 'en_US' },
+                { property: 'og:site_name', content: seo.websiteName },
+                { property: 'og:url', content: canonical },
+                { property: 'og:title', content: title },
+                { property: 'og:description', content: description },
+                { property: 'og:image', content: image },
+                { property: 'og:image:alt', content: page.imageAlt ?? title },
                 { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:title', content: socialTitle },
-                { name: 'twitter:description', content: socialDescription },
-                { name: 'twitter:image', content: imageUrl },
-                { name: 'twitter:image:alt', content: resolved.imageAlt ?? socialTitle },
-                { name: 'twitter:url', content: canonicalUrl },
-                { name: 'twitter:creator', content: '@yheun03' },
-            ],
-            script: [
-                {
-                    key: 'portfolio-json-ld',
-                    type: 'application/ld+json',
-                    innerHTML: sanitizeJsonLd(jsonLd),
-                },
+                { name: 'twitter:title', content: title },
+                { name: 'twitter:description', content: description },
+                { name: 'twitter:image', content: image },
             ],
         };
     });

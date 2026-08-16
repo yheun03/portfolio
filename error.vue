@@ -21,7 +21,7 @@
                         <code class="error-page__path-value">{{ requestedPath }}</code>
                     </p>
 
-                    <nav class="error-page__actions" :aria-label="locale === 'ko' ? '오류 페이지 안내' : 'Error page actions'">
+                    <nav class="error-page__actions" :aria-label="t('a11y.errorActions')">
                         <BaseButton :label="t('error.home')" @click="handleError" />
                         <BaseButton :label="t('error.report')" :href="reportHref" variant="ghost" />
                     </nav>
@@ -33,14 +33,14 @@
 
 <script setup lang="ts">
 import type { NuxtError } from '#app';
-import { profile } from '@data/site';
 
 const props = defineProps<{
     error: NuxtError;
 }>();
 
 const route = useRoute();
-const { locale, t } = useLocale();
+const { content, locale, t } = useLocale();
+const profile = computed(() => content.value.profile);
 const statusCode = computed(() => props.error.statusCode ?? 500);
 const is404 = computed(() => statusCode.value === 404);
 
@@ -53,7 +53,7 @@ const requestedPath = computed(() => route.fullPath || route.path || '');
 const reportHref = computed(() => {
     const subject = encodeURIComponent(t('error.reportSubject'));
     const body = encodeURIComponent(`${t('error.reportBody')}\n\n${requestedPath.value}`);
-    return `mailto:${profile.contacts.email}?subject=${subject}&body=${body}`;
+    return `mailto:${profile.value.contacts.email}?subject=${subject}&body=${body}`;
 });
 
 usePortfolioSeo(() => ({

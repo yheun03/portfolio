@@ -10,7 +10,7 @@
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
                 <span aria-hidden="true">·</span>
-                <span>{{ pick(profile.role) }}</span>
+                <span>{{ profile.role }}</span>
             </p>
 
             <div class="hero__stage">
@@ -18,7 +18,8 @@
 
                 <h1 id="hero-display-title" class="hero__display">
                     <span class="hero__display-line" style="--line-index: 0">{{ t("hero.displayLine1") }}</span>
-                    <span class="hero__display-line hero__display-line--accent" style="--line-index: 1">{{ t("hero.displayLine2") }}</span>
+                    <span class="hero__display-line hero__display-line--accent" style="--line-index: 1">{{
+                        t("hero.displayLine2") }}</span>
                     <span class="hero__display-line" style="--line-index: 2">{{ t("hero.displayLine3") }}</span>
                 </h1>
 
@@ -39,7 +40,6 @@
 </template>
 
 <script setup lang="ts">
-import { profile } from "@data/site";
-
-const { t, pick } = useLocale();
+const { t, content } = useLocale();
+const profile = computed(() => content.value.profile);
 </script>

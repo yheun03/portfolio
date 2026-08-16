@@ -16,16 +16,19 @@
 </template>
 
 <script setup lang="ts" generic="TEra extends EditorialYearEraItem = EditorialYearEraItem">
-import type { EditorialYearEntriesTag, EditorialYearEraItem, EditorialYearVariant } from '@app-types/editorial-year';
+type EditorialYearEraItem = {
+    key: string;
+    year?: string;
+};
 
 const props = withDefaults(
     defineProps<{
         eras: readonly TEra[];
         ariaLabel: string;
-        variant?: EditorialYearVariant;
+        variant?: 'home' | 'gallery';
         idPrefix?: string;
         flatAriaLabel?: string;
-        entriesTag?: EditorialYearEntriesTag;
+        entriesTag?: 'ol' | 'ul' | 'div';
     }>(),
     {
         variant: 'home',

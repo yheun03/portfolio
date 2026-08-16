@@ -4,7 +4,7 @@
 
 | 문서                                             | 내용                                                   |
 | ------------------------------------------------ | ------------------------------------------------------ |
-| [project-structure.md](./project-structure.md)   | 폴더별 책임, `core/`·`composables/`·플러그인           |
+| [project-structure.md](./project-structure.md)   | 폴더별 책임, `composables/`·플러그인                   |
 | [design-system.md](./design-system.md)           | SCSS 토큰(`_theme.scss`, `_tokens.scss`), 컴포넌트·BEM |
 | [project-data-notes.md](./project-data-notes.md) | `data/`, `i18n/`, 수정 체크리스트                      |
 | [lighthouse-roadmap.md](./lighthouse-roadmap.md) | 성능·접근성·SEO 개선 계획                              |
@@ -21,6 +21,6 @@
 
 ## 테마 전환
 
-- `stores/theme.ts` + `composables/useTheme.ts`
+- `composables/useTheme.ts`
 - `html[data-theme="light|dark"]` 및 `prefers-color-scheme`
-- 클라이언트 초기화: `plugins/init.client.ts`
+- 클라이언트 초기화: `app.vue`

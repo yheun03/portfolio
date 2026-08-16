@@ -41,11 +41,11 @@
     }
 
     > :where(p, ul, ol)+ :where(p, ul, ol),
-    > :where(.contact__profile, .work-card__tech)+ :where(p, ul, ol, div) {
+    > .contact__profile + :where(p, ul, ol, div) {
         margin-top: var(--card-flow-content);
     }
 
-    > :where(.work-card__footer, .contact__profile) {
+    > .contact__profile {
         margin-top: var(--card-flow-content);
     }
 

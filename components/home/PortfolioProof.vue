@@ -2,7 +2,7 @@
     <HomeSection id="proof" section-class="section--proof" title-id="section-proof-title" :eyebrow="t('nav.proof')"
         :title="t('highlights.title')" :description="t('story.proofDescription')">
         <BaseStatList data-animate :stats="profile.stats.map((stat) => ({
-            label: pick(stat.label),
+            label: stat.label,
             value: stat.value,
             suffix: stat.suffix,
         }))" :aria-label="t('story.proofMetricsAriaLabel')" />
@@ -15,7 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { profile } from '@data/site';
-
-const { t, pick } = useLocale();
+const { t, content } = useLocale();
+const profile = computed(() => content.value.profile);
 </script>

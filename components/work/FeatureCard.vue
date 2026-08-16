@@ -1,5 +1,5 @@
 <template>
-    <article class="feature-card" :class="cardClass" :data-animate="animate ? '' : null" data-card-pointer>
+    <article class="feature-card" :class="cardClass" :data-animate="animate ? '' : null">
         <p v-if="eyebrow" class="feature-card__eyebrow">{{ eyebrow }}</p>
         <p v-if="icon" class="feature-card__icon" aria-hidden="true">{{ icon }}</p>
         <h3 class="feature-card__title">{{ title }}</h3>

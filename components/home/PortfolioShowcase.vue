@@ -5,13 +5,11 @@
             <li v-for="(work, index) in homeShowcaseWorks" :key="work.id"
                 :class="['showcase__item', { 'showcase__item--featured': index === 0 }]"
                 :style="{ '--animate-delay': `${index * 90}ms` }" data-animate>
-                <StoryCaseCard :to="`/projects/${work.id}`"
-                    :aria-label="`${pick(work.title)}, ${t('story.caseCta')}`"
-                    :index-label="String(index + 1).padStart(2, '0')" :tag="pick(work.type)" :period="work.period"
-                    :title="pick(work.title)" :summary="pick(work.introduction)"
-                    :tech="work.tech.slice(0, 4)" :cta-label="t('story.caseCta')"
-                    :tech-aria-label="t('story.techStackAriaLabel')" :featured="index === 0"
-                    :featured-badge="t('story.featuredBadge')" />
+                <StoryCaseCard :to="`/projects/${work.id}`" :aria-label="`${work.title}, ${t('story.caseCta')}`"
+                    :index-label="String(index + 1).padStart(2, '0')" :tag="work.type" :period="work.period"
+                    :title="work.title" :summary="work.introduction" :tech="work.tech.slice(0, 4)"
+                    :cta-label="t('story.caseCta')" :tech-aria-label="t('story.techStackAriaLabel')"
+                    :featured="index === 0" :featured-badge="t('story.featuredBadge')" />
             </li>
         </ul>
 
@@ -23,7 +21,12 @@
 </template>
 
 <script setup lang="ts">
-import { homeShowcaseWorks } from '@data/home/showcase';
+import type { WorkItem } from '@data/works';
 
-const { t, pick } = useLocale();
+const { t, content } = useLocale();
+const showcaseIds = ['samhwa-eco-dashboard', 'orchem-mes', 'hanjinkal'];
+const homeShowcaseWorks = computed(() => {
+    const works = content.value.works.career as unknown as WorkItem[];
+    return showcaseIds.map((id) => works.find((work) => work.id === id)).filter((work): work is WorkItem => Boolean(work));
+});
 </script>
