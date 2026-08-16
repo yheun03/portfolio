@@ -14,6 +14,7 @@ export const seoConfig = {
     },
     siteName: '은영환 웹 퍼블리셔 포트폴리오',
     themeColor: '#f7f2ea',
+    dateModified: '2026-08-16',
     personId: '#person',
     websiteId: '#website',
     profilePageId: '#profile-page',

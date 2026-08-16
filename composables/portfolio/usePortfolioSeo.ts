@@ -43,12 +43,20 @@ function createPersonJsonLd(locale: SeoLocale, homeUrl: string, personImageUrl: 
         '@id': `${homeUrl}${seoConfig.personId}`,
         name: profile.name,
         alternateName: [...seoStructuredData.person.alternateName],
+        email: profile.contacts.email,
         jobTitle: seoStructuredData.person.jobTitle[locale],
+        hasOccupation: {
+            '@type': 'Occupation',
+            name: seoStructuredData.person.jobTitle[locale],
+            skills: profile.keywords.join(', '),
+        },
         description: seoStructuredData.person.description[locale],
         url: homeUrl,
         image: personImageUrl,
         sameAs: [...seoConfig.sameAs],
         knowsAbout: seoKeywords[locale],
+        knowsLanguage: ['ko-KR', 'en-US'],
+        mainEntityOfPage: `${homeUrl}${seoConfig.profilePageId}`,
     };
 }
 
@@ -62,7 +70,8 @@ function createWebSiteJsonLd(locale: SeoLocale, homeUrl: string) {
         url: homeUrl,
         inLanguage: [getLanguageTag('ko'), getLanguageTag('en')],
         publisher: { '@id': `${homeUrl}${seoConfig.personId}` },
-        about: seoKeywords[locale],
+        about: { '@id': `${homeUrl}${seoConfig.personId}` },
+        keywords: seoKeywords[locale].join(', '),
     };
 }
 
@@ -77,7 +86,9 @@ function createWebPageJsonLd(locale: SeoLocale, canonicalUrl: string, title: str
         inLanguage: getLanguageTag(locale),
         isPartOf: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.websiteId}` },
         author: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}` },
+        about: { '@id': `${buildAbsoluteSeoUrl('/')}${seoConfig.personId}` },
         primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
+        dateModified: seoConfig.dateModified,
     };
 }
 
@@ -93,6 +104,7 @@ function createProfilePageJsonLd(locale: SeoLocale, homeUrl: string, title: stri
         isPartOf: { '@id': `${homeUrl}${seoConfig.websiteId}` },
         mainEntity: { '@id': `${homeUrl}${seoConfig.personId}` },
         primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
+        dateModified: seoConfig.dateModified,
     };
 }
 
@@ -111,6 +123,29 @@ function createFaqPageJsonLd(locale: SeoLocale, homeUrl: string) {
                 text: item.acceptedAnswer,
             },
         })),
+    };
+}
+
+function createBreadcrumbListJsonLd(locale: SeoLocale, canonicalUrl: string, title: string) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalUrl}#breadcrumb`,
+        inLanguage: getLanguageTag(locale),
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: seoStructuredData.website.name[locale],
+                item: buildAbsoluteSeoUrl('/'),
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: title,
+                item: canonicalUrl,
+            },
+        ],
     };
 }
 
@@ -135,10 +170,12 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const googlebotContent = resolved.noindex
             ? 'noindex, nofollow'
             : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+        const naverBotContent = resolved.noindex ? 'noindex, nofollow' : 'index, follow';
         const jsonLd = [
             createPersonJsonLd(resolved.locale, homeUrl, personImageUrl),
             createWebSiteJsonLd(resolved.locale, homeUrl),
             createWebPageJsonLd(resolved.locale, canonicalUrl, resolved.title, resolved.description, imageUrl),
+            ...(!isHome ? [createBreadcrumbListJsonLd(resolved.locale, canonicalUrl, resolved.title)] : []),
             ...(isHome
                 ? [
                       createProfilePageJsonLd(resolved.locale, homeUrl, resolved.title, resolved.description, imageUrl),
@@ -174,6 +211,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'keywords', content: [...new Set(keywords)].join(', ') },
                 { name: 'robots', content: robotsContent },
                 { name: 'googlebot', content: googlebotContent },
+                { name: 'naverbot', content: naverBotContent },
+                { name: 'Yeti', content: naverBotContent },
                 { name: 'application-name', content: seoConfig.siteName },
                 { name: 'theme-color', content: seoConfig.themeColor },
                 { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
