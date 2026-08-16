@@ -48,6 +48,7 @@
 .portfolio-page--archive-career {
     --color-primary: var(--primary-600);
     --color-primary-dark: var(--primary-700);
+    background: var(--color-bg);
 
     .gallery-page__kicker,
     .section-title__eyebrow {
@@ -66,4 +67,5 @@
         var(--primary-700) 100%
     );
     --card-list-gap: var(--space-6);
+    background: var(--color-bg);
 }
