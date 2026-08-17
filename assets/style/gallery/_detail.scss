@@ -78,10 +78,10 @@
         max-width: 18ch;
         color: var(--gallery-ink);
         font-family: var(--font-display);
-        font-size: 3.05rem;
+        font-size: clamp(2.75rem, 3.2vw, 3.75rem);
         font-weight: var(--font-weight-black);
         letter-spacing: 0;
-        line-height: 1.05;
+        line-height: 1.1;
         overflow-wrap: anywhere;
     }
 
@@ -176,7 +176,7 @@
         margin: 0 0 14px;
         color: var(--gallery-accent);
         font-family: var(--font-mono);
-        font-size: #{$gallery-text-ui};
+        font-size: var(--font-size-sm);
         font-weight: 800;
         letter-spacing: 0;
         text-transform: uppercase;
@@ -372,7 +372,8 @@
     }
 
     &.gallery-page--editorial.section {
-        max-width: min(100%, 1504px);
+        max-width: none;
+        padding-block: clamp(72px, 9vh, 120px);
     }
 
     &.gallery-page--editorial &__hero {
@@ -396,8 +397,8 @@
         max-width: 68ch;
         margin: var(--space-5) 0 0;
         color: var(--gallery-body-soft);
-        font-size: 1rem;
-        line-height: 1.65;
+        font-size: var(--font-size-md);
+        line-height: 1.7;
         letter-spacing: 0;
     }
 
