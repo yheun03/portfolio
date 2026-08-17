@@ -24,9 +24,7 @@
 }
 
 .section,
-.section *,
-.page__layer,
-.page__layer * {
+.section * {
     min-width: 0;
 }
 
@@ -48,29 +46,6 @@
         background-image: $texture-noise;
         background-size: 160px 160px;
         mix-blend-mode: multiply;
-    }
-}
-
-.page__layer {
-    position: relative;
-    overflow: visible;
-
-    &--hero {
-        position: relative;
-
-        @media (min-width: #{$bp-min-laptop}) {
-            padding-bottom: clamp(32px, 6vw, 64px);
-        }
-    }
-
-    &--about-intro,
-    &--why-list {
-        position: relative;
-        overflow: visible;
-    }
-
-    &--contact {
-        position: relative;
     }
 }
 
@@ -118,43 +93,49 @@
 
 // data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .page__layer--about-intro,
-    :root:not([data-theme="light"]) .page__layer--why-list {
+    :root:not([data-theme="light"]) .section--about-intro,
+    :root:not([data-theme="light"]) .section--why-list {
         @include editorial-panel-about;
     }
 
-    :root:not([data-theme="light"]) .page__layer--contact {
+    :root:not([data-theme="light"]) .section--contact {
         @include editorial-panel-contact;
     }
 }
 
-:root[data-theme="dark"] .page__layer--about-intro,
-:root[data-theme="dark"] .page__layer--why-list {
+:root[data-theme="dark"] .section--about-intro,
+:root[data-theme="dark"] .section--why-list {
     @include editorial-panel-about;
 }
 
 @media (min-width: 1920px) {
-    .page__layer--hero,
-    .page__layer--about-intro,
-    .page__layer--why-list {
-        display: flex;
-        min-height: 100dvh;
-        align-items: stretch;
+    html:has(.portfolio-page--home) {
+        scroll-padding-top: var(--layout-header-height);
+        scroll-snap-type: y mandatory;
     }
 
-    .page__layer--hero {
-        padding-bottom: 0;
+    .portfolio-page--home {
+        --home-fullpage-height: calc(100dvh - var(--layout-header-height));
     }
 
-    .page__layer--hero > .section,
-    .page__layer--about-intro > .section,
-    .page__layer--why-list > .section {
-        width: 100%;
-        min-height: 100dvh;
+    .portfolio-page.portfolio-page--home > .section {
+        min-height: var(--home-fullpage-height);
+        align-content: center;
+        scroll-margin-top: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .portfolio-page.portfolio-page--home > :is(.section--works, .section--proof, .section--how) {
+        align-items: start;
+    }
+
+    html:has(.portfolio-page--home) .app-footer {
+        scroll-snap-align: end;
     }
 }
 
-:root[data-theme="dark"] .page__layer--contact {
+:root[data-theme="dark"] .section--contact {
     @include editorial-panel-contact;
 }
 

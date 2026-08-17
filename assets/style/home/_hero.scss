@@ -265,25 +265,37 @@
 }
 
 @media (min-width: 1920px) {
-    .page__layer--hero .hero.section--hero {
-        width: min(100% - var(--page-pad-x), var(--layout-content-max));
-        min-height: 100dvh;
-        padding-block: 96px;
+    .portfolio-page--home > .hero.section--hero {
+        width: 100%;
+        min-height: var(--home-fullpage-height);
+        margin-inline: 0;
+        padding-block: 72px;
     }
 
     .hero__poster {
-        gap: 40px;
+        gap: 48px;
     }
 
     .hero__display-line {
-        font-size: 8rem;
-        line-height: 0.98;
+        font-size: 10rem;
+        line-height: 0.96;
     }
 
     .hero__lead {
         max-width: 32ch;
         margin-top: 32px;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+    }
+
+    .hero__meta,
+    .hero__eyebrow {
+        font-size: 1rem;
+    }
+
+    .hero__cue {
+        right: auto;
+        left: 50%;
+        translate: -50% 0;
     }
 }
 

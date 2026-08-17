@@ -7,19 +7,11 @@
                 <p class="contact__lead">{{ t("contact.description") }}</p>
             </header>
 
-            <section class="spotlight-block spotlight" :aria-label="t('contact.spotlightAriaLabel')">
-                <h3 class="spotlight__kicker">{{ t("contact.kicker") }}</h3>
-                <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`"
-                    :aria-label="`${t('contact.mailPrefix')} ${profile.contacts.email}`">
-                    <span v-for="(letter, index) in profile.contacts.email.split('')" :key="`${letter}-${index}`"
-                        :class="{ 'contact__mail-slot--suffix': profile.contacts.email.indexOf('@') >= 0 && index >= profile.contacts.email.indexOf('@') }"
-                        :style="{ '--mail-index': index }" aria-hidden="true">
-                        <span>{{ letter }}</span>
-                    </span>
-                </a>
-            </section>
-
-            <p class="contact__note">{{ t("contact.note") }}</p>
+            <a class="contact__mail-display" :href="`mailto:${profile.contacts.email}`"
+                :aria-label="`${t('contact.mailPrefix')} ${profile.contacts.email}`">
+                <span v-for="(letter, index) in profile.contacts.email.split('')" :key="`${letter}-${index}`"
+                    :style="{ '--mail-index': index }" aria-hidden="true">{{ letter }}</span>
+            </a>
 
             <nav class="contact__actions" :aria-label="t('contact.linksAriaLabel')">
                 <BaseButton :href="`mailto:${profile.contacts.email}`" :aria-label="t('contact.email')">
@@ -50,18 +42,12 @@
                 </BaseButton>
             </nav>
 
-            <div class="contact__profile" aria-hidden="true">
-                <img :src="profilePhotoSrc" alt="" loading="lazy" decoding="async" fetchpriority="low" />
-                <p class="contact__profile-label">{{ t("contact.profileLabel") }}</p>
-            </div>
+            <p class="contact__note">{{ t("contact.note") }}</p>
         </div>
     </HomeSection>
 </template>
 
 <script setup lang="ts">
-import profilePhotoUrl from "~/assets/images/profile/photo-1440.webp";
-
 const { t, content } = useLocale();
 const profile = computed(() => content.value.profile);
-const profilePhotoSrc = profilePhotoUrl;
 </script>
