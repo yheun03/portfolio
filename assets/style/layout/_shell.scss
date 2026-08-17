@@ -63,7 +63,8 @@
         }
     }
 
-    &--profile {
+    &--about-intro,
+    &--why-list {
         position: relative;
         overflow: visible;
     }
@@ -98,7 +99,7 @@
     --color-on-primary: #fff;
 }
 
-@mixin editorial-panel-profile {
+@mixin editorial-panel-about {
     @include editorial-panel-base;
 }
 
@@ -117,8 +118,9 @@
 
 // data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .page__layer--profile {
-        @include editorial-panel-profile;
+    :root:not([data-theme="light"]) .page__layer--about-intro,
+    :root:not([data-theme="light"]) .page__layer--why-list {
+        @include editorial-panel-about;
     }
 
     :root:not([data-theme="light"]) .page__layer--contact {
@@ -126,8 +128,30 @@
     }
 }
 
-:root[data-theme="dark"] .page__layer--profile {
-    @include editorial-panel-profile;
+:root[data-theme="dark"] .page__layer--about-intro,
+:root[data-theme="dark"] .page__layer--why-list {
+    @include editorial-panel-about;
+}
+
+@media (min-width: 1920px) {
+    .page__layer--hero,
+    .page__layer--about-intro,
+    .page__layer--why-list {
+        display: flex;
+        min-height: 100dvh;
+        align-items: stretch;
+    }
+
+    .page__layer--hero {
+        padding-bottom: 0;
+    }
+
+    .page__layer--hero > .section,
+    .page__layer--about-intro > .section,
+    .page__layer--why-list > .section {
+        width: 100%;
+        min-height: 100dvh;
+    }
 }
 
 :root[data-theme="dark"] .page__layer--contact {
@@ -164,7 +188,7 @@
     }
 }
 
-.section--about {
+.section--about-intro {
     --section-index: "01";
 }
 
