@@ -1,7 +1,6 @@
 @use "../abstracts/tokens" as *;
 
 @media (max-width: #{$bp-max-tablet}) {
-    .about__stage,
     .contact__poster {
         gap: var(--section-gap);
     }

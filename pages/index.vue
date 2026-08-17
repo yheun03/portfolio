@@ -4,8 +4,11 @@
         <div class="page__layer page__layer--hero">
             <PortfolioHero />
         </div>
-        <div class="page__layer page__layer--profile">
-            <PortfolioWhy />
+        <div class="page__layer page__layer--about-intro">
+            <PortfolioAboutIntro />
+        </div>
+        <div class="page__layer page__layer--why-list">
+            <PortfolioWhyList />
         </div>
         <div class="page__layer page__layer--works">
             <PortfolioShowcase />
@@ -23,7 +26,8 @@
 
 <script setup lang="ts">
 import PortfolioHero from '~/components/home/PortfolioHero.vue';
-import PortfolioWhy from '~/components/home/PortfolioWhy.vue';
+import PortfolioAboutIntro from '~/components/home/PortfolioAboutIntro.vue';
+import PortfolioWhyList from '~/components/home/PortfolioWhyList.vue';
 import PortfolioShowcase from '~/components/home/PortfolioShowcase.vue';
 import PortfolioProof from '~/components/home/PortfolioProof.vue';
 import PortfolioHow from '~/components/home/PortfolioHow.vue';

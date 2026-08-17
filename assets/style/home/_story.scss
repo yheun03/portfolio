@@ -1,7 +1,8 @@
 @use "../abstracts/tokens" as *;
 
-/* About (PortfolioWhy) */
-.section.section--about {
+/* About intro */
+.section.section--about-intro,
+.section.section--why-list {
     display: block;
     min-height: auto;
     background: transparent;
@@ -13,15 +14,6 @@
 
     @media (min-width: #{$bp-min-laptop}) {
         padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
-    }
-}
-
-.about__stage {
-    display: grid;
-    gap: clamp(24px, 4vw, 40px);
-
-    @media (min-width: #{$bp-min-laptop}) {
-        gap: clamp(64px, 10vw, 120px);
     }
 }
 
@@ -81,6 +73,47 @@
         color: var(--color-text-muted);
         font-size: var(--font-size-sm);
         line-height: var(--line-height-body);
+    }
+}
+
+@media (min-width: 1920px) {
+    .section.section--about-intro,
+    .section.section--why-list {
+        display: flex;
+        min-height: 100dvh;
+        padding-block: 96px;
+        align-items: center;
+    }
+
+    .about__intro,
+    .why__list {
+        width: 100%;
+    }
+
+    .about__display-line {
+        font-size: 8rem;
+        line-height: 0.98;
+    }
+
+    .about__lead {
+        max-width: 32ch;
+        margin-top: 32px;
+        font-size: 1.25rem;
+    }
+
+    .why__list {
+        min-height: calc(100dvh - 192px);
+        gap: 48px;
+        align-content: space-between;
+
+        h3 {
+            font-size: 4rem;
+            line-height: 1.05;
+        }
+
+        p {
+            font-size: 1rem;
+        }
     }
 }
 

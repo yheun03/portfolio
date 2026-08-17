@@ -265,8 +265,25 @@
 }
 
 @media (min-width: 1920px) {
-    .section--hero {
+    .page__layer--hero .hero.section--hero {
         width: min(100% - var(--page-pad-x), var(--layout-content-max));
+        min-height: 100dvh;
+        padding-block: 96px;
+    }
+
+    .hero__poster {
+        gap: 40px;
+    }
+
+    .hero__display-line {
+        font-size: 8rem;
+        line-height: 0.98;
+    }
+
+    .hero__lead {
+        max-width: 32ch;
+        margin-top: 32px;
+        font-size: 1.25rem;
     }
 }
 
