@@ -34,45 +34,6 @@
     @include editorial-lead;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: view()) {
-        .about__intro,
-        .why__list > li {
-            animation: story-rise-in linear both;
-            animation-timeline: view();
-            animation-range: entry 8% cover 34%;
-        }
-
-        .why__list > li:nth-child(1) h3,
-        .why__list > li:nth-child(3) h3 {
-            animation: story-title-settle linear both;
-            animation-timeline: view();
-            animation-range: entry 8% cover 42%;
-        }
-
-        .why__list > li:nth-child(3) h3 {
-            --story-title-x: -4%;
-        }
-    }
-}
-
-@keyframes story-rise-in {
-    from {
-        opacity: 0;
-        transform: translateY(36px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes story-title-settle {
-    from { transform: translateX(var(--story-title-x, 4%)); }
-    to { transform: translateX(0); }
-}
-
 .why__list {
     display: grid;
     gap: clamp(48px, 8vw, 96px);
