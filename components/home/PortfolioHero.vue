@@ -17,10 +17,10 @@
                 <p class="section-title__eyebrow hero__eyebrow">{{ t("nav.hello") }}</p>
 
                 <h1 id="hero-display-title" class="hero__display">
-                    <span class="hero__display-line" style="--line-index: 0">{{ t("hero.displayLine1") }}</span>
-                    <span class="hero__display-line hero__display-line--accent" style="--line-index: 1">{{
+                    <span class="hero__display-line">{{ t("hero.displayLine1") }}</span>
+                    <span class="hero__display-line hero__display-line--accent">{{
                         t("hero.displayLine2") }}</span>
-                    <span class="hero__display-line" style="--line-index: 2">{{ t("hero.displayLine3") }}</span>
+                    <span class="hero__display-line">{{ t("hero.displayLine3") }}</span>
                 </h1>
 
                 <p class="hero__lead">{{ t("hero.lead") }}</p>

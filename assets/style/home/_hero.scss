@@ -362,6 +362,13 @@
 .hero__cue { animation-delay: 1.45s; }
 
 .hero__display-line {
-    animation: hero-word-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-    animation-delay: calc(0.28s + (var(--line-index, 0) * 0.16s));
+    animation: hero-word-in var(--reveal-duration) var(--reveal-ease) backwards;
+}
+
+.hero__display-line:nth-child(1) { animation-delay: var(--reveal-line-delay); }
+.hero__display-line:nth-child(2) {
+    animation-delay: calc(var(--reveal-line-delay) + var(--reveal-delay-step));
+}
+.hero__display-line:nth-child(3) {
+    animation-delay: calc(var(--reveal-line-delay) + var(--reveal-delay-step) + var(--reveal-delay-step));
 }
