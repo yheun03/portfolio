@@ -303,8 +303,8 @@ $font-presets: (
 
 @media (min-width: 1920px) {
     :root {
-        --page-pad-x: clamp(128px, 10vw, 256px);
-        --page-pad-hero: clamp(128px, 8vw, 192px);
+        --page-pad-x: clamp(80px, 5vw, 120px);
+        --page-pad-hero: clamp(80px, 5vw, 120px);
         --layout-content-max: 2040px;
         --layout-hero-max: 2240px;
         --section-gap: clamp(32px, 3vw, 60px);
@@ -312,6 +312,25 @@ $font-presets: (
         --home-sidebar-min: clamp(320px, 18vw, 384px);
         --home-section-column-gap: clamp(36px, 2.8vw, 64px);
         --home-chapter-sidebar-min: clamp(288px, 16vw, 352px);
+        --font-size-xs: 1rem;
+        --font-size-sm: 1.125rem;
+        --font-size-md: 1.25rem;
+        --font-size-lg: 1.375rem;
+        --font-size-xl: 1.75rem;
+        --font-size-body-1: 1.25rem;
+        --font-size-body-2: 1.125rem;
+        --font-size-title-1: 1.75rem;
+        --font-size-title-2: 1.5rem;
+        --font-size-title-3: 1.25rem;
+        --font-size-display-1: clamp(9rem, 6.6vw, 11.25rem);
+        --font-size-display-2: clamp(7rem, 5vw, 8.75rem);
+        --font-size-display-3: clamp(5rem, 3.75vw, 6.5rem);
+        --font-size-display-4: clamp(3.25rem, 2.55vw, 4rem);
+        --font-size-display-5: clamp(2.25rem, 1.85vw, 3rem);
+        --font-size-display-6: clamp(1.9rem, 1.45vw, 2.5rem);
+        --font-size-label: 1rem;
+        --font-size-chip: 0.9rem;
+        --font-size-contact: clamp(9.5rem, 7vw, 14rem);
         --space-section-gap: var(--section-gap);
         --space-block-gap: var(--block-gap);
     }
@@ -321,17 +340,6 @@ $font-presets: (
     :root {
         --layout-content-max: 2160px;
         --layout-hero-max: 2320px;
-        --font-size-body-1: clamp(1.1rem, 0.52vw, 1.22rem);
-        --font-size-body-2: clamp(1rem, 0.46vw, 1.1rem);
-        --font-size-display-1: clamp(9rem, 6.6vw, 11.25rem);
-        --font-size-display-2: clamp(7rem, 5vw, 8.75rem);
-        --font-size-display-3: clamp(5rem, 3.75vw, 6.5rem);
-        --font-size-display-4: clamp(3.25rem, 2.55vw, 4rem);
-        --font-size-display-5: clamp(2.25rem, 1.85vw, 3rem);
-        --font-size-display-6: clamp(1.9rem, 1.45vw, 2.5rem);
-        --font-size-label: clamp(0.9rem, 0.4vw, 1rem);
-        --font-size-chip: clamp(0.8rem, 0.35vw, 0.9rem);
-        --font-size-contact: clamp(9.5rem, 7vw, 14rem);
         --card-padding: clamp(26px, 1.4vw, 39px);
         --card-padding-lg: clamp(32px, 2vw, 56px);
     }

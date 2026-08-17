@@ -80,8 +80,8 @@
     .section.section--about-intro,
     .section.section--why-list {
         display: flex;
-        min-height: 100dvh;
-        padding-block: 96px;
+        min-height: var(--home-fullpage-height);
+        padding-block: 72px;
         align-items: center;
     }
 
@@ -91,27 +91,31 @@
     }
 
     .about__display-line {
-        font-size: 8rem;
-        line-height: 0.98;
+        font-size: 10rem;
+        line-height: 0.96;
     }
 
     .about__lead {
         max-width: 32ch;
         margin-top: 32px;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 
     .why__list {
-        min-height: calc(100dvh - 192px);
-        gap: 48px;
+        min-height: calc(var(--home-fullpage-height) - 144px);
+        gap: 56px;
         align-content: space-between;
 
         h3 {
-            font-size: 4rem;
+            font-size: 5.5rem;
             line-height: 1.05;
         }
 
         p {
+            font-size: 1.125rem;
+        }
+
+        .base-index-label {
             font-size: 1rem;
         }
     }
@@ -250,12 +254,16 @@
 .showcase__more {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    align-self: start;
     gap: var(--space-3);
 }
 
 .proof__links {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    align-self: start;
     gap: var(--space-3);
 }
 

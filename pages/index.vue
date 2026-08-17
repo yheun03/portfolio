@@ -1,26 +1,14 @@
 <template>
     <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home"
         :footer-text="t('footer.copyright')">
-        <div class="page__layer page__layer--hero">
-            <PortfolioHero />
-        </div>
-        <div class="page__layer page__layer--about-intro">
-            <PortfolioAboutIntro />
-        </div>
-        <div class="page__layer page__layer--why-list">
-            <PortfolioWhyList />
-        </div>
-        <div class="page__layer page__layer--works">
-            <PortfolioShowcase />
-        </div>
-        <div class="page__layer page__layer--capability">
-            <PortfolioProof />
-            <PortfolioHow />
-            <PortfolioToolbox />
-        </div>
-        <div class="page__layer page__layer--contact">
-            <PortfolioContact />
-        </div>
+        <PortfolioHero />
+        <PortfolioAboutIntro />
+        <PortfolioWhyList />
+        <PortfolioShowcase />
+        <PortfolioProof />
+        <PortfolioHow />
+        <PortfolioToolbox />
+        <PortfolioContact />
     </AppLayout>
 </template>
 

@@ -186,6 +186,54 @@
     line-height: 1.6;
 }
 
+@media (min-width: 1920px) and (max-height: 1440px) {
+    .section.section--toolbox {
+        gap: clamp(20px, 3vh, 32px);
+        padding-block: clamp(32px, 4vh, 48px);
+        justify-content: center;
+    }
+
+    .section--toolbox {
+        .section-head {
+            gap: 16px;
+        }
+
+        .section-title__description {
+            margin-top: 16px;
+        }
+
+        .spotlight-block {
+            gap: clamp(12px, 2vh, 20px);
+        }
+
+        .spotlight__kicker {
+            font-size: var(--font-size-display-5);
+        }
+
+        .toolbox__grid {
+            gap: clamp(12px, 1.5vh, 20px);
+        }
+
+        .feature-card--skill {
+            min-height: 0;
+            gap: clamp(8px, 1.3vh, 14px);
+            padding: clamp(18px, 2.2vh, 28px);
+        }
+
+        .feature-card__title {
+            font-size: var(--font-size-display-6);
+        }
+
+        .feature-card__tags {
+            gap: 6px;
+        }
+
+        .feature-card__description {
+            line-height: 1.5;
+        }
+    }
+}
+
 @media (max-width: #{$bp-max-tablet}) {
     .section.section--toolbox {
         gap: var(--section-gap);
