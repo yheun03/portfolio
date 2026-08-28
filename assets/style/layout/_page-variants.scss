@@ -32,7 +32,11 @@
     );
 
     .section--journey {
+        width: min(1400px, calc(100% - (var(--page-pad-x) * 2)));
+        max-width: 1400px;
+        margin-inline: auto;
         padding-block-start: calc(var(--section-pad-y) + 24px);
+        padding-inline: 0;
     }
 
     .section-title__eyebrow {
