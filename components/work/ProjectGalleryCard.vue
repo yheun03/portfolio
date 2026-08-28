@@ -47,7 +47,7 @@
             <div class="gallery-card__body">
                 <p class="gallery-card__meta">
                     <span>{{ work.duration }}</span>
-                    <span aria-hidden="true">·</span>
+                    <span aria-hidden="true"> / </span>
                     <span>{{ work.type }}</span>
                 </p>
                 <component :is="headingTag" class="gallery-card__title">{{ work.title }}</component>
