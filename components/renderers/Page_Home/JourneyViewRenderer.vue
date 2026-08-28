@@ -7,7 +7,7 @@
                 <p v-if="block.temp" class="journey__temp-label">{{ tempLabel }}</p>
                 <h3 class="journey__chapter-title">{{ block.summary.company }}</h3>
                 <p class="journey__chapter-meta">
-                    {{ block.summary.team }} · {{ block.summary.period }}
+                    {{ block.summary.team }} / {{ block.summary.period }}
                 </p>
                 <p class="journey__chapter-intro">{{ block.summary.intro }}</p>
                 <ul v-if="block.summary.roles.length" class="journey__chapter-roles">

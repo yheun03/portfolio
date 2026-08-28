@@ -156,7 +156,7 @@
         "visibleCount": "{visible} of {total} shown",
         "tabSummary": "{visible} in this category of {total} highlights total.",
         "totalCount": "{total} total",
-        "countSummary": "{awards} awards · {certifications} certs · {roles} roles · {activities} activities",
+        "countSummary": "{awards} awards / {certifications} certs / {roles} roles / {activities} activities",
         "categoriesAriaLabel": "Highlight categories",
         "summaryAriaLabel": "Highlights summary"
     },
@@ -184,7 +184,7 @@
     "lnb": {
         "eyebrow": "Explore",
         "title": "Menu",
-        "subtitle": "Web Publisher · Frontend",
+        "subtitle": "Web Publisher / Frontend",
         "connect": "Get in touch",
         "email": "Email me",
         "github": "GitHub",
@@ -202,7 +202,7 @@
         "report": "Report a broken link",
         "reportSubject": "[Portfolio] Broken link report",
         "reportBody": "I reached the page below, but it didn’t load as expected.",
-        "seoTitle": "Error {code} · Eunyounghwan Portfolio"
+        "seoTitle": "Error {code} / Eunyounghwan Portfolio"
     },
     "a11y": {
         "switchToEn": "Switch to English",
@@ -290,7 +290,7 @@
         "shapeDescription": "Radii and shadows keep component hierarchy, touch areas, and focus states consistent."
     },
     "meta": {
-        "title": "Eunyounghwan Portfolio | 7-Year Web Publisher · Vue UI Development",
+        "title": "Eunyounghwan Portfolio | 7-Year Web Publisher / Vue UI Development",
         "description": "The 2026 portfolio of Eunyounghwan, a seven-year HTML and SCSS web publisher using Vue 3 templates, props, v-if, v-for, and Teleport for practical UI work.",
         "ogTitle": "Eunyounghwan, 7-Year Web Publisher Portfolio 2026",
         "ogDescription": "A portfolio of production HTML and SCSS work with practical, lightweight use of Vue 3 for UI structure."
@@ -432,37 +432,37 @@
             "typography": [
                 {
                     "name": "Display-1",
-                    "value": "PC 64~136 / TB 51~96 / MB 44~76px · 900",
+                    "value": "PC 64~136 / TB 51~96 / MB 44~76px / 900",
                     "reason": "The highest-level token is reserved for the home hero and strongest activity titles.",
                     "sampleClass": "type-item__sample--display1"
                 },
                 {
                     "name": "Display-2 / Display-3",
-                    "value": "Emphasis sections · large cards · 900",
+                    "value": "Emphasis sections / large cards / 900",
                     "reason": "These keep a strong visual signal without competing with Display-1.",
                     "sampleClass": "type-item__sample--display3"
                 },
                 {
                     "name": "Display-4 / Display-5 / Display-6",
-                    "value": "Section and card titles · 760~900",
+                    "value": "Section and card titles / 760~900",
                     "reason": "These levels separate section titles, major card titles, and small module headings.",
                     "sampleClass": "type-item__sample--display5"
                 },
                 {
                     "name": "Title-1 / Title-2 / Title-3",
-                    "value": "18~23 / 16~19 / 16~17px · 720~760",
+                    "value": "18~23 / 16~19 / 16~17px / 720~760",
                     "reason": "Information headings inside cards and lists stay below the Display scale.",
                     "sampleClass": "type-item__sample--title"
                 },
                 {
                     "name": "Body-1 / Body-2",
-                    "value": "16px+ / 15px · 500",
+                    "value": "16px+ / 15px / 500",
                     "reason": "Body text starts at 16px, while supporting descriptions use a denser 15px size.",
                     "sampleClass": "type-item__sample--body"
                 },
                 {
                     "name": "Label / Chip",
-                    "value": "14px / 12px · 720",
+                    "value": "14px / 12px / 720",
                     "reason": "Metadata labels use 14px and chips use a fixed 12px minimum to keep small UI consistent.",
                     "sampleClass": "type-item__sample--label"
                 }
@@ -666,7 +666,7 @@
                 "temp": false,
                 "summary": {
                     "company": "Company",
-                    "team": "JO&SOFT · DX Solution Team 2 · Assistant Manager (Daeri) · Web Publisher / Frontend",
+                    "team": "JO&SOFT / DX Solution Team 2 / Assistant Manager (Daeri) / Web Publisher / Frontend",
                     "period": "Nov 2019 ~ Present",
                     "intro": "While delivering build, operation, and renewal projects at JO&SOFT, I experience the entire process of web UI from requirements to UI structure, responsive publishing, Vue, CMS, and maintenance.",
                     "clients": [
@@ -737,7 +737,7 @@
                 "temp": false,
                 "summary": {
                     "company": "University",
-                    "team": "Tech University of Korea · Computer & Electronic Engineering · Transfer & Graduated (GPA 4.45/4.5) · Prior college: Mobile Software (GPA 4.27/4.5)",
+                    "team": "Tech University of Korea / Computer & Electronic Engineering / Transfer & Graduated (GPA 4.45/4.5) / Prior college: Mobile Software (GPA 4.27/4.5)",
                     "period": "Mar 2021 ~ Feb 2025",
                     "intro": "After graduating from my prior college in Mobile Software (GPA 4.27/4.5), I transferred into Computer & Electronic Engineering at Tech University of Korea and graduated with a 4.45/4.5 GPA. From mobile and software fundamentals to programming and software engineering, I studied while balancing client work—and as class representative and society president, I launched the student council and led department events and communication.",
                     "clients": [],
@@ -780,7 +780,7 @@
                 "temp": false,
                 "summary": {
                     "company": "High School",
-                    "team": "Web design · MOD club",
+                    "team": "Web design / MOD club",
                     "period": "Mar 2018 ~ Jan 2021",
                     "intro": "Built HTML, CSS, and JavaScript fundamentals in the web design track and MOD club, shipping real-user sites such as online learning and student election pages.",
                     "clients": [],
@@ -789,7 +789,7 @@
                         "Online learning site development",
                         "Student election site development",
                         "School election and learning-info web TF",
-                        "Web Design · Information Processing Craftsman"
+                        "Web Design / Information Processing Craftsman"
                     ]
                 },
                 "timeline": [
@@ -951,7 +951,7 @@
                     ],
                     "points": ["AG Grid table UX standardization", "Tablet workflow UI", "Vue 3 + Vite integration"],
                     "pin": true,
-                    "duration": "Ongoing · ~3+ months",
+                    "duration": "Ongoing / ~3+ months",
                     "captures": ["/images/projects/placeholder.svg"],
                     "languages": ["Vue 3", "Vite", "JavaScript", "SCSS", "AG Grid"]
                 },
@@ -1014,7 +1014,7 @@
                     "category": "project",
                     "title": "Smart Factory Government Projects",
                     "period": "2021.05~2022.07",
-                    "type": "SI·SM",
+                    "type": "SI / SM",
                     "role": "Publishing 100%, Design 20%",
                     "tech": ["eGovFrame", "Adobe XD", "HTML", "CSS", "jQuery"],
                     "introduction": "A government-funded program that began with Teraeco MES/smart-factory work and expanded across manufacturers like Sungel, Dawoo, and Sinae Electronics. Rather than one-off delivery, it grew into an in-house solution: I tailored each client UI to its brand identity and colors, and the screen know-how here became the foundation for Robo MES.",
@@ -1740,7 +1740,7 @@
                         "Documented a friend-matching expansion direction based on user feedback"
                     ],
                     "pin": false,
-                    "duration": "~1 week launch · ~2 months in repo",
+                    "duration": "~1 week launch / ~2 months in repo",
                     "captures": ["/images/portfolio/ver-2025/project/gongting/thumbnail-mb.png"],
                     "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
                     "links": [

@@ -9,7 +9,7 @@
         <div class="hero__poster">
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
-                <span aria-hidden="true">·</span>
+                <span aria-hidden="true"> / </span>
                 <span>{{ profile.role }}</span>
             </p>
 

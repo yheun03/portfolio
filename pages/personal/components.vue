@@ -47,7 +47,7 @@
 
             <section class="catalog-section" aria-labelledby="badge-section-title">
                 <header class="catalog-section__head">
-                    <BaseLabel tone="technical">BaseBadge · BaseAccentBadge</BaseLabel>
+                    <BaseLabel tone="technical">BaseBadge / BaseAccentBadge</BaseLabel>
                     <h2 id="badge-section-title">{{ t('catalog.badgeTitle') }}</h2>
                     <p>{{ t('catalog.badgeDescription') }}</p>
                 </header>
@@ -106,7 +106,7 @@
 
             <section class="catalog-section" aria-labelledby="card-section-title">
                 <header class="catalog-section__head">
-                    <BaseLabel tone="technical">BaseCard · StoryCaseCard</BaseLabel>
+                    <BaseLabel tone="technical">BaseCard / StoryCaseCard</BaseLabel>
                     <h2 id="card-section-title">{{ t('catalog.cardTitle') }}</h2>
                     <p>{{ t('catalog.cardDescription') }}</p>
                 </header>
