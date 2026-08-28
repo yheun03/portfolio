@@ -10,7 +10,16 @@
    Tokens: --gallery-* in _tokens.scss
    ============================================================================= */
 
-.gallery-page--editorial.section,
+.gallery-page.gallery-page--editorial.section {
+    width: min(1400px, calc(100% - (var(--page-pad-x) * 2)));
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-block: var(--section-pad-y);
+    padding-inline: 0;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
 .gallery-detail.gallery-page--editorial.section {
     width: 100%;
     max-width: none;
