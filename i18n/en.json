@@ -910,7 +910,9 @@
                     "points": ["Data-focused dashboard UI", "Status and hierarchy visualization rules", "Screen consistency in a short timeframe"],
                     "pin": true,
                     "duration": "~1 month",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/samhwa-eco-dashboard/image-01.webp"
+                    ],
                     "languages": ["Vue", "JavaScript", "SCSS", "HTML"]
                 },
                 {
@@ -952,7 +954,14 @@
                     "points": ["AG Grid table UX standardization", "Tablet workflow UI", "Vue 3 + Vite integration"],
                     "pin": true,
                     "duration": "Ongoing / ~3+ months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/orchem-mes/image-01.webp",
+                        "/images/projects/orchem-mes/image-02.webp",
+                        "/images/projects/orchem-mes/image-03.webp",
+                        "/images/projects/orchem-mes/image-04.webp",
+                        "/images/projects/orchem-mes/image-05.webp",
+                        "/images/projects/orchem-mes/image-06.webp"
+                    ],
                     "languages": ["Vue 3", "Vite", "JavaScript", "SCSS", "AG Grid"]
                 },
                 {
@@ -980,7 +989,13 @@
                     "points": ["CMS customization adaptability", "Led guides, documentation, and training", "Multi-party collaboration"],
                     "pin": true,
                     "duration": "~6 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/hanjinkal/image-01.webp",
+                        "/images/projects/hanjinkal/image-02.webp",
+                        "/images/projects/hanjinkal/image-03.webp",
+                        "/images/projects/hanjinkal/image-04.webp",
+                        "/images/projects/hanjinkal/image-05.webp"
+                    ],
                     "languages": ["HTML", "SCSS", "Vue"]
                 },
                 {
@@ -1006,7 +1021,13 @@
                     "points": ["Speed and quality together", "Self-initiated frontend contribution", "Improvement-driven publisher"],
                     "pin": true,
                     "duration": "~8 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/oms/image-01.webp",
+                        "/images/projects/oms/image-02.webp",
+                        "/images/projects/oms/image-03.webp",
+                        "/images/projects/oms/image-04.webp",
+                        "/images/projects/oms/image-05.webp"
+                    ],
                     "languages": ["Vue", "SCSS"]
                 },
                 {
@@ -1031,7 +1052,13 @@
                     "points": ["Handled multiple enterprise clients", "Brand-tailored design", "Productization-grounded experience"],
                     "pin": false,
                     "duration": "~15 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/smart-factory-gov/image-01.webp",
+                        "/images/projects/smart-factory-gov/image-02.webp",
+                        "/images/projects/smart-factory-gov/image-03.webp",
+                        "/images/projects/smart-factory-gov/image-04.webp",
+                        "/images/projects/smart-factory-gov/image-05.webp"
+                    ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1094,7 +1121,10 @@
                     "points": ["Operational responsiveness", "Ticket-driven maintenance", "Awareness of deploy and security impact"],
                     "pin": true,
                     "duration": "Ongoing",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/hanon/image-01.webp",
+                        "/images/projects/hanon/image-02.webp"
+                    ],
                     "languages": ["C#", "CSS3", "csHtml", "JavaScript"]
                 },
                 {
@@ -1160,7 +1190,12 @@
                     "points": ["Nuxt 3 frameworkization", "Production-state components", "Design-token SCSS"],
                     "pin": true,
                     "duration": "Ongoing",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/framework/image-01.webp",
+                        "/images/projects/framework/image-02.webp",
+                        "/images/projects/framework/image-03.webp",
+                        "/images/projects/framework/image-04.webp"
+                    ],
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS"],
                     "links": [
                         {
@@ -1220,7 +1255,11 @@
                     "points": ["Planning, design, and publishing in one", "Operation experience to productization", "UX improvement case"],
                     "pin": false,
                     "duration": "~3 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/robo-tms/image-01.webp",
+                        "/images/projects/robo-tms/image-02.webp",
+                        "/images/projects/robo-tms/image-03.webp"
+                    ],
                     "languages": ["Vue", "SCSS"]
                 },
                 {
@@ -1244,7 +1283,10 @@
                     "points": ["Solution productization", "Modularization-driven productivity"],
                     "pin": false,
                     "duration": "~9 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/robo-mes/image-01.webp",
+                        "/images/projects/robo-mes/image-02.webp"
+                    ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1271,7 +1313,11 @@
                     "points": ["Brand and information trust", "i18n and web-standard readiness", "Led the Git adoption proposal"],
                     "pin": true,
                     "duration": "~3 weeks",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/company-renewal/image-01.webp",
+                        "/images/projects/company-renewal/image-02.webp",
+                        "/images/projects/company-renewal/image-03.webp"
+                    ],
                     "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
                     "links": [
                         {
@@ -1301,7 +1347,11 @@
                     "points": ["Short-term ramp-up", "CMS publishing stabilization"],
                     "pin": false,
                     "duration": "~2 weeks",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/kyungdongwon-cms/image-01.webp",
+                        "/images/projects/kyungdongwon-cms/image-02.webp",
+                        "/images/projects/kyungdongwon-cms/image-03.webp"
+                    ],
                     "languages": ["XML", "CSS3"]
                 },
                 {
@@ -1321,7 +1371,10 @@
                     "points": ["Rapid-delivery capability", "React publishing experience"],
                     "pin": false,
                     "duration": "~1 week",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/fems/image-01.webp",
+                        "/images/projects/fems/image-02.webp"
+                    ],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1345,7 +1398,11 @@
                     "points": ["Reuse-oriented publishing", "Delivery acceleration"],
                     "pin": false,
                     "duration": "~2 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/scm-daeyang-paper/image-01.webp",
+                        "/images/projects/scm-daeyang-paper/image-02.webp",
+                        "/images/projects/scm-daeyang-paper/image-03.webp"
+                    ],
                     "languages": ["HTML", "SCSS"]
                 },
                 {
@@ -1366,7 +1423,10 @@
                     "points": ["Multi-version structure handling", "React component adaptation"],
                     "pin": false,
                     "duration": "~6 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/scm-daeyang-board/image-01.webp",
+                        "/images/projects/scm-daeyang-board/image-02.webp"
+                    ],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1387,7 +1447,10 @@
                     "points": ["End-to-end plan, build, and operate", "Contributed to brand trust"],
                     "pin": false,
                     "duration": "~3 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/company-renewal-2022/image-01.webp",
+                        "/images/projects/company-renewal-2022/image-02.webp"
+                    ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1425,7 +1488,11 @@
                     "points": ["Business-system publishing", "Start of a long client relationship"],
                     "pin": false,
                     "duration": "~2 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/tos-renewal/image-01.webp",
+                        "/images/projects/tos-renewal/image-02.webp",
+                        "/images/projects/tos-renewal/image-03.webp"
+                    ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1446,7 +1513,19 @@
                     "points": ["Award-linked achievement", "Design, UX, and publishing in one build"],
                     "pin": true,
                     "duration": "~3 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/toms/image-01.webp",
+                        "/images/projects/toms/image-02.webp",
+                        "/images/projects/toms/image-03.webp",
+                        "/images/projects/toms/image-04.webp",
+                        "/images/projects/toms/image-05.webp",
+                        "/images/projects/toms/image-06.webp",
+                        "/images/projects/toms/image-07.webp",
+                        "/images/projects/toms/image-08.webp",
+                        "/images/projects/toms/image-09.webp",
+                        "/images/projects/toms/image-10.webp",
+                        "/images/projects/toms/image-11.webp"
+                    ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 }
             ],
@@ -1485,15 +1564,15 @@
                     "pin": true,
                     "duration": "~2 months (ongoing improvements)",
                     "captures": [
-                        "/images/portfolio-2026/home-light-desktop.png",
-                        "/images/portfolio-2026/home-dark-desktop.png",
-                        "/images/portfolio-2026/design-tokens-light-desktop.png",
-                        "/images/portfolio-2026/design-tokens-dark-desktop.png",
-                        "/images/portfolio-2026/home-light-tablet.png",
-                        "/images/portfolio-2026/home-dark-tablet.png",
-                        "/images/portfolio-2026/home-light-mobile.png",
-                        "/images/portfolio-2026/home-dark-mobile.png",
-                        "/images/og-image-2026.jpg"
+                        "/images/projects/jonsoft-framework-portfolio/image-01.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-02.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-03.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-04.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-05.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-06.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-07.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-08.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-09.webp"
                     ],
                     "languages": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript"],
                     "links": [
@@ -1532,7 +1611,14 @@
                     ],
                     "pin": true,
                     "duration": "Intensive May 31 build, then ongoing (53 GitHub commits)",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": [
+                        "/images/projects/singil-bmc/image-01.webp",
+                        "/images/projects/singil-bmc/image-02.webp",
+                        "/images/projects/singil-bmc/image-03.webp",
+                        "/images/projects/singil-bmc/image-04.webp",
+                        "/images/projects/singil-bmc/image-05.webp",
+                        "/images/projects/singil-bmc/image-06.webp"
+                    ],
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Node.js"],
                     "links": [
                         {
@@ -1573,9 +1659,9 @@
                     "pin": true,
                     "duration": "In progress",
                     "captures": [
-                        "/images/projects/flighty/image-1.png",
-                        "/images/projects/flighty/image-2.png",
-                        "/images/projects/flighty/image-3.png"
+                        "/images/projects/clone-flighty/image-01.webp",
+                        "/images/projects/clone-flighty/image-02.webp",
+                        "/images/projects/clone-flighty/image-03.webp"
                     ],
                     "thumbnail": "/images/archive-thumbs/flighty.jpg",
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Figma"],
@@ -1654,15 +1740,15 @@
                     "pin": true,
                     "duration": "~1 month",
                     "captures": [
-                        "/images/portfolio/ver-2025/og-image.jpg",
-                        "/images/portfolio/ver-2025/photo-1920.webp",
-                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png",
-                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png",
-                        "/images/portfolio/ver-2025/project/matemate/thumbnail-pc.png",
-                        "/images/portfolio/ver-2025/project/matemate/modal/modal-01.png",
-                        "/images/portfolio/ver-2025/project/matemate/modal/modal-02.png",
-                        "/images/portfolio/ver-2025/project/matemate/modal/modal-03.png",
-                        "/images/portfolio/ver-2025/project/gongting/thumbnail-mb.png"
+                        "/images/projects/portfolio-2025/image-01.webp",
+                        "/images/projects/portfolio-2025/image-02.webp",
+                        "/images/projects/portfolio-2025/image-03.webp",
+                        "/images/projects/portfolio-2025/image-04.webp",
+                        "/images/projects/portfolio-2025/image-05.webp",
+                        "/images/projects/portfolio-2025/image-06.webp",
+                        "/images/projects/portfolio-2025/image-07.webp",
+                        "/images/projects/portfolio-2025/image-08.webp",
+                        "/images/projects/portfolio-2025/image-09.webp"
                     ],
                     "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
                     "links": [
@@ -1698,10 +1784,10 @@
                     "pin": false,
                     "duration": "~4 weeks (focused GitHub development)",
                     "captures": [
-                        "/images/portfolio/ver-2025/project/matemate/thumbnail-pc.png",
-                        "/images/portfolio/ver-2025/project/matemate/modal/modal-01.png",
-                        "/images/portfolio/ver-2025/project/matemate/modal/modal-02.png",
-                        "/images/portfolio/ver-2025/project/matemate/modal/modal-03.png"
+                        "/images/projects/matemate-capstone/image-01.webp",
+                        "/images/projects/matemate-capstone/image-02.webp",
+                        "/images/projects/matemate-capstone/image-03.webp",
+                        "/images/projects/matemate-capstone/image-04.webp"
                     ],
                     "thumbnail": "/images/archive-thumbs/matemate.jpg",
                     "languages": ["HTML", "SCSS", "JavaScript", "Firebase", "Figma"],
@@ -1741,7 +1827,9 @@
                     ],
                     "pin": false,
                     "duration": "~1 week launch / ~2 months in repo",
-                    "captures": ["/images/portfolio/ver-2025/project/gongting/thumbnail-mb.png"],
+                    "captures": [
+                        "/images/projects/gongting-blind-matching/image-01.webp"
+                    ],
                     "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
                     "links": [
                         {
@@ -1773,8 +1861,8 @@
                     "pin": false,
                     "duration": "~2 months",
                     "captures": [
-                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-pc.png",
-                        "/images/portfolio/ver-2025/project/jonsoft/thumbnail-mb.png"
+                        "/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
+                        "/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
                     ],
                     "thumbnail": "/images/archive-thumbs/jonsoft-2022.jpg",
                     "languages": ["HTML", "CSS", "jQuery", "Figma"],
