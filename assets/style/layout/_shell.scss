@@ -108,26 +108,27 @@
     @include editorial-panel-about;
 }
 
+.portfolio-page--home {
+    --home-fullpage-height: calc(100vh - var(--layout-header-height));
+    --home-fullpage-height: calc(100dvh - var(--layout-header-height));
+}
+
+.portfolio-page.portfolio-page--home > :is(#hello, #about, #works) {
+    min-height: var(--home-fullpage-height);
+    align-content: center;
+    justify-content: center;
+}
+
 @media (min-width: 1920px) {
     html:has(.portfolio-page--home) {
         scroll-padding-top: var(--layout-header-height);
         scroll-snap-type: y mandatory;
     }
 
-    .portfolio-page--home {
-        --home-fullpage-height: calc(100dvh - var(--layout-header-height));
-    }
-
     .portfolio-page.portfolio-page--home > .section {
-        min-height: var(--home-fullpage-height);
-        align-content: center;
         scroll-margin-top: 0;
         scroll-snap-align: start;
         scroll-snap-stop: always;
-    }
-
-    .portfolio-page.portfolio-page--home > :is(.section--works, .section--proof, .section--how) {
-        align-items: start;
     }
 
     html:has(.portfolio-page--home) .app-footer {
