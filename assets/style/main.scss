@@ -17,7 +17,6 @@
 @use "layout/header";
 @use "layout/footer";
 @use "layout/shell";
-@use "layout/viewport";
 @use "layout/dock";
 @use "layout/page-variants";
 
@@ -31,7 +30,7 @@
 @use "home/journey";
 @use "home/highlights";
 @use "home/contact";
-@use "home/handheld";
+@use "home/responsive";
 
 /* Route-level pages */
 @use "pages/error";

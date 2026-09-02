@@ -5,13 +5,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    min-height: auto;
     background: transparent;
-
-    @media (min-width: #{$bp-min-laptop}) {
-        min-height: min(88dvh, 896px);
-        padding-block: clamp(64px, 10vw, 112px) clamp(80px, 12vw, 144px);
-    }
 }
 
 .contact__poster {

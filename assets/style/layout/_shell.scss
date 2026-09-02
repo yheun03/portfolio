@@ -106,42 +106,6 @@
     @include editorial-panel-about;
 }
 
-.portfolio-page--home {
-    --home-fullpage-height: calc(100vh - var(--layout-header-height));
-    --home-fullpage-height: calc(100dvh - var(--layout-header-height));
-}
-
-@media (min-width: 1920px) {
-    html:has(.portfolio-page--home) {
-        scroll-padding-top: var(--layout-header-height);
-        scroll-snap-type: y mandatory;
-    }
-
-    .portfolio-page.portfolio-page--home > .section {
-        scroll-margin-top: 0;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-
-    html:has(.portfolio-page--home) .app-footer {
-        scroll-snap-align: end;
-    }
-}
-
-@media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page.portfolio-page--home > :is(#hello, #about, #works) {
-        min-height: var(--home-fullpage-height);
-        align-content: center;
-    }
-}
-
-@media (min-width: #{$bp-min-tablet}) {
-    .portfolio-page.portfolio-page--home > .section {
-        min-height: var(--home-fullpage-height);
-        align-content: center;
-    }
-}
-
 :root[data-theme="dark"] .section--contact {
     @include editorial-panel-contact;
 }

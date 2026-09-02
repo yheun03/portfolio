@@ -4,16 +4,11 @@
 .section.section--about-intro,
 .section.section--why-list {
     display: block;
-    min-height: auto;
     background: transparent;
 
     &::before,
     &::after {
         content: none;
-    }
-
-    @media (min-width: #{$bp-min-laptop}) {
-        padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
     }
 }
 
@@ -76,50 +71,6 @@
     }
 }
 
-@media (min-width: 1920px) {
-    .section.section--about-intro,
-    .section.section--why-list {
-        display: flex;
-        padding-block: 72px;
-        align-items: center;
-    }
-
-    .about__intro,
-    .why__list {
-        width: 100%;
-    }
-
-    .about__display-line {
-        font-size: 10rem;
-        line-height: 1.12;
-    }
-
-    .about__lead {
-        max-width: 32ch;
-        margin-top: 32px;
-        font-size: 1.5rem;
-    }
-
-    .why__list {
-        min-height: calc(var(--home-fullpage-height) - 144px);
-        gap: 56px;
-        align-content: space-between;
-
-        h3 {
-            font-size: 5.5rem;
-            line-height: 1.05;
-        }
-
-        p {
-            font-size: 1.125rem;
-        }
-
-        .base-index-label {
-            font-size: 1rem;
-        }
-    }
-}
-
 .showcase__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -127,10 +78,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-
-    @media (max-width: #{$bp-max-tablet}) {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }
 
 .showcase__item--featured {
@@ -219,34 +166,6 @@
     &__cta-arrow {
         display: inline-block;
         transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-}
-
-@media (min-width: #{$bp-min-laptop}) {
-    .showcase__item--featured .story-case {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        grid-template-areas: "head head" "title summary" "stack summary" "cta summary";
-        column-gap: clamp(32px, 4vw, 56px);
-        align-items: start;
-        min-height: clamp(272px, 26vw, 368px);
-
-        .story-case__head { grid-area: head; }
-
-        h3 {
-            grid-area: title;
-            max-width: 18ch;
-            @include font(display-4);
-        }
-
-        .story-case__summary {
-            grid-area: summary;
-            -webkit-line-clamp: 6;
-            font-size: var(--font-size-md);
-            max-width: 52ch;
-        }
-
-        .base-chip-list { grid-area: stack; align-self: end; }
-        .story-case__cta { grid-area: cta; }
     }
 }
 
