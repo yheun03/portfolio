@@ -2,16 +2,11 @@
 
 /* =============================================================================
    Viewport layout — mobile · tablet · desktop
-   Desktop: `layout/_shell.scss` (centered column + grid)
-   ≤1023px: full-width sections with unified --page-pad-x / --section-pad-y
+   Narrow viewport overrides
 ============================================================================= */
 
 /* ----- Handheld + tablet (≤1023px) ----- */
 @media (max-width: #{$bp-max-tablet}) {
-    .portfolio-page--app-dock {
-        padding-inline-end: 0;
-    }
-
     .section--hero,
     .hero.section--hero {
         padding: var(--section-pad-y) var(--page-pad-x);
