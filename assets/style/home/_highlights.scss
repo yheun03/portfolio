@@ -73,15 +73,3 @@
         }
     }
 }
-
-@media (min-width: 900px) {
-    .highlights__panel {
-        grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
-        align-items: start;
-        gap: clamp(32px, 4.5vw, 56px);
-    }
-
-    .highlights__panel-aside {
-        @include sticky-sidebar;
-    }
-}
