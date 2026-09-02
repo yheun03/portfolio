@@ -31,7 +31,8 @@
         var(--primary-700) 100%
     );
 
-    .section--journey {
+    .section--journey,
+    .section--highlights {
         width: min(1400px, calc(100% - (var(--page-pad-x) * 2)));
         max-width: 1400px;
         margin-inline: auto;

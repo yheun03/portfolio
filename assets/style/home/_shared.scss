@@ -186,7 +186,7 @@
 .highlights.section--highlights {
     position: relative;
     overflow: visible;
-    padding-top: calc(var(--space-section-y) + 80px);
+    padding-block-start: calc(var(--section-pad-y) + 24px);
     grid-template-columns: var(--home-section-columns);
     column-gap: var(--home-section-column-gap);
     align-items: start;
