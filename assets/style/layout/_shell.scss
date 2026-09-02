@@ -116,7 +116,6 @@
 .portfolio-page.portfolio-page--home > :is(#hello, #about, #works) {
     min-height: var(--home-fullpage-height);
     align-content: center;
-    justify-content: center;
 }
 
 @media (min-width: 1920px) {
