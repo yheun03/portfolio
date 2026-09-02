@@ -17,9 +17,7 @@
 
     /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
     &--app-dock {
-        @media (min-width: #{$bp-min-laptop}) {
-            padding-inline-end: 0;
-        }
+        padding-inline-end: 0;
     }
 }
 
@@ -113,11 +111,6 @@
     --home-fullpage-height: calc(100dvh - var(--layout-header-height));
 }
 
-.portfolio-page.portfolio-page--home > :is(#hello, #about, #works) {
-    min-height: var(--home-fullpage-height);
-    align-content: center;
-}
-
 @media (min-width: 1920px) {
     html:has(.portfolio-page--home) {
         scroll-padding-top: var(--layout-header-height);
@@ -132,6 +125,20 @@
 
     html:has(.portfolio-page--home) .app-footer {
         scroll-snap-align: end;
+    }
+}
+
+@media (max-width: #{$bp-max-mobile}) {
+    .portfolio-page.portfolio-page--home > :is(#hello, #about, #works) {
+        min-height: var(--home-fullpage-height);
+        align-content: center;
+    }
+}
+
+@media (min-width: #{$bp-min-tablet}) {
+    .portfolio-page.portfolio-page--home > .section {
+        min-height: var(--home-fullpage-height);
+        align-content: center;
     }
 }
 

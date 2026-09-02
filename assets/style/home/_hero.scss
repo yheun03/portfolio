@@ -2,7 +2,6 @@
 
 .hero {
     &.section--hero {
-        max-width: none;
         padding-top: 0;
     }
 
@@ -232,15 +231,11 @@
 
 @media (min-width: #{$bp-min-laptop}) {
     .hero.section--hero {
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
         padding-top: clamp(36px, 4vw, 64px);
     }
 
     .section--hero {
         padding-block: clamp(80px, 11vw, 128px) clamp(80px, 11vw, 144px);
-        min-height: min(100svh, 1080px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -266,9 +261,6 @@
 
 @media (min-width: 1920px) {
     .portfolio-page--home > .hero.section--hero {
-        width: 100%;
-        min-height: var(--home-fullpage-height);
-        margin-inline: 0;
         padding-block: 72px;
     }
 
