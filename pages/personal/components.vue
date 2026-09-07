@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        page-variant="archive-personal" :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="catalog-page section" aria-labelledby="catalog-page-title">
             <header class="catalog-hero">
                 <BaseLabel tone="technical">{{ t('catalog.pageLabel') }}</BaseLabel>
@@ -147,16 +147,20 @@ usePortfolioSeo(() => ({
 <style scoped>
 .catalog-page {
     display: grid;
-    gap: var(--space-fluid-xl);
-    width: min(100%, var(--layout-content-max));
+    gap: clamp(88px, 11vw, 168px);
+    width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
     margin: 0 auto;
-    padding: calc(var(--layout-header-height) + var(--space-fluid-xl)) var(--inset-page) var(--space-fluid-2xl);
+    padding: clamp(88px, 11vw, 168px) 0;
 }
 
 .catalog-hero,
 .catalog-section {
     display: grid;
-    gap: var(--space-6);
+    gap: clamp(24px, 3vw, 48px);
+}
+
+.catalog-hero {
+    max-width: 1080px;
 }
 
 .catalog-hero h1,
@@ -167,11 +171,16 @@ usePortfolioSeo(() => ({
 }
 
 .catalog-hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 12ch;
+    font-size: var(--font-size-display-2);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-display);
 }
 
 .catalog-section__head h2 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: var(--font-size-display-4);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-heading);
 }
 
 .catalog-hero p,
@@ -197,12 +206,13 @@ usePortfolioSeo(() => ({
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(20px, 3vw, 32px);
+    gap: clamp(24px, 2.5vw, 40px);
 }
 
 @media (max-width: 767px) {
     .catalog-page {
-        padding-inline: max(var(--space-5), env(safe-area-inset-left)) max(var(--space-5), env(safe-area-inset-right));
+        width: 100%;
+        padding: 56px max(var(--page-pad-x), env(safe-area-inset-left)) 80px max(var(--page-pad-x), env(safe-area-inset-right));
     }
 
     .catalog-hero__actions {

@@ -75,10 +75,10 @@
 
     &.gallery-page--editorial &__title {
         margin: 0;
-        max-width: 18ch;
+        max-width: 15ch;
         color: var(--gallery-ink);
         font-family: var(--font-display);
-        font-size: clamp(2.75rem, 3.2vw, 3.75rem);
+        font-size: clamp(3.25rem, 5.2vw, 6.5rem);
         font-weight: var(--font-weight-black);
         letter-spacing: 0;
         line-height: 1.1;
@@ -373,13 +373,14 @@
 
     &.gallery-page--editorial.section {
         max-width: none;
-        padding-block: clamp(72px, 9vh, 120px);
+        --gallery-section-gap: clamp(64px, 8vw, 128px);
+        padding-block: clamp(88px, 11vw, 168px);
     }
 
     &.gallery-page--editorial &__hero {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(260px, 0.32fr);
-        gap: var(--section-gap);
+        gap: clamp(48px, 6vw, 96px);
         align-items: stretch;
         margin-bottom: 0;
         @include surface-card-shell;
@@ -447,9 +448,9 @@
     &.gallery-page--editorial &__showcase {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(272px, 0.36fr);
-        gap: var(--space-6);
+        gap: clamp(24px, 2.5vw, 40px);
         align-items: start;
-        margin-top: var(--section-gap);
+        margin-top: var(--gallery-section-gap);
     }
 
     &.gallery-page--editorial &__gallery,
@@ -614,7 +615,7 @@
     }
 
     &.gallery-page--editorial &__body {
-        margin-top: var(--section-gap);
+        margin-top: var(--gallery-section-gap);
         padding-top: 0;
         border-top: 0;
     }
@@ -623,7 +624,7 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: start;
-        gap: var(--space-6);
+        gap: clamp(24px, 2.5vw, 40px);
     }
 
     &.gallery-page--editorial &__content-card {
@@ -720,7 +721,7 @@
         }
 
         &.gallery-page--editorial &__title {
-            font-size: 2.75rem;
+            font-size: clamp(2.75rem, 7vw, 4.75rem);
         }
 
         &.gallery-page--editorial &__summary {

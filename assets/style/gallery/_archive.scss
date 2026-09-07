@@ -11,10 +11,10 @@
    ============================================================================= */
 
 .gallery-page.gallery-page--editorial.section {
-    width: min(1400px, calc(100% - (var(--page-pad-x) * 2)));
-    max-width: 1400px;
+    width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
+    max-width: var(--layout-content-max);
     margin-inline: auto;
-    padding-block: var(--section-pad-y);
+    padding-block: clamp(88px, 11vw, 168px);
     padding-inline: 0;
     overflow: visible;
     box-sizing: border-box;
@@ -72,8 +72,8 @@
 .gallery-page--editorial {
     .gallery-page__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-        gap: var(--space-6);
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+        gap: clamp(24px, 2.5vw, 40px);
         margin-top: var(--gallery-section-gap);
     }
 
@@ -257,7 +257,7 @@
 /* ----- Editorial sports poster layout ----- */
 
 .gallery-page--editorial {
-    --gallery-section-gap: var(--section-gap);
+    --gallery-section-gap: clamp(56px, 7vw, 112px);
 
     position: relative;
     color: var(--gallery-body);
@@ -269,7 +269,7 @@
     }
 
     .year-timeline__era--gallery .year-timeline__entries {
-        gap: var(--space-6);
+        gap: clamp(24px, 2.5vw, 40px);
     }
 }
 
@@ -614,7 +614,7 @@
 
 @media (min-width: 900px) {
     .gallery-editorial__entry-poster {
-        grid-template-columns: minmax(240px, 0.8fr) minmax(360px, 1.2fr);
+        grid-template-columns: minmax(280px, 0.75fr) minmax(440px, 1.25fr);
         grid-template-rows: max-content max-content max-content max-content minmax(0, 1fr);
         grid-template-areas:
             "kicker media"
@@ -622,13 +622,13 @@
             "dek media"
             "tags media"
             ". media";
-        column-gap: 32px;
+        column-gap: clamp(36px, 4vw, 72px);
         align-items: start;
     }
 
     .gallery-editorial__entry-media {
         align-self: center;
-        height: clamp(360px, 28vw, 480px);
+        height: clamp(400px, 31vw, 560px);
         aspect-ratio: auto;
     }
 

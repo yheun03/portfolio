@@ -31,12 +31,12 @@
         var(--primary-700) 100%
     );
 
-    .section--journey,
-    .section--highlights {
-        width: min(1400px, calc(100% - (var(--page-pad-x) * 2)));
-        max-width: 1400px;
+    > .section.section--journey,
+    > .section.section--highlights {
+        width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
+        max-width: var(--layout-content-max);
         margin-inline: auto;
-        padding-block-start: calc(var(--section-pad-y) + 24px);
+        padding-block: clamp(88px, 11vw, 168px);
         padding-inline: 0;
     }
 
@@ -46,6 +46,25 @@
 
     .section-title__description {
         max-width: 52ch;
+    }
+}
+
+@media (max-width: $bp-max-tablet) {
+    .portfolio-page--journey {
+        > .section.section--journey,
+        > .section.section--highlights {
+            width: 100%;
+            padding: 64px var(--page-pad-x) 96px;
+        }
+    }
+}
+
+@media (max-width: $bp-max-mobile) {
+    .portfolio-page--journey {
+        > .section.section--journey,
+        > .section.section--highlights {
+            padding-block: 56px 80px;
+        }
     }
 }
 

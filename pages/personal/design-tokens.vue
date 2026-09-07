@@ -1,6 +1,6 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        page-variant="archive-personal" :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero">
                 <p class="base-label base-label--technical">{{ t('tokens.pageLabel') }}</p>
@@ -118,20 +118,20 @@ usePortfolioSeo(() => ({
 <style scoped>
 .token-page {
     display: grid;
-    gap: var(--space-fluid-xl);
-    width: min(100%, var(--layout-content-max));
+    gap: clamp(88px, 11vw, 168px);
+    width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
     margin: 0 auto;
-    padding: calc(var(--layout-header-height) + var(--space-fluid-xl)) var(--inset-page) var(--space-fluid-2xl);
+    padding: clamp(88px, 11vw, 168px) 0;
 }
 
 .token-hero,
 .token-section {
     display: grid;
-    gap: var(--space-fluid-md);
+    gap: clamp(24px, 3vw, 48px);
 }
 
 .token-hero {
-    max-width: 1216px;
+    max-width: 1080px;
 }
 
 .token-hero h1 {
@@ -171,7 +171,7 @@ usePortfolioSeo(() => ({
 .token-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
-    gap: var(--space-fluid-sm);
+    gap: clamp(24px, 2.5vw, 40px);
 }
 
 .token-card,
@@ -258,7 +258,7 @@ usePortfolioSeo(() => ({
 
 .type-list {
     display: grid;
-    gap: var(--space-fluid-sm);
+    gap: clamp(24px, 2.5vw, 40px);
 }
 
 .type-item {
@@ -361,7 +361,8 @@ usePortfolioSeo(() => ({
 
 @media (max-width: 767px) {
     .token-page {
-        padding-inline: max(var(--space-5), env(safe-area-inset-left)) max(var(--space-5), env(safe-area-inset-right));
+        width: 100%;
+        padding: 56px max(var(--page-pad-x), env(safe-area-inset-left)) 80px max(var(--page-pad-x), env(safe-area-inset-right));
     }
 
     .token-hero h1,
