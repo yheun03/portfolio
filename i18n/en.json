@@ -1538,7 +1538,7 @@
                     "type": "Personal / Nuxt Portfolio",
                     "role": "End-to-end design, publishing, architecture, and frontend development",
                     "tech": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript", "Vite"],
-                    "introduction": "My 2026 portfolio, built as a seven-year HTML and SCSS web publisher taking an introductory step into Vue. Semantic HTML and SCSS remain the foundation, while Vue is used lightly for templates, props, v-if, v-for, and Teleport. Client work, personal projects, and bilingual content are organized so their editing locations stay obvious.",
+                    "introduction": "A Nuxt 3 portfolio designed to present professional experience and frontend capabilities through a consistent information architecture. It combines semantic HTML and SCSS with Vue components, state management, and bilingual content architecture for efficient expansion and maintenance.",
                     "myWorks": [
                         "Published the home, gallery, and detail pages around semantic HTML and SCSS",
                         "Used Vue templates, props, v-if, v-for, and Teleport for repeated UI and the mobile menu",
@@ -1550,19 +1550,19 @@
                     ],
                     "achievements": [
                         "Handled the full process independently from design and publishing to architecture and frontend development",
-                        "Unified the editing location for all client, personal, Korean, and English content into two i18n JSON files",
+                        "Centralized client, personal, Korean, and English content in i18n JSON files for efficient content management",
                         "Kept only essential language and theme state with Nuxt useState",
                         "Removed unused GSAP and Pinia dependencies together with motion and dialog code",
-                        "Kept only components that are actually rendered, making the code easier for a publisher to read and edit"
+                        "Kept the structure focused on active components to improve maintainability and code readability"
                     ],
                     "points": [
-                        "An introductory Vue structure centered on HTML and SCSS publishing",
-                        "Components are limited to screen units that need props or repeated templates",
-                        "Bilingual content is not scattered across feature files, so editing locations are clear",
-                        "Continuously improved against the live deployed portfolio URL"
+                        "Consistent UI implementation based on semantic markup and design tokens",
+                        "Reusable component structure that supports efficient screen expansion and change management",
+                        "Centralized bilingual content that reduces operational effort and update errors",
+                        "Asset and routing structure designed for reliable static deployment"
                     ],
                     "pin": true,
-                    "duration": "~2 months (ongoing improvements)",
+                    "duration": "~2 months",
                     "captures": [
                         "/images/projects/jonsoft-framework-portfolio/image-01.webp",
                         "/images/projects/jonsoft-framework-portfolio/image-02.webp",
@@ -1590,7 +1590,7 @@
                     "type": "Personal / Nuxt community website",
                     "role": "End-to-end planning, design, publishing, frontend, and record-pipeline development",
                     "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "AG Grid", "Node.js", "cheerio"],
-                    "introduction": "The official Singil Church Baseball Mission website. After an intensive Nuxt 3 foundation on May 31, 2026, June work added a GameOne HTML→JSON parsing pipeline, dark/light themes, leader cards, expanded MVP stats, and fresh game data. With no backend API, `npm run update` refreshes records while about, records, games, roster, MVP, videos, news, and contact IA ship as a static GitHub Pages site at `/singil-bmc/`.",
+                    "introduction": "The official Nuxt 3 website for managing the Singil Church Baseball Mission's game records and operational content. It integrates about, records, games, roster, MVP, videos, news, and contact content, with an automated GameOne HTML-to-JSON pipeline that enables efficient operation without a separate backend.",
                     "myWorks": [
                         "Designed IA for about/leaders/history, team gallery, full/yearly/monthly/group records, monthly/weekly MVP, roster, games, YouTube, news, and contact",
                         "Built `parse-game-html`, `build-records`, and `update-records` scripts that parse GameOne HTML with cheerio into per-game and summary JSON",
@@ -1600,17 +1600,17 @@
                         "Organized static deployment with GitHub Actions, `npm run deploy`, sitemap generation, JSON-LD, and dynamic SEO meta for games and news"
                     ],
                     "achievements": [
-                        "Shipped IA, records, stats, roster, media, and deployment in 33 commits on May 31, then extended themes, MVP, and ops data with 20 more commits in June (53 total)",
+                        "Delivered the core capabilities required for operation, including IA, records, statistics, roster, media, and deployment",
                         "Established an operator-friendly flow: drop GameOne HTML and run `npm run update` once to rebuild game and summary records",
                         "Encoded baseball-domain rules—excluding opponent stats and matching names via `players.json`—in parsing scripts and the README"
                     ],
                     "points": [
                         "A church-community static site with a post-game record pipeline that needs no server",
-                        "Continued improvement through June with real games, videos, and MVP data after the initial one-day push",
+                        "Designed an operations-focused content structure for real game, video, and MVP data",
                         "A deployable, maintainable live site with GitHub Pages base path, accessibility, SEO, and dark/light themes"
                     ],
                     "pin": true,
-                    "duration": "Intensive May 31 build, then ongoing (53 GitHub commits)",
+                    "duration": "May 2026–Present",
                     "captures": [
                         "/images/projects/singil-bmc/image-01.webp",
                         "/images/projects/singil-bmc/image-02.webp",
@@ -1639,22 +1639,22 @@
                     "type": "Personal / Nuxt clone service",
                     "role": "End-to-end planning, design analysis, Figma redesign, and frontend development",
                     "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "Figma", "AG Grid", "Chart.js"],
-                    "introduction": "A personal project I started after becoming an aviation enthusiast through a friend and taking 22 flights myself. I liked how Flighty lets people organize and share their flights through polished design and UX, but wanted to explore a version with multilingual support and a richer aircraft image library. This clone demo studies the original service and extends the idea toward localized flight records and broader aircraft registration.",
+                    "introduction": "A Nuxt 3 service demo that analyzes Flighty's flight-record experience and redesigns it for local users. The product structure reflects multilingual support, mobile usability, and scalable aircraft data after reviewing the original information architecture and core user flows.",
                     "myWorks": [
                         "Captured the Flighty 4.8.2 desktop UI and analyzed IA, typography hierarchy, card structure, and interaction density",
-                        "Recreated the captured UI in Figma to study the layout rules and visual details of the original design",
+                        "Reconstructed the captured UI in Figma to analyze the original layout rules and visual details",
                         "Designed a mobile-adapted version with refined typography, spacing, component sizing, and color roles",
                         "Built a Nuxt 3 foundation with workspace, auth, settings, component demos, grid, chart, and upload UI patterns",
                         "Organized Pinia, Axios, i18n dictionaries, and GitHub Pages base-path handling for localization and static deployment"
                     ],
                     "achievements": [
-                        "Documented the design-learning process from original-service capture to Figma clone and mobile redesign",
+                        "Produced a consistent set of product-design deliverables from service analysis and Figma design to mobile UI reconstruction",
                         "Prepared a scalable base by building shared UI components and demo pages on Nuxt 3 + Pinia first"
                     ],
                     "points": [
-                        "A clone project that connects a personal aviation interest to service planning and frontend practice",
-                        "Reframed English-only UX as a localization task and limited aircraft imagery as a data and asset expansion task",
-                        "Moves beyond a direct clone by reinterpreting the product through mobile usability and design-system decisions"
+                        "Defined core features and improvement requirements through structured product benchmarking",
+                        "Designed scalable content architecture for localization and aircraft-data expansion",
+                        "Reinterpreted the UI around mobile usability and design-system consistency"
                     ],
                     "pin": true,
                     "duration": "In progress",
@@ -1684,7 +1684,7 @@
                     "type": "Personal / Vue clone project",
                     "role": "End-to-end planning, UI implementation, publishing, and frontend development",
                     "tech": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "@vuepic/vue-datepicker", "holiday-kr", "vite-svg-loader"],
-                    "introduction": "A personal Vue 3 clone of KakaoTalk, built to learn a new frontend stack while following an existing product’s planning and design. I split major flows—chat, friends, settings—into components and practiced a production-like setup including GitHub Pages deployment with a `/cloneKakaoTalk/` base path.",
+                    "introduction": "A Vue 3 SPA implementation of KakaoTalk's primary user flows. Chat, friends, and settings are separated into routes and reusable components, with shared UI and deployment configuration organized for maintainability and feature expansion.",
                     "myWorks": [
                         "Mapped core KakaoTalk screens to Vue Router 4 routes and layout components",
                         "Set up Vite 6 with Sass (SCSS) and SVG icons via vite-svg-loader",
@@ -1693,15 +1693,15 @@
                         "Configured gh-pages deployment (`npm run deploy`)"
                     ],
                     "achievements": [
-                        "Grew the UI incrementally across 120+ GitHub commits, getting comfortable with Vue 3 Composition API",
-                        "Moved from the 2025 HTML-only portfolio to a Vue SPA with routing and a modern build toolchain"
+                        "Established a scalable Vue 3 Composition API structure while expanding screens and shared components",
+                        "Built an end-to-end Vue SPA workflow covering routing, bundling, and deployment"
                     ],
                     "points": [
-                        "A learning clone focused on component boundaries, state, and routing by following a real product UI",
+                        "A large-scale messenger UI case study focused on component boundaries and routing architecture",
                         "Documented local run and base-path rules in the repo README against the live deployment URL"
                     ],
                     "pin": true,
-                    "duration": "~8 months (ongoing improvements)",
+                    "duration": "~8 months",
                     "captures": ["/images/projects/placeholder.svg"],
                     "languages": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "JavaScript"],
                     "links": [
@@ -1723,7 +1723,7 @@
                     "type": "Personal / HTML Portfolio",
                     "role": "End-to-end planning, design, publishing, and interaction implementation",
                     "tech": ["HTML", "SCSS", "JavaScript", "jQuery", "Swiper"],
-                    "introduction": "A static HTML portfolio built in 2025. It records my publishing craft at the time through a single-page flow with intro content, project showcases, dark mode, and canvas motion—an archive that shows exactly how I worked just before moving to the Nuxt-based 2026 portfolio.",
+                    "introduction": "A static HTML portfolio designed to communicate profile and project information effectively in a single-page experience. It combines responsive layout, dark mode, sliders, and modal interactions in a structure that can be deployed using static assets alone.",
                     "myWorks": [
                         "Designed the IA and visual layout for a single-page HTML/SCSS portfolio",
                         "Implemented dark/light mode, Swiper project sections, and modal interactions",
@@ -1731,11 +1731,11 @@
                     ],
                     "achievements": [
                         "Completed and deployed a single-page portfolio using only static assets, no framework",
-                        "Preserved it as an archive whose approach and structure can be compared with the 2026 Nuxt portfolio"
+                        "Established a lightweight static-site structure focused on content delivery and interaction quality"
                     ],
                     "points": [
-                        "An archive that makes the structure and expression before the Nuxt-based 2026 portfolio easy to compare",
-                        "HTML-first work completed with static assets and no application framework"
+                        "Delivered a stable responsive single page without relying on an application framework",
+                        "Enabled straightforward deployment and maintenance through a static-asset architecture"
                     ],
                     "pin": true,
                     "duration": "~1 month",
@@ -1774,15 +1774,15 @@
                         "Implemented matching and list interactions with Swiper and shared JS, tuned UX for repeated C2C edits"
                     ],
                     "achievements": [
-                        "Shipped an MVP and deployment pipeline with ~74 commits over four weeks in the team-matemate org repo",
+                        "Delivered an MVP with core user flows and a deployment pipeline through four weeks of team collaboration",
                         "Implemented automatic condition-based matching in the UI, differentiated from paper checklists and ad-hoc posts"
                     ],
                     "points": [
-                        "Led planning and publishing in a team capstone, splitting work by screen in a shared repo",
+                        "Led planning and publishing in a team capstone, distributing screen-level work through shared conventions",
                         "Bundled hosting, database, and functions on Firebase so the mobile web prototype is shareable via a live URL"
                     ],
                     "pin": false,
-                    "duration": "~4 weeks (focused GitHub development)",
+                    "duration": "~4 weeks",
                     "captures": [
                         "/images/projects/matemate-capstone/image-01.webp",
                         "/images/projects/matemate-capstone/image-02.webp",
@@ -1822,11 +1822,11 @@
                         "Version-controlled screens and assets on GitHub, separate from the portfolio archive copy"
                     ],
                     "points": [
-                        "A campus project that shipped mobile UI and publishing within a focused launch week",
-                        "Documented a friend-matching expansion direction based on user feedback"
+                        "Launched the core user flow and mobile UI within a fixed delivery schedule",
+                        "Derived follow-up feature directions from participation data and user feedback"
                     ],
                     "pin": false,
-                    "duration": "~1 week launch / ~2 months in repo",
+                    "duration": "~1 week build / ~2 months operation and enhancement",
                     "captures": [
                         "/images/projects/gongting-blind-matching/image-01.webp"
                     ],
