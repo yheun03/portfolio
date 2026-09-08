@@ -117,10 +117,8 @@
    Design Tokens
 ========================================= */
 
-$bp-mobile: 360px;
 $bp-tablet: 768px;
 $bp-laptop: 1024px;
-$bp-desktop: 1440px;
 
 /** max-width — 정수 px만 사용 (.98 등 소수 금지) */
 $bp-max-mobile: $bp-tablet - 1px;
@@ -131,12 +129,9 @@ $bp-min-laptop: $bp-laptop;
 $font-display: var(--font-display);
 $font-body: var(--font-body);
 $font-mono: var(--font-mono);
-$font-size-2xs: var(--font-size-2xs);
 $font-size-xs: var(--font-size-xs);
 $font-size-sm: var(--font-size-sm);
-$font-size-md: var(--font-size-md);
 $font-size-lg: var(--font-size-lg);
-$font-size-xl: var(--font-size-xl);
 $font-size-display-1: var(--font-size-display-1);
 $font-size-display-2: var(--font-size-display-2);
 $font-size-display-3: var(--font-size-display-3);
@@ -150,7 +145,6 @@ $font-size-body-1: var(--font-size-body-1);
 $font-size-body-2: var(--font-size-body-2);
 $font-size-label: var(--font-size-label);
 $font-size-chip: var(--font-size-chip);
-$font-size-contact: var(--font-size-contact);
 $font-weight-regular: var(--font-weight-regular);
 $font-weight-medium: var(--font-weight-medium);
 $font-weight-semibold: var(--font-weight-semibold);
@@ -172,47 +166,26 @@ $grayscale-50: var(--grayscale-50);
 $grayscale-100: var(--grayscale-100);
 $grayscale-200: var(--grayscale-200);
 $grayscale-300: var(--grayscale-300);
-$grayscale-400: var(--grayscale-400);
-$grayscale-500: var(--grayscale-500);
 $grayscale-600: var(--grayscale-600);
 $grayscale-700: var(--grayscale-700);
-$grayscale-800: var(--grayscale-800);
 $grayscale-900: var(--grayscale-900);
-$grayscale-950: var(--grayscale-950);
 $primary-50: var(--primary-50);
-$primary-100: var(--primary-100);
-$primary-200: var(--primary-200);
-$primary-300: var(--primary-300);
-$primary-400: var(--primary-400);
-$primary-500: var(--primary-500);
 $primary-600: var(--primary-600);
 $primary-700: var(--primary-700);
-$primary-800: var(--primary-800);
-$primary-900: var(--primary-900);
 $accent-hot: var(--accent-hot);
 $accent-mint: var(--accent-mint);
-$state-error: var(--state-error);
-$state-success: var(--state-success);
-$state-warning: var(--state-warning);
-$overlay: var(--color-overlay);
 $glass-2: var(--color-glass-2);
 $glass-2-strong: var(--color-glass-2-strong);
 $shadow-soft: var(--shadow-soft);
 $shadow-lift: var(--shadow-lift);
 $shadow-glow: var(--shadow-glow);
-$shadow-ring: var(--shadow-ring);
 $gradient-accent: var(--gradient-accent);
-$gradient-accent-soft: var(--gradient-accent-soft);
 $gradient-surface: var(--gradient-surface);
-$gradient-noise: var(--gradient-noise);
 $texture-noise: url("/images/noise-paper-small.png");
-$gradient-hero-mesh: var(--gradient-hero-mesh);
 $radius-card: var(--radius-card);
 $radius-pill: var(--radius-pill);
 $radius-md: var(--radius-md);
 $radius-lg: var(--radius-lg);
-$radius-xl: var(--radius-xl);
-$space-0: var(--space-0);
 $space-1: var(--space-1);
 $space-2: var(--space-2);
 $space-3: var(--space-3);
@@ -220,21 +193,8 @@ $space-4: var(--space-4);
 $space-5: var(--space-5);
 $space-6: var(--space-6);
 $space-7: var(--space-7);
-$space-8: var(--space-8);
-$space-9: var(--space-9);
-$space-10: var(--space-10);
-$space-11: var(--space-11);
-$space-fluid-xs: var(--space-fluid-xs);
-$space-fluid-sm: var(--space-fluid-sm);
-$space-fluid-md: var(--space-fluid-md);
-$space-fluid-lg: var(--space-fluid-lg);
-$space-fluid-xl: var(--space-fluid-xl);
-$space-fluid-2xl: var(--space-fluid-2xl);
-$inset-panel: var(--inset-panel);
 $size-touch: var(--size-touch);
 $layout-header-height: var(--layout-header-height);
-$layout-content-max: var(--layout-content-max);
-$layout-hero-max: var(--layout-hero-max);
 
 $font-presets: (
     display-1: (family: $font-display, size: $font-size-display-1, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
@@ -379,12 +339,6 @@ $font-presets: (
 
 @mixin respond-up($bp) {
     @media (min-width: $bp) {
-        @content;
-    }
-}
-
-@mixin respond-down($bp) {
-    @media (max-width: $bp) {
         @content;
     }
 }

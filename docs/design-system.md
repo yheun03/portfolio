@@ -90,7 +90,7 @@ Primary scale: `--primary-50` … `--primary-900` (앵커 `#0050ff`).
 | Folder              | 담당                                                                 |
 | ------------------- | -------------------------------------------------------------------- |
 | `abstracts/`        | `_theme.scss`, `_tokens.scss`, `_fonts.scss`                         |
-| `base/`             | reset, skeleton, button, label, badge, progress, card, section-title |
+| `base/`             | reset, button, label, badge, progress, card, section-title |
 | `layout/`           | shell, **viewport**, header, footer, dock                            |
 | `home/`             | section composition                                                  |
 | `work/`, `gallery/` | card·archive·detail patterns                                         |

@@ -140,11 +140,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
               })),
     );
 
-    const editorialYearGroups = computed(() =>
-        sortMode.value === 'start'
-            ? groupWorkYearEntries(createWorkYearEntries(sortedWorks.value))
-            : [{ year: '', key: 'all', works: sortedWorks.value }],
-    );
+    const editorialYearGroups = computed(() => groupWorkYearEntries(galleryEntries.value));
 
     const lead = computed(() =>
         t(variant === 'career' ? 'gallery.careerLead' : 'gallery.personalLead').replace('{total}', String(works.value.length)),

@@ -67,23 +67,19 @@ function sortAffiliationBlocks(companies: readonly JourneyCompanyBlock[]): Journ
 }
 
 function buildChronologicalEntries(companies: readonly JourneyCompanyBlock[]): JourneyChronologicalEntry[] {
-    const entries: JourneyChronologicalEntry[] = [];
-
-    companies.forEach((block, ci) => {
-        block.timeline.forEach((item, ti) => {
-            entries.push({
-                key: `${ci}-${ti}-${item.period}-${block.summary.company}`,
+    return companies
+        .flatMap((block, companyIndex) =>
+            block.timeline.map((item, timelineIndex) => ({
+                key: `${companyIndex}-${timelineIndex}-${item.period}-${block.summary.company}`,
                 period: item.period,
                 title: item.title,
                 description: item.description,
                 company: block.summary.company,
                 sortKey: parsePeriodSortKey(item.period),
                 yearLabel: formatYearLabel(item.period),
-            });
-        });
-    });
-
-    return entries.sort((a, b) => b.sortKey - a.sortKey);
+            })),
+        )
+        .sort((a, b) => b.sortKey - a.sortKey);
 }
 
 // 동일 연도·기간 라벨은 한 그룹으로 묶음 (갤러리 연도 레일과 동일 패턴)
