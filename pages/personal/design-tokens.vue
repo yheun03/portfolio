@@ -1,6 +1,6 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal"
-        page-variant="archive-personal" :footer-text="t('footer.copyright')" :show-app-dock="true">
+    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
+        :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero">
                 <p class="base-label base-label--technical">{{ t('tokens.pageLabel') }}</p>

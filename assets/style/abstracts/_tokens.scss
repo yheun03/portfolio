@@ -365,8 +365,8 @@ $font-presets: (
         inset: 0;
         border-radius: inherit;
         background: radial-gradient(#{$size} circle at var(--glow-x, 50%) var(--glow-y, 50%),
-                color-mix(in srgb, var(--color-primary) 9%, transparent),
-                transparent 65%);
+            color-mix(in srgb, var(--color-primary) 9%, transparent),
+            transparent 65%);
         opacity: 0;
         transition: opacity 0.4s ease;
         pointer-events: none;
@@ -396,17 +396,20 @@ $font-presets: (
     border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
     border-radius: var(--radius-2xl);
     background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-    @if $shadow == soft {
+
+    @if $shadow ==soft {
         box-shadow:
             0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
             0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
-    } @else {
+    }
+
+    @else {
         box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     }
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.32s ease,
-        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.32s ease,
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @mixin scroll-rail($snap: mandatory) {

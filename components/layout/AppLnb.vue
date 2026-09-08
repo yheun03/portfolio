@@ -5,13 +5,13 @@
         </transition>
         <transition name="app-lnb-drawer">
             <div v-if="open" :id="id" ref="drawerRef" class="app-lnb" role="dialog" aria-modal="true"
-                :aria-labelledby="`${id}-title`">
+                :aria-labelledby="`${id}-title`" :aria-describedby="`${id}-description`" @keydown="handleDialogKeydown">
                 <div class="app-lnb__glow" aria-hidden="true" />
                 <div class="app-lnb__head">
                     <div class="app-lnb__head-copy">
                         <p class="app-lnb__eyebrow">{{ t('lnb.eyebrow') }}</p>
                         <p :id="`${id}-title`" class="app-lnb__title">{{ t('lnb.title') }}</p>
-                        <p class="app-lnb__subtitle">{{ t('lnb.subtitle') }}</p>
+                        <p :id="`${id}-description`" class="app-lnb__subtitle">{{ t('lnb.subtitle') }}</p>
                     </div>
                     <button type="button" class="app-lnb__close" :aria-label="t('a11y.mobileMenuClose')"
                         @click="emitClose">
@@ -90,6 +90,45 @@ function formatLinkIndex(index: number): string {
     return String(index + 1).padStart(2, '0');
 }
 
+function getFocusableElements(): HTMLElement[] {
+    if (!drawerRef.value) return [];
+    return [...drawerRef.value.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    )].filter((element) => !element.hasAttribute('hidden'));
+}
+
+function handleDialogKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        emitClose();
+        return;
+    }
+
+    if (event.key !== 'Tab') return;
+    const focusable = getFocusableElements();
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (!first || !last) return;
+
+    if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+    }
+}
+
+function setBackgroundInert(inert: boolean): void {
+    if (!import.meta.client) return;
+    document.querySelectorAll<HTMLElement>(
+        '.app-dock-ribbon, .app-header, #main-content, .app-footer',
+    ).forEach((element) => {
+        element.inert = inert;
+    });
+}
+
 const { isActive, getAriaCurrent } = useNavLinkState({
     activeId: () => props.activeId,
     activePath: () => props.activePath,
@@ -98,11 +137,14 @@ const { isActive, getAriaCurrent } = useNavLinkState({
 watch(
     () => props.open,
     (open) => {
+        setBackgroundInert(open);
         if (!open) return;
         nextTick(() => {
             drawerRef.value?.querySelector<HTMLElement>('.app-lnb__close')?.focus();
         });
     },
 );
+
+onBeforeUnmount(() => setBackgroundInert(false));
 
 </script>

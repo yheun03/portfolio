@@ -7,6 +7,7 @@
 }
 
 @media (max-width: #{$bp-max-tablet}) {
+
     .section--hero,
     .hero.section--hero {
         padding: var(--section-pad-y) var(--page-pad-x);
@@ -25,7 +26,7 @@
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page.portfolio-page--home > :is(#hello, #about, #works) {
+    .portfolio-page.portfolio-page--home> :is(#hello, #about, #works) {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -36,7 +37,7 @@
 }
 
 @media (min-width: #{$bp-min-tablet}) {
-    .portfolio-page.portfolio-page--home > .section {
+    .portfolio-page.portfolio-page--home>.section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -48,7 +49,7 @@
         scroll-snap-type: y mandatory;
     }
 
-    .portfolio-page.portfolio-page--home > .section {
+    .portfolio-page.portfolio-page--home>.section {
         scroll-margin-top: 0;
         scroll-snap-align: start;
         scroll-snap-stop: always;
@@ -61,6 +62,7 @@
 
 /* Cards */
 @media (max-width: #{$bp-max-tablet}) {
+
     .surface-card,
     .feature-card,
     .base-card {
@@ -171,7 +173,7 @@
 }
 
 @media (min-width: 1920px) {
-    .portfolio-page--home > .hero.section--hero {
+    .portfolio-page--home>.hero.section--hero {
         padding-block: 72px;
     }
 
@@ -204,6 +206,7 @@
 
 /* About */
 @media (min-width: #{$bp-min-laptop}) {
+
     .section.section--about-intro,
     .section.section--why-list {
         padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
@@ -211,6 +214,7 @@
 }
 
 @media (min-width: 1920px) {
+
     .section.section--about-intro,
     .section.section--why-list {
         display: flex;
@@ -281,7 +285,9 @@
         align-items: start;
         min-height: clamp(272px, 26vw, 368px);
 
-        .story-case__head { grid-area: head; }
+        .story-case__head {
+            grid-area: head;
+        }
 
         h3 {
             grid-area: title;
@@ -301,7 +307,9 @@
             align-self: end;
         }
 
-        .story-case__cta { grid-area: cta; }
+        .story-case__cta {
+            grid-area: cta;
+        }
     }
 }
 
@@ -706,7 +714,7 @@
         font-size: clamp(4rem, 7.5vw, 9rem);
         line-height: 1.05;
 
-        .contact__mail-slot--suffix > span {
+        .contact__mail-slot--suffix>span {
             font-size: 0.72em;
         }
     }

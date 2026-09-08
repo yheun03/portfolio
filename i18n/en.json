@@ -910,9 +910,7 @@
                     "points": ["Data-focused dashboard UI", "Status and hierarchy visualization rules", "Screen consistency in a short timeframe"],
                     "pin": true,
                     "duration": "~1 month",
-                    "captures": [
-                        "/images/projects/samhwa-eco-dashboard/image-01.webp"
-                    ],
+                    "captures": ["/images/projects/samhwa-eco-dashboard/image-01.webp"],
                     "languages": ["Vue", "JavaScript", "SCSS", "HTML"]
                 },
                 {
@@ -1121,10 +1119,7 @@
                     "points": ["Operational responsiveness", "Ticket-driven maintenance", "Awareness of deploy and security impact"],
                     "pin": true,
                     "duration": "Ongoing",
-                    "captures": [
-                        "/images/projects/hanon/image-01.webp",
-                        "/images/projects/hanon/image-02.webp"
-                    ],
+                    "captures": ["/images/projects/hanon/image-01.webp", "/images/projects/hanon/image-02.webp"],
                     "languages": ["C#", "CSS3", "csHtml", "JavaScript"]
                 },
                 {
@@ -1283,10 +1278,7 @@
                     "points": ["Solution productization", "Modularization-driven productivity"],
                     "pin": false,
                     "duration": "~9 months",
-                    "captures": [
-                        "/images/projects/robo-mes/image-01.webp",
-                        "/images/projects/robo-mes/image-02.webp"
-                    ],
+                    "captures": ["/images/projects/robo-mes/image-01.webp", "/images/projects/robo-mes/image-02.webp"],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1371,10 +1363,7 @@
                     "points": ["Rapid-delivery capability", "React publishing experience"],
                     "pin": false,
                     "duration": "~1 week",
-                    "captures": [
-                        "/images/projects/fems/image-01.webp",
-                        "/images/projects/fems/image-02.webp"
-                    ],
+                    "captures": ["/images/projects/fems/image-01.webp", "/images/projects/fems/image-02.webp"],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1423,10 +1412,7 @@
                     "points": ["Multi-version structure handling", "React component adaptation"],
                     "pin": false,
                     "duration": "~6 months",
-                    "captures": [
-                        "/images/projects/scm-daeyang-board/image-01.webp",
-                        "/images/projects/scm-daeyang-board/image-02.webp"
-                    ],
+                    "captures": ["/images/projects/scm-daeyang-board/image-01.webp", "/images/projects/scm-daeyang-board/image-02.webp"],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1447,10 +1433,7 @@
                     "points": ["End-to-end plan, build, and operate", "Contributed to brand trust"],
                     "pin": false,
                     "duration": "~3 months",
-                    "captures": [
-                        "/images/projects/company-renewal-2022/image-01.webp",
-                        "/images/projects/company-renewal-2022/image-02.webp"
-                    ],
+                    "captures": ["/images/projects/company-renewal-2022/image-01.webp", "/images/projects/company-renewal-2022/image-02.webp"],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1827,9 +1810,7 @@
                     ],
                     "pin": false,
                     "duration": "~1 week build / ~2 months operation and enhancement",
-                    "captures": [
-                        "/images/projects/gongting-blind-matching/image-01.webp"
-                    ],
+                    "captures": ["/images/projects/gongting-blind-matching/image-01.webp"],
                     "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
                     "links": [
                         {

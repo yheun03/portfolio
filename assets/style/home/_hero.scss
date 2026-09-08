@@ -17,9 +17,17 @@
         border: 0;
         box-shadow: none;
 
-        .hero__meta { grid-area: meta; }
-        .hero__stage { grid-area: stage; }
-        .hero__actions { grid-area: actions; }
+        .hero__meta {
+            grid-area: meta;
+        }
+
+        .hero__stage {
+            grid-area: stage;
+        }
+
+        .hero__actions {
+            grid-area: actions;
+        }
     }
 
     &__canvas {
@@ -223,17 +231,29 @@
 }
 
 @keyframes hero-orb-drift {
-    from { transform: translate3d(0, 0, 0) scale(1); }
-    to { transform: translate3d(4%, -7%, 0) scale(1.12); }
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(4%, -7%, 0) scale(1.12);
+    }
 }
 
 @keyframes hero-cue-scan {
-    to { transform: translateY(100%); }
+    to {
+        transform: translateY(100%);
+    }
 }
 
 @keyframes hero-fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .hero__meta,
@@ -250,20 +270,38 @@
     animation-delay: 0.1s;
 }
 
-.hero__meta { animation-delay: 0.05s; }
-.hero__eyebrow { animation-delay: 0.16s; }
-.hero__lead { animation-delay: 0.82s; }
-.hero__actions { animation-delay: 1.08s; }
-.hero__cue { animation-delay: 1.45s; }
+.hero__meta {
+    animation-delay: 0.05s;
+}
+
+.hero__eyebrow {
+    animation-delay: 0.16s;
+}
+
+.hero__lead {
+    animation-delay: 0.82s;
+}
+
+.hero__actions {
+    animation-delay: 1.08s;
+}
+
+.hero__cue {
+    animation-delay: 1.45s;
+}
 
 .hero__display-line {
     animation: hero-word-in var(--reveal-duration) var(--reveal-ease) backwards;
 }
 
-.hero__display-line:nth-child(1) { animation-delay: var(--reveal-line-delay); }
+.hero__display-line:nth-child(1) {
+    animation-delay: var(--reveal-line-delay);
+}
+
 .hero__display-line:nth-child(2) {
     animation-delay: calc(var(--reveal-line-delay) + var(--reveal-delay-step));
 }
+
 .hero__display-line:nth-child(3) {
     animation-delay: calc(var(--reveal-line-delay) + var(--reveal-delay-step) + var(--reveal-delay-step));
 }

@@ -494,7 +494,7 @@
 
     &.gallery-page--editorial &__gallery-controls {
         display: grid;
-        grid-template-columns: 38px minmax(0, 1fr) 38px;
+        grid-template-columns: 44px minmax(0, 1fr) 44px;
         gap: 11px;
         align-items: center;
         margin-top: 14px;
@@ -505,8 +505,8 @@
     }
 
     &.gallery-page--editorial &__arrow {
-        width: 38px;
-        height: 38px;
+        width: 44px;
+        height: 44px;
         border: 1px solid color-mix(in srgb, var(--gallery-muted) 36%, transparent);
         border-radius: 999px;
         background: var(--color-surface-strong);
@@ -534,16 +534,29 @@
     }
 
     &.gallery-page--editorial &__dot {
-        width: 7px;
-        height: 7px;
+        display: grid;
+        place-items: center;
+        width: 24px;
+        height: 24px;
         padding: 0;
         border: 0;
         border-radius: 999px;
-        background: color-mix(in srgb, var(--gallery-muted) 42%, transparent);
+        background: transparent;
+        cursor: pointer;
+
+        &::before {
+            width: 7px;
+            height: 7px;
+            border-radius: inherit;
+            background: color-mix(in srgb, var(--gallery-muted) 42%, transparent);
+            content: '';
+        }
 
         &.is-active {
-            width: 23px;
-            background: var(--gallery-accent);
+            &::before {
+                width: 23px;
+                background: var(--gallery-accent);
+            }
         }
     }
 
@@ -570,7 +583,7 @@
     }
 
     &.gallery-page--editorial &__stack-group {
-        & + & {
+        &+& {
             margin-top: 0;
             padding-top: 20px;
             border-top: 1px solid color-mix(in srgb, var(--gallery-muted) 32%, transparent);
@@ -609,7 +622,7 @@
             color: var(--gallery-muted);
         }
 
-        & + &::before {
+        &+&::before {
             content: none;
         }
     }
@@ -715,6 +728,7 @@
 
 @media (max-width: 1024px) {
     .gallery-detail {
+
         &.gallery-page--editorial &__hero,
         &.gallery-page--editorial &__showcase {
             grid-template-columns: minmax(0, 1fr);
@@ -849,6 +863,7 @@
 }
 
 @media (max-width: 640px) {
+
     .gallery-page--editorial.section,
     .gallery-detail.gallery-page--editorial.section {
         padding-block: 32px;

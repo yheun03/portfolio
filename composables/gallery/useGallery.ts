@@ -172,6 +172,21 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
         path: config.basePath,
         locale: locale.value,
         keywords: works.value.flatMap((work) => [work.title, ...work.languages, ...work.tech]),
+        schemaType: 'CollectionPage',
+        breadcrumbs: [
+            { name: t('footer.homeLink'), path: '/' },
+            { name: t(config.titleKey), path: config.basePath },
+        ],
+        mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: works.value.length,
+            itemListElement: works.value.map((work, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: work.title,
+                url: getPortfolioAbsoluteUrl(`${config.basePath}/${work.id}`),
+            })),
+        },
     }));
 
     return {
