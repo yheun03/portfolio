@@ -18,5 +18,10 @@ usePortfolioSeo(() => ({
     description: t('journey.summary'),
     path: '/journey',
     locale: locale.value,
+    schemaType: 'AboutPage',
+    breadcrumbs: [
+        { name: t('footer.homeLink'), path: '/' },
+        { name: t('journey.title'), path: '/journey' },
+    ],
 }));
 </script>

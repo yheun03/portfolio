@@ -60,7 +60,7 @@
     overflow-wrap: anywhere;
     text-decoration: none;
 
-    > span {
+    >span {
         display: inline-block;
         transition: color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.45, 0.64, 1);
         transition-delay: calc(var(--mail-index, 0) * 12ms);
@@ -70,12 +70,12 @@
         &:hover {
             color: var(--color-primary-dark);
 
-            > span:nth-child(2n) {
+            >span:nth-child(2n) {
                 color: var(--color-primary);
                 transform: translateY(-0.14em) rotate(0.03turn) scale(1.06);
             }
 
-            > span:nth-child(2n + 1) {
+            >span:nth-child(2n + 1) {
                 color: color-mix(in srgb, var(--color-primary) 70%, var(--color-text));
                 transform: translateY(0.08em) rotate(-0.03turn) scale(1.04);
             }
@@ -89,12 +89,12 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        > span {
+        >span {
             transition: color 0.2s ease;
             transition-delay: 0ms;
         }
 
-        &:hover > span {
+        &:hover>span {
             transform: none;
         }
     }

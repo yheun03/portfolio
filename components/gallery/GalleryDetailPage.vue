@@ -46,7 +46,7 @@
                     <div class="gallery-detail__section-head">
                         <h2 :id="capturesTitleId" class="gallery-detail__section-title">{{ t('gallery.captures') }}</h2>
                         <span class="gallery-detail__counter">{{ activeCaptureIndex + 1 }} / {{ galleryCaptures.length
-                            }}</span>
+                        }}</span>
                     </div>
                     <figure class="gallery-detail__figure"
                         :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(activeCapture) }">
@@ -66,12 +66,13 @@
                         <div class="gallery-detail__dots">
                             <button v-for="(_, index) in galleryCaptures" :key="index" type="button"
                                 class="gallery-detail__dot" :class="{ 'is-active': index === activeCaptureIndex }"
-                                :aria-label="captureDotLabel(index)" @click="activeCaptureIndex = index" />
+                                :aria-label="captureDotLabel(index)" :aria-pressed="index === activeCaptureIndex"
+                                @click="activeCaptureIndex = index" />
                         </div>
                         <button type="button" class="gallery-detail__arrow" :disabled="galleryCaptures.length < 2"
                             :aria-label="galleryLabels.next" @click="moveCapture(1)">›</button>
                     </div>
-                    <p class="gallery-detail__caption">{{ captureCaption }}</p>
+                    <p class="gallery-detail__caption" aria-live="polite" aria-atomic="true">{{ captureCaption }}</p>
                 </div>
 
                 <aside class="gallery-detail__summary" :aria-labelledby="overviewTitleId">
@@ -90,7 +91,7 @@
                         <h3>{{ stackLabels.core }}</h3>
                         <p>
                             <span v-for="lang in work.languages" :key="lang" class="gallery-detail__chip">{{ lang
-                                }}</span>
+                            }}</span>
                             <template v-if="!work.languages.length">-</template>
                         </p>
                     </div>
@@ -254,6 +255,21 @@ usePortfolioSeo(() => {
         image: coverImage,
         imageAlt: coverImage ? captureAlt(0) : undefined,
         keywords: [props.work.title, props.work.type, props.work.role, ...props.work.languages, ...props.work.tech],
+        breadcrumbs: [
+            { name: t('footer.homeLink'), path: '/' },
+            { name: t(config.titleKey), path: config.basePath },
+            { name: props.work.title, path: `${config.basePath}/${props.work.id}` },
+        ],
+        mainEntity: {
+            '@type': 'CreativeWork',
+            '@id': `${getPortfolioAbsoluteUrl(`${config.basePath}/${props.work.id}`)}#project`,
+            url: getPortfolioAbsoluteUrl(`${config.basePath}/${props.work.id}`),
+            name: props.work.title,
+            abstract: props.work.introduction,
+            creator: { '@id': 'https://yheun03.github.io/portfolio/#person' },
+            genre: props.work.type,
+            keywords: [...props.work.languages, ...props.work.tech].join(', '),
+        },
     };
 });
 </script>

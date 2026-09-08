@@ -1,6 +1,6 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal"
-        page-variant="archive-personal" :footer-text="t('footer.copyright')" :show-app-dock="true">
+    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
+        :footer-text="t('footer.copyright')" :show-app-dock="true">
         <article class="catalog-page section" aria-labelledby="catalog-page-title">
             <header class="catalog-hero">
                 <BaseLabel tone="technical">{{ t('catalog.pageLabel') }}</BaseLabel>

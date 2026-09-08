@@ -87,13 +87,13 @@ Primary scale: `--primary-50` … `--primary-900` (앵커 `#0050ff`).
 
 ## SCSS module map
 
-| Folder              | 담당                                                                 |
-| ------------------- | -------------------------------------------------------------------- |
-| `abstracts/`        | `_theme.scss`, `_tokens.scss`, `_fonts.scss`                         |
+| Folder              | 담당                                                       |
+| ------------------- | ---------------------------------------------------------- |
+| `abstracts/`        | `_theme.scss`, `_tokens.scss`, `_fonts.scss`               |
 | `base/`             | reset, button, label, badge, progress, card, section-title |
-| `layout/`           | shell, **viewport**, header, footer, dock                            |
-| `home/`             | section composition                                                  |
-| `work/`, `gallery/` | card·archive·detail patterns                                         |
+| `layout/`           | shell, **viewport**, header, footer, dock                  |
+| `home/`             | section composition                                        |
+| `work/`, `gallery/` | card·archive·detail patterns                               |
 
 ## Component inventory
 

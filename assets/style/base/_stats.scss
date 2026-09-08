@@ -13,7 +13,7 @@
         gap: clamp(20px, 5vw, 32px);
     }
 
-    > div {
+    >div {
         position: relative;
         display: grid;
         gap: 8px;
@@ -52,7 +52,7 @@
     }
 
     @media (hover: hover) {
-        > div:hover dd {
+        >div:hover dd {
             translate: 0 -3px;
         }
     }
