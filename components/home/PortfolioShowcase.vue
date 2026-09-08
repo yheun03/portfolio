@@ -5,7 +5,7 @@
             <li v-for="(work, index) in homeShowcaseWorks" :key="work.id"
                 :class="['showcase__item', { 'showcase__item--featured': index === 0 }]"
                 :style="{ '--animate-delay': `${index * 90}ms` }" data-animate>
-                <StoryCaseCard :to="`/projects/${work.id}`" :aria-label="`${work.title}, ${t('story.caseCta')}`"
+                <StoryCaseCard :to="`/projects/${work.id}`" :link-label="`${work.title}, ${t('story.caseCta')}`"
                     :index-label="String(index + 1).padStart(2, '0')" :tag="work.type" :period="work.period"
                     :title="work.title" :summary="work.introduction" :tech="work.tech.slice(0, 4)"
                     :cta-label="t('story.caseCta')" :tech-aria-label="t('story.techStackAriaLabel')"

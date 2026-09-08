@@ -116,7 +116,7 @@
                         <h3>BaseCard</h3>
                         <p>{{ t('catalog.baseCardDescription') }}</p>
                     </BaseCard>
-                    <StoryCaseCard to="/projects/toms" :aria-label="t('catalog.caseAria')" index-label="01"
+                    <StoryCaseCard to="/projects/toms" :link-label="t('catalog.caseAria')" index-label="01"
                         :tag="t('catalog.caseTag')" period="2024.03 – 2024.11" :title="t('catalog.caseTitle')"
                         :summary="t('catalog.caseSummary')" :tech="['Vue 3', 'TypeScript', 'SCSS']"
                         :cta-label="t('catalog.caseCta')" :tech-aria-label="t('catalog.caseTech')" featured

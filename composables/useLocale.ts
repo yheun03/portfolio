@@ -4,21 +4,19 @@ import en from '@i18n/en.json';
 
 export type Locale = 'ko' | 'en';
 
-type LocaleMessageValue = string | number | boolean | null | LocaleMessageValue[] | { readonly [key: string]: LocaleMessageValue };
-type LocaleMessages = Record<string, LocaleMessageValue>;
 export type PortfolioContent = typeof ko.content;
 
-const messages = { ko, en } satisfies Record<Locale, LocaleMessages>;
+const messages = { ko, en };
 const STORAGE_KEY = 'portfolio-locale';
 
 function isLocale(value: string | null): value is Locale {
     return value === 'ko' || value === 'en';
 }
 
-function getByPath(obj: LocaleMessages, path: string): string {
-    const value = path.split('.').reduce<LocaleMessageValue | undefined>((acc, key) => {
+function getByPath(obj: unknown, path: string): string {
+    const value = path.split('.').reduce<unknown>((acc, key) => {
         if (!acc || typeof acc !== 'object' || Array.isArray(acc)) return undefined;
-        return acc[key];
+        return (acc as Record<string, unknown>)[key];
     }, obj);
     return typeof value === 'string' ? value : path;
 }
