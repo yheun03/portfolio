@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="to" class="story-case surface-card" :aria-label="ariaLabel">
+    <NuxtLink :to="to" class="story-case surface-card" :aria-label="linkLabel">
         <span class="story-case__watermark" aria-hidden="true">{{ indexLabel }}</span>
 
         <p class="story-case__head">
@@ -25,7 +25,7 @@
 <script setup lang="ts">
 defineProps<{
     to: string;
-    ariaLabel: string;
+    linkLabel: string;
     indexLabel: string;
     tag: string;
     period: string;

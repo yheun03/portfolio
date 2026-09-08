@@ -15,7 +15,7 @@
     </div>
 </template>
 
-<script setup lang="ts" generic="TEra extends EditorialYearEraItem = EditorialYearEraItem">
+<script setup lang="ts" generic="TEra extends { key: string; year?: string }">
 type EditorialYearEraItem = {
     key: string;
     year?: string;
