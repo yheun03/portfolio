@@ -8,6 +8,10 @@ const analyticsEnabled = !['false', '0'].includes(process.env.NUXT_PUBLIC_ANALYT
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
+const faviconIcoHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/favicon.ico');
+const faviconPngHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/favicon-32x32.png');
+const appleTouchIconHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/apple-icon-180x180.png');
+const sitemapHref = joinURL(resolvedBaseURL, 'sitemap.xml');
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
@@ -38,7 +42,10 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
-                { rel: 'apple-touch-icon', href: faviconHref },
+                { rel: 'icon', type: 'image/png', sizes: '32x32', href: faviconPngHref },
+                { rel: 'shortcut icon', type: 'image/x-icon', href: faviconIcoHref },
+                { rel: 'apple-touch-icon', sizes: '180x180', href: appleTouchIconHref },
+                { rel: 'sitemap', type: 'application/xml', href: sitemapHref },
             ],
         },
     },

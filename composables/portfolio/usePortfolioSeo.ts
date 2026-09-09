@@ -41,7 +41,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
     useHead(() => {
         const page = toValue(options);
         const { profile, seo } = contentByLocale[page.locale];
-        const canonical = getPortfolioAbsoluteUrl(page.path);
+        const canonicalPath = page.path === '/' || page.path.endsWith('/') ? page.path : `${page.path}/`;
+        const canonical = getPortfolioAbsoluteUrl(canonicalPath);
         const imagePath = page.image?.endsWith('.svg') ? DEFAULT_IMAGE : (page.image ?? DEFAULT_IMAGE);
         const image = getPortfolioAbsoluteUrl(imagePath);
         const title = page.ogTitle ?? page.title;
@@ -112,7 +113,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                     '@type': 'ListItem',
                     position: index + 1,
                     name: item.name,
-                    item: getPortfolioAbsoluteUrl(item.path),
+                    item: getPortfolioAbsoluteUrl(item.path === '/' || item.path.endsWith('/') ? item.path : `${item.path}/`),
                 })),
             });
             webpage.breadcrumb = { '@id': `${canonical}#breadcrumb` };
