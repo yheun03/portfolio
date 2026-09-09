@@ -22,7 +22,7 @@
                     </p>
 
                     <nav class="error-page__actions" :aria-label="t('a11y.errorActions')">
-                        <BaseButton :label="t('error.home')" @click="handleError" />
+                        <BaseButton :label="t('error.home')" href="/" @click="handleError" />
                         <BaseButton :label="t('error.report')" :href="reportHref" variant="ghost" />
                     </nav>
                 </div>
