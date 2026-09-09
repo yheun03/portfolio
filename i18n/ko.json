@@ -290,8 +290,8 @@
         "shapeDescription": "라운드와 그림자는 컴포넌트의 위계, 터치 영역, 포커스 상태를 일관되게 맞춥니다."
     },
     "meta": {
-        "title": "은영환 포트폴리오 | 7년차 웹 퍼블리셔 / Vue UI 개발",
-        "description": "HTML / SCSS 기반 7년차 웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3 template, props, v-if, v-for, Teleport를 활용한 UI와 실무 프로젝트를 소개합니다.",
+        "title": "웹 퍼블리셔 포트폴리오 2026 | Vue 3·SCSS 프로젝트 | 은영환",
+        "description": "HTML / SCSS 기반 7년차 웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3와 JavaScript로 구현한 반응형 UI, 기업 홈페이지, 스마트팩토리·물류 시스템, CMS 운영 및 실무 프로젝트를 통해 구조적인 마크업과 사용자 중심 프론트엔드 개발 경험을 소개합니다.",
         "ogTitle": "7년차 웹 퍼블리셔 은영환 2026 포트폴리오",
         "ogDescription": "HTML / SCSS 실무 경험과 필요한 만큼의 Vue 3를 활용한 UI 작업을 정리한 은영환 포트폴리오"
     },
