@@ -136,7 +136,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         return {
             htmlAttrs: { lang: page.locale },
             title: page.title,
-            link: [{ rel: 'canonical', href: canonical }],
+            link: page.noindex ? [] : [{ rel: 'canonical', href: canonical }],
             meta: [
                 { name: 'description', content: page.description },
                 { name: 'author', content: profile.name },
@@ -168,13 +168,15 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'twitter:image', content: image },
                 { name: 'twitter:image:alt', content: page.imageAlt ?? title },
             ],
-            script: [
-                {
-                    key: 'portfolio-structured-data',
-                    type: 'application/ld+json',
-                    innerHTML: structuredData,
-                },
-            ],
+            script: page.noindex
+                ? []
+                : [
+                      {
+                          key: 'portfolio-structured-data',
+                          type: 'application/ld+json',
+                          innerHTML: structuredData,
+                      },
+                  ],
         };
     });
 }
