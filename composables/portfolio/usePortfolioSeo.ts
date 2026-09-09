@@ -18,6 +18,10 @@ type PortfolioSeoOptions = {
     schemaType?: 'ProfilePage' | 'CollectionPage' | 'AboutPage' | 'WebPage';
     breadcrumbs?: { name: string; path: string }[];
     mainEntity?: Record<string, unknown>;
+    dateCreated?: string;
+    dateModified?: string;
+    relatedLinks?: string[];
+    significantLinks?: string[];
 };
 
 const SITE_URL = 'https://yheun03.github.io/portfolio/';
@@ -82,6 +86,11 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         } else if (page.mainEntity) {
             webpage.mainEntity = page.mainEntity;
         }
+
+        if (page.dateCreated) webpage.dateCreated = page.dateCreated;
+        if (page.dateModified) webpage.dateModified = page.dateModified;
+        if (page.relatedLinks?.length) webpage.relatedLink = page.relatedLinks.map(getPortfolioAbsoluteUrl);
+        if (page.significantLinks?.length) webpage.significantLink = page.significantLinks.map(getPortfolioAbsoluteUrl);
 
         const graph: Record<string, unknown>[] = [
             {

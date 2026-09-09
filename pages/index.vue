@@ -72,6 +72,10 @@ usePortfolioSeo(() => ({
     path: '/',
     locale: locale.value,
     imageAlt: t('meta.ogTitle'),
+    dateCreated: '2026-04-16',
+    dateModified: '2026-09-09',
+    relatedLinks: ['/projects/', '/personal/', '/journey/'],
+    significantLinks: ['/projects/', '/journey/'],
 }));
 
 </script>
