@@ -756,3 +756,156 @@
         padding-block: clamp(64px, 10vw, 112px) clamp(80px, 12vw, 144px);
     }
 }
+
+/* Compact one-screen layout for MacBook-sized desktop viewports */
+@media (min-width: #{$bp-min-laptop}) and (max-height: 1080px) {
+    html:has(.portfolio-page--home) {
+        scroll-padding-top: var(--layout-header-height);
+        scroll-snap-type: y mandatory;
+    }
+
+    .portfolio-page.portfolio-page--home>.section {
+        scroll-margin-top: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    html:has(.portfolio-page--home) .app-footer {
+        scroll-snap-align: end;
+    }
+
+    .portfolio-page--home {
+        --space-1: 3px;
+        --space-2: 5px;
+        --space-3: 7px;
+        --space-4: 9px;
+        --space-5: 11px;
+        --space-6: 14px;
+        --space-7: 17px;
+        --space-8: 20px;
+        --space-9: 24px;
+        --space-10: 30px;
+        --space-11: 36px;
+        --space-fluid-xs: clamp(6px, 1vh, 10px);
+        --space-fluid-sm: clamp(9px, 1.4vh, 13px);
+        --space-fluid-md: clamp(12px, 2vh, 18px);
+        --space-fluid-lg: clamp(16px, 2.5vh, 24px);
+        --space-fluid-xl: clamp(20px, 3vh, 28px);
+        --space-fluid-2xl: clamp(24px, 3.5vh, 32px);
+        --space-fluid-3xl: clamp(28px, 4vh, 36px);
+        --section-pad-y: clamp(28px, 4vh, 36px);
+        --section-gap: clamp(20px, 3vh, 28px);
+        --block-gap: clamp(16px, 2.5vh, 22px);
+        --space-section-y: var(--section-pad-y);
+        --space-section-gap: var(--section-gap);
+        --space-block-gap: var(--block-gap);
+        --home-section-column-gap: clamp(24px, 3.5vh, 36px);
+        --inset-panel: clamp(14px, 2vh, 20px);
+        --card-padding: clamp(18px, 2.5vh, 24px);
+        --card-padding-lg: clamp(22px, 3vh, 30px);
+        --font-size-display-1: clamp(3.5rem, 8vh, 5rem);
+        --font-size-display-2: clamp(3rem, 7vh, 4.5rem);
+        --font-size-display-3: clamp(2.4rem, 5.5vh, 3.5rem);
+        --font-size-display-4: clamp(1.85rem, 4vh, 2.5rem);
+        --font-size-display-5: clamp(1.5rem, 3.2vh, 2rem);
+        --font-size-display-6: clamp(1.25rem, 2.7vh, 1.65rem);
+        --font-size-xl: clamp(1.05rem, 2vh, 1.25rem);
+        --font-size-lg: clamp(1rem, 1.8vh, 1.08rem);
+        --font-size-md: clamp(0.9rem, 1.65vh, 0.94rem);
+        --font-size-sm: 0.875rem;
+        --font-size-xs: 0.8rem;
+        --font-size-title-1: clamp(1.05rem, 2vh, 1.25rem);
+        --font-size-title-2: clamp(1rem, 1.8vh, 1.125rem);
+        --font-size-title-3: clamp(0.94rem, 1.65vh, 1.05rem);
+        --font-size-body-1: clamp(0.94rem, 1.65vh, 1rem);
+        --font-size-body-2: 0.875rem;
+        --font-size-label: 0.8rem;
+        --font-size-chip: 0.72rem;
+        --font-size-contact: var(--font-size-display-2);
+    }
+
+    .portfolio-page.portfolio-page--home>.section,
+    .portfolio-page--home>.hero.section--hero,
+    .portfolio-page--home>.section.section--about-intro,
+    .portfolio-page--home>.section.section--why-list,
+    .portfolio-page--home>.section.section--contact {
+        padding-block: var(--section-pad-y);
+    }
+
+    .hero__poster {
+        gap: clamp(16px, 2.5vh, 22px);
+    }
+
+    .hero__display-line,
+    .about__display-line {
+        font-size: var(--font-size-display-1);
+        line-height: var(--line-height-display);
+    }
+
+    .hero__eyebrow {
+        margin-bottom: clamp(10px, 1.5vh, 14px);
+        font-size: var(--font-size-sm);
+    }
+
+    .hero__lead,
+    .about__lead {
+        margin-top: clamp(12px, 2vh, 18px);
+        font-size: var(--font-size-title-1);
+    }
+
+    .hero__meta {
+        font-size: var(--font-size-xs);
+    }
+
+    .hero__cue {
+        display: none;
+    }
+
+    .why__list {
+        min-height: 0;
+        gap: clamp(20px, 3vh, 28px);
+
+        h3 {
+            font-size: var(--font-size-display-3);
+        }
+
+        p {
+            font-size: var(--font-size-sm);
+        }
+
+        .base-index-label {
+            font-size: var(--font-size-label);
+        }
+    }
+
+    .showcase__list {
+        gap: clamp(12px, 2vh, 18px);
+    }
+
+    .feature-card,
+    .surface-card--flow,
+    .how__steps-card {
+        gap: var(--block-gap);
+    }
+
+    .surface-card--metrics {
+        gap: var(--block-gap);
+        padding: var(--card-padding);
+    }
+
+    .base-button {
+        padding: var(--space-5) clamp(18px, 2vw, 24px);
+    }
+
+    .story-case,
+    .showcase__item--featured .story-case {
+        min-height: clamp(176px, 22vh, 204px);
+        gap: clamp(10px, 1.5vh, 14px);
+    }
+
+    .section.section--toolbox,
+    .contact__poster,
+    .contact__head {
+        gap: var(--section-gap);
+    }
+}
