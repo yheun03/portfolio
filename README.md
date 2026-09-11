@@ -18,7 +18,7 @@
 - **Nuxt 3** · Vue 3 · Vite
 - **SCSS** — 색상 `_theme.scss`, foundation `_tokens.scss`
 - **CSS 기반 인터랙션**
-- **GitHub Pages** 배포 (`baseURL`: `/portfolio/`)
+- **GitHub Pages** 사용자 페이지 배포 (`baseURL`: `/`)
 
 ## 문서
 
@@ -68,7 +68,7 @@ cp .env.example .env
 | `NUXT_PUBLIC_ANALYTICS_ENABLED`        | `false`면 분석 스크립트 전부 미로드                      |
 | `NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML 태그 값 (선택)                |
 | `NUXT_PUBLIC_NAVER_SITE_VERIFICATION`  | 네이버 서치어드바이저 사이트 소유 확인 값 (선택)         |
-| `NUXT_APP_BASE_URL`                    | 앱 base path (기본 `/portfolio/`)                        |
+| `NUXT_APP_BASE_URL`                    | 앱 base path (기본 `/`)                                  |
 
 `NUXT_PUBLIC_*` 값은 **클라이언트 번들에 포함**됩니다. `plugins/analytics.client.ts`가 빌드·런타임에 이 값을 읽습니다.
 
@@ -78,12 +78,12 @@ GitHub Pages 배포(`npm run deploy`) 전에 로컬 `.env`를 채우거나, CI�
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000/portfolio/
-npm run dev:root     # http://localhost:3000/ (로컬 루트 서빙이 필요할 때)
+npm run dev          # http://localhost:3000/
+npm run dev:root     # http://localhost:3000/
 npm run dev:host     # 0.0.0.0:3005
 ```
 
-기본 개발 서버도 GitHub Pages와 동일한 `/portfolio/` 경로로 실행됩니다. 로컬 루트(`/`)로 확인해야 할 때만 `npm run dev:root`를 사용합니다.
+기본 개발 서버와 GitHub Pages 모두 루트(`/`) 경로로 실행됩니다.
 
 ## 배포
 
@@ -126,7 +126,7 @@ npm run deploy   # build + gh-pages 브랜치 배포
 
 | 명령               | 설명                              |
 | ------------------ | --------------------------------- |
-| `npm run dev`      | 개발 서버 (`/portfolio/` baseURL) |
+| `npm run dev`      | 개발 서버 (`/` baseURL)           |
 | `npm run dev:root` | 개발 서버 (`/` baseURL)           |
 | `npm run build`    | 프로덕션 빌드                     |
 | `npm run generate` | 정적 생성                         |

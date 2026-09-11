@@ -14,16 +14,16 @@
 
 ## 주요 페이지
 
-- 포트폴리오 홈: https://yheun03.github.io/portfolio/
-- 실무 프로젝트: https://yheun03.github.io/portfolio/projects
-- 개인 프로젝트: https://yheun03.github.io/portfolio/personal
-- 성장 여정: https://yheun03.github.io/portfolio/journey
-- 이력서: https://yheun03.github.io/portfolio/files/Resume.pdf
+- 포트폴리오 홈: https://yheun03.github.io/
+- 실무 프로젝트: https://yheun03.github.io/projects
+- 개인 프로젝트: https://yheun03.github.io/personal
+- 성장 여정: https://yheun03.github.io/journey
+- 이력서: https://yheun03.github.io/files/Resume.pdf
 
 ## 공식 엔티티
 
-- canonical URL: https://yheun03.github.io/portfolio/
-- Person ID: https://yheun03.github.io/portfolio/#person
+- canonical URL: https://yheun03.github.io/
+- Person ID: https://yheun03.github.io/#person
 - GitHub: https://github.com/yheun03
 - 기본 언어: 한국어
 - 지원 언어: 한국어, 영어

@@ -4,8 +4,8 @@ import { joinURL } from 'ufo';
 
 const analyticsEnabled = !['false', '0'].includes(process.env.NUXT_PUBLIC_ANALYTICS_ENABLED ?? 'true');
 
-/** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
-const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
+/** GitHub Pages 기본 경로 */
+const rawBase = process.env.NUXT_APP_BASE_URL ?? '/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
 const faviconIcoHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/favicon.ico');

@@ -266,7 +266,7 @@ usePortfolioSeo(() => {
             url: getPortfolioAbsoluteUrl(`${config.basePath}/${props.work.id}`),
             name: props.work.title,
             abstract: props.work.introduction,
-            creator: { '@id': 'https://yheun03.github.io/portfolio/#person' },
+            creator: { '@id': 'https://yheun03.github.io/#person' },
             genre: props.work.type,
             keywords: [...props.work.languages, ...props.work.tech].join(', '),
         },
