@@ -2,8 +2,6 @@ import { defineNuxtConfig } from 'nuxt/config';
 import { fileURLToPath } from 'node:url';
 import { joinURL } from 'ufo';
 
-const analyticsEnabled = !['false', '0'].includes(process.env.NUXT_PUBLIC_ANALYTICS_ENABLED ?? 'true');
-
 /** GitHub Pages 기본 경로 */
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
@@ -19,12 +17,6 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            gtmId: process.env.NUXT_PUBLIC_GTM_ID?.trim() ?? '',
-            gaMeasurementId: process.env.NUXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? '',
-            naverWcsWa: process.env.NUXT_PUBLIC_NAVER_WCS_WA?.trim() ?? '',
-            naverWcsScriptUrl: process.env.NUXT_PUBLIC_NAVER_WCS_SCRIPT_URL?.trim() ?? '',
-            analyticsEnabled,
-            googleSiteVerification: process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ?? '',
             naverSiteVerification: process.env.NUXT_PUBLIC_NAVER_SITE_VERIFICATION?.trim() ?? '',
         },
     },
@@ -88,5 +80,9 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
+        publicAssets: [
+            { dir: 'assets/images', baseURL: '/images' },
+            { dir: 'assets/icons', baseURL: '/' },
+        ],
     },
 });

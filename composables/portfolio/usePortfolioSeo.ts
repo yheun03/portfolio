@@ -25,7 +25,7 @@ type PortfolioSeoOptions = {
 };
 
 const SITE_URL = 'https://yheun03.github.io/';
-const DEFAULT_IMAGE = '/images/portfolio-2026/home-light-desktop.png';
+const DEFAULT_IMAGE = '/images/projects/portfolio-2026/home-light-desktop.png';
 const contentByLocale = { ko: ko.content, en: en.content };
 
 export function getPortfolioAbsoluteUrl(path = '/') {
@@ -45,14 +45,14 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
     useHead(() => {
         const page = toValue(options);
         const { profile, seo } = contentByLocale[page.locale];
-        const canonicalPath = page.path === '/' || page.path.endsWith('/') ? page.path : `${page.path}/`;
+        const pagePath = page.path ?? '/';
+        const canonicalPath = pagePath === '/' || pagePath.endsWith('/') ? pagePath : `${pagePath}/`;
         const canonical = getPortfolioAbsoluteUrl(canonicalPath);
         const imagePath = page.image?.endsWith('.svg') ? DEFAULT_IMAGE : (page.image ?? DEFAULT_IMAGE);
         const image = getPortfolioAbsoluteUrl(imagePath);
         const title = page.ogTitle ?? page.title;
         const description = page.ogDescription ?? page.description;
         const robots = page.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
-        const googleVerification = String(config.googleSiteVerification ?? '').trim();
         const naverVerification = String(config.naverSiteVerification ?? '').trim();
         const personId = `${SITE_URL}#person`;
         const organizationId = `${SITE_URL}#organization`;
@@ -71,7 +71,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             knowsAbout: profile.keywords,
         };
         const webpage: Record<string, unknown> = {
-            '@type': page.schemaType ?? (page.path === '/' ? 'ProfilePage' : 'WebPage'),
+            '@type': page.schemaType ?? (pagePath === '/' ? 'ProfilePage' : 'WebPage'),
             '@id': webpageId,
             url: canonical,
             name: page.title,
@@ -83,7 +83,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             primaryImageOfPage: { '@id': imageId },
         };
 
-        if ((page.schemaType ?? (page.path === '/' ? 'ProfilePage' : 'WebPage')) === 'ProfilePage') {
+        if ((page.schemaType ?? (pagePath === '/' ? 'ProfilePage' : 'WebPage')) === 'ProfilePage') {
             webpage.mainEntity = { '@id': personId };
         } else if (page.mainEntity) {
             webpage.mainEntity = page.mainEntity;
@@ -154,7 +154,6 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'robots', content: robots },
                 { name: 'googlebot', content: robots },
                 { name: 'bingbot', content: robots },
-                ...(googleVerification ? [{ name: 'google-site-verification', content: googleVerification }] : []),
                 ...(naverVerification ? [{ name: 'naver-site-verification', content: naverVerification }] : []),
                 { property: 'og:type', content: page.type ?? 'website' },
                 { property: 'og:locale', content: page.locale === 'ko' ? 'ko_KR' : 'en_US' },
