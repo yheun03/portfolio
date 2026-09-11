@@ -1,5 +1,5 @@
 <template>
-    <a class="skip-link" href="#main-content" @click="focusMainContent">{{ locale === "ko" ? "본문으로 건너뛰기" : "Skip to main content" }}</a>
+    <a class="skip-link" href="#main-content" @click="focusMainContent">{{ t('a11y.skipToContent') }}</a>
     <AppDock v-if="showAppDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
     <div class="app-background" aria-hidden="true" />
     <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useLocale();
+const { t } = useLocale();
 
 const props = withDefaults(
     defineProps<{

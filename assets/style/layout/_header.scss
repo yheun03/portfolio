@@ -284,8 +284,6 @@
         position: fixed;
         inset: $layout-header-height 0 0;
         z-index: 90;
-        min-width: 0;
-        min-height: 0;
         padding: 0;
         border: 0;
         background: var(--color-scrim);
@@ -590,12 +588,11 @@
    Responsive
 ========================================= */
 
-@media (max-width: #{$bp-max-narrow}) {
+@media (max-width: #{$bp-max-tablet}) {
     .app-header {
         gap: $space-3;
         padding-block: $space-3;
         padding-inline: max(var(--page-pad-x, 14px), env(safe-area-inset-left)) max(var(--page-pad-x, 14px), env(safe-area-inset-right));
-        min-height: auto;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -609,16 +606,28 @@
 
     .app-header__actions {
         flex: 0 0 auto;
-        gap: clamp(5px, 1.6vw, #{$space-2});
+        gap: $space-2;
     }
 
+    .app-header__theme-toggle,
     .app-header__language-toggle,
     .app-header__menu-btn {
         min-width: auto;
+        min-height: 42px;
+        padding-block: $space-2;
+        font-size: var(--font-size-sm);
+    }
+
+    .app-header__theme-toggle {
+        padding-inline: $space-6;
     }
 
     .app-header__language-toggle {
-        padding: $space-2 clamp(10px, 2.5vw, #{$space-4});
+        padding-inline: $space-5;
+    }
+
+    .app-header__menu-btn {
+        width: 42px;
     }
 
     .app-lnb {
@@ -627,31 +636,41 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: #{$bp-max-mobile}) {
     .app-header {
         gap: $space-2;
+        padding-block: $space-2;
     }
 
     .app-header__brand {
         font-size: var(--font-size-body-1);
     }
 
+    .app-header__theme-toggle,
     .app-header__language-toggle,
     .app-header__menu-btn {
-        min-height: calc(var(--size-touch) - 4px);
+        min-height: var(--size-touch-compact);
         font-size: var(--font-size-xs);
     }
 
+    .app-header__theme-toggle,
     .app-header__language-toggle {
-        padding-inline: 10px;
+        padding-inline: $space-4;
     }
 
     .app-header__menu-btn {
-        width: calc(var(--size-touch) - 4px);
+        width: var(--size-touch-compact);
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 360px) {
+    .app-header__theme-toggle,
+    .app-header__language-toggle {
+        padding-inline: $space-3;
+    }
+}
+
+@media (min-width: #{$bp-min-laptop}) {
     .app-header {
         &__nav {
             display: flex;

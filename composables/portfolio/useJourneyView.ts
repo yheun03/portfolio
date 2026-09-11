@@ -1,7 +1,9 @@
 // Journey 섹션 소속별·연대기별 보기 데이터 구성 — 기간 정렬, 연도 그룹, sessionStorage 보기 모드 저장
-import { journeyCompanies, type JourneyCompanyBlock, type JourneyTimelineEntry } from '@data/site';
+import type { PortfolioContent } from '~/composables/useLocale';
 
 export type JourneyViewMode = 'affiliation' | 'chronological';
+export type JourneyCompanyBlock = PortfolioContent['journey'][number];
+type JourneyTimelineEntry = JourneyCompanyBlock['timeline'][number];
 
 const STORAGE_KEY = 'portfolio-journey-view';
 
@@ -61,31 +63,27 @@ function sortAffiliationBlocks(companies: readonly JourneyCompanyBlock[]): Journ
             ...block,
             timeline: [...block.timeline].sort((a, b) => parsePeriodSortKey(b.period) - parsePeriodSortKey(a.period)),
         }))
-        .sort((a, b) => parseAffiliationEnd(b.summary.period.ko) - parseAffiliationEnd(a.summary.period.ko)) as unknown as JourneyCompanyBlock[];
+        .sort((a, b) => parseAffiliationEnd(b.summary.period) - parseAffiliationEnd(a.summary.period)) as JourneyCompanyBlock[];
 }
 
-function buildChronologicalEntries(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyChronologicalEntry[] {
-    const entries: JourneyChronologicalEntry[] = [];
-
-    companies.forEach((block, ci) => {
-        block.timeline.forEach((item, ti) => {
-            entries.push({
-                key: `${ci}-${ti}-${item.period}-${block.summary.company.ko}`,
+function buildChronologicalEntries(companies: readonly JourneyCompanyBlock[]): JourneyChronologicalEntry[] {
+    return companies
+        .flatMap((block, companyIndex) =>
+            block.timeline.map((item, timelineIndex) => ({
+                key: `${companyIndex}-${timelineIndex}-${item.period}-${block.summary.company}`,
                 period: item.period,
                 title: item.title,
                 description: item.description,
                 company: block.summary.company,
                 sortKey: parsePeriodSortKey(item.period),
                 yearLabel: formatYearLabel(item.period),
-            });
-        });
-    });
-
-    return entries.sort((a, b) => b.sortKey - a.sortKey);
+            })),
+        )
+        .sort((a, b) => b.sortKey - a.sortKey);
 }
 
 // 동일 연도·기간 라벨은 한 그룹으로 묶음 (갤러리 연도 레일과 동일 패턴)
-function buildYearGroups(companies: readonly JourneyCompanyBlock[] = journeyCompanies): JourneyYearGroup[] {
+function buildYearGroups(companies: readonly JourneyCompanyBlock[]): JourneyYearGroup[] {
     const groups = new Map<string, JourneyYearGroup>();
 
     for (const entry of buildChronologicalEntries(companies)) {
@@ -108,6 +106,7 @@ function buildYearGroups(companies: readonly JourneyCompanyBlock[] = journeyComp
 // --- 컴포저블 ---
 
 export function useJourneyView() {
+    const { content } = useLocale();
     const viewMode = ref<JourneyViewMode>('affiliation');
 
     const viewOptions = computed(() => [
@@ -116,8 +115,8 @@ export function useJourneyView() {
     ]);
 
     // 소속순: 최신 회사부터, 각 챕터 내 타임라인도 최신순
-    const affiliationBlocks = computed(() => sortAffiliationBlocks(journeyCompanies));
-    const chronologicalYearGroups = computed(() => buildYearGroups());
+    const affiliationBlocks = computed(() => sortAffiliationBlocks(content.value.journey));
+    const chronologicalYearGroups = computed(() => buildYearGroups(content.value.journey));
 
     function setViewMode(mode: JourneyViewMode) {
         viewMode.value = mode;

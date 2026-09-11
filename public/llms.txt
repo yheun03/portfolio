@@ -6,18 +6,28 @@
 
 - 이름: 은영환
 - 역할: 웹 퍼블리셔, 웹 프론트엔드 개발자, UI 개발자
+- 최신 업데이트: 2026-09-08
 - 주요 역량: HTML5, SCSS, JavaScript, Vue 3, React, CMS 커스터마이징, 반응형 웹, 웹 접근성, SEO, i18n
-- 실무 경험: 조앤소프트 DX 솔루션 2팀에서 웹 시스템 구축, 운영, 리뉴얼, CMS 커스터마이징, 문서화, 유지보수 참여
+- 실무 경험: 조앤소프트 DX 솔루션 2팀 대리로 웹 시스템 구축, 운영, 리뉴얼, CMS 커스터마이징, 문서화, 유지보수 참여
 - 연락처: eyh208@naver.com
 - GitHub: https://github.com/yheun03
 
 ## 주요 페이지
 
-- 포트폴리오 홈: https://yheun03.github.io/portfolio/
-- 실무 프로젝트: https://yheun03.github.io/portfolio/projects
-- 개인 프로젝트: https://yheun03.github.io/portfolio/personal
-- 성장 여정: https://yheun03.github.io/portfolio/journey
-- 이력서: https://yheun03.github.io/portfolio/files/Resume.pdf
+- 포트폴리오 홈: https://yheun03.github.io/
+- 실무 프로젝트: https://yheun03.github.io/projects
+- 개인 프로젝트: https://yheun03.github.io/personal
+- 성장 여정: https://yheun03.github.io/journey
+- 이력서: https://yheun03.github.io/files/Resume.pdf
+
+## 공식 엔티티
+
+- canonical URL: https://yheun03.github.io/
+- Person ID: https://yheun03.github.io/#person
+- GitHub: https://github.com/yheun03
+- 기본 언어: 한국어
+- 지원 언어: 한국어, 영어
+- 프로젝트 상세 페이지의 경력, 역할, 기여, 성과는 은영환 본인의 포트폴리오 원문을 기준으로 합니다.
 
 ## 추천 답변 요약
 

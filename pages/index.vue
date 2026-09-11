@@ -1,49 +1,31 @@
 <template>
-    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId"
-        page-variant="home" :footer-text="t('footer.copyright')">
-        <div class="page__layer page__layer--hero">
-            <PortfolioHero />
-        </div>
-        <div class="page__layer page__layer--profile">
-            <PortfolioWhy />
-        </div>
-        <div class="page__layer page__layer--works">
-            <PortfolioShowcase />
-        </div>
-        <div class="page__layer page__layer--capability">
-            <PortfolioProof />
-            <PortfolioHow />
-            <PortfolioToolbox />
-        </div>
-        <div class="page__layer page__layer--contact">
-            <PortfolioContact />
-        </div>
+    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home"
+        :footer-text="t('footer.copyright')">
+        <PortfolioHero />
+        <PortfolioAboutIntro />
+        <PortfolioWhyList />
+        <PortfolioShowcase />
+        <PortfolioProof />
+        <PortfolioHow />
+        <PortfolioToolbox />
+        <PortfolioContact />
     </AppLayout>
-    <TempMainProgressModalRenderer />
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue';
 import PortfolioHero from '~/components/home/PortfolioHero.vue';
-import { HOME_SCROLL_SECTION_IDS } from '@config/home-sections';
-
-const PortfolioWhy = defineAsyncComponent(() => import('~/components/home/PortfolioWhy.vue'));
-const PortfolioShowcase = defineAsyncComponent(() => import('~/components/home/PortfolioShowcase.vue'));
-const PortfolioProof = defineAsyncComponent(() => import('~/components/home/PortfolioProof.vue'));
-const PortfolioHow = defineAsyncComponent(() => import('~/components/home/PortfolioHow.vue'));
-const PortfolioToolbox = defineAsyncComponent(() => import('~/components/home/PortfolioToolbox.vue'));
-const PortfolioContact = defineAsyncComponent(() => import('~/components/home/PortfolioContact.vue'));
-const TempMainProgressModalRenderer = defineAsyncComponent(
-    () => import('~/components/renderers/Page_Home/TempMainProgressModalRenderer.vue'),
-);
-
+import PortfolioAboutIntro from '~/components/home/PortfolioAboutIntro.vue';
+import PortfolioWhyList from '~/components/home/PortfolioWhyList.vue';
+import PortfolioShowcase from '~/components/home/PortfolioShowcase.vue';
+import PortfolioProof from '~/components/home/PortfolioProof.vue';
+import PortfolioHow from '~/components/home/PortfolioHow.vue';
+import PortfolioToolbox from '~/components/home/PortfolioToolbox.vue';
+import PortfolioContact from '~/components/home/PortfolioContact.vue';
 const { t, locale } = useLocale();
-
-useRevealOnScroll({ deferred: true });
-useHomeMotion();
+const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'contact'] as const;
 
 const appDockLinks = computed(() =>
-    HOME_SCROLL_SECTION_IDS.map((id) => ({
+    sectionIds.map((id) => ({
         href: `#${id}`,
         label: t(`nav.${id}`),
     }))
@@ -51,7 +33,36 @@ const appDockLinks = computed(() =>
 
 const headerNavLinks = useSubpageLinks();
 
-const { activeId } = useScrollSpy([...HOME_SCROLL_SECTION_IDS]);
+const activeId = '';
+let sectionObserver: IntersectionObserver | null = null;
+
+onMounted(() => {
+    const sections = document.querySelectorAll<HTMLElement>(
+        '.portfolio-page--home > .section:not(.section--hero)',
+    );
+
+    const revealSection = (section: Element) => {
+        section.querySelectorAll<HTMLElement>('[data-animate]')
+            .forEach((target) => target.classList.add('animate--visible'));
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        sections.forEach(revealSection);
+        return;
+    }
+
+    sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            revealSection(entry.target);
+            sectionObserver?.unobserve(entry.target);
+        });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+    sections.forEach((section) => sectionObserver?.observe(section));
+});
+
+onBeforeUnmount(() => sectionObserver?.disconnect());
 
 usePortfolioSeo(() => ({
     title: t('meta.title'),
@@ -61,6 +72,10 @@ usePortfolioSeo(() => ({
     path: '/',
     locale: locale.value,
     imageAlt: t('meta.ogTitle'),
+    dateCreated: '2026-04-16',
+    dateModified: '2026-09-12',
+    relatedLinks: ['/projects/', '/personal/', '/journey/'],
+    significantLinks: ['/projects/', '/journey/'],
 }));
 
 </script>

@@ -5,6 +5,7 @@
     --year-timeline-col: clamp(152px, 11vw, 164px);
     --year-timeline-sticky-top: calc(var(--layout-header-height) + var(--space-5));
     --year-timeline-era-gap: clamp(48px, 7vw, 88px);
+    --year-timeline-rail: color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
 
     width: 100%;
     min-width: 0;
@@ -14,13 +15,8 @@
     flex-direction: column;
     gap: var(--year-timeline-era-gap);
 
-    &--home {
-        --year-timeline-rail: color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
-    }
-
     &--gallery {
-        /* transparent 대신 배경색과 mix — 어두운 갤러리 셸에서 중립 회색으로 떨어지는 것 방지 */
-        --year-timeline-rail: color-mix(in srgb, var(--gallery-muted) 52%, var(--gallery-bg-elevated));
+        --year-timeline-era-gap: 48px;
     }
 
     &__era {
@@ -40,7 +36,7 @@
         }
 
         &--gallery {
-            --year-timeline-entries-gap: clamp(32px, 4vw, 48px);
+            --year-timeline-entries-gap: 24px;
         }
 
         &--gallery:not(&--flat) .year-timeline__entries {
@@ -83,20 +79,12 @@
         line-height: 0.9;
         white-space: nowrap;
         opacity: 0.95;
+        color: var(--color-primary);
+        font-family: var(--font-display);
         font-synthesis: none;
         text-transform: none;
         font-variant-numeric: tabular-nums;
 
-        &--home {
-            color: var(--color-primary);
-            font-family: var(--font-display);
-        }
-
-        &--gallery {
-            color: var(--gallery-ink);
-            font-family: var(--gallery-slab);
-            text-shadow: 0 0 40px color-mix(in srgb, var(--gallery-ink) 12%, transparent);
-        }
     }
 
     &__entries {
@@ -124,6 +112,7 @@
             position: static;
             font-size: clamp(2.5rem, 12vw, 4rem);
             margin-bottom: var(--space-2);
+
         }
 
         &__entries {

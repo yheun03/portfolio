@@ -41,11 +41,11 @@
     }
 
     > :where(p, ul, ol)+ :where(p, ul, ol),
-    > :where(.contact__profile, .work-card__tech)+ :where(p, ul, ol, div) {
+    >.contact__profile+ :where(p, ul, ol, div) {
         margin-top: var(--card-flow-content);
     }
 
-    > :where(.work-card__footer, .contact__profile) {
+    >.contact__profile {
         margin-top: var(--card-flow-content);
     }
 
@@ -66,51 +66,21 @@
 /* Surface + feature cards */
 .surface-card,
 .feature-card {
-    position: relative;
+    @include surface-card-shell;
     overflow: visible;
-    padding: var(--card-padding-lg);
-    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-    border-radius: var(--radius-2xl);
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-    box-shadow:
-        0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
-        0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     backdrop-filter: blur(18px);
     transform-origin: center center;
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.32s ease,
-        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    @include pointer-glow;
 
-    &.feature-card--tilted {
+    &.card--tilted {
         transition:
             transform 0.1s ease,
             border-color 0.32s ease,
             box-shadow 0.32s ease;
     }
 
-    /* 포인터 추적 글로우 — --glow-x/--glow-y 는 FeatureCard 가 갱신 */
-    &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: radial-gradient(
-            288px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-            color-mix(in srgb, var(--color-primary) 9%, transparent),
-            transparent 65%
-        );
-        opacity: 0;
-        transition: opacity 0.45s ease;
-        pointer-events: none;
-    }
-
     @media (hover: hover) {
-        &:hover::after {
-            opacity: 1;
-        }
-
-        &:hover {
+        &:hover:not(.card--tilted) {
             border-color: color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
             box-shadow:
                 0 1px 0 color-mix(in srgb, var(--color-surface) 92%, var(--color-primary)),
@@ -158,8 +128,7 @@
 
     &__eyebrow {
         margin: 0;
-        color: var(--color-primary);
-        @include font(label, $font-weight-bold);
+        @include index-label;
         text-transform: uppercase;
     }
 
@@ -230,7 +199,7 @@
 
 .flow-steps {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: clamp(20px, 3vw, 36px);
     padding: 0;
     margin: 0;
@@ -244,54 +213,11 @@
     }
 
     &__index {
-        color: var(--color-primary);
-        @include font(label, $font-weight-bold);
+        @include index-label;
     }
 
     &__label {
         @include font(title-1, $font-weight-black);
-    }
-}
-
-@media (max-width: #{$bp-max-narrow}) {
-    .surface-card,
-    .feature-card,
-    .base-card {
-        padding: clamp(16px, 4.8vw, var(--card-padding-lg));
-    }
-
-    .feature-card {
-        min-height: auto;
-
-        &__title,
-        &__description {
-            max-width: 100%;
-            overflow-wrap: anywhere;
-        }
-    }
-
-    .feature-grid {
-        grid-template-columns: minmax(0, 1fr);
-
-        &--highlights {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
-    .flow-steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 767px) {
-    .surface-card--metrics {
-        display: grid;
-        gap: var(--space-5);
-        align-items: start;
-    }
-
-    .flow-steps {
-        grid-template-columns: minmax(0, 1fr);
     }
 }
 

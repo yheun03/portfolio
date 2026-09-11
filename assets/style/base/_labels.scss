@@ -50,3 +50,15 @@
         --label-accent: color-mix(in srgb, #{$primary-600} 72%, #{$grayscale-700});
     }
 }
+
+.base-index-label {
+    @include index-label;
+
+    &--tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+}

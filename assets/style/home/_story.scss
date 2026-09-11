@@ -1,11 +1,34 @@
 @use "../abstracts/tokens" as *;
 
-/* =========================================
-   Home story blocks — Why · Showcase · Proof · How
-   제품 소개형 홈 6블록 (Apple-style showcase)
-========================================= */
+/* About intro */
+.section.section--about-intro,
+.section.section--why-list {
+    display: block;
+    background: transparent;
 
-/* Why — 핵심 가치 3개 대형 타이포 */
+    &::before,
+    &::after {
+        content: none;
+    }
+}
+
+.about__intro {
+    max-width: min(1152px, 100%);
+}
+
+.about__display {
+    margin: 0;
+    @include font(display-1);
+}
+
+.about__display-line {
+    @include display-line;
+}
+
+.about__lead {
+    @include editorial-lead;
+}
+
 .why__list {
     display: grid;
     gap: clamp(48px, 8vw, 96px);
@@ -48,15 +71,6 @@
     }
 }
 
-.why__index {
-    color: var(--color-primary);
-    font-family: var(--font-mono);
-    font-size: var(--font-size-label);
-    font-weight: 700;
-    letter-spacing: var(--tracking-label);
-}
-
-/* Showcase — 대표 작업 3 케이스: 피처드 1 + 서브 2 */
 .showcase__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -64,10 +78,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-
-    @media (max-width: #{$bp-max-narrow}) {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }
 
 .showcase__item--featured {
@@ -75,48 +85,16 @@
 }
 
 .story-case {
-    position: relative;
     display: grid;
     align-content: start;
     gap: clamp(14px, 2vw, 22px);
     min-height: clamp(240px, 28vw, 336px);
-    padding: var(--card-padding-lg);
+    height: 100%;
     overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-    border-radius: var(--radius-2xl);
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-    box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     color: inherit;
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.32s ease,
-        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-
-    /* 포인터 글로우 — usePointerGlow가 갱신하는 --glow-x/--glow-y 사용 */
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: radial-gradient(416px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-                color-mix(in srgb, var(--color-primary) 9%, transparent),
-                transparent 65%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-    }
-
-    &.is-glow::before {
-        opacity: 1;
-    }
+    text-decoration: none;
 
     @media (hover: hover) {
-        &:hover {
-            transform: translateY(-5px);
-            border-color: color-mix(in srgb, var(--color-primary) 26%, var(--color-border));
-            box-shadow: 0 30px 76px color-mix(in srgb, var(--color-primary) 10%, transparent);
-        }
-
         &:hover .story-case__cta-arrow {
             translate: 5px 0;
         }
@@ -153,28 +131,6 @@
         margin: 0;
     }
 
-    &__tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        margin: 0;
-        color: var(--color-primary);
-        font-family: var(--font-mono);
-        font-size: var(--font-size-xs);
-        font-weight: 700;
-        letter-spacing: var(--tracking-label);
-        text-transform: uppercase;
-    }
-
-    &__badge {
-        padding: 3px 10px;
-        border-radius: var(--radius-pill);
-        background: var(--gradient-accent);
-        color: var(--color-on-primary, #fff);
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-    }
-
     &__period {
         color: var(--color-text-subtle, var(--color-text-muted));
         font-family: var(--font-mono);
@@ -197,28 +153,6 @@
         line-height: var(--line-height-body);
     }
 
-    &__stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-            padding: 4px 11px;
-            border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
-            border-radius: var(--radius-pill);
-            background: color-mix(in srgb, var(--color-surface) 65%, transparent);
-            color: var(--color-text-muted);
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            line-height: var(--line-height-ui);
-        }
-    }
-
     &__cta {
         display: inline-flex;
         align-items: center;
@@ -235,123 +169,22 @@
     }
 }
 
-/* 피처드 카드 — 데스크톱에서 에디토리얼 2컬럼 */
-@media (min-width: #{$bp-min-laptop}) {
-    .showcase__item--featured .story-case {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        grid-template-areas:
-            "head head"
-            "title summary"
-            "stack summary"
-            "cta summary";
-        column-gap: clamp(32px, 4vw, 56px);
-        align-items: start;
-        min-height: clamp(272px, 26vw, 368px);
-
-        .story-case__head {
-            grid-area: head;
-        }
-
-        h3 {
-            grid-area: title;
-            max-width: 18ch;
-            @include font(display-4);
-        }
-
-        .story-case__summary {
-            grid-area: summary;
-            -webkit-line-clamp: 6;
-            font-size: var(--font-size-md);
-            max-width: 52ch;
-        }
-
-        .story-case__stack {
-            grid-area: stack;
-            align-self: end;
-        }
-
-        .story-case__cta {
-            grid-area: cta;
-        }
-    }
-}
-
 .showcase__more {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    align-self: start;
     gap: var(--space-3);
-}
-
-/* Proof — 숫자 밴드 + 이력 링크 */
-.proof__metrics {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(24px, 4vw, 48px);
-    margin: 0;
-    padding: clamp(32px, 4.5vw, 56px) 0;
-    border-block: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
-
-    @media (max-width: 767px) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(20px, 5vw, 32px);
-    }
-
-    > div {
-        position: relative;
-        display: grid;
-        gap: 8px;
-        min-width: 0;
-        padding-inline-start: clamp(16px, 2vw, 24px);
-
-        /* 스펙시트 느낌의 세로 구분선 */
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            bottom: 5px;
-            width: 1px;
-            background: linear-gradient(180deg, var(--color-primary), transparent);
-            opacity: 0.45;
-        }
-    }
-
-    dd {
-        margin: 0;
-        font-family: var(--font-display);
-        font-size: var(--font-size-display-4);
-        font-weight: 900;
-        letter-spacing: var(--tracking-tight);
-        line-height: 1;
-        background: var(--gradient-accent);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    dt {
-        color: var(--color-text-muted);
-        font-size: var(--font-size-xs);
-        font-weight: 700;
-        letter-spacing: var(--tracking-label);
-        text-transform: uppercase;
-    }
-
-    @media (hover: hover) {
-        > div:hover dd {
-            translate: 0 -3px;
-        }
-    }
 }
 
 .proof__links {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    align-self: start;
     gap: var(--space-3);
 }
 
-/* How — 작업 방식 (flow-steps 재사용) + 스택 링크 */
 .how__steps-card {
     display: grid;
     gap: clamp(24px, 3.5vw, 40px);
@@ -360,7 +193,6 @@
         position: relative;
         transition: border-color 0.3s ease;
 
-        /* 상단 보더 위로 차오르는 액센트 라인 */
         &::before {
             content: "";
             position: absolute;
