@@ -73,7 +73,7 @@
     --space-7: 19px;
     --space-8: 24px;
     --space-9: 32px;
-    --space-block-gap: var(--space-fluid-sm);
+    --space-block-gap: var(--block-gap);
     --space-fluid-2xl: clamp(72px, 10vw, 136px);
     --space-fluid-3xl: clamp(96px, 14vw, 192px);
     --space-fluid-lg: clamp(22px, 4vw, 48px);
@@ -81,8 +81,8 @@
     --space-fluid-sm: clamp(12px, 1.6vw, 19px);
     --space-fluid-xl: clamp(38px, 6vw, 80px);
     --space-fluid-xs: clamp(8px, 1vw, 14px);
-    --space-section-gap: var(--space-fluid-lg);
-    --space-section-y: var(--space-fluid-3xl);
+    --space-section-gap: var(--section-gap);
+    --space-section-y: var(--section-pad-y);
     /* Viewport rhythm — desktop baseline */
     --page-pad-x: clamp(32px, 5vw, 96px);
     --page-pad-hero: clamp(24px, 4vw, 80px);
@@ -219,11 +219,11 @@ $font-presets: (
 
 @media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
     :root {
-        --page-pad-x: clamp(22px, 3.5vw, 36px);
-        --page-pad-hero: clamp(20px, 3vw, 32px);
-        --section-pad-y: clamp(60px, 8vw, 88px);
-        --section-gap: clamp(28px, 4vw, 44px);
-        --block-gap: clamp(20px, 2.8vw, 30px);
+        --page-pad-x: clamp(40px, 5vw, 56px);
+        --page-pad-hero: var(--page-pad-x);
+        --section-pad-y: clamp(88px, 11vw, 120px);
+        --section-gap: clamp(40px, 5vw, 56px);
+        --block-gap: clamp(24px, 3vw, 34px);
         --swipe-card-width: min(44vw, 320px);
         --font-size-display-1: clamp(3.4rem, 8.5vw, 5.5rem);
         --font-size-display-2: clamp(2.85rem, 7vw, 4.5rem);
@@ -231,11 +231,9 @@ $font-presets: (
         --font-size-display-4: clamp(1.85rem, 3.6vw, 2.75rem);
         --font-size-display-5: clamp(1.45rem, 2.8vw, 2.1rem);
         --font-size-display-6: clamp(1.25rem, 2.2vw, 1.7rem);
-        --space-section-y: var(--section-pad-y);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
-        --card-padding: clamp(20px, 3vw, 32px);
-        --card-padding-lg: clamp(24px, 3.5vw, 38px);
+        --font-size-contact: clamp(2.5rem, 6.2vw, 4.5rem);
+        --card-padding: clamp(26px, 3.2vw, 34px);
+        --card-padding-lg: clamp(30px, 3.8vw, 42px);
     }
 }
 
@@ -255,9 +253,6 @@ $font-presets: (
         --font-size-display-4: clamp(2rem, 3.3vw, 2.85rem);
         --font-size-display-5: clamp(1.55rem, 2.4vw, 2.15rem);
         --font-size-display-6: clamp(1.3rem, 2vw, 1.75rem);
-        --space-section-y: var(--section-pad-y);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
     }
 }
 
@@ -291,8 +286,6 @@ $font-presets: (
         --font-size-label: 1rem;
         --font-size-chip: 0.9rem;
         --font-size-contact: clamp(9.5rem, 7vw, 14rem);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
     }
 }
 
@@ -307,36 +300,33 @@ $font-presets: (
 
 @media (max-width: #{$bp-max-mobile}) {
     :root {
-        --page-pad-x: clamp(14px, 4vw, 18px);
-        --page-pad-hero: clamp(14px, 4vw, 18px);
-        --section-pad-y: clamp(44px, 11vw, 64px);
-        --section-gap: clamp(22px, 5.5vw, 32px);
-        --block-gap: clamp(14px, 3.8vw, 22px);
+        --page-pad-x: clamp(20px, 6vw, 28px);
+        --page-pad-hero: var(--page-pad-x);
+        --section-pad-y: clamp(72px, 20vw, 96px);
+        --section-gap: clamp(32px, 9vw, 44px);
+        --block-gap: clamp(20px, 6vw, 28px);
         --swipe-card-width: min(88vw, 336px);
-        --font-size-display-1: clamp(2.35rem, 10.5vw, 3.75rem);
-        --font-size-display-2: clamp(2rem, 8.8vw, 3.2rem);
-        --font-size-display-3: clamp(1.75rem, 7.5vw, 2.7rem);
-        --font-size-display-4: clamp(1.45rem, 6.2vw, 2rem);
-        --font-size-display-5: clamp(1.22rem, 5vw, 1.6rem);
-        --font-size-display-6: clamp(1.05rem, 4.2vw, 1.3rem);
-        --font-size-xl: 1.05rem;
-        --font-size-lg: 0.95rem;
-        --font-size-md: 0.9rem;
-        --font-size-sm: 0.82rem;
-        --font-size-xs: 0.75rem;
-        --font-size-title-1: clamp(1rem, 3.8vw, 1.18rem);
-        --font-size-title-2: clamp(0.94rem, 3.4vw, 1.05rem);
-        --font-size-title-3: 0.9rem;
-        --font-size-body-1: 0.9rem;
-        --font-size-body-2: 0.84rem;
-        --font-size-label: 0.75rem;
-        --font-size-chip: 0.7rem;
-        --space-section-y: var(--section-pad-y);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
-        --inset-panel: clamp(16px, 4.5vw, 21px);
-        --card-padding: clamp(15px, 4.2vw, 20px);
-        --card-padding-lg: clamp(17px, 4.8vw, 23px);
+        --font-size-display-1: clamp(2.5rem, 11vw, 4rem);
+        --font-size-display-2: clamp(2.1rem, 9vw, 3.4rem);
+        --font-size-display-3: clamp(1.8rem, 7.8vw, 2.8rem);
+        --font-size-display-4: clamp(1.5rem, 6.4vw, 2.1rem);
+        --font-size-display-5: clamp(1.25rem, 5.2vw, 1.7rem);
+        --font-size-display-6: clamp(1.1rem, 4.4vw, 1.35rem);
+        --font-size-xl: 1.1rem;
+        --font-size-lg: 1rem;
+        --font-size-md: 0.94rem;
+        --font-size-sm: 0.88rem;
+        --font-size-xs: 0.78rem;
+        --font-size-title-1: clamp(1.05rem, 4vw, 1.22rem);
+        --font-size-title-2: clamp(0.98rem, 3.6vw, 1.08rem);
+        --font-size-title-3: 0.94rem;
+        --font-size-body-1: 0.94rem;
+        --font-size-body-2: 0.88rem;
+        --font-size-label: 0.78rem;
+        --font-size-chip: 0.72rem;
+        --inset-panel: clamp(18px, 5.5vw, 24px);
+        --card-padding: clamp(20px, 6vw, 26px);
+        --card-padding-lg: clamp(24px, 7vw, 30px);
         --font-size-contact: clamp(1.55rem, 8.2vw, 2.25rem);
     }
 }

@@ -53,17 +53,7 @@
         >.section.section--journey,
         >.section.section--highlights {
             width: 100%;
-            padding: 64px var(--page-pad-x) 96px;
-        }
-    }
-}
-
-@media (max-width: $bp-max-mobile) {
-    .portfolio-page--journey {
-
-        >.section.section--journey,
-        >.section.section--highlights {
-            padding-block: 44px 64px;
+            padding: var(--section-pad-y) var(--page-pad-x);
         }
     }
 }
