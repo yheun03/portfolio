@@ -29,8 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryViewMode } from '@composables/gallery/useGallery';
-import type { WorkSortMode } from '@utils/work-timeline';
+import type { GalleryViewMode, WorkSortMode } from '~/composables/gallery/useGallery';
 
 defineProps<{
     viewMode: GalleryViewMode;

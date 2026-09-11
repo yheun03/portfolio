@@ -1,10 +1,9 @@
 <template>
-    <header ref="headerRef" class="app-header" :class="{ 'app-header--scrolled': isScrolled }">
-        <BaseLink class="app-header__brand" :href="brandHref"
-            :aria-label="locale === 'ko' ? '포트폴리오 홈' : 'Portfolio home'">
+    <header class="app-header" :class="{ 'app-header--scrolled': isScrolled }">
+        <BaseLink class="app-header__brand" :href="brandHref" :aria-label="t('a11y.portfolioHome')">
             <span aria-hidden="true">Eun</span>
         </BaseLink>
-        <nav class="app-header__nav" :aria-label="locale === 'ko' ? '주요 페이지' : 'Primary pages'">
+        <nav class="app-header__nav" :aria-label="t('a11y.primaryNavigation')">
             <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-header__link"
                 :class="{ 'app-header__link--active': isActive(link.href) }" :aria-current="getAriaCurrent(link.href)">
                 {{ link.label }}
@@ -24,9 +23,8 @@
                     <span :key="localeLabel" class="toggle-swap">{{ localeLabel }}</span>
                 </Transition>
             </BaseButton>
-            <button ref="menuButtonRef" type="button" class="app-header__menu-btn" :aria-label="menuOpen
-                ? locale === 'ko' ? '모바일 메뉴 닫기' : 'Close mobile menu'
-                : locale === 'ko' ? '모바일 메뉴 열기' : 'Open mobile menu'" :aria-expanded="menuOpen"
+            <button ref="menuButtonRef" type="button" class="app-header__menu-btn"
+                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')" :aria-expanded="menuOpen"
                 aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="handleAppLnbToggle">
                 <span class="app-header__menu-icon" aria-hidden="true">
                     <span />
@@ -34,7 +32,7 @@
                     <span />
                 </span>
                 <span class="visually-hidden">
-                    {{ menuOpen ? locale === "ko" ? "닫기" : "Close" : locale === "ko" ? "메뉴" : "Menu" }}
+                    {{ t(menuOpen ? 'a11y.close' : 'a11y.menu') }}
                 </span>
             </button>
         </div>
@@ -45,7 +43,6 @@
 
 <script setup lang="ts">
 const menuOpen = ref(false);
-const headerRef = ref<HTMLElement | null>(null);
 const menuButtonRef = ref<HTMLButtonElement | null>(null);
 const isScrolled = ref(false);
 
@@ -53,7 +50,6 @@ const handleScroll = () => {
     isScrolled.value = window.scrollY > 48;
 };
 
-useLayoutHeaderHeight(headerRef);
 const statusMessage = ref('');
 const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
@@ -62,11 +58,7 @@ const localeLabel = computed(() => locale.value.toUpperCase());
 const languageToggleAriaLabel = computed(() =>
     locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
 );
-const themeToggleLabel = computed(() => {
-    if (locale.value === 'ko') return isDarkTheme.value ? 'Light' : 'Dark';
-
-    return isDarkTheme.value ? 'Light' : 'Dark';
-});
+const themeToggleLabel = computed(() => (isDarkTheme.value ? 'Light' : 'Dark'));
 const themeToggleAriaLabel = computed(() =>
     isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme'),
 );

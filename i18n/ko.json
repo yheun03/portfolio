@@ -16,31 +16,42 @@
     },
     "hero": {
         "title": "기분 좋은 인터랙션과 탄탄한 구조를 함께 만드는 웹 퍼블리셔",
-        "subtitle": "기업 홈페이지, 스마트팩토리·물류 시스템, 자사 솔루션 등 다양한 프로젝트에서 운영부터 신규 구축, 내부 리뉴얼까지 경험했습니다.",
+        "subtitle": "기업 홈페이지, 스마트팩토리 / 물류 시스템, 자사 솔루션 등 다양한 프로젝트에서 운영부터 신규 구축, 내부 리뉴얼까지 경험했습니다.",
         "branding": "Publishing에서 Frontend까지, UI를 중심에 두고 일합니다",
         "kicker": "핵심부터.",
-        "essentialsLead": "구조 · 퍼블리싱 · 협업을 한 흐름으로 맞춥니다.",
+        "essentialsLead": "화면 목적부터 구현 기준까지 한 흐름으로 맞춥니다.",
         "ctaWorks": "웹 퍼블리셔 실무 프로젝트 보기",
-        "ctaToolbox": "Vue 3·SCSS UI 개발 역량 보기",
+        "ctaToolbox": "Vue 3 / SCSS UI 개발 역량 보기",
         "ctaContact": "연락하기",
         "scrollCue": "Scroll",
-        "scrollCueLabel": "다음 섹션으로 이동"
+        "scrollCueLabel": "다음 섹션으로 이동",
+        "displayLine1": "기분 좋은",
+        "displayLine2": "화면 구조",
+        "displayLine3": "만듭니다",
+        "lead": "HTML / SCSS 7년, Vue는 필요한 만큼 가볍게.",
+        "actionsAriaLabel": "주요 포트폴리오 섹션 바로가기"
     },
     "about": {
         "title": "감각과 구조를 함께 설계하는 방식",
-        "intro": "퍼블리싱을 단순 구현이 아닌 사용자 경험, 구조, 협업까지 연결하는 일로 바라봅니다.",
-        "direction": "Vue 3 컴포넌트 구조와 프론트엔드 설계 역량을 꾸준히 넓혀 가고 있습니다.",
+        "intro": "요구사항을 읽고, 화면의 우선순위와 사용 흐름까지 함께 맞추는 일을 해왔습니다.",
+        "direction": "Vue 3와 Nuxt 기반 화면도 실제 프로젝트 흐름 안에서 꾸준히 다루고 있습니다.",
         "kicker": "조금 더.",
         "workflowTitle": "작업 흐름",
-        "tagline": "구조는 단순하게. 사용감은 가볍게."
+        "tagline": "구조는 단순하게. 사용감은 가볍게.",
+        "displayLine1": "쉽게 읽히고",
+        "displayLine2": "빠르게 쓰이는",
+        "displayLine3": "화면을 만듭니다",
+        "principlesAriaLabel": "작업 원칙",
+        "workflowAriaLabel": "작업 흐름",
+        "stepsAriaLabel": "단계"
     },
     "works": {
         "title": "웹 퍼블리셔 실무 프로젝트",
         "cardLabel": "실무 사례",
         "all": "전체",
         "detail": "프로젝트 상세 보기",
-        "fullArchiveLink": "웹 퍼블리셔 실무 프로젝트 전체 갤러리 보기",
-        "sectionDescription": "SI·SM·솔루션 프로젝트 중 웹 접근성, SEO, 반응형 UI, JavaScript·Vue 3 경험을 보여주는 핵심 사례입니다. 전체 목록과 캡처는 갤러리에서 볼 수 있습니다.",
+        "fullArchiveLink": "실무 전체보기",
+        "sectionDescription": "SI / SM / 솔루션 프로젝트 중 화면 설계, 운영 대응, JavaScript / Vue 3 경험이 드러나는 핵심 사례입니다.",
         "archiveCountLabel": "개 실무 프로젝트 아카이브",
         "archiveSummary": "현재 탭의 대표 {pinned}건을 메인에 두었고, 전체 {total}건은 갤러리에 정리해 두었습니다.",
         "showMore": "프로젝트 더 보기",
@@ -52,7 +63,7 @@
         "cardLabel": "개인 프로젝트",
         "backToWorks": "실무 프로젝트(Works) 섹션으로 이동",
         "ctaTab": "개인 프로젝트 전체 보기",
-        "fullArchiveLink": "프론트엔드 개인 프로젝트 전체 갤러리 보기",
+        "fullArchiveLink": "개인 전체보기",
         "designTokensLink": "2026 포트폴리오 디자인 토큰 보기"
     },
     "gallery": {
@@ -75,38 +86,67 @@
         "duration": "소요 시간",
         "projectList": "프로젝트 목록",
         "otherProjects": "연도 미분류 프로젝트",
-        "languages": "언어·핵심 스택",
-        "techFull": "사용 도구·전체 스택",
+        "languages": "언어 / 핵심 스택",
         "captures": "캡처",
-        "details": "상세 내용",
         "overview": "개요",
         "role": "역할",
         "breadcrumbLabel": "현재 위치",
         "backToCareerList": "실무 목록으로",
         "backToPersonalList": "개인 목록으로",
-        "backPrevious": "이전 화면으로",
-        "backHint": "Esc 키로 이전 위치로 돌아갑니다",
         "detailEndLine": "긴 이야기의 마침표입니다. 끝까지 읽어 주셔서 고마워요.",
         "detailEndBackCareer": "다 읽었다면 실무 페이지로 돌아가기",
-        "detailEndBackPersonal": "다 읽었다면 개인 프로젝트 목록으로"
+        "detailEndBackPersonal": "다 읽었다면 개인 프로젝트 목록으로",
+        "sortStart": "시작시간",
+        "sortTitle": "가나다 순",
+        "sortLegend": "정렬",
+        "archive": "아카이브",
+        "result": "결과",
+        "careerLead": "실무 / 내부 프로젝트 {total}건을 캡처 / 소요 시간 / 언어 스택과 함께 정리했습니다.",
+        "personalLead": "개인 프로젝트 {total}건을 아카이브로 정리했습니다.",
+        "stats": "{total}건 • 캡처 • 스택",
+        "totalProjects": "총 {total}개 프로젝트",
+        "careerSortLabel": "프로젝트 정렬 기준",
+        "personalSortLabel": "개인 프로젝트 정렬 기준",
+        "home": "홈",
+        "type": "유형",
+        "period": "기간",
+        "coreStack": "Core",
+        "libraryStack": "Library / Tool",
+        "previousImage": "이전 이미지",
+        "nextImage": "다음 이미지",
+        "previousProject": "이전 프로젝트",
+        "nextProject": "다음 프로젝트",
+        "noCapture": "등록된 프로젝트 이미지가 없습니다.",
+        "loadingImage": "이미지 불러오는 중",
+        "captureAlt": "{title} 캡처 {index}",
+        "captureCardAlt": "{title} 캡처",
+        "captureDotLabel": "{index}번째 이미지 보기",
+        "projectLinkLabel": "{title} {label}",
+        "openPage": "페이지 이동하기",
+        "emptyCaptureTitle": "이미지 준비 중",
+        "emptyCaptureDescription": "대신 설명은 먼저 열어뒀어요.",
+        "contributions": "내가 한 일",
+        "results": "성과",
+        "points": "포인트"
     },
     "journey": {
         "title": "경험이 쌓인 성장의 흐름",
-        "summary": "중학교 학생회 페이지부터 고등학교·대학, 회사 실무 병행까지 퍼블리싱·프론트엔드 중심으로 쌓아 온 경험입니다.",
+        "summary": "학교 웹 제작에서 출발해 회사 실무와 전공 학습을 병행하며 이어 온 흐름입니다.",
         "kicker": "소속별, 또는 시간순으로.",
         "viewLegend": "여정 보기 방식",
         "viewAffiliation": "소속순",
         "viewChronological": "시간순",
-        "tempLabel": "임시 예시 데이터"
+        "tempLabel": "임시 예시 데이터",
+        "clientsAriaLabel": "참여 고객사"
     },
     "toolbox": {
         "title": "실무에서 검증한 도구와 방법",
-        "copy": "화면을 만들고, 이후에도 손보기 쉬운 구조까지 함께 고민합니다.",
+        "copy": "마크업과 스타일 기반을 단단히 두고, Vue 기능은 화면에 필요한 만큼만 얹어 사용합니다.",
         "kicker": "영역별로."
     },
     "highlights": {
         "title": "성과와 전문성 한눈에 보기",
-        "summary": "수상, 자격, 역할, 활동 — 분야별로 정리했습니다.",
+        "summary": "수상, 자격, 역할, 활동을 분야별 기록으로 모았습니다.",
         "awards": "수상",
         "certifications": "자격/인증",
         "roles": "전문 역할",
@@ -114,20 +154,27 @@
         "showMore": "하이라이트 항목 더 보기",
         "collapse": "하이라이트 항목 접기",
         "visibleCount": "대표 {visible} / {total}건",
-        "tabSummary": "전체 {total}건 중 이 카테고리 {visible}건"
+        "tabSummary": "전체 {total}건 중 이 카테고리 {visible}건",
+        "totalCount": "총 {total}건",
+        "countSummary": "수상 {awards} / 자격 {certifications} / 역할 {roles} / 활동 {activities}",
+        "categoriesAriaLabel": "하이라이트 카테고리",
+        "summaryAriaLabel": "하이라이트 요약"
     },
     "contact": {
         "title": "프로젝트 문의",
-        "description": "퍼블리싱·UI·구조 정리가 필요하시면 메일로 연락 주세요. 정리할 화면부터 함께 보면 됩니다.",
+        "description": "퍼블리싱 / UI 구현이 필요하시면 메일로 연락 주세요. 먼저 맞춰야 할 화면부터 함께 보면 됩니다.",
         "kicker": "메일 주소.",
         "note": "범위와 일정을 먼저 맞추고, 유지하기 쉬운 화면부로 작업합니다.",
         "profileLabel": "새 프로젝트 문의 환영",
         "email": "메일 보내기",
         "github": "은영환 GitHub 프로필 보기",
-        "resume": "은영환 이력서 PDF 보기"
+        "resume": "은영환 이력서 PDF 보기",
+        "mailPrefix": "이메일 주소",
+        "linksAriaLabel": "연락 링크",
+        "spotlightAriaLabel": "연락처"
     },
     "footer": {
-        "tagline": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환의 2026 포트폴리오",
+        "tagline": "웹 퍼블리셔 / 웹 프론트엔드 개발자 은영환의 2026 포트폴리오",
         "navLabel": "사이트 하단 링크",
         "homeLink": "포트폴리오 홈",
         "careerLink": "실무 프로젝트 갤러리",
@@ -137,7 +184,7 @@
     "lnb": {
         "eyebrow": "탐색",
         "title": "메뉴",
-        "subtitle": "웹 퍼블리셔 · 프론트엔드",
+        "subtitle": "웹 퍼블리셔 / 프론트엔드",
         "connect": "연락하기",
         "email": "메일 보내기",
         "github": "GitHub",
@@ -155,7 +202,7 @@
         "report": "잘못된 링크 알려주기",
         "reportSubject": "[포트폴리오] 잘못된 링크 제보",
         "reportBody": "아래 경로로 들어왔는데 페이지가 보이지 않았습니다.",
-        "seoTitle": "{code} · 은영환 포트폴리오"
+        "seoTitle": "{code} / 은영환 포트폴리오"
     },
     "a11y": {
         "switchToEn": "영어로 전환",
@@ -165,22 +212,1603 @@
         "localeChangedKo": "표시 언어가 한국어로 변경되었습니다.",
         "localeChangedEn": "표시 언어가 영어로 변경되었습니다.",
         "themeChangedDark": "다크 테마로 변경되었습니다.",
-        "themeChangedLight": "라이트 테마로 변경되었습니다."
+        "themeChangedLight": "라이트 테마로 변경되었습니다.",
+        "skipToContent": "본문으로 건너뛰기",
+        "portfolioHome": "포트폴리오 홈",
+        "primaryNavigation": "주요 페이지",
+        "quickNavigation": "빠른 페이지 이동",
+        "mobileMenuOpen": "모바일 메뉴 열기",
+        "mobileMenuClose": "모바일 메뉴 닫기",
+        "mobileNavigation": "모바일 주요 메뉴",
+        "menu": "메뉴",
+        "close": "닫기",
+        "errorActions": "오류 페이지 안내"
+    },
+    "catalog": {
+        "componentsMetaTitle": "2026 포트폴리오 컴포넌트 카탈로그 | 은영환",
+        "componentsMetaDescription": "2026 포트폴리오에서 사용하는 BaseButton, BaseLabel, BaseBadge, BaseChipList, StoryCaseCard 등 Vue base 컴포넌트 미리보기 페이지입니다.",
+        "tokensMetaTitle": "2026 포트폴리오 디자인 토큰 | 은영환",
+        "tokensMetaDescription": "2026 포트폴리오에서 쓰는 색상, 여백, 폰트, 라운드, 그림자 디자인 토큰과 네이밍 이유를 정리한 페이지입니다.",
+        "pageLabel": "2026 포트폴리오 컴포넌트",
+        "title": "컴포넌트 카탈로그",
+        "introBefore": "홈 / 갤러리 / 상세 페이지에서 반복되는 UI 패턴을 Vue base 컴포넌트로 모았습니다. 스타일은",
+        "introAfter": "SCSS와 1:1로 대응합니다.",
+        "navigation": "카탈로그 페이지 이동",
+        "viewTokens": "디자인 토큰 보기",
+        "viewPersonal": "개인 프로젝트 목록",
+        "viewHome": "홈으로",
+        "buttonTitle": "버튼",
+        "buttonDescription": "primary / ghost 변형. 내부 라우트, 앵커 / 외부 링크, 클릭 핸들러를 지원합니다.",
+        "labelTitle": "라벨",
+        "labelDescription": "섹션 칩 / 카드 분류 등 UI 계층을 표시하는 pill 라벨입니다.",
+        "badgeTitle": "배지",
+        "badgeDescription": "상태 / 분류 점 배지와 강조 pill 배지입니다.",
+        "indexTitle": "인덱스 라벨",
+        "indexDescription": "원칙 목록 / 케이스 태그 등 mono accent 텍스트입니다.",
+        "chipTitle": "기술 칩",
+        "chipDescription": "프로젝트 카드 / 상세에서 쓰는 mono pill 목록입니다.",
+        "sampleTech": "샘플 기술 스택",
+        "statTitle": "지표",
+        "statDescription": "Proof 섹션의 숫자 / 라벨 그리드입니다.",
+        "sampleStats": "샘플 지표",
+        "sectionTitle": "섹션 타이틀",
+        "sectionDescription": "eyebrow / title / description 조합입니다.",
+        "sectionDemoTitle": "대표 프로젝트",
+        "sectionDemoDescription": "홈 쇼케이스와 동일한 섹션 헤더 패턴입니다.",
+        "cardTitle": "카드",
+        "cardDescription": "범용 카드 shell과 홈 쇼케이스 케이스 카드입니다.",
+        "baseCardDescription": "갤러리 / 모달 등에서 쓰는 기본 카드 컨테이너입니다.",
+        "caseAria": "TOMS, 자세히 보기",
+        "caseTag": "수상 프로젝트",
+        "caseTitle": "TOMS 통합 관리 시스템",
+        "caseSummary": "운영 흐름을 한 화면에서 읽을 수 있게 정리한 대표 SI 케이스입니다.",
+        "caseCta": "자세히 보기",
+        "caseTech": "사용 기술"
+    },
+    "tokens": {
+        "pageLabel": "2026 포트폴리오 디자인 토큰",
+        "title": "디자인 토큰 정리",
+        "introBefore": "2026 포트폴리오에서 반복해서 쓰는 색, 여백, 타이포그래피, 형태 값을 목적별 토큰으로 나눠 정리했습니다. 색상은",
+        "introMiddle": "나머지 foundation은",
+        "introAfter": "에서 관리합니다.",
+        "navigation": "토큰 페이지 이동",
+        "viewCatalog": "컴포넌트 카탈로그",
+        "viewPersonal": "개인 프로젝트 목록으로",
+        "viewHome": "홈에서 포트폴리오 보기",
+        "colorTitle": "색상 토큰",
+        "colorDescription": "Primitive는 색상 원재료, Semantic은 실제 UI 역할을 나타냅니다.",
+        "spacingTitle": "여백 토큰",
+        "spacingDescription": "칩과 라벨은 12px~14px 최소 단위를 지키고, 화면 / 섹션 / 카드 여백은 PC/TB/MB 순으로 밀도를 낮춥니다.",
+        "spacingTable": "여백 토큰 목록",
+        "tokenColumn": "토큰",
+        "valueColumn": "값",
+        "reasonColumn": "네이밍 이유",
+        "typeTitle": "폰트 토큰",
+        "typeDescription": "Display가 화면의 리듬을 잡고, Title과 Body가 정보 밀도를 조절하며, Label/Chip은 UI 최소 단위를 지킵니다.",
+        "typeSample": "가벼운 구조를 만듭니다.",
+        "shapeTitle": "형태와 효과 토큰",
+        "shapeDescription": "라운드와 그림자는 컴포넌트의 위계, 터치 영역, 포커스 상태를 일관되게 맞춥니다."
     },
     "meta": {
-        "title": "은영환 포트폴리오 | 웹 퍼블리셔 · 웹 프론트엔드 개발자 포트폴리오 2026",
-        "description": "웹 퍼블리셔 은영환의 2026 포트폴리오입니다. HTML, SCSS, JavaScript, Vue 3 기반 UI 개발, 웹 접근성, SEO, 반응형 웹 실무 프로젝트와 프론트엔드 경험을 소개합니다.",
-        "ogTitle": "웹 퍼블리셔·웹 프론트엔드 개발자 은영환 2026 포트폴리오",
-        "ogDescription": "Vue 3, SCSS, JavaScript UI 개발과 웹 접근성, SEO, 반응형 웹 실무 경험을 정리한 은영환 포트폴리오"
+        "title": "웹 퍼블리셔 은영환 포트폴리오 2026 | Vue 3·SCSS·JavaScript 실무 프로젝트",
+        "description": "HTML / SCSS 기반 7년차 웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3와 JavaScript로 구현한 반응형 UI, 기업 홈페이지, 스마트팩토리·물류 시스템, CMS 운영 및 실무 프로젝트를 통해 구조적인 마크업과 사용자 중심 프론트엔드 개발 경험을 소개합니다.",
+        "ogTitle": "7년차 웹 퍼블리셔 은영환 2026 포트폴리오",
+        "ogDescription": "HTML / SCSS 실무 경험과 필요한 만큼의 Vue 3를 활용한 UI 작업을 정리한 은영환 포트폴리오"
     },
     "story": {
         "showcaseTitle": "대표 작업 셋만 먼저 보여드립니다",
-        "showcaseDescription": "수상작·자사 솔루션·SI 대표 사례입니다. 나머지는 갤러리에 정리되어 있습니다.",
+        "showcaseDescription": "수상작, 자사 솔루션, SI 사례 중 먼저 보여줄 작업만 골랐습니다.",
         "caseCta": "케이스 보기",
-        "proofDescription": "숫자와 기록으로 정리한 결과입니다. 자세한 내용은 각 페이지에서 볼 수 있습니다.",
-        "proofLinkHighlights": "수상·자격 기록 보기",
+        "proofDescription": "성과를 숫자와 이력 기준으로 압축해 보여줍니다.",
+        "proofLinkHighlights": "수상 / 자격 기록 보기",
         "proofLinkJourney": "성장 여정 보기",
         "featuredBadge": "대표작",
-        "howDescription": "파악 → 정리 → 구현 → 검증. 모든 화면을 같은 리듬으로 만듭니다."
+        "howDescription": "요구사항을 화면 단위로 나누고, 마크업 / 스타일 / 동작을 순서대로 맞춥니다.",
+        "galleriesAriaLabel": "프로젝트 갤러리 바로가기",
+        "techStackAriaLabel": "사용 기술",
+        "proofMetricsAriaLabel": "핵심 지표",
+        "proofLinksAriaLabel": "이력 상세 페이지"
+    },
+    "content": {
+        "seo": {
+            "keywords": [
+                "은영환",
+                "은영환 포트폴리오",
+                "웹 퍼블리셔",
+                "웹퍼블리셔",
+                "웹 퍼블리셔 포트폴리오",
+                "웹 퍼블리셔 포트폴리오 2026",
+                "웹 프론트엔드 개발자",
+                "웹 프론트엔드 개발자 포트폴리오",
+                "웹 프론트엔드 개발자 포트폴리오 2026",
+                "프론트엔드 개발자",
+                "프론트엔드 개발자 포트폴리오",
+                "UI 개발자",
+                "UI 개발",
+                "Vue 프론트엔드",
+                "Vue 3",
+                "SCSS",
+                "JavaScript",
+                "퍼블리셔 포트폴리오",
+                "프론트엔드 포트폴리오",
+                "2026 포트폴리오",
+                "웹 표준",
+                "웹 접근성",
+                "SEO",
+                "AEO",
+                "GEO",
+                "AI 검색 최적화",
+                "반응형 웹"
+            ],
+            "jobTitle": "7년차 웹 퍼블리셔, Vue 기반 UI 개발",
+            "description": "HTML과 SCSS를 중심으로 실무 웹 UI를 만들고, Vue 3의 template, props, v-if, v-for, Teleport를 필요한 만큼 활용하는 7년차 웹 퍼블리셔 은영환입니다.",
+            "websiteName": "웹 퍼블리셔 은영환 2026 포트폴리오",
+            "questions": [
+                {
+                    "name": "은영환은 어떤 일을 하나요?",
+                    "acceptedAnswer": "은영환은 HTML, SCSS, JavaScript, Vue 3 기반의 UI 구현과 반응형 웹, 웹 접근성, SEO를 함께 다루는 웹 퍼블리셔이자 웹 프론트엔드 개발자입니다."
+                },
+                {
+                    "name": "은영환 포트폴리오에서 확인할 수 있는 역량은 무엇인가요?",
+                    "acceptedAnswer": "실무 프로젝트, 개인 프로젝트, Vue 3와 SCSS 기반 컴포넌트 설계, CMS 커스터마이징, 유지보수 가능한 UI 구조, 문서화와 협업 경험을 확인할 수 있습니다."
+                },
+                {
+                    "name": "은영환에게 프로젝트 문의는 어떻게 하나요?",
+                    "acceptedAnswer": "포트폴리오의 연락 섹션 또는 이력서 링크를 통해 확인할 수 있으며, 대표 연락처는 eyh208@naver.com 입니다."
+                }
+            ]
+        },
+        "componentCatalogSamples": {
+            "tech": ["Vue 3", "Nuxt 3", "TypeScript", "SCSS"],
+            "stats": [
+                { "label": "경력", "value": "8", "suffix": "+" },
+                { "label": "프로젝트", "value": "40", "suffix": "+" },
+                { "label": "팀", "value": "12", "suffix": "" },
+                { "label": "수상", "value": "3", "suffix": "" }
+            ]
+        },
+        "designTokens": {
+            "colors": [
+                {
+                    "name": "--primary-*",
+                    "value": "var(--primary-600)",
+                    "reason": "브랜드의 중심 색을 단계형 스케일로 두어 버튼, 링크, 포커스 링이 같은 계열에서 움직이게 합니다."
+                },
+                {
+                    "name": "--grayscale-*",
+                    "value": "var(--grayscale-100)",
+                    "reason": "배경부터 본문까지 넓게 쓰는 중립 색이라 숫자 스케일로 명암 관계를 바로 읽게 했습니다."
+                },
+                {
+                    "name": "--color-surface",
+                    "value": "var(--color-surface)",
+                    "reason": "카드와 패널의 실제 역할 이름입니다. 컴포넌트 코드는 구체 색상 대신 surface 역할만 바라봅니다."
+                },
+                {
+                    "name": "--color-text-muted",
+                    "value": "var(--color-text-muted)",
+                    "reason": "보조 설명과 메타 정보처럼 시선을 한 단계 낮춰야 하는 텍스트를 명확히 분리합니다."
+                },
+                {
+                    "name": "--accent-hot / --accent-mint",
+                    "value": "linear-gradient(135deg, var(--accent-hot), var(--accent-mint))",
+                    "reason": "강조점이 필요할 때 쓰는 보조 색입니다. 감정적 이름 대신 accent 역할과 온도감만 남겼습니다."
+                },
+                {
+                    "name": "--gallery-*",
+                    "value": "var(--gallery-bg)",
+                    "reason": "개인 / 실무 갤러리는 별도 편집 톤을 갖기 때문에 portfolio 토큰과 충돌하지 않게 namespace를 나눴습니다."
+                }
+            ],
+            "spacing": [
+                {
+                    "name": "--space-1 ~ --space-11",
+                    "value": "4px ~ 54px",
+                    "reason": "칩, 버튼, 카드 내부처럼 촘촘한 UI 간격은 4px 계열의 숫자 단계로 맞춥니다."
+                },
+                {
+                    "name": "--space-fluid-xs ~ 3xl",
+                    "value": "clamp(...)",
+                    "reason": "PC에서는 호흡을 크게, TB/MB에서는 정보 밀도를 유지하도록 화면 단위 여백을 유동값으로 둡니다."
+                },
+                {
+                    "name": "--space-section-y / gap",
+                    "value": "PC > TB > MB override",
+                    "reason": "섹션 상하 여백과 섹션 내부 간격은 breakpoint별 CSS 변수 override로 우선순위를 둡니다."
+                },
+                {
+                    "name": "--inset-page / --inset-panel",
+                    "value": "responsive inset",
+                    "reason": "페이지와 패널의 좌우 여백을 분리해 모바일에서 카드가 과하게 좁아지지 않게 했습니다."
+                },
+                {
+                    "name": "--card-padding / lg",
+                    "value": "responsive padding",
+                    "reason": "반복 카드의 내부 여백은 카드 namespace로 묶고 모바일에서는 16px대까지 낮춥니다."
+                },
+                {
+                    "name": "--size-touch / compact",
+                    "value": "44px / 40px",
+                    "reason": "버튼과 토글은 접근성 터치 영역을 기준으로 크기 토큰을 분리했습니다."
+                }
+            ],
+            "typography": [
+                {
+                    "name": "Display-1",
+                    "value": "PC 64~136 / TB 51~96 / MB 44~76px / 900",
+                    "reason": "홈 히어로와 가장 강한 액티비티 타이틀에만 쓰는 최상위 토큰입니다.",
+                    "sampleClass": "type-item__sample--display1"
+                },
+                {
+                    "name": "Display-2 / Display-3",
+                    "value": "강조 섹션 / 대형 카드 / 900",
+                    "reason": "큰 시각 신호는 유지하되 Display-1보다 먼저 튀지 않도록 2~3단계로 낮춥니다.",
+                    "sampleClass": "type-item__sample--display3"
+                },
+                {
+                    "name": "Display-4 / Display-5 / Display-6",
+                    "value": "섹션 / 카드 제목 / 760~900",
+                    "reason": "섹션 제목, 주요 카드 제목, 작은 모듈 제목의 우선순위를 분리합니다.",
+                    "sampleClass": "type-item__sample--display5"
+                },
+                {
+                    "name": "Title-1 / Title-2 / Title-3",
+                    "value": "18~23 / 16~19 / 16~17px / 720~760",
+                    "reason": "카드 / 리스트 안에서 Display보다 낮은 정보 제목으로 사용합니다.",
+                    "sampleClass": "type-item__sample--title"
+                },
+                {
+                    "name": "Body-1 / Body-2",
+                    "value": "16px+ / 15px / 500",
+                    "reason": "본문은 16px 이상을 기준으로 두고, 보조 설명만 15px 밀도로 낮춥니다.",
+                    "sampleClass": "type-item__sample--body"
+                },
+                {
+                    "name": "Label / Chip",
+                    "value": "14px / 12px / 720",
+                    "reason": "메타 라벨은 14px, 칩은 최소 단위인 12px로 고정해 작은 UI의 밀도를 통일합니다.",
+                    "sampleClass": "type-item__sample--label"
+                }
+            ],
+            "shapes": [
+                {
+                    "name": "--radius-card",
+                    "value": "15px",
+                    "reason": "주요 카드와 버튼의 공통 모서리입니다. 포트폴리오의 부드러운 톤을 기본값으로 둡니다.",
+                    "demoClass": "shape-demo--card"
+                },
+                {
+                    "name": "--radius-pill",
+                    "value": "999px",
+                    "reason": "태그, 세그먼트, 작은 상태값처럼 알약형 UI임을 이름만으로 알 수 있습니다.",
+                    "demoClass": "shape-demo--pill"
+                },
+                {
+                    "name": "--shadow-soft",
+                    "value": "0 18px 44px ...",
+                    "reason": "기본 떠오름 상태입니다. 과한 장식보다 계층을 보여주는 용도라 soft로 부릅니다.",
+                    "demoClass": "shape-demo--soft"
+                },
+                {
+                    "name": "--shadow-ring",
+                    "value": "0 0 0 3px ...",
+                    "reason": "키보드 포커스와 선택 상태처럼 둘러싸는 피드백을 ring으로 분리했습니다.",
+                    "demoClass": "shape-demo--ring"
+                }
+            ]
+        },
+        "profile": {
+            "name": "은영환",
+            "role": "7년차 웹 퍼블리셔 / Vue 기반 UI 개발",
+            "keywords": [
+                "웹 퍼블리셔",
+                "웹 프론트엔드 개발자",
+                "프론트엔드 개발자",
+                "UI 개발자",
+                "HTML5",
+                "SCSS",
+                "JavaScript",
+                "Vue 3",
+                "React",
+                "CMS Customizing",
+                "UI/UX",
+                "Accessibility",
+                "SEO",
+                "Multi-language",
+                "Documentation"
+            ],
+            "focusAreas": [
+                {
+                    "label": "구조 설계",
+                    "value": "컴포넌트 / SCSS / 파일 구조"
+                },
+                {
+                    "label": "퍼블리싱 품질",
+                    "value": "반응형 / 접근성 / 크로스브라우징"
+                },
+                {
+                    "label": "협업 효율",
+                    "value": "문서화 / 공통화 / 운영 대응"
+                }
+            ],
+            "deliveryPillars": ["Design-to-code 정합성", "유지보수 가능한 UI 시스템", "검색과 접근성을 고려한 마크업", "운영 환경에 강한 구조"],
+            "stats": [
+                {
+                    "label": "실무 경력",
+                    "value": 7,
+                    "suffix": "년+"
+                },
+                {
+                    "label": "프로젝트",
+                    "value": 20,
+                    "suffix": "+"
+                },
+                {
+                    "label": "퍼블리싱 책임 수행",
+                    "value": 100,
+                    "suffix": "%"
+                },
+                {
+                    "label": "일정 준수율",
+                    "value": 100,
+                    "suffix": "%"
+                }
+            ],
+            "contacts": {
+                "email": "eyh208@naver.com",
+                "github": "https://github.com/yheun03",
+                "resume": "files/Resume.pdf"
+            }
+        },
+        "about": {
+            "intro": "안녕하세요, 은영환입니다. 요구사항을 실제 사용 흐름에 맞는 화면으로 옮기고, 이후 수정까지 고려해 구현합니다.",
+            "paragraphs": [
+                "조앤소프트 DX 솔루션 2팀 대리로 6년 이상 다양한 웹 시스템 구축과 운영 프로젝트에 참여하며, 요구사항 분석부터 마크업 구조 설계, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 프로젝트 전 주기에 관여해 왔습니다.",
+                "HTML, SCSS, JavaScript를 기반으로 Vue.js / React.js 환경에 적응하며 컴포넌트 기반 구조 설계 경험을 쌓았고, ICE CMS, WebSquare, Nexacro 등 다양한 CMS / 솔루션 환경에서도 퍼블리싱 품질을 안정적으로 맞춰왔습니다.",
+                "SCSS 컴포넌트화로 공수를 최대 60% 절감하고, 문서화 / 교육 체계 구축으로 협업 효율을 약 30% 높인 경험이 있습니다. 앞으로도 Vue 3 등 최신 프론트엔드 환경에서 구조와 품질을 함께 책임지는 UI 개발자로 성장하고 있습니다."
+            ],
+            "keywords": ["꼼꼼함", "성실함", "구조적 사고", "사용자 중심", "유지보수성", "협업 친화성", "실행력", "리더십"],
+            "principles": [
+                {
+                    "title": "사용자 경험",
+                    "description": "보기에만 좋은 화면보다 실제로 쓰기 편한 화면을 만드는 것을 중요하게 생각합니다."
+                },
+                {
+                    "title": "유지보수 가능한 구조",
+                    "description": "프로젝트가 길어질수록 기준의 힘이 중요합니다. 반복 화면은 재사용 가능한 단위로 묶습니다."
+                },
+                {
+                    "title": "명확한 커뮤니케이션",
+                    "description": "디자이너 / 개발자 / 고객의 언어를 연결하며 설명 가능한 산출물을 지향합니다."
+                }
+            ],
+            "workflow": [
+                {
+                    "label": "파악",
+                    "description": "요구사항과 화면 목적을 먼저 파악합니다."
+                },
+                {
+                    "label": "정리",
+                    "description": "레이아웃과 공통 요소를 먼저 나눕니다."
+                },
+                {
+                    "label": "구현",
+                    "description": "스타일과 동작을 화면 단위로 구현합니다."
+                },
+                {
+                    "label": "검증",
+                    "description": "확인할 기준과 수정 포인트를 남깁니다."
+                },
+                {
+                    "label": "품질",
+                    "description": "빠른 납기에서도 품질 우선순위를 유지합니다."
+                }
+            ],
+            "direction": "퍼블리싱 경험을 바탕으로 컴포넌트 설계와 프론트엔드 이해도를 넓혀, UI 개발 전반을 더 안정적으로 맡는 것이 목표입니다."
+        },
+        "skills": [
+            {
+                "key": "markup",
+                "icon": "</>",
+                "title": "Markup",
+                "items": ["HTML5", "시맨틱 마크업", "웹표준", "웹접근성", "크로스브라우징"],
+                "description": "시맨틱한 HTML과 브라우저 기본기를 바탕으로 화면 뼈대를 잡습니다."
+            },
+            {
+                "key": "style",
+                "icon": "◈",
+                "title": "Style",
+                "items": ["CSS3", "SCSS", "반응형 웹", "컴포넌트 스타일링", "유지보수형 구조"],
+                "description": "반복되는 스타일을 규칙화해 수정 범위를 작게 유지합니다."
+            },
+            {
+                "key": "interaction",
+                "icon": "⚡",
+                "title": "Interaction",
+                "items": ["JavaScript", "jQuery", "동적 UI", "인터랙션 구현"],
+                "description": "탭, 모달, 폼, 데이터 UI처럼 실제 서비스에 필요한 동작을 구현합니다."
+            },
+            {
+                "key": "framework",
+                "icon": "⬡",
+                "title": "Framework",
+                "items": ["Vue 3", "React.js", "컴포넌트 구조", "프론트엔드 확장 학습"],
+                "description": "라우팅, 상태, props 흐름을 화면 구현 안에서 필요한 수준으로 다룹니다."
+            },
+            {
+                "key": "cms",
+                "icon": "▦",
+                "title": "CMS / Solution",
+                "items": ["ICE CMS", "WebSquare", "Nexacro", "eGovFrame", "커스터마이징"],
+                "description": "CMS와 업무 솔루션마다 다른 제약을 파악해 화면을 맞춥니다."
+            },
+            {
+                "key": "collaboration",
+                "icon": "✦",
+                "title": "Design / Collaboration",
+                "items": ["Figma", "Zeplin", "Photoshop", "Illustrator", "Git", "문서화", "교육 지원"],
+                "description": "디자인 시안, 산출물, 이슈를 이해하기 쉬운 기준으로 공유합니다."
+            }
+        ],
+        "journey": [
+            {
+                "temp": false,
+                "summary": {
+                    "company": "회사",
+                    "team": "조앤소프트 / DX 솔루션 2팀 / 대리 / 웹 퍼블리셔 / 프론트엔드",
+                    "period": "2019.11 ~ 현재",
+                    "intro": "조앤소프트에서 구축 / 운영 / 리뉴얼을 맡으며 요구사항 분석, 화면 설계, Vue 구현, CMS 커스터마이징까지 납품형 웹 UI 전 과정을 경험했습니다.",
+                    "clients": [
+                        "태림포장",
+                        "삼화페인트",
+                        "대양제지",
+                        "대양판지",
+                        "깨끗한나라",
+                        "경동원",
+                        "한진칼",
+                        "한온시스템",
+                        "오알켐",
+                        "광장 파트너스",
+                        "인천대학교"
+                    ],
+                    "roles": ["퍼블리싱 100% 수행", "Vue 기반 화면 구현", "CMS 커스터마이징", "구조 설계 및 공통화", "운영 유지보수"]
+                },
+                "timeline": [
+                    {
+                        "period": "2026",
+                        "title": "Vue 3 화면 설계 고도화",
+                        "description": "포트폴리오와 납품형 UI를 Vue 3 / Composition API 기준으로 다시 구성했습니다. 재사용 컴포넌트, SCSS 모듈, 디자인 토큰을 함께 다루며 정적 배포까지 고려한 화면 단위 설계를 이어가고 있습니다."
+                    },
+                    {
+                        "period": "2025",
+                        "title": "운영 / 리뉴얼 / CMS 확장",
+                        "description": "운영 / 리뉴얼 / CMS 커스터마이징을 병행하며 프로젝트별 기준에 맞춰 화면을 맞췄습니다. 인수인계 자료와 가이드를 남겨 이후 수정이 쉬운 상태로 넘기는 비중을 키웠고, 대학 졸업과 납품 일정을 함께 관리했습니다."
+                    },
+                    {
+                        "period": "2024",
+                        "title": "Vue 기반 프로젝트 강화",
+                        "description": "Vue 3 기반 관리 / 업무 시스템에서 컴포넌트, 상태, 라우팅, SCSS 레이어를 함께 다뤘습니다. 화면 단위 QA와 협업사 / 고객 피드백 반영 루틴도 이 시기에 정착시켰습니다."
+                    },
+                    {
+                        "period": "2023",
+                        "title": "WebSquare / SW 개발 역량 보강",
+                        "description": "WebSquare Certified Publisher와 SW개발 L5를 취득하며 엔터프라이즈 UI와 개발 산출물 기준을 보강했습니다. 화면 스펙과 마크업 규칙을 문서로 남기는 습관도 이때 강화했습니다."
+                    },
+                    {
+                        "period": "2022",
+                        "title": "자사 솔루션 UI 구조화",
+                        "description": "자사 솔루션과 납품형 화면의 레이아웃, 컴포넌트, SCSS 변수를 묶어 반복 마크업을 줄였습니다. Naver Cloud Platform Certified Associate 취득으로 배포 환경에 대한 이해도 넓혔습니다."
+                    },
+                    {
+                        "period": "2021",
+                        "title": "퍼블리싱 실무 정착",
+                        "description": "시스템 구축 프로젝트에서 와이어, 디자인, HTML/CSS, 인터랙션을 연속된 흐름으로 맡기 시작했습니다. 고등학교 졸업과 맞물려 업무 톤에 맞는 산출물 관리 방식도 익혔습니다."
+                    },
+                    {
+                        "period": "2020",
+                        "title": "퍼블리싱 기반 실무 적응",
+                        "description": "입사 후 반응형, 크로스브라우징, 웹 표준을 프로젝트 단위로 적용하는 방식을 익혔습니다. 요구사항 변경과 운영 티켓에 대응하며 납품 일정에 맞추는 리듬을 키웠습니다."
+                    },
+                    {
+                        "period": "2019",
+                        "title": "실무자로 전환",
+                        "description": "11월 조앤소프트에 웹 퍼블리셔로 합류했습니다. 학교 / 동아리에서 만들던 웹 화면이 납품형 프로젝트로 바뀌며 일정, 품질, 커뮤니케이션의 기준을 새로 배웠습니다."
+                    }
+                ]
+            },
+            {
+                "temp": false,
+                "summary": {
+                    "company": "대학교",
+                    "team": "한국공학대학교 컴퓨터전자공학과 편입 / 졸업 (4.45/4.5) / 전적대 모바일소프트웨어학과 (4.27/4.5)",
+                    "period": "2021.03 ~ 2025.02",
+                    "intro": "전적대 모바일소프트웨어학과를 졸업한 뒤 한국공학대학교 컴퓨터전자공학과에 편입해 4.45/4.5의 학점으로 졸업했습니다. 전공 수업과 회사 업무를 병행했고, 학과대표 / 학회장으로 학생회 설립과 행사를 이끌었습니다.",
+                    "clients": [],
+                    "roles": [
+                        "한국공학대학교 컴퓨터전자공학과 편입 / 졸업 (4.45/4.5)",
+                        "전적대 모바일소프트웨어학과 졸업 (4.27/4.5)",
+                        "학과대표 / 학회장 (학생회 설립)",
+                        "회사 실무 병행"
+                    ]
+                },
+                "timeline": [
+                    {
+                        "period": "2025",
+                        "title": "컴퓨터전자공학과 졸업",
+                        "description": "한국공학대학교 컴퓨터전자공학과를 4.45/4.5의 학점으로 졸업했습니다. 학업, 회사 일정, 학생회 운영을 함께 마무리하며 여러 이해관계를 조율하는 경험을 쌓았습니다."
+                    },
+                    {
+                        "period": "2024",
+                        "title": "학회장 운영 / 전공 수업",
+                        "description": "2024년 2월까지 학회장을 맡아 학과 점퍼, MT, 해커톤 같은 프로그램을 기획 / 주최했습니다. 전공 수업에서는 웹 제작 경험을 이론과 연결했습니다."
+                    },
+                    {
+                        "period": "2023",
+                        "title": "편입 / 학과대표 / 학생회 설립",
+                        "description": "전적대 졸업 후 한국공학대학교 컴퓨터전자공학과 3학년으로 편입했습니다. 학과대표를 거쳐 학회장을 맡으며 학생회 설립, 셔틀버스 배차, 주차 문제 등을 조율했습니다."
+                    },
+                    {
+                        "period": "2022",
+                        "title": "전적대 전공 수업 (모바일 / 소프트웨어)",
+                        "description": "전적대 모바일소프트웨어학과에서 앱과 소프트웨어 개발 흐름을 익혔습니다. 업무와 수업 일정을 함께 관리하는 방식도 배웠습니다."
+                    },
+                    {
+                        "period": "2021",
+                        "title": "전적대 입학 (모바일소프트웨어학과)",
+                        "description": "고등학교 졸업 후 전적대 모바일소프트웨어학과에 입학했습니다. 회사 업무를 이어가며 전공 공부를 시작했습니다."
+                    }
+                ]
+            },
+            {
+                "temp": false,
+                "summary": {
+                    "company": "고등학교",
+                    "team": "웹디자인 / 동아리 MOD",
+                    "period": "2018.03 ~ 2021.01",
+                    "intro": "웹디자인과 MOD 동아리에서 HTML / CSS / JavaScript 기초를 익혔습니다. 온라인 학습과 학생회장 선거 사이트처럼 실제 학생이 쓰는 웹을 만들며 경험을 넓혔습니다.",
+                    "clients": [],
+                    "roles": [
+                        "MOD 웹디자인 동아리 회장",
+                        "온라인 학습 사이트 개발",
+                        "학생회장 선거 사이트 개발",
+                        "전교 투표 / 학습 정보 통합 웹 TF",
+                        "웹디자인기능사 / 정보처리기능사"
+                    ]
+                },
+                "timeline": [
+                    {
+                        "period": "2021",
+                        "title": "졸업과 실무 연결",
+                        "description": "졸업을 앞두고 MOD / TF에서 만든 화면을 포트폴리오로 모았습니다. 마크업, 폴더, 네이밍 규칙을 팀과 맞추는 방식도 이때 익혔습니다."
+                    },
+                    {
+                        "period": "2020",
+                        "title": "실사용 웹 서비스 개발",
+                        "description": "코로나 시기 원격 수업을 위해 학교 온라인 학습 사이트를 만들고, 학생회장 선거용 투표 / 후보 소개 페이지도 제작했습니다. 정보처리산업기사 취득으로 개발 기초도 보강했습니다."
+                    },
+                    {
+                        "period": "2019",
+                        "title": "웹 프로젝트와 첫 실무",
+                        "description": "MOD 회장으로 커리큘럼, 튜터링, 과제를 운영했고 웹디자인 / 정보처리 기능사를 취득했습니다. 전교 투표 / 학습 정보 통합 웹 TF 팀장으로 실사용자와 마감을 경험했습니다."
+                    },
+                    {
+                        "period": "2018",
+                        "title": "웹디자인 기초",
+                        "description": "웹디자인과에 입학해 MOD에 가입하며 HTML / CSS 레이아웃, 반응형 개념, 정적 페이지 제작을 반복 연습했습니다. 선배 과제 / 교내 대회를 통해 디자인 시안을 마크업으로 옮기는 감각을 키웠습니다."
+                    }
+                ]
+            },
+            {
+                "temp": false,
+                "summary": {
+                    "company": "중학교",
+                    "team": "학생회 홍보부",
+                    "period": "2015.03 ~ 2017.02",
+                    "intro": "학생회 홍보부장으로 활동하며 학교 소식을 웹 페이지로 게시하기 시작했습니다. 조직 안내를 디지털 채널로 옮기는 경험이 이후 웹 제작 관심으로 이어졌습니다.",
+                    "clients": [],
+                    "roles": ["학급회장", "학생회 홍보부장", "학생회 페이지 신설 / 운영"]
+                },
+                "timeline": [
+                    {
+                        "period": "2017",
+                        "title": "학생회 페이지 신설",
+                        "description": "홍보부장으로서 학생회 소개, 행사, 공지를 모을 전용 페이지를 만들었습니다. 글 / 이미지 업데이트와 메뉴 구성을 직접 맞추며 웹이 학교 안내 도구가 될 수 있음을 경험했습니다."
+                    },
+                    {
+                        "period": "2016",
+                        "title": "홍보부 활동 확대",
+                        "description": "학생회 홍보 업무를 맡으며 교내 행사 안내와 게시물을 만들었습니다. 인쇄물 중심의 안내를 온라인에서도 공유할 수 있는 형태로 고민했습니다."
+                    },
+                    {
+                        "period": "2015",
+                        "title": "학급 / 학생회 리더십",
+                        "description": "중학교 입학 후 학급회장을 맡으며 반 일정 / 소통을 조율했습니다. 학생회 홍보부에 들어가 공지 / 행사 홍보를 돕기 시작했고, 글과 visual 자료로 학교 소식을 전하는 역할에 익숙해졌습니다."
+                    }
+                ]
+            }
+        ],
+        "highlights": {
+            "awards": [
+                "2023 일학습병행 우수사례 경진대회 대상",
+                "2022 메이커톤 「지구(EARTH)」 우수상",
+                "한반도 체인지 메이커톤 우수상",
+                "제5회 G AI & IoT 메이커톤 최우수상",
+                "2020 명동 루프탑 캐릭터 메이커톤 대상",
+                "제6회 신한 29초 영화제 일반부 특별상"
+            ],
+            "certifications": [
+                "NCS 인공지능개발_L5",
+                "NCS SW개발_L5",
+                "기업현장교사 3급",
+                "정보통신기술자경력수첩 초급",
+                "정보처리산업기사",
+                "정보처리기능사",
+                "웹디자인기능사",
+                "NCA",
+                "컴퓨터활용능력 1급 필기합격"
+            ],
+            "roles": ["i-AWARDS 평가위원", "편성기준 개발위원", "출제/검토위원", "외부평가 감독위원", "모니터링/컨설팅위원", "과정지정 심사위원"],
+            "activities": [
+                "한국공학대학교 임시학생회 운영",
+                "청소년 연합 자기개발 동아리 MC 설립/운영",
+                "서울디지텍고 학생회 활동",
+                "웹디자인 동아리 MOD 회장"
+            ],
+            "descriptions": {
+                "awards": "고등학교 시절부터 실무와 연결되는 프로젝트형 활동과 대회에 꾸준히 참여하며 아이디어를 결과물로 구현해왔습니다.",
+                "certifications": "실무 경험에 더해 자격과 인증을 통해 기초 역량부터 확장 역량까지 꾸준히 검증했습니다.",
+                "roles": "실무 수행을 넘어 평가와 검토, 기준 수립에 참여할 수 있는 수준의 전문성과 신뢰를 인정받았습니다.",
+                "activities": "학생 시절부터 리더십과 실행력을 바탕으로 사람과 구조를 연결하는 역할을 지속해왔습니다."
+            }
+        },
+        "works": {
+            "career": [
+                {
+                    "id": "samhwa-eco-dashboard",
+                    "category": "project",
+                    "title": "삼화페인트 생태공장 대시보드",
+                    "period": "2026.05",
+                    "type": "SI / 대시보드",
+                    "role": "퍼블리싱 100%, UI 개선 50%",
+                    "tech": ["Visual Studio Code", "Git", "Vue", "JavaScript", "SCSS", "HTML"],
+                    "introduction": "운영자가 공정 / 환경 데이터를 한 화면에서 빠르게 확인하는 생태공장 대시보드입니다. 카드 / 상태 표시 / 차트 / 정보성 UI가 제각각이던 화면을 하나의 시각 규칙으로 묶어 \"보기 좋은 화면\"보다 \"빠르게 읽히는 화면\"에 초점을 맞췄습니다.",
+                    "myWorks": [
+                        "대시보드 Client 화면 전체 퍼블리싱 — 카드, 데이터 영역, 상태 표시, 차트, 정보성 UI",
+                        "화면별로 흩어져 있던 위계 / 간격 / 정렬 기준을 통일해 일관된 카드형 레이아웃 정립",
+                        "정상 / 경고 등 상태 표현을 색 / 라벨 규칙으로 정리해 데이터 판독성 강화",
+                        "차트 / 수치 영역의 반응형 대응으로 다양한 해상도에서 가독성 유지",
+                        "기존 화면의 불규칙한 스타일을 정리하며 UI 개선(50%)을 함께 수행"
+                    ],
+                    "achievements": [
+                        "정보 가독성과 UI 일관성을 개선해 운영자의 데이터 확인 속도 향상",
+                        "카드 레이아웃 / 상태 표현 규칙을 표준화해 신규 위젯 추가 시 재사용 가능"
+                    ],
+                    "points": ["데이터 중심 대시보드 UI", "상태 / 위계 시각화 규칙 정립", "짧은 기간에 화면 일관성 확보"],
+                    "pin": true,
+                    "duration": "약 1개월",
+                    "captures": ["/images/projects/samhwa-eco-dashboard/image-01.webp"],
+                    "languages": ["Vue", "JavaScript", "SCSS", "HTML"]
+                },
+                {
+                    "id": "orchem-mes",
+                    "category": "project",
+                    "title": "오알켐 MES 리뉴얼",
+                    "period": "2026.03~",
+                    "type": "실무 / 구축",
+                    "role": "퍼블리싱 100%, UI 컴포넌트 구조 개선 70%, 화면 구조 설계 50%",
+                    "tech": [
+                        "Vue 3",
+                        "Vite",
+                        "JavaScript",
+                        "SCSS",
+                        "HTML",
+                        "Vue Router",
+                        "Pinia",
+                        "Axios",
+                        "Vue I18n",
+                        "AG Grid",
+                        "Chart.js",
+                        "flatpickr",
+                        "marked"
+                    ],
+                    "introduction": "Vue 3 + Vite 기반으로 제조 현장의 MES를 리뉴얼했습니다. Vue Router / Pinia / Axios / Vue I18n 구조 위에서 업무 화면을 구성하고, 반복 화면을 공통 컴포넌트로 묶어 AG Grid 테이블 UX와 태블릿 사용성을 끌어올렸습니다.",
+                    "myWorks": [
+                        "Vue Router / Pinia / Axios / Vue I18n 구조에 맞춰 MES 업무 화면 퍼블리싱 / 구성",
+                        "공통 컴포넌트(AppGrid / AppInput / AppSelect / AppButton / AppAccordion / AppModalHost)를 활용 / 개선해 화면 간 UI 일관성 확보",
+                        "원재료 준비 / 중간 검사 / 검사 결과 / 태블릿 화면의 레이아웃과 인터랙션 개선",
+                        "AG Grid 검색 / 선택 / 삭제 / 칩 렌더링 / 조건부 스타일 / 엑셀 다운로드 / 행/헤더 높이까지 테이블 동작 정리",
+                        "태블릿 환경의 버튼 / 카드 / 아코디언 / 그리드 반응형 / 터치 UI 개선",
+                        "API 응답 / 다국어 키를 안정적으로 반영하도록 props / 상태값 / 이벤트 처리 구조 정리"
+                    ],
+                    "achievements": [
+                        "반복되는 MES 화면을 공통 컴포넌트 중심으로 정리해 유지보수성 향상",
+                        "AG Grid 테이블의 검색 / 선택 / 렌더 / 다운로드 구조를 표준화해 프로젝트 전반의 확장성 / 재사용성 확보",
+                        "퍼블리싱과 프론트엔드 개발 사이 연결성을 높여 협업 효율 개선"
+                    ],
+                    "points": ["AG Grid 테이블 UX 표준화", "태블릿 업무 UI 대응", "Vue 3 + Vite 구조 연동"],
+                    "pin": true,
+                    "duration": "진행 중 / 약 3개월~",
+                    "captures": [
+                        "/images/projects/orchem-mes/image-01.webp",
+                        "/images/projects/orchem-mes/image-02.webp",
+                        "/images/projects/orchem-mes/image-03.webp",
+                        "/images/projects/orchem-mes/image-04.webp",
+                        "/images/projects/orchem-mes/image-05.webp",
+                        "/images/projects/orchem-mes/image-06.webp"
+                    ],
+                    "languages": ["Vue 3", "Vite", "JavaScript", "SCSS", "AG Grid"]
+                },
+                {
+                    "id": "hanjinkal",
+                    "category": "project",
+                    "title": "한진칼 및 계열사 리뉴얼",
+                    "period": "2025.02~07",
+                    "type": "기업 사이트 / CMS",
+                    "role": "문서화 / 교육 지원 80%, 운영 안정화 80%, 협업 커뮤니케이션 40%",
+                    "tech": ["IntelliJ", "ICE 5.0", "Microsoft Teams", "Word", "PowerPoint", "HTML", "SCSS", "Vue.js"],
+                    "introduction": "한진칼과 계열사 홈페이지 리뉴얼에서 콘센트릭스가 전달한 Vue 컴포넌트를 ICE 5.0 CMS에 맞게 커스터마이징했습니다. 공식 가이드가 없어 생긴 교육 혼선을 줄이기 위해 개발 구조와 ICE 환경 세팅 가이드를 만들어 공유했고, 이후 대외 커뮤니케이션도 맡았습니다.",
+                    "myWorks": [
+                        "콘센트릭스가 전달한 Vue 컴포넌트를 ICE 5.0 CMS 구조에 맞게 커스터마이징 / 재구성",
+                        "ICE가 요구하는 파일 구조를 직접 설계하고, 컴포넌트를 재사용 / 확장 가능한 CMS 친화형으로 변환",
+                        "공식 가이드 부재로 생긴 교육 혼선을 해소하기 위해 개발 구조 / ICE 세팅 가이드를 직접 기획 / 제작해 콘센트릭스 / 한진칼에 공유",
+                        "ICE 내부 기능 미비로 발생한 이슈를 ICE 담당자와 지속 커뮤니케이션하며 해결 속도 단축",
+                        "퍼블리싱 가이드를 유지하면서 다양한 디바이스 대응 마크업 / 스타일링을 주도적으로 수정 / 적용",
+                        "2025.04 ICE 담당자 롤아웃 이후 대외 커뮤니케이션 전담, 내부 산출물 정리 / 공유로 협업 효율 유지"
+                    ],
+                    "achievements": [
+                        "가이드 / 산출물 정리로 교육 / 협업 혼선을 줄여 커뮤니케이션 비용 약 30% 절감 추산",
+                        "ICE 기능 한계 상황에서도 컴포넌트 재사용 / 확장 구조를 확보해 운영 안정성 향상",
+                        "협력사(콘센트릭스 / 아이온)–고객사(한진칼) 사이를 잇는 커뮤니케이션 허브 역할 수행"
+                    ],
+                    "points": ["CMS 커스터마이징 적응력", "가이드 / 문서화 / 교육 주도", "다자 협업 커뮤니케이션"],
+                    "pin": true,
+                    "duration": "약 6개월",
+                    "captures": [
+                        "/images/projects/hanjinkal/image-01.webp",
+                        "/images/projects/hanjinkal/image-02.webp",
+                        "/images/projects/hanjinkal/image-03.webp",
+                        "/images/projects/hanjinkal/image-04.webp",
+                        "/images/projects/hanjinkal/image-05.webp"
+                    ],
+                    "languages": ["HTML", "SCSS", "Vue"]
+                },
+                {
+                    "id": "oms",
+                    "category": "project",
+                    "title": "깨끗한나라 OMS 리뉴얼",
+                    "period": "2024.07~2025.02",
+                    "type": "시스템 리뉴얼",
+                    "role": "전체 퍼블리싱 100%",
+                    "tech": ["Vue", "SCSS", "Figma"],
+                    "introduction": "깨끗한나라 OMS 리뉴얼에서 전체 화면 퍼블리싱을 맡았습니다. 주요 화면을 일정보다 빠르게 끝낸 뒤 Vue 컴포넌트 개발에 참여하고, 오픈 전 UI/UX 개선안을 제안했습니다. 마진 / 폰트 같은 디테일까지 챙긴 사례입니다.",
+                    "myWorks": [
+                        "전체 화면을 Vue 기반으로 퍼블리싱 전담",
+                        "주요 화면을 약 1개월 만에 조기 완료해 일정 여유 확보",
+                        "잔여 기간에 자발적으로 Vue 컴포넌트 개발에 참여해 프론트엔드 기여 확대",
+                        "서비스 오픈 전 UI/UX 개선 항목을 정리해 팀장에게 제안, 일부 실제 반영",
+                        "세부 마진 / 폰트 크기까지 점검해 화면 완성도 유지"
+                    ],
+                    "achievements": ["주요 화면 약 1개월 조기 완료로 일정 리스크 완화", "개선 제안 일부가 실제 반영되어 사용자 경험 향상에 기여"],
+                    "points": ["일정 단축과 품질을 동시 달성", "자발적 프론트엔드 기여", "개선 제안형 퍼블리셔"],
+                    "pin": true,
+                    "duration": "약 8개월",
+                    "captures": [
+                        "/images/projects/oms/image-01.webp",
+                        "/images/projects/oms/image-02.webp",
+                        "/images/projects/oms/image-03.webp",
+                        "/images/projects/oms/image-04.webp",
+                        "/images/projects/oms/image-05.webp"
+                    ],
+                    "languages": ["Vue", "SCSS"]
+                },
+                {
+                    "id": "smart-factory-gov",
+                    "category": "project",
+                    "title": "스마트팩토리 정부 사업 프로젝트",
+                    "period": "2021.05~2022.07",
+                    "type": "SI / SM",
+                    "role": "퍼블리싱 100%, 디자인 20%",
+                    "tech": ["eGovFrame", "Adobe XD", "HTML", "CSS", "jQuery"],
+                    "introduction": "테라에코의 MES 도입 / 스마트팩토리 구축에서 출발해 썬겔 / 다우기업 / 신애전자 등 다수 제조사로 확장된 정부 지원 사업입니다. 일회성 납품이 아니라 자사 솔루션으로 키워가는 과정이었고, 각 기업의 브랜드 철학과 색상을 반영한 맞춤 디자인으로 높은 만족도를 끌어냈습니다. 이때 쌓은 화면 노하우가 이후 Robo MES 솔루션의 토대가 됐습니다.",
+                    "myWorks": [
+                        "테라에코 MES 도입 / 스마트팩토리 구축 화면 퍼블리싱 100% 수행",
+                        "썬겔 / 다우기업 / 신애전자 등 다수 제조사로 확장하며 기업별 요구사항 반영",
+                        "각 기업의 브랜드 철학 / 색상을 반영한 맞춤 UI 디자인(20%) 제공",
+                        "반복 화면을 솔루션화 관점으로 정리해 후속 재사용 기반 마련"
+                    ],
+                    "achievements": [
+                        "다수 고객사로 사업을 확장하며 맞춤 디자인으로 높은 만족도 확보",
+                        "축적한 MES 화면 노하우가 자사 Robo MES 솔루션 구축의 기반이 됨"
+                    ],
+                    "points": ["다수 고객사 동시 대응", "브랜드 맞춤 디자인", "솔루션화 기반 경험"],
+                    "pin": false,
+                    "duration": "약 15개월",
+                    "captures": [
+                        "/images/projects/smart-factory-gov/image-01.webp",
+                        "/images/projects/smart-factory-gov/image-02.webp",
+                        "/images/projects/smart-factory-gov/image-03.webp",
+                        "/images/projects/smart-factory-gov/image-04.webp",
+                        "/images/projects/smart-factory-gov/image-05.webp"
+                    ],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "kwangjang-homepage",
+                    "category": "project",
+                    "title": "광장 파트너스 홈페이지",
+                    "period": "2020.11~2020.12",
+                    "type": "SI / 구축",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["Visual Studio Code", "Sketch", "HTML", "CSS", "jQuery"],
+                    "introduction": "입사 초기에 맡은 광장 파트너스 기업 홈페이지 신규 구축 작업입니다. Sketch 시안을 기준으로 반응형 / 크로스브라우징을 챙기며 기업 사이트의 기본기를 다졌습니다.",
+                    "myWorks": ["기업 홈페이지 전 화면 퍼블리싱 전담", "Sketch 시안 기반 반응형 / 크로스브라우징 대응"],
+                    "achievements": [],
+                    "points": ["초기 실무 구축 경험", "기업 사이트 퍼블리싱 기본기"],
+                    "pin": false,
+                    "duration": "약 2개월",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "hama-app",
+                    "category": "project",
+                    "title": "하마 애플리케이션",
+                    "period": "2020.09~2020.10",
+                    "type": "SI / 구축",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["Visual Studio Code", "Sketch", "HTML", "CSS", "JavaScript"],
+                    "introduction": "입사 첫 달에 맡은 부동산 건축 서비스 애플리케이션 작업입니다. 화면 퍼블리싱부터 웹앱 형태의 사용 흐름까지 처음으로 다뤘습니다.",
+                    "myWorks": [
+                        "부동산 건축 서비스 애플리케이션 화면 퍼블리싱",
+                        "JavaScript 기반 인터랙션 구현",
+                        "웹앱(WebApp) 형태로 빌드해 앱 사용 흐름 구현"
+                    ],
+                    "achievements": [],
+                    "points": ["앱형 웹 구축 경험", "서비스 애플리케이션 퍼블리싱"],
+                    "pin": false,
+                    "duration": "약 2개월",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "JavaScript"]
+                },
+                {
+                    "id": "hanon",
+                    "category": "operation",
+                    "title": "한온시스템 홈페이지 운영",
+                    "period": "2025.07~",
+                    "type": "SM 운영",
+                    "role": "퍼블리싱 100%, 운영 이슈 대응 100%",
+                    "tech": ["Rider", "Teams", "JIRA", "C#", "CSS3", "csHtml", "JavaScript"],
+                    "introduction": "콘센트릭스 CATALYST와 함께 한온시스템 홈페이지를 운영하는 SM 사업입니다. JIRA 티켓을 화면 수정으로만 보지 않고 csHtml 뷰, CSP, 인코딩, 정적 리소스 경로, 404, 보안 설정까지 영향 범위를 확인했습니다.",
+                    "myWorks": [
+                        "JIRA 운영 티켓 기반으로 요청사항을 분석하고 우선순위에 맞춰 대응",
+                        "문구 / 타이틀 / 이미지 / 링크 / 레이아웃 / 콘텐츠 영역 등 퍼블리싱 중심 유지보수 수행",
+                        "csHtml 화면 구조를 확인하고 필요 시 CSS / 정적 리소스를 직접 수정",
+                        "CSP / 인코딩 / 정적 리소스 경로 / 404 / 보안 점검 이슈를 퍼블리싱 관점에서 검토하고 영향 범위 정리"
+                    ],
+                    "achievements": [
+                        "운영 요청을 신속히 반영해 홈페이지 콘텐츠의 최신성 유지",
+                        "뷰 구조 / CSS 경로 / 보안 설정 영향까지 함께 검토해 운영 안정성 확보에 기여"
+                    ],
+                    "points": ["운영 대응력", "티켓 기반 유지보수 체계", "배포 / 보안 영향까지 검토하는 시야"],
+                    "pin": true,
+                    "duration": "진행 중",
+                    "captures": ["/images/projects/hanon/image-01.webp", "/images/projects/hanon/image-02.webp"],
+                    "languages": ["C#", "CSS3", "csHtml", "JavaScript"]
+                },
+                {
+                    "id": "tms-maintenance",
+                    "category": "operation",
+                    "title": "TMS 운영 / 보수",
+                    "period": "2023.05~2023.07",
+                    "type": "SM 운영 / 보수",
+                    "role": "이슈 리포트 / 운영 대응 100%, 보수 퍼블리싱 100%",
+                    "tech": ["Nexacro"],
+                    "introduction": "태림포장 / 대영포장 TMS의 속도 저하 이슈 해결을 위해 투입된 뒤, 단위 테스트로 원인을 찾아 해결하고 그대로 운영 대응까지 이어간 프로젝트입니다. 서비스에 익숙해지자 자발적으로 고객 응대를 맡아 일 평균 15건 이상이던 불편 접수를 2건 수준으로 줄였고, 반복 이슈는 UX/UI 개선과 보수 작업으로 연결했습니다.",
+                    "myWorks": [
+                        "속도 저하 이슈를 단위 테스트로 특정해 원인 해결",
+                        "자발적으로 고객 응대를 맡아 속도 / 화면 오류 등 불편사항 즉시 처리",
+                        "미해결 이슈는 개발팀에 신속 보고하고, 해결 케이스를 산출물로 정리",
+                        "반복되는 불편 사항을 분석해 UX/UI 개선 / 보수 화면(Nexacro)으로 연결"
+                    ],
+                    "achievements": [
+                        "일 평균 불편 접수 15건 이상 → 2건 수준으로 획기적 단축",
+                        "해결 케이스 산출물이 동일 이슈 재발 시 대응 자료로 재사용됨"
+                    ],
+                    "points": ["운영 개선형 퍼블리싱", "주도적 고객 응대", "재발 방지 산출물화"],
+                    "pin": false,
+                    "duration": "약 3개월",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Nexacro"]
+                },
+                {
+                    "id": "framework",
+                    "category": "solution",
+                    "title": "조앤소프트 프레임워크 구축",
+                    "period": "2026.02~",
+                    "type": "내부 프로젝트 / 프레임워크",
+                    "role": "퍼블리싱 100%, 프론트엔드 구조 설계 70%, 디자인 시스템 구축 70%",
+                    "tech": [
+                        "Nuxt 3",
+                        "Vue 3",
+                        "TypeScript",
+                        "JavaScript",
+                        "SCSS",
+                        "Pinia",
+                        "Axios",
+                        "Vite",
+                        "Vue I18n",
+                        "Chart.js",
+                        "vue-chartjs",
+                        "AG Grid",
+                        "flatpickr",
+                        "noUiSlider"
+                    ],
+                    "introduction": "프로젝트마다 화면 기반을 새로 짜던 비효율을 줄이기 위해 Nuxt 3 기반 자사 프론트엔드 프레임워크를 구축했습니다. 자동 라우팅, 컴포넌트 자동 import, 상태 관리, API 플러그인과 실무 상태를 반영한 UI 컴포넌트, 디자인 토큰 기반 SCSS를 하나의 표준으로 묶었습니다.",
+                    "myWorks": [
+                        "자동 라우팅 / 컴포넌트 자동 import / Pinia 상태 관리 / Axios API 플러그인 등 기반 구조 정리",
+                        "AppButton / AppInput / AppSelect / AppDatePicker / AppProgress / Chart / AG Grid 등 재사용 컴포넌트 제작",
+                        "컴포넌트마다 size / disabled / readonly / focus / error / loading / active 등 실무 상태를 반영",
+                        "BEM 네이밍과 디자인 토큰(색 / 타이포 / 간격 / 상태 / 반응형)을 기준으로 SCSS 구조 설계",
+                        "composable / 레이아웃 / 공통 플러그인을 실무 적용 가능한 형태로 구성하고 예제 페이지 제작"
+                    ],
+                    "achievements": [
+                        "프로젝트마다 반복 구축하던 기본 UI / 레이아웃 / API 연동 / SCSS 구조를 프레임워크화",
+                        "컴포넌트 / API 구조 / 예제 페이지를 함께 정리해 신규 프로젝트 착수 속도를 높이는 협업 표준 구축"
+                    ],
+                    "points": ["Nuxt 3 프레임워크화", "실무 상태 반영 컴포넌트", "디자인 토큰 기반 SCSS"],
+                    "pin": true,
+                    "duration": "진행 중",
+                    "captures": [
+                        "/images/projects/framework/image-01.webp",
+                        "/images/projects/framework/image-02.webp",
+                        "/images/projects/framework/image-03.webp",
+                        "/images/projects/framework/image-04.webp"
+                    ],
+                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/framework/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/framework"
+                        }
+                    ]
+                },
+                {
+                    "id": "infra",
+                    "category": "solution",
+                    "title": "자사 개발 인프라 및 퍼블리싱 표준화",
+                    "period": "2026.02~",
+                    "type": "내부 프로젝트",
+                    "role": "퍼블리싱 표준화 80%, UI 구조 개선 70%, 문서화 50%",
+                    "tech": ["GitHub", "Visual Studio Code", "Cursor", "Figma", "Vue 3", "Nuxt 3", "SCSS", "JavaScript", "TypeScript"],
+                    "introduction": "프레임워크 구축과 함께 산발적으로 작성되던 화면 구조, SCSS, 컴포넌트 네이밍, 폴더 구조, API 연동, 다국어 처리를 하나의 기준으로 맞춘 표준화 작업입니다. 실무 적용 가능한 예제 페이지와 스타일 가이드도 함께 만들었습니다.",
+                    "myWorks": [
+                        "버튼 / 입력폼 / 셀렉트 / 달력 / 프로그레스 / 차트 / 그리드 / LNB / 레이아웃 구조를 공통화",
+                        "컴포넌트 네이밍 / 폴더 구조 / API 연동 / 다국어 처리 방식을 신규 프로젝트 재사용 가능한 형태로 정리",
+                        "SCSS 토큰 / BEM 네이밍 / 컴포넌트 단위 스타일 관리 방식 정립",
+                        "실무 적용 가능한 예제 페이지와 스타일 가이드 제작 / 문서화"
+                    ],
+                    "achievements": [
+                        "신규 프로젝트 착수 시 기본 레이아웃 / 컴포넌트 / 스타일 가이드를 빠르게 적용할 수 있는 기반 마련",
+                        "산발적이던 UI 구조를 공통화해 퍼블리싱–프론트엔드 협업 생산성 향상 기반 구축"
+                    ],
+                    "points": ["퍼블리싱 표준화", "재사용성 / 협업성 향상", "예제 / 가이드 문서화"],
+                    "pin": true,
+                    "duration": "진행 중",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue 3", "Nuxt 3", "SCSS", "TypeScript"]
+                },
+                {
+                    "id": "robo-tms",
+                    "category": "solution",
+                    "title": "Robo TMS 솔루션",
+                    "period": "2024.02~04",
+                    "type": "자사 솔루션",
+                    "role": "기획 30%, 퍼블리싱 100%, 디자인 80%",
+                    "tech": ["Vue", "SCSS", "Figma"],
+                    "introduction": "TMS 서비스를 운영하며 마주한 여러 고객의 요구 / 문의를 직접 해결해 본 경험을 토대로, 자사 솔루션 Robo TMS를 만든 프로젝트입니다. 특히 고객용 애플리케이션은 UI / UX 디자인부터 퍼블리싱까지 직접 맡아 가장 애정을 쏟았고, 개편된 UI와 더 편한 UX로 고객 만족도를 끌어올렸습니다.",
+                    "myWorks": [
+                        "운영 중 수집한 고객 요구 / 문의를 바탕으로 기획에 참여",
+                        "고객용 애플리케이션의 UI / UX 디자인을 직접 설계",
+                        "Vue / SCSS 기반으로 전체 화면 퍼블리싱 전담",
+                        "개편된 UI와 더 편한 사용 흐름으로 사용성 개선"
+                    ],
+                    "achievements": ["개선된 UX로 사용자 문의 약 25% 감소 추산", "운영 경험을 제품화로 연결한 자사 솔루션 결과물 완성"],
+                    "points": ["기획 / 디자인 / 퍼블리싱 일체형 수행", "운영 경험 → 제품화", "사용성 개선 사례"],
+                    "pin": false,
+                    "duration": "약 3개월",
+                    "captures": [
+                        "/images/projects/robo-tms/image-01.webp",
+                        "/images/projects/robo-tms/image-02.webp",
+                        "/images/projects/robo-tms/image-03.webp"
+                    ],
+                    "languages": ["Vue", "SCSS"]
+                },
+                {
+                    "id": "robo-mes",
+                    "category": "solution",
+                    "title": "Robo MES 솔루션 개발",
+                    "period": "2022.08~2023.04",
+                    "type": "자사 솔루션",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["WebSquare", "Figma", "HTML", "CSS", "jQuery"],
+                    "introduction": "여러 제조사의 MES / 스마트팩토리 프로젝트에서 다진 노하우를 모아 자사 Robo MES 솔루션으로 제품화한 프로젝트입니다. 퍼블리싱을 100% 담당하며 화면을 모듈 단위 컴포넌트로 구축해, 이후 프로젝트의 화면 제작 공수를 크게 줄이는 기반을 만들었습니다.",
+                    "myWorks": [
+                        "반복 화면을 모듈 단위 UI 컴포넌트로 구축",
+                        "전체 퍼블리싱을 전담하며 화면 구조 일관성 고도화",
+                        "WebSquare 환경에서 컴포넌트 재사용 체계 정착"
+                    ],
+                    "achievements": ["모듈화로 퍼블리싱 공수 약 40% 절감", "현장 프로젝트 노하우를 재사용 가능한 솔루션 자산으로 전환"],
+                    "points": ["솔루션 제품화 경험", "모듈화 기반 생산성 향상"],
+                    "pin": false,
+                    "duration": "약 9개월",
+                    "captures": ["/images/projects/robo-mes/image-01.webp", "/images/projects/robo-mes/image-02.webp"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "company-renewal",
+                    "category": "renewal",
+                    "title": "자사 홈페이지 리뉴얼",
+                    "period": "2025.07~2025.08",
+                    "type": "내부 프로젝트",
+                    "role": "퍼블리싱 100%, UI 개선 50%, 콘텐츠 기획 30%",
+                    "tech": ["Cursor", "Figma", "Git", "FileZilla", "Whois Hosting", "HTML", "SCSS", "JavaScript", "jQuery"],
+                    "introduction": "구조 복잡성과 정보 노후화로 신뢰도가 떨어진 자사 홈페이지를, AW VIETNAM 2025 국제 전시회를 앞두고 3주 만에 전면 리뉴얼한 프로젝트입니다. 2022년 코드의 구조적 한계를 리팩토링하고, 형상관리가 안 되던 FTP 배포를 Git 도입으로 전환하자고 직접 제안했으며, 영문 / 베트남어 다국어와 SSL / SEO / 접근성까지 함께 끌어올렸습니다.",
+                    "myWorks": [
+                        "중복 마크업 / 불필요 요소를 제거하고 SCSS 컴포넌트 구조 도입으로 유지보수성 개선",
+                        "AW VIETNAM 2025 대비 영문 / 베트남어 다국어를 유연한 텍스트 적용 방식으로 설계 / 구현",
+                        "형상관리가 안 되던 FTP 배포를 Git 도입으로 전환하자고 주도적으로 제안 / 적용",
+                        "최신 프로젝트 레퍼런스 / 솔루션 / 회사 소개 등 콘텐츠를 최신화하고 일부 페이지 구성 기획",
+                        "SSL 인증서 적용과 SEO / 오픈그래프 / 접근성 / 반응형 표준 반영"
+                    ],
+                    "achievements": [
+                        "중복 마크업 제거 / SCSS 컴포넌트화로 유지보수 효율 약 40% 향상",
+                        "다국어 / SEO / SSL / OG 적용으로 글로벌 접근성과 검색 유입 개선 (~25% 증가 추산)",
+                        "FTP→Git 전환으로 배포 안정성과 협업 추적성 확보"
+                    ],
+                    "points": ["브랜드 / 정보 신뢰도 개선", "다국어 / 웹 표준 대응", "Git 도입을 주도한 개선 제안"],
+                    "pin": true,
+                    "duration": "약 3주",
+                    "captures": [
+                        "/images/projects/company-renewal/image-01.webp",
+                        "/images/projects/company-renewal/image-02.webp",
+                        "/images/projects/company-renewal/image-03.webp"
+                    ],
+                    "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
+                    "links": [
+                        {
+                            "label": "사이트 보기",
+                            "href": "https://jonsoft.co.kr/"
+                        }
+                    ]
+                },
+                {
+                    "id": "kyungdongwon-cms",
+                    "category": "renewal",
+                    "title": "경동원 CMS 리뉴얼",
+                    "period": "2025.07",
+                    "type": "SI / CMS",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["WebSquare SP5", "XML", "CSS3"],
+                    "introduction": "기존 투입 인원의 장기 공가로 생긴 공백을 메우기 위해 단기 투입된 프로젝트입니다. 다른 사람이 만들던 화면을 빠르게 파악해 디테일한 오류를 수정하고 신규 페이지까지 제작하며, 짧은 기간에도 매끄럽게 합류하는 온보딩 역량을 보였습니다.",
+                    "myWorks": ["기존 인원이 제작한 화면의 디테일한 오류 수정", "신규 페이지 퍼블리싱", "웹스퀘어 SP5 CMS 구조에 빠르게 적응해 합류"],
+                    "achievements": ["약 2주 내 신규 / 수정 화면 납품 완료", "코드 기준을 맞춰 기존 작업과의 충돌 최소화"],
+                    "points": ["단기 투입 대응력", "CMS 퍼블리싱 안정화"],
+                    "pin": false,
+                    "duration": "약 2주",
+                    "captures": [
+                        "/images/projects/kyungdongwon-cms/image-01.webp",
+                        "/images/projects/kyungdongwon-cms/image-02.webp",
+                        "/images/projects/kyungdongwon-cms/image-03.webp"
+                    ],
+                    "languages": ["XML", "CSS3"]
+                },
+                {
+                    "id": "fems",
+                    "category": "renewal",
+                    "title": "삼화페인트 FEMS 리뉴얼",
+                    "period": "2024.11",
+                    "type": "SI / 단기 납품",
+                    "role": "퍼블리싱 50%",
+                    "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS", "React.js"],
+                    "introduction": "삼화페인트 FEMS 도입 프로젝트에서 React 기반 주요 화면을 1주 이내에 구현해야 하는 급한 납기에 대응한 작업입니다. 다수의 업무용 웹 애플리케이션 퍼블리싱 경험을 바탕으로 짧은 기간에도 완성도를 확보해 프로젝트 안정화에 기여했습니다.",
+                    "myWorks": ["1주 내 우선 구현이 필요한 React 주요 화면 단기 구축", "급한 납기 속에서도 완성도를 유지하는 퍼블리싱 수행"],
+                    "achievements": ["1주 내 주요 화면 구현으로 일정 준수 / 프로젝트 안정화 지원"],
+                    "points": ["단기 납품 대응력", "React 퍼블리싱 경험"],
+                    "pin": false,
+                    "duration": "약 1주",
+                    "captures": ["/images/projects/fems/image-01.webp", "/images/projects/fems/image-02.webp"],
+                    "languages": ["HTML", "SCSS", "React"]
+                },
+                {
+                    "id": "scm-daeyang-paper",
+                    "category": "renewal",
+                    "title": "대양제지 SCM 리뉴얼",
+                    "period": "2024.05~2024.06",
+                    "type": "SI / 신규 구축",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS"],
+                    "introduction": "대양제지 SCM 신규 구축에서는 이전 프로젝트에서 쌓은 공통 컴포넌트 / 재사용 경험을 적극 활용했습니다. 전체 퍼블리싱 공수를 약 60% 절감하면서 이후 수정과 확장도 고려했습니다.",
+                    "myWorks": [
+                        "공통 UI 요소를 체계화하고 재사용 구조로 반영",
+                        "컴포넌트 기반 퍼블리싱으로 화면 일관성 확보",
+                        "유지보수 / 확장성을 고려한 마크업 설계"
+                    ],
+                    "achievements": ["공통 컴포넌트 재사용으로 전체 퍼블리싱 공수 약 60% 절감", "퍼블리싱 효율화로 개발 일정 단축에 기여"],
+                    "points": ["재사용 중심 퍼블리싱", "일정 단축 기여"],
+                    "pin": false,
+                    "duration": "약 2개월",
+                    "captures": [
+                        "/images/projects/scm-daeyang-paper/image-01.webp",
+                        "/images/projects/scm-daeyang-paper/image-02.webp",
+                        "/images/projects/scm-daeyang-paper/image-03.webp"
+                    ],
+                    "languages": ["HTML", "SCSS"]
+                },
+                {
+                    "id": "scm-daeyang-board",
+                    "category": "renewal",
+                    "title": "대양판지 SCM 리뉴얼",
+                    "period": "2023.08~2024.01",
+                    "type": "SI / 리뉴얼",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS", "React"],
+                    "introduction": "대양판지 SCM 리뉴얼에서는 고객 버전과 관리자 버전을 분리해 구현했습니다. 고객 버전은 HTML로 만들고, 관리자 버전은 React 구조에 맞춰 컴포넌트로 전환하며 두 가지 화면 전략을 다뤘습니다.",
+                    "myWorks": [
+                        "고객 버전 HTML 퍼블리싱",
+                        "관리자 버전을 React 구조에 맞춰 컴포넌트로 제작",
+                        "버전별 요구사항에 맞춘 화면 분리 / 구성"
+                    ],
+                    "achievements": [],
+                    "points": ["멀티 버전 구조 대응", "React 컴포넌트 적응력"],
+                    "pin": false,
+                    "duration": "약 6개월",
+                    "captures": ["/images/projects/scm-daeyang-board/image-01.webp", "/images/projects/scm-daeyang-board/image-02.webp"],
+                    "languages": ["HTML", "SCSS", "React"]
+                },
+                {
+                    "id": "company-renewal-2022",
+                    "category": "renewal",
+                    "title": "자사 홈페이지 리뉴얼 (2022)",
+                    "period": "2022.01~2022.03",
+                    "type": "내부 프로젝트",
+                    "role": "퍼블리싱 100%, 디자인 40%, UX 기획 25%",
+                    "tech": ["Visual Studio Code", "Figma", "FileZilla", "Whois Hosting", "HTML", "CSS", "jQuery"],
+                    "introduction": "단방향 소통에 머물던 단조로운 기존 홈페이지를 개선하기 위해 리뉴얼을 직접 건의하고, 기획 / 디자인 / 퍼블리싱 / 배포 / 운영까지 일체형으로 수행한 프로젝트입니다. 성공적인 홈페이지 레퍼런스를 수집해 콘텐츠를 기획하고, SEO / 오픈그래프를 챙긴 뒤 후이즈 호스팅으로 올려 지금까지 관리하고 있습니다.",
+                    "myWorks": [
+                        "홈페이지에 담길 콘텐츠를 직접 기획하고 성공 레퍼런스 수집 / 활용",
+                        "SEO / 오픈그래프 프로토콜을 반영한 퍼블리싱 수행",
+                        "후이즈 호스팅으로 배포하고 이후 지속 운영 / 관리"
+                    ],
+                    "achievements": ["단방향 구조를 개선해 기업 전문성 / 브랜드 신뢰도 향상에 기여"],
+                    "points": ["기획-구현-운영 일체형 수행", "브랜드 신뢰도 개선 기여"],
+                    "pin": false,
+                    "duration": "약 3개월",
+                    "captures": ["/images/projects/company-renewal-2022/image-01.webp", "/images/projects/company-renewal-2022/image-02.webp"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "incheon-university",
+                    "category": "renewal",
+                    "title": "인천대학교 공과대학 홈페이지 리뉴얼",
+                    "period": "2021.03~2021.04",
+                    "type": "SM / 리뉴얼",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["Visual Studio Code", "Adobe XD", "HTML", "CSS", "jQuery"],
+                    "introduction": "인천대학교 공과대학 홈페이지 리뉴얼 퍼블리싱을 담당한 프로젝트입니다. 학교가 공유한 브로슈어와 공식 홈페이지의 교수님 데이터가 서로 맞지 않는 문제를 그냥 넘기지 않고, 주인의식을 갖고 학교에 직접 건의해 정확한 정보로 수정 / 보완되도록 했습니다.",
+                    "myWorks": [
+                        "공과대학 홈페이지 퍼블리싱 전담",
+                        "브로슈어와 홈페이지 데이터 불일치를 발견해 학교에 개선 건의",
+                        "정확한 정보로 데이터 수정 / 추가 반영"
+                    ],
+                    "achievements": ["주도적 문제 제기로 홈페이지 정보 정확성 개선"],
+                    "points": ["주도적 문제 발견 / 해결", "주인의식 기반 개선"],
+                    "pin": false,
+                    "duration": "약 2개월",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "tos-renewal",
+                    "category": "renewal",
+                    "title": "태림포장 TOS 리뉴얼",
+                    "period": "2021.01~2021.02",
+                    "type": "SI / 리뉴얼",
+                    "role": "퍼블리싱 100%",
+                    "tech": ["eGovFrame", "Sketch", "HTML", "CSS", "jQuery"],
+                    "introduction": "태림포장 사내 주문 시스템(TOS) 리뉴얼 작업입니다. 전자정부 프레임워크 환경에서 업무 시스템 화면을 다뤘고, 이후 태림포장과의 장기 협업(TOMS / TMS)으로 이어졌습니다.",
+                    "myWorks": ["사내 주문 시스템 리뉴얼 화면 퍼블리싱", "전자정부 프레임워크 환경에 맞춘 마크업 구성"],
+                    "achievements": [],
+                    "points": ["업무 시스템 퍼블리싱", "장기 고객 협업의 출발점"],
+                    "pin": false,
+                    "duration": "약 2개월",
+                    "captures": [
+                        "/images/projects/tos-renewal/image-01.webp",
+                        "/images/projects/tos-renewal/image-02.webp",
+                        "/images/projects/tos-renewal/image-03.webp"
+                    ],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                },
+                {
+                    "id": "toms",
+                    "category": "award",
+                    "title": "TOMS 서비스 구축",
+                    "period": "2021.10~12",
+                    "type": "신규 구축",
+                    "role": "디자인 30%, 퍼블리싱 100%, UX 기획 25%",
+                    "tech": ["HTML", "CSS", "jQuery", "Figma"],
+                    "introduction": "태림포장 사내 원지 / 박스 주문 서비스를 리뉴얼 / 구축하며 필요한 애플리케이션의 디자인 협업 / UX 기획 / 퍼블리싱을 함께 수행한 프로젝트입니다. 디자이너와 Figma로 소통하면서 사용법을 익혀 고객사 요구사항을 정확히 반영해 직접 디자인했고, 그 결과물이 스마트앱어워드 2022 업무향상 부문 대상으로 이어졌습니다.",
+                    "myWorks": [
+                        "Figma 기반으로 디자이너와 협업하며 고객 요구사항을 정확히 반영",
+                        "HTML / CSS / jQuery 기반 애플리케이션 화면 퍼블리싱 100% 수행",
+                        "업무 흐름을 고려한 UX 기획과 화면 사용성 개선"
+                    ],
+                    "achievements": ["스마트앱어워드 2022 업무향상 부문 대상 수상"],
+                    "points": ["수상 연계 실적", "디자인 / UX / 퍼블리싱 일체형 구축"],
+                    "pin": true,
+                    "duration": "약 3개월",
+                    "captures": [
+                        "/images/projects/toms/image-01.webp",
+                        "/images/projects/toms/image-02.webp",
+                        "/images/projects/toms/image-03.webp",
+                        "/images/projects/toms/image-04.webp",
+                        "/images/projects/toms/image-05.webp",
+                        "/images/projects/toms/image-06.webp",
+                        "/images/projects/toms/image-07.webp",
+                        "/images/projects/toms/image-08.webp",
+                        "/images/projects/toms/image-09.webp",
+                        "/images/projects/toms/image-10.webp",
+                        "/images/projects/toms/image-11.webp"
+                    ],
+                    "languages": ["HTML", "CSS", "jQuery"]
+                }
+            ],
+            "personal": [
+                {
+                    "id": "jonsoft-framework-portfolio",
+                    "category": "personal",
+                    "title": "포트폴리오 웹사이트 2026",
+                    "period": "2026",
+                    "type": "개인 / Nuxt 포트폴리오",
+                    "role": "디자인 / 퍼블리싱 / 구조 설계 / 프론트엔드 개발 전체 담당",
+                    "tech": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript", "Vite"],
+                    "introduction": "실무 경험과 프론트엔드 역량을 일관된 기준으로 전달하기 위해 구축한 Nuxt 3 기반 포트폴리오입니다. 시맨틱 HTML과 SCSS를 기반으로 Vue 컴포넌트, 상태 관리, 다국어 콘텐츠 구조를 적용해 정보 확장과 유지보수가 용이하도록 설계했습니다.",
+                    "myWorks": [
+                        "시맨틱 HTML과 SCSS를 기준으로 홈 / 갤러리 / 상세 페이지 퍼블리싱",
+                        "Vue template, props, v-if, v-for, Teleport로 반복 UI와 모바일 메뉴 구성",
+                        "한국어 / 영어 UI 문구와 프로젝트 콘텐츠를 i18n/ko.json, i18n/en.json에 통합",
+                        "Nuxt 파일 기반 라우팅과 Vite 번들 환경을 활용해 정적 포트폴리오 구성",
+                        "색상 / 여백 / 폰트 / 라운드 / 그림자를 SCSS 디자인 토큰으로 정리",
+                        "사용하지 않는 모션 / 스토어 / 컴포넌트를 제거해 HTML에 가까운 화면 코드로 단순화",
+                        "GitHub Pages base path와 public asset 경로를 고려한 정적 배포 구조 정리"
+                    ],
+                    "achievements": [
+                        "디자인, 퍼블리싱, 설계, 프론트엔드 개발까지 전 과정을 단독 수행",
+                        "실무 / 개인 프로젝트와 전체 한 / 영 콘텐츠를 i18n JSON으로 통합해 콘텐츠 관리 효율 향상",
+                        "Vue 상태 관리는 언어 / 테마처럼 필요한 값만 Nuxt useState로 유지",
+                        "사용하지 않는 GSAP / Pinia 의존성과 모션 / 모달 코드를 제거해 화면 구조를 단순화",
+                        "실제 사용되는 컴포넌트 중심으로 구조를 정리해 유지보수성과 코드 가독성 확보"
+                    ],
+                    "points": [
+                        "시맨틱 마크업과 디자인 토큰을 기반으로 한 일관된 UI 구현",
+                        "반복 UI를 컴포넌트화해 화면 확장과 변경 대응 효율 확보",
+                        "한 / 영 콘텐츠 중앙 관리로 운영 시 수정 범위와 오류 가능성 최소화",
+                        "정적 배포 환경에서도 안정적으로 운영 가능한 자산 / 경로 구조 적용"
+                    ],
+                    "pin": true,
+                    "duration": "약 2개월",
+                    "captures": [
+                        "/images/projects/jonsoft-framework-portfolio/image-01.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-02.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-03.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-04.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-05.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-06.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-07.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-08.webp",
+                        "/images/projects/jonsoft-framework-portfolio/image-09.webp"
+                    ],
+                    "languages": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript"],
+                    "links": [
+                        {
+                            "label": "디자인 토큰 보기",
+                            "href": "/personal/design-tokens"
+                        }
+                    ]
+                },
+                {
+                    "id": "singil-bmc",
+                    "category": "personal",
+                    "title": "신길교회 야구 선교단 홈페이지",
+                    "period": "2026.05.31~",
+                    "type": "개인 / Nuxt 커뮤니티 사이트",
+                    "role": "기획 / 디자인 / 퍼블리싱 / 프론트엔드 / 기록 파이프라인 개발 전체 담당",
+                    "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "AG Grid", "Node.js", "cheerio"],
+                    "introduction": "신길교회 야구 선교단의 경기 기록과 운영 콘텐츠를 통합 관리하는 Nuxt 3 기반 공식 홈페이지입니다. 소개 / 기록 / 경기 / 선수 / MVP / 영상 / 소식 / 문의 정보 구조를 설계하고, 게임원 HTML을 JSON으로 변환하는 자동화 파이프라인을 구축해 별도 서버 없이도 효율적으로 운영할 수 있도록 구현했습니다.",
+                    "myWorks": [
+                        "선교단 소개 / 조직 / 히스토리, 단체사진, 전체/연도별/월별/조별 기록, 월 / 주간 MVP, 선수 / 경기 / YouTube / 소식 / 문의 페이지 IA 설계",
+                        "게임원 경기 HTML을 cheerio로 파싱해 경기 / 누적 기록 JSON을 생성하는 `parse-game-html` / `build-records` / `update-records` 스크립트 구축",
+                        "A조(Davids) / D조(다윗) 자동 구분, `playerId` 기준 통계 집계, AG Grid 기록 표 / 경기 상세 MVP/하이라이트 섹션 구현",
+                        "`useBasePath` / `fetchJson()`으로 GitHub Pages base path 대응, `GAME_RECORD_UPDATE_HANDOFF.md`로 경기 후 운영 절차 문서화",
+                        "6월: 다크 / 라이트 테마, 홈 최근 경기 / 영상 링크 레이아웃, 리더 카드 컴포넌트 / 이미지 경로 동적 처리, favicon / SCSS 통합",
+                        "GitHub Actions / `npm run deploy` / sitemap 생성 / JSON-LD / 경기 / 뉴스 동적 SEO 메타로 정적 배포 파이프라인 정리"
+                    ],
+                    "achievements": [
+                        "정보 구조부터 기록 / 통계 / 선수 / 미디어 / 배포까지 서비스 운영에 필요한 핵심 기능 구축",
+                        "게임원 HTML만 추가하면 `npm run update` 한 번으로 경기 / 누적 / 조별 기록을 재생성하는 비개발자 친화 운영 구조 확립",
+                        "상대팀 선수 기록 제외 / 선수명 `players.json` 매칭 등 야구 기록 도메인 규칙을 파싱 스크립트와 README에 반영"
+                    ],
+                    "points": [
+                        "교회 공동체 운영에 맞춘 정적 사이트 — 서버 없이도 경기 후 기록 갱신이 가능한 파이프라인",
+                        "실제 경기 / 영상 / MVP 데이터를 반영할 수 있는 운영 중심 콘텐츠 구조 설계",
+                        "GitHub Pages base path, 접근성, SEO, 다크/라이트 테마를 포함한 배포 / 운영 가능한 실서비스"
+                    ],
+                    "pin": true,
+                    "duration": "2026.05~진행 중",
+                    "captures": [
+                        "/images/projects/singil-bmc/image-01.webp",
+                        "/images/projects/singil-bmc/image-02.webp",
+                        "/images/projects/singil-bmc/image-03.webp",
+                        "/images/projects/singil-bmc/image-04.webp",
+                        "/images/projects/singil-bmc/image-05.webp",
+                        "/images/projects/singil-bmc/image-06.webp"
+                    ],
+                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Node.js"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/singil-bmc/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/singil-bmc"
+                        }
+                    ]
+                },
+                {
+                    "id": "clone-flighty",
+                    "category": "personal",
+                    "title": "플라이티 클론 데모",
+                    "period": "2026.05.24~",
+                    "type": "개인 / Nuxt 클론 서비스",
+                    "role": "기획 / 디자인 분석 / 피그마 재설계 / 프론트엔드 개발 전체 담당",
+                    "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "Figma", "AG Grid", "Chart.js"],
+                    "introduction": "Flighty의 비행 기록 경험을 분석하고 국내 사용자 환경에 맞게 재설계한 Nuxt 3 기반 서비스 데모입니다. 정보 구조와 핵심 사용 흐름을 검토한 뒤 다국어 지원, 모바일 사용성, 기체 데이터 확장 가능성을 반영해 서비스 구조를 설계했습니다.",
+                    "myWorks": [
+                        "Flighty 4.8.2 PC 버전 화면을 캡처하고 정보 구조, 폰트 계층, 카드 구성, 인터랙션 밀도를 분석",
+                        "캡처를 기반으로 Figma에서 원본 디자인을 재구성해 레이아웃 규칙과 시각적 디테일 분석",
+                        "모바일 환경에 맞춰 폰트 위계, 간격, 컴포넌트 크기, 색상 역할을 다시 정리한 최종 디자인 시안 제작",
+                        "Nuxt 3 기반으로 워크스페이스, 인증, 설정, 공통 컴포넌트 데모, 그리드 / 차트 / 업로드 UI 골격 구성",
+                        "Pinia / Axios / i18n 사전 / GitHub Pages base path를 정리해 다국어 확장과 정적 배포를 고려한 구조로 설계"
+                    ],
+                    "achievements": [
+                        "서비스 분석부터 Figma 설계, 모바일 UI 재구성까지 일관된 제품 설계 산출물 확보",
+                        "Nuxt 3 + Pinia 기반의 공통 UI 컴포넌트와 데모 페이지를 먼저 구축해 서비스 화면 확장 기반 마련"
+                    ],
+                    "points": [
+                        "기존 서비스 벤치마킹을 통해 핵심 기능과 개선 요구사항을 구체화",
+                        "다국어 지원과 기체 데이터 확장을 고려한 확장 가능한 콘텐츠 구조 설계",
+                        "모바일 사용성과 디자인 시스템 기준으로 UI를 재해석해 일관된 화면 경험 구현"
+                    ],
+                    "pin": true,
+                    "duration": "진행 중",
+                    "captures": [
+                        "/images/projects/clone-flighty/image-01.webp",
+                        "/images/projects/clone-flighty/image-02.webp",
+                        "/images/projects/clone-flighty/image-03.webp"
+                    ],
+                    "thumbnail": "/images/projects/archive-thumbnails/flighty.jpg",
+                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Figma"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/cloneFlighty/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/cloneFlighty"
+                        }
+                    ]
+                },
+                {
+                    "id": "clone-kakaotalk",
+                    "category": "personal",
+                    "title": "카카오톡 클론",
+                    "period": "2025.09.27~2026.05.23",
+                    "type": "개인 / Vue 클론 코딩",
+                    "role": "기획 / UI 구현 / 퍼블리싱 / 프론트엔드 개발 전체 담당",
+                    "tech": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "@vuepic/vue-datepicker", "holiday-kr", "vite-svg-loader"],
+                    "introduction": "카카오톡의 주요 사용자 흐름을 Vue 3 기반 SPA로 재구현한 프로젝트입니다. 채팅 / 친구 / 설정 화면을 라우트와 컴포넌트 단위로 분리하고, 공통 UI와 배포 환경을 체계화해 기능 확장과 유지보수를 고려한 구조로 구현했습니다.",
+                    "myWorks": [
+                        "카카오톡 주요 화면 IA를 Vue Router 4 라우트와 레이아웃 컴포넌트로 구성",
+                        "Vite 6 + Sass(SCSS) 기반 스타일 구조, SVG 아이콘 로더(vite-svg-loader) 적용",
+                        "날짜 / 휴일 선택 UI에 @vuepic/vue-datepicker, holiday-kr 연동",
+                        "GitHub Pages용 base path(`VITE_APP_BASE_URL`)와 dev/root 스크립트로 로컬 / 배포 경로 정리",
+                        "gh-pages 브랜치 배포 파이프라인(`npm run deploy`) 구성"
+                    ],
+                    "achievements": [
+                        "화면과 공통 컴포넌트를 단계적으로 확장하며 Vue 3 Composition API 기반 구조 정립",
+                        "라우팅 / 빌드 / 배포 환경을 포함한 Vue SPA 개발 흐름 구축"
+                    ],
+                    "points": [
+                        "대규모 메신저 UI를 기준으로 컴포넌트 경계와 라우팅 구조를 설계한 SPA 구현 사례",
+                        "배포 URL과 저장소 README를 기준으로 로컬 실행 / base path 규칙을 문서화해 재현 가능하게 유지"
+                    ],
+                    "pin": true,
+                    "duration": "약 8개월",
+                    "captures": ["/images/projects/placeholder.svg"],
+                    "languages": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "JavaScript"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/cloneKakaoTalk/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/cloneKakaoTalk"
+                        }
+                    ]
+                },
+                {
+                    "id": "portfolio-2025",
+                    "category": "personal",
+                    "title": "포트폴리오 웹사이트 2025",
+                    "period": "2025",
+                    "type": "개인 / HTML 포트폴리오",
+                    "role": "기획 / 디자인 / 퍼블리싱 / 인터랙션 구현 전체 담당",
+                    "tech": ["HTML", "SCSS", "JavaScript", "jQuery", "Swiper"],
+                    "introduction": "프로필과 프로젝트 정보를 한 화면에서 효과적으로 전달하도록 제작한 정적 HTML 기반 포트폴리오입니다. 반응형 레이아웃, 다크 모드, 슬라이드와 모달 인터랙션을 적용하고 정적 자산만으로 배포 가능한 구조를 구성했습니다.",
+                    "myWorks": [
+                        "HTML / SCSS 기반의 단일 페이지 포트폴리오 IA와 화면 디자인 설계",
+                        "다크/라이트 모드, Swiper 프로젝트 영역, 모달 인터랙션 구현",
+                        "프로필 이미지, 목업, OG 이미지, 이력서 정적 파일까지 함께 관리"
+                    ],
+                    "achievements": [
+                        "프레임워크 없이 정적 자산만으로 단일 페이지 포트폴리오를 완성해 배포",
+                        "콘텐츠 전달과 인터랙션 구현에 집중한 경량 정적 사이트 구조 확보"
+                    ],
+                    "points": [
+                        "별도 프레임워크 없이도 안정적으로 동작하는 반응형 단일 페이지 구현",
+                        "정적 자산 중심 구성으로 간단한 배포와 유지관리 가능"
+                    ],
+                    "pin": true,
+                    "duration": "약 1개월",
+                    "captures": [
+                        "/images/projects/portfolio-2025/image-01.webp",
+                        "/images/projects/portfolio-2025/image-02.webp",
+                        "/images/projects/portfolio-2025/image-03.webp",
+                        "/images/projects/portfolio-2025/image-04.webp",
+                        "/images/projects/portfolio-2025/image-05.webp",
+                        "/images/projects/portfolio-2025/image-06.webp",
+                        "/images/projects/portfolio-2025/image-07.webp",
+                        "/images/projects/portfolio-2025/image-08.webp",
+                        "/images/projects/portfolio-2025/image-09.webp"
+                    ],
+                    "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
+                    "links": [
+                        {
+                            "label": "2025 버전 보기",
+                            "href": "/ver.2025/index.html"
+                        }
+                    ]
+                },
+                {
+                    "id": "matemate-capstone",
+                    "category": "personal",
+                    "title": "메이트메이트(MATEMATE) 룸메이트 매칭",
+                    "period": "2025.01.04~2025.01.30",
+                    "type": "팀 / 방학 / 캡스톤 (모바일 웹)",
+                    "role": "기획 90% / UI 디자인 30% / 퍼블리싱 100% (team-matemate)",
+                    "tech": ["HTML", "SCSS", "JavaScript", "Firebase Hosting", "Firestore", "Cloud Functions", "Figma"],
+                    "introduction": "한국공학대학교 방학 / 캡스톤 팀 프로젝트로 만든 기숙사 룸메이트 매칭 모바일 웹입니다. 랜덤 배정이나 지인 추천 대신 생활 습관 / 성향 조건을 입력해 맞는 상대를 찾도록 설계했습니다. 소스와 배포는 team-matemate/matemate 저장소와 Firebase에서 관리했습니다.",
+                    "myWorks": [
+                        "문제 정의 / 서비스 기획 / 매칭 / 인증 / 채팅 / 게시판 등 사용자 흐름과 IA 설계",
+                        "`public/html/`에 auth / match / chat / board / cutline / user / main 화면 퍼블리싱 및 SCSS 컴포넌트 구조 정리",
+                        "Firebase Hosting(루트 → main), Firestore / Storage rules, Cloud Functions 백엔드 연동 구성",
+                        "Swiper / 공통 JS로 매칭 / 목록 인터랙션 구현, C2C 반복 수정에 맞춘 UX 정리"
+                    ],
+                    "achievements": [
+                        "4주간의 팀 협업으로 핵심 사용자 흐름을 갖춘 MVP와 배포 파이프라인 완성",
+                        "체크리스트 / 개인 게시글 방식 대비 자동 조건 매칭이라는 서비스 차별점을 UI 흐름으로 구현"
+                    ],
+                    "points": [
+                        "팀 캡스톤에서 기획 / 퍼블리싱을 담당하고 공통 기준에 따라 화면 단위 업무를 분담",
+                        "Firebase로 호스팅 / DB / 함수를 묶어 모바일 웹 프로토타입을 실제 URL로 공유 가능"
+                    ],
+                    "pin": false,
+                    "duration": "약 4주",
+                    "captures": [
+                        "/images/projects/matemate-capstone/image-01.webp",
+                        "/images/projects/matemate-capstone/image-02.webp",
+                        "/images/projects/matemate-capstone/image-03.webp",
+                        "/images/projects/matemate-capstone/image-04.webp"
+                    ],
+                    "thumbnail": "/images/projects/archive-thumbnails/matemate.jpg",
+                    "languages": ["HTML", "SCSS", "JavaScript", "Firebase", "Figma"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/matemate/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/team-matemate/matemate"
+                        }
+                    ]
+                },
+                {
+                    "id": "gongting-blind-matching",
+                    "category": "personal",
+                    "title": "공팅 블라인드 매칭 서비스",
+                    "period": "2024.05.16~2024.07.21",
+                    "type": "개인 / 모바일 웹 서비스",
+                    "role": "디자인 50% / 퍼블리싱 100%",
+                    "tech": ["HTML", "SCSS", "JavaScript", "Figma", "Photoshop", "Illustrator", "GitHub Pages"],
+                    "introduction": "한국공학대학교 학생을 대상으로 한 블라인드 매칭 웹 서비스입니다. 코로나19 이후 줄어든 학생 간 교류를 다시 만들기 위해 성향 / 관심사 기반 연결 흐름을 설계했습니다. intro, 가입, 프로필, 매칭, 결과 화면을 정적 HTML로 관리하고 GitHub Pages에 배포했습니다.",
+                    "myWorks": [
+                        "intro / 회원(user) / 매칭(match) 흐름을 `html/` 정적 페이지와 `intro.html` 진입점으로 구성",
+                        "모바일 중심 UI 디자인 방향 수립, 브랜드 톤 / 그래픽 / SCSS / JS를 `resources/`에 정리",
+                        "UI 컴포넌트 샘플을 `component.html`로 분리해 화면 단위 퍼블리싱 재사용",
+                        "GitHub Pages(`yheun03.github.io/gongting`) 배포 및 파비콘 / 에셋 세트 구성"
+                    ],
+                    "achievements": [
+                        "초기 서비스에서 1차 171명, 2차 121명의 참여 경험을 기록",
+                        "GitHub 저장소로 화면 / 리소스를 버전 관리해 포트폴리오 아카이브와 별도로 유지"
+                    ],
+                    "points": [
+                        "정해진 일정 안에 핵심 사용자 흐름과 모바일 UI를 완성해 실제 서비스 출시",
+                        "사용자 참여 데이터와 피드백을 바탕으로 후속 기능 확장 방향 도출"
+                    ],
+                    "pin": false,
+                    "duration": "구축 약 1주 / 운영 및 고도화 약 2개월",
+                    "captures": ["/images/projects/gongting-blind-matching/image-01.webp"],
+                    "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/gongting/intro.html"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/gongting"
+                        }
+                    ]
+                },
+                {
+                    "id": "jonsoft-homepage-2022-archive",
+                    "category": "personal",
+                    "title": "조앤소프트 홈페이지 리뉴얼 아카이브",
+                    "period": "2022.01.03~2022.03.04",
+                    "type": "아카이브 / 기업 홈페이지",
+                    "role": "기획 / 퍼블리싱 중심 참여",
+                    "tech": ["HTML", "CSS", "jQuery", "Figma", "Photoshop", "Illustrator"],
+                    "introduction": "2025 포트폴리오에 수록했던 조앤소프트 홈페이지 리뉴얼 아카이브입니다. 단조로운 정보 구성과 낮은 신뢰감을 개선하기 위해 레퍼런스 조사, 콘텐츠 구성, 퍼블리싱, SEO / 오픈그래프 관리를 함께 맡았습니다.",
+                    "myWorks": [
+                        "홈페이지 리뉴얼 방향 제안 및 주요 콘텐츠 구조 정리",
+                        "퍼블리싱, 반응형 화면, SEO / 오픈그래프 메타 관리 수행",
+                        "2025 포트폴리오용 PC / 모바일 캡처 자료를 아카이브로 정리"
+                    ],
+                    "achievements": ["기업 홈페이지의 전문성과 대외 신뢰도 개선에 기여"],
+                    "points": ["현재 실무 프로젝트 이력과 연결되는 초기 기업 홈페이지 리뉴얼 경험"],
+                    "pin": false,
+                    "duration": "약 2개월",
+                    "captures": [
+                        "/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
+                        "/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
+                    ],
+                    "thumbnail": "/images/projects/archive-thumbnails/jonsoft-2022.jpg",
+                    "languages": ["HTML", "CSS", "jQuery", "Figma"],
+                    "links": [
+                        {
+                            "label": "사이트 보기",
+                            "href": "http://jonsoft.co.kr/"
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }

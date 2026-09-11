@@ -14,10 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import type { HighlightTabKey } from '@app-types/highlight-tabs';
-
 defineProps<{
-    activeTab: HighlightTabKey;
+    activeTab: 'awards' | 'certifications' | 'roles' | 'activities';
     panelRenderKey: string;
     activeTabIndex: string;
     activeTabLabel: string;

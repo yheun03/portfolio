@@ -1,12 +1,6 @@
 @use "../abstracts/tokens" as *;
 
-/* Portfolio highlights */
 .highlights {
-    &__filters {
-        align-self: stretch;
-        justify-self: start;
-    }
-
     &__workspace {
         grid-column: 2;
         grid-row: 1;
@@ -19,22 +13,20 @@
         display: grid;
         gap: clamp(28px, 4vw, 48px);
         padding: clamp(28px, 4vw, 44px);
-        border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-        border-radius: var(--radius-2xl);
+        @include glass-panel(var(--radius-2xl));
         background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+        box-shadow: none;
     }
 
     &__panel-aside {
         display: grid;
         gap: clamp(12px, 2vw, 20px);
         align-content: start;
-        text-align: start;
     }
 
     &__panel-index {
         margin: 0;
-        color: var(--color-primary);
-        @include font(label, $font-weight-bold);
+        @include index-label;
     }
 
     &__panel-title {
@@ -65,9 +57,8 @@
             font-size: var(--font-size-md);
             font-weight: var(--font-weight-semibold);
             line-height: var(--line-height-body);
-            text-align: start;
             text-wrap: pretty;
-            transition: color 0.2s ease, padding-inline-start 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: color 0.2s ease, padding-inline-start 0.24s ease;
 
             &:first-child {
                 border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
@@ -80,18 +71,5 @@
                 }
             }
         }
-    }
-}
-
-@media (min-width: 900px) {
-    .highlights__panel {
-        grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
-        align-items: start;
-        gap: clamp(32px, 4.5vw, 56px);
-    }
-
-    .highlights__panel-aside {
-        position: sticky;
-        top: var(--home-sticky-top);
     }
 }

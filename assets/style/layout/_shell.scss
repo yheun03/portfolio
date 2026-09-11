@@ -17,16 +17,12 @@
 
     /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
     &--app-dock {
-        @media (min-width: 1024px) {
-            padding-inline-end: 0;
-        }
+        padding-inline-end: 0;
     }
 }
 
 .section,
-.section *,
-.page__layer,
-.page__layer * {
+.section * {
     min-width: 0;
 }
 
@@ -51,40 +47,18 @@
     }
 }
 
-.page__layer {
-    position: relative;
-    overflow: visible;
-
-    &--hero {
-        position: relative;
-
-        @media (min-width: 1024px) {
-            padding-bottom: clamp(32px, 6vw, 64px);
-        }
-    }
-
-    &--profile {
-        position: relative;
-        overflow: visible;
-    }
-
-    &--contact {
-        position: relative;
-    }
-}
-
 // Dark editorial panel — 다크 테마에서만 적용 (라이트 테마는 페이지 배경 그대로)
-@mixin editorial-panel-profile {
+@mixin editorial-panel-base($surface: #0d1117, $border: #1c2333, $glass-2: rgba(28, 36, 54, 0.78), $glass-2-strong: rgba(37, 46, 66, 0.86)) {
     background: #020407;
     --color-bg: #020407;
-    --color-surface: #0d1117;
+    --color-surface: #{$surface};
     --color-surface-strong: #252e42;
     --color-text: #d1d6db;
     --color-text-strong: #f2f4f6;
     --color-text-heading: #f9fafb;
     --color-text-muted: #8b95a1;
-    --color-text-subtle: #7b8694; /* 어두운 에디토리얼 패널에서 AA 충족(기존 #6b7684=3.70:1 미달) */
-    --color-border: #1c2333;
+    --color-text-subtle: #7b8694;
+    --color-border: #{$border};
     --color-primary: #4a8cff;
     --color-primary-dark: #6fa3ff;
     --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
@@ -93,49 +67,45 @@
     --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
     --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
     --shadow-ring: 0 0 0 3px rgba(74, 140, 255, 0.28);
-    --color-glass-2: rgba(28, 36, 54, 0.78);
-    --color-glass-2-strong: rgba(37, 46, 66, 0.86);
+    --color-glass-2: #{$glass-2};
+    --color-glass-2-strong: #{$glass-2-strong};
     --color-on-primary: #fff;
 }
 
+@mixin editorial-panel-about {
+    @include editorial-panel-base;
+}
+
 @mixin editorial-panel-contact {
-    background: #020407;
-    --color-bg: #020407;
-    --color-surface: #161c27;
-    --color-surface-strong: #1e2538;
-    --color-text: #d1d6db;
-    --color-text-strong: #f2f4f6;
-    --color-text-heading: #f9fafb;
-    --color-text-muted: #8b95a1;
-    --color-text-subtle: #7b8694; /* 어두운 에디토리얼 패널에서 AA 충족(기존 #6b7684=3.70:1 미달) */
-    --color-border: #252e42;
-    --color-primary: #4a8cff;
-    --color-primary-dark: #6fa3ff;
-    --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
+    @include editorial-panel-base($surface: #161c27,
+        $border: #252e42,
+        $glass-2: rgba(22, 28, 39, 0.78),
+        $glass-2-strong: rgba(30, 37, 56, 0.86));
+
     --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
     --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
     --shadow-glow: 0 0 0 1px rgba(37, 46, 66, 0.58) inset;
-    --color-glass-2: rgba(22, 28, 39, 0.78);
-    --color-glass-2-strong: rgba(30, 37, 56, 0.86);
-    --color-on-primary: #fff;
 }
 
 // data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .page__layer--profile {
-        @include editorial-panel-profile;
+
+    :root:not([data-theme="light"]) .section--about-intro,
+    :root:not([data-theme="light"]) .section--why-list {
+        @include editorial-panel-about;
     }
 
-    :root:not([data-theme="light"]) .page__layer--contact {
+    :root:not([data-theme="light"]) .section--contact {
         @include editorial-panel-contact;
     }
 }
 
-:root[data-theme="dark"] .page__layer--profile {
-    @include editorial-panel-profile;
+:root[data-theme="dark"] .section--about-intro,
+:root[data-theme="dark"] .section--why-list {
+    @include editorial-panel-about;
 }
 
-:root[data-theme="dark"] .page__layer--contact {
+:root[data-theme="dark"] .section--contact {
     @include editorial-panel-contact;
 }
 
@@ -169,7 +139,7 @@
     }
 }
 
-.section--about {
+.section--about-intro {
     --section-index: "01";
 }
 
@@ -211,10 +181,7 @@
 .app-dock__item:focus-visible,
 .app-footer__links a:focus-visible,
 .tab-list .tab-list__tab:focus-visible,
-.works__filters .tab-list__tab:focus-visible,
 .highlights__filters .tab-list__tab:focus-visible,
-.work-card__button:focus-visible,
-.swipe-rail__button:focus-visible,
 .gallery-page__segment:focus-visible,
 .journey__segment:focus-visible,
 .gallery-card:focus-visible,

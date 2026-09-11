@@ -1,0 +1,59 @@
+@use "../abstracts/tokens" as *;
+
+.base-stat-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 48px);
+    margin: 0;
+    padding: clamp(32px, 4.5vw, 56px) 0;
+    border-block: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+
+    @media (max-width: #{$bp-max-mobile}) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(20px, 5vw, 32px);
+    }
+
+    >div {
+        position: relative;
+        display: grid;
+        gap: 8px;
+        min-width: 0;
+        padding-inline-start: clamp(16px, 2vw, 24px);
+
+        &:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 1px;
+            background: linear-gradient(180deg, var(--color-primary), transparent);
+            opacity: 0.45;
+        }
+    }
+
+    dd {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: var(--font-size-display-4);
+        font-weight: 900;
+        letter-spacing: var(--tracking-tight);
+        line-height: 1;
+        @include gradient-accent-text;
+        transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    dt {
+        color: var(--color-text-muted);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: var(--tracking-label);
+        text-transform: uppercase;
+    }
+
+    @media (hover: hover) {
+        >div:hover dd {
+            translate: 0 -3px;
+        }
+    }
+}

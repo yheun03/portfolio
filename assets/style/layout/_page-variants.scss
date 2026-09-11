@@ -24,15 +24,18 @@
 .portfolio-page--journey {
     --color-primary: color-mix(in srgb, var(--accent-mint) 42%, var(--primary-500));
     --color-primary-dark: color-mix(in srgb, var(--accent-mint) 30%, var(--primary-600));
-    --gradient-accent: linear-gradient(
-        122deg,
-        var(--accent-mint) 0%,
-        var(--primary-500) 58%,
-        var(--primary-700) 100%
-    );
+    --gradient-accent: linear-gradient(122deg,
+            var(--accent-mint) 0%,
+            var(--primary-500) 58%,
+            var(--primary-700) 100%);
 
-    .section--journey {
-        padding-block-start: calc(var(--section-pad-y) + 24px);
+    >.section.section--journey,
+    >.section.section--highlights {
+        width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
+        max-width: var(--layout-content-max);
+        margin-inline: auto;
+        padding-block: clamp(88px, 11vw, 168px);
+        padding-inline: 0;
     }
 
     .section-title__eyebrow {
@@ -44,10 +47,22 @@
     }
 }
 
+@media (max-width: $bp-max-tablet) {
+    .portfolio-page--journey {
+
+        >.section.section--journey,
+        >.section.section--highlights {
+            width: 100%;
+            padding: var(--section-pad-y) var(--page-pad-x);
+        }
+    }
+}
+
 /* Archive (career) — 신뢰감 있는 딥 블루, eyebrow tracking 강조 */
 .portfolio-page--archive-career {
     --color-primary: var(--primary-600);
     --color-primary-dark: var(--primary-700);
+    background: var(--color-bg);
 
     .gallery-page__kicker,
     .section-title__eyebrow {
@@ -59,11 +74,10 @@
 .portfolio-page--archive-personal {
     --color-primary: color-mix(in srgb, var(--accent-hot) 52%, var(--primary-500));
     --color-primary-dark: color-mix(in srgb, var(--accent-hot) 38%, var(--primary-600));
-    --gradient-accent: linear-gradient(
-        128deg,
-        var(--accent-hot) 0%,
-        var(--primary-500) 56%,
-        var(--primary-700) 100%
-    );
+    --gradient-accent: linear-gradient(128deg,
+            var(--accent-hot) 0%,
+            var(--primary-500) 56%,
+            var(--primary-700) 100%);
     --card-list-gap: var(--space-6);
+    background: var(--color-bg);
 }

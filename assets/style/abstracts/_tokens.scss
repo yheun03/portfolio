@@ -16,20 +16,15 @@
     --font-size-body-2: 0.94rem;
     --font-size-chip: 0.75rem;
     --font-size-contact: clamp(2.5rem, 9vw, 9.5rem);
-    --font-size-counter: var(--font-size-display-5);
     --font-size-display-1: clamp(4rem, 7.5vw, 8.5rem);
     --font-size-display-2: clamp(3.4rem, 6.2vw, 6.75rem);
     --font-size-display-3: clamp(2.5rem, 5vw, 5.25rem);
     --font-size-display-4: clamp(1.9rem, 3.2vw, 3.05rem);
     --font-size-display-5: clamp(1.55rem, 2.8vw, 2.35rem);
     --font-size-display-6: clamp(1.35rem, 2.4vw, 2rem);
-    --font-size-display-soft: var(--font-size-display-3);
-    --font-size-hero: var(--font-size-display-1);
-    --font-size-hero-card: var(--font-size-display-3);
     --font-size-label: 0.88rem;
     --font-size-lg: clamp(1rem, 0.96rem + 0.32vw, 1.16rem);
     --font-size-md: clamp(1rem, 0.96rem + 0.2vw, 1.06rem);
-    --font-size-section-title: var(--font-size-display-4);
     --font-size-sm: 0.94rem;
     --font-size-title-1: clamp(1.12rem, 1rem + 0.8vw, 1.42rem);
     --font-size-title-2: clamp(1rem, 0.96rem + 0.32vw, 1.16rem);
@@ -78,7 +73,7 @@
     --space-7: 19px;
     --space-8: 24px;
     --space-9: 32px;
-    --space-block-gap: var(--space-fluid-sm);
+    --space-block-gap: var(--block-gap);
     --space-fluid-2xl: clamp(72px, 10vw, 136px);
     --space-fluid-3xl: clamp(96px, 14vw, 192px);
     --space-fluid-lg: clamp(22px, 4vw, 48px);
@@ -86,8 +81,8 @@
     --space-fluid-sm: clamp(12px, 1.6vw, 19px);
     --space-fluid-xl: clamp(38px, 6vw, 80px);
     --space-fluid-xs: clamp(8px, 1vw, 14px);
-    --space-section-gap: var(--space-fluid-lg);
-    --space-section-y: var(--space-fluid-3xl);
+    --space-section-gap: var(--section-gap);
+    --space-section-y: var(--section-pad-y);
     /* Viewport rhythm — desktop baseline */
     --page-pad-x: clamp(32px, 5vw, 96px);
     --page-pad-hero: clamp(24px, 4vw, 80px);
@@ -104,14 +99,6 @@
     --inset-page: var(--page-pad-x);
     --inset-page-hero: var(--page-pad-hero);
     --inset-panel: clamp(18px, 2.6vw, 32px);
-    /* Legacy aliases (prefer --page-pad-x, --section-pad-y) */
-    --touch-pad-x: var(--page-pad-x);
-    --touch-stack-gap: var(--section-pad-y);
-    --cluster-gap: var(--space-3);
-    --card-flow-content: var(--space-8);
-    --card-flow-label: var(--space-6);
-    --card-flow-title: var(--space-7);
-    --card-list-gap: var(--space-4);
     --card-padding: clamp(28px, 3.5vw, 46px);
     --card-padding-lg: clamp(34px, 4.5vw, 60px);
     --size-touch: 44px;
@@ -130,27 +117,21 @@
    Design Tokens
 ========================================= */
 
-$bp-mobile: 360px;
 $bp-tablet: 768px;
 $bp-laptop: 1024px;
-$bp-desktop: 1440px;
 
 /** max-width — 정수 px만 사용 (.98 등 소수 금지) */
 $bp-max-mobile: $bp-tablet - 1px;
 $bp-max-tablet: $bp-laptop - 1px;
-$bp-max-narrow: $bp-max-tablet;
 $bp-min-tablet: $bp-tablet;
 $bp-min-laptop: $bp-laptop;
 
 $font-display: var(--font-display);
 $font-body: var(--font-body);
 $font-mono: var(--font-mono);
-$font-size-2xs: var(--font-size-2xs);
 $font-size-xs: var(--font-size-xs);
 $font-size-sm: var(--font-size-sm);
-$font-size-md: var(--font-size-md);
 $font-size-lg: var(--font-size-lg);
-$font-size-xl: var(--font-size-xl);
 $font-size-display-1: var(--font-size-display-1);
 $font-size-display-2: var(--font-size-display-2);
 $font-size-display-3: var(--font-size-display-3);
@@ -164,12 +145,6 @@ $font-size-body-1: var(--font-size-body-1);
 $font-size-body-2: var(--font-size-body-2);
 $font-size-label: var(--font-size-label);
 $font-size-chip: var(--font-size-chip);
-$font-size-section-title: var(--font-size-section-title);
-$font-size-hero: var(--font-size-hero);
-$font-size-hero-card: var(--font-size-hero-card);
-$font-size-display-soft: var(--font-size-display-soft);
-$font-size-contact: var(--font-size-contact);
-$font-size-counter: var(--font-size-counter);
 $font-weight-regular: var(--font-weight-regular);
 $font-weight-medium: var(--font-weight-medium);
 $font-weight-semibold: var(--font-weight-semibold);
@@ -191,47 +166,26 @@ $grayscale-50: var(--grayscale-50);
 $grayscale-100: var(--grayscale-100);
 $grayscale-200: var(--grayscale-200);
 $grayscale-300: var(--grayscale-300);
-$grayscale-400: var(--grayscale-400);
-$grayscale-500: var(--grayscale-500);
 $grayscale-600: var(--grayscale-600);
 $grayscale-700: var(--grayscale-700);
-$grayscale-800: var(--grayscale-800);
 $grayscale-900: var(--grayscale-900);
-$grayscale-950: var(--grayscale-950);
 $primary-50: var(--primary-50);
-$primary-100: var(--primary-100);
-$primary-200: var(--primary-200);
-$primary-300: var(--primary-300);
-$primary-400: var(--primary-400);
-$primary-500: var(--primary-500);
 $primary-600: var(--primary-600);
 $primary-700: var(--primary-700);
-$primary-800: var(--primary-800);
-$primary-900: var(--primary-900);
 $accent-hot: var(--accent-hot);
 $accent-mint: var(--accent-mint);
-$state-error: var(--state-error);
-$state-success: var(--state-success);
-$state-warning: var(--state-warning);
-$overlay: var(--color-overlay);
 $glass-2: var(--color-glass-2);
 $glass-2-strong: var(--color-glass-2-strong);
 $shadow-soft: var(--shadow-soft);
 $shadow-lift: var(--shadow-lift);
 $shadow-glow: var(--shadow-glow);
-$shadow-ring: var(--shadow-ring);
 $gradient-accent: var(--gradient-accent);
-$gradient-accent-soft: var(--gradient-accent-soft);
 $gradient-surface: var(--gradient-surface);
-$gradient-noise: var(--gradient-noise);
-$texture-noise: url("/images/noise-paper-small.png");
-$gradient-hero-mesh: var(--gradient-hero-mesh);
+$texture-noise: url("/images/common/textures/noise-paper-small.png");
 $radius-card: var(--radius-card);
 $radius-pill: var(--radius-pill);
 $radius-md: var(--radius-md);
 $radius-lg: var(--radius-lg);
-$radius-xl: var(--radius-xl);
-$space-0: var(--space-0);
 $space-1: var(--space-1);
 $space-2: var(--space-2);
 $space-3: var(--space-3);
@@ -239,26 +193,8 @@ $space-4: var(--space-4);
 $space-5: var(--space-5);
 $space-6: var(--space-6);
 $space-7: var(--space-7);
-$space-8: var(--space-8);
-$space-9: var(--space-9);
-$space-10: var(--space-10);
-$space-11: var(--space-11);
-$space-fluid-xs: var(--space-fluid-xs);
-$space-fluid-sm: var(--space-fluid-sm);
-$space-fluid-md: var(--space-fluid-md);
-$space-fluid-lg: var(--space-fluid-lg);
-$space-fluid-xl: var(--space-fluid-xl);
-$space-fluid-2xl: var(--space-fluid-2xl);
-$inset-page: var(--inset-page);
-$inset-page-hero: var(--inset-page-hero);
-$inset-panel: var(--inset-panel);
 $size-touch: var(--size-touch);
 $layout-header-height: var(--layout-header-height);
-$layout-content-max: var(--layout-content-max);
-$layout-hero-max: var(--layout-hero-max);
-$space-section-y: var(--space-section-y);
-$space-section-gap: var(--space-section-gap);
-$space-block-gap: var(--space-block-gap);
 
 $font-presets: (
     display-1: (family: $font-display, size: $font-size-display-1, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
@@ -277,20 +213,17 @@ $font-presets: (
     label: (family: $font-mono, size: $font-size-label, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-label),
     chip: (family: $font-body, size: $font-size-chip, weight: $font-weight-semibold, line-height: $line-height-ui, letter-spacing: $tracking-ui),
     button: (family: $font-display, size: $font-size-body-1, weight: $font-weight-semibold, line-height: $line-height-title, letter-spacing: $tracking-ui),
-    heading-1: (family: $font-display, size: $font-size-display-1, weight: $font-weight-black, line-height: $line-height-tight, letter-spacing: $tracking-tight),
-    heading-2: (family: $font-display, size: $font-size-display-4, weight: $font-weight-black, line-height: $line-height-heading, letter-spacing: $tracking-tight),
-    heading-3: (family: $font-display, size: $font-size-display-6, weight: $font-weight-bold, line-height: $line-height-title, letter-spacing: $tracking-heading),
 );
 
 /* Responsive :root — tablet (768–1023) · mobile (≤767) · desktop = :root baseline */
 
 @media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
     :root {
-        --page-pad-x: clamp(22px, 3.5vw, 36px);
-        --page-pad-hero: clamp(20px, 3vw, 32px);
-        --section-pad-y: clamp(60px, 8vw, 88px);
-        --section-gap: clamp(28px, 4vw, 44px);
-        --block-gap: clamp(20px, 2.8vw, 30px);
+        --page-pad-x: clamp(40px, 5vw, 56px);
+        --page-pad-hero: var(--page-pad-x);
+        --section-pad-y: clamp(88px, 11vw, 120px);
+        --section-gap: clamp(40px, 5vw, 56px);
+        --block-gap: clamp(24px, 3vw, 34px);
         --swipe-card-width: min(44vw, 320px);
         --font-size-display-1: clamp(3.4rem, 8.5vw, 5.5rem);
         --font-size-display-2: clamp(2.85rem, 7vw, 4.5rem);
@@ -298,13 +231,9 @@ $font-presets: (
         --font-size-display-4: clamp(1.85rem, 3.6vw, 2.75rem);
         --font-size-display-5: clamp(1.45rem, 2.8vw, 2.1rem);
         --font-size-display-6: clamp(1.25rem, 2.2vw, 1.7rem);
-        --space-section-y: var(--section-pad-y);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
-        --inset-page: var(--page-pad-x);
-        --inset-page-hero: var(--page-pad-hero);
-        --card-padding: clamp(20px, 3vw, 32px);
-        --card-padding-lg: clamp(24px, 3.5vw, 38px);
+        --font-size-contact: clamp(2.5rem, 6.2vw, 4.5rem);
+        --card-padding: clamp(26px, 3.2vw, 34px);
+        --card-padding-lg: clamp(30px, 3.8vw, 42px);
     }
 }
 
@@ -324,18 +253,13 @@ $font-presets: (
         --font-size-display-4: clamp(2rem, 3.3vw, 2.85rem);
         --font-size-display-5: clamp(1.55rem, 2.4vw, 2.15rem);
         --font-size-display-6: clamp(1.3rem, 2vw, 1.75rem);
-        --space-section-y: var(--section-pad-y);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
-        --inset-page: var(--page-pad-x);
-        --inset-page-hero: var(--page-pad-hero);
     }
 }
 
 @media (min-width: 1920px) {
     :root {
-        --page-pad-x: clamp(128px, 10vw, 256px);
-        --page-pad-hero: clamp(128px, 8vw, 192px);
+        --page-pad-x: clamp(80px, 5vw, 120px);
+        --page-pad-hero: clamp(80px, 5vw, 120px);
         --layout-content-max: 2040px;
         --layout-hero-max: 2240px;
         --section-gap: clamp(32px, 3vw, 60px);
@@ -343,10 +267,25 @@ $font-presets: (
         --home-sidebar-min: clamp(320px, 18vw, 384px);
         --home-section-column-gap: clamp(36px, 2.8vw, 64px);
         --home-chapter-sidebar-min: clamp(288px, 16vw, 352px);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
-        --inset-page: var(--page-pad-x);
-        --inset-page-hero: var(--page-pad-hero);
+        --font-size-xs: 1rem;
+        --font-size-sm: 1.125rem;
+        --font-size-md: 1.25rem;
+        --font-size-lg: 1.375rem;
+        --font-size-xl: 1.75rem;
+        --font-size-body-1: 1.25rem;
+        --font-size-body-2: 1.125rem;
+        --font-size-title-1: 1.75rem;
+        --font-size-title-2: 1.5rem;
+        --font-size-title-3: 1.25rem;
+        --font-size-display-1: clamp(9rem, 6.6vw, 11.25rem);
+        --font-size-display-2: clamp(7rem, 5vw, 8.75rem);
+        --font-size-display-3: clamp(5rem, 3.75vw, 6.5rem);
+        --font-size-display-4: clamp(3.25rem, 2.55vw, 4rem);
+        --font-size-display-5: clamp(2.25rem, 1.85vw, 3rem);
+        --font-size-display-6: clamp(1.9rem, 1.45vw, 2.5rem);
+        --font-size-label: 1rem;
+        --font-size-chip: 0.9rem;
+        --font-size-contact: clamp(9.5rem, 7vw, 14rem);
     }
 }
 
@@ -354,17 +293,6 @@ $font-presets: (
     :root {
         --layout-content-max: 2160px;
         --layout-hero-max: 2320px;
-        --font-size-body-1: clamp(1.1rem, 0.52vw, 1.22rem);
-        --font-size-body-2: clamp(1rem, 0.46vw, 1.1rem);
-        --font-size-display-1: clamp(9rem, 6.6vw, 11.25rem);
-        --font-size-display-2: clamp(7rem, 5vw, 8.75rem);
-        --font-size-display-3: clamp(5rem, 3.75vw, 6.5rem);
-        --font-size-display-4: clamp(3.25rem, 2.55vw, 4rem);
-        --font-size-display-5: clamp(2.25rem, 1.85vw, 3rem);
-        --font-size-display-6: clamp(1.9rem, 1.45vw, 2.5rem);
-        --font-size-label: clamp(0.9rem, 0.4vw, 1rem);
-        --font-size-chip: clamp(0.8rem, 0.35vw, 0.9rem);
-        --font-size-contact: clamp(9.5rem, 7vw, 14rem);
         --card-padding: clamp(26px, 1.4vw, 39px);
         --card-padding-lg: clamp(32px, 2vw, 56px);
     }
@@ -372,31 +300,37 @@ $font-presets: (
 
 @media (max-width: #{$bp-max-mobile}) {
     :root {
-        --page-pad-x: clamp(16px, 4.2vw, 22px);
-        --page-pad-hero: clamp(16px, 4vw, 20px);
-        --section-pad-y: clamp(56px, 12.5vw, 80px);
-        --section-gap: clamp(28px, 6.5vw, 40px);
-        --block-gap: clamp(18px, 4.2vw, 26px);
+        --page-pad-x: clamp(20px, 6vw, 28px);
+        --page-pad-hero: var(--page-pad-x);
+        --section-pad-y: clamp(72px, 20vw, 96px);
+        --section-gap: clamp(32px, 9vw, 44px);
+        --block-gap: clamp(20px, 6vw, 28px);
         --swipe-card-width: min(88vw, 336px);
-        --font-size-display-1: clamp(2.75rem, 12vw, 4.5rem);
-        --font-size-display-2: clamp(2.35rem, 10vw, 3.85rem);
-        --font-size-display-3: clamp(2rem, 8.5vw, 3.15rem);
-        --font-size-display-4: clamp(1.65rem, 7vw, 2.35rem);
-        --font-size-display-5: clamp(1.35rem, 5.5vw, 1.85rem);
-        --font-size-display-6: clamp(1.15rem, 4.5vw, 1.45rem);
-        --font-size-title-1: clamp(1.1rem, 4vw, 1.3rem);
-        --font-size-title-2: clamp(1rem, 3.5vw, 1.12rem);
-        --font-size-body-1: 1rem;
-        --font-size-body-2: 0.94rem;
-        --space-section-y: var(--section-pad-y);
-        --space-section-gap: var(--section-gap);
-        --space-block-gap: var(--block-gap);
-        --inset-page: var(--page-pad-x);
-        --inset-page-hero: var(--page-pad-hero);
-        --inset-panel: clamp(16px, 4.5vw, 21px);
-        --card-padding: clamp(18px, 4.8vw, 24px);
-        --card-padding-lg: clamp(20px, 5.2vw, 28px);
-        --font-size-contact: clamp(2rem, 8.5vw, 3.25rem);
+        --font-size-display-1: clamp(2.5rem, 11vw, 4rem);
+        --font-size-display-2: clamp(2.1rem, 9vw, 3.4rem);
+        --font-size-display-3: clamp(1.8rem, 7.8vw, 2.8rem);
+        --font-size-display-4: clamp(1.5rem, 6.4vw, 2.1rem);
+        --font-size-display-5: clamp(1.25rem, 5.2vw, 1.7rem);
+        --font-size-display-6: clamp(1.1rem, 4.4vw, 1.35rem);
+        --font-size-xl: 1.1rem;
+        --font-size-lg: 1rem;
+        --font-size-md: 0.94rem;
+        --font-size-sm: 0.88rem;
+        --font-size-xs: 0.78rem;
+        --font-size-title-1: clamp(1.05rem, 4vw, 1.22rem);
+        --font-size-title-2: clamp(0.98rem, 3.6vw, 1.08rem);
+        --font-size-title-3: 0.94rem;
+        --font-size-body-1: 0.94rem;
+        --font-size-body-2: 0.88rem;
+        --font-size-label: 0.78rem;
+        --font-size-chip: 0.72rem;
+        --line-height-body: 1.72;
+        --line-height-title: 1.38;
+        --line-height-heading: 1.24;
+        --inset-panel: clamp(18px, 5.5vw, 24px);
+        --card-padding: clamp(20px, 6vw, 26px);
+        --card-padding-lg: clamp(24px, 7vw, 30px);
+        --font-size-contact: clamp(1.55rem, 8.2vw, 2.25rem);
     }
 }
 
@@ -410,10 +344,109 @@ $font-presets: (
     }
 }
 
-@mixin respond-down($bp) {
-    @media (max-width: $bp) {
-        @content;
+@mixin gradient-accent-text {
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin glass-panel($radius: var(--radius-lg), $blur: 12px) {
+    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    border-radius: $radius;
+    background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur($blur);
+}
+
+@mixin pointer-glow($size: 288px, $pseudo: after) {
+    &::#{$pseudo} {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(#{$size} circle at var(--glow-x, 50%) var(--glow-y, 50%),
+            color-mix(in srgb, var(--color-primary) 9%, transparent),
+            transparent 65%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
     }
+
+    &.is-glow::#{$pseudo} {
+        opacity: 1;
+    }
+
+    @media (hover: hover) {
+        &:hover::#{$pseudo} {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin sticky-sidebar($top: var(--home-sticky-top)) {
+    position: sticky;
+    top: $top;
+    align-self: start;
+}
+
+@mixin surface-card-shell($shadow: soft) {
+    position: relative;
+    overflow: hidden;
+    padding: var(--card-padding-lg);
+    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    border-radius: var(--radius-2xl);
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+
+    @if $shadow ==soft {
+        box-shadow:
+            0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
+            0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
+    }
+
+    @else {
+        box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
+    }
+
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.32s ease,
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@mixin scroll-rail($snap: mandatory) {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x #{$snap};
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin index-label {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    @include font(label, $font-weight-bold);
+}
+
+@mixin display-line {
+    display: block;
+    margin-bottom: 0.1em;
+    font-size: var(--font-size-display-1);
+    line-height: var(--line-height-display);
+
+    &--accent {
+        @include gradient-accent-text;
+    }
+}
+
+@mixin editorial-lead {
+    max-width: 28ch;
+    margin: clamp(32px, 5vw, 56px) 0 0;
+    color: var(--color-text-muted);
+    @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
 }
 
 @mixin font($type, $font-weight: null, $letter-spacing: null, $line-height: null) {

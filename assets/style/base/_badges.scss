@@ -60,3 +60,12 @@
         display: none;
     }
 }
+
+.base-accent-badge {
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--gradient-accent);
+    color: var(--color-on-primary, #fff);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}

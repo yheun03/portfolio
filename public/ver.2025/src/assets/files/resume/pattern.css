@@ -574,7 +574,7 @@ textarea.Invalid {border-color:var(--coral110)}
 .NotiBox .NotiTit {display:flex;width:178px;box-sizing:border-box;color:var(--gray70);font-size:14px;font-weight:bold;line-height:20px;align-items:flex-start;flex-shrink:0;}
 .NotiBox .NotiTit:before {display:inline-block;margin-right:15px;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg transform='translate(-488 -2372) translate(456 1409) translate(32 963)' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='9.1' stroke='%239AA0AA' stroke-width='1.8'/%3E%3Cpath fill='%239AA0AA' fill-rule='nonzero' d='M10 5c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5'/%3E%3Cpath stroke='%239AA0AA' stroke-width='2' d='M10 9.2L10 15'/%3E%3C/g%3E%3C/svg%3E%0A") 0 0 no-repeat;content:""}
 .NotiBox .NotiCont .list>li {display:block;position:relative;padding-left:8px;color:var(--gray70);font-size:13px;line-height:22px}
-.NotiBox .NotiCont .list>li:before {position:absolute;top:0;left:0;font-weight:bold;line-height:22px;content:"·"}
+.NotiBox .NotiCont .list>li:before {position:absolute;top:0;left:0;font-weight:bold;line-height:22px;content:"-"}
 
 /* Scrollbar */
 .ScrollBar::-webkit-scrollbar {margin-right:10px;width:10px;background-color:rgba(0,0,0,0)}

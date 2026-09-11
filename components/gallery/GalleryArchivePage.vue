@@ -1,7 +1,7 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="basePath"
         :page-variant="`archive-${variant}`" :footer-text="t('footer.copyright')" :show-app-dock="true">
-        <article ref="galleryPageRef" class="gallery-page section gallery-page--editorial" :class="galleryVariantClass"
+        <article class="gallery-page section gallery-page--editorial" :class="galleryVariantClass"
             aria-labelledby="gallery-poster-title">
             <GalleryPageHeader :view-mode="viewMode" :title="t(titleKey)" :dek="lead" :kicker="editorialKicker"
                 :hero-number="heroNumber" :hero-aria-label="heroAriaLabel" :status-label="t('gallery.indexLabel')"
@@ -18,18 +18,17 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from '@data/works';
-import type { GalleryArchiveVariant } from '@composables/gallery/useGallery';
+import type { GalleryArchiveVariant } from '~/composables/gallery/useGallery';
 import GalleryArchiveListRenderer from '~/components/renderers/Page_GalleryArchive/GalleryArchiveListRenderer.vue';
 import GalleryPageHeader from '~/components/gallery/GalleryPageHeader.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
-    works: readonly WorkItem[];
 }>();
 
 const layoutLinks = useSubpageLinks();
 const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
+const works = useGalleryRouteWorks(props.variant);
 
 const {
     t,
@@ -51,8 +50,6 @@ const {
     toolbarAriaLabel,
     titleKey,
     basePath,
-} = useGalleryArchive(props.variant, props.works);
+} = useGalleryArchive(props.variant, works);
 
-const galleryPageRef = ref<HTMLElement | null>(null);
-useGalleryEntryFocusScope(galleryPageRef);
 </script>
