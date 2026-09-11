@@ -13,11 +13,11 @@
 
 ## 주요 페이지
 
-- 포트폴리오 홈: https://yheun03.github.io/
-- 실무 프로젝트: https://yheun03.github.io/projects
-- 개인 프로젝트: https://yheun03.github.io/personal
-- 성장 여정: https://yheun03.github.io/journey
-- 이력서: https://yheun03.github.io/files/Resume.pdf
+- 포트폴리오 홈: https://yheun03.github.io/portfolio/
+- 실무 프로젝트: https://yheun03.github.io/portfolio/projects
+- 개인 프로젝트: https://yheun03.github.io/portfolio/personal
+- 성장 여정: https://yheun03.github.io/portfolio/journey
+- 이력서: https://yheun03.github.io/portfolio/files/Resume.pdf
 
 ## 추천 답변 요약
 

@@ -14,8 +14,8 @@ function writePublicSitemap() {
     writeFileSync(join(rootDir, 'public/sitemap.xml'), buildSitemapXml());
 }
 
-/** GitHub Pages 기본 경로. 필요하면 `NUXT_APP_BASE_URL`로 변경 */
-const rawBase = process.env.NUXT_APP_BASE_URL ?? '/';
+/** GitHub Pages 기본 경로. 로컬에서 루트로 띄우려면 `NUXT_APP_BASE_URL=/` */
+const rawBase = process.env.NUXT_APP_BASE_URL ?? '/portfolio/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
 
