@@ -1646,7 +1646,7 @@
                         "/images/projects/clone-flighty/image-02.webp",
                         "/images/projects/clone-flighty/image-03.webp"
                     ],
-                    "thumbnail": "/images/archive-thumbs/flighty.jpg",
+                    "thumbnail": "/images/projects/archive-thumbnails/flighty.jpg",
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Figma"],
                     "links": [
                         {
@@ -1772,7 +1772,7 @@
                         "/images/projects/matemate-capstone/image-03.webp",
                         "/images/projects/matemate-capstone/image-04.webp"
                     ],
-                    "thumbnail": "/images/archive-thumbs/matemate.jpg",
+                    "thumbnail": "/images/projects/archive-thumbnails/matemate.jpg",
                     "languages": ["HTML", "SCSS", "JavaScript", "Firebase", "Figma"],
                     "links": [
                         {
@@ -1845,7 +1845,7 @@
                         "/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
                         "/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
                     ],
-                    "thumbnail": "/images/archive-thumbs/jonsoft-2022.jpg",
+                    "thumbnail": "/images/projects/archive-thumbnails/jonsoft-2022.jpg",
                     "languages": ["HTML", "CSS", "jQuery", "Figma"],
                     "links": [
                         {
