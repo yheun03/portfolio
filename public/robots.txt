@@ -3,6 +3,8 @@ Allow: /
 
 # 내부 디자인 토큰 문서 — 검색 노출 제외
 Disallow: /personal/design-tokens
+Disallow: /portfolio/personal/design-tokens
+Disallow: /portfolio/personal/design-tokens/
 
-Sitemap: https://yheun03.github.io/sitemap.xml
-LLMs: https://yheun03.github.io/llms.txt
+Sitemap: https://yheun03.github.io/portfolio/sitemap.xml
+LLMs: https://yheun03.github.io/portfolio/llms.txt
