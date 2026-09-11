@@ -543,6 +543,10 @@
 
 /* Highlights */
 @media (max-width: #{$bp-max-tablet}) {
+    .highlights.section--highlights {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .section--highlights .highlights__total-badge {
         position: relative;
         top: auto;
@@ -677,8 +681,8 @@
     }
 
     .contact__mail-display {
-        flex-wrap: wrap;
-        white-space: normal;
+        flex-wrap: nowrap;
+        white-space: nowrap;
     }
 
     .contact__spotlight .spotlight__kicker {
@@ -707,15 +711,17 @@
 
     .contact__mail-display {
         display: inline-flex;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
         height: auto;
         min-height: 1.15em;
-        padding-inline: 0 0.5em;
-        font-size: clamp(4rem, 7.5vw, 9rem);
+        padding-inline: 0;
+        font-size: var(--font-size-contact);
         line-height: 1.05;
+        overflow-wrap: normal;
 
         .contact__mail-slot--suffix>span {
-            font-size: 0.72em;
+            font-size: 1em;
         }
     }
 
@@ -747,7 +753,7 @@
     }
 
     .contact__mail-display {
-        font-size: clamp(5rem, 7.5vw, 12rem);
+        font-size: clamp(2.5rem, 6.2vw, 4.5rem);
     }
 }
 
