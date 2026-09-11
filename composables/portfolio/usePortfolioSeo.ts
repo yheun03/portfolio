@@ -55,6 +55,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const googleVerification = String(config.googleSiteVerification ?? '').trim();
         const naverVerification = String(config.naverSiteVerification ?? '').trim();
         const personId = `${SITE_URL}#person`;
+        const organizationId = `${SITE_URL}#organization`;
         const websiteId = `${SITE_URL}#website`;
         const webpageId = `${canonical}#webpage`;
         const imageId = `${canonical}#primaryimage`;
@@ -78,6 +79,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             inLanguage: page.locale,
             isPartOf: { '@id': websiteId },
             about: { '@id': personId },
+            publisher: { '@id': organizationId },
             primaryImageOfPage: { '@id': imageId },
         };
 
@@ -100,7 +102,15 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 name: seo.websiteName,
                 description: seo.description,
                 inLanguage: ['ko', 'en'],
-                publisher: { '@id': personId },
+                publisher: { '@id': organizationId },
+            },
+            {
+                '@type': 'Organization',
+                '@id': organizationId,
+                name: seo.websiteName,
+                url: SITE_URL,
+                founder: { '@id': personId },
+                sameAs: [profile.contacts.github],
             },
             person,
             {

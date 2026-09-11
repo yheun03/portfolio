@@ -2,7 +2,7 @@
     <section id="journey" class="section section--journey" aria-labelledby="section-journey-title">
         <header class="section-head section-head--start">
             <BaseSectionTitle title-id="section-journey-title" :eyebrow="t('nav.journey')" :title="t('journey.title')"
-                :description="t('journey.summary')" />
+                :description="t('journey.summary')" :heading-tag="props.headingTag" />
         </header>
 
         <div class="journey__flow" data-animate>
@@ -24,6 +24,12 @@
 
 <script setup lang="ts">
 import JourneyViewRenderer from '~/components/renderers/Page_Home/JourneyViewRenderer.vue';
+
+const props = withDefaults(defineProps<{
+    headingTag?: 'h1' | 'h2';
+}>(), {
+    headingTag: 'h2',
+});
 
 const { t } = useLocale();
 const {
