@@ -5,7 +5,7 @@
 export type SeoLocale = 'ko' | 'en';
 
 export const seoConfig = {
-    siteUrl: 'https://yheun03.github.io/portfolio/',
+    siteUrl: 'https://yheun03.github.io/',
     defaultOgImage: '/images/og-image-2026.jpg',
     personImage: '/images/portfolio/ver-2025/photo-1440.webp',
     defaultOgImageSize: {
