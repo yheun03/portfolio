@@ -50,7 +50,7 @@
         "cardLabel": "Case Study",
         "all": "All",
         "detail": "View project details",
-        "fullArchiveLink": "View full client project gallery",
+        "fullArchiveLink": "View client work",
         "sectionDescription": "A curated set of client work showing accessibility, SEO, responsive UI, JavaScript, and Vue 3 experience. The full list and captures live in the gallery.",
         "archiveCountLabel": "client projects in the archive",
         "archiveSummary": "{pinned} highlights on this page; {total} total in the gallery.",
@@ -63,7 +63,7 @@
         "cardLabel": "Personal",
         "backToWorks": "Go to Client works (#works)",
         "ctaTab": "Open personal projects gallery",
-        "fullArchiveLink": "View full personal project gallery",
+        "fullArchiveLink": "View personal work",
         "designTokensLink": "View 2026 portfolio design tokens"
     },
     "gallery": {
