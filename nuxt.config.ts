@@ -35,6 +35,7 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
             meta: [
+                { name: 'referrer', content: 'strict-origin-when-cross-origin' },
                 { name: 'color-scheme', content: 'light dark' },
                 { name: 'theme-color', content: '#f2f4f6', media: '(prefers-color-scheme: light)' },
                 { name: 'theme-color', content: '#060a10', media: '(prefers-color-scheme: dark)' },

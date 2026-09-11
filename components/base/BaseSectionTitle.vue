@@ -1,10 +1,10 @@
 <template>
     <div class="section-title" :data-animate="animate ? '' : null">
         <p class="section-title__eyebrow">{{ eyebrow }}</p>
-        <h2 :id="titleId" class="section-title__title">
+        <component :is="headingTag" :id="titleId" class="section-title__title">
             {{ title }}
             <span v-if="spark" class="section-title__spark emoji emoji--soft" aria-hidden="true">✦</span>
-        </h2>
+        </component>
         <p v-if="description" :id="descriptionId" class="section-title__description">{{ description }}</p>
     </div>
 </template>
@@ -17,9 +17,10 @@ withDefaults(
         description?: string;
         titleId: string;
         descriptionId?: string;
+        headingTag?: 'h1' | 'h2';
         spark?: boolean;
         animate?: boolean;
     }>(),
-    { spark: true, animate: true },
+    { headingTag: 'h2', spark: true, animate: true },
 );
 </script>
