@@ -196,7 +196,6 @@
             justify-content: center;
             width: auto;
             min-width: 0;
-            min-height: 0;
             padding: 4px 9px;
             border: 1px solid color-mix(in srgb, var(--gallery-muted) 36%, transparent);
             border-radius: var(--radius-pill);
@@ -459,7 +458,6 @@
             "media";
         row-gap: 16px;
         min-width: 0;
-        min-height: 0;
         overflow: hidden;
         padding: var(--card-padding-lg);
         border: 0;
@@ -546,7 +544,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 0;
             padding: 4px 11px;
             border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
             border-radius: var(--radius-pill);
@@ -638,7 +635,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: #{$bp-min-tablet}) and (max-width: #{$bp-max-tablet}) {
     .gallery-editorial__headline {
         font-size: 2.75rem;
     }
@@ -652,7 +649,7 @@
     .gallery-editorial {
         &__poster-top {
             display: grid;
-            padding-inline: 20px;
+            padding-inline: var(--page-pad-x);
         }
 
         &__stats {
@@ -667,30 +664,30 @@
                 "rule"
                 "status"
                 "number";
-            padding-inline: 20px;
+            padding-inline: var(--page-pad-x);
         }
 
         &__headline {
-            font-size: 2rem;
+            font-size: var(--font-size-display-4);
         }
 
         &__hero-num {
             justify-self: start;
             margin-top: 16px;
-            font-size: 4rem;
+            font-size: var(--font-size-display-1);
         }
 
         &__dek {
-            padding-inline: 20px;
-            font-size: 1rem;
+            padding-inline: var(--page-pad-x);
+            font-size: var(--font-size-body-1);
         }
 
         &__entry-title {
-            font-size: 1.5rem;
+            font-size: var(--font-size-display-5);
         }
 
         &__entry-poster {
-            padding: 24px 20px;
+            padding: var(--card-padding-lg) var(--page-pad-x);
         }
     }
 }

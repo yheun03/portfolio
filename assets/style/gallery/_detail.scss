@@ -483,7 +483,6 @@
     }
 
     &.gallery-page--editorial &__figure {
-        min-height: 0;
         max-width: none;
         height: min(68vh, 720px);
         max-height: 720px;
@@ -726,7 +725,14 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: #{$bp-max-tablet}) {
+    .gallery-page--editorial.section,
+    .gallery-detail.gallery-page--editorial.section {
+        --gallery-section-gap: var(--section-gap);
+        padding-block: var(--section-pad-y);
+        padding-inline: max(var(--page-pad-x), env(safe-area-inset-left)) max(var(--page-pad-x), env(safe-area-inset-right));
+    }
+
     .gallery-detail {
 
         &.gallery-page--editorial &__hero,
@@ -754,97 +760,6 @@
             grid-template-columns: minmax(0, 1fr);
         }
     }
-}
-
-@media (max-width: 640px) {
-    .gallery-detail {
-        &.gallery-page--editorial &__links {
-            display: grid;
-
-            .base-button {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        &.gallery-page--editorial &__hero {
-            padding: var(--card-padding-lg);
-        }
-
-        &.gallery-page--editorial &__title {
-            font-size: 2rem;
-            line-height: 1.15;
-        }
-
-        &.gallery-page--editorial &__intro {
-            font-size: 0.98rem;
-            line-height: 1.68;
-        }
-
-        &.gallery-page--editorial &__hero-meta,
-        &.gallery-page--editorial &__summary-grid,
-        &.gallery-page--editorial &__content-grid {
-            grid-template-columns: minmax(0, 1fr);
-        }
-
-        &.gallery-page--editorial &__section-head {
-            align-items: flex-start;
-        }
-
-        &.gallery-page--editorial &__gallery-controls {
-            grid-template-columns: 36px minmax(0, 1fr) 36px;
-        }
-
-        &.gallery-page--editorial &__gallery {
-            height: auto;
-            padding: 20px;
-        }
-
-        &.gallery-page--editorial &__summary,
-        &.gallery-page--editorial &__content-card {
-            padding: 20px;
-        }
-
-        &.gallery-page--editorial &__showcase,
-        &.gallery-page--editorial &__body {
-            margin-top: 32px;
-        }
-
-        &.gallery-page--editorial &__content-grid {
-            gap: 16px;
-        }
-
-        &.gallery-page--editorial &__figure {
-            height: 320px;
-        }
-
-        &.gallery-page--editorial &__arrow {
-            width: 36px;
-            height: 36px;
-        }
-
-        &.gallery-page--editorial &__footer-nav {
-            display: grid;
-
-            .base-button {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    }
-}
-
-@media (max-width: #{$bp-max-tablet}) {
-
-    .gallery-page--editorial.section,
-    .gallery-detail.gallery-page--editorial.section {
-        --gallery-section-gap: 32px;
-        width: 100%;
-        max-width: none;
-        padding-block: 48px;
-        padding-inline: max(var(--page-pad-x, 16px), env(safe-area-inset-left)) max(var(--page-pad-x, 16px),
-                env(safe-area-inset-right));
-    }
 
     .gallery-card__empty-capture {
         min-height: 176px;
@@ -859,13 +774,66 @@
             overflow-wrap: anywhere;
         }
     }
-
 }
 
-@media (max-width: 640px) {
+@media (max-width: #{$bp-max-mobile}) {
+    .gallery-detail.gallery-page--editorial {
+        .gallery-detail {
+            &__hero {
+                padding: var(--card-padding-lg);
+            }
 
-    .gallery-page--editorial.section,
-    .gallery-detail.gallery-page--editorial.section {
-        padding-block: 32px;
+            &__title {
+                font-size: var(--font-size-display-3);
+                line-height: 1.15;
+            }
+
+            &__intro {
+                font-size: var(--font-size-body-1);
+                line-height: 1.68;
+            }
+
+            &__hero-meta,
+            &__summary-grid,
+            &__content-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            &__section-head {
+                align-items: flex-start;
+            }
+
+            &__gallery-controls {
+                grid-template-columns: 36px minmax(0, 1fr) 36px;
+            }
+
+            &__gallery,
+            &__summary,
+            &__content-card {
+                padding: var(--card-padding);
+            }
+
+            &__gallery {
+                height: auto;
+            }
+
+            &__showcase,
+            &__body {
+                margin-top: var(--section-gap);
+            }
+
+            &__content-grid {
+                gap: var(--block-gap);
+            }
+
+            &__figure {
+                height: 320px;
+            }
+
+            &__arrow {
+                width: 36px;
+                height: 36px;
+            }
+        }
     }
 }
