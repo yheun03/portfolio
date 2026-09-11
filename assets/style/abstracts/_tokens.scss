@@ -307,29 +307,37 @@ $font-presets: (
 
 @media (max-width: #{$bp-max-mobile}) {
     :root {
-        --page-pad-x: clamp(16px, 4.2vw, 22px);
-        --page-pad-hero: clamp(16px, 4vw, 20px);
-        --section-pad-y: clamp(56px, 12.5vw, 80px);
-        --section-gap: clamp(28px, 6.5vw, 40px);
-        --block-gap: clamp(18px, 4.2vw, 26px);
+        --page-pad-x: clamp(14px, 4vw, 18px);
+        --page-pad-hero: clamp(14px, 4vw, 18px);
+        --section-pad-y: clamp(44px, 11vw, 64px);
+        --section-gap: clamp(22px, 5.5vw, 32px);
+        --block-gap: clamp(14px, 3.8vw, 22px);
         --swipe-card-width: min(88vw, 336px);
-        --font-size-display-1: clamp(2.75rem, 12vw, 4.5rem);
-        --font-size-display-2: clamp(2.35rem, 10vw, 3.85rem);
-        --font-size-display-3: clamp(2rem, 8.5vw, 3.15rem);
-        --font-size-display-4: clamp(1.65rem, 7vw, 2.35rem);
-        --font-size-display-5: clamp(1.35rem, 5.5vw, 1.85rem);
-        --font-size-display-6: clamp(1.15rem, 4.5vw, 1.45rem);
-        --font-size-title-1: clamp(1.1rem, 4vw, 1.3rem);
-        --font-size-title-2: clamp(1rem, 3.5vw, 1.12rem);
-        --font-size-body-1: 1rem;
-        --font-size-body-2: 0.94rem;
+        --font-size-display-1: clamp(2.35rem, 10.5vw, 3.75rem);
+        --font-size-display-2: clamp(2rem, 8.8vw, 3.2rem);
+        --font-size-display-3: clamp(1.75rem, 7.5vw, 2.7rem);
+        --font-size-display-4: clamp(1.45rem, 6.2vw, 2rem);
+        --font-size-display-5: clamp(1.22rem, 5vw, 1.6rem);
+        --font-size-display-6: clamp(1.05rem, 4.2vw, 1.3rem);
+        --font-size-xl: 1.05rem;
+        --font-size-lg: 0.95rem;
+        --font-size-md: 0.9rem;
+        --font-size-sm: 0.82rem;
+        --font-size-xs: 0.75rem;
+        --font-size-title-1: clamp(1rem, 3.8vw, 1.18rem);
+        --font-size-title-2: clamp(0.94rem, 3.4vw, 1.05rem);
+        --font-size-title-3: 0.9rem;
+        --font-size-body-1: 0.9rem;
+        --font-size-body-2: 0.84rem;
+        --font-size-label: 0.75rem;
+        --font-size-chip: 0.7rem;
         --space-section-y: var(--section-pad-y);
         --space-section-gap: var(--section-gap);
         --space-block-gap: var(--block-gap);
         --inset-panel: clamp(16px, 4.5vw, 21px);
-        --card-padding: clamp(18px, 4.8vw, 24px);
-        --card-padding-lg: clamp(20px, 5.2vw, 28px);
-        --font-size-contact: clamp(2rem, 8.5vw, 3.25rem);
+        --card-padding: clamp(15px, 4.2vw, 20px);
+        --card-padding-lg: clamp(17px, 4.8vw, 23px);
+        --font-size-contact: clamp(1.55rem, 8.2vw, 2.25rem);
     }
 }
 
