@@ -14,7 +14,7 @@
         </ul>
 
         <nav class="showcase__more" :aria-label="t('story.galleriesAriaLabel')">
-            <BaseButton to="/projects" :label="t('works.fullArchiveLink')" variant="ghost" />
+            <BaseButton to="/projects" :label="careerArchiveLabel" />
             <BaseButton to="/personal" :label="t('personal.fullArchiveLink')" variant="ghost" />
         </nav>
     </HomeSection>
@@ -29,4 +29,6 @@ const homeShowcaseWorks = computed(() => {
     const works = content.value.works.career as unknown as WorkItem[];
     return showcaseIds.map((id) => works.find((work) => work.id === id)).filter((work): work is WorkItem => Boolean(work));
 });
+const careerArchiveLabel = computed(() => t('works.fullArchiveLink')
+    .replace('{total}', String(content.value.works.career.length)));
 </script>

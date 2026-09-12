@@ -25,10 +25,10 @@
         "ctaContact": "Contact",
         "scrollCue": "Scroll",
         "scrollCueLabel": "Scroll to next section",
-        "displayLine1": "Interfaces",
-        "displayLine2": "with rhythm",
-        "displayLine3": "and structure",
-        "lead": "Seven years of HTML and SCSS, with Vue used only where it helps.",
+        "displayLine1": "Clear to read",
+        "displayLine2": "fast to use",
+        "displayLine3": "solidly built",
+        "lead": "I use semantic HTML and reusable SCSS components for accessible, responsive UI, with SEO, GEO, and AEO built into the content structure.",
         "actionsAriaLabel": "Primary portfolio sections"
     },
     "about": {
@@ -37,10 +37,10 @@
         "direction": "I keep growing in Vue 3 component structure and frontend design.",
         "kicker": "A closer look.",
         "workflowTitle": "Workflow",
-        "tagline": "Simple structure. Light feel.",
-        "displayLine1": "Easy to read",
-        "displayLine2": "Fast to use",
-        "displayLine3": "Built to last",
+        "tagline": "Clear hierarchy helps people, search engines, and AI systems understand each screen with less friction.",
+        "displayLine1": "Clear reading",
+        "displayLine2": "order",
+        "displayLine3": "faster use",
         "principlesAriaLabel": "Work principles",
         "workflowAriaLabel": "Workflow",
         "stepsAriaLabel": "Steps"
@@ -50,7 +50,7 @@
         "cardLabel": "Case Study",
         "all": "All",
         "detail": "View project details",
-        "fullArchiveLink": "View client work",
+        "fullArchiveLink": "View all {total} client projects",
         "sectionDescription": "A curated set of client work showing accessibility, SEO, responsive UI, JavaScript, and Vue 3 experience. The full list and captures live in the gallery.",
         "archiveCountLabel": "client projects in the archive",
         "archiveSummary": "{pinned} highlights on this page; {total} total in the gallery.",
@@ -141,7 +141,7 @@
     },
     "toolbox": {
         "title": "Tools and practices proven in production",
-        "copy": "HTML and SCSS stay central, with Vue templates, props, v-if, v-for, and Teleport used as needed.",
+        "copy": "Accessibility and responsive UI come first, supported by content structure and metadata for SEO, GEO, and AEO.",
         "kicker": "By discipline."
     },
     "highlights": {
@@ -296,9 +296,9 @@
         "ogDescription": "A portfolio of production HTML and SCSS work with practical, lightweight use of Vue 3 for UI structure."
     },
     "story": {
-        "showcaseTitle": "Three works, up front",
-        "showcaseDescription": "Award-winning, in-house solution, and SI highlights. The rest live in the galleries.",
-        "caseCta": "View case",
+        "showcaseTitle": "Three highlights, with every project in the archive",
+        "showcaseDescription": "Start with an award winner, an in-house solution, and an SI case. Open a card for my role, implementation process, and results.",
+        "caseCta": "View project details",
         "proofDescription": "Results in numbers and records. Full details live on each page.",
         "proofLinkHighlights": "View awards & records",
         "proofLinkJourney": "View journey",
@@ -531,7 +531,7 @@
             "deliveryPillars": [
                 "Design-to-code fidelity",
                 "Maintainable UI system",
-                "SEO and accessibility-first markup",
+                "Accessibility and SEO/GEO/AEO-ready markup",
                 "Production-ready structure"
             ],
             "stats": [
@@ -581,8 +581,8 @@
             ],
             "principles": [
                 {
-                    "title": "User Experience",
-                    "description": "I prioritize interfaces that are practically usable, not only visually pleasing."
+                    "title": "Accessibility and Usability",
+                    "description": "Semantic structure, keyboard navigation, and clear hierarchy help everyone understand and use the interface quickly."
                 },
                 {
                     "title": "Maintainable Structure",
@@ -608,7 +608,7 @@
                 },
                 {
                     "label": "Check",
-                    "description": "Document for collaboration readability."
+                    "description": "Check keyboard use, heading structure, metadata, and search visibility."
                 },
                 {
                     "label": "Quality",
@@ -652,6 +652,13 @@
                 "title": "CMS / Solution",
                 "items": ["ICE CMS", "WebSquare", "Nexacro", "eGovFrame", "Customization"],
                 "description": "Flexible in adapting to enterprise CMS and solution ecosystems."
+            },
+            {
+                "key": "search",
+                "icon": "◎",
+                "title": "Accessibility / Search",
+                "items": ["Web Accessibility", "SEO", "GEO", "AEO", "Metadata", "JSON-LD", "Sitemap"],
+                "description": "Semantic markup and structured content improve both user access and visibility in search and AI-generated answers."
             },
             {
                 "key": "collaboration",

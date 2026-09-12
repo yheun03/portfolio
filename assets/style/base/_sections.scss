@@ -47,3 +47,15 @@
         display: none;
     }
 }
+
+@media (min-width: #{$bp-min-laptop}) {
+    .section-title__eyebrow {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .section-title__eyebrow {
+        font-size: 1.125rem;
+    }
+}
