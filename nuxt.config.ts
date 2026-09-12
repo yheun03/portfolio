@@ -16,6 +16,9 @@ const googleTagManagerId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_GOOGLE_
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
+    experimental: {
+        appManifest: false,
+    },
 
     runtimeConfig: {
         public: {
