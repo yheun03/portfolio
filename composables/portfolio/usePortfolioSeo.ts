@@ -25,7 +25,7 @@ type PortfolioSeoOptions = {
 };
 
 const SITE_URL = 'https://yheun03.github.io/';
-const DEFAULT_IMAGE = '/images/projects/portfolio-2026/home-light-desktop.png';
+const DEFAULT_IMAGE = '/assets/images/projects/portfolio-2026/home-light-desktop.png';
 const contentByLocale = { ko: ko.content, en: en.content };
 
 export function getPortfolioAbsoluteUrl(path = '/') {

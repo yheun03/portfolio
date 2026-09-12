@@ -96,7 +96,7 @@ const cardAriaLabel = computed(() => {
 });
 
 const coverCapture = computed(() => (props.work as WorkItemWithThumbnail).thumbnail ?? props.work.captures[0] ?? '');
-const coverSrc = computed(() => resolveAppPath(coverCapture.value || '/images/projects/placeholder.svg'));
+const coverSrc = computed(() => resolveAppPath(coverCapture.value || '/assets/images/projects/placeholder.svg'));
 const isPlaceholderCover = computed(() => isPlaceholderCapture(coverCapture.value));
 
 const coverAlt = computed(() => {

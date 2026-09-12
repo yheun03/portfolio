@@ -910,7 +910,7 @@
                     "points": ["Data-focused dashboard UI", "Status and hierarchy visualization rules", "Screen consistency in a short timeframe"],
                     "pin": true,
                     "duration": "~1 month",
-                    "captures": ["/images/projects/samhwa-eco-dashboard/image-01.webp"],
+                    "captures": ["/assets/images/projects/samhwa-eco-dashboard/image-01.webp"],
                     "languages": ["Vue", "JavaScript", "SCSS", "HTML"]
                 },
                 {
@@ -953,12 +953,12 @@
                     "pin": true,
                     "duration": "Ongoing / ~3+ months",
                     "captures": [
-                        "/images/projects/orchem-mes/image-01.webp",
-                        "/images/projects/orchem-mes/image-02.webp",
-                        "/images/projects/orchem-mes/image-03.webp",
-                        "/images/projects/orchem-mes/image-04.webp",
-                        "/images/projects/orchem-mes/image-05.webp",
-                        "/images/projects/orchem-mes/image-06.webp"
+                        "/assets/images/projects/orchem-mes/image-01.webp",
+                        "/assets/images/projects/orchem-mes/image-02.webp",
+                        "/assets/images/projects/orchem-mes/image-03.webp",
+                        "/assets/images/projects/orchem-mes/image-04.webp",
+                        "/assets/images/projects/orchem-mes/image-05.webp",
+                        "/assets/images/projects/orchem-mes/image-06.webp"
                     ],
                     "languages": ["Vue 3", "Vite", "JavaScript", "SCSS", "AG Grid"]
                 },
@@ -988,11 +988,11 @@
                     "pin": true,
                     "duration": "~6 months",
                     "captures": [
-                        "/images/projects/hanjinkal/image-01.webp",
-                        "/images/projects/hanjinkal/image-02.webp",
-                        "/images/projects/hanjinkal/image-03.webp",
-                        "/images/projects/hanjinkal/image-04.webp",
-                        "/images/projects/hanjinkal/image-05.webp"
+                        "/assets/images/projects/hanjinkal/image-01.webp",
+                        "/assets/images/projects/hanjinkal/image-02.webp",
+                        "/assets/images/projects/hanjinkal/image-03.webp",
+                        "/assets/images/projects/hanjinkal/image-04.webp",
+                        "/assets/images/projects/hanjinkal/image-05.webp"
                     ],
                     "languages": ["HTML", "SCSS", "Vue"]
                 },
@@ -1020,11 +1020,11 @@
                     "pin": true,
                     "duration": "~8 months",
                     "captures": [
-                        "/images/projects/oms/image-01.webp",
-                        "/images/projects/oms/image-02.webp",
-                        "/images/projects/oms/image-03.webp",
-                        "/images/projects/oms/image-04.webp",
-                        "/images/projects/oms/image-05.webp"
+                        "/assets/images/projects/oms/image-01.webp",
+                        "/assets/images/projects/oms/image-02.webp",
+                        "/assets/images/projects/oms/image-03.webp",
+                        "/assets/images/projects/oms/image-04.webp",
+                        "/assets/images/projects/oms/image-05.webp"
                     ],
                     "languages": ["Vue", "SCSS"]
                 },
@@ -1051,11 +1051,11 @@
                     "pin": false,
                     "duration": "~15 months",
                     "captures": [
-                        "/images/projects/smart-factory-gov/image-01.webp",
-                        "/images/projects/smart-factory-gov/image-02.webp",
-                        "/images/projects/smart-factory-gov/image-03.webp",
-                        "/images/projects/smart-factory-gov/image-04.webp",
-                        "/images/projects/smart-factory-gov/image-05.webp"
+                        "/assets/images/projects/smart-factory-gov/image-01.webp",
+                        "/assets/images/projects/smart-factory-gov/image-02.webp",
+                        "/assets/images/projects/smart-factory-gov/image-03.webp",
+                        "/assets/images/projects/smart-factory-gov/image-04.webp",
+                        "/assets/images/projects/smart-factory-gov/image-05.webp"
                     ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
@@ -1073,7 +1073,7 @@
                     "points": ["Early-stage production build experience", "Corporate-site publishing fundamentals"],
                     "pin": false,
                     "duration": "~2 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": ["/assets/images/projects/placeholder.svg"],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1094,7 +1094,7 @@
                     "points": ["App-like web implementation", "Service application publishing"],
                     "pin": false,
                     "duration": "~2 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": ["/assets/images/projects/placeholder.svg"],
                     "languages": ["HTML", "CSS", "JavaScript"]
                 },
                 {
@@ -1119,7 +1119,7 @@
                     "points": ["Operational responsiveness", "Ticket-driven maintenance", "Awareness of deploy and security impact"],
                     "pin": true,
                     "duration": "Ongoing",
-                    "captures": ["/images/projects/hanon/image-01.webp", "/images/projects/hanon/image-02.webp"],
+                    "captures": ["/assets/images/projects/hanon/image-01.webp", "/assets/images/projects/hanon/image-02.webp"],
                     "languages": ["C#", "CSS3", "csHtml", "JavaScript"]
                 },
                 {
@@ -1144,7 +1144,7 @@
                     "points": ["Operations-improving publishing", "Self-initiated customer support", "Recurrence-prevention documentation"],
                     "pin": false,
                     "duration": "~3 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": ["/assets/images/projects/placeholder.svg"],
                     "languages": ["Nexacro"]
                 },
                 {
@@ -1186,10 +1186,10 @@
                     "pin": true,
                     "duration": "Ongoing",
                     "captures": [
-                        "/images/projects/framework/image-01.webp",
-                        "/images/projects/framework/image-02.webp",
-                        "/images/projects/framework/image-03.webp",
-                        "/images/projects/framework/image-04.webp"
+                        "/assets/images/projects/framework/image-01.webp",
+                        "/assets/images/projects/framework/image-02.webp",
+                        "/assets/images/projects/framework/image-03.webp",
+                        "/assets/images/projects/framework/image-04.webp"
                     ],
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS"],
                     "links": [
@@ -1225,7 +1225,7 @@
                     "points": ["Publishing standardization", "Reuse and collaboration", "Examples and guide docs"],
                     "pin": true,
                     "duration": "Ongoing",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": ["/assets/images/projects/placeholder.svg"],
                     "languages": ["Vue 3", "Nuxt 3", "SCSS", "TypeScript"]
                 },
                 {
@@ -1251,9 +1251,9 @@
                     "pin": false,
                     "duration": "~3 months",
                     "captures": [
-                        "/images/projects/robo-tms/image-01.webp",
-                        "/images/projects/robo-tms/image-02.webp",
-                        "/images/projects/robo-tms/image-03.webp"
+                        "/assets/images/projects/robo-tms/image-01.webp",
+                        "/assets/images/projects/robo-tms/image-02.webp",
+                        "/assets/images/projects/robo-tms/image-03.webp"
                     ],
                     "languages": ["Vue", "SCSS"]
                 },
@@ -1278,7 +1278,7 @@
                     "points": ["Solution productization", "Modularization-driven productivity"],
                     "pin": false,
                     "duration": "~9 months",
-                    "captures": ["/images/projects/robo-mes/image-01.webp", "/images/projects/robo-mes/image-02.webp"],
+                    "captures": ["/assets/images/projects/robo-mes/image-01.webp", "/assets/images/projects/robo-mes/image-02.webp"],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1306,9 +1306,9 @@
                     "pin": true,
                     "duration": "~3 weeks",
                     "captures": [
-                        "/images/projects/company-renewal/image-01.webp",
-                        "/images/projects/company-renewal/image-02.webp",
-                        "/images/projects/company-renewal/image-03.webp"
+                        "/assets/images/projects/company-renewal/image-01.webp",
+                        "/assets/images/projects/company-renewal/image-02.webp",
+                        "/assets/images/projects/company-renewal/image-03.webp"
                     ],
                     "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
                     "links": [
@@ -1340,9 +1340,9 @@
                     "pin": false,
                     "duration": "~2 weeks",
                     "captures": [
-                        "/images/projects/kyungdongwon-cms/image-01.webp",
-                        "/images/projects/kyungdongwon-cms/image-02.webp",
-                        "/images/projects/kyungdongwon-cms/image-03.webp"
+                        "/assets/images/projects/kyungdongwon-cms/image-01.webp",
+                        "/assets/images/projects/kyungdongwon-cms/image-02.webp",
+                        "/assets/images/projects/kyungdongwon-cms/image-03.webp"
                     ],
                     "languages": ["XML", "CSS3"]
                 },
@@ -1363,7 +1363,7 @@
                     "points": ["Rapid-delivery capability", "React publishing experience"],
                     "pin": false,
                     "duration": "~1 week",
-                    "captures": ["/images/projects/fems/image-01.webp", "/images/projects/fems/image-02.webp"],
+                    "captures": ["/assets/images/projects/fems/image-01.webp", "/assets/images/projects/fems/image-02.webp"],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1388,9 +1388,9 @@
                     "pin": false,
                     "duration": "~2 months",
                     "captures": [
-                        "/images/projects/scm-daeyang-paper/image-01.webp",
-                        "/images/projects/scm-daeyang-paper/image-02.webp",
-                        "/images/projects/scm-daeyang-paper/image-03.webp"
+                        "/assets/images/projects/scm-daeyang-paper/image-01.webp",
+                        "/assets/images/projects/scm-daeyang-paper/image-02.webp",
+                        "/assets/images/projects/scm-daeyang-paper/image-03.webp"
                     ],
                     "languages": ["HTML", "SCSS"]
                 },
@@ -1412,7 +1412,7 @@
                     "points": ["Multi-version structure handling", "React component adaptation"],
                     "pin": false,
                     "duration": "~6 months",
-                    "captures": ["/images/projects/scm-daeyang-board/image-01.webp", "/images/projects/scm-daeyang-board/image-02.webp"],
+                    "captures": ["/assets/images/projects/scm-daeyang-board/image-01.webp", "/assets/images/projects/scm-daeyang-board/image-02.webp"],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1433,7 +1433,7 @@
                     "points": ["End-to-end plan, build, and operate", "Contributed to brand trust"],
                     "pin": false,
                     "duration": "~3 months",
-                    "captures": ["/images/projects/company-renewal-2022/image-01.webp", "/images/projects/company-renewal-2022/image-02.webp"],
+                    "captures": ["/assets/images/projects/company-renewal-2022/image-01.webp", "/assets/images/projects/company-renewal-2022/image-02.webp"],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1454,7 +1454,7 @@
                     "points": ["Proactive problem discovery and fix", "Ownership-driven improvement"],
                     "pin": false,
                     "duration": "~2 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": ["/assets/images/projects/placeholder.svg"],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {
@@ -1472,9 +1472,9 @@
                     "pin": false,
                     "duration": "~2 months",
                     "captures": [
-                        "/images/projects/tos-renewal/image-01.webp",
-                        "/images/projects/tos-renewal/image-02.webp",
-                        "/images/projects/tos-renewal/image-03.webp"
+                        "/assets/images/projects/tos-renewal/image-01.webp",
+                        "/assets/images/projects/tos-renewal/image-02.webp",
+                        "/assets/images/projects/tos-renewal/image-03.webp"
                     ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
@@ -1497,17 +1497,17 @@
                     "pin": true,
                     "duration": "~3 months",
                     "captures": [
-                        "/images/projects/toms/image-01.webp",
-                        "/images/projects/toms/image-02.webp",
-                        "/images/projects/toms/image-03.webp",
-                        "/images/projects/toms/image-04.webp",
-                        "/images/projects/toms/image-05.webp",
-                        "/images/projects/toms/image-06.webp",
-                        "/images/projects/toms/image-07.webp",
-                        "/images/projects/toms/image-08.webp",
-                        "/images/projects/toms/image-09.webp",
-                        "/images/projects/toms/image-10.webp",
-                        "/images/projects/toms/image-11.webp"
+                        "/assets/images/projects/toms/image-01.webp",
+                        "/assets/images/projects/toms/image-02.webp",
+                        "/assets/images/projects/toms/image-03.webp",
+                        "/assets/images/projects/toms/image-04.webp",
+                        "/assets/images/projects/toms/image-05.webp",
+                        "/assets/images/projects/toms/image-06.webp",
+                        "/assets/images/projects/toms/image-07.webp",
+                        "/assets/images/projects/toms/image-08.webp",
+                        "/assets/images/projects/toms/image-09.webp",
+                        "/assets/images/projects/toms/image-10.webp",
+                        "/assets/images/projects/toms/image-11.webp"
                     ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 }
@@ -1547,15 +1547,15 @@
                     "pin": true,
                     "duration": "~2 months",
                     "captures": [
-                        "/images/projects/jonsoft-framework-portfolio/image-01.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-02.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-03.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-04.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-05.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-06.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-07.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-08.webp",
-                        "/images/projects/jonsoft-framework-portfolio/image-09.webp"
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-01.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-02.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-03.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-04.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-05.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-06.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-07.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-08.webp",
+                        "/assets/images/projects/jonsoft-framework-portfolio/image-09.webp"
                     ],
                     "languages": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript"],
                     "links": [
@@ -1595,12 +1595,12 @@
                     "pin": true,
                     "duration": "May 2026–Present",
                     "captures": [
-                        "/images/projects/singil-bmc/image-01.webp",
-                        "/images/projects/singil-bmc/image-02.webp",
-                        "/images/projects/singil-bmc/image-03.webp",
-                        "/images/projects/singil-bmc/image-04.webp",
-                        "/images/projects/singil-bmc/image-05.webp",
-                        "/images/projects/singil-bmc/image-06.webp"
+                        "/assets/images/projects/singil-bmc/image-01.webp",
+                        "/assets/images/projects/singil-bmc/image-02.webp",
+                        "/assets/images/projects/singil-bmc/image-03.webp",
+                        "/assets/images/projects/singil-bmc/image-04.webp",
+                        "/assets/images/projects/singil-bmc/image-05.webp",
+                        "/assets/images/projects/singil-bmc/image-06.webp"
                     ],
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Node.js"],
                     "links": [
@@ -1642,11 +1642,11 @@
                     "pin": true,
                     "duration": "In progress",
                     "captures": [
-                        "/images/projects/clone-flighty/image-01.webp",
-                        "/images/projects/clone-flighty/image-02.webp",
-                        "/images/projects/clone-flighty/image-03.webp"
+                        "/assets/images/projects/clone-flighty/image-01.webp",
+                        "/assets/images/projects/clone-flighty/image-02.webp",
+                        "/assets/images/projects/clone-flighty/image-03.webp"
                     ],
-                    "thumbnail": "/images/projects/archive-thumbnails/flighty.jpg",
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/flighty.jpg",
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Figma"],
                     "links": [
                         {
@@ -1685,7 +1685,7 @@
                     ],
                     "pin": true,
                     "duration": "~8 months",
-                    "captures": ["/images/projects/placeholder.svg"],
+                    "captures": ["/assets/images/projects/placeholder.svg"],
                     "languages": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "JavaScript"],
                     "links": [
                         {
@@ -1723,15 +1723,15 @@
                     "pin": true,
                     "duration": "~1 month",
                     "captures": [
-                        "/images/projects/portfolio-2025/image-01.webp",
-                        "/images/projects/portfolio-2025/image-02.webp",
-                        "/images/projects/portfolio-2025/image-03.webp",
-                        "/images/projects/portfolio-2025/image-04.webp",
-                        "/images/projects/portfolio-2025/image-05.webp",
-                        "/images/projects/portfolio-2025/image-06.webp",
-                        "/images/projects/portfolio-2025/image-07.webp",
-                        "/images/projects/portfolio-2025/image-08.webp",
-                        "/images/projects/portfolio-2025/image-09.webp"
+                        "/assets/images/projects/portfolio-2025/image-01.webp",
+                        "/assets/images/projects/portfolio-2025/image-02.webp",
+                        "/assets/images/projects/portfolio-2025/image-03.webp",
+                        "/assets/images/projects/portfolio-2025/image-04.webp",
+                        "/assets/images/projects/portfolio-2025/image-05.webp",
+                        "/assets/images/projects/portfolio-2025/image-06.webp",
+                        "/assets/images/projects/portfolio-2025/image-07.webp",
+                        "/assets/images/projects/portfolio-2025/image-08.webp",
+                        "/assets/images/projects/portfolio-2025/image-09.webp"
                     ],
                     "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
                     "links": [
@@ -1767,12 +1767,12 @@
                     "pin": false,
                     "duration": "~4 weeks",
                     "captures": [
-                        "/images/projects/matemate-capstone/image-01.webp",
-                        "/images/projects/matemate-capstone/image-02.webp",
-                        "/images/projects/matemate-capstone/image-03.webp",
-                        "/images/projects/matemate-capstone/image-04.webp"
+                        "/assets/images/projects/matemate-capstone/image-01.webp",
+                        "/assets/images/projects/matemate-capstone/image-02.webp",
+                        "/assets/images/projects/matemate-capstone/image-03.webp",
+                        "/assets/images/projects/matemate-capstone/image-04.webp"
                     ],
-                    "thumbnail": "/images/projects/archive-thumbnails/matemate.jpg",
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/matemate.jpg",
                     "languages": ["HTML", "SCSS", "JavaScript", "Firebase", "Figma"],
                     "links": [
                         {
@@ -1810,7 +1810,7 @@
                     ],
                     "pin": false,
                     "duration": "~1 week build / ~2 months operation and enhancement",
-                    "captures": ["/images/projects/gongting-blind-matching/image-01.webp"],
+                    "captures": ["/assets/images/projects/gongting-blind-matching/image-01.webp"],
                     "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
                     "links": [
                         {
@@ -1842,10 +1842,10 @@
                     "pin": false,
                     "duration": "~2 months",
                     "captures": [
-                        "/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
-                        "/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
+                        "/assets/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
+                        "/assets/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
                     ],
-                    "thumbnail": "/images/projects/archive-thumbnails/jonsoft-2022.jpg",
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-2022.jpg",
                     "languages": ["HTML", "CSS", "jQuery", "Figma"],
                     "links": [
                         {

@@ -5,10 +5,9 @@ import { joinURL } from 'ufo';
 /** GitHub Pages 기본 경로 */
 const rawBase = process.env.NUXT_APP_BASE_URL ?? '/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
-const faviconHref = joinURL(resolvedBaseURL, 'favicon.svg');
-const faviconIcoHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/favicon.ico');
-const faviconPngHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/favicon-32x32.png');
-const appleTouchIconHref = joinURL(resolvedBaseURL, 'ver.2025/src/assets/favicon/apple-icon-180x180.png');
+const imagesDir = fileURLToPath(new URL('./assets/images', import.meta.url));
+const iconsDir = fileURLToPath(new URL('./assets/icons', import.meta.url));
+const faviconHref = joinURL(resolvedBaseURL, 'assets/icons/favicon.svg');
 const sitemapHref = joinURL(resolvedBaseURL, 'sitemap.xml');
 const isAnalyticsEnabled = process.env.ANALYTICS_ENABLED === 'true';
 const naverAnalyticsId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_NAVER_ANALYTICS_ID?.trim() ?? '') : '';
@@ -40,9 +39,6 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
-                { rel: 'icon', type: 'image/png', sizes: '32x32', href: faviconPngHref },
-                { rel: 'shortcut icon', type: 'image/x-icon', href: faviconIcoHref },
-                { rel: 'apple-touch-icon', sizes: '180x180', href: appleTouchIconHref },
                 { rel: 'sitemap', type: 'application/xml', href: sitemapHref },
             ],
             script: [
@@ -115,8 +111,8 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         publicAssets: [
-            { dir: 'assets/images', baseURL: '/images' },
-            { dir: 'assets/icons', baseURL: '/' },
+            { dir: imagesDir, baseURL: '/assets/images' },
+            { dir: iconsDir, baseURL: '/assets/icons' },
         ],
     },
 });
