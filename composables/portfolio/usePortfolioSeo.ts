@@ -25,7 +25,7 @@ type PortfolioSeoOptions = {
 };
 
 const SITE_URL = 'https://yheun03.github.io/';
-const DEFAULT_IMAGE = '/assets/images/projects/portfolio-2026/home-light-desktop.png';
+const DEFAULT_IMAGE = '/assets/images/common/og/og-image-2026.jpg';
 const contentByLocale = { ko: ko.content, en: en.content };
 
 export function getPortfolioAbsoluteUrl(path = '/') {
@@ -167,8 +167,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image:alt', content: page.imageAlt ?? title },
                 ...(imagePath === DEFAULT_IMAGE
                     ? [
-                          { property: 'og:image:width', content: '1200' },
-                          { property: 'og:image:height', content: '900' },
+                          { property: 'og:image:width', content: '1402' },
+                          { property: 'og:image:height', content: '1122' },
                       ]
                     : []),
                 { name: 'twitter:card', content: 'summary_large_image' },
