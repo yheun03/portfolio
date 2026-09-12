@@ -9,6 +9,7 @@ const imagesDir = fileURLToPath(new URL('./assets/images', import.meta.url));
 const iconsDir = fileURLToPath(new URL('./assets/icons', import.meta.url));
 const faviconHref = joinURL(resolvedBaseURL, 'assets/icons/favicon.svg');
 const sitemapHref = joinURL(resolvedBaseURL, 'sitemap.xml');
+const googleSiteVerification = process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ?? '';
 const isAnalyticsEnabled = process.env.ANALYTICS_ENABLED === 'true';
 const naverAnalyticsId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_NAVER_ANALYTICS_ID?.trim() ?? '') : '';
 const googleTagManagerId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_GOOGLE_TAG_MANAGER_ID?.trim() ?? '') : '';
@@ -23,6 +24,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             naverSiteVerification: process.env.NUXT_PUBLIC_NAVER_SITE_VERIFICATION?.trim() ?? '',
+            googleSiteVerification,
             naverAnalyticsId,
             googleTagManagerId,
         },
@@ -39,6 +41,7 @@ export default defineNuxtConfig({
                 { name: 'theme-color', content: '#f2f4f6', media: '(prefers-color-scheme: light)' },
                 { name: 'theme-color', content: '#060a10', media: '(prefers-color-scheme: dark)' },
                 { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
+                ...(googleSiteVerification ? [{ name: 'google-site-verification', content: googleSiteVerification }] : []),
             ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
