@@ -2,8 +2,8 @@
 
 /* Page */
 .portfolio-page--home {
-    --home-fullpage-height: calc(100vh - var(--layout-header-height));
-    --home-fullpage-height: calc(100dvh - var(--layout-header-height));
+    --home-fullpage-height: 100vh;
+    --home-fullpage-height: 100dvh;
 }
 
 html:has(.portfolio-page--home) {
@@ -30,7 +30,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page.portfolio-page--home> :is(#hello, #about, #works) {
+    .portfolio-page.portfolio-page--home>.section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
