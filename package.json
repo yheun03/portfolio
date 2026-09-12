@@ -23,7 +23,7 @@
         "dev:clean:root": "npm run clean && NUXT_APP_BASE_URL=/ nuxt dev --host 0.0.0.0",
         "generate": "nuxt generate",
         "generate:clean": "npm run clean && nuxt generate",
-        "deploy": "npm run generate && gh-pages -d .output/public -b gh-pages --nojekyll",
+        "deploy": "ANALYTICS_ENABLED=true npm run generate && gh-pages -d .output/public -b gh-pages --nojekyll",
         "preview": "nuxt preview --host 0.0.0.0",
         "preview:host": "nuxt preview --host 0.0.0.0 --port 3005",
         "preview:clean": "npm run build:clean && nuxt preview --host 0.0.0.0",
